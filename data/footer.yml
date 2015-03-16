@@ -1,0 +1,7 @@
+footer:
+  -
+    label: "Teste"
+    url: "/teste"
+  -
+    label: "Teste 2"
+    url: "/teste2"
