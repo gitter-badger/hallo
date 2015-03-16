@@ -19,6 +19,8 @@ Cada funcionalidade do site será um módulo separado, com seu próprio _CSS_, _
 
 Para desenvolvimento usaremos um sistema de _build_ baseado em *Gulp*
 
+Usaremos [git flow](http://nvie.com/posts/a-successful-git-branching-model/) para o trabalho da equipe no git
+
 ### Ambiente de desenvolvimento
 
 Para desenvolvimento, usaremos uma [box vagrant](https://www.vagrantup.com/)
