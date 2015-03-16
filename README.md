@@ -2,7 +2,10 @@
 
 ## Arquitetura
 
-A aplicação será composta de
+A aplicação será baseada em um front end estático com todos os arquivos e páginas finais gerados por um _build system_ em _nodejs_, que irá separar a aplicação do conteúdo, de início com arquivos locais, dentro do projeto, depois alterando os _endpoints_ para _APIs_ com os dados de produtos, serviços e estrutura do site, como menus, _boxes_ promocionais, etc.
+
+Cada funcionalidade do site será um módulo separado, com seu próprio _CSS_, _HTML_ e _Javascript_ e as páginas deverão ser apenas a coleção estruturada desses módulos, que deverão funcionar idependentes.
+
 
 ## Desenvolvimento
 
