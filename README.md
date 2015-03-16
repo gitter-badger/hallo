@@ -4,12 +4,20 @@
 
 A aplicação será baseada em um front end estático com todos os arquivos e páginas finais gerados por um _build system_ em _nodejs_, que irá separar a aplicação do conteúdo, de início com arquivos locais, dentro do projeto, depois alterando os _endpoints_ para _APIs_ com os dados de produtos, serviços e estrutura do site, como menus, _boxes_ promocionais, etc.
 
-Cada funcionalidade do site será um módulo separado, com seu próprio _CSS_, _HTML_ e _Javascript_ e as páginas deverão ser apenas a coleção estruturada desses módulos, que deverão funcionar idependentes.
+Cada funcionalidade do site será um módulo separado, com seu próprio _CSS_, _HTML_ e _Javascript_ e as páginas deverão ser apenas a coleção estruturada desses módulos, que deverão funcionar independentes.
+
+
+### Estrutura da Aplicação
+
+```bash
+
+
+```
 
 
 ## Desenvolvimento
 
-Para desenvolvimento usaremos um sistema de _build_ baseado em *Gulp* que irá
+Para desenvolvimento usaremos um sistema de _build_ baseado em *Gulp*
 
 ### Ambiente de desenvolvimento
 
@@ -72,6 +80,8 @@ Testes E2E com protractor
           - [grid 768](.layout/components/styleguide/grid-768.jpg)
           - [grid 960](.layout/components/styleguide/grid-960.jpg)
           - [grid 1280](.layout/components/styleguide/grid-1280.jpg)
+      + Box oferta [1](.layout/components/box_ofertas.jpg)
+      +
       + Modal Torpedo
           * número de telefone [1](.layout/components/torpedo/1_torpedo_numero.jpg)
           * mensagem [2A](.layout/components/torpedo/2_torpedo_mensagem-A.jpg) [2B](.layout/components/torpedo/2_torpedo_mensagem-B.jpg)
@@ -94,6 +104,64 @@ Testes E2E com protractor
           * seleção de pacote [3A](.layout/components/pacotes/3_pacotes_selecao-A.jpg) [3B](.layout/components/pacotes/3_pacotes_selecao-B.jpg) [3C](.layout/components/pacotes/3_pacotes_selecao-C.jpg) [3D](.layout/components/pacotes/3_pacotes_selecao-D.jpg)
           * enviando [4](.layout/components/pacotes/4_pacotes_enviando.jpg)
           * Sucesso [5](.layout/components/pacotes/5_pacotes_sucesso.jpg)
+      + Modal Detalhe
+        * detalhe canal
+        * lista canais
+        * busca
+        * disclaimer
+        * mapa dinamico
+        * simulador planos
+        * simulador combos
+      + Landing page
+        * canal TV
+        * Home aparelhos
+        * Detalhe aparelho
+        * 404
+        * Fibra optica
+        * Mapa lojas Oi
+        * Oi pontos
+        * Home recarga
+        * Informações 102
+        * Informações Orelhão
+        * Informações Cobertura
+        * Informações WiFi
+        * App Minha Oi
+        * Serviços Financeiros
+        * Prepaid Kit
+        * Sobre a Oi
+      + Versão de impressão
+      + Página Minha Oi (HDTV, Internet, Fixo, Celular, Combo)
+        * layout split
+          - detalhamento de dúvida
+          - detalhe "turbine/opcional"
+      + Acompanhe seu pedido
+        * detalhe do pedido
+      + Resolva tudo
+        * layout split
+      + Produtos e Serviços
+        * TVHD (start, Mix, Total)
+          - header produto
+          - box preço produto
+          - tabela canais
+        * Internet (Banda larga, móvel 3G/4G)
+          - Header
+          - Box preço
+          - tabela
+        * Fixo
+          - header com tabela
+          - especificação técnica
+        * Celular
+          - header / box preço
+          - tabela
+        * Combo
+          - header box preço/imagem
+          - tabela/tabs
+        * Seleção "Possui Chip?"
+        * Avise-me ao chegar
+        * Pedido de produto - Formulário
+        * Pedido de produto - Sucesso
+        * Chat
+        * Click to call
 
     + Home
         * API de planos
