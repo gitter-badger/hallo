@@ -16,3 +16,20 @@ gulp.task('build-jade', function() {
     .pipe(gulp.dest(config.path.dist.root));
 });
 
+gulp.task('build-stylus', function () {
+  gulp.src(config.path.src.stylus)
+    .pipe($.plumber())
+    .pipe($.changed(config.path.dist.root))
+    .pipe($.if(!config.isProd, $.sourcemaps.init() ))
+    .pipe($.stylus())
+    .pipe($.autoprefixer({
+      browsers: config.BrowserList,
+      cascade: false
+    }))
+    .pipe($.if(!config.isProd, $.sourcemaps.write('.')))
+    .pipe(gulp.dest(config.path.dist.css));
+});
+
+gulp.task('build', ['build-jade', 'build-stylus' ], function() {
+  console.log('All Build!')
+});
