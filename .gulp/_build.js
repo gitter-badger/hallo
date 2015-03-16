@@ -4,6 +4,8 @@ var gulp   = require('gulp');
 var $      = require('gulp-load-plugins')();
 var config = require('./appConfig');
 var helpers= require('./helpers');
+var logdown= require('logdown')
+var msg    = new logdown({prefix: 'Message:'})
 
 gulp.task('build-jade', function() {
   var data = helpers.loadData();
@@ -30,6 +32,7 @@ gulp.task('build-stylus', function () {
     .pipe(gulp.dest(config.path.dist.css));
 });
 
+
 gulp.task('build', ['build-jade', 'build-stylus' ], function() {
-  console.log('All Build!')
+  msg.log('`All Build!`')
 });
