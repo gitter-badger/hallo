@@ -8,6 +8,11 @@ var appConfig = (function() {
 
   _public.BrowserList = ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'];
 
+  _public.server = {
+    host: 'localhost',
+    port: '8080'
+  }
+
   _public.path = {
     data: {
 
@@ -20,7 +25,12 @@ var appConfig = (function() {
     dist: {
       root: './dist/',
       css: './dist/assets/styles/'
-
+    },
+    docs: {
+      jade: './docs/views/**/*.jade',
+      partials: './docs/views/_partials/**/*.jade',
+      stylus: './docs/assets/styles/**/*.styl',
+      root: './dist/docs/'
     }
 
   }
