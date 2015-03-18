@@ -16,7 +16,6 @@ var helpers = (function() {
     return dataFiles;
   }
 
-
   _public.loadData = function() {
     var dataFiles = _private.listDataFiles(),
         dataMerged = {};
@@ -30,6 +29,9 @@ var helpers = (function() {
     return dataMerged;
   }
 
+  _public.filterPartials = function(file) {
+    return !/\/_/.test(file.path);
+  }
 
   return _public;
 
