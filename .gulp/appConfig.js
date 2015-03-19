@@ -22,12 +22,14 @@ var appConfig = (function() {
       partials: './app/views/_partials/**/*.jade',
       stylus: './app/assets/styles/**/*.styl',
       components: './app/assets/styles/components/**/*.styl',
-      fonts: './app/assets/fonts/**/*.{eot,svg,ttf,woff}'
+      fonts: './app/assets/fonts/**/*.{eot,svg,ttf,woff}',
+      icons: './app/assets/images/icons/**/*.svg'
     },
     dist: {
       root: './dist/',
       css: './dist/assets/styles/',
-      fonts: './dist/assets/fonts/'
+      fonts: './dist/assets/fonts/',
+      icons: './dist/assets/fonts/icons/'
     },
     docs: {
       jade: './docs/views/**/*.jade',

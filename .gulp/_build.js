@@ -30,6 +30,28 @@ gulp.task('build-fonts', function() {
     .pipe(gulp.dest(config.path.dist.fonts));
 });
 
+gulp.task('build-fonts-icon', function() {
+  var fontName = 'oi-icons';
+  gulp.src(config.path.src.icons)
+    .pipe($.plumber())
+    .pipe($.changed(config.path.src.icons))
+
+    .pipe($.iconfontCss({
+        fontName: fontName,
+        // path: './app/assets/styles/components/_icons.styl',
+        targetPath: './AAcss/_icons.scss',
+        fontPath: './icons/'
+    }))
+    .pipe($.iconfont({
+      fontName: fontName,
+      appendCodepoints: true
+    }))
+    .on('codepoints', function(codepoints, options) {
+      // console.log(codepoints, options);
+    })
+    .pipe(gulp.dest(config.path.dist.icons));
+});
+
 gulp.task('build-stylus', function () {
   gulp.src(config.path.src.stylus)
     .pipe($.plumber())
