@@ -1,0 +1,26 @@
+include ./_partials/header.jade
+
+body
+  section.container
+
+    include ./_partials/menu.jade
+
+    article.content-doc
+
+      h1.title.medium Grid
+
+      h2 Uso
+
+      h2 Desenvolvimento
+
+      p
+        O GridSystem é feito com #[a(target="_blank", href="http://jeet.gs/") Jeet] e #[a(href="http://jenius.github.io/rupture/") Rupture] permitindo utilizar o grid através de classes no HTML ou mixins no CSS/Stylus
+
+      - var n = 1
+      ul
+        while n <= 12
+          li= n++
+
+
+
+
