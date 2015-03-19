@@ -1,0 +1,59 @@
+@require "main"
+
+body
+  // background-image url(styleguide.png)
+  // background-repeat no-repeat
+  // background-position 172px -34px
+  // background-position 172px -23px
+  // background-position 166px -23px
+
+.menu-doc
+  column(0.3)
+  background-color $green
+  min-height 1000px
+
+  h1
+    color #fff
+    text-indent 1rem
+
+  a
+    transition background-color .25s easing( "in-quad" )
+    background-color $green
+    color #fff
+    display block
+    line-height  5rem
+    text-decoration none
+    text-indent 1rem
+    &:hover
+      background-color $greenLight
+
+.content-doc
+  column(0.7)
+
+  h1
+    color: $green
+
+  h2:before
+    color: $grayLight
+    content: '# '
+
+.example
+  border: 1px solid $green
+  padding 10px
+  margin-top 1rem
+  margin-bottom 1rem
+  margin-right 1rem
+
+  &.color
+    line-height 2rem
+
+  &.typography
+    background-color #fff
+    background-image linear-gradient(#eee 1px, transparent 1px)
+    background-size 100% 10px
+
+  &.gradient
+    cf()
+    div
+      col(1/6)
+      height 200px
