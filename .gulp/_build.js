@@ -14,7 +14,7 @@ gulp.task('build-jade', function() {
   var data = helpers.loadData();
   gulp.src(config.path.src.jade)
     .pipe($.plumber())
-    .pipe($.changed(config.path.dist.root))
+    .pipe($.changed(config.path.src.jade))
     .pipe($.filter(helpers.filterPartials))
     .pipe($.jade({ locals: data }))
     .pipe($.minifyHtml())
@@ -22,10 +22,18 @@ gulp.task('build-jade', function() {
     .pipe(gulp.dest(config.path.dist.root));
 });
 
+gulp.task('build-fonts', function() {
+  gulp.src(config.path.src.fonts)
+    .pipe($.plumber())
+    .pipe($.changed(config.path.src.fonts))
+    .pipe($.if(true, $.gzip()))
+    .pipe(gulp.dest(config.path.dist.fonts));
+});
+
 gulp.task('build-stylus', function () {
   gulp.src(config.path.src.stylus)
     .pipe($.plumber())
-    // .pipe($.changed(config.path.src.stylus))
+    .pipe($.changed(config.path.src.stylus))
     .pipe($.filter(helpers.filterPartials))
     .pipe($.if(!config.isProd, $.sourcemaps.init() ))
     .pipe($.stylus({
@@ -36,11 +44,12 @@ gulp.task('build-stylus', function () {
       browsers: config.BrowserList,
       cascade: false
     }))
+    .pipe($.csso())
     .pipe($.if(!config.isProd, $.sourcemaps.write('.')))
     .pipe(gulp.dest(config.path.dist.css));
 });
 
 
-gulp.task('build', ['build-jade', 'build-stylus' ], function() {
+gulp.task('build', ['build-jade', 'build-fonts', 'build-stylus' ], function() {
   msg.log('`All Build!`')
 });
