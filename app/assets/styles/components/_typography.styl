@@ -1,0 +1,56 @@
+font-face( "oiText", "../fonts/simplon/SimplonBP-Regular-webfont", normal )
+font-face( "oiText", "../fonts/simplon/SimplonBP-Bold-webfont", normal )
+font-face( "oiText", "../fonts/simplon/SimplonBP-Light-webfont", normal )
+font-face( "oiTitle", "../fonts/simplon/SimplonOi-headline-webfont", normal )
+
+// $baseline  = 12px
+$baseline  = 1rem
+
+html
+  font-size 100%
+
+body
+  font-family font-stack( 'Helvetica' )
+  font-size 10px
+
+  .container
+    font-family oiText
+    font-size 1.2rem
+
+    .lowercase
+      text-transform lowercase
+
+    .uppercase
+      text-transform uppercase
+
+.title
+  font-family oiTitle
+  text-transform uppercase
+  display block
+  color: $black
+  margin-top $baseline * 2
+  margin-bottom $baseline * 1
+  &.huge
+    font-size $baseline * 7
+    // letter-spacing -3px
+    line-height $baseline * 7
+  &.big
+    font-size $baseline * 5
+    // letter-spacing 0
+    line-height $baseline * 5
+  &.medium
+    font-size $baseline * 4
+    // letter-spacing -2px
+    line-height $baseline * 4
+  &.small
+    font-size $baseline * 3
+    // letter-spacing -2px
+    line-height $baseline * 2
+  &.tiny
+    font-size $baseline * 2
+    // letter-spacing 1px
+    line-height $baseline * 2
+  &.eyebrow
+    font-size $baseline * 1
+    // letter-spacing 3px
+    line-height $baseline * 1
