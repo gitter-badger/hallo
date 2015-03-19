@@ -1,21 +1,20 @@
-doctype html
-html(lang="en")
-  head
-    title Ola
-    script(type='text/javascript').
-      if (foo) {
-         bar(1 + 5)
-      }
-  body
+include ./_partials/header.jade
 
-    h1 Jade - node template engine
-    #container.col
-      if youAreUsingJade
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Jade is a terse and simple
-        templating language with a
-        strong focus on performance
-        and powerful features.
+body
+    section.container
+
+      include ./_partials/menu.jade
+
+      article.content-doc
+
+        h1.title.medium Início
+
+        p Documentação de elementos, componentes e módulos usados no portal Oi
+
+        h2.title.tiny Organização
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias eveniet sequi dicta totam, quia qui quibusdam beatae asperiores accusantium officiis harum nostrum non voluptas. Quaerat reprehenderit, porro voluptates. Dicta, sit?
+
+        h2.title.tiny Desenvolvimento
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vitae, tenetur impedit voluptas nisi laudantium sed quibusdam obcaecati perferendis at est nam enim, dignissimos similique hic commodi autem consequatur ipsum.
+
+
