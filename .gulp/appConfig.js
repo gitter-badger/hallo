@@ -21,10 +21,13 @@ var appConfig = (function() {
       jade: './app/views/**/*.jade',
       partials: './app/views/_partials/**/*.jade',
       stylus: './app/assets/styles/**/*.styl',
+      components: './app/assets/styles/components/**/*.styl',
+      fonts: './app/assets/fonts/**/*.{eot,svg,ttf,woff}'
     },
     dist: {
       root: './dist/',
-      css: './dist/assets/styles/'
+      css: './dist/assets/styles/',
+      fonts: './dist/assets/fonts/'
     },
     docs: {
       jade: './docs/views/**/*.jade',
