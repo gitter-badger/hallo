@@ -1,9 +1,11 @@
-mainColor = #0982c1
-siteWidth = 1024px
-$borderStyle = dotted
+@import "kouto-swiss"
+@import "config/_variables"
 
-body
-  color mainColor
-  border 1px $borderStyle mainColor
-  max-width siteWidth
-  box-shadow: 1px solid red
+// Reset & box-sizing
+meyer-reset()
+box-sizing-reset()
+
+@import "components/_colors"
+@import "components/_base"
+@import "components/_grid"
+@import "components/_typography"
