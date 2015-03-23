@@ -40,7 +40,7 @@ gulp.task('build-fonts-icon', function() {
     .pipe($.iconfontCss({
         fontName: fontName,
         // path: './app/assets/styles/components/_icons.styl',
-        targetPath: '../../../app/assets/styles/components/_icons.styl',
+        targetPath: '../../../app/assets/styles/components/_icon-font.styl',
         fontPath: '../fonts/'
     }))
     .pipe($.iconfont({
