@@ -1,0 +1,23 @@
+{
+  "name": "oi",
+  "version": "0.0.0",
+  "homepage": "https://github.com/letanure/oi",
+  "authors": [
+    "Luiz Tanure <letanure@gmail.com>"
+  ],
+  "description": "bower dependencies",
+  "keywords": [
+    "javascript"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.5"
+  }
+}

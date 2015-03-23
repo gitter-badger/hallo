@@ -30,3 +30,4 @@ node_modules
 .vagrant/
 dist/
 .publish
+bower_components/

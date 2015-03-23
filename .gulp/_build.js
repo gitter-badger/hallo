@@ -10,6 +10,8 @@ var jeet         = require('jeet');
 var koutoSwiss   = require('kouto-swiss');
 var rupture      = require('rupture');
 
+$.mainBowerFiles = require('main-bower-files');
+
 gulp.task('build-jade', function() {
   var data = helpers.loadData();
   gulp.src(config.path.src.jade)
@@ -54,7 +56,13 @@ gulp.task('build-fonts-icon', function() {
     .on('codepoints', function(codepoints, options) {
       console.log(codepoints, options);
     })
-    .pipe(gulp.dest('./dist/assets/fonts/oi-icons/'));
+    .pipe(gulp.dest(config.path.dist.fonts));
+});
+
+gulp.task("build-bower", function(){
+    return gulp.src(
+      $.mainBowerFiles(), {base: config.path.src.bower } )
+      .pipe(gulp.dest(config.path.dist.scripts));
 });
 
 gulp.task('build-stylus', function () {

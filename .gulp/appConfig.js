@@ -23,13 +23,15 @@ var appConfig = (function() {
       stylus: './app/assets/styles/**/*.styl',
       components: './app/assets/styles/components/**/*.styl',
       fonts: './app/assets/fonts/**/*.{eot,svg,ttf,woff}',
-      icons: './app/assets/images/icons/**/*.svg'
+      icons: './app/assets/images/icons/**/*.svg',
+      bower: './bower_components/'
     },
     dist: {
       root: './dist/',
       css: './dist/assets/styles/',
       fonts: './dist/assets/fonts/',
-      icons: './dist/assets/fonts/icons/'
+      icons: './dist/assets/fonts/icons/',
+      scripts: './dist/assets/scripts/'
     },
     docs: {
       jade: './docs/views/**/*.jade',
