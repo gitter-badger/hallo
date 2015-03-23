@@ -96,6 +96,6 @@ gulp.task('build-stylus', function () {
 });
 
 
-gulp.task('build', ['build-jade', 'build-fonts', 'build-stylus' ], function() {
+gulp.task('build', ['build-jade', 'build-fonts', 'build-stylus', 'build-images' ], function() {
   msg.log('`All Build!`')
 });

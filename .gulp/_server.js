@@ -14,6 +14,7 @@ gulp.task('watch', ['build-jade', 'build-stylus', 'build-fonts', 'build-docs'], 
     gulp.watch(config.path.src.jade, ['build-jade']);
     gulp.watch(config.path.src.stylus, ['build-stylus']);
     gulp.watch(config.path.src.fonts, ['build-fonts']);
+    gulp.watch(config.path.src.images, ['build-images']);
 });
 
 gulp.task('server', ['watch'], function() {
