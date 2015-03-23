@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg enable-background="new 0 0 100 100" id="celular-s" version="1.1" viewBox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-  <path d="M60.3,0H39.7C27.3,0,17.3,10,17.3,22.3v55.3c0,12.3,10,22.3,22.3,22.3h20.6c12.3,0,22.3-10,22.3-22.3V22.3   C82.7,10,72.7,0,60.3,0z M39.7,3.3h20.6c8.4,0,15.8,5.8,18.1,13.6h-57C23.8,9.2,31.2,3.3,39.7,3.3z M79.2,77.7   c0.2,10.3-8.6,19.1-18.9,19.1H39.7c-10.3,0-19.1-8.6-19.1-19.1V58.3h58.6V77.7z M79.4,55H20.8V22.3c0-0.6,0-1.4,0.2-2h58.4   c-0.2,0.6,0,1.4,0,2V55z"/>
-  <rect height="7" width="7" x="32.7" y="67.3"/>
-  <rect height="7" width="7" x="46.7" y="67.3"/>
-  <rect height="7" width="7" x="39.7" y="80.9"/>
-  <rect height="7" width="7" x="53.3" y="80.9"/>
-  <rect height="7" width="7" x="60.3" y="67.3"/>
-</svg>
