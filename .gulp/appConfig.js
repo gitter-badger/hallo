@@ -23,6 +23,7 @@ var appConfig = (function() {
       stylus: './app/assets/styles/**/*.styl',
       components: './app/assets/styles/components/**/*.styl',
       fonts: './app/assets/fonts/**/*.{eot,svg,ttf,woff}',
+      images: './app/assets/images/**/*.{jpg,jpeg,png,gif}',
       icons: './app/assets/images/icons/**/*.svg',
       bower: './bower_components/'
     },
@@ -30,6 +31,7 @@ var appConfig = (function() {
       root: './dist/',
       css: './dist/assets/styles/',
       fonts: './dist/assets/fonts/',
+      images: './dist/assets/images/',
       icons: './dist/assets/fonts/icons/',
       scripts: './dist/assets/scripts/'
     },

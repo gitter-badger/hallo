@@ -65,6 +65,17 @@ gulp.task("build-bower", function(){
       .pipe(gulp.dest(config.path.dist.scripts));
 });
 
+gulp.task('build-images', function() {
+  return gulp.src(config.path.src.images)
+    .pipe($.newer(config.path.dist.images))
+    .pipe($.imagemin({
+      optimizationLevel: 3,
+      progressive: true,
+      interlaced: true
+    }))
+    .pipe(gulp.dest(config.path.dist.images));
+});
+
 gulp.task('build-stylus', function () {
   gulp.src(config.path.src.stylus)
     .pipe($.plumber())
