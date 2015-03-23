@@ -26,7 +26,6 @@ gulp.task('build-fonts', function() {
   gulp.src(config.path.src.fonts)
     .pipe($.plumber())
     .pipe($.changed(config.path.src.fonts))
-    .pipe($.if(true, $.gzip()))
     .pipe(gulp.dest(config.path.dist.fonts));
 });
 
@@ -39,23 +38,29 @@ gulp.task('build-fonts-icon', function() {
     .pipe($.iconfontCss({
         fontName: fontName,
         // path: './app/assets/styles/components/_icons.styl',
-        targetPath: './AAcss/_icons.scss',
-        fontPath: './icons/'
+        targetPath: '../../styles/components/_icons.css',
+        fontPath: './assets/icons/'
     }))
     .pipe($.iconfont({
+      appendCodepoints: true,
+      descent: 0,
+      // error: [Function],
+      fixedWidth: true,
       fontName: fontName,
-      appendCodepoints: true
+      ignoreExt: false,
+      // log: [Function],
+      round: 10000000000000
     }))
     .on('codepoints', function(codepoints, options) {
-      // console.log(codepoints, options);
+      console.log(codepoints, options);
     })
-    .pipe(gulp.dest(config.path.dist.icons));
+    .pipe(gulp.dest('./dist/assets/fonts/oi-icons/'));
 });
 
 gulp.task('build-stylus', function () {
   gulp.src(config.path.src.stylus)
     .pipe($.plumber())
-    .pipe($.changed(config.path.src.stylus))
+    // .pipe($.changed(config.path.src.stylus))
     .pipe($.filter(helpers.filterPartials))
     .pipe($.if(!config.isProd, $.sourcemaps.init() ))
     .pipe($.stylus({

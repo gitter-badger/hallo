@@ -1,0 +1,81 @@
+@font-face {
+	font-family: "oi-icons";
+	src: url('./assets/icons/oi-icons.eot');
+	src: url('./assets/icons/oi-icons.eot?#iefix') format('eot'),
+		url('./assets/icons/oi-icons.woff') format('woff'),
+		url('./assets/icons/oi-icons.ttf') format('truetype'),
+		url('./assets/icons/oi-icons.svg#oi-icons') format('svg');
+}
+
+.icon:before {
+	font-family: "oi-icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+}
+
+
+.icon-app-s-aqua:before {
+	content: "\E001";
+}
+
+.icon-banda-black:before {
+	content: "\E002";
+}
+
+.icon-celular-black:before {
+	content: "\E003";
+}
+
+.icon-celular-s-black:before {
+	content: "\E004";
+}
+
+.icon-email-s-aqua:before {
+	content: "\E005";
+}
+
+.icon-fixo-black:before {
+	content: "\E006";
+}
+
+.icon-fixo-s-black:before {
+	content: "\E007";
+}
+
+.icon-internet-black:before {
+	content: "\E008";
+}
+
+.icon-internet-s-black:before {
+	content: "\E009";
+}
+
+.icon-ligacao-s-aqua:before {
+	content: "\E00A";
+}
+
+.icon-pin-s-aqua:before {
+	content: "\E00B";
+}
+
+.icon-tv-black:before {
+	content: "\E00C";
+}
+
+.icon-tv-s-black:before {
+	content: "\E00D";
+}
+
+.icon-user-s-aqua:before {
+	content: "\E00E";
+}
+
+.icon-via-s-aqua:before {
+	content: "\E00F";
+}
