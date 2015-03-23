@@ -1,120 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   version="1.1"
-   id="Layer_1"
-   x="0px"
-   y="0px"
-   viewBox="653 354 64 64"
-   enable-background="new 653 354 60 60"
-   xml:space="preserve"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="celular.svg"
-   width="64"
-   height="64"><metadata
-     id="metadata41"><rdf:RDF><cc:Work
-         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
-     id="defs39" /><sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="2560"
-     inkscape:window-height="1352"
-     id="namedview37"
-     showgrid="false"
-     inkscape:zoom="3.9333333"
-     inkscape:cx="-33.559322"
-     inkscape:cy="30"
-     inkscape:window-x="0"
-     inkscape:window-y="800"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="Layer_1" /><g
-     id="g3"
-     transform="matrix(1.0684474,0,0,1.0684474,-44.749574,-24.337224)"
-     style="fill:#000000"><rect
-       x="665.20001"
-       y="366.20001"
-       width="35.599998"
-       height="2"
-       id="rect5"
-       style="fill:#000000" /><rect
-       x="665.20001"
-       y="387.60001"
-       width="35.599998"
-       height="2"
-       id="rect7"
-       style="fill:#000000" /><g
-       id="g9"
-       style="fill:#000000"><circle
-         cx="679.90002"
-         cy="394.70001"
-         r="2"
-         id="circle11"
-         style="fill:#000000" /><circle
-         cx="679.90002"
-         cy="400.79999"
-         r="2"
-         id="circle13"
-         style="fill:#000000" /></g><circle
-       cx="672.79999"
-       cy="394.70001"
-       r="2"
-       id="circle15"
-       style="fill:#000000" /><circle
-       cx="672.79999"
-       cy="400.79999"
-       r="2"
-       id="circle17"
-       style="fill:#000000" /><g
-       id="g19"
-       style="fill:#000000"><circle
-         cx="687.09998"
-         cy="394.70001"
-         r="2"
-         id="circle21"
-         style="fill:#000000" /><circle
-         cx="687.09998"
-         cy="400.79999"
-         r="2"
-         id="circle23"
-         style="fill:#000000" /></g><circle
-       cx="679.90002"
-       cy="406.89999"
-       r="2"
-       id="circle25"
-       style="fill:#000000" /><circle
-       cx="687.09998"
-       cy="406.89999"
-       r="2"
-       id="circle27"
-       style="fill:#000000" /><g
-       id="g29"
-       style="fill:#000000"><circle
-         cx="694.20001"
-         cy="394.70001"
-         r="2"
-         id="circle31"
-         style="fill:#000000" /><circle
-         cx="694.20001"
-         cy="400.79999"
-         r="2"
-         id="circle33"
-         style="fill:#000000" /></g><path
-       d="m 688.6,414 -11.2,0 c -7.3,0 -13.2,-5.9 -13.2,-13.2 l 0,-33.5 c 0,-7.3 5.9,-13.2 13.2,-13.2 l 11.2,0 c 7.3,0 13.2,5.9 13.2,13.2 l 0,33.5 c 0,7.3 -5.9,13.2 -13.2,13.2 z m -11.2,-57.9 c -6.2,0 -11.2,5 -11.2,11.2 l 0,33.5 c 0,6.2 5,11.2 11.2,11.2 l 11.2,0 c 6.2,0 11.2,-5 11.2,-11.2 l 0,-33.5 c 0,-6.2 -5,-11.2 -11.2,-11.2 l -11.2,0 z"
-       id="path35"
-       inkscape:connector-curvature="0"
-       style="fill:#000000" /></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg enable-background="new 0 0 100 100" id="celular" version="1.1" viewBox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+  <circle cx="44.8" cy="67.8" r="3.3"/>
+  <circle cx="44.8" cy="78" r="3.3"/>
+  <circle cx="33" cy="67.8" r="3.3"/>
+  <circle cx="33" cy="78" r="3.3"/>
+  <circle cx="56.9" cy="67.8" r="3.3"/>
+  <circle cx="56.9" cy="78" r="3.3"/>
+  <circle cx="44.8" cy="88.1" r="3.3"/>
+  <circle cx="56.9" cy="88.1" r="3.3"/>
+  <circle cx="68.8" cy="67.8" r="3.3"/>
+  <circle cx="68.8" cy="78" r="3.3"/>
+  <path d="M59.4,0H40.6c-12.2,0-22,9.8-22,22V78c0,12.2,9.8,22,22,22h18.8c12.2,0,22-9.8,22-22V22C81.4,9.8,71.6,0,59.4,0z M78,78   c0,10.3-8.3,18.8-18.6,18.8H40.6c-10.3,0-18.8-8.3-18.8-18.8V59.2H78V78z M78,55.9H21.9V23.6H78V55.9z M22,20.2   C23,10.8,30.9,3.3,40.6,3.3h18.8c9.7,0,17.7,7.3,18.6,16.9H22z"/>
+</svg>
