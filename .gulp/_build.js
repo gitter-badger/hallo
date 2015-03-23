@@ -40,8 +40,8 @@ gulp.task('build-fonts-icon', function() {
     .pipe($.iconfontCss({
         fontName: fontName,
         // path: './app/assets/styles/components/_icons.styl',
-        targetPath: '../../styles/components/_icons.css',
-        fontPath: './assets/icons/'
+        targetPath: '../../../app/assets/styles/components/_icons.styl',
+        fontPath: '../fonts/'
     }))
     .pipe($.iconfont({
       appendCodepoints: true,

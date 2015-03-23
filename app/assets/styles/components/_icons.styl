@@ -1,59 +1,97 @@
-font-face( "oiIcons", "../fonts/oi-icons/oi-icons", normal )
+@font-face {
+	font-family: "oi-icons";
+	src: url('../fonts/oi-icons.eot');
+	src: url('../fonts/oi-icons.eot?#iefix') format('eot'),
+		url('../fonts/oi-icons.woff') format('woff'),
+		url('../fonts/oi-icons.ttf') format('truetype'),
+		url('../fonts/oi-icons.svg#oi-icons') format('svg');
+}
 
-.icon
-  &:before
-    font-family "oiIcons"
-    -webkit-font-smoothing antialiased
-    -moz-osx-font-smoothing grayscale
-    font-style normal
-    font-variant normal
-    font-weight normal
-    text-decoration none
-    text-transform none
+.icon:before {
+	font-family: "oi-icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+}
 
-.icon
-  &-app-s-aqua
-    &:before
-      content "\E001"
-  &-banda-black
-    &:before
-      content "\E002"
-  &-celular-black
-    &:before
-      content "\E003"
-  &-celular-s-black
-    &:before
-      content "\E004"
-  &-email-s-aqua
-    &:before
-      content "\E005"
-  &-fixo-black
-    &:before
-      content "\E006"
-  &-fixo-s-black
-    &:before
-      content "\E007"
-  &-internet-black
-    &:before
-      content "\E008"
-  &-internet-s-black
-    &:before
-      content "\E009"
-  &-ligacao-s-aqua
-    &:before
-      content "\E00A"
-  &-pin-s-aqua
-    &:before
-      content "\E00B"
-  &-tv-black
-    &:before
-      content "\E00C"
-  &-tv-s-black
-    &:before
-      content "\E00D"
-  &-user-s-aqua
-    &:before
-      content "\E00E"
-  &-via-s-aqua
-    &:before
-      content "\E00F"
+
+.icon-app-s:before {
+	content: "\E001";
+}
+
+.icon-arrow:before {
+	content: "\E002";
+}
+
+.icon-banda-s:before {
+	content: "\E003";
+}
+
+.icon-banda:before {
+	content: "\E004";
+}
+
+.icon-celular-s:before {
+	content: "\E005";
+}
+
+.icon-celular:before {
+	content: "\E006";
+}
+
+.icon-email-s:before {
+	content: "\E007";
+}
+
+.icon-error:before {
+	content: "\E008";
+}
+
+.icon-fixo-s:before {
+	content: "\E009";
+}
+
+.icon-fixo:before {
+	content: "\E00A";
+}
+
+.icon-internet-s:before {
+	content: "\E00B";
+}
+
+.icon-internet:before {
+	content: "\E00C";
+}
+
+.icon-ligacao-s:before {
+	content: "\E00D";
+}
+
+.icon-pin-s:before {
+	content: "\E00E";
+}
+
+.icon-success:before {
+	content: "\E00F";
+}
+
+.icon-tv-s:before {
+	content: "\E010";
+}
+
+.icon-tv:before {
+	content: "\E011";
+}
+
+.icon-user-s:before {
+	content: "\E012";
+}
+
+.icon-via-s:before {
+	content: "\E013";
+}
