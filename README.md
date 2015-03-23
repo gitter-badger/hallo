@@ -35,6 +35,10 @@ vagrant up
 
 ### Dependências
 
+Para desenvolvimento utilize uma _box vagrant_, para que todos tenham o mesmo ambiente.
+
+Usaremos um _stack_ baseado em NodeJs/Gulp para build, Stylus para _stylesheets_, _Jade_ para HTML
+
 - [Vagrant](https://www.vagrantup.com/)
 - [VirtualBox](https://www.virtualbox.org/)
 - [NodeJs](https://nodejs.org/)
@@ -48,6 +52,24 @@ Testes unitários com Karma/Jasmine
 Testes E2E com protractor
 
 ### Controle de projeto & Issues
+
+As tarefas do projeto serão definidas no [Trello](https://trello.com/c/nEt6RHE0/), com _cards_ para tarefas de desenvolvimento, planejamento, etc.
+
+Títulos descritivos, com uma descrição com mais detalhes, definindo enregaveis, subtarefas, data de entrega e labels.
+
+Qualquer movimentaçao na _task_ deverá ser anotada.
+
+### Versionamento de Código
+
+Usar o modelo [git-flow](http://nvie.com/posts/a-successful-git-branching-model/) com [Semantic Versioning ](http://semver.org/) para releases.
+
+
+### Comunicação
+
+Para conversa diária, usar o [slack](https://slack.com/), qualquer decisão deverá ser anotada no Trello, comunicados gerais por email.
+
+
+### Planejamento Inicial
 
 - Estrutura & Planejamento
     + Definição de tecnologias a serem usadas e arquitetura de aplicação
