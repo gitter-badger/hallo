@@ -95,7 +95,19 @@ gulp.task('build-stylus', function () {
     .pipe(gulp.dest(config.path.dist.css));
 });
 
+gulp.task('build-manifest', function(){
+  gulp.src([ config.path.dist.root + '**/*'])
+    .pipe($.plumber())
+    .pipe($.manifest({
+      hash: true,
+      preferOnline: true,
+      network: ['http://*', 'https://*', '*'],
+      filename: 'app.manifest',
+      exclude: 'app.manifest'
+     }))
+    .pipe(gulp.dest(config.path.dist.root));
+});
 
-gulp.task('build', ['build-jade', 'build-fonts', 'build-stylus', 'build-images' ], function() {
+gulp.task('build', ['build-jade', 'build-fonts', 'build-stylus', 'build-images', 'build-manifest' ], function() {
   msg.log('`All Build!`')
 });
