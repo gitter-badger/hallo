@@ -18,8 +18,11 @@ gulp.task('build-jade', function() {
     .pipe($.plumber())
     .pipe($.changed(config.path.src.jade))
     .pipe($.filter(helpers.filterPartials))
-    .pipe($.jade({ locals: data }))
-    .pipe($.minifyHtml())
+    .pipe($.jade({
+      locals: data,
+      pretty: true
+    }))
+    .pipe($.if(config.isProd, $.minifyHtml()))
     .pipe($.if(config.isProd, $.gzip()))
     .pipe(gulp.dest(config.path.dist.root));
 });
@@ -68,11 +71,11 @@ gulp.task("build-bower", function(){
 gulp.task('build-images', function() {
   return gulp.src(config.path.src.images)
     .pipe($.newer(config.path.dist.images))
-    .pipe($.imagemin({
-      optimizationLevel: 3,
-      progressive: true,
-      interlaced: true
-    }))
+    // .pipe($.imagemin({
+    //   optimizationLevel: 3,
+    //   progressive: true,
+    //   interlaced: true
+    // }))
     .pipe(gulp.dest(config.path.dist.images));
 });
 

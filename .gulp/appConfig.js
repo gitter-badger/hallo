@@ -23,8 +23,8 @@ var appConfig = (function() {
       stylus: './app/assets/styles/**/*.styl',
       components: './app/assets/styles/components/**/*.styl',
       fonts: './app/assets/fonts/**/*.{eot,svg,ttf,woff}',
-      images: './app/assets/images/**/*.{jpg,jpeg,png,gif}',
-      icons: './app/assets/images/icons/**/*.svg',
+      images: './app/assets/images/**/*.{jpg,jpeg,png,gif,svg}',
+      icons: './app/assets/icons/**/*.svg',
       bower: './bower_components/'
     },
     dist: {
