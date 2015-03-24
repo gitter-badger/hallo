@@ -27,10 +27,13 @@ Para desenvolvimento, usaremos uma [box vagrant](https://www.vagrantup.com/)
 
 ## Configurando ambiente de desenvolvimento
 
-Inicie a _vagrant box_:
+Para iniciar o ambiente de desenvolvimento, _box vagrant_, execute os comandos:
 
 ```bash
 vagrant up
+# vá para a pasta de desenvolvimento
+cd /vagrant/
+# done.
 ```
 
 ### Dependências
@@ -43,8 +46,6 @@ Usaremos um _stack_ baseado em NodeJs/Gulp para build, Stylus para _stylesheets_
 - [VirtualBox](https://www.virtualbox.org/)
 - [NodeJs](https://nodejs.org/)
 - [Gulp](http://gulpjs.com/)
-
-### Instalação
 
 ### Testes
 
