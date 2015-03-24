@@ -12,11 +12,12 @@ var rupture      = require('rupture');
 
 $.mainBowerFiles = require('main-bower-files');
 
+var data = helpers.loadData();
+
 gulp.task('build-jade', function() {
-  var data = helpers.loadData();
   gulp.src(config.path.src.jade)
     .pipe($.plumber())
-    .pipe($.changed(config.path.src.jade))
+    .pipe($.changed(config.path.dist.root))
     .pipe($.filter(helpers.filterPartials))
     .pipe($.jade({
       locals: data,

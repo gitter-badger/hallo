@@ -5,17 +5,17 @@ var $      = require('gulp-load-plugins')();
 var config = require('./appConfig');
 var helpers= require('./helpers');
 var browserSync = require('browser-sync');
+var reload      = browserSync.reload;
 var logdown= require('logdown')
 var msg    = new logdown({prefix: 'Message:'})
 
 
-// gulp.task('watch', ['build-jade', 'build-stylus', 'build-fonts', 'build-docs'],  function() {
-gulp.task('watch', ['build-jade', 'build-stylus', 'build-fonts'],  function() {
-    // gulp.watch(config.path.docs.jade, ['build-docs']);
-    gulp.watch(config.path.src.jade, ['build-jade']);
-    gulp.watch(config.path.src.stylus, ['build-stylus']);
-    gulp.watch(config.path.src.fonts, ['build-fonts']);
-    gulp.watch(config.path.src.images, ['build-images']);
+gulp.task('watch', ['build-jade', 'build-stylus', 'build-fonts', 'build-docs'],  function() {
+    gulp.watch(config.path.docs.jade, ['build-docs', reload]);
+    gulp.watch(config.path.src.jade, ['build-jade', reload]);
+    gulp.watch(config.path.src.stylus, ['build-stylus', reload]);
+    gulp.watch(config.path.src.fonts, ['build-fonts', reload]);
+    gulp.watch(config.path.src.images, ['build-images', reload]);
 });
 
 gulp.task('server', ['watch'], function() {
