@@ -2,6 +2,7 @@
 
 var gulp   = require('gulp');
 var $      = require('gulp-load-plugins')();
+$.mainBowerFiles = require('main-bower-files');
 var config = require('./appConfig');
 var helpers= require('./helpers');
 var logdown= require('logdown')
@@ -9,8 +10,7 @@ var msg    = new logdown({prefix: 'Message:'})
 var jeet         = require('jeet');
 var koutoSwiss   = require('kouto-swiss');
 var rupture      = require('rupture');
-
-$.mainBowerFiles = require('main-bower-files');
+var runSequence = require('run-sequence');
 
 var data = helpers.loadData();
 
@@ -63,12 +63,6 @@ gulp.task('build-fonts-icon', function() {
     .pipe(gulp.dest(config.path.dist.fonts));
 });
 
-gulp.task("build-bower", function(){
-    return gulp.src(
-      $.mainBowerFiles(), {base: config.path.src.bower } )
-      .pipe(gulp.dest(config.path.dist.scripts));
-});
-
 gulp.task('build-images', function() {
   return gulp.src(config.path.src.images)
     .pipe($.newer(config.path.dist.images))
@@ -99,6 +93,24 @@ gulp.task('build-stylus', function () {
     .pipe(gulp.dest(config.path.dist.css));
 });
 
+gulp.task('build-bower', function() {
+  var filterJs = $.filter('*.js');
+  var filterCss = $.filter('*.css');
+  return gulp.src($.mainBowerFiles())
+    .pipe(filterJs)
+    .pipe($.concat('vendor.js'))
+    .pipe(((!config.isProd) ? $.uglify({
+      mangle: false
+    }) : $.util.noop()))
+    .pipe(gulp.dest(config.path.dist.scripts))
+    .pipe(filterJs.restore())
+
+  .pipe(filterCss)
+    .pipe($.concat('vendor.css'))
+    .pipe($.csso())
+    .pipe(gulp.dest(config.path.dist.css))
+});
+
 gulp.task('build-manifest', function(){
   gulp.src([ config.path.dist.root + '**/*'])
     .pipe($.plumber())
@@ -112,6 +124,14 @@ gulp.task('build-manifest', function(){
     .pipe(gulp.dest(config.path.dist.root));
 });
 
-gulp.task('build', ['build-jade', 'build-fonts', 'build-stylus', 'build-images', 'build-manifest' ], function() {
+gulp.task('build', function() {
+  runSequence(
+    'build-bower',
+    'build-jade',
+    'build-stylus',
+    'build-images',
+    'build-fonts',
+    'build-manifest'
+    )
   msg.log('`All Build!`')
 });
