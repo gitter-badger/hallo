@@ -66,11 +66,11 @@ gulp.task('build-fonts-icon', function() {
 gulp.task('build-images', function() {
   return gulp.src(config.path.src.images)
     .pipe($.newer(config.path.dist.images))
-    // .pipe($.imagemin({
-    //   optimizationLevel: 3,
-    //   progressive: true,
-    //   interlaced: true
-    // }))
+    .pipe($.imagemin({
+      optimizationLevel: 3,
+      progressive: true,
+      interlaced: true
+    }))
     .pipe(gulp.dest(config.path.dist.images));
 });
 
@@ -79,7 +79,7 @@ gulp.task('build-stylus', function () {
     .pipe($.plumber())
     // .pipe($.changed(config.path.src.stylus))
     .pipe($.filter(helpers.filterPartials))
-    .pipe($.if(!config.isProd, $.sourcemaps.init() ))
+    // .pipe($.if(!config.isProd, $.sourcemaps.init() ))
     .pipe($.stylus({
       use: [jeet(), koutoSwiss(), rupture()]
     }))
@@ -88,8 +88,9 @@ gulp.task('build-stylus', function () {
       browsers: config.BrowserList,
       cascade: false
     }))
+    .pipe($.minifyCss())
     .pipe($.csso())
-    .pipe($.if(!config.isProd, $.sourcemaps.write('.')))
+    // .pipe($.if(!config.isProd, $.sourcemaps.write('.')))
     .pipe(gulp.dest(config.path.dist.css));
 });
 
