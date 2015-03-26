@@ -1,65 +1,118 @@
 @require "main"
 
-body
-  // background-image url(styleguide.png)
-  // background-repeat no-repeat
-  // background-position 172px -34px
-  // background-position 172px -23px
-  // background-position 166px -23px
+.docs-menu
+  column(.3)
+  background $green
+  color $white
+  height 100%
+  padding 2rem 0
+  min-height 100vh
 
-.menu-doc
-  column(0.3)
-  background-color $green
-  min-height 1000px
+  h2
+    @extend $title-small
+    padding 1rem
 
-  h1
-    color #fff
-    text-indent 1rem
+  h3
+    @extend $title-tiny
+    display block
+    padding 1rem
 
   a
-    transition background-color .25s easing( "in-quad" )
-    background-color $green
-    color #fff
+    color $white
     display block
-    line-height  5rem
     text-decoration none
-    text-indent 1rem
+    padding 1rem
+    h3
+      padding 0
     &:hover
-      background-color $greenLight
+      background $greenLight
 
-.content-doc
-  column(0.7)
+
+
+.docs-content
+  column(.7)
+  padding 2rem 0
 
   h1
-    color: $green
+    @extend $title-small
+    color $green
+    padding 1rem 0
+    margin-bottom 2rem
 
-  h2:before
-    color: $grayLight
-    content: '# '
+  h2
+    @extend $title-tiny
+    margin 2rem 0 1rem 0
+
+  h3
+    @extend $title-eyebrow
+    margin 2rem 0 1rem 0
+
+  p
+    margin-bottom .5rem
+
+  hr
+    border 0
+    width 90%
+    border-bottom 1px solid $green
+    margin 2rem auto
+
+  table
+    width 100%
+    th
+      background-color $grayLight
+      padding .5rem
+    td
+      border-bottom 1px solid $grayLight
+      border-right 1px solid $grayLight
+      padding .5rem
+
+$linesBg
+  background-color #fff
+  background-image linear-gradient(#eee remify(1px), transparent remify(1px))
+  background-size 100% remify(10px)
 
 .example
-  border: 1px solid $green
-  padding 10px
-  margin-top 1rem
-  margin-bottom 1rem
-  margin-right 1rem
+  border 1px solid $grayLight
+  overflow hidden
+  padding 1rem
 
-  &.color
-    line-height 2rem
+  .column
+    column(1/3)
 
   &.typography
-    background-color #fff
-    background-image linear-gradient(#eee 1px, transparent 1px)
-    background-size 100% 10px
+    @extend $linesBg
+    .titleA
+      @extend $title-huge
+      color red
+    .titleB
+      @extend $title-big
+    .titleC
+      @extend $title-medium
+    .titleD
+      @extend $title-small
+    .titleE
+      @extend $title-tiny
+    .titleF
+      @extend $title-eyebrow
 
-  &.gradient
-    cf()
-    div
-      col(1/6)
-      height 200px
+    .headlineA
+      @extend $headline-big
+    .headlineB
+      @extend $headline-regular
+    .headlineC
+      @extend $headline-small
 
-  &.icons
-    cf()
-    font-size 2rem
-    li
-      // col(1/4)
+    .textA
+      @extend $text-big
+    .textB
+      @extend $text-regular
+    .textC
+      @extend $text-small
+
+    .textExample1
+      @extend $text-regular
+      column(1/4)
+    .textExample2
+      @extend $text-regular
+      @extend $line-height-big
+      column(1/4)
