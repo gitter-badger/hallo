@@ -1,28 +1,17 @@
 doctype html
-html(lang="en", manifest="app.manifest")
+html(lang="en")
   head
     title Ola
-    link(rel='stylesheet', href='assets/styles/main.css')
-    script(type='text/javascript').
-      if (foo) {
-         bar(1 + 5)
-      }
+    link(rel='stylesheet', href='/assets/styles/main.css')
   body
 
     include ./_partials/menu.jade
 
-    each item in menu
-      li
-        a(href=item.url)=item.label
+    //- each item in menu
+    //-   li
+    //-     a(href=item.url)=item.label
 
-    h1 Ola mundo
-    #container.col
-      if youAreUsingJade
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Jade is a terse and simple
-        templating language with a
-        strong focus on performance
-        and powerful features.
+    #main.container Teste 2
+
+    //- script(src="/assets/scripts/vendor.js")
+    script(src="/assets/scripts/main.js")
