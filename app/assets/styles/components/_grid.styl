@@ -1,27 +1,63 @@
-@import 'jeet'
+// /**
+//  * breakpoints
+//  *
+//  * max width: 1280px | division: 12c | column: 70px | gutter: 30px | efective width: 1170px
+//  * max width: 1024px | division: 12c | column: 58px | gutter: 24px | efective width:  960px
+//  * max width:  768px | division: 12c | column: 44px | gutter: 16px | efective width:  704px
+//  * max width:  414px | division:  6c | column: 44px | gutter: 16px | efective width:  344px
+//  * max width:  320px | division:  6c | column: 35px | gutter: 14px | efective width:  280px
+//  *
+//  // **/
+//  // breakpoints =  'l'  1280px 12 70 30 1170,
+//  //                'm'  1024px 12 58 24  960,
+//  //                's'   768px 12 44 16  704,
+//  //                'xs'  414px  6 44 16  344,
+//  //                'xxs' 320px  6 35 14  280
+// breakpoints =  {
+//   l  : { max:  1280px, cols: 12, colWidth: 70, gutter: 30, width: 1170},
+//   m  : { max:  1024px, cols: 12, colWidth: 58, gutter: 24, width:  960},
+//   s  : { max:   768px, cols: 12, colWidth: 44, gutter: 16, width:  704},
+//   xs : { max:   414px, cols:  6, colWidth: 44, gutter: 16, width:  344},
+//   xxs: { max:   320px, cols:  6, colWidth: 35, gutter: 14, width:  280},
+// }
 
-scale               = 0  322px 480px 768px 992px 1200px
-rupture.scale-names = '0' 'xs'   's'   'm'   'l'   'xl'
+// getBreakpoint(name)
+//   breakpoints[name]
 
-// edit
+// breakpoint(name, prop)
+//   breakpoint = getBreakpoint(name)[prop]
 
-.container
-  center(100%)
-  // +above('xs')
-  //   max-width 500px
-  // +above('s')
-  //   max-width 600px
-  // +above('m')
-  //   max-width 700px
-  // +above('l')
-  //   max-width 800px
-  // +above('xl')
-  //   max-width 900px
+// scale               =  0  320px 414px 768px 1024px 1280px
+// rupture.scale-names = '0'  'xs'   's'   'm'    'l'   'xl'
+
+// edit()
+
+// .container
+//   width 100%
+//   center(280px)
+//   +above(320px)
+//     center(344px)
+//   +above(414px)
+//     center(704px)
+//   +above(768px)
+//     center(960px)
+//   +above(1024px)
+//     center(1170px)
+//   +above(1280px)
+//     center(1280px)
+
+// // column(ratios, offset, cycle, uncycle, gutter)
+// lastCycle = 0
+// for col in (1..12)
+//   .col-{col}-12
+//     margin-bottom 5px
+//     // ratio = col/breakpoint('xxs', 'cols')
+//     // if( ratio > 1)
+//     //   ratio = 1
+//     // column(ratio, 0, 6)
+//     // +above(320px)
+//     column(col/6, uncycle: 0, cycle: 6)
+//     +above(414px)
+//       column(col/12, uncycle: 6, cycle: 12)
 
 
-.teste
-  center(400px)
-  +above('xs')
-    max-width 500px
-  +above(2)
-    max-width 700px
