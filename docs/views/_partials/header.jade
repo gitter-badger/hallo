@@ -1,5 +1,35 @@
+include ../../../app/views/_mixins/_all.jade
 doctype html
-html(lang="en")
+html.no-js(lang='pt-br')
   head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
     title Grid
+    meta(name='description', content='Grid')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/assets/styles/docs.css')
+    //if lt IE 9
+      script(src='//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js')
+      script(src='//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.css')
+
+  body
+    //if IE
+      .browsehappy
+        p
+          | You are using an
+          strong outdated
+          |  browser. Please
+          a(href='http://browsehappy.com/', target='_blank') upgrade your browser
+          |  to improve your experience.
+    //if lt IE 9
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+      script.
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\\/script>')
+    // [if gt IE 8] <!
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+    script.
+      window.jQuery || document.write('<script src="js/vendor/jquery-2.1.3.min.js"><\\/script>')
+    // <![endif]
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js')
+    //- script(src='https://rawgit.com/PrismJS/prism/gh-pages/components/prism-stylus.js')
