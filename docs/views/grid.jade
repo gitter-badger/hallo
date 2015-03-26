@@ -1,26 +1,28 @@
 include ./_partials/header.jade
 
 body
-  section.container
+  section
 
     include ./_partials/menu.jade
 
-    article.content-doc
+    article.docs-content
 
-      h1.title.medium Grid
+      h1 Grid
+
+      p O GridSystem é feito com #[a(target="_blank", href="http://jeet.gs/") Jeet] para definição das colunas e #[a(href="http://jenius.github.io/rupture/") Rupture] para os breakpoints.
+      p Procure definir o grid por cada componente, evitando classes específicas para grid, no estilo do Bootstrap
 
       h2 Uso
 
-      h2 Desenvolvimento
-
-      p
-        O GridSystem é feito com #[a(target="_blank", href="http://jeet.gs/") Jeet] e #[a(href="http://jenius.github.io/rupture/") Rupture] permitindo utilizar o grid através de classes no HTML ou mixins no CSS/Stylus
-
-      - var n = 1
-      ul
-        while n <= 12
-          li= n++
-
-
-
-
+      pre
+        code.language-css
+          |.foo
+          |   column(.3)
+          |   display block
+          |.biz
+          |   column(3/10)
+          |   color red
+          |.buzz
+          |   column(6/12)
+          |   +above(320px)
+          |       column(3/12)
