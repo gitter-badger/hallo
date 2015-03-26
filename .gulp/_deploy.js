@@ -7,5 +7,6 @@ var helpers= require('./helpers');
 
 gulp.task('deploy-ghp', function() {
   return gulp.src(config.path.dist.root + '**/*')
+    .pipe($.replace('href=/', 'href=/oi/'))
     .pipe($.ghPages());
 });
