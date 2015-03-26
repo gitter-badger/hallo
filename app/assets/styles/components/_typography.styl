@@ -5,27 +5,8 @@ font-face( "oiTitle", "../fonts/simplon/SimplonOi-headline-webfont", normal )
 
 $baseline  = .625rem // 10px
 
-set-font-size(value) {
-  font-size: value; /* add PX (or original value) as backup */
-  if (value is inherit) {
-  /* do nothing, "inherit" has no unit */
-  } else {
-    font-size: remify(value);
-  }
-}
-
-remify(value) { /* separate mixin, so it can be used elsewhere */
-  u = unit(value);
-  if (u is 'px') {
-    return unit(value/16, 'rem');
-  } else {
-    return unit(value, u);
-  }
-}
-
-
 .container
-  font-family oiText
+  font-family oiText, sans-serif
   set-font-size(21px)
 
 $text
@@ -39,50 +20,41 @@ $title
   &-huge
     @extend $title
     set-font-size(112px)
-    // font-size 8rem
     line-height 8rem
   &-big
     @extend $title
     set-font-size(85px)
-    // font-size 5rem
     line-height 6rem
   &-medium
     @extend $title
     set-font-size(57px)
-    // font-size 4rem
     line-height 4rem
   &-small
     @extend $title
     set-font-size(42px)
-    // font-size 3rem
     line-height 3rem
   &-tiny
     @extend $title
     set-font-size(28px)
-    // font-size 2rem
     line-height 2rem
   &-eyebrow
     @extend $title
     set-font-size(14px)
-    // font-size 1rem
     line-height 1rem
 
 $headline
-  font-family oiText
+  font-family oiText, sans-serif
   &-big
     @extend $headline
     set-font-size(55px)
-    // font-size 4rem
     line-height 4rem
   &-regular
     @extend $headline
     set-font-size(35px)
-    // font-size 3rem
     line-height 3rem
   &-small
     @extend $headline
     set-font-size(21px)
-    // font-size 3rem
     line-height 3rem
 
 $line-height
@@ -93,7 +65,7 @@ $line-height
 
 $text
   @extend $line-height-regular
-  font-family oiText
+  font-family oiText, sans-serif
   &-big
     @extend $text
     set-font-size(21px)
@@ -113,12 +85,12 @@ $text
       display block
     &-value
       set-font-size(97px)
-      font-family oiTitle
+      font-family oiTitle, sans-serif
       line-height remify(86px)
     &-cents
       set-font-size(48px)
       display inline-block
-      font-family oiTitle
+      font-family oiTitle, sans-serif
       transform: translateY(remify(-34px))
     &-sufix
       set-font-size(24px)
