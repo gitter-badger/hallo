@@ -1,0 +1,25 @@
+.button
+  @extend $text-regular
+  background $white
+  border remify(1px) solid $black
+  border-radius remify(2px)
+  color $black
+  cursor pointer
+  display inline-block
+  left remify(30px)
+  line-height remify(48px)
+  text-decoration none
+  width 100%
+  text-align center
+  &.green
+    background $green
+    border-color $green
+    color $white
+  &.black
+    background $black
+    border-color $black
+    color $white
+  &.inactive
+    background rgba($black, 0.14)
+    border-color rgba($black, 0.14)
+    color $white
