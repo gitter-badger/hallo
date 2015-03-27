@@ -1,3 +1,18 @@
+//
+// Unit mixins
+//
+remify(value) { /* separate mixin, so it can be used elsewhere */
+  u = unit(value);
+  if (u is 'px') {
+    return unit(value/16, 'rem');
+  } else {
+    return unit(value, u);
+  }
+}
+
+//
+// Typografy mixins
+//
 set-font-size(value) {
   font-size: value; /* add PX (or original value) as backup */
   if (value is inherit) {
@@ -7,11 +22,40 @@ set-font-size(value) {
   }
 }
 
-remify(value) { /* separate mixin, so it can be used elsewhere */
-  u = unit(value);
-  if (u is 'px') {
-    return unit(value/16, 'rem');
-  } else {
-    return unit(value, u);
-  }
-}
+//
+// Position mixins
+//
+absoluteTopLeft(vTop = 0, vLeft = 0)
+  position absolute
+  top vTop
+  left vLeft
+
+absoluteTopRight(vTop = 0, vRight = 0)
+  position absolute
+  top vTop
+  right vRight
+
+absoluteBottomLeft(vBottom = 0, vLeft = 0)
+  position absolute
+  bottom vBottom
+  left vLeft
+
+absoluteBottomRight(vBottom = 0, vRight = 0)
+  position absolute
+  bottom vBottom
+  right vRight
+
+//
+// Position mixins
+//
+size(width, height)
+  display inline-block
+  width width
+  height height
+
+square(value)
+  size(remify(value), remify(value))
+
+circle(value)
+  square(value)
+  border-radius remify(value)
