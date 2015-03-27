@@ -1,0 +1,40 @@
+include ../_partials/header.jade
+
+body.product
+  section.container
+
+  .simule Simule
+
+  .hero teste
+
+  .cards
+
+    +card(
+      'Start HD', 
+      ['111 Canais', '12 HD' ], 
+      [null, '39,90', '/Mês'], 
+      'Preço para cliente Oi Banda Larga. Não cliente: R$ 49,90', 
+      ['Instalação Gráris'], 
+      ['#link', 'Conheça o Start HD']
+    )
+
+    +card(
+      'Mix HD', 
+      ['158 Canais', '32 HD' ], 
+      [null, '69,90', '/Mês'], 
+      'Preço para cliente Oi Banda Larga. Não cliente: R$ 79,90', 
+      ['Instalação Gráris', 'Ponto adicional em HD', 'Pay Per View [Aluguel de Filmes]'], 
+      ['#link', 'Conheça o Mix HD']
+    )
+
+    +card(
+      'Total HD', 
+      ['178 Canais', '42 HD' ], 
+      [null, '89,90', '/Mês'], 
+      'Preço para cliente Oi Banda Larga. Não cliente: R$ 99,90', 
+      ['Instalação Gráris', 'Ponto adicional em HD', 'Pay Per View [Aluguel de Filmes]', 'Gravador Digital Opcional'], 
+      ['#link', 'Conheça o Total HD']
+    )
+
+  //- script(src="/assets/scripts/vendor.js")
+  script(src="/assets/scripts/main.js")

@@ -1,7 +1,4 @@
 menu:
   -
-    label: "Teste"
-    url: "/teste"
-  -
-    label: "Teste 2"
-    url: "/teste2"
+    label: "Produtos & Serviços"
+    url: "/produtos-e-servicos/"
