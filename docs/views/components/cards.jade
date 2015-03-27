@@ -1,0 +1,112 @@
+include ../_partials/header.jade
+
+body
+  section
+
+    include ../_partials/menu.jade
+
+    article.docs-content
+
+      h1.docs-h1 Cards
+
+      p Cards São usados para resumir informações de um produto
+
+      p Para inserir um card use o mixin, abaixo
+
+      pre
+        code.language-scss +card(title, subtitles, price, info, list, action )
+
+      table
+        thead
+          tr
+            th Argumento
+            th Tipo
+            th Descrição
+        tbody
+          tr
+            td title
+            td String
+            td Título no topo, opcional, opcional
+          tr
+            td subtitles
+            td array
+            td Lista de itens, exibidos lado a lado, opcional
+          tr
+            td price
+            td array
+            td argumentos do mixin +widget-price , opcional
+          tr
+            td info
+            td String
+            td Texto simples, opcional
+          tr
+            td list
+            td array
+            td Lista de itens exibidos em pilha, opcional
+          tr
+            td action
+            td array
+            td Link e texto do link/botão, opcional
+
+      h3.docs-h3 Exemplo completo
+      
+      .example
+        +card(
+          'Mix HD', 
+          ['158 Canais', '32 HD' ], 
+          [null, '69,90', '/Mês'], 
+          'Preço para cliente Oi Banda Larga. Não cliente: R$ 49,90', 
+          ['Instalação Gráris', 'Ponto adicional em HD', 'Pay Per View [Aluguel de Filmes]'], 
+          ['#link', 'Conheça o Mix HD']
+        )
+
+      pre
+        code.language-scss
+          | +card(
+          |   'Mix HD', 
+          |   ['158 Canais', '32 HD' ], 
+          |   [null, '69,90', '/Mês'], 
+          |   'Preço para cliente Oi Banda Larga. Não cliente: R$ 49,90', 
+          |   ['Instalação Gráris', 'Ponto adicional em HD', 'Pay Per View [Aluguel de Filmes]'], 
+          |   ['#link', 'Conheça o Mix HD']
+          | )
+
+      
+      h3.docs-h3 Outros exemplos
+      
+      .example
+        +card(
+          'Box 1', 
+          ['sub 1', 'sub 2' ], 
+          ['Compre por', '1469,90', '/dia','small'], 
+          'Não tenho lista!', 
+          null, 
+          ['#link', 'Conheça o Mix HD']
+        )
+        +card(
+          'Box 2', 
+          ['sub 1', 'sub 2', 'sub 3' ], 
+          null, 
+          null, 
+          ['item de lista 1', 'item de lista 2', 'item de lista 3', 'item de lista 4', 'item de lista 5'], 
+          ['#link', 'Conheça o Mix HD']
+        )
+
+      pre
+        code.language-scss
+          | +card(
+          |   'Box 1', 
+          |   ['sub 1', 'sub 2' ], 
+          |   null, 
+          |   'Eu não tenho preço', 
+          |   ['item de lista 1', 'item de lista 2'], 
+          |   ['#link', 'Conheça o Mix HD']
+          | )
+          | +card(
+          |   'Box 2', 
+          |   ['sub 1', 'sub 2', 'sub 3' ], 
+          |   null, 
+          |   null, 
+          |   ['item de lista 1', 'item de lista 2', 'item de lista 3', 'item de lista 4', 'item de lista 5'], 
+          |   ['#link', 'Conheça o Mix HD']
+          | )
