@@ -5,7 +5,13 @@ body.product
 
   .simule Simule
 
-  .hero teste
+  .hero
+    img(src="/assets/images/demo/product-hero.jpg")
+  
+  .menu Menu
+  
+  header
+    h1 TV HD
 
   .cards
 
@@ -35,6 +41,21 @@ body.product
       ['Instalação Gráris', 'Ponto adicional em HD', 'Pay Per View [Aluguel de Filmes]', 'Gravador Digital Opcional'], 
       ['#link', 'Conheça o Total HD']
     )
+  
+  .channels-area
+    
+    nav.channels-choose
+      ul
+        li
+          a(href="#") Start HD
+        li
+          a.active(href="#") Mix HD
+        li
+          a(href="#") Total HD
 
-  //- script(src="/assets/scripts/vendor.js")
+    nav.channels-header
+      ul
+        li 158 Canais
+        li 32 em HD
+
   script(src="/assets/scripts/main.js")
