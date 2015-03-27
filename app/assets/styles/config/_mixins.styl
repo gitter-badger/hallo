@@ -59,3 +59,12 @@ square(value)
 circle(value)
   square(value)
   border-radius remify(value)
+
+// Utils & snippets
+circleSeparator(sizeValue, marginVertical, marginHorizontal)
+  &:nth-child(n+2)
+    &:before
+      background $grayLight
+      circle(sizeValue)
+      content ''
+      margin remify(marginVertical) remify(marginHorizontal)

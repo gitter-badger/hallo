@@ -21,13 +21,8 @@
     padding-bottom remify(22px)
     width remify(210px)
     li
+      circleSeparator(6px, 3px, 8px)
       display inline-block
-      &:nth-child(n+2)
-        &:before
-          background $grayLight
-          circle(6px)
-          content ''
-          margin remify(3px) remify(8px)
   // @todo: buggy in container width
   &-price > div
       transform translateX(remify(32px))
