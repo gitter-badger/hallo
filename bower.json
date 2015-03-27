@@ -18,5 +18,6 @@
     "tests"
   ],
   "dependencies": {
+    "velocity": "~1.2.2"
   }
 }
