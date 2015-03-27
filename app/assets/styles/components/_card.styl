@@ -46,16 +46,8 @@
     padding-left remify(117px)
 
   &-action
-    @extend $text-regular
+    @extend .button
     position absolute
     bottom remify(30px)
-    border remify(1px) solid $black
-    border-radius remify(2px)
-    color $black
-    display inline-block
-    line-height remify(48px)
-    text-decoration none
     left remify(30px)
-    width s('calc(100% - %s)', remify(30px) * 2 );
-    // margin 0 remify(30px)
-
+    width s('calc(100% - %s)', remify(30px) * 2 )
