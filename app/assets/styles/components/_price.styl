@@ -1,0 +1,38 @@
+// @todo: what happens whithout cents/sufix ?
+// @todo: buggy in container width
+.price-widget
+  display inline-block
+  position relative
+  text-align left
+  .price
+    &-prefix
+      line-height remify(13px)
+      color: $gray
+      display block
+    &-value
+      set-font-size(97px)
+      font-family oiTitle, sans-serif
+      line-height remify(86px)
+    &-cents
+      set-font-size(48px)
+      display inline-block
+      font-family oiTitle, sans-serif
+      transform: translateY(remify(-34px))
+    &-sufix
+      set-font-size(24px)
+      display inline-block
+      text-transform uppercase
+      transform: translateX(remify(-64px))
+  &.small
+    .price
+      &-prefix
+        color: $black
+      &-value
+        set-font-size(57px)
+        line-height remify(66px)
+      &-cents
+        set-font-size(27px)
+        transform: translateY(remify(-21px))
+      &-sufix
+        set-font-size(14px)
+        transform: translateX(remify(-37px))

@@ -9,9 +9,11 @@ $baseline  = .625rem // 10px
   font-family oiText, sans-serif
   set-font-size(21px)
 
-$text
+$line-height
   &-regular
-    set-font-size(21px)
+    line-height remify(20px)
+  &-big
+    line-height remify(30px)
 
 $title
   font-family oiTitle
@@ -20,48 +22,42 @@ $title
   &-huge
     @extend $title
     set-font-size(112px)
-    line-height 8rem
+    // line-height 8rem
   &-big
     @extend $title
     set-font-size(85px)
-    line-height 6rem
+    // line-height 6rem
   &-medium
     @extend $title
     set-font-size(57px)
-    line-height 4rem
+    // line-height 4rem
   &-small
     @extend $title
     set-font-size(42px)
-    line-height 3rem
+    // line-height 3rem
   &-tiny
     @extend $title
     set-font-size(28px)
-    line-height 2rem
+    // line-height 2rem
   &-eyebrow
     @extend $title
     set-font-size(14px)
-    line-height 1rem
+    // line-height 1rem
 
 $headline
   font-family oiText, sans-serif
   &-big
     @extend $headline
     set-font-size(55px)
-    line-height 4rem
+    // line-height 4rem
   &-regular
     @extend $headline
     set-font-size(35px)
-    line-height 3rem
+    // line-height 3rem
   &-small
     @extend $headline
     set-font-size(21px)
-    line-height 3rem
-
-$line-height
-  &-regular
-    line-height remify(20px)
-  &-big
-    line-height remify(30px)
+    // line-height 3rem
 
 $text
   @extend $line-height-regular
@@ -75,42 +71,3 @@ $text
   &-small
     @extend $text
     set-font-size(13px)
-
-.price-widget
-  display inline-block
-  .price
-    &-prefix
-      line-height remify(13px)
-      color: $gray
-      display block
-    &-value
-      set-font-size(97px)
-      font-family oiTitle, sans-serif
-      line-height remify(86px)
-    &-cents
-      set-font-size(48px)
-      display inline-block
-      font-family oiTitle, sans-serif
-      transform: translateY(remify(-34px))
-    &-sufix
-      set-font-size(24px)
-      display inline-block
-      text-transform uppercase
-      transform: translateX(remify(-64px))
-  &.small
-    .price
-      &-prefix
-        color: $black
-      &-value
-        set-font-size(57px)
-        line-height remify(66px)
-      &-cents
-        set-font-size(27px)
-        transform: translateY(remify(-21px))
-      &-sufix
-        set-font-size(14px)
-        transform: translateX(remify(-37px))
-
-
-
-
