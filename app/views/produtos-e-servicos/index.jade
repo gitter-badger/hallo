@@ -57,5 +57,32 @@ body.product
       ul
         li 158 Canais
         li 32 em HD
+    
+    .channels-list-area
+
+      .channels-container
+        .channels-lists
+          each group in channelsgroup.tv
+            .channels-pack
+              h4=group.label
+              ul
+                each channel in group.channels
+                  li
+                    img(src="/assets/images/logos/" + channel.img )
+                    span=channel.name
+
+    .channels-audio
+      h5=channelsgroup.audio.label + '('+ channelsgroup.audio.channels.length + ')'
+      ul
+        each audio in channelsgroup.audio.channels
+          li=audio
+
+    .channels-radio
+      h5=channelsgroup.radio.label + '('+ channelsgroup.radio.channels.length + ')'
+      ul
+        each radio in channelsgroup.radio.channels
+          li=radio
+
+              
 
   script(src="/assets/scripts/main.js")

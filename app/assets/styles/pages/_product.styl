@@ -14,7 +14,7 @@
 
   .hero
     absoluteTopLeft(remify(70px))
-    background-color rgba(green, 0.3)
+    // background-color rgba(green, 0.3)
     height remify(625px)
     overflow hidden
     width 100%
@@ -31,13 +31,13 @@
   header
     center(1200px)
     // background-color rgba(red, 0.14)
-    height 57vh
+    height 64.3vh
     max-height remify(518px)
     min-height remify(250px)
     position relative
     z-index 2
     h1
-      @extend $title-huge
+      // @extend $title-huge
       color $white
       word-spacing -7px
       margin remify(34px) 0 0 remify(14px)
@@ -45,23 +45,24 @@
   .cards
     center(1170px)
     text-align center
-    background-color rgba(red, 0.3)
+    // background-color rgba(red, 0.3)
     position relative
     z-index 2
     .card
       width s('calc( 100% / 3 )')
 
   .channels-area
+    center(1366px)
     background-color $green
     padding remify(10px)
     margin-top remify(193px)
     margin-bottom 2px
-    opacity .5
+    // background-color red
+    // opacity .5
 
     .channels-choose
-      center(100%)
       li
-        column(1/3)
+        col(1/3, gutter: 1)
       a
         @extend $text-regular
         background-color $white
@@ -73,13 +74,53 @@
         &.active
           color $white
           background-color $green
+          cursor default
 
     .channels-header
+      border-top remify(1px) solid $green
       background-color $white
-      padding remify(40px) remify(42px)
-      word-spacing remify(-2px, 5px, 8px)
-
+      padding remify(40px) remify(42px) remify(34px)
+      word-spacing remify(-2px)
+      overflow hidden
+      ul
+        center(1170px)
       li
         @extend $title-small
-        circleSeparator(11px)
+        color $black
+        circleSeparator(11px, 5px, 8px)
+        display inline-block
+
+    .channels-list-area
+      background-color $white
+
+    .channels-container
+      center(1170px)
+
+    .channels-lists
+      column(9/12)
+
+    .channels-pack
+      width s('calc(100% / 6)')
+      float left
+
+      h4
+        @extend $text-regular
+        line-height remify(71px)
+        text-align center
+        border-bottom remify(1px) solid $grayLight
+
+      li
+        @extend $text-regular
+        size(remify(120px), remify(112px))
+        margin 0 remify(4px)
+        margin-right remify(30px)
+        display block
+        font-size remify(12px)
+        text-align center
+        padding-top remify(30px)
+        white-space nowrap
+      span
+        display block
+        margin-top remify(-9px)
+      img
         display inline-block
