@@ -1,0 +1,432 @@
+channelsgroup:
+  tv:
+    -
+      label: "Abertos"
+      channels:
+        -
+          img: "globo-hd.png"
+          name: "Globo HD"
+        -
+          img: "record-hd.png"
+          name: "Record HD"
+        -
+          img: "sbt-hd.png"
+          name: "SBT HD"
+        -
+          img: "band-hd.png"
+          name: "Band HD"
+        -
+          img: "rede-tv.png"
+          name: "Rede TV"
+        -
+          img: "tv-cultura.png"
+          name: "Tv Cultura"
+        -
+          img: "aparecida.png"
+          name: "Aparecida"
+        -
+          img: "cancao-nova.png"
+          name: "Canção Nova"
+        -
+          img: "cnt.png"
+          name: "CNT"
+        -
+          img: "ideal-tv.png"
+          name: "Ideal TV"
+        -
+          img: "nbr.png"
+          name: "NBR"
+        -
+          img: "rbi-tv.png"
+          name: "RBI TV"
+        -
+          img: "rede-brasil.png"
+          name: "Rede Brasil"
+        -
+          img: "rede-vida.png"
+          name: "Rede Vida"
+        -
+          img: "rit.png"
+          name: "RIT"
+        -
+          img: "tv-diario.png"
+          name: "TV Diário"
+        -
+          img: "tv-brasil.png"
+          name: "TV Brasil"
+        -
+          img: "tv-camara.png"
+          name: "TV Câmara"
+        -
+          img: "tv-escola.png"
+          name: "TV Escola"
+        -
+          img: "tv-justica.png"
+          name: "TV Justiça"
+        -
+          img: "tv-senado.png"
+          name: "TV Senado"
+    -
+      label: "Filmes & Séries"
+      channels:
+        -
+          img: "warner-hd.png"
+          name: "Warner HD"
+        -
+          img: "sony-hd.png"
+          name: "Sony HD"
+        -
+          img: "tnt-hd.png"
+          name: "Tnt HD"
+        -
+          img: "universal-channel-hd.png"
+          name: "Universal Channel HD"
+        -
+          img: "fox-hd.png"
+          name: "Fox HD"
+        -
+          img: "fx-hd.png"
+          name: "Fx HD"
+        -
+          img: "paramount-channel-hd.png"
+          name: "Paramount Channel HD"
+        -
+          img: "axn-hd.png"
+          name: "AXN HD"
+        -
+          img: "megapix-hd.png"
+          name: "Megapix HD"
+        -
+          img: "canal-brasil-hd.png"
+          name: "Canal Brasil HD"
+        -
+          img: "space-hd.png"
+          name: "Space HD"
+        -
+          img: "cinemax.png"
+          name: "Cinemax"
+        -
+          img: "curta.png"
+          name: "Curta!"
+        -
+          img: "id.png"
+          name: "ID"
+        -
+          img: "lifetime.png"
+          name: "Lifetime"
+        -
+          img: "studio-universal.png"
+          name: "Studio Universal"
+        -
+          img: "syfy.png"
+          name: "Syfy"
+        -
+          img: "tcm.png"
+          name: "TCM"
+    -
+      label: "Esportes"
+      channels:
+        -
+          img: "sportv-hd.png"
+          name: "SporTV HD"
+        -
+          img: "sportv2-hd.png"
+          name: "SporTV 2 HD"
+        -
+          img: "sportv3.png"
+          name: "SporTv 3"
+        -
+          img: "fox-sports-hd.png"
+          name: "Fox Sports HD"
+        -
+          img: "fox-sports2-hd.png"
+          name: "Fox Sports 2 HD"
+        -
+          img: "espn-brasil-hd.png"
+          name: "ESPN Brasil HD"
+        -
+          img: "espn-hd.png"
+          name: "ESPN HD"
+        -
+          img: "espn-mais-hd.png"
+          name: "ESPN+ HD"
+        -
+          img: "band-sports-hd.png"
+          name: "Band Sports HD"
+        -
+          img: "esporte-interativo-hd.png"
+          name: "Esporte Interativo HD"
+        -
+          img: "esporte-interativo-nordeste-hd.png"
+          name: "Esporte Interativo Nordeste HD"
+        -
+          img: "discovery-turbo.png"
+          name: "Discovery Turbo"
+        -
+          img: "off-hd.png"
+          name: "Off HD"
+        -
+          img: "woohoo.png"
+          name: "Woohoo"
+    -
+      label: "Infantis & Básicos"
+      channels:
+        -
+          img: "cartoon-network-hd.png"
+          name: "Cartoon Network HD"
+        -
+          img: "discovery-kids-hd.png"
+          name: "Discovery Kids HD"
+        -
+          img: "nickelodeon-hd.png"
+          name: "Nickelodeon HD"
+        -
+          img: "nick-jr.png"
+          name: "Nick Jr"
+        -
+          img: "disney-channel-hd.png"
+          name: "Disney Channel HD"
+        -
+          img: "disney-junior.png"
+          name: "Disney Junior"
+        -
+          img: "disney-xd.png"
+          name: "Disney XD"
+        -
+          img: "gloob-hd.png"
+          name: "Gloob HD"
+        -
+          img: "boomerang.png"
+          name: "Boomerang"
+        -
+          img: "tooncast.png"
+          name: "Tooncast"
+        -
+          img: "baby-tv.png"
+          name: "Baby TV"
+        -
+          img: "tv-ra-tim-bum.png"
+          name: "TV Rá Tim Bum"
+        -
+          img: "canal-oi.png"
+          name: "Canal Oi"
+        -
+          img: "polishop.png"
+          name: "Polishop"
+        -
+          img: "shoptime.png"
+          name: "Shoptime"
+        -
+          img: "tv-novo-tempo.png"
+          name: "Tv Novo Tempo"
+        -
+          img: "rede-genesis.png"
+          name: "Rede Gênesis"
+        -
+          img: "rede-super.png"
+          name: "Rede Super"
+        -
+          img: "terra-viva.png"
+          name: "Terra Viva"
+    -
+      label: "Notícias & Cultura"
+      channels:
+        -
+          img: "globonews-hd.png"
+          name: "GloboNews HD"
+        -
+          img: "record-news.png"
+          name: "Record News"
+        -
+          img: "band-news.png"
+          name: "BandNews"
+        -
+          img: "bbc-hd.png"
+          name: "BBC HD"
+        -
+          img: "bloomberg.png"
+          name: "Bloomberg"
+        -
+          img: "cnn-en-espanol.png"
+          name: "CNN en Español"
+        -
+          img: "cnn-internacional.png"
+          name: "CNN Internacional"
+        -
+          img: "climatempo.png"
+          name: "Climatempo"
+        -
+          img: "discovery-channel-hd.png"
+          name: "Discovery Channel HD"
+        -
+          img: "discovery-civilization.png"
+          name: "Discovery Civilization"
+        -
+          img: "discovery-science.png"
+          name: "Discovery  Science"
+        -
+          img: "discovery-theater-hd.png"
+          name: "Discovery Theater HD"
+        -
+          img: "history-channel-hd.png"
+          name: "History Channel HD"
+        -
+          img: "history-channel-2-hd.png"
+          name: "History Channel 2 HD"
+        -
+          img: "national-geographic-hd.png"
+          name: "National Geographic HD"
+        -
+          img: "natgeo-wild-hd.png"
+          name: "Nat Geo Wild HD"
+        -
+          img: "animal-planet.png"
+          name: "Animal Planet"
+        -
+          img: "arte-1.png"
+          name: "Arte1"
+        -
+          img: "futura.png"
+          name: "Futura"
+        -
+          img: "canal-rural.png"
+          name: "Canal Rural"
+        -
+          img: "sesc-tv.png"
+          name: "SESC TV"
+    -
+      label: "Variedades"
+      channels:
+        -
+          img: "gnt-hd.png"
+          name: "GNT HD"
+        -
+          img: "multishow-hd.png"
+          name: "Multishow HD"
+        -
+          img: "canal-viva-hd.png"
+          name: "Canal Viva HD"
+        -
+          img: "mtv-hd.png"
+          name: "MTV HD"
+        -
+          img: "globosat-hd.png"
+          name: "Globosat HD"
+        -
+          img: "home-health-hd.png"
+          name: "Home & Health HD"
+        -
+          img: "a-e-hd.png"
+          name: "A&E HD"
+        -
+          img: "bis-hd.png"
+          name: "Bis HD"
+        -
+          img: "byu.png"
+          name: "BYU"
+        -
+          img: "chef-tv.png"
+          name: "Chef TV"
+        -
+          img: "comedy-central-hd.png"
+          name: "Comedy Central HD"
+        -
+          img: "e.png"
+          name: "E!"
+        -
+          img: "fox-life.png"
+          name: "Fox Life"
+        -
+          img: "glitz.png"
+          name: "Glitz"
+        -
+          img: "isat.png"
+          name: "I.SAT"
+        -
+          img: "mix-tv.png"
+          name: "Mix TV"
+        -
+          img: "play-tv.png"
+          name: "Play TV"
+        -
+          img: "tbs-hd.png"
+          name: "TBS HD"
+        -
+          img: "tlc-hd.png"
+          name: "TLC HD"
+        -
+          img: "tru-tv-hd.png"
+          name: "Tru TV HD"
+        -
+          img: "vh1-mega-hits.png"
+          name: "VH1 Mega Hits"
+  audio:
+    label: "Canais de Áudio"
+    channels:
+      - "Anos 60"
+      - "Anos 70"
+      - "Anos 80"
+      - "Anos 90"
+      - "Axé"
+      - "Baladas"
+      - "Blues"
+      - "Bossa Nova"
+      - "Disco"
+      - "Easy Listening"
+      - "Festa"
+      - "Forró"
+      - "Gospel"
+      - "Hip Hop"
+      - "Jazz Clássico"
+      - "Jazz Contemporâneo"
+      - "Kids"
+      - "Latina"
+      - "Lounge"
+      - "MPB"
+      - "Música Clássica"
+      - "Música Eletrônica"
+      - "New Rock"
+      - "Pagode"
+      - "R&B"
+      - "Reggae"
+      - "Trilhas Sonoras"
+      - "Rock Clássico"
+      - "Samba de Raiz"
+      - "Sertanejo"
+      - "Standards"
+      - "Sucessos"
+  radio:
+    label: "Rádios"
+    channels:
+      - "Rádio Globo RJ"
+      - "Rádio Globo SP"
+      - "Globo FM"
+      - "CBN"
+      - "Nativa FM"
+      - "Band News"
+      - "Rádio Bandeirantes"
+      - "Bradesco esportes"
+      - "Band FM"
+      - "Rádio Disney"
+      - "Rádio Sara Brasil FM"
+      - "Rádio Super"
+      - "Beat 98 FM"
+      - "CBN RJ"
+      - "CBN BH"
+      - "CBN BSB"
+      - "BH FM"
+      - "Rádio Clube do Pará"
+      - "Rádio Verdes Mares AM"
+      - "Rádio Tamoio AM e RFI"
+      - "Rádio Gaúcha"
+      - "Rádio Atlântica"
+      - "Rádio Cultura e Cultura FM"
+      - "Globo FM Bahia"
+      - "Bahia FM"
+      - "Rádio 93 FM"
+      - "Jovem Pan"
+      - "Jovem Pan News"
+      - "Rádio Grenal"
+      - "Rádio Novo Tempo"
+      - "Rádio LBV"
+      - "Rádio Canção Nova."
