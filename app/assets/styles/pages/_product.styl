@@ -1,7 +1,7 @@
 .product
   background-image url(tv.jpg)
-  background-repeat no-repeat
   background-position center 0
+  background-repeat no-repeat
   position relative
 
   height 5000px
@@ -14,7 +14,7 @@
 
   .hero
     absoluteTopLeft(remify(70px))
-    // background-color rgba(green, 0.3)
+    background-color rgba(green, 0.3)
     height remify(625px)
     overflow hidden
     width 100%
@@ -23,42 +23,42 @@
       display none
 
   .menu
-    // background-color rgba(purple, 0.4)
+    background-color rgba(purple, 0.4)
     height remify(70px)
     position relative
     z-index 2
 
   header
-    center(1200px)
-    // background-color rgba(red, 0.14)
+    center( remify(1200px))
+    background-color rgba(red, 0.14)
     height 64.3vh
     max-height remify(518px)
     min-height remify(250px)
     position relative
     z-index 2
     h1
-      // @extend $title-huge
+      @extend $title-huge
       color $white
-      word-spacing -7px
       margin remify(34px) 0 0 remify(14px)
+      word-spacing -7px
 
   .cards
-    center(1170px)
-    text-align center
-    // background-color rgba(red, 0.3)
+    center( remify(1170px))
+    background-color rgba(red, 0.3)
     position relative
+    text-align center
     z-index 2
     .card
       width s('calc( 100% / 3 )')
 
   .channels-area
-    center(1366px)
+    center( remify(1366px) )
     background-color $green
-    padding remify(10px)
+    background-color red
+    margin-bottom remify(2px)
     margin-top remify(193px)
-    margin-bottom 2px
-    // background-color red
     // opacity .5
+    padding remify(10px)
 
     .channels-choose
       li
@@ -72,55 +72,138 @@
         text-align center
         text-decoration none
         &.active
-          color $white
           background-color $green
+          color $white
           cursor default
 
     .channels-header
-      border-top remify(1px) solid $green
       background-color $white
+      border-top remify(1px) solid $green
+      overflow hidden
       padding remify(40px) remify(42px) remify(34px)
       word-spacing remify(-2px)
-      overflow hidden
       ul
-        center(1170px)
+        center( remify(1170px) )
       li
         @extend $title-small
+        circleSeparator(11px, 8px, 14px)
         color $black
-        circleSeparator(11px, 5px, 8px)
         display inline-block
+        letter-spacing remify(-1px)
 
     .channels-list-area
       background-color $white
 
     .channels-container
-      center(1170px)
+      center( remify(1170px) )
+      background-color $grayLighter
+      border-bottom remify(1px) solid $gray
 
     .channels-lists
-      column(9/12)
+      column(9/12, gutter: 0)
+      background-color $white
+      width 77%
+
+    .channels-tv
+      margin-bottom remify(60px)
+      overflow hidden
+
+    h4
+      @extend $text-regular
+      line-height remify(71px)
+      text-align center
+      border-bottom remify(1px) solid $grayLight
+      text-indent remify(-29px)
 
     .channels-pack
       width s('calc(100% / 6)')
       float left
 
-      h4
-        @extend $text-regular
-        line-height remify(71px)
-        text-align center
-        border-bottom remify(1px) solid $grayLight
-
       li
         @extend $text-regular
         size(remify(120px), remify(112px))
-        margin 0 remify(4px)
-        margin-right remify(30px)
+        color $gray
         display block
         font-size remify(12px)
-        text-align center
+        margin 0 remify(4px) 0
+        margin-right remify(30px)
         padding-top remify(30px)
+        text-align center
         white-space nowrap
       span
         display block
-        margin-top remify(-9px)
+        // margin-top remify(-9px)
+        white-space initial
+        font-size 11px
+        transform translateY(-50%)
+        line-height 13px
       img
         display inline-block
+        width remify(112px)
+
+    .channels-audio, .channels-radio
+      background-color $white
+      margin-bottom remify(36px)
+      padding-right remify(110px)
+      h5
+        @extend $text-bold-small
+        font-weight 500
+        margin-bottom remify(6px)
+      li
+        @extend $line-height-regular
+        @extend $text-small
+        display inline-block
+        &:after
+          content: ', '
+        &:last-child
+          &:after
+            content: '.'
+
+    .channels-radio
+      margin-bottom remify(56px)
+
+    .channels-optionals
+      background-color $grayLighter
+      column(3/12)
+      width 23%
+
+      h4
+        text-indent 0
+      li
+        @extend $text-small
+        height remify(221px)
+        border-bottom remify(1px) solid $grayLight
+        color $gray
+        margin-bottom remify(3px)
+        padding remify(25px) 0
+        text-align center
+      img
+        display inline-block
+        width remify(112px)
+      span
+        @extend $line-height-small
+        display block
+        height remify(65px)
+        margin-top remify(-5px)
+        & + span
+          margin-top remify(13px)
+      a
+        @extend $button-small
+        width 64%
+
+        &.spot
+          width remify(35px)
+          margin-right remify(4px)
+          transition all .25s easing( "in-quad" )
+          &:last-child
+            margin-right 0
+          &.selected, &:hover
+            background-color $green
+            border-color $green
+            color $white
+      h5
+        @extend $text-regular
+        margin-top remify(21px)
+
+        & + span
+          margin remify(11px) remify(40px) 0
