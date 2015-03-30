@@ -1,10 +1,12 @@
-font-face( "oiText", "../fonts/simplon/SimplonBP-Regular-webfont", normal )
-font-face( "oiText", "../fonts/simplon/SimplonBP-Bold-webfont", normal )
-font-face( "oiText", "../fonts/simplon/SimplonBP-Light-webfont", normal )
+font-face( "oiTextRegular", "../fonts/simplon/SimplonBP-Regular-webfont", normal )
+font-face( "oiTextBold", "../fonts/simplon/SimplonBP-Bold-webfont", normal )
+font-face( "oiTextLight", "../fonts/simplon/SimplonBP-Light-webfont", normal )
 font-face( "oiTitle", "../fonts/simplon/SimplonOi-headline-webfont", normal )
 
 $fontTitle = oiTitle, sans-serif
-$fontText = oiText, sans-serif
+$fontTextRegular = oiTextRegular, sans-serif
+$fontTextBold = oiTextBold, sans-serif
+$fontTextLight = oiTextLight, sans-serif
 
 $baseline  = .625rem // 10px
 
@@ -49,7 +51,7 @@ $title
     // line-height 1rem
 
 $headline
-  font-family $fontText
+  font-family $fontTextRegular
   &-big
     @extend $headline
     set-font-size(55px)
@@ -65,7 +67,7 @@ $headline
 
 $text
   @extend $line-height-regular
-  font-family $fontText
+  font-family $fontTextRegular
   &-big
     @extend $text
     set-font-size(21px)
@@ -75,3 +77,8 @@ $text
   &-small
     @extend $text
     set-font-size(13px)
+  &-bold-small
+    @extend $text
+    font-family $fontTextBold
+    set-font-size(13px)
+
