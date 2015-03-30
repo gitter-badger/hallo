@@ -1,4 +1,11 @@
 channelsgroup:
+  header:
+    title:
+      - "158 canais"
+      - "32 em HD"
+    desc: "Preço para cliente Oi banda Larga. Não cliente; R$79,90"
+    price: '69'
+    action: 'Peça Já'
   tv:
     -
       label: "Abertos"
@@ -430,3 +437,64 @@ channelsgroup:
       - "Rádio Novo Tempo"
       - "Rádio LBV"
       - "Rádio Canção Nova"
+  addons:
+    title: "Turbine sua TV HD"
+    channels:
+      action: "Adicionar"
+      itens:
+        -
+          img: "telecine.png"
+          name: "Telecine"
+          desc:
+            - "6 Canais Telecine em HD"
+            - "Filmes inéditos e clássicos"
+        -
+          img: "hbo.png"
+          name: "HBO"
+          desc:
+            - "10 Canais HBO em HD"
+            - "Filmes e Séries"
+        -
+          img: "premiere.png"
+          name: "Premiere"
+          desc:
+            - "Premiere"
+            - "Brasileirão e Estaduais"
+        -
+          img: "combate.png"
+          name: "Combate"
+          desc:
+            - "Combate"
+            - "UFC, MMA, Luta Livre e Boxe"
+        -
+          img: "playboy-tv.png"
+          name: "Playboy TV"
+          desc:
+            - "Playboy TV"
+            - "Conteúdo adulto explícito"
+        -
+          img: "sexy-hot.png"
+          name: "Sexy Hot"
+          desc:
+            - "Sexy Hot"
+            - "Conteúdo adulto brasileiro"
+        -
+          img: "sexy-prive.png"
+          name: "Sex Privê"
+          desc:
+            - "Sex Privê"
+            - "Filmes e séries adultas"
+        -
+          img: "canais-internacionais.png"
+          name: "Canais Internacionais"
+          desc:
+            - "Canais Internacionais"
+            - "Deutsche Welle, TVE, TV5 e RTP"
+    spots:
+      title: "Pontos em HD"
+      desc: "Quantidade de aparelhos receptores do sinal da Oi TV VD"
+      quant: 5
+    recorder:
+      title: "Gravador digital"
+      desc: "Pause, grave e reveja programas a hora que quiser"
+      info: Disponível apenas no total HD
