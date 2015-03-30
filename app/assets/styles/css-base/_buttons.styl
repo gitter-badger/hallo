@@ -1,4 +1,4 @@
-.button
+$button
   @extend $text-regular
   background $white
   border remify(1px) solid $black
@@ -6,12 +6,27 @@
   color $black
   cursor pointer
   display inline-block
-  left remify(30px)
-  line-height remify(48px)
+  line-height 2rem
+  text-align center
   text-decoration none
   width 100%
-  text-align center
-  &.green
+  &-small
+    @extend $button
+    @extend $text-small
+    line-height remify(40px)
+  &-regular
+    @extend $button
+    line-height remify(48px)
+  &-big
+    @extend $button
+    @extend $text-big
+    line-height remify(56px)
+  &.gray
+    background $grayLighter
+    border-color $gray
+    color $black
+  &-green
+    @extend $button
     background $green
     border-color $green
     color $white

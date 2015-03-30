@@ -41,8 +41,6 @@
     padding-left remify(117px)
 
   &-action
-    @extend .button
-    position absolute
-    bottom remify(30px)
-    left remify(30px)
+    @extend $button-regular
+    absoluteBottomLeft(remify(30px), remify(30px))
     width s('calc(100% - %s)', remify(30px) * 2 )
