@@ -12,9 +12,13 @@ var koutoSwiss   = require('kouto-swiss');
 var rupture      = require('rupture');
 var runSequence = require('run-sequence');
 
-var data = helpers.loadData();
+var data;
 
-gulp.task('build-jade', function() {
+gulp.task('build-data', function() {
+  data = helpers.loadData();
+});
+
+gulp.task('build-jade',['build-data'], function() {
   gulp.src(config.path.src.jade)
     .pipe($.plumber())
     .pipe($.changed(config.path.dist.root))
@@ -66,11 +70,11 @@ gulp.task('build-fonts-icon', function() {
 gulp.task('build-images', function() {
   return gulp.src(config.path.src.images)
     .pipe($.newer(config.path.dist.images))
-    .pipe($.imagemin({
-      optimizationLevel: 3,
-      progressive: true,
-      interlaced: true
-    }))
+    // .pipe($.imagemin({
+    //   optimizationLevel: 3,
+    //   progressive: true,
+    //   interlaced: true
+    // }))
     .pipe(gulp.dest(config.path.dist.images));
 });
 
@@ -127,6 +131,7 @@ gulp.task('build-manifest', function(){
 
 gulp.task('build', function() {
   runSequence(
+    'build-data',
     'build-bower',
     'build-jade',
     'build-stylus',

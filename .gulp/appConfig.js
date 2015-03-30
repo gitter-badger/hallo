@@ -18,6 +18,7 @@ var appConfig = (function() {
 
     },
     src: {
+      data: './data/**/*.yml',
       jade: './app/views/**/*.jade',
       partials: './app/views/_partials/**/*.jade',
       stylus: './app/assets/styles/**/*.styl',
