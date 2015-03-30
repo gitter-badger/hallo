@@ -55,8 +55,8 @@ body.product
 
     nav.channels-header
       ul
-        li 158 Canais
-        li 32 em HD
+        each title in channelsgroup.header.title
+          li=title
     
     .channels-list-area
 
@@ -87,12 +87,28 @@ body.product
                 li=radio
 
         .channels-optionals
-          h4 Turbine sua TV HD
+          h4=channelsgroup.addons.title
           ul
-            li teste
+            each channel in channelsgroup.addons.channels.itens
+              li
+                img(src="/assets/images/logos/" + channel.img, alt=channel.name )
+                span!=channel.desc.join('<br>')
+                a(href="#")=channelsgroup.addons.channels.action
+            li
+              h5=channelsgroup.addons.spots.title
+              span=channelsgroup.addons.spots.desc
+              - var count = 1
+              while count <= channelsgroup.addons.spots.quant
+                - selected = (count === 1 ? ' selected': '' )
+                a(href="#", class="spot" + selected )=count++
+            li
+              h5=channelsgroup.addons.recorder.title
+              span=channelsgroup.addons.recorder.desc
+              span.info=channelsgroup.addons.recorder.info
 
-
-              
+      p aaa             
+      
+      img(src="/assets/images/demo/product-bottom.jpg")
 
   link(rel='stylesheet', href='/assets/styles/main.css')
   script(src="/assets/scripts/main.js")
