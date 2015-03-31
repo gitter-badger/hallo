@@ -1,7 +1,8 @@
 footer
+  @extend $text-regular
+
   nav.footer-products
     center( remify(1170px) )
-    @extend $text-regular
     @extend $line-height-big
     color $black
     padding-top remify(70px)
@@ -16,4 +17,39 @@ footer
       color $black
 
   nav.footer-oi
+    background-color $purple
     height remify(70px)
+    line-height remify(70px)
+    margin-top remify(90px)
+    overflow hidden
+    ul
+      center( remify(1366px) )
+      padding 0 remify(90px)
+    li
+      display inline-block
+      float left
+      font-size remify( 16px)
+      margin-right remify( 9px)
+      padding 0 remify( 10px)
+    .home
+      margin 0 remify( 10px) 0 0
+      padding 0
+      width remify(65px)
+      a
+        color transparent
+        background-image url(/assets/images/oi/oi-logo.svg)
+        background-position remify(4px) remify(12px)
+        background-repeat no-repeat
+        background-size remify(50px)
+        font-size remify( 21px)
+        line-height remify( 94px)
+        text-indent remify( 10px)
+    .search-az
+      float right
+      margin 0
+    a
+      size(100%, 100%)
+      color $white
+      display block
+      text-decoration none
+
