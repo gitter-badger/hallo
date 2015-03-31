@@ -3,144 +3,144 @@ include ../_partials/header.jade
 body.product
   section.container
 
-  .simule Simule
+    .simule Simule
 
-  .hero
-    img(src="/assets/images/demo/product-hero.jpg")
-  
-  .menu Menu
-  
-  header
-    h1 TV HD
-
-  .cards
-
-    +card(
-      'Start HD', 
-      ['111 Canais', '12 HD' ], 
-      [null, '39,90', '/Mês'], 
-      'Preço para cliente Oi Banda Larga. Não cliente: R$ 49,90', 
-      ['Instalação Gráris'], 
-      ['#link', 'Conheça o Start HD']
-    )
-
-    +card(
-      'Mix HD', 
-      ['158 Canais', '32 HD' ], 
-      [null, '69,90', '/Mês'], 
-      'Preço para cliente Oi Banda Larga. Não cliente: R$ 79,90', 
-      ['Instalação Gráris', 'Ponto adicional em HD', 'Pay Per View [Aluguel de Filmes]'], 
-      ['#link', 'Conheça o Mix HD']
-    )
-
-    +card(
-      'Total HD', 
-      ['178 Canais', '42 HD' ], 
-      [null, '89,90', '/Mês'], 
-      'Preço para cliente Oi Banda Larga. Não cliente: R$ 99,90', 
-      ['Instalação Gráris', 'Ponto adicional em HD', 'Pay Per View [Aluguel de Filmes]', 'Gravador Digital Opcional'], 
-      ['#link', 'Conheça o Total HD']
-    )
-  
-  .channels-area
+    .hero
+      img(src="/assets/images/demo/product-hero.jpg")
     
-    nav.channels-choose
-      ul
-        li
-          a(href="#") Start HD
-        li
-          a.active(href="#") Mix HD
-        li
-          a(href="#") Total HD
-
-    nav.channels-header
-      ul
-        each title in channelsgroup.header.title
-          li=title
+    .menu Menu
     
-    .channels-list-area
+    header
+      h1 TV HD
 
-      .channels-container
-        
-        .channels-lists
-          
-          .channels-tv
-            each group in channelsgroup.tv
-              .channels-pack
-                h4=group.label
-                ul
-                  each channel in group.channels
-                    li
-                      img(src="/assets/images/logos/" + channel.img )
-                      span=channel.name
+    .cards
 
-          .channels-audio
-            h5=channelsgroup.audio.label + '('+ channelsgroup.audio.channels.length + ')'
-            ul
-              each audio in channelsgroup.audio.channels
-                li=audio
+      +card(
+        'Start HD', 
+        ['111 Canais', '12 HD' ], 
+        [null, '39,90', '/Mês'], 
+        'Preço para cliente Oi Banda Larga. Não cliente: R$ 49,90', 
+        ['Instalação Gráris'], 
+        ['#link', 'Conheça o Start HD']
+      )
 
-          .channels-radio
-            h5=channelsgroup.radio.label + '('+ channelsgroup.radio.channels.length + ')'
-            ul
-              each radio in channelsgroup.radio.channels
-                li=radio
+      +card(
+        'Mix HD', 
+        ['158 Canais', '32 HD' ], 
+        [null, '69,90', '/Mês'], 
+        'Preço para cliente Oi Banda Larga. Não cliente: R$ 79,90', 
+        ['Instalação Gráris', 'Ponto adicional em HD', 'Pay Per View [Aluguel de Filmes]'], 
+        ['#link', 'Conheça o Mix HD']
+      )
 
-        .channels-optionals
-          h4=channelsgroup.addons.title
-          ul
-            each channel in channelsgroup.addons.channels.itens
-              li
-                img(src="/assets/images/logos/" + channel.img, alt=channel.name )
-                span!=channel.desc.join('<br>')
-                a(href="#")=channelsgroup.addons.channels.action
-            li
-              h5=channelsgroup.addons.spots.title
-              span=channelsgroup.addons.spots.desc
-              - var count = 1
-              while count <= channelsgroup.addons.spots.quant
-                - selected = (count === 1 ? ' selected': '' )
-                a(href="#", class="spot" + selected )=count++
-            li
-              h5=channelsgroup.addons.recorder.title
-              span=channelsgroup.addons.recorder.desc
-              span.info=channelsgroup.addons.recorder.info
-        
-      .channels-area-footer
-        .channels-help
-          .channels-search
-            a(hre="#") Busque um canal específico
-          .channels-faq
-            |Alguma dúvida? 
-            a(href="#") Entenda o plano.
+      +card(
+        'Total HD', 
+        ['178 Canais', '42 HD' ], 
+        [null, '89,90', '/Mês'], 
+        'Preço para cliente Oi Banda Larga. Não cliente: R$ 99,90', 
+        ['Instalação Gráris', 'Ponto adicional em HD', 'Pay Per View [Aluguel de Filmes]', 'Gravador Digital Opcional'], 
+        ['#link', 'Conheça o Total HD']
+      )
+    
+    .channels-area
       
-        img.channels-img-bottom(src="/assets/images/demo/product-bottom.jpg")
+      nav.channels-choose
+        ul
+          li
+            a(href="#") Start HD
+          li
+            a.active(href="#") Mix HD
+          li
+            a(href="#") Total HD
 
-        div.channels-detail-area
-          each detail in channelsgroup.details
-            div.channel-detail
-              h5=detail.title
+      nav.channels-header
+        ul
+          each title in channelsgroup.header.title
+            li=title
+      
+      .channels-list-area
+
+        .channels-container
+          
+          .channels-lists
+            
+            .channels-tv
+              each group in channelsgroup.tv
+                .channels-pack
+                  h4=group.label
+                  ul
+                    each channel in group.channels
+                      li
+                        img(src="/assets/images/logos/" + channel.img )
+                        span=channel.name
+
+            .channels-audio
+              h5=channelsgroup.audio.label + '('+ channelsgroup.audio.channels.length + ')'
               ul
-                each item in detail.itens
-                  li(class= item.img ? "has-image": "")
-                    if item.img
-                      span.detail-img
-                        img(src=item.img)
-                    span.detail-title=item.title
-                      if item.tooltip && item.tooltip.length > 0
-                        span.detail-tooltip=item.tooltip
-                    span.detail-desc=item.desc
-                    if item.actions
-                      ul
-                        each action in item.actions
-                          li
-                            a(href=action.url)=action.label
-        
-        div.call-help
-          |Em dúvida? 
-          a(href="") Compre com a ajuda de um especialista.
+                each audio in channelsgroup.audio.channels
+                  li=audio
 
-  +footer(footer)
+            .channels-radio
+              h5=channelsgroup.radio.label + '('+ channelsgroup.radio.channels.length + ')'
+              ul
+                each radio in channelsgroup.radio.channels
+                  li=radio
+
+          .channels-optionals
+            h4=channelsgroup.addons.title
+            ul
+              each channel in channelsgroup.addons.channels.itens
+                li
+                  img(src="/assets/images/logos/" + channel.img, alt=channel.name )
+                  span!=channel.desc.join('<br>')
+                  a(href="#")=channelsgroup.addons.channels.action
+              li
+                h5=channelsgroup.addons.spots.title
+                span=channelsgroup.addons.spots.desc
+                - var count = 1
+                while count <= channelsgroup.addons.spots.quant
+                  - selected = (count === 1 ? ' selected': '' )
+                  a(href="#", class="spot" + selected )=count++
+              li
+                h5=channelsgroup.addons.recorder.title
+                span=channelsgroup.addons.recorder.desc
+                span.info=channelsgroup.addons.recorder.info
+          
+        .channels-area-footer
+          .channels-help
+            .channels-search
+              a(hre="#") Busque um canal específico
+            .channels-faq
+              |Alguma dúvida? 
+              a(href="#") Entenda o plano.
+        
+          img.channels-img-bottom(src="/assets/images/demo/product-bottom.jpg")
+
+          div.channels-detail-area
+            each detail in channelsgroup.details
+              div.channel-detail
+                h5=detail.title
+                ul
+                  each item in detail.itens
+                    li(class= item.img ? "has-image": "")
+                      if item.img
+                        span.detail-img
+                          img(src=item.img)
+                      span.detail-title=item.title
+                        if item.tooltip && item.tooltip.length > 0
+                          span.detail-tooltip=item.tooltip
+                      span.detail-desc=item.desc
+                      if item.actions
+                        ul
+                          each action in item.actions
+                            li
+                              a(href=action.url)=action.label
+          
+          div.call-help
+            |Em dúvida? 
+            a(href="") Compre com a ajuda de um especialista.
+
+    +footer(footer)
 
   link(rel='stylesheet', href='/assets/styles/main.css')
   script(src="/assets/scripts/main.js")
