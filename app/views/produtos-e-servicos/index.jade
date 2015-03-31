@@ -105,10 +105,41 @@ body.product
               h5=channelsgroup.addons.recorder.title
               span=channelsgroup.addons.recorder.desc
               span.info=channelsgroup.addons.recorder.info
-
-      p aaa             
+        
+      .channels-area-footer
+        .channels-help
+          .channels-search
+            a(hre="#") Busque um canal específico
+          .channels-faq
+            |Alguma dúvida? 
+            a(href="#") Entenda o plano.
       
-      img(src="/assets/images/demo/product-bottom.jpg")
+        img.channels-img-bottom(src="/assets/images/demo/product-bottom.jpg")
+
+        div.channels-detail-area
+          each detail in channelsgroup.details
+            div.channel-detail
+              h5=detail.title
+              ul
+                each item in detail.itens
+                  li(class= item.img ? "has-image": "")
+                    if item.img
+                      span.detail-img
+                        img(src=item.img)
+                    span.detail-title=item.title
+                      if item.tooltip && item.tooltip.length > 0
+                        span.detail-tooltip=item.tooltip
+                    span.detail-desc=item.desc
+                    if item.actions
+                      ul
+                        each action in item.actions
+                          li
+                            a(href=action.url)=action.label
+        
+        div.call-help
+          |Em dúvida? 
+          a(href="") Compre com a ajuda de um especialista.
+
 
   link(rel='stylesheet', href='/assets/styles/main.css')
   script(src="/assets/scripts/main.js")
