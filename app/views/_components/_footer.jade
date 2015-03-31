@@ -1,0 +1,28 @@
+
+mixin footer(data)
+  footer
+      
+      nav.footer-products
+        ul
+          each group in footer
+            li.footer-group
+              h5=group.title
+              ul
+                each item in group.itens
+                  li
+                    a(href=item.url)=item.label
+      
+      nav.footer-oi
+        ul
+          li
+            a(href="/") Oi
+          li
+            a(href="/") Empresas
+          li
+            a(href="/") Investidores
+          li
+            a(href="/") Encontre uma Loja
+          li
+            a(href="/") Visitors
+          li
+            a(href="/") Oi de A à Z
