@@ -1,6 +1,41 @@
 .build-plan
-  center( remify(1200px))
-  background-color rgba(green, 0.14)
+  center( remify(371px))
   height remify(70px)
+  padding remify(15px) 0
   position relative
   z-index 2
+  ul
+    size(remify(170px), remify(40px))
+    display block
+    float left
+    line-height remify(40px)
+    border-right remify(1px) solid $black
+    border-left remify(1px) solid $black
+    position relative
+    padding 0 0 0 remify(10px)
+    &:before
+      size(remify(7px), remify(40px))
+      absoluteTopLeft()
+      content ""
+      border-top remify(1px) solid $black
+      border-bottom remify(1px) solid $black
+    &:after
+      size(remify(7px), remify(40px))
+      absoluteTopRight()
+      content ""
+      border-top remify(1px) solid $black
+      border-bottom remify(1px) solid $black
+  li
+    display block
+    float left
+    font-size remify(22px)
+    width remify(29px)
+    margin 0 remify(5px)
+  button
+    @extend $button-small
+    size(remify(170px), remify(40px))
+    display block
+    float left
+    line-height remify(40px)
+    margin-left remify(30px)
+    font-size remify(16px)
