@@ -497,4 +497,155 @@ channelsgroup:
     recorder:
       title: "Gravador digital"
       desc: "Pause, grave e reveja programas a hora que quiser"
-      info: Disponível apenas no total HD
+      info: "Disponível apenas no total HD"
+  details:
+    -
+      title: "O que você recebe"
+      itens:
+        -
+          title: "158 Canais"
+          desc: "42 em HD, 50 em SD e 66 de áudio."
+          tooltip: null
+          actions:
+            -
+              label: "Imprima a lista completa"
+              url: "#"
+        -
+          title: "1º Ponto de TV HD"
+          desc: "Receptor mais controle remoto."
+          tooltip: null
+          actions: null
+        -
+          title: "2º Ponto de TV HD"
+          desc: "Receptor mais controle remoto."
+          tooltip: "Grátis por 1 ano"
+          actions: null
+        -
+          title: "1 Antena Digital"
+          desc: "Dimensões: 32 x 57 x 42cm."
+          tooltip: null
+          actions: null
+        -
+          title: "Oi TV HD no Tablet e Celular"
+          desc: "Nos aplicativos Globosat, Telecine, Premiere e Combate Play."
+          tooltip: null
+          actions: null
+    -
+      title: "Nesse Plano você assiste"
+      itens:
+        -
+          img: "/assets/images/demo/shows/gotham.jpg"
+          title: "Gotham"
+          desc: "Warner"
+          tooltip: null
+          actions: null
+        -
+          img: "/assets/images/demo/shows/guia-de-sobrevivencia.jpg"
+          title: "Guia de Sobrevivência"
+          desc: "Discovery"
+          tooltip: null
+          actions: null
+        -
+          img: "/assets/images/demo/shows/liga-dos-campeoes.jpg"
+          title: "Liga dos Campeões"
+          desc: "ESPN Brasil"
+          info: "Disponível no Total HD"
+          tooltip: null
+          actions: null
+        -
+          img: "/assets/images/demo/shows/bob-esponja.jpg"
+          title: "Bob Esponja"
+          desc: "Nick Jr."
+          tooltip: null
+          actions: null
+        -
+          img: "/assets/images/demo/shows/dr-house.jpg"
+          title: "Dr. House"
+          desc: "Fox"
+          tooltip: null
+          actions: null
+    -
+      title: "Condições de compra"
+      itens:
+        -
+          title: "Instalação"
+          desc: "Gratuita. Em 7 dias úteis. De seg. à sáb. das 8h às 20h"
+          actions:
+            -
+              label: "Acompanhe seu pedido online"
+              url: "#"
+        -
+          title: "Forma de Pagamento"
+          desc: "Débito Automático com desconto de R$ 10."
+          actions: null
+        -
+          title: "Fidelização"
+          desc: "12 meses com desconto de R$ 30. Cancelar no período:  R$ 280."
+          actions: null
+        -
+          title: "Desconto Promocional"
+          desc: "R$ 10 para cliente Banda Larga da Oi."
+          actions: null
+        -
+          title: "Área de Cobertura"
+          desc: "Disponível no Rio de Janeiro, RJ."
+          actions:
+            -
+              label: "Consulte a disponibilidade"
+              url: "#"
+        -
+          title: "Informações Legais"
+          desc: ""
+          actions:
+            -
+              label: "Contratos e termos aditivos"
+              url: "#"
+            -
+              label: "Consulte a lista de todos os planos"
+              url: "#"
+    -
+      title: "Veja também"
+      itens:
+        -
+          title: "Cliente de outra operadora?"
+          desc: ""
+          actions:
+            -
+              label: "Mude sua TV para a Oi"
+              url: "#"
+        -
+          title: "Planos alternativos de TV da Oi"
+          desc: ""
+          actions:
+            -
+              label: "TV via Fibra da Oi"
+              url: "#"
+            -
+              label: "TV Livre HD (sem mensalidade)"
+              url: "#"
+        -
+          title: "Já tem a Oi TV HD?"
+          desc: ""
+          actions:
+            -
+              label: "Altere seu plano"
+              url: "#"
+            -
+              label: "2ª via de conta"
+              url: "#"
+            -
+              label: "Entenda a sua conta"
+              url: "#"
+            -
+              label: "Verifique problemas de sinal"
+              url: "#"
+            -
+              label: "Perguntas frequentes"
+              url: "#"
+        -
+          title: "Alugue um filme"
+          desc: ""
+          actions:
+            -
+              label: ""
+              url: "#"
