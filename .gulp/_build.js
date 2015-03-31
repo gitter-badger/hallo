@@ -52,14 +52,18 @@ gulp.task('build-font-icon', function() {
         fontPath: '../fonts/'
     }))
     .pipe($.iconfont({
-      appendCodepoints: true,
-      descent: 0,
-      // error: [Function],
-      fixedWidth: true,
       fontName: fontName,
-      ignoreExt: false,
+      fixedWidth: true,
+        centerHorizontally: true,
+        normalize: true,
+        // fontHeight
+        // round: 1
+        // descent: 0
       // log: [Function],
-      round: 10000000000000
+
+      // appendCodepoints: true,
+      // error: [Function],
+      // ignoreExt: false,
     }))
     .on('codepoints', function(codepoints, options) {
       console.log(codepoints, options);
