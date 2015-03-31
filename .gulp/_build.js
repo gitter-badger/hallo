@@ -39,7 +39,7 @@ gulp.task('build-fonts', function() {
     .pipe(gulp.dest(config.path.dist.fonts));
 });
 
-gulp.task('build-fonts-icon', function() {
+gulp.task('build-font-icon', function() {
   var fontName = 'oi-icons';
   gulp.src(config.path.src.icons)
     .pipe($.plumber())
