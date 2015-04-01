@@ -1,7 +1,42 @@
 .menu
   @extend $text-regular
 .menu
-  background-color rgba(green, 0.4)
+  center(1200px)
   height remify(70px)
   position relative
   z-index 2
+  line-height remify(70px)
+
+  li
+    display block
+    float left
+    margin 0 remify(15px)
+  a
+    @extend $text-regular
+    line-height remify(70px)
+    display block
+    color $white
+    text-decoration none
+
+  .home
+    width remify(65px)
+    margin 0 0 0 remify(10px)
+    a
+      color transparent
+      background-image url(/assets/images/oi/oi-logo.svg)
+      background-position remify(4px) remify(12px)
+      background-repeat no-repeat
+      background-size remify(50px)
+      font-size remify( 21px)
+      line-height remify( 94px)
+      text-indent remify( 10px)
+
+  label
+    display block
+    float left
+    span
+      @extend $visuallyhidden
+    input
+      @extend $text-regular
+      background-color transparent
+      border 0
