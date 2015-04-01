@@ -2,10 +2,13 @@ html, body
   background-color $purple
 
 .product
-  background-image url(tv.jpg)
   background-position center 0
   background-repeat no-repeat
   position relative
+  +above(768px)
+    background-image url(tv-1024.jpg)
+  +above(1024px)
+    background-image url(tv-1366.jpg)
 
 .hero
   absoluteTopLeft(remify(70px))
@@ -18,25 +21,32 @@ html, body
     width 100%
 
 header
-  center( remify(1200px))
+  // center( remify(1200px))
   // height 64.3vh
   height 69.3vh
   max-height remify(518px)
   min-height remify(250px)
   position relative
   z-index 2
+  +above(768px)
+    center( remify(960px))
+  +above(1024px)
+    center( remify(1200px))
   h1
     @extend $title-huge
     color $white
-    margin remify(34px) 0 0 remify(14px)
+    // margin remify(34px) 0 0 remify(14px)
+    margin remify(34px) 0 0 0
     word-spacing remify(-7px)
 
 .cards
-  center( remify(1170px))
-  background-color rgba(red, 0.3)
   position relative
   text-align center
   z-index 2
+  +above(768px)
+    center( remify(960px))
+  +above(1024px)
+    center( remify(1170px))
   .card
     width s('calc( 100% / 3 )')
 
@@ -46,6 +56,10 @@ header
   // margin-bottom remify(2px)
   margin-top remify(196px)
   padding remify(10px)
+  +above(768px)
+    margin-top remify(177px)
+  +above(1024px)
+    margin-top remify(196px)
 
 .channels-choose
   overflow hidden
@@ -68,8 +82,11 @@ header
   background-color $white
   border-top remify(1px) solid $green
   overflow hidden
-  padding remify(37px) remify(42px) remify(35px)
   word-spacing remify(-2px)
+  +above(768px)
+    padding remify(37px) remify(20px) remify(35px)
+  +above(1024px)
+    padding remify(37px) remify(42px) remify(35px)
   ul
     center( remify(1170px) )
   li
@@ -90,7 +107,10 @@ header
 .channels-lists
   column(9/12, gutter: 0)
   background-color $white
-  width 77%
+  +above(768px)
+    width 80%
+  +above(1024px)
+    width 77%
 
 .channels-tv
   margin-bottom remify(62px)
@@ -101,7 +121,11 @@ h4
   line-height remify(71px)
   text-align center
   border-bottom remify(1px) solid $grayLight
-  text-indent remify(-29px)
+  // +above(768px)
+  //   padding 0 remify(10px)
+  +above(1024px)
+    // padding 0
+    text-indent remify(-29px)
 
 .channels-pack
   width s('calc(100% / 6)')
@@ -132,7 +156,11 @@ h4
 .channels-audio, .channels-radio
   background-color $white
   margin-bottom remify(35px)
-  padding-right remify(110px)
+  +above(768px)
+    padding 0 remify(20px)
+  +above(1024px)
+    padding 0
+
   h5
     @extend $text-bold-small
     font-weight 500
@@ -153,8 +181,11 @@ h4
 .channels-optionals
   background-color $grayLighter
   column(3/12)
-  width 23%
   margin-right 0
+  +above(768px)
+    width 20%
+  +above(1024px)
+    width 23%
 
   h4
     text-indent 0
@@ -180,14 +211,26 @@ h4
       margin-top remify(13px)
   a
     @extend $button-small
-    width 64%
+    +above(768px)
+      width 77%
+    +above(1024px)
+      width 64%
 
     &.spot
-      width remify(35px)
       margin-right remify(4px)
       transition all .25s easing( "in-quad" )
+      +above(768px)
+        margin-top remify(5px)
+        width remify(28px)
+        height remify(36px)
+      +above(1024px)
+        margin-top 0
+        width remify(35px)
+        height remify(42px)
+
       &:last-child
         margin-right 0
+
       &.selected, &:hover
         background-color $green
         border-color $green
@@ -200,7 +243,10 @@ h4
       margin remify(11px) remify(40px) 0
 
 .channels-area-footer
-  center( remify(1170px) )
+  +above(768px)
+    center( remify(960px) )
+  +above(1024px)
+    center( remify(1170px) )
 
 .channels-help
   @extend $line-height-regular
@@ -208,11 +254,12 @@ h4
   overflow hidden
   hidden remify(30px)
   padding-top remify(25px)
+
   .channels-search
-    column(77/100, gutter: 0)
+    column(70/100, gutter: 0)
     display block
   .channels-faq
-    column(23/100, gutter: 0)
+    column(30/100, gutter: 0)
     text-align right
   a
     color $green
@@ -225,9 +272,12 @@ h4
 
 .channels-detail-area
   border-bottom 1px solid $grayLight
-  margin-top remify(68px)
   padding-bottom remify(59px)
   overflow hidden
+  +above(768px)
+    margin-top remify(61px)
+  +above(1024px)
+    margin-top remify(68px)
 
 .channel-detail
   border-top 1px solid $grayLight
@@ -241,7 +291,10 @@ h4
     margin-top remify(32px)
   li
     margin-bottom remify(30px)
-    padding-right remify(30px)
+    +above(768px)
+      padding-right 0
+    +above(1024px)
+      padding-right remify(30px)
     ul
       margin-top 0
       li
@@ -307,6 +360,10 @@ h4
   @extend $text-regular
   line-height remify(149px)
   text-align center
+  +above(768px)
+    line-height remify(138px)
+  +above(1024px)
+    line-height remify(149px)
   a
     color $green
     text-decoration none
