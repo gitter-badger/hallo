@@ -2,10 +2,14 @@ footer
   @extend $text-regular
 
   nav.footer-products
-    center( remify(1170px) )
     @extend $line-height-big
     color $black
-    padding-top remify(70px)
+    +above(768px)
+      center( remify(960px) )
+      padding-top remify(59px)
+    +above(1024px)
+      center( remify(1170px) )
+      padding-top remify(70px)
 
     li.footer-group
       column(1/5)
@@ -24,7 +28,10 @@ footer
     overflow hidden
     ul
       center( remify(1366px) )
-      padding 0 remify(90px)
+      +above(768px)
+        padding 0 remify(20px)
+      +above(1024px)
+        padding 0 remify(90px)
     li
       display inline-block
       float left
