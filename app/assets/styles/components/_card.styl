@@ -38,7 +38,10 @@
     @extend $text-small
     color $black
     text-align left
-    padding-left remify(117px)
+    +above(768px)
+      padding-left remify(80px)
+    +above(1024px)
+      padding-left remify(117px)
 
   &-action
     @extend $button-regular
