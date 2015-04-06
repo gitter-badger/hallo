@@ -5,49 +5,15 @@ html, body
   background-position center 0
   background-repeat no-repeat
   position relative
-  // background-image url(tv-320.jpg)
-  // background-size 100%
-  // +above(414px)
-  //   background-image url(tv-768.jpg)
-  // +above(768px)
-  //   background-image url(tv-1024.jpg)
-  // +above(1024px)
-  //   background-image url(tv-1366.jpg)
-
-header
-  // center( remify(1200px))
-  // height 64.3vh
-  min-height remify(250px)
-  position relative
-  z-index 2
-  +mobile()
-    height 74vh
+  background-image url(tv-320.jpg)
+  background-size 100%
   +above(414px)
-    center( remify(704px))
-    height 77.3vh
-    height remify(750px)
-    max-height remify(750px)
+    background-image url(tv-768.jpg)
   +above(768px)
-    center( remify(960px))
-    height 69.3vh
-    max-height remify(517px)
+    background-image url(tv-1024.jpg)
+    background-size auto
   +above(1024px)
-    center( remify(1170px))
-
-  h1
-    color $white
-    word-spacing remify(-7px)
-    +mobile()
-      @extend $title-big
-      padding-top  remify(177px)
-      text-align center
-    +above(414px)
-      @extend $title-huge
-      margin-top remify(96px)
-      padding-top 0
-      text-align left
-    +above(768px)
-      margin-top remify(34px)
+    background-image url(tv-1366.jpg)
 
 .cards
   position relative
@@ -66,9 +32,12 @@ header
   background-color $green
   // margin-bottom remify(2px)
   margin-top remify(196px)
-  padding remify(10px)
+  +below(414px)
+    margin-top remify(162px)
+    border-top remify(3px) solid $green
   +above(414px)
     margin-top remify(184px)
+    padding remify(10px)
   +above(768px)
     margin-top remify(175px)
   +above(1024px)
@@ -87,6 +56,9 @@ header
     display block
     text-align center
     text-decoration none
+    +below(414px)
+      line-height remify(76px)
+      font-size remify(21px)
     +above(414px)
       line-height remify(68px)
     +above(768px)
@@ -103,6 +75,10 @@ header
   border-top remify(1px) solid $green
   overflow hidden
   word-spacing remify(-2px)
+  +below(414px)
+    height remify(80px)
+    padding 0 remify(25px)
+    border-bottom 1px solid $gray
   +above(414px)
     padding remify(48px) 0 remify(43px)
   +above(768px)
@@ -118,11 +94,16 @@ header
       center( remify(1170px) )
   li
     @extend $title-tiny
-    circleSeparator(11px, 8px, 14px)
     color $black
     display inline-block
     letter-spacing remify(-1px)
+    +below(414px)
+      circleSeparator(6px, 4px, 5px)
+      line-height remify(80px)
+      font-size remify(21px)
+      color red
     +above(414px)
+      circleSeparator(11px, 8px, 14px)
       set-font-size(28px)
     +above(768px)
       set-font-size(42px)
@@ -139,7 +120,7 @@ header
 .channels-lists
   column(9/12, gutter: 0)
   background-color $white
-  +mobile()
+  +above(100px)
     width 100%
   +above(414px)
     width 100%
@@ -160,7 +141,7 @@ h4
   @extend $text-regular
   // +above(768px)
   //   padding 0 remify(10px)
-  +mobile()
+  +above(100px)
     border-bottom remify(1px) solid transparent
     line-height remify(20px)
     margin-top remify(45px)
@@ -183,7 +164,7 @@ h4
     text-indent remify(-29px)
 
 .channels-pack
-  +mobile()
+  +below(414px)
     width 100%
     height remify(151px)
   +above(414px)
@@ -195,7 +176,7 @@ h4
     float left
 
   div
-    +mobile()
+    +above(100px)
       height remify(131px)
       width 100%
       overflow auto
@@ -216,7 +197,7 @@ h4
 
   ul
     overflow hidden
-    +mobile()
+    +above(100px)
       width 1000%
     +above(414px)
       width 1000%
@@ -232,7 +213,7 @@ h4
     margin 0 remify(4px) 0
     text-align center
     white-space nowrap
-    +mobile()
+    +above(100px)
       float left
       width 18vw
       margin-right remify(18px)
@@ -247,22 +228,23 @@ h4
       width remify(100px)
       margin-right remify(30px)
       padding-top remify(30px)
-  span
-    display block
-    // margin-top remify(-9px)
-    white-space initial
-    font-size remify(11px)
-    transform translateY(-50%)
-    line-height remify(13px)
-    +mobile()
-      margin-top remify(10px)
-    +above(414px)
-      margin-top remify(10px)
-    +above(768px)
-      margin-top 0
+
+    span
+      display block
+      // margin-top remify(-9px)
+      white-space initial
+      font-size remify(11px)
+      transform translateY(-50%)
+      line-height remify(13px)
+      +above(100px)
+        margin-top remify(10px)
+      +above(414px)
+        margin-top remify(10px)
+      +above(768px)
+        margin-top 0
   img
     display inline-block
-    +mobile()
+    +above(100px)
       height remify(60px)
     +above(414px)
       height remify(60px)
@@ -272,7 +254,7 @@ h4
 
 .channels-audio, .channels-radio
   background-color $white
-  +mobile()
+  +above(100px)
     padding-bottom remify(40px)
     margin-left remify(30px)
     border-bottom 1px dashed $grayLight
@@ -342,7 +324,7 @@ h4
   background-color $grayLighter
   column(3/12)
   margin-right 0
-  +mobile()
+  +above(100px)
     width 100%
   +above(414px)
     width 100%
@@ -352,7 +334,7 @@ h4
     width 23%
 
   h4
-    +mobile()
+    +above(100px)
       text-indent remify(30px)
     +above(414px)
       text-indent remify(30px)
@@ -361,7 +343,7 @@ h4
 
   div
     width 100%
-    +mobile()
+    +above(100px)
       overflow auto
       padding-left remify(30px)
       height remify(130px)
@@ -377,7 +359,7 @@ h4
 
   ul
     overflow hidden
-    +mobile()
+    +above(100px)
       width 300%
     +above(414px)
       width 300%
@@ -392,7 +374,7 @@ h4
     text-align center
     &:last-child
       border-bottom 0
-    +mobile()
+    +above(100px)
       float left
       width 21vw
       height remify(125px)
@@ -414,7 +396,7 @@ h4
     @extend $line-height-small
     display block
     height remify(67px)
-    +mobile()
+    +above(100px)
       font-size remify(11px)
       margin-top remify(8px)
     +above(414px)
@@ -427,7 +409,7 @@ h4
   a
     @extend $button-small
     margin 0 auto
-    +mobile()
+    +above(100px)
       display none
     +above(414px)
       display none

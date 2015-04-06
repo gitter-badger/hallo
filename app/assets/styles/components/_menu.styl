@@ -1,59 +1,83 @@
 .menu
   @extend $text-regular
 .menu
-  height remify(70px)
-  line-height remify(70px)
   overflow hidden
   position relative
   z-index 2
-  +mobile()
+  +below(414px)
     center(100%)
+    height remify(90px)
+    // line-height remify(90px)
   +above(414px)
     center(724px)
+    // line-height remify(70px)
+    height remify(70px)
   +above(768px)
     center(1200px)
 
   ul
     overflow hidden
+    width 100%
     float left
+    +below(414px)
+      height remify(90px)
+    +above(414px)
+      height remify(70px)
 
   li
     display block
     float left
-    margin 0 remify(15px)
+    +below(414px)
+      margin 0 remify(15px)
+    +above(414px)
+      margin 0 remify(15px) 0 remify(10px)
+
   a
-    line-height remify(70px)
     display block
     color $white
     text-decoration none
-    +mobile()
-      @extend $text-big
-      color red
-    +tablet()
-      @extend $text-regular
+    +below(414px)
+      font-size remify(21px)
+      line-height remify(90px)
+    +above(414px)
+      line-height remify(70px)
+
+  .products
+    +below(414px)
+      max-width remify(90px)
 
   .home
-    width remify(65px)
-    +mobile()
-      margin 0 remify(10px) 0 remify(20px)
-    +tablet()
-      margin 0 0 0 remify(10px)
-    a
-      color transparent
-      background-image url(/assets/images/oi/oi-logo.svg)
-      background-position remify(4px) remify(12px)
-      background-repeat no-repeat
-      background-size remify(50px)
-      font-size remify( 21px)
-      line-height remify( 94px)
-      text-indent remify( 10px)
+    margin 0 remify(10px)
+    +below(414px)
+      width remify(75px)
+      height remify(90px)
+    +above(414px)
+      width remify(65px)
+      height remify(65px)
 
-  label
-    display block
-    float left
-    span
-      @extend $visuallyhidden
-    input
-      @extend $text-regular
-      background-color transparent
-      border 0
+    svg
+      display inline-block
+      +below(414px)
+        square( remify(60px) )
+        margin remify(15px) 0 0 remify(13px)
+      +above(414px)
+        square( remify(50px) )
+        margin remify(10px) 0 0 remify(4px)
+
+  .search
+    +below(414px)
+      size( remify(45px), remify(90px) )
+      float right
+      text-align right
+
+    svg
+      square( remify(12px) )
+      display inline-block
+      margin 0 remify(5px) remify(1px) remify(4px)
+      +below(414px)
+        square( remify(16px) )
+        margin 0 remify(10px) 0 0
+      path
+        fill $white
+
+

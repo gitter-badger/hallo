@@ -7,6 +7,8 @@
   width remify(392px)
   display inline-block
   float left
+  +below(414px)
+    padding-bottom remify(20px)
   +above(414px)
     height remify(407px)
   +above(768px)
@@ -18,6 +20,8 @@
   &-title
     @extend $headline-small
     color: $green
+    +below(414px)
+      color: $black
     +above(414px)
       margin-bottom remify(5px)
     +above(768px)
@@ -28,7 +32,7 @@
     border-bottom remify(1px) solid $grayLight
     padding-bottom remify(22px)
     width remify(210px)
-    +mobile()
+    +above(100px)
       display none
     +above(414px)
       font-size remify(15px)
@@ -56,7 +60,7 @@
     color $gray
     margin 0 auto remify(25px) auto
     width remify(160px)
-    +mobile()
+    +above(100px)
       display none
     +above(414px)
       display block
@@ -66,7 +70,7 @@
     @extend $text-small
     color $black
     text-align left
-    +mobile()
+    +above(100px)
       display none
     +above(414px)
       display none
@@ -78,7 +82,7 @@
 
   &-action
     @extend $button-regular
-    +mobile()
+    +above(100px)
       display none
     +above(414px)
       absoluteBottomLeft(remify(30px), remify(38px))

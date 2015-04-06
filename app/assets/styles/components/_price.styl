@@ -4,6 +4,9 @@
   display inline-block
   position relative
   text-align left
+  +below(414px)
+    transform translateX(remify(15px))
+
   .price
     &-prefix
       line-height remify(13px)
