@@ -23,7 +23,7 @@ var appConfig = (function() {
       partials: './app/views/_partials/**/*.jade',
       stylus: './app/assets/styles/**/*.styl',
       components: './app/assets/styles/components/**/*.styl',
-      fonts: './app/assets/fonts/**/*.{eot,svg,ttf,woff}',
+      fonts: './app/assets/fonts/**/*.{eot,svg,ttf,woff,woff2}',
       images: './app/assets/images/**/*.{jpg,jpeg,png,gif,svg}',
       icons: './app/assets/images/icons/**/*.svg',
       bower: './bower_components/'
