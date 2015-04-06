@@ -1,0 +1,21 @@
+.hero
+  absoluteTopLeft(remify(70px))
+  background-color $gray
+  overflow hidden
+  width 100%
+  z-index 1
+  +mobile()
+    display none
+  +above(414px)
+    display block
+    height remify(820px)
+  +above(768px)
+    height remify(625px)
+  .imgc
+    size(100%, 100%)
+    background-repeat no-repeat
+    background-size cover
+    background-position top center
+
+  img
+    width 100%
