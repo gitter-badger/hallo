@@ -87,7 +87,7 @@ gulp.task('build-stylus', function () {
     .pipe($.plumber())
     // .pipe($.changed(config.path.src.stylus))
     .pipe($.filter(helpers.filterPartials))
-    // .pipe($.if(!config.isProd, $.sourcemaps.init() ))
+    .pipe($.if(!config.isProd, $.sourcemaps.init() ))
     .pipe($.stylus({
       use: [jeet(), koutoSwiss(), rupture()]
     }))
@@ -98,7 +98,7 @@ gulp.task('build-stylus', function () {
     }))
     .pipe($.minifyCss())
     .pipe($.csso())
-    // .pipe($.if(!config.isProd, $.sourcemaps.write('.')))
+    .pipe($.if(!config.isProd, $.sourcemaps.write('.')))
     .pipe(gulp.dest(config.path.dist.css));
 });
 

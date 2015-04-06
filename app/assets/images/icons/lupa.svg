@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg
+  version="1.1"
+  baseProfile="full"
+  xmlns="http://www.w3.org/2000/svg"
+  height="100%"
+  width="100%"
+  id="icon-search"
+
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  x="0px"
+  y="0px"
+	viewBox="0 0 500 500"
+  enable-background="new 0 0 500 500"
+  xml:space="preserve"
+  >
+<path fill-rule="evenodd" clip-rule="evenodd" stroke="#000000" stroke-miterlimit="10" d="M488.4,427.1L387.1,325.8
+	c22-33.2,34.8-73,34.8-115.8C421.9,94,327.9,0,212,0C96,0,2,94,2,209.9c0,116,94,210,210,210c42.8,0,82.6-12.8,115.8-34.8
+	l101.3,101.3c16.4,16.5,42.9,16.5,59.3,0C504.8,470,504.8,443.5,488.4,427.1z M211.4,335.2c-69.5,0-125.9-56.3-125.9-125.9
+	c0-69.5,56.3-125.9,125.9-125.9c69.5,0,125.8,56.4,125.8,125.9C337.3,278.9,280.9,335.2,211.4,335.2z"/>
+</svg>

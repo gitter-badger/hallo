@@ -26,60 +26,50 @@ $title
   color green
   text-transform uppercase
   display block
-  &-huge
-    @extend $title
-    set-font-size(112px)
-    // line-height 8rem
-  &-big
-    @extend $title
-    set-font-size(85px)
-    // line-height 6rem
-  &-medium
-    @extend $title
-    set-font-size(57px)
-    // line-height 4rem
-  &-small
-    @extend $title
-    set-font-size(42px)
-    // line-height 3rem
-  &-tiny
-    @extend $title
-    set-font-size(28px)
-    // line-height 2rem
-  &-eyebrow
-    @extend $title
-    set-font-size(14px)
-    // line-height 1rem
+$title-huge
+  @extend $title
+  font-size remify(112px)
+$title-big
+  @extend $title
+  font-size remify(85px)
+$title-medium
+  @extend $title
+  font-size remify(57px)
+$title-small
+  @extend $title
+  font-size remify(42px)
+$title-tiny
+  @extend $title
+  font-size remify(28px)
+$title-eyebrow
+  @extend $title
+  font-size remify(14px)
 
 $headline
   font-family $fontTextRegular
   &-big
     @extend $headline
-    set-font-size(55px)
-    // line-height 4rem
+    font-size remify(55px)
   &-regular
     @extend $headline
-    set-font-size(35px)
-    // line-height 3rem
+    font-size remify(35px)
   &-small
     @extend $headline
-    set-font-size(21px)
-    // line-height 3rem
+    font-size remify(21px)
 
 $text
   @extend $line-height-regular
   font-family $fontTextRegular
   &-big
     @extend $text
-    set-font-size(21px)
+    font-size remify(21px)
   &-regular
     @extend $text
-    set-font-size(16px)
+    font-size remify(16px)
   &-small
     @extend $text
-    set-font-size(13px)
+    font-size remify(13px)
   &-bold-small
     @extend $text
     font-family $fontTextBold
-    set-font-size(13px)
-
+    font-size remify(13px)

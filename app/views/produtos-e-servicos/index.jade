@@ -9,9 +9,8 @@ body.product
     
     +menu()
     
-    header
-      h1 TV HD
-
+    +header()
+    
     .cards
 
       +card(
@@ -67,6 +66,7 @@ body.product
               each group in channelsgroup.tv
                 .channels-pack
                   h4=group.label
+                    span= '[' + group.channels.length + ']'
                   div
                     ul
                       each channel in group.channels
@@ -143,6 +143,3 @@ body.product
             a(href="") Compre com a ajuda de um especialista.
 
     +footer(footer)
-
-  
-  //- script(src="/assets/scripts/main.js")
