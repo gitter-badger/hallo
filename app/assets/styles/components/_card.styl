@@ -1,49 +1,88 @@
 .card
   background $white
   border remify(1px) solid $grayLight
-  height remify(587px)
   padding-top remify(24px)
   position relative
   text-align center
   width remify(392px)
   display inline-block
   float left
+  +above(414px)
+    height remify(407px)
+  +above(768px)
+    height remify(587px)
+
   & + .card
     border-left 0
+
   &-title
     @extend $headline-small
     color: $green
-    margin-bottom remify(11px)
+    +above(414px)
+      margin-bottom remify(5px)
+    +above(768px)
+      margin-bottom remify(11px)
+
   &-list-subtitle
     @extend $headline-small
     border-bottom remify(1px) solid $grayLight
-    margin 0 auto remify(37px) auto
     padding-bottom remify(22px)
     width remify(210px)
+    +mobile()
+      display none
+    +above(414px)
+      font-size remify(15px)
+      margin 0 auto remify(20px) auto
+      padding-bottom remify(25px)
+    +above(768px)
+      font-size remify(21px)
+      margin 0 auto remify(37px) auto
+      padding-bottom remify(22px)
     li
       circleSeparator(6px, 3px, 8px)
       display inline-block
+
   // @todo: buggy in container width
   &-price > div
-      transform translateX(remify(32px))
-      margin-bottom remify(16px)
+      +above(414px)
+        transform translateX(remify(16px))
+        margin-bottom remify(6px)
+      +above(768px)
+        transform translateX(remify(32px))
+        margin-bottom remify(16px)
+
   &-info
     @extend $text-small
     color $gray
     margin 0 auto remify(25px) auto
     width remify(160px)
+    +mobile()
+      display none
+    +above(414px)
+      display block
 
   &-list
     @extend $line-height-big
     @extend $text-small
     color $black
     text-align left
+    +mobile()
+      display none
+    +above(414px)
+      display none
     +above(768px)
+      display block
       padding-left remify(80px)
     +above(1024px)
       padding-left remify(117px)
 
   &-action
     @extend $button-regular
-    absoluteBottomLeft(remify(30px), remify(30px))
-    width s('calc(100% - %s)', remify(30px) * 2 )
+    +mobile()
+      display none
+    +above(414px)
+      absoluteBottomLeft(remify(30px), remify(38px))
+      width s('calc(100% - %s)', remify(38px) * 2 )
+    +above(768px)
+      absoluteBottomLeft(remify(30px), remify(30px))
+      width s('calc(100% - %s)', remify(30px) * 2 )
