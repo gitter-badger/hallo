@@ -5,8 +5,7 @@ body.product
 
     +buildPlan()
 
-    .hero
-      img(src="/assets/images/demo/product-hero.jpg")
+    +hero()
     
     +menu()
     
@@ -68,11 +67,12 @@ body.product
               each group in channelsgroup.tv
                 .channels-pack
                   h4=group.label
-                  ul
-                    each channel in group.channels
-                      li
-                        img(src="/assets/images/logos/" + channel.img )
-                        span=channel.name
+                  div
+                    ul
+                      each channel in group.channels
+                        li
+                          img(src="/assets/images/logos/" + channel.img )
+                          span=channel.name
 
             .channels-audio
               h5=channelsgroup.audio.label + '('+ channelsgroup.audio.channels.length + ')'
@@ -88,23 +88,24 @@ body.product
 
           .channels-optionals
             h4=channelsgroup.addons.title
-            ul
-              each channel in channelsgroup.addons.channels.itens
+            div
+              ul
+                each channel in channelsgroup.addons.channels.itens
+                  li
+                    img(src="/assets/images/logos/" + channel.img, alt=channel.name )
+                    span!=channel.desc.join('<br>')
+                    a(href="#")=channelsgroup.addons.channels.action
                 li
-                  img(src="/assets/images/logos/" + channel.img, alt=channel.name )
-                  span!=channel.desc.join('<br>')
-                  a(href="#")=channelsgroup.addons.channels.action
-              li
-                h5=channelsgroup.addons.spots.title
-                span=channelsgroup.addons.spots.desc
-                - var count = 1
-                while count <= channelsgroup.addons.spots.quant
-                  - selected = (count === 1 ? ' selected': '' )
-                  a(href="#", class="spot" + selected )=count++
-              li
-                h5=channelsgroup.addons.recorder.title
-                span=channelsgroup.addons.recorder.desc
-                span.info=channelsgroup.addons.recorder.info
+                  h5=channelsgroup.addons.spots.title
+                  span=channelsgroup.addons.spots.desc
+                  - var count = 1
+                  while count <= channelsgroup.addons.spots.quant
+                    - selected = (count === 1 ? ' selected': '' )
+                    a(href="#", class="spot" + selected )=count++
+                li
+                  h5=channelsgroup.addons.recorder.title
+                  span=channelsgroup.addons.recorder.desc
+                  span.info=channelsgroup.addons.recorder.info
           
         .channels-area-footer
           .channels-help
@@ -113,8 +114,9 @@ body.product
             .channels-faq
               |Alguma dúvida? 
               a(href="#") Entenda o plano.
-        
-          img.channels-img-bottom(src="/assets/images/demo/product-bottom.jpg")
+          
+          .img
+            img.channels-img-bottom(src="/assets/images/demo/product-bottom.jpg")
 
           div.channels-detail-area
             each detail in channelsgroup.details
