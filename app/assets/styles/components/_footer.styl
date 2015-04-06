@@ -4,15 +4,25 @@ footer
   nav.footer-products
     @extend $line-height-big
     color $black
+    +above(414px)
+      center(704px)
     +above(768px)
-      center( remify(960px) )
+      center( 960px )
       padding-top remify(59px)
     +above(1024px)
-      center( remify(1170px) )
+      center( 1170px )
       padding-top remify(70px)
 
+    ul
+      overflow hidden
+
     li.footer-group
-      column(1/5)
+      +above(414px)
+        column(1/3, 0, 3)
+        margin-top remify(70px)
+      +above(768px)
+        column(1/5, 0, 5, 3)
+        margin-top 0
 
       ul
         margin-top remify(19px)
