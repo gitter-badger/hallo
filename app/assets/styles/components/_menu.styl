@@ -1,26 +1,43 @@
 .menu
   @extend $text-regular
 .menu
-  center(1200px)
   height remify(70px)
+  line-height remify(70px)
+  overflow hidden
   position relative
   z-index 2
-  line-height remify(70px)
+  +mobile()
+    center(100%)
+  +above(414px)
+    center(724px)
+  +above(768px)
+    center(1200px)
+
+  ul
+    overflow hidden
+    float left
 
   li
     display block
     float left
     margin 0 remify(15px)
   a
-    @extend $text-regular
     line-height remify(70px)
     display block
     color $white
     text-decoration none
+    +mobile()
+      @extend $text-big
+      color red
+    +tablet()
+      @extend $text-regular
 
   .home
     width remify(65px)
-    margin 0 0 0 remify(10px)
+    +mobile()
+      margin 0 remify(10px) 0 remify(20px)
+    +tablet()
+      margin 0 0 0 remify(10px)
     a
       color transparent
       background-image url(/assets/images/oi/oi-logo.svg)
