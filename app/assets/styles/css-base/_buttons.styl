@@ -1,7 +1,7 @@
 $button
   @extend $text-regular
-  background $white
-  border remify(1px) solid $black
+  background transparent
+  border remify(1px) solid $grayLight
   border-radius remify(2px)
   color $black
   cursor pointer
@@ -10,6 +10,10 @@ $button
   text-align center
   text-decoration none
   width 100%
+  transition all 300ms ease-out
+  &:hover
+    border-color $purple
+    color $purple
   &-small
     @extend $button
     @extend $text-small
