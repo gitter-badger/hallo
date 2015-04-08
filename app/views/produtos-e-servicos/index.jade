@@ -71,9 +71,9 @@ body.product
                     ul(style="width: " + 26 * group.channels.length +"vw")
                       each channel in group.channels
                         li
-                          a(href="#")
+                          a(href="#" class=channel.color)
                             .logo-container
-                              div(class='s-'+channel.img + " s-logo")
+                              div(class='s-'+channel.img + " s-logo ")
                             span=channel.name
 
             .channels-audio

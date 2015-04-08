@@ -5,15 +5,15 @@ html, body
   background-position center 0
   background-repeat no-repeat
   position relative
-  background-image url(tv-320.jpg)
-  background-size 100%
-  +above(415px)
-    background-image url(tv-768.jpg)
-  +above(767px)
-    background-image url(tv-1024.jpg)
-    background-size auto
-  +above(1023px)
-    background-image url(tv-1366.jpg)
+  // background-image url(tv-320.jpg)
+  // background-size 100%
+  // +above(415px)
+  //   background-image url(tv-768.jpg)
+  // +above(767px)
+  //   background-image url(tv-1024.jpg)
+  //   background-size auto
+  // +above(1023px)
+  //   background-image url(tv-1366.jpg)
 
 .cards
   position relative
@@ -253,8 +253,15 @@ div.logo-container
       display block
       padding-top remify(10px)
       text-decoration none
-      transition border 500ms ease-out, color 500ms ease-out, transform 100ms ease-out
+      transition all 300ms ease-out
       transition-delay 100ms
+      &.inactive
+        filter gray
+        -webkit-filter grayscale(100%)
+        &.dark .logo-container
+          opacity .4
+        &:hover
+          border-color $gray
       &:active
         border 1px solid $purple
         transform translateY( remify(2px) )
