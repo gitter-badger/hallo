@@ -68,11 +68,13 @@ body.product
                   h4=group.label
                     span= '[' + group.channels.length + ']'
                   div
-                    ul
+                    ul(style="width: " + 26 * group.channels.length +"vw")
                       each channel in group.channels
                         li
-                          img(src="/assets/images/logos/" + channel.img )
-                          span=channel.name
+                          a(href="#")
+                            .logo-container
+                              div(class='s-'+channel.img + " s-logo")
+                            span=channel.name
 
             .channels-audio
               h5=channelsgroup.audio.label + '('+ channelsgroup.audio.channels.length + ')'
@@ -92,7 +94,8 @@ body.product
               ul
                 each channel in channelsgroup.addons.channels.itens
                   li
-                    img(src="/assets/images/logos/" + channel.img, alt=channel.name )
+                    .logo-container
+                      div(class='s-'+channel.img + " s-logo")
                     span!=channel.desc.join('<br>')
                     a(href="#")=channelsgroup.addons.channels.action
                 li
@@ -116,7 +119,8 @@ body.product
               a(href="#") Entenda o plano.
           
           .img
-            img.channels-img-bottom(src="/assets/images/demo/product-bottom.jpg")
+            //- img.channels-img-bottom(src="/assets/images/demo/product-bottom.jpg")
+            .imgc(style="background-image: url('/assets/images/demo/product-bottom.jpg')")
 
           div.channels-detail-area
             each detail in channelsgroup.details
@@ -127,7 +131,7 @@ body.product
                     li(class= item.img ? "has-image": "")
                       if item.img
                         span.detail-img
-                          img(src=item.img)
+                          //- img(src=item.img)
                       span.detail-title=item.title
                         if item.tooltip && item.tooltip.length > 0
                           span.detail-tooltip=item.tooltip
