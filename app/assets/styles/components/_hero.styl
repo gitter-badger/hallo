@@ -4,12 +4,14 @@
   overflow hidden
   width 100%
   z-index 1
-  +above(100px)
-    display none
-  +above(414px)
-    display block
+  +below(415px)
+    background-color $green
+    height 66vh
+    .imgc
+      display none
+  +above(415px)
     height remify(820px)
-  +above(768px)
+  +above(767px)
     height remify(625px)
   .imgc
     size(100%, 100%)
