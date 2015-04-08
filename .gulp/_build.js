@@ -18,6 +18,24 @@ gulp.task('build-data', function() {
   data = helpers.loadData();
 });
 
+gulp.task('build-sprites', function() {
+    var spriteData =
+        gulp.src('./app/assets/images/logos/*.png')
+            .pipe($.spritesmith({
+                imgName: 'sprite-logos.png',
+                cssName: '_sprite-logos.styl',
+                cssFormat: 'stylus',
+                algorithm: 'top-down',//top-down, left-right, diagonal, alt-diagonal,  binary-tree
+                cssTemplate: '.gulp/stylus.template.mustache',
+                cssVarMap: function(sprite) {
+                    sprite.name = 's-' + sprite.name
+                }
+            }));
+
+    spriteData.img.pipe(gulp.dest('./dist/assets/images/'));
+    spriteData.css.pipe(gulp.dest('./app/assets/styles/components/'));
+});
+
 gulp.task('build-jade',['build-data'], function() {
   gulp.src(config.path.src.jade)
     .pipe($.plumber())
@@ -99,6 +117,7 @@ gulp.task('build-stylus', function () {
     .pipe($.minifyCss())
     .pipe($.csso())
     .pipe($.if(!config.isProd, $.sourcemaps.write('.')))
+    .pipe($.if(config.isProd, $.gzip()))
     .pipe(gulp.dest(config.path.dist.css));
 });
 
