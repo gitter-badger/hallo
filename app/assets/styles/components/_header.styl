@@ -4,33 +4,32 @@ header
   min-height remify(250px)
   position relative
   z-index 2
-  +below(414px)
-    height 58.5vh
-  +above(414px)
+  +below(415px)
+    height 47vh
+  +above(415px)
     center( remify(704px))
     height 77.3vh
     height remify(750px)
     max-height remify(750px)
-  +above(768px)
+  +above(767px)
     center( remify(960px))
     height 69.3vh
     max-height remify(517px)
-  +above(1024px)
+  +above(1023px)
     center( remify(1170px))
 
   h1
     color $white
-    color red
     word-spacing remify(-7px)
-    +below(414px)
+    +below(415px)
       @extend $title-big
       padding-top remify(165px)
       text-align center
-    +above(414px)
+    +above(415px)
       @extend $title-huge
       font-size remify(112px)
       margin-top remify(96px)
       padding-top 0
       text-align left
-    +above(768px)
+    +above(767px)
       margin-top remify(34px)
