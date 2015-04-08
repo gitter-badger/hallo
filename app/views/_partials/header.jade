@@ -8,11 +8,13 @@ html.no-js(lang='pt-br')
     title Produtos
     meta(name='description', content='Grid')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    
-    //if lt IE 9
-      script(src='//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js')
-      script(src='//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js')
 
+    script
+      include ../../assets/scripts/_load-css.js
+
+    noscript
+      link(rel='stylesheet', href='/assets/styles/fonts.css')
+    
     link(rel='stylesheet', href='/assets/styles/main.css')
 
   body
