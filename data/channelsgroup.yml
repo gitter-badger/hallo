@@ -554,7 +554,10 @@ channelsgroup:
   addons:
     title: "Turbine sua TV HD"
     channels:
-      action: "Adicionar"
+      actions:
+        add: "Adicionar"
+        added: "Adicionado"
+        remove: "Remover"
       itens:
         -
           img: "telecine"

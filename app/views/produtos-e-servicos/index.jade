@@ -87,7 +87,7 @@ body.product
               ul
                 each radio in channelsgroup.radio.channels
                   li=radio
-
+          
           .channels-optionals
             h4=channelsgroup.addons.title
             div
@@ -97,7 +97,8 @@ body.product
                     .logo-container
                       div(class='s-'+channel.img + " s-logo")
                     span!=channel.desc.join('<br>')
-                    a(href="#")=channelsgroup.addons.channels.action
+                    button.add(type="button" aria-label=channelsgroup.addons.channels.actions.add + " " + channel.name)=channelsgroup.addons.channels.actions.add
+                    button.remove(type="button" aria-label=channelsgroup.addons.channels.actions.remove + " " + channel.name)=channelsgroup.addons.channels.actions.remove
                 li
                   h5=channelsgroup.addons.spots.title
                   span=channelsgroup.addons.spots.desc
