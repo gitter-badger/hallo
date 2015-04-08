@@ -35,7 +35,7 @@
     }
     var f = new win.FontFace( "t", 'url( "data:application/font-woff2," ) format( "woff2" )', {} );
     f.load().catch(function() {});
-    return f.status == 'loading';
+    return f.status === 'loading';
   })( window );
   var ua = navigator.userAgent,
     fontFileUrl = "/assets/styles/fonts.css";
