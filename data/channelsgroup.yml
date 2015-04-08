@@ -11,361 +11,361 @@ channelsgroup:
       label: "Abertos"
       channels:
         -
-          img: "globo-hd.png"
+          img: "globo"
           name: "Globo HD"
         -
-          img: "record-hd.png"
+          img: "record"
           name: "Record HD"
         -
-          img: "sbt-hd.png"
+          img: "sbt"
           name: "SBT HD"
         -
-          img: "band-hd.png"
+          img: "band"
           name: "Band HD"
         -
-          img: "rede-tv.png"
+          img: "rede-tv"
           name: "Rede TV"
         -
-          img: "tv-cultura.png"
+          img: "tv-cultura"
           name: "Tv Cultura"
         -
-          img: "aparecida.png"
+          img: "aparecida"
           name: "Aparecida"
         -
-          img: "cancao-nova.png"
+          img: "cancao-nova"
           name: "Canção Nova"
         -
-          img: "cnt.png"
+          img: "cnt"
           name: "CNT"
         -
-          img: "ideal-tv.png"
+          img: "ideal-tv"
           name: "Ideal TV"
         -
-          img: "nbr.png"
+          img: "nbr"
           name: "NBR"
         -
-          img: "rbi-tv.png"
+          img: "rbi-tv"
           name: "RBI TV"
         -
-          img: "rede-brasil.png"
+          img: "rede-brasil"
           name: "Rede Brasil"
         -
-          img: "rede-vida.png"
+          img: "rede-vida"
           name: "Rede Vida"
         -
-          img: "rit.png"
+          img: "rit"
           name: "RIT"
         -
-          img: "tv-diario.png"
+          img: "tv-diario"
           name: "TV Diário"
         -
-          img: "tv-brasil.png"
+          img: "tv-brasil"
           name: "TV Brasil"
         -
-          img: "tv-camara.png"
+          img: "tv-camara"
           name: "TV Câmara"
         -
-          img: "tv-escola.png"
+          img: "tv-escola"
           name: "TV Escola"
         -
-          img: "tv-justica.png"
+          img: "tv-justica"
           name: "TV Justiça"
         -
-          img: "tv-senado.png"
+          img: "tv-senado"
           name: "TV Senado"
     -
       label: "Filmes & Séries"
       channels:
         -
-          img: "warner-hd.png"
+          img: "warner"
           name: "Warner HD"
         -
-          img: "sony-hd.png"
+          img: "sony"
           name: "Sony HD"
         -
-          img: "tnt-hd.png"
+          img: "tnt"
           name: "Tnt HD"
         -
-          img: "universal-channel-hd.png"
+          img: "universal-channel"
           name: "Universal Channel HD"
         -
-          img: "fox-hd.png"
+          img: "fox-hd"
           name: "Fox HD"
         -
-          img: "fx-hd.png"
+          img: "fx"
           name: "Fx HD"
         -
-          img: "paramount-channel-hd.png"
+          img: "paramount"
           name: "Paramount Channel HD"
         -
-          img: "axn-hd.png"
+          img: "axn"
           name: "AXN HD"
         -
-          img: "megapix-hd.png"
+          img: "megapix"
           name: "Megapix HD"
         -
-          img: "canal-brasil-hd.png"
+          img: "canal-brasil"
           name: "Canal Brasil HD"
         -
-          img: "space-hd.png"
+          img: "space"
           name: "Space HD"
         -
-          img: "cinemax.png"
+          img: "cinemax"
           name: "Cinemax"
         -
-          img: "curta.png"
+          img: "curta"
           name: "Curta!"
         -
-          img: "id.png"
+          img: "id"
           name: "ID"
         -
-          img: "lifetime.png"
+          img: "lifetime"
           name: "Lifetime"
         -
-          img: "studio-universal.png"
+          img: "studio-universal"
           name: "Studio Universal"
         -
-          img: "syfy.png"
+          img: "syfy"
           name: "Syfy"
         -
-          img: "tcm.png"
+          img: "tcm"
           name: "TCM"
     -
       label: "Esportes"
       channels:
         -
-          img: "sportv-hd.png"
+          img: "sportv"
           name: "SporTV HD"
         -
-          img: "sportv2-hd.png"
+          img: "sportv2"
           name: "SporTV 2 HD"
         -
-          img: "sportv3.png"
+          img: "sportv3"
           name: "SporTv 3"
         -
-          img: "fox-sports-hd.png"
+          img: "fox-sports"
           name: "Fox Sports HD"
         -
-          img: "fox-sports2-hd.png"
+          img: "fox-sports-2"
           name: "Fox Sports 2 HD"
         -
-          img: "espn-brasil-hd.png"
+          img: "espn-brasil"
           name: "ESPN Brasil HD"
         -
-          img: "espn-hd.png"
+          img: "espn"
           name: "ESPN HD"
         -
-          img: "espn-mais-hd.png"
+          img: "espn-plus"
           name: "ESPN+ HD"
         -
-          img: "band-sports-hd.png"
+          img: "band-sports"
           name: "Band Sports HD"
         -
-          img: "esporte-interativo-hd.png"
+          img: "esporte-interativo"
           name: "Esporte Interativo HD"
         -
-          img: "esporte-interativo-nordeste-hd.png"
+          img: "esporte-interativo-nordeste"
           name: "Esporte Interativo Nordeste HD"
         -
-          img: "discovery-turbo.png"
+          img: "discovery-turbo"
           name: "Discovery Turbo"
         -
-          img: "off-hd.png"
+          img: "off"
           name: "Off HD"
         -
-          img: "woohoo.png"
+          img: "woohoo"
           name: "Woohoo"
     -
       label: "Infantis & Básicos"
       channels:
         -
-          img: "cartoon-network-hd.png"
+          img: "cartoon-network"
           name: "Cartoon Network HD"
         -
-          img: "discovery-kids-hd.png"
+          img: "discovery-kids"
           name: "Discovery Kids HD"
         -
-          img: "nickelodeon-hd.png"
+          img: "nick"
           name: "Nickelodeon HD"
         -
-          img: "nick-jr.png"
+          img: "nick-jr"
           name: "Nick Jr"
         -
-          img: "disney-channel-hd.png"
+          img: "disney-channel"
           name: "Disney Channel HD"
         -
-          img: "disney-junior.png"
+          img: "disney-jr"
           name: "Disney Junior"
         -
-          img: "disney-xd.png"
+          img: "disney-xd"
           name: "Disney XD"
         -
-          img: "gloob-hd.png"
+          img: "gloob"
           name: "Gloob HD"
         -
-          img: "boomerang.png"
+          img: "boomerang"
           name: "Boomerang"
         -
-          img: "tooncast.png"
+          img: "tooncast"
           name: "Tooncast"
         -
-          img: "baby-tv.png"
+          img: "baby-tv"
           name: "Baby TV"
         -
-          img: "tv-ra-tim-bum.png"
+          img: "tv-ra-tim-bum"
           name: "TV Rá Tim Bum"
         -
-          img: "canal-oi.png"
+          img: "canal-oi"
           name: "Canal Oi"
         -
-          img: "polishop.png"
+          img: "polishop"
           name: "Polishop"
         -
-          img: "shoptime.png"
+          img: "shoptime"
           name: "Shoptime"
         -
-          img: "tv-novo-tempo.png"
+          img: "tv-novo-tempo"
           name: "Tv Novo Tempo"
         -
-          img: "rede-genesis.png"
+          img: "rede-genesis"
           name: "Rede Gênesis"
         -
-          img: "rede-super.png"
+          img: "rede-super"
           name: "Rede Super"
         -
-          img: "terra-viva.png"
+          img: "terra-viva"
           name: "Terra Viva"
     -
       label: "Notícias & Cultura"
       channels:
         -
-          img: "globonews-hd.png"
+          img: "globo-news"
           name: "GloboNews HD"
         -
-          img: "record-news.png"
+          img: "record-news"
           name: "Record News"
         -
-          img: "band-news.png"
+          img: "band-news"
           name: "BandNews"
         -
-          img: "bbc-hd.png"
+          img: "bbc"
           name: "BBC HD"
         -
-          img: "bloomberg.png"
+          img: "bloomberg"
           name: "Bloomberg"
         -
-          img: "cnn-en-espanol.png"
+          img: "cnn-en-espanol"
           name: "CNN en Español"
         -
-          img: "cnn-internacional.png"
+          img: "cnn"
           name: "CNN Internacional"
         -
-          img: "climatempo.png"
+          img: "climatempo"
           name: "Climatempo"
         -
-          img: "discovery-channel-hd.png"
+          img: "discovery-channel"
           name: "Discovery Channel HD"
         -
-          img: "discovery-civilization.png"
+          img: "discovery-civilization"
           name: "Discovery Civilization"
         -
-          img: "discovery-science.png"
+          img: "discovery-science"
           name: "Discovery  Science"
         -
-          img: "discovery-theater-hd.png"
+          img: "discovery-theater"
           name: "Discovery Theater HD"
         -
-          img: "history-channel-hd.png"
+          img: "history-channel"
           name: "History Channel HD"
         -
-          img: "history-channel-2-hd.png"
+          img: "history-channel-2"
           name: "History Channel 2 HD"
         -
-          img: "national-geographic-hd.png"
+          img: "national-geographic-channel"
           name: "National Geographic HD"
         -
-          img: "natgeo-wild-hd.png"
+          img: "nat-geo-wild"
           name: "Nat Geo Wild HD"
         -
-          img: "animal-planet.png"
+          img: "animal-planet"
           name: "Animal Planet"
         -
-          img: "arte-1.png"
+          img: "arte-1"
           name: "Arte1"
         -
-          img: "futura.png"
+          img: "futura"
           name: "Futura"
         -
-          img: "canal-rural.png"
+          img: "canal-rural"
           name: "Canal Rural"
         -
-          img: "sesc-tv.png"
+          img: "sesc-tv"
           name: "SESC TV"
     -
       label: "Variedades"
       channels:
         -
-          img: "gnt-hd.png"
+          img: "gnt"
           name: "GNT HD"
         -
-          img: "multishow-hd.png"
+          img: "multishow"
           name: "Multishow HD"
         -
-          img: "canal-viva-hd.png"
+          img: "canal-viva"
           name: "Canal Viva HD"
         -
-          img: "mtv-hd.png"
+          img: "mtv"
           name: "MTV HD"
         -
-          img: "globosat-hd.png"
+          img: "globosat"
           name: "Globosat HD"
         -
-          img: "home-health-hd.png"
+          img: "home-health"
           name: "Home & Health HD"
         -
-          img: "a-e-hd.png"
+          img: "a-e"
           name: "A&E HD"
         -
-          img: "bis-hd.png"
+          img: "bis"
           name: "Bis HD"
         -
-          img: "byu.png"
+          img: "byu-tv"
           name: "BYU"
         -
-          img: "chef-tv.png"
+          img: "chef-tv"
           name: "Chef TV"
         -
-          img: "comedy-central-hd.png"
+          img: "comedy-central"
           name: "Comedy Central HD"
         -
-          img: "e.png"
+          img: "e"
           name: "E!"
         -
-          img: "fox-life.png"
+          img: "fox-life"
           name: "Fox Life"
         -
-          img: "glitz.png"
+          img: "glitz"
           name: "Glitz"
         -
-          img: "isat.png"
+          img: "isat"
           name: "I.SAT"
         -
-          img: "mix-tv.png"
+          img: "mix-tv"
           name: "Mix TV"
         -
-          img: "play-tv.png"
+          img: "play-tv"
           name: "Play TV"
         -
-          img: "tbs-hd.png"
+          img: "tbs"
           name: "TBS HD"
         -
-          img: "tlc-hd.png"
+          img: "tlc"
           name: "TLC HD"
         -
-          img: "tru-tv-hd.png"
+          img: "tru-tv"
           name: "Tru TV HD"
         -
-          img: "vh1-mega-hits.png"
+          img: "vh1-mega-hits"
           name: "VH1 Mega Hits"
   audio:
     label: "Canais de Áudio"
@@ -443,49 +443,49 @@ channelsgroup:
       action: "Adicionar"
       itens:
         -
-          img: "telecine.png"
+          img: "telecine"
           name: "Telecine"
           desc:
             - "6 Canais Telecine em HD"
             - "Filmes inéditos e clássicos"
         -
-          img: "hbo.png"
+          img: "hbo"
           name: "HBO"
           desc:
             - "10 Canais HBO em HD"
             - "Filmes e Séries"
         -
-          img: "premiere.png"
+          img: "premiere"
           name: "Premiere"
           desc:
             - "Premiere"
             - "Brasileirão e Estaduais"
         -
-          img: "combate.png"
+          img: "combate"
           name: "Combate"
           desc:
             - "Combate"
             - "UFC, MMA, Luta Livre e Boxe"
         -
-          img: "playboy-tv.png"
+          img: "playboy-tv"
           name: "Playboy TV"
           desc:
             - "Playboy TV"
             - "Conteúdo adulto explícito"
         -
-          img: "sexy-hot.png"
+          img: "sexy-hot"
           name: "Sexy Hot"
           desc:
             - "Sexy Hot"
             - "Conteúdo adulto brasileiro"
         -
-          img: "sexy-prive.png"
+          img: "sexy-prive"
           name: "Sex Privê"
           desc:
             - "Sex Privê"
             - "Filmes e séries adultas"
         -
-          img: "canais-internacionais.png"
+          img: "canais-internacionais"
           name: "Canais Internacionais"
           desc:
             - "Canais Internacionais"
