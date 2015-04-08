@@ -4,55 +4,61 @@
   display inline-block
   position relative
   text-align left
-  +below(414px)
+  +below(415px)
     transform translateX(remify(15px))
 
   .price
     &-prefix
       line-height remify(13px)
       display block
-      +above(300px)
+      +below(415px)
         color: $black
-      +above(414px)
+      +above(415px)
         color: $black
-      +above(768px)
+      +above(767px)
         color: $gray
 
     &-value
       font-family oiTitle, sans-serif
-      +above(300px)
+      +below(415px)
         font-size remify(43px)
         line-height remify(43px)
-      +above(414px)
+      +above(415px)
         font-size remify(72px)
         line-height remify(99px)
-      +above(768px)
+      +above(767px)
         font-size remify(97px)
         line-height remify(86px)
 
     &-cents
       display inline-block
       font-family oiTitle, sans-serif
-      +above(300px)
+      +below(415px)
         font-size remify(23px)
         transform: translateY(remify(-14px))
-      +above(414px)
+      +above(415px)
         font-size remify(34px)
         transform: translateY(remify(-27px))
-      +above(768px)
+      +above(767px)
         font-size remify(48px)
         transform: translateY(remify(-34px))
 
     &-sufix
       display inline-block
       text-transform uppercase
-      +above(300px)
+      +below(415px)
         font-size remify(11px)
         transform: translateX(remify(-17px))
-      +above(414px)
+        margin-left remify(-13px)
+      +below(440px)
+        transform: translateX(remify(-20px))
+        margin-left remify(-20px)
+      +below(470px)
+        margin-left remify(-10px)
+      +above(415px)
         font-size remify(14px)
         transform: translateX(remify(-37px))
-      +above(768px)
+      +above(767px)
         font-size remify(24px)
         transform: translateX(remify(-64px))
 
