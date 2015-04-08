@@ -22,6 +22,7 @@ var appConfig = (function() {
       jade: './app/views/**/*.jade',
       partials: './app/views/_partials/**/*.jade',
       stylus: './app/assets/styles/**/*.styl',
+      scripts: './app/assets/scripts/**/*.js',
       components: './app/assets/styles/components/**/*.styl',
       fonts: './app/assets/fonts/**/*.{eot,svg,ttf,woff,woff2}',
       images: './app/assets/images/**/*.{jpg,jpeg,png,gif,svg}',

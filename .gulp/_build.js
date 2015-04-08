@@ -1,16 +1,17 @@
 'use strict';
 
-var gulp   = require('gulp');
-var $      = require('gulp-load-plugins')();
+var gulp         = require('gulp');
+var $            = require('gulp-load-plugins')();
 $.mainBowerFiles = require('main-bower-files');
-var config = require('./appConfig');
-var helpers= require('./helpers');
-var logdown= require('logdown')
-var msg    = new logdown({prefix: 'Message:'})
+var config       = require('./appConfig');
+var helpers      = require('./helpers');
 var jeet         = require('jeet');
 var koutoSwiss   = require('kouto-swiss');
 var rupture      = require('rupture');
-var runSequence = require('run-sequence');
+var runSequence  = require('run-sequence');
+var pkg          = require('../package.json');
+var Logdown      = require('logdown')
+var logger       = new Logdown({prefix: 'GULP build'})
 
 var data;
 
@@ -152,10 +153,25 @@ gulp.task('build-manifest', function(){
     .pipe(gulp.dest(config.path.dist.root));
 });
 
+gulp.task('build-scripts', function(){
+  gulp.src(config.path.src.scripts)
+    .pipe($.plumber())
+    .pipe($.changed(config.path.dist.scripts))
+    .pipe($.filter(helpers.filterPartials))
+    .pipe($.concat('main-' + pkg.version + '.js'))
+    .pipe($.uglify({
+      mangle: false
+    }))
+    .pipe(gulp.dest(config.path.dist.scripts))
+    .pipe($.gzip())
+    .pipe(gulp.dest(config.path.dist.scripts));
+});
+
 gulp.task('build', function() {
   runSequence(
     'build-data',
     'build-bower',
+    'build-scripts',
     'build-jade',
     'build-stylus',
     'build-images',
