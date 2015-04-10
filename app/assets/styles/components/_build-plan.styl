@@ -1,15 +1,47 @@
+@keyframes slidein
+  0%
+    width 0
+    opacity 0
+  100%
+    opacity 1
+    width remify(280px)
+
 .build-plan
   center( remify(371px))
   height remify(62px)
   padding remify(15px) 0
   position relative
   z-index 2
+  line-height remify(40px)
+  text-align center
   +above(415px)
     height remify(70px)
+    center(724px)
+  +above(767px)
+    center( 960px )
+  +above(1023px)
+    center( 1170px)
+
+  span
+    @extend $headline-small
+    animation-count 1
+    animation-delay 2s
+    animation-duration 1s
+    animation-fill-mode forwards
+    animation-name slidein
+    display inline-block
+    height remify(40px)
+    margin-right 0
+    overflow hidden
+    // text-align right
+    white-space nowrap
+    // width remify(280px)
+    width 0
+
+
   ul
     size(remify(170px), remify(40px))
-    display block
-    float left
+    display inline-block
     line-height remify(40px)
     border-right remify(1px) solid $black
     border-left remify(1px) solid $black
@@ -42,8 +74,8 @@
   button
     @extend $button-small
     size(remify(170px), remify(40px))
-    display block
-    float left
+    display inline-block
     line-height remify(36px)
     margin-left remify(30px)
     font-size remify(16px)
+    transform translateY( remify(-14px))
