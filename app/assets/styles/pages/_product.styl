@@ -423,6 +423,27 @@ div.logo-container
     color $gray
     padding remify(25px) 0
     text-align center
+    transition background 300ms ease-out
+    &.added
+      background-color $white
+
+      button.add
+        background-color $greenLight
+        border-color $greenLight
+        color $white
+        svg
+          absoluteTopLeft(12px, 14px)
+          opacity 1
+          // polygon
+          //   fill $white
+
+      button.remove
+        color $grayLight
+        display block
+        margin-top remify(3px)
+        &:hover, &:focus, &:active
+          color $gray
+
     &:last-child
       border-bottom 0
     +below(415px)
@@ -437,13 +458,12 @@ div.logo-container
       float none
       width 100%
       height remify(222px)
-      margin-bottom remify(2px)
       border-bottom remify(1px) solid $grayLight
 
   span
     @extend $line-height-small
     display block
-    height remify(67px)
+    height remify(50px)
     +below(415px)
       font-size remify(11px)
       margin-top remify(8px)
@@ -456,12 +476,30 @@ div.logo-container
       margin-top remify(13px)
 
   button.remove
+    height remify(20px)
+    transition all 200ms ease-out
     background-color transparent
     border none
-    color $gray
+    cursor pointer
+    color $grayLighter
+    display none
+    text-align center
+    width 40%
+    margin 0 auto
+    margin-top remify(-20px)
+    position relative
+    z-index 1
+    &:focus
+      outline none
 
   button.add
     @extend $button-small
+    background-color $white
+    transition all 400ms ease-out
+    position relative
+    z-index 2
+    &:focus
+      outline none
     margin 0 auto
     +below(415px)
       display none
@@ -472,6 +510,18 @@ div.logo-container
       width 77%
     +above(1023px)
       width 64%
+
+    svg
+      absoluteTopLeft(12px, 34px)
+      width remify(27px)
+      opacity 0
+      transition all 200ms ease-out
+      // margin-left remify(-27px)
+      // margin 0px 0px 0 remify(-27px)
+      display inline-block
+      // transform translate( remify(-6px), remify(6px))
+      polygon
+        fill $white
 
     &.spot
       margin-right remify(4px)
