@@ -7,6 +7,7 @@ var helpers= require('./helpers');
 
 gulp.task('deploy-ghp', function() {
   return gulp.src(config.path.dist.root + '**/*')
+    .pipe($.plumber({errorHandler: helpers.notifyError}))
     .pipe($.replace('href=/', 'href=/oi/'))
     .pipe($.replace('href="/', 'href="/oi/'))
     .pipe($.replace('src="/', 'src="/oi/'))

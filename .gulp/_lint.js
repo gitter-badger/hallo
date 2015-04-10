@@ -31,7 +31,7 @@ var jsHintErrorReporter = map(function (file, cb) {
 
 gulp.task('lint-scripts', function() {
   gulp.src(config.path.src.scripts)
-    .pipe($.plumber())
+    .pipe($.plumber({errorHandler: helpers.notifyError}))
     .pipe($.jshint('.jshintrc', {fail: true}))
     .pipe($.jshint.reporter(stylish))
     .pipe(jsHintErrorReporter)

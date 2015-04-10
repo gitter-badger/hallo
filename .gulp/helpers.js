@@ -4,6 +4,7 @@ var helpers = (function() {
   var fs   = require('fs');
   var yaml = require('js-yaml');
   var _    = require('lodash');
+  var notify    = require('gulp-notify');
 
   var _public = {};
   var _private = {};
@@ -28,6 +29,17 @@ var helpers = (function() {
     });
     return dataMerged;
   }
+
+  _public.notifyError = function(err) {
+    notify.onError({
+      title:    "Gulp",
+      subtitle: "Failure!",
+      message:  "Error: <%= error.message %>",
+      sound:    "Beep"
+    })(err);
+    this.emit('end');
+  };
+
 
   _public.filterPartials = function(file) {
     return !/\/_/.test(file.path);

@@ -8,7 +8,7 @@ var helpers= require('./helpers');
 gulp.task('build-docs', function() {
   var data = helpers.loadData();
   gulp.src(config.path.docs.jade)
-    .pipe($.plumber())
+    .pipe($.plumber({errorHandler: helpers.notifyError}))
     // .pipe($.changed(config.path.docs.jade))
     .pipe($.jade({ locals: data }))
     .pipe($.minifyHtml())
