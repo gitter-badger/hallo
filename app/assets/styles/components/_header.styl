@@ -21,9 +21,11 @@ header
   h1
     color $white
     word-spacing remify(-7px)
+    padding-left remify(20px)
     +below(415px)
       @extend $title-big
-      padding-top remify(165px)
+      // padding-top remify(165px)
+      padding-top 6vh
       text-align center
     +above(415px)
       @extend $title-huge
@@ -33,3 +35,5 @@ header
       text-align left
     +above(767px)
       margin-top remify(34px)
+    +above(1200px)
+      padding-left 0
