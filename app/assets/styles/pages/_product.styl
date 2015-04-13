@@ -33,8 +33,8 @@ html, body
   // margin-bottom remify(2px)
   margin-top remify(196px)
   +below(415px)
-    margin-top remify(162px)
-    border-top remify(3px) solid $green
+    margin-top remify(125px)
+    border-top remify(2px) solid $green
   +above(415px)
     margin-top remify(184px)
     padding remify(10px)
@@ -57,8 +57,7 @@ html, body
     text-align center
     text-decoration none
     +below(415px)
-      line-height remify(76px)
-      font-size remify(21px)
+      line-height remify(60px)
     +above(415px)
       line-height remify(68px)
     +above(767px)
@@ -76,7 +75,7 @@ html, body
   overflow hidden
   word-spacing remify(-2px)
   +below(415px)
-    height remify(80px)
+    height remify(62px)
     padding 0 remify(25px)
     border-bottom 1px solid $gray
   +above(415px)
@@ -99,8 +98,8 @@ html, body
     letter-spacing remify(-1px)
     +below(415px)
       circleSeparator(6px, 4px, 5px)
-      line-height remify(80px)
-      font-size remify(21px)
+      line-height remify(62px)
+      font-size remify(16px)
     +above(415px)
       circleSeparator(11px, 8px, 14px)
       set-font-size(28px)
@@ -141,6 +140,7 @@ h4
   +below(415px)
     border-bottom remify(1px) solid transparent
     text-align left
+    font-size remify(14px)
     text-indent remify(30px)
   +above(415px)
     height remify(70px)
@@ -169,6 +169,10 @@ div.logo-container
   display inline-block
   zoom .43
   transform translate(0, 50px)
+  +below(415px)
+    zoom .40
+    transform translate(-55px, 33px)
+
   +retina()
     background-image url(../images/sprite-logos-2x.png)
   +above(2000px)
@@ -185,8 +189,8 @@ div.logo-container
 .channels-pack
   +below(415px)
     width 100%
-    height remify(173px)
-    padding-top remify(40px)
+    height remify(135px)
+    padding-top remify(25px)
   +above(415px)
     width 100%
     height remify(151px)
@@ -197,7 +201,7 @@ div.logo-container
 
   & > div
     +below(415px)
-      height remify(113px)
+      height remify(87px)
       width 100%
       overflow auto
       margin-left remify(35px)
@@ -218,6 +222,7 @@ div.logo-container
   ul
     overflow hidden
     +below(415px)
+      height remify(87px)
       width 1000%
     +above(415px)
       width 1000%
@@ -236,7 +241,7 @@ div.logo-container
     color $gray
     +below(415px)
       float left
-      width 25vw
+      width 19vw
     +above(415px)
       float left
       width 18vw
@@ -276,6 +281,8 @@ div.logo-container
       &:hover
         border 1px solid $purple
         color $purple
+      +below(415px)
+        padding-top 0
 
     span
       display block
@@ -285,7 +292,7 @@ div.logo-container
       transform translateY(-10%)
       line-height remify(13px)
       +below(415px)
-        margin-top remify(10px)
+        margin remify(-14px) 0 0 remify(-37px)
       +above(415px)
         margin-top remify(10px)
       +above(767px)
@@ -303,10 +310,10 @@ div.logo-container
 .channels-audio, .channels-radio
   background-color $white
   +below(415px)
-    padding-bottom remify(40px)
-    margin-left remify(30px)
     border-bottom 1px dashed $grayLight
-    margin-bottom remify(44px)
+    margin remify(32px) 0 0 remify(20px)
+    padding-bottom remify(53px)
+    border-bottom remify(1px) dashed $grayLight
   +above(415px)
     padding-bottom remify(40px)
     margin-left remify(30px)
@@ -374,6 +381,7 @@ div.logo-container
   margin-right 0
   +below(415px)
     width 100%
+    padding-top remify(25px)
   +above(415px)
     width 100%
   +above(767px)
@@ -394,7 +402,7 @@ div.logo-container
     +below(415px)
       overflow auto
       padding-left remify(30px)
-      height remify(130px)
+      height remify(100px)
     +above(415px)
       overflow auto
       padding-left remify(30px)
@@ -443,13 +451,18 @@ div.logo-container
         margin-top remify(3px)
         &:hover, &:focus, &:active
           color $gray
+    &:nth-last-of-type(-n+2)
+      +below(415px)
+        display none
 
     &:last-child
       border-bottom 0
     +below(415px)
+      padding 0
       float left
       width 21vw
-      height remify(125px)
+      height remify(100px)
+      margin-right 7vw
     +above(415px)
       float left
       width 21vw
@@ -465,8 +478,10 @@ div.logo-container
     display block
     height remify(50px)
     +below(415px)
-      font-size remify(11px)
-      margin-top remify(8px)
+      font-size remify(10px)
+      margin-top remify(-17px)
+      height remify(33px)
+      overflow hidden
     +above(415px)
       font-size remify(11px)
       margin-top remify(8px)
@@ -573,6 +588,8 @@ div.logo-container
 
   .channels-search
     display block
+    +below(415px)
+      text-indent remify(20px)
     +above(415px)
       column(50/100, gutter: 0)
     +above(767px)
@@ -582,6 +599,8 @@ div.logo-container
     // ugh!
     text-align right !important
     column(30/100, gutter: 0)
+    +below(415px)
+      display none
     +above(415px)
       display none
       margin-top remify(18px)
@@ -594,6 +613,12 @@ div.logo-container
 
 .img
   height remify(679px)
+  +below(415px)
+    height 25vh
+    margin-top remify(90px)
+    div
+      height 25vh
+
   +above(415px)
     margin-top remify(206px)
   +above(767px)
@@ -608,6 +633,9 @@ div.logo-container
 .channels-detail-area
   border-bottom 1px solid $grayLight
   overflow hidden
+  +below(415px)
+    margin-top remify(38px)
+    border-bottom 1px solid $black
   +above(415px)
     margin-top remify(58px)
     padding-bottom remify(10px)
@@ -621,11 +649,12 @@ div.logo-container
     margin-top remify(68px)
 
 .channel-detail
-  border-top 1px solid $grayLight
+  border-top remify(1px) solid $grayLight
   color $black
   +above(415px)
     column(1/2, 0, 2)
     margin-bottom remify(75px)
+    border-bottom remify(2px) solid $grayLight
   +above(767px)
     column(1/4, 0, 4, 2)
     margin-bottom 0
@@ -637,12 +666,19 @@ div.logo-container
     @extend $title-eyebrow
     color $black
     line-height remify(50px)
+    +below(415px)
+      line-height remify(70px)
+      text-indent remify(20px)
+      color $green
+      text-transform none
     +above(415px)
       margin-top remify(10px)
     +above(767px)
       margin-top 0
   ul
     margin-top remify(32px)
+    +below(415px)
+      display none
   li
     margin-bottom remify(30px)
     +above(767px)
@@ -714,6 +750,8 @@ div.logo-container
   @extend $text-regular
   line-height remify(149px)
   text-align center
+  +below(415px)
+    display none
   +above(415px)
     line-height remify(132px)
   +above(767px)
