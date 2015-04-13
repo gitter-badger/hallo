@@ -51,6 +51,7 @@ gulp.task('build-jade',['build-data'], function() {
       mangle: true
     }))
     // .pipe($.if(config.isProd, $.minifyHtml()))
+    .pipe(gulp.dest(config.path.dist.root))
     .pipe($.if(config.isProd, $.gzip()))
     .pipe(gulp.dest(config.path.dist.root));
 });
@@ -123,6 +124,7 @@ gulp.task('build-stylus', function () {
     .pipe($.minifyCss())
     .pipe($.csso())
     .pipe($.if(!config.isProd, $.sourcemaps.write('.')))
+    .pipe(gulp.dest(config.path.dist.css))
     .pipe($.if(config.isProd, $.gzip()))
     .pipe(gulp.dest(config.path.dist.css));
 });
