@@ -1,0 +1,18 @@
+{
+  "meta": {},
+  "data": {
+    "name": "Warner Channel HD",
+    "slug": "warner-channel",
+    "logo": "/assets/images/demo/logo-warner-white.png",
+    "img": "/assets/images/demo/modal-tv.jpg",
+    "channels": {
+      "sd": "64",
+      "hd": false
+    },
+    "desc": "Aqui você encontra todos os maiores sucessos produzidos pelos estúdios da Warner Bros. Dos filmes mais consagrados às séries mais populares. Diversão Garantida para a família.",
+    "availability": [
+      "TV Mix HD (à partir de R$ 69,90)",
+      "TV Total HD (à partir de R$ 89,90)"
+    ]
+  }
+}
