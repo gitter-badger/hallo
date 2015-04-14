@@ -19,6 +19,7 @@
   ],
   "dependencies": {
     "velocity": "~1.2.2",
-    "requirejs": "~2.1.17"
+    "requirejs": "~2.1.17",
+    "riot": "~2.0.14"
   }
 }
