@@ -197,19 +197,22 @@ gulp.task('build-templates', function(){
   gulp.src(config.path.src.tags)
     .pipe($.plumber({errorHandler: helpers.notifyError}))
     .pipe($.changed(config.path.dist.tags))
+    .pipe($.flatten())
     .pipe($.riot({
       compact: true,
-      // template: 'jade'
+      template: 'jade'
     }))
     .pipe(gulp.dest(config.path.dist.tags))
     .pipe($.gzip())
     .pipe(gulp.dest(config.path.dist.tags))
 });
 
+
 gulp.task('build', function() {
   runSequence(
     'build-data',
     'build-bower',
+    'build-templates',
     'build-scripts',
     'build-jade',
     'build-stylus',
