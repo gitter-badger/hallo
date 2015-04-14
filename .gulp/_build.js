@@ -141,23 +141,25 @@ gulp.task('build-bower', function() {
     .pipe(((!config.isProd) ? $.uglify({
       mangle: false
     }) : $.util.noop()))
-    .pipe(gulp.dest(config.path.dist.scripts))
+    .pipe(gulp.dest(config.path.dist.scripts + 'vendor'))
     .pipe($.gzip())
-    .pipe(gulp.dest(config.path.dist.scripts))
+    .pipe(gulp.dest(config.path.dist.scripts + 'vendor'))
     .pipe(filterRequire.restore())
 
     .pipe(filterJs)
-    .pipe($.concat('vendor' + pkg.version + '.js'))
+    // .pipe($.concat('vendor' + pkg.version + '.js'))
+    // .pipe($.concat('vendor.js'))
     .pipe(((!config.isProd) ? $.uglify({
       mangle: false
     }) : $.util.noop()))
-    .pipe(gulp.dest(config.path.dist.scripts))
+    .pipe(gulp.dest(config.path.dist.scripts + 'vendor'))
     .pipe($.gzip())
-    .pipe(gulp.dest(config.path.dist.scripts))
+    .pipe(gulp.dest(config.path.dist.scripts + 'vendor'))
     .pipe(filterJs.restore())
 
     .pipe(filterCss)
-      .pipe($.concat('vendor' + pkg.version + '.css'))
+      // .pipe($.concat('vendor' + pkg.version + '.css'))
+      .pipe($.concat('vendor.css'))
       .pipe($.csso())
       .pipe(gulp.dest(config.path.dist.css))
       .pipe($.gzip())
@@ -189,6 +191,19 @@ gulp.task('build-scripts', function(){
     .pipe(gulp.dest(config.path.dist.scripts))
     .pipe($.gzip())
     .pipe(gulp.dest(config.path.dist.scripts));
+});
+
+gulp.task('build-templates', function(){
+  gulp.src(config.path.src.tags)
+    .pipe($.plumber({errorHandler: helpers.notifyError}))
+    .pipe($.changed(config.path.dist.tags))
+    .pipe($.riot({
+      compact: true,
+      // template: 'jade'
+    }))
+    .pipe(gulp.dest(config.path.dist.tags))
+    .pipe($.gzip())
+    .pipe(gulp.dest(config.path.dist.tags))
 });
 
 gulp.task('build', function() {
