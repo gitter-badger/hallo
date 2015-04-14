@@ -67,7 +67,8 @@
     "require-dir": "~0.1.0",
     "run-sequence": "^1.0.2",
     "rupture": "~0.6.1",
-    "gulp-riot": "~0.2.12"
+    "gulp-riot": "~0.2.12",
+    "gulp-flatten": "0.0.4"
   },
   "dependencies": {}
 }
