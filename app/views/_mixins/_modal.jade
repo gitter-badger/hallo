@@ -1,13 +1,33 @@
 mixin modal(data)
   .modal(aria-hidden="false" role="dialog" aria-labelledby="modal-title")
-    button.modal-close fechar
-    .modal-container
+    button.modal-close
+      include ../../assets/images/icons/close.svg
+      | Fechar
+    .modal-container.indisponiblex
       .col-info
         #modal-title Informações sobre o canal warner 
         .logo
-          div(style='background-image:url("/assets/images/demo/logo-warner-white.png")')
+          .col-container(style='background-image:url("/assets/images/demo/logo-warner-white.png")')
         .desc
-          h3.name Warner Channel HD
-          .channel Canal 64
-          .info Aqui você encontra todos os maiores sucessos produzidos pelos estúdios da Warner Bros. Dos filmes mais consagrados às séries mais populares. Diversão Garantida para a família.
+          .indisponible-info
+            h3 Indisponível nesse plano
+            .col-container
+              p Disponível nos planos:
+              ul
+                li
+                  a TV Mix HD (à partir de R$ 69,90)
+                li
+                  a TV Total HD (à partir de R$ 89,90)
+          .channel-info
+            .col-container
+              h3.name Warner Channel HD
+              .channel Canal 64
+              .info 
+                | Aqui você encontra todos os maiores sucessos produzidos pelos estúdios da Warner Bros. Dos filmes mais consagrados às séries mais populares. Diversão Garantida para a família.
+                | Aqui você encontra todos os maiores sucessos produzidos pelos estúdios da Warner Bros. Dos filmes mais consagrados às séries mais populares. Diversão Garantida para a família.
+                | Aqui você encontra todos os maiores sucessos produzidos pelos estúdios da Warner Bros. Dos filmes mais consagrados às séries mais populares. Diversão Garantida para a família.
+      
       .col-img(style='background-image:url("/assets/images/demo/modal-tv.jpg");')
+        div
+          span.name-img Gotham
+          span.desc-img Dom às 20:30
