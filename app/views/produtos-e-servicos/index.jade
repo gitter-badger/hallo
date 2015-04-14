@@ -1,7 +1,7 @@
 include ../_partials/header.jade
 
 body.product
-  section.container(aria-hidden="true")
+  section.container(aria-hidden="false")
 
     +buildPlan()
 
@@ -71,7 +71,7 @@ body.product
                     ul(style="width: " + 26 * group.channels.length +"vw")
                       each channel in group.channels
                         li
-                          a(href="#" class=channel.color)
+                          a(href=channel.slug class=channel.color)
                             .logo-container
                               div(class='s-'+channel.img + " s-logo ")
                             span=channel.name
@@ -157,4 +157,4 @@ body.product
   +modal()
 
   //- script(src='/assets/scripts/main-0.0.0.js')
-  script(src='/assets/scripts/require.js' data-main="/assets/scripts/main" async)
+  script(src='/assets/scripts/vendor/require.js' data-main="/assets/scripts/main" async)
