@@ -6,8 +6,10 @@ require([], function() {
 
   // Crossroads?
 
-  require(['channel-addons'], function(addons){
-    addons.init();
+  var path = window.location.pathname.split('/').slice(1);
+
+  require( ['pages/' + path[0]], function(page){
+    page.init();
   });
 
 });
