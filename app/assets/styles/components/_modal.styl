@@ -1,7 +1,8 @@
 .modal
+  display none
   font-family $fontTextRegular
   // background-image url(tv-modal.jpg)
-  background-color $green
+  // background-image url(modal-tv-indisponivel.jpg)
   position fixed
   top 0
   left 0
@@ -9,68 +10,131 @@
   height 100vh
   z-index 2
 
+  .modal-container
+    background-color $green
+    overflow hidden
+    &.indisponible
+      background-color $gray
+      .indisponible-info
+        display block
+      .channel-info
+        margin-top 0
+      .info
+        height 19vh
+      .col-img
+        filter grayscale(100%)
+
   #modal-title
     @extend $visuallyhidden
 
   .modal-close
     square( remify(30px) )
     absoluteTopRight(remify(30px), remify(30px))
-    display block
+    background-color transparent
+    border none
     cursor pointer
-
+    display block
+    padding 0
+    z-index 3
+    &:hover
+      opacity .7
+    svg
+      square(remify(30px))
+      line
+        stroke $white
 
   .col-info
     width 33.3333%
     float left
     height 100vh
     color $white
+    position relative
+    z-index 2
     +at('xs')
       width 100%
     +at('s')
       width 100%
 
   .logo
-    // height remify(230px)
-    // margin-bottom remify(110px)
-    +at('xs')
-      height 35vh
-    +at('s')
-      height 35vh
-    +from-width('m')
-      height 50vh
+    height 24vh
+    margin-top 10vh
 
     div
       height 100%
       background-repeat no-repeat
-      background-position remify(100px) remify(100px)
-      background-size 8rem
-      +at('xs')
-        background-position remify(20px) center
-      +at('m')
-        background-position remify(30px) center
+      // background-position remify(100px) remify(100px)
+      // background-size 8rem
+      background-size 24vh
+      // +at('xs')
+      //   background-position remify(20px) center
+      // +at('m')
+      //   background-position remify(30px) center
 
   .desc
-    padding-left remify(100px)
+    @extend $text-regular
+    height 66vh
+
+  .col-container
+    // margin-left remify(100px)
+    // width remify(255px)
     +at('xs')
-      height 65vh
-      padding 0 remify(30px) remify(30px) remify(30px)
+      margin-left 4%
+      width 84%
     +at('s')
-      height 65vh
-      padding 0 remify(30px) remify(30px) remify(30px)
+      margin-left 10%
+      width 78%
     +at('m')
-      padding remify(40px) remify(30px) remify(60px) remify(30px)
-    +from-width('m')
-      height 50vh
-      padding remify(40px) remify(70px) remify(100px) remify(100px)
+      margin-left 10%
+      width 78%
+    +from-width('l')
+      width 56%
+      margin-left 22%
+
+  .indisponible-info
+    display none
+    h3
+      background-color $grayDark
+      // line-height 50px
+      line-height 6vh
+      padding-left remify(100px)
+    .col-container
+      // margin-top remify(43px)
+      // height remify(120px)
+      margin-top 6vh
+      height 15vh
+      border-bottom remify(1px) solid $grayLight
+    p
+      height 3vh
+    ul
+      // margin-top remify(5px)
+      line-height remify(30px)
+    li
+      text-decoration underline
+
+  .channel-info
+    height 35vh
+    margin-top 21vh
+    +below('s')
+      height 55vh
+      margin-top 1vh
 
   .name
     @extend $title-light-small
-    margin-bottom remify(5px)
+    margin-top 6vh
+    height 4vh
+
   .channel
     color $black
+    height 3vh
+
   .info
-    margin-top remify(33px)
+    margin-top 4vh
+    height 30vh
     line-height remify(30px)
+    overflow auto
+    +below('s')
+      height 40vh
+
   .col-img
     width 66.666%
     float left
@@ -79,3 +143,18 @@
     background-size cover
     background-repeat no-repeat
     // background white
+    position relative
+    z-index 1
+
+    div
+      absoluteBottomRight(remify(30px), remify(30px))
+      display block
+      text-align right
+      color $white
+
+    span
+      display block
+      &.name-img
+        @extend $text-bold-small
+      &.desc-img
+        @extend $text-small
