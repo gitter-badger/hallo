@@ -1,7 +1,7 @@
 include ../_partials/header.jade
 
 body.product
-  section.container
+  section.container(aria-hidden="true")
 
     +buildPlan()
 
@@ -153,6 +153,8 @@ body.product
             a(href="") Compre com a ajuda de um especialista.
 
     +footer(footer)
+
+  +modal()
 
   //- script(src='/assets/scripts/main-0.0.0.js')
   script(src='/assets/scripts/require.js' data-main="/assets/scripts/main" async)
