@@ -12,86 +12,107 @@ channelsgroup:
       channels:
         -
           img: "globo"
+          slug: "globo"
           name: "Globo HD"
           color: ""
         -
           img: "record"
+          slug: "record"
           name: "Record HD"
           color: "dark"
         -
           img: "sbt"
+          slug: "sbt"
           name: "SBT HD"
           color: "dark"
         -
           img: "band"
+          slug: "band"
           name: "Band HD"
           color: ""
         -
           img: "rede-tv"
+          slug: "rede-tv"
           name: "Rede TV"
           color: "dark"
         -
           img: "tv-cultura"
+          slug: "tv-cultura"
           name: "Tv Cultura"
           color: ""
         -
           img: "aparecida"
+          slug: "aparecida"
           name: "Aparecida"
           color: "dark"
         -
           img: "cancao-nova"
+          slug: "cancao-nova"
           name: "Canção Nova"
           color: ""
         -
           img: "cnt"
+          slug: "cnt"
           name: "CNT"
           color: "dark"
         -
           img: "ideal-tv"
+          slug: "ideal-tv"
           name: "Ideal TV"
           color: "dark"
         -
           img: "nbr"
+          slug: "nbr"
           name: "NBR"
           color: "dark"
         -
           img: "rbi-tv"
+          slug: "rbi-tv"
           name: "RBI TV"
           color: "dark"
         -
           img: "rede-brasil"
+          slug: "rede-brasil"
           name: "Rede Brasil"
           color: "dark"
         -
           img: "rede-vida"
+          slug: "rede-vida"
           name: "Rede Vida"
           color: ""
         -
           img: "rit"
+          slug: "rit"
           name: "RIT"
           color: "dark"
         -
           img: "tv-diario"
+          slug: "tv-diario"
           name: "TV Diário"
           color: "dark"
         -
           img: "tv-brasil"
+          slug: "tv-brasil"
           name: "TV Brasil"
           color: "dark"
         -
           img: "tv-camara"
+          slug: "tv-camara"
           name: "TV Câmara"
           color: "dark"
         -
           img: "tv-escola"
+          slug: "tv-escola"
           name: "TV Escola"
           color: "dark"
         -
           img: "tv-justica"
+          slug: "tv-justica"
           name: "TV Justiça"
           color: "dark"
         -
           img: "tv-senado"
+          slug: "tv-senado"
           name: "TV Senado"
           color: ""
     -
@@ -99,74 +120,92 @@ channelsgroup:
       channels:
         -
           img: "warner"
+          slug: "warner"
           name: "Warner HD"
           color: "dark"
         -
           img: "sony"
+          slug: "sony"
           name: "Sony HD"
           color: "dark"
         -
           img: "tnt"
+          slug: "tnt"
           name: "Tnt HD"
           color: ""
         -
           img: "universal-channel"
+          slug: "universal-channel"
           name: "Universal Channel HD"
           color: "dark"
         -
           img: "fox-hd"
+          slug: "fox-hd"
           name: "Fox HD"
           color: ""
         -
           img: "fx"
+          slug: "fx"
           name: "Fx HD"
           color: ""
         -
           img: "paramount"
+          slug: "paramount"
           name: "Paramount Channel HD"
           color: "dark"
         -
           img: "axn"
+          slug: "axn"
           name: "AXN HD"
           color: "dark"
         -
           img: "megapix"
+          slug: "megapix"
           name: "Megapix HD"
           color: "dark"
         -
           img: "canal-brasil"
+          slug: "canal-brasil"
           name: "Canal Brasil HD"
           color: "dark"
         -
           img: "space"
+          slug: "space"
           name: "Space HD"
           color: "dark"
         -
           img: "cinemax"
+          slug: "cinemax"
           name: "Cinemax"
           color: "dark"
         -
           img: "curta"
+          slug: "curta"
           name: "Curta!"
           color: "dark"
         -
           img: "id"
+          slug: "id"
           name: "ID"
           color: "dark"
         -
           img: "lifetime"
+          slug: "lifetime"
           name: "Lifetime"
           color: ""
         -
           img: "studio-universal"
+          slug: "studio-universal"
           name: "Studio Universal"
           color: "dark"
         -
           img: "syfy"
+          slug: "syfy"
           name: "Syfy"
           color: "dark"
         -
           img: "tcm"
+          slug: "tcm"
           name: "TCM"
           color: "dark"
     -
@@ -174,58 +213,72 @@ channelsgroup:
       channels:
         -
           img: "sportv"
+          slug: "sportv"
           name: "SporTV HD"
           color: "dark"
         -
           img: "sportv2"
+          slug: "sportv2"
           name: "SporTV 2 HD"
           color: "dark"
         -
           img: "sportv3"
+          slug: "sportv3"
           name: "SporTv 3"
           color: "dark"
         -
           img: "fox-sports"
+          slug: "fox-sports"
           name: "Fox Sports HD"
           color: "dark"
         -
           img: "fox-sports-2"
+          slug: "fox-sports-2"
           name: "Fox Sports 2 HD"
           color: "dark"
         -
           img: "espn-brasil"
+          slug: "espn-brasil"
           name: "ESPN Brasil HD"
           color: "dark"
         -
           img: "espn"
+          slug: "espn"
           name: "ESPN HD"
           color: "dark"
         -
           img: "espn-plus"
+          slug: "espn-plus"
           name: "ESPN+ HD"
           color: "dark"
         -
           img: "band-sports"
+          slug: "band-sports"
           name: "Band Sports HD"
           color: "dark"
         -
           img: "esporte-interativo"
+          slug: "esporte-interativo"
           name: "Esporte Interativo HD"
           color: "dark"
         -
           img: "esporte-interativo-nordeste"
+          slug: "esporte-interativo-nordeste"
           name: "Esporte Interativo Nordeste HD"
           color: "dark"
         -
           img: "discovery-turbo"
+          slug: "discovery-turbo"
           name: "Discovery Turbo"
           color: "dark"
         -
           img: "off"
+          slug: "off"
           name: "Off HD"
           color: "dark"
         -
           img: "woohoo"
+          slug: "woohoo"
           name: "Woohoo"
           color: "dark"
     -
@@ -233,78 +286,97 @@ channelsgroup:
       channels:
         -
           img: "cartoon-network"
+          slug: "cartoon-network"
           name: "Cartoon Network HD"
           color: "dark"
         -
           img: "discovery-kids"
+          slug: "discovery-kids"
           name: "Discovery Kids HD"
           color: "dark"
         -
           img: "nick"
+          slug: "nick"
           name: "Nickelodeon HD"
           color: ""
         -
           img: "nick-jr"
+          slug: "nick-jr"
           name: "Nick Jr"
           color: ""
         -
           img: "disney-channel"
+          slug: "disney-channel"
           name: "Disney Channel HD"
           color: "dark"
         -
           img: "disney-jr"
+          slug: "disney-jr"
           name: "Disney Junior"
           color: "dark"
         -
           img: "disney-xd"
+          slug: "disney-xd"
           name: "Disney XD"
           color: "dark"
         -
           img: "gloob"
+          slug: "gloob"
           name: "Gloob HD"
           color: ""
         -
           img: "boomerang"
+          slug: "boomerang"
           name: "Boomerang"
           color: "dark"
         -
           img: "tooncast"
+          slug: "tooncast"
           name: "Tooncast"
           color: ""
         -
           img: "baby-tv"
+          slug: "baby-tv"
           name: "Baby TV"
           color: "dark"
         -
           img: "tv-ra-tim-bum"
+          slug: "tv-ra-tim-bum"
           name: "TV Rá Tim Bum"
           color: ""
         -
           img: "canal-oi"
+          slug: "canal-oi"
           name: "Canal Oi"
           color: "dark"
         -
           img: "polishop"
+          slug: "polishop"
           name: "Polishop"
           color: "dark"
         -
           img: "shoptime"
+          slug: "shoptime"
           name: "Shoptime"
           color: ""
         -
           img: "tv-novo-tempo"
+          slug: "tv-novo-tempo"
           name: "Tv Novo Tempo"
           color: "dark"
         -
           img: "rede-genesis"
+          slug: "rede-genesis"
           name: "Rede Gênesis"
           color: "dark"
         -
           img: "rede-super"
+          slug: "rede-super"
           name: "Rede Super"
           color: "dark"
         -
           img: "terra-viva"
+          slug: "terra-viva"
           name: "Terra Viva"
           color: "dark"
     -
@@ -312,86 +384,107 @@ channelsgroup:
       channels:
         -
           img: "globo-news"
+          slug: "globo-news"
           name: "GloboNews HD"
           color: "dark"
         -
           img: "record-news"
+          slug: "record-news"
           name: "Record News"
           color: "dark"
         -
           img: "band-news"
+          slug: "band-news"
           name: "BandNews"
           color: "dark"
         -
           img: "bbc"
+          slug: "bbc"
           name: "BBC HD"
           color: "dark"
         -
           img: "bloomberg"
+          slug: "bloomberg"
           name: "Bloomberg"
           color: "dark"
         -
           img: "cnn-en-espanol"
+          slug: "cnn-en-espanol"
           name: "CNN en Español"
           color: "dark"
         -
           img: "cnn"
+          slug: "cnn"
           name: "CNN Internacional"
           color: "dark"
         -
           img: "climatempo"
+          slug: "climatempo"
           name: "Climatempo"
           color: ""
         -
           img: "discovery-channel"
+          slug: "discovery-channel"
           name: "Discovery Channel HD"
           color: "dark"
         -
           img: "discovery-civilization"
+          slug: "discovery-civilization"
           name: "Discovery Civilization"
           color: "dark"
         -
           img: "discovery-science"
+          slug: "discovery-science"
           name: "Discovery  Science"
           color: "dark"
         -
           img: "discovery-theater"
+          slug: "discovery-theater"
           name: "Discovery Theater HD"
           color: "dark"
         -
           img: "history-channel"
+          slug: "history-channel"
           name: "History Channel HD"
           color: "dark"
         -
           img: "history-channel-2"
+          slug: "history-channel-2"
           name: "History Channel 2 HD"
           color: "dark"
         -
           img: "national-geographic-channel"
+          slug: "national-geographic-channel"
           name: "National Geographic HD"
           color: ""
         -
           img: "nat-geo-wild"
+          slug: "nat-geo-wild"
           name: "Nat Geo Wild HD"
           color: ""
         -
           img: "animal-planet"
+          slug: "animal-planet"
           name: "Animal Planet"
           color: ""
         -
           img: "arte-1"
+          slug: "arte-1"
           name: "Arte1"
           color: "dark"
         -
           img: "futura"
+          slug: "futura"
           name: "Futura"
           color: "dark"
         -
           img: "canal-rural"
+          slug: "canal-rural"
           name: "Canal Rural"
           color: "dark"
         -
           img: "sesc-tv"
+          slug: "sesc-tv"
           name: "SESC TV"
           color: "dark"
     -
@@ -399,86 +492,107 @@ channelsgroup:
       channels:
         -
           img: "gnt"
+          slug: "gnt"
           name: "GNT HD"
           color: "dark"
         -
           img: "multishow"
+          slug: "multishow"
           name: "Multishow HD"
           color: ""
         -
           img: "canal-viva"
+          slug: "canal-viva"
           name: "Canal Viva HD"
           color: ""
         -
           img: "mtv"
+          slug: "mtv"
           name: "MTV HD"
           color: "dark"
         -
           img: "globosat"
+          slug: "globosat"
           name: "Globosat HD"
           color: ""
         -
           img: "home-health"
+          slug: "home-health"
           name: "Home & Health HD"
           color: ""
         -
           img: "a-e"
+          slug: "a-e"
           name: "A&E HD"
           color: ""
         -
           img: "bis"
+          slug: "bis"
           name: "Bis HD"
           color: ""
         -
           img: "byu-tv"
+          slug: "byu-tv"
           name: "BYU"
           color: "dark"
         -
           img: "chef-tv"
+          slug: "chef-tv"
           name: "Chef TV"
           color: ""
         -
           img: "comedy-central"
+          slug: "comedy-central"
           name: "Comedy Central HD"
           color: "dark"
         -
           img: "e"
+          slug: "e"
           name: "E!"
           color: "dark"
         -
           img: "fox-life"
+          slug: "fox-life"
           name: "Fox Life"
           color: "dark"
         -
           img: "glitz"
+          slug: "glitz"
           name: "Glitz"
           color: ""
         -
           img: "isat"
+          slug: "isat"
           name: "I.SAT"
           color: ""
         -
           img: "mix-tv"
+          slug: "mix-tv"
           name: "Mix TV"
           color: "dark"
         -
           img: "play-tv"
+          slug: "play-tv"
           name: "Play TV"
           color: "dark"
         -
           img: "tbs"
+          slug: "tbs"
           name: "TBS HD"
           color: ""
         -
           img: "tlc"
+          slug: "tlc"
           name: "TLC HD"
           color: "dark"
         -
           img: "tru-tv"
+          slug: "tru-tv"
           name: "Tru TV HD"
           color: "dark"
         -
           img: "vh1-mega-hits"
+          slug: "vh1-mega-hits"
           name: "VH1 Mega Hits"
           color: "dark"
   audio:
