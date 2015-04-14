@@ -45,4 +45,5 @@
     fontFileUrl = "fonts/data-ttf.css";
   }
   loadCSS( fontFileUrl );
+  loadCSS( "/assets/styles/components.css" );
 }( this ));
