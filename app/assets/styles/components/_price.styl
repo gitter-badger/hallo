@@ -9,7 +9,9 @@
 
   .price
     &-prefix
+      @extend $text-small
       line-height remify(13px)
+      margin-bottom remify(5px)
       display block
       +below(415px)
         color: $black
@@ -44,6 +46,7 @@
         transform: translateY(remify(-34px))
 
     &-sufix
+      @extend $text-small
       display inline-block
       text-transform uppercase
       +below(415px)
