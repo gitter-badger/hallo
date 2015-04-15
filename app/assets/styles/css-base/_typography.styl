@@ -8,14 +8,16 @@ $baseline  = .625rem // 10px
 .container
   font-family oiText, sans-serif
 
-$line-height
-  &-small
-    line-height remify(16px)
-  &-regular
-    line-height remify(20px)
-  &-big
-    line-height remify(30px)
+$line-height-small
+  line-height remify(16px)
+$line-height-regular
+  line-height remify(20px)
+$line-height-big
+  line-height remify(30px)
 
+//
+// Title
+//
 $title
   font-family $fontTitle
   color green
@@ -44,31 +46,38 @@ $title-light-small
   font-family $fontTextLight
   font-size remify(21px)
 
+//
+// Headline
+//
 $headline
   font-family $fontTextRegular
-  &-big
-    @extend $headline
-    font-size remify(55px)
-  &-regular
-    @extend $headline
-    font-size remify(35px)
-  &-small
-    @extend $headline
-    font-size remify(21px)
 
+$headline-big
+  @extend $headline
+  font-size remify(55px)
+$headline-regular
+  @extend $headline
+  font-size remify(35px)
+$headline-small
+  @extend $headline
+  font-size remify(21px)
+
+//
+// Text
+//
 $text
   @extend $line-height-regular
   font-family $fontTextRegular
-  &-big
-    @extend $text
-    font-size remify(21px)
-  &-regular
-    @extend $text
-    font-size remify(16px)
-  &-small
-    @extend $text
-    font-size remify(13px)
-  &-bold-small
-    @extend $text
-    font-family $fontTextBold
-    font-size remify(13px)
+$text-big
+  @extend $text
+  font-size remify(21px)
+$text-regular
+  @extend $text
+  font-size remify(16px)
+$text-small
+  @extend $text
+  font-size remify(13px)
+$text-bold-small
+  @extend $text
+  font-family $fontTextBold
+  font-size remify(13px)
