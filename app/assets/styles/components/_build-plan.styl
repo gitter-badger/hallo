@@ -4,7 +4,7 @@
     opacity 0
   100%
     opacity 1
-    width remify(290px)
+    width remify(240px)
 
 .build-plan
   center( remify(371px))
@@ -26,11 +26,13 @@
 
   span
     @extend $headline-small
+    font-size remify(16px)
     animation-count 1
-    animation-delay 2s
-    animation-duration 1s
+    animation-delay 1s
+    animation-duration 700ms
     animation-fill-mode forwards
     animation-name slidein
+    transition-timing-function ease-out
     display none
     height remify(40px)
     margin-right 0
