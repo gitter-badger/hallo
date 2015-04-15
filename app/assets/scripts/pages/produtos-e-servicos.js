@@ -1,14 +1,21 @@
-define(['core/dom', 'vendor/riot', 'vendor/velocity'],function (dom, riot, velocity) {
+define([
+  'core/dom',
+  'vendor/riot',
+  'vendor/velocity',
+  'channel-addons'
+  ],function (dom, riot, velocity, addOns) {
 
   var _public = {},
       _private = {},
       $body = $('body')[0],
-      $container = $('.container')[0]
-      'core/dom', 'vendor/riot'
+      $container = $('.container')[0];
+      'core/dom', 'vendor/riot';
 
   _public.init = function(){
     _private.bindOpenModal();
-    _private.bindCloseModal();
+    _private.bindCloseButton();
+    _private.bindNavKeyboard();
+    addOns.init()
   };
 
   _private.bindOpenModal = function(){
@@ -18,24 +25,34 @@ define(['core/dom', 'vendor/riot', 'vendor/velocity'],function (dom, riot, veloc
     });
   };
 
-  _private.bindCloseModal = function(){
+  _private.bindCloseButton = function(){
     $('.modal-close').on('click', function(e){
       _private.closeModal();
     });
   };
 
-  $.fn.addClass = function( className ) {
-    this.forEach( function( item ) {
-        var classList = item.classList;
-        classList.add.apply( classList, className.split( /\s/ ) );
-    });
-    return this;
-};
+  _private.bindNavKeyboard = function(){
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      // Esc
+      if (evt.keyCode == 27) {
+        _private.closeModal();
+      }
+      // Up / left = back
+      if (evt.keyCode == 37 || evt.keyCode == 38 ) {
+        console.log('back');
+      }
+      // Down / right = next
+      if (evt.keyCode == 39 || evt.keyCode == 40 ) {
+        console.log('next');
+      }
+    };
+  };
 
   _private.openModal = function(){
     $('.modal')[0].style.display = 'block';
     $container.attributes['aria-hidden'].value = true;
-    $body.addClass('modal-opened')
+    // $body.addClass('modal-opened');
 
   };
 
