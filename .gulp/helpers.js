@@ -31,10 +31,14 @@ var helpers = (function() {
   }
 
   _public.notifyError = function(err) {
+    err.$filename = err.path || err.filename;
+    err.$filename = err.$filename.split('/').slice(-1);
+    err.$lineno = err.lineno || '';
     notify.onError({
-      title:    "Gulp",
-      subtitle: "Failure!",
-      message:  "Error: <%= error.message %>",
+      title:    "Error on <%= error.plugin.split('-')[1].toUpperCase() %>",
+      subtitle: "File: <%= error.$filename %> | Line: <%= error.$lineno %>",
+      // message:  "<%= error.message.split('\\n').slice(-2)[0] %>",
+      message:  "<%= error.message %>",
       sound:    "Beep"
     })(err);
     this.emit('end');
