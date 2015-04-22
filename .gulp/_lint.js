@@ -38,5 +38,9 @@ gulp.task('lint-scripts', function() {
     .on('error', $.notify.onError(function (error) {
       return error.message;
     }));
+});
 
+gulp.task('jscs-scripts', function() {
+  gulp.src(config.path.src.scripts)
+    .pipe($.jscs());
 });
