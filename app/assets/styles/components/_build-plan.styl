@@ -81,10 +81,15 @@
     @extend $button-small
     size(remify(170px), remify(40px))
     display inline-block
+    border remify(1px) solid $black
     line-height remify(36px)
     margin-left remify(30px)
     font-size remify(16px)
     transform translateY( remify(-14px))
+    &:hover, &:active, &:focus
+      color $purple
+      border-color $purple
+      outline none
     +below(380px)
       margin-left remify(10px)
       width remify(70px)
