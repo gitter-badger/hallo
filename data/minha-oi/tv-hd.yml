@@ -1,0 +1,81 @@
+tvhd:
+  title: "Minha TV HD"
+services:
+  title: "Atendimento ao cliente"
+  links:
+    -
+      label: "2ª via de conta"
+      url: ""
+      img: ""
+    -
+      label: "Altere seu plano"
+      url: ""
+      img: ""
+    -
+      label: "Fatura atrasada"
+      url: ""
+      img: ""
+    -
+      label: "Fatura com valor diferente"
+      url: ""
+      img: ""
+    -
+      label: "Entenda a sua conta"
+      url: ""
+      img: ""
+    -
+      label: "Problemas com o sinal da TV"
+      url: ""
+      img: ""
+    -
+      label: "Como usar o controle remoto"
+      url: ""
+      img: ""
+    -
+      label: "Como usar o gravador digital"
+      url: ""
+      img: ""
+    -
+      label: "Instalação atrasada"
+      url: ""
+      img: ""
+    -
+      label: "Transferir local da assinatura"
+      url: ""
+      img: ""
+    -
+      label: "Grade de canais"
+      url: ""
+      img: ""
+    -
+      label: "Contratar canais extra"
+      url: ""
+      img: ""
+    -
+      label: "Sem sinal de TV"
+      url: ""
+      img: ""
+    -
+      label: "2ª via de conta"
+      url: ""
+      img: ""
+    -
+      label: "Altere seu plano"
+      url: ""
+      img: ""
+    -
+      label: "Fatura atrasada"
+      url: ""
+      img: ""
+    -
+      label: "Fatura com valor diferente"
+      url: ""
+      img: ""
+    -
+      label: "Ver mais dúvidas frequentes"
+      url: ""
+      img: ""
+  addons:
+    title: "Turbibe sua TV HD"
+    img: ""
+
