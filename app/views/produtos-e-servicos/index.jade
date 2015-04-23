@@ -68,22 +68,21 @@ body.product
                   h4=group.label
                     span= '[' + group.channels.length + ']'
                   div
-                    ul(style="width: " + 26 * group.channels.length +"vw")
+                    ul(style="xwidth: " + 26 * group.channels.length +"vw")
                       each channel in group.channels
                         li
                           a(href=channel.slug class=channel.color)
-                            .logo-container
-                              div(class='s-'+channel.img + " s-logo ")
+                            div(class='s-'+channel.img + " s-logo ")
                             span=channel.name
 
             .channels-audio
-              h5=channelsgroup.audio.label + '('+ channelsgroup.audio.channels.length + ')'
+              h5=channelsgroup.audio.label + ' ('+ channelsgroup.audio.channels.length + ')'
               ul
                 each audio in channelsgroup.audio.channels
                   li=audio
 
             .channels-radio
-              h5=channelsgroup.radio.label + '('+ channelsgroup.radio.channels.length + ')'
+              h5=channelsgroup.radio.label + ' ('+ channelsgroup.radio.channels.length + ')'
               ul
                 each radio in channelsgroup.radio.channels
                   li=radio
@@ -93,6 +92,19 @@ body.product
             h4=channelsgroup.addons.title
             div
               ul
+                li
+                  h5=channelsgroup.addons.spots.title
+                  span=channelsgroup.addons.spots.desc
+                  - var count = 1
+                  while count <= channelsgroup.addons.spots.quant
+                    - selected = (count === 1 ? ' selected': '' )
+                    a(href="#", class="spot" + selected )=count++
+                
+                li
+                  h5=channelsgroup.addons.recorder.title
+                  span=channelsgroup.addons.recorder.desc
+                  span.info=channelsgroup.addons.recorder.info
+
                 each channel in channelsgroup.addons.channels.itens
                   li(aria-live="assertive" aria-relevant="text")
                     .logo-container
@@ -104,17 +116,6 @@ body.product
                       //- i Adicionado
                     button.remove(type="button" role="button" aria-label=channelsgroup.addons.channels.actions.remove + " " + channel.name)=channelsgroup.addons.channels.actions.remove
 
-                li
-                  h5=channelsgroup.addons.spots.title
-                  span=channelsgroup.addons.spots.desc
-                  - var count = 1
-                  while count <= channelsgroup.addons.spots.quant
-                    - selected = (count === 1 ? ' selected': '' )
-                    a(href="#", class="spot" + selected )=count++
-                li
-                  h5=channelsgroup.addons.recorder.title
-                  span=channelsgroup.addons.recorder.desc
-                  span.info=channelsgroup.addons.recorder.info
           
         .channels-area-footer
           .channels-help
