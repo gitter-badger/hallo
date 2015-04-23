@@ -20,17 +20,16 @@ html, body
   text-align center
   overflow hidden
   z-index 2
-  +above(767px)
+  +above('s')
     center( remify(960px))
-  +above(1023px)
+  +above('m')
     center( remify(1170px))
   .card
-    width s('calc( 100% / 3 )')
+    width (100% / 3)
 
 .channels-area
   center( remify(1366px) )
   background-color $green
-  // margin-bottom remify(2px)
   margin-top remify(196px)
   +below(415px)
     margin-top remify(125px)
@@ -156,35 +155,23 @@ h4
     text-align center
     text-indent 0
   +above(1023px)
-    // padding 0
     text-indent remify(-29px)
+  span
+    display inline
+    +above('m')
+      display none
 
-div.logo-container
-  height remify(70px)
-  width remify(100px)
+
+// div.logo-container
+//   height remify(70px)
+//   width remify(100px)
 
 .s-logo
-  background-image url(../images/sprite-logos-2x.png)
-  margin 0 auto
-  display inline-block
-  zoom .43
-  transform translate(0, 50px)
-  +below(415px)
-    zoom .40
-    transform translate(-55px, 33px)
-
-  +retina()
-    background-image url(../images/sprite-logos-2x.png)
-  +above(2000px)
-    zoom .5
-  +above(2100px)
-    zoom .55
-  +above(2200px)
-    zoom .6
-  +above(2300px)
-    zoom .65
-  +above(2400px)
-    zoom .7
+  background-image url(../images/sprite-logos-low.png)
+  margin remify(15px) remify(-7px)
+  display block
+  width remify(120px)
+  height remify(40px)
 
 .channels-pack
   +below(415px)
@@ -196,7 +183,7 @@ div.logo-container
     height remify(151px)
   +above(767px)
     height auto
-    width s('calc(100% / 6)')
+    width (100% / 6)
     float left
 
   & > div
@@ -231,7 +218,7 @@ div.logo-container
 
   li
     @extend $text-regular
-    size(remify(120px), remify(105px))
+    size(remify(100px), remify(105px))
     color $gray
     display block
     font-size remify(12px)
@@ -256,7 +243,6 @@ div.logo-container
       border 1px solid $white
       color inherit
       display block
-      padding-top remify(10px)
       text-decoration none
       transition all 300ms ease-out
       transition-delay 100ms
@@ -284,28 +270,13 @@ div.logo-container
       +below(415px)
         padding-top 0
 
-    span
-      display block
-      // margin-top remify(-9px)
-      white-space initial
-      font-size remify(11px)
-      transform translateY(-10%)
-      line-height remify(13px)
-      +below(415px)
-        margin remify(-14px) 0 0 remify(-37px)
-      +above(415px)
-        margin-top remify(10px)
-      +above(767px)
-        margin-top 0
-  img
-    display inline-block
-    +below(415px)
-      height remify(60px)
-    +above(415px)
-      height remify(60px)
-    +above(767px)
-      width remify(112px)
-      height auto
+      span
+        width remify(100px)
+        white-space initial
+        line-height remify(13px)
+        height remify(30px)
+        vertical-align middle
+        display table-cell
 
 .channels-audio, .channels-radio
   background-color $white
@@ -335,7 +306,6 @@ div.logo-container
     overflow hidden
     +above(767px)
       line-height remify(20px)
-
     +above(1023px)
       max-height none
 
@@ -509,7 +479,7 @@ div.logo-container
 
   button.add
     @extend $button-small
-    background-color $white
+    background-color $grayLighter
     transition all 400ms ease-out
     position relative
     z-index 2
@@ -538,27 +508,33 @@ div.logo-container
       polyline
         stroke $white
 
-    &.spot
-      margin-right remify(4px)
-      transition all .25s easing( "in-quad" )
-      +above(767px)
-        display inline-block
-        margin-top remify(5px)
-        width remify(28px)
-        height remify(36px)
-      +above(1023px)
-        display inline-block
-        margin-top 0
-        width remify(35px)
-        height remify(42px)
+  .spot
+    margin-right remify(4px)
+    transition all .25s easing( "in-quad" )
+    text-decoration none
+    border-radius remify(2px)
+    background-color $grayLighter
+    border remify(1px) solid $gray
+    color $black
+    &:last-child
+      margin-right 0
+    &.selected, &:hover
+      background-color $green
+      border-color $green
+      color $white
+    +above(767px)
+      display inline-block
+      margin-top remify(5px)
+      width remify(28px)
+      height remify(36px)
+      line-height remify(36px)
+    +above(1023px)
+      display inline-block
+      margin-top 0
+      width remify(35px)
+      height remify(42px)
+      line-height remify(42px)
 
-      &:last-child
-        margin-right 0
-
-      &.selected, &:hover
-        background-color $green
-        border-color $green
-        color $white
   h5
     @extend $text-regular
     margin-top remify(21px)
@@ -586,27 +562,26 @@ div.logo-container
   +above(1023px)
     center( remify(1170px) )
 
-  .channels-search
-    display block
-    +below(415px)
-      text-indent remify(20px)
-    +above(415px)
-      column(50/100, gutter: 0)
-    +above(767px)
-      column(70/100, gutter: 0)
+.channels-search
+  display block
+  +below(415px)
+    text-indent remify(20px)
+  +above(415px)
+    column(50/100, gutter: 0)
+  +above(767px)
+    column(70/100, gutter: 0)
 
-  .channels-faq
-    // ugh!
-    text-align right !important
-    column(30/100, gutter: 0)
-    +below(415px)
-      display none
-    +above(415px)
-      display none
-      margin-top remify(18px)
-    +above(767px)
-      display block
-      margin-top 0
+.channels-faq
+  text-align right !important
+  column(30/100, gutter: 0)
+  +below(415px)
+    display none
+  +above(415px)
+    display none
+    margin-top remify(18px)
+  +above(767px)
+    display block
+    margin-top 0
   a
     color $green
     text-decoration none
