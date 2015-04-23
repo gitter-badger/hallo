@@ -21,7 +21,7 @@ gulp.task('build-data', function() {
 
 gulp.task('build-sprites', function() {
     var spriteData =
-        gulp.src('./app/assets/images/logos/*.png')
+        gulp.src('./app/assets/images/logos/120x40/*.png')
           .pipe($.plumber({errorHandler: helpers.notifyError}))
           .pipe($.spritesmith({
               imgName: 'sprite-logos.png',
@@ -220,5 +220,5 @@ gulp.task('build', function() {
     'build-fonts',
     'build-manifest'
     );
-  msg.log('`All Build!`');
+  // msg.log('`All Build!`');
 });
