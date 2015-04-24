@@ -18,6 +18,33 @@
     background-repeat no-repeat
     background-size cover
     background-position top center
+    position relative
 
   img
     width 100%
+
+  .caption-container
+    display none
+    height 100%
+    color $white
+    position relative
+    +above(415px)
+      center( remify(704px))
+    +above(767px)
+      center( remify(960px))
+    +above(1023px)
+      center( remify(1170px))
+  .caption
+    position absolute
+    bottom remify(60px)
+    right 0
+    padding-right 65px
+    background-repeat no-repeat
+    background-position right remify(3px)
+  .caption-name
+    @extend $text-bold-small
+  .caption-time
+    @extend $text-small
+  // .caption-channel
+
+
