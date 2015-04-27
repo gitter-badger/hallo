@@ -1,0 +1,40 @@
+{
+  "meta": {},
+  "data": [
+    {
+      "id": 1,
+      "name": "Oi TV Start HD",
+      "default": true,
+      "PRODUTOS": [],
+      "channels": [1, 56, 78],
+      "signature":
+        {
+          "fidelizado": {
+            "cliente": {
+              "dacc-fixo": 78,
+              "boleto": 98
+            },
+            "naocliente": {
+              "dacc-fixo": 78,
+              "boleto": 98
+            }
+          },
+          "naofidelizado": {
+            "cliente": {
+              "dacc-fixo": 78,
+              "boleto": 98
+            },
+            "naocliente": {
+              "dacc-fixo": 78,
+              "boleto": 98
+            }
+          }
+        },
+      "addons": {},
+      "points": {
+        "one": 19.90,
+        "more": 19.90
+      }
+    }
+  ]
+}
