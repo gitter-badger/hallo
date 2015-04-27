@@ -31,8 +31,10 @@ var helpers = (function() {
   }
 
   _public.notifyError = function(err) {
-    err.$filename = err.path || err.filename;
-    err.$filename = err.$filename.split('/').slice(-1);
+    err.$filename = err.path || err.filename ;
+    if(err.$filename){
+      err.$filename = err.$filename.split('/').slice(-1);
+    }
     err.$lineno = err.lineno || '';
     notify.onError({
       title:    "Error on <%= error.plugin.split('-')[1].toUpperCase() %>",
