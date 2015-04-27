@@ -48,8 +48,6 @@ $column-container-right
     float left
 
     .column-container
-      // background-color $grayLighter
-      // background-image linear-gradient(0%, $white 10%, $grayLighter 50%, $white 90%)
       float right
     & + .column
       padding-right 0
@@ -145,6 +143,8 @@ $column-container-right
         background-repeat no-repeat
         background-position left center
         padding-left remify(200px)
+      &.is-link
+        color $green
 
   .main-content
     .column-container
@@ -156,6 +156,9 @@ $column-container-right
     background-image url(/assets/images/demo/minha-oi-tv-hd.png)
     background-repeat no-repeat
     background-position remify(80px) remify(50px)
+
+    .column-title h2
+      float left
 
   .addons
     margin-top remify(391px)
@@ -206,6 +209,7 @@ $column-container-right
           height remify(150px)
           vertical-align middle
           display table-cell
+          position relative
           +above('l')
             width (1200px / 2 - 115px - 110px)
 
@@ -230,8 +234,12 @@ $column-container-right
 
 
     .price-widget
-      float right
-      display none
+      position absolute
+      top remify(45px)
+      right 0
+
+  footer
+    background-color $grayLighter
 
 
 
