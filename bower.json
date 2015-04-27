@@ -21,6 +21,7 @@
     "velocity": "~1.2.2",
     "requirejs": "~2.1.17",
     "riot": "~2.0.14",
-    "reqwest": "~1.1.5"
+    "reqwest": "~1.1.5",
+    "lodash": "~3.7.0"
   }
 }
