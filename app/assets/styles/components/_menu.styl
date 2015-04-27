@@ -4,21 +4,20 @@
   overflow hidden
   position relative
   z-index 2
-  +below(415px)
-    center(100%)
-    height remify(90px)
-    // line-height remify(90px)
-  +above(415px)
-    center(724px)
-    // line-height remify(70px)
-    height remify(70px)
-  +above(767px)
-    center(1200px)
+  width 100%
 
   ul
     overflow hidden
-    width 100%
-    float left
+    +below(415px)
+      center(100%)
+      height remify(90px)
+      // line-height remify(90px)
+    +above(415px)
+      center(724px)
+      // line-height remify(70px)
+      height remify(70px)
+    +above(767px)
+      center(1200px)
     +below(415px)
       height remify(90px)
     +above(415px)
