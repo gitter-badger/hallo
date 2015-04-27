@@ -1,0 +1,1 @@
+define(['vendor/riot'], function(riot){<%= contents %>});
