@@ -1,36 +1,191 @@
 include ../../_partials/header.jade
 
-body.product
+body.minha-oi
   section.container(aria-hidden="false")
+
+    +buildPlan()
+
+    +menu()
     
     header
-      h1 Minha TV HD
-      p
-        | Não tem Oi TV HD?
-        a Veja os planos
+      .pre-title
+        h2 Minha Oi
+        p
+          | Não tem Oi TV HD? 
+          a Veja os planos
+      h1.title Minha TV HD
+  
+    main.content
+      div.column.main-content
+        .column-container
+          
+          .column-title 
+            h2 Atendimento ao cliente
 
-    div
-      h2 Atendimento ao cliente
+          nav.customer-service-nav
+            ul
+              li
+                a(href="#")
+                  include ../../../assets/images/icons/user-s.svg
+                  |Acesse sua conta na Minha Oi 
+              li
+                a(href="#")
+                  include ../../../assets/images/icons/app-s.svg
+                  |Baixe o App da Minha Oi
+              li
+                a(href="#")
+                  include ../../../assets/images/icons/ligacao-s.svg
+                  |Ligue para 106 31
+              li
+                a(href="#")
+                  include ../../../assets/images/icons/pin-s.svg
+                  |Visite a Loja Oi mais próxima
 
-      nav
-        ul
-          li
-            a Acesse sua conta na Minha Oi
-          li
-            a Baixe o App da Minha Oi
-          li
-            a Ligue para 106 31
-          li
-            a Visite a Loja Oi mais próxima
+          nav.customer-service-links
+            ul
+              li
+                a(href="#") 2 via de conta
+              li
+                a(href="#") Altere seu plano
+              li
+                a(href="#") Fatura atrasada
+              li
+                a(href="#") Fatura com valor diferente
+              li
+                a(href="#") Sem sinal de TV
+              li
+                a(href="#" style="background-image:url(/assets/images/demo/video1.png)").hasimg Como usar o controle remoto
+              li
+                a(href="#" style="background-image:url(/assets/images/demo/video2.png)").hasimg Como usar o gravador digital
+              li
+                a(href="#") Instalação atrasada
+              li
+                a(href="#") Transferir local da assinatura
+              li
+                a(href="#") Grade de canais
+              li
+                a(href="#") Habilitar o Débito Automático
+              li
+                a(href="#") Premiere Indisponível
+              li
+                a(href="#") Contratar canais extras
+              li
+                a(href="#") Habilitar o Vídeo on Demand
+              li
+                a(href="#") Crie lista de canais favoritos
+              li
+                a(href="#") Parcelamento do Débito Automático
+              li
+                a(href="#") Ver mais dúvidas frequentes
 
-      form
-        label
-          input
+      div.column.side-content
+        .column-container
 
-      nav
-        ul
-          li
-            a 2 via de conta
+          .column-title 
+            h2 Turbine sua TV HD
+
+          .addons
+            ul
+              li
+                a(href="#") Tele Cine
+                  +widget-price(null, '45,00', '/mês', 'small')
+              li
+                a(href="#") HBO
+                  +widget-price(null, '35,00', '/mês', 'small')
+              li
+                a(href="#") Premiere
+                  +widget-price(null, '71,00', '/mês', 'small')
+              li
+                a(href="#") Ponto Adicional
+                  +widget-price(null, '19,00', '/mês', 'small')
+              li
+                a(href="#") Gravador Digital
+                  +widget-price(null, '20,00', '/mês', 'small')
+              li
+                a(href="#") Combate
+                  +widget-price(null, '60,00', '/mês', 'small')
+              li
+                a(href="#") Playboy TV
+                  +widget-price(null, '19,90', '/mês', 'small')
+              li
+                a(href="#") SexyHot
+                  +widget-price(null, '19,90', '/mês', 'small')
+              li
+                a(href="#") SexyPrive
+                  +widget-price(null, '14,90', '/mês', 'small')
+              li
+                a(href="#") Canais Internacionais
+                  +widget-price(null, '19,90', '/mês', 'small')
+          
+          .column-title 
+            h2 Filmes em destaque
+
+          .rent-list
+            ul
+              li
+                a(style="background-image:url(/assets/images/demo/alugue1.png)")
+                  div
+                    div
+                      span.movie-title O Hobbit
+                      ul.availability
+                        li.availability-vod
+                          acronym(title="Video On Demand") VOD
+                        li.availability-oifilmes Oi Filmes
+                      +widget-price(null, '10,00', '/mês', 'small')
+              li
+                a(style="background-image:url(/assets/images/demo/alugue2.png)")
+                  div
+                    div
+                      span.movie-title Homem Aranha 3
+                      ul.availability
+                        li.availability-vod
+                          acronym(title="Video On Demand") VOD
+                        li.availability-oifilmes Oi Filmes
+                      +widget-price(null, '10,00', '/mês', 'small')
+              li
+                a(style="background-image:url(/assets/images/demo/alugue3.png)")
+                  div
+                    div
+                      span.movie-title Os miseráveis
+                      ul.availability
+                        li.availability-vod
+                          acronym(title="Video On Demand") VOD
+                      +widget-price(null, '10,00', '/mês', 'small')
+              li
+                a(style="background-image:url(/assets/images/demo/alugue4.png)")
+                  div
+                    div
+                      span.movie-title Thor
+                      ul.availability
+                        li.availability-vod
+                          acronym(title="Video On Demand") VOD
+                      +widget-price(null, '10,00', '/mês', 'small')
+              li
+                a(style="background-image:url(/assets/images/demo/alugue5.png)")
+                  div
+                    div
+                      span.movie-title A Perseguição
+                      ul.availability
+                        li.availability-vod
+                          acronym(title="Video On Demand") VOD
+                        li.availability-oifilmes Oi Filmes
+                      +widget-price(null, '10,00', '/mês', 'small')
+              li
+                a(style="background-image:url(/assets/images/demo/alugue6.png)")
+                  div
+                    div
+                      span Oblivion
+                      +widget-price(null, '10,00', '/mês', 'small')
+              li
+                a(style="background-image:url(/assets/images/demo/alugue7.png)")
+                  div
+                    div
+                      span.movie-title Perfume
+                      ul.availability
+                        li.availability-oifilmes Oi Filmes
+                      +widget-price(null, '10,00', '/mês', 'small')
+
+
 
 
 
