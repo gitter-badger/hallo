@@ -149,9 +149,9 @@ gulp.task('build-bower', function() {
     .pipe(filterJs)
     // .pipe($.concat('vendor' + pkg.version + '.js'))
     // .pipe($.concat('vendor.js'))
-    .pipe(((!config.isProd) ? $.uglify({
+    .pipe($.uglify({
       mangle: false
-    }) : $.util.noop()))
+    }))
     .pipe(gulp.dest(config.path.dist.scripts + 'vendor'))
     .pipe($.gzip())
     .pipe(gulp.dest(config.path.dist.scripts + 'vendor'))
@@ -200,8 +200,12 @@ gulp.task('build-templates', function(){
     .pipe($.flatten())
     .pipe($.riot({
       compact: true,
-      template: 'jade'
+      // template: 'jade'
     }))
+    .pipe($.uglify({
+      mangle: false
+    }))
+    .pipe($.wrap({ src: '.gulp/require-wrap.js.txt'}))
     .pipe(gulp.dest(config.path.dist.tags))
     .pipe($.gzip())
     .pipe(gulp.dest(config.path.dist.tags))
