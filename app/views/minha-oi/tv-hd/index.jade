@@ -40,7 +40,21 @@ body.minha-oi
                 a(href="#")
                   include ../../../assets/images/icons/pin-s.svg
                   |Visite a Loja Oi mais próxima
+          
+          form.search-faq
+            fieldset
+              label 
+                span Buscar perguntas frequentes
+                include ../../../assets/images/icons/lupa-thin.svg
+                input(type="search", placeholder="Buscar perguntas frequentes")
+              label
+                span Buscar em
+                select
+                  option(value="tv-hd") em TV HD
+                  option(value="fixo") em Fixo
+                  option(value="internet") em Internet
 
+          
           nav.customer-service-links
             ul
               li
@@ -117,10 +131,11 @@ body.minha-oi
                 a(href="#") Canais Internacionais
                   +widget-price(null, '19,90', '/mês', 'small')
           
-          .column-title 
-            h2 Filmes em destaque
 
           .rent-list
+            
+            h2 Filmes em destaque
+            
             ul
               li
                 a(style="background-image:url(/assets/images/demo/alugue1.png)")
