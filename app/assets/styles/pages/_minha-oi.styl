@@ -1,0 +1,181 @@
+$column-container-left
+  float right
+  +above('l')
+    width (1200px / 2 - 115px)
+    margin-right remify(115px)
+
+$column-container-right
+  float left
+  +above('l')
+    width (1200px / 2 - 115px)
+    // margin-right remify(115px)
+
+.minha-oi
+  .menu
+    background-color $green
+    center
+
+  header
+    padding-top remify(60px)
+    +above('l')
+      center(1200px)
+
+    .pre-title
+      @extend $text-regular
+      color $gray
+      overflow hidden
+      h2
+        float left
+      p
+        float right
+      a
+        color inherit
+        text-decoration underline
+
+    h1
+      @extend $title-big
+      color $black
+      padding-bottom remify(120px)
+
+  main.content
+    width 100%
+    display block
+    overflow hidden
+    margin-bottom remify(150px)
+
+  .column
+    width 50%
+    float left
+
+    .column-container
+      // background-color $grayLighter
+      // background-image linear-gradient(0%, $white 10%, $grayLighter 50%, $white 90%)
+      float right
+    & + .column
+      padding-right 0
+      padding-left remify(115px)
+      float right
+      .column-container
+        float left
+
+  .column-container
+    width 100%
+
+  .column-title
+    overflow hidden
+    h2
+      @extend $column-container-left
+      @extend $headline-big
+      font-size 45px
+      margin-bottom remify(65px)
+
+  .customer-service-nav
+    li
+      height remify(60px)
+      line-height remify(60px)
+      overflow hidden
+    a
+      @extend $column-container-left
+      @extend $text-regular
+      color $black
+      display inline-block
+      text-decoration none
+    svg
+      height 23px
+
+  .customer-service-links
+    li
+      border-bottom 1px solid $grayLight
+      line-height remify(150px)
+      overflow hidden
+      &:last-child
+        border-bottom 1px solid $white
+    a
+      @extend $column-container-left
+      color $black
+      text-decoration none
+      &.hasimg
+        background-repeat no-repeat
+        background-position left center
+        padding-left remify(200px)
+
+  .main-content
+    .column-container
+      background-color $grayLighter
+      background-image linear-gradient(0%, $white 0%, $grayLighter 20%, $grayLighter 80%, $white 100%)
+
+  .side-content
+    background-image url(/assets/images/demo/minha-oi-tv-hd.png)
+    background-repeat no-repeat
+    background-position remify(80px) remify(50px)
+
+  .addons
+    margin-top remify(391px)
+    // margin-bottom remify(90px)
+    margin-bottom remify(59px)
+    li
+      border-bottom 1px solid $grayLight
+      line-height remify(150px)
+      overflow hidden
+      &:last-child
+        border-color $black
+    a
+      @extend $column-container-right
+      color $black
+      display block
+      text-decoration none
+
+    .price-widget
+      float right
+
+  .rent-list
+    & > li
+      height remify(150px)
+      overflow hidden
+
+    a
+      font-family $fontTextRegular
+      display block
+      height remify(150px)
+      background-repeat no-repeat
+      background-position 0 center
+      padding-left remify(110px)
+
+      & > div
+        height remify(150px)
+        border-bottom 1px solid $grayLight
+        // line-height remify(150px)
+
+        & > div
+          height remify(150px)
+          vertical-align middle
+          display table-cell
+          +above('l')
+            width (1200px / 2 - 115px - 110px)
+
+    .movie-title
+      display block
+
+    .availability
+      display block
+      li
+        display inline-block
+        color $white
+        border-radius remify(3px)
+        font-size remify(11px)
+        height remify(18px)
+        line-height remify(18px)
+        padding 0 remify(5px)
+        font-family $fontTextRegular
+        &.availability-oifilmes
+          background-color $purple
+        &.availability-vod
+          background-color $purpleLight
+
+
+    .price-widget
+      float right
+      display none
+
+
+
