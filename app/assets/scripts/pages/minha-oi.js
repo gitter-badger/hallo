@@ -3,104 +3,129 @@ define([
   'vendor/reqwest',
   'vendor/lodash',
   'vendor/riot',
-  'velocity'
+  'velocity',
   // 'velocity-ui',
-  // 'vendor/ScrollMagic'
-  ],function ($, reqwest, lodash, riot, Velocity, velocityui) {
+  'vendor/ScrollMagic'
+  ],function ($, reqwest, lodash, riot, Velocity, ScrollMagic) {
 
   var _public = {},
       _private = {},
       $body = $('body'),
       $hiddenContent = $('.hidden-content'),
+      $content = $('.content'),
       $container = $('.container')[0],
       $main = $('.main-content'),
       $side = $('.side-content'),
       $addOns = $('.addons');
 
+  var maxWidth = $('.menu ul').width();
+  var margin =  ($body.width() - maxWidth)/2;
+  var $detail = $('#detail');
+
+  var speed = 700;
 
   _public.init = function(){
+    _private.BindOpenDetail();
   };
 
-  // init controller
-    // var controller = new ScrollMagic.Controller({
-    //   globalSceneOptions: {triggerHook: "onCenter"}
-    // });
-    // // init scene
-    // var scene = new ScrollMagic.Scene({
-    //   duration: 300,
-    //   offset: 0
-    // })
-    // .setPin(".pre-title")
-    // .addTo(controller)
+  _private.BindOpenDetail = function(){
+    $('.addons a').on('click', function(evt){
+      var $btLi = $(this).parent('li');
+      evt.preventDefault();
+      _private.openDetail($btLi);
+    });
+  };
 
-    // $.fn.velocity = velocity;
+  _private.openDetail = function($btLi){
+    var $price = $btLi.find('.price-widget');
 
-  $('.addons a').on('click', function(evt){
-    evt.preventDefault();
+    console.log('teste2', $btLi);
 
-    var $bt = $(this);
+    // HIDE PRICE
+    Velocity({
+      e: $price,
+      p: {opacity: 0},
+      o: { duration: speed/2, delay: speed/2 }
+    });
 
-    $('body')[0].classList.add('teste');
-
-
-
-    var mySequence = [
-      { e: $('.banner-image')[0], p: { opacity     :     0   }, o: { duration: 1000 } },
-      { e: $('.bt-back')[0]     , p: { height      :    70   }, o: { duration: 1000 } },
-      { e: $main             , p: { paddingRight:   '50%' }, o: { duration: 1000 } },
-      { e: $side             , p: { marginLeft  : '-600px'}, o: { duration: 1000 } },
-      { e: $side             , p: { paddingLeft :     0   }, o: { duration: 1000 } }
-    ];
-    // Velocity.RunSequence(mySequence);
-
-    Velocity($('.banner-image'), {opacity: 0 }, 'easeInOutCubic');
-
-    Velocity($addOns, "scroll", 'easeInOutCubic', function(){
-      // Velocity($('.bt-back'), {height: 70 }, 'easeOutQuart');
-      Velocity({
-        e: $('.bt-back'),
-        p: { height: 70 },
-        o: {
-          duration: 300,
-          delay: 300,
-          easing: 'easeOutQuart'
-        }
-      });
+    // Change item bg color
+    Velocity({
+      e: $btLi,
+      p: { backgroundColor: '#000'},
+      o: { duration: speed/2}
+    }).then(function(els) {
 
       $body.addClass('locked');
+      $side.height($hiddenContent.height());
+
+      Velocity({
+        e: $('header'),
+        p: { height: 0 },
+        o: { duration: speed }
+      }).then(function(els){
+        Velocity({
+            e: $side,
+            p: 'scroll',
+            o: { duration: speed }
+          });
+      });
+
+      Velocity({
+        e: $side,
+        p: { width: maxWidth * .3 + margin },
+        o: { duration: speed }
+      });
+
+      Velocity({
+        e: $main,
+        p: { marginLeft: '-50%' },
+        o: { duration: speed }
+      });
+
+      Velocity({
+        e: $hiddenContent,
+        p: { width: maxWidth * .7 + margin },
+        o: { duration: speed }
+      }).then(function(){
+        _private.holdScroll();
+      });
+
+      Velocity({
+        e: $side.find('h2'),
+        p: { width: maxWidth * .3, marginLeft: margin },
+        o: { duration: speed }
+      });
+
+      Velocity({
+        e: $side.find('.banner-image'),
+        p: { width: maxWidth * .3, height: maxWidth * .3,  marginLeft: margin },
+        o: { duration: speed }
+      });
+
+      Velocity({
+        e: $side.find('.rent-list ul > li'),
+        p: { marginLeft: margin },
+        o: { duration: speed }
+      });
+
+
+
     });
-    Velocity($main, {marginLeft: '-50%'}, 'easeInSine');
 
-    Velocity($hiddenContent, {
-      left: '30vw',
-      width: '70vw',
-    }, 'easeInSine');
+  };
 
-    // Velocity($side, {paddingLeft: '0'}, 'easeInSine');
-    Velocity($('.addons li'), {marginLeft: '-120px', }, 'easeInSine');
-
-    Velocity($('.addons a'), {
-      paddingLeft: '130px',
-      backgroundPositionX: '130px'
-    }, 'easeInSine');
-    // Velocity($bt, {backgroundColor: '#222222'}, 'easeInSine');
-
-    Velocity($('.addons .bt-back'), {marginLeft: '-200px'}, 'easeInSine');
-
-    // Velocity($('.addons li'), {
-    //   height: '80px',
-    //   lineHeight: '80px'
-    // }, 'easeInSine');
-
-    Velocity($('.addons .price-widget'), {
-      opacity: 0
-    }, 'easeInSine');
-
-
-
-
-  });
-
+  _private.holdScroll = function(){
+    var detailPos = $detail.offset();
+    var heightScreen = $(window).height();
+    var dura = $side.height() - $detail.height();
+    var controller = new ScrollMagic.Controller();
+    new ScrollMagic.Scene({
+      duration: dura,  // the scene should last for a scroll distance of 100px
+      offset: detailPos.top + detailPos.height - heightScreen
+    })
+    .setPin("#detail") // pins the element for the the scene's duration
+    .addTo(controller); // assign the scene to the controller
+  };
 
   return _public;
 

@@ -16,6 +16,7 @@ body.minha-oi.teste
       h1.title Minha TV HD
   
     main.content
+
       div.column.main-content
         .column-container
           
@@ -215,13 +216,15 @@ body.minha-oi.teste
                         li.availability-oifilmes Oi Filmes
                       +widget-price(null, '10,00', '/mês', 'small')
 
-
-
-      div.hidden-content
+      div.hidden-content#detail
         div
 
 
   +footer(footer)
+  
+  .testeCont
+    .colLeft
+    .colRight
 
   script(src='/assets/scripts/vendor/require.js' data-main="/assets/scripts/main" async)
 

@@ -1,8 +1,28 @@
+.testeCont
+  display  none
+  position fixed
+  height 100vh
+  border 1px solid red
+  width 1200px
+  top 0
+  left s("calc((100vw - 1200px)/2)")
+  margin 0 auto
+  z-index 99999
+  pointer-events none
+  .colLeft
+    border-right 1px solid red
+    height 100vh
+    width 30%
+
+*
+  -webkit-backface-visibility hidden
+
 $column-container-left
   float right
   +above('l')
     width (1200px / 2 - 115px)
     // margin-right remify(115px)
+
 
 $column-container-right
   float left
@@ -16,12 +36,15 @@ $column-container-right
     center
 
   header
-    padding-top remify(60px)
+    // padding-top remify(60px)
+    overflow hidden
+    height remify(320px)
     +above('l')
       center(1200px)
 
     .pre-title
       @extend $text-regular
+      margin-top remify(60px)
       color $gray
       overflow hidden
       h2
@@ -41,11 +64,12 @@ $column-container-right
     width 100%
     display block
     overflow hidden
-    margin-bottom remify(150px)
+    position relative
 
   .column
     width 50%
     float left
+    margin-bottom remify(120px)
 
     .column-container
       float right
@@ -106,6 +130,10 @@ $column-container-right
       display inline-block
       line-height remify(30px)
       width remify(320px)
+      &:focus
+        outline none
+        border-bottom 1px solid $black
+
     select
       @extend $text-regular
       appearance none
@@ -156,18 +184,29 @@ $column-container-right
     .column-title h2
       float left
       margin-bottom 0
+      position relative
+      z-index 3
 
     .banner-image
       background-image url(/assets/images/demo/minha-oi-tv-hd.png)
       background-repeat no-repeat
       // background-position remify(80px) remify(50px)
       background-position remify(50px) 0
-      width 100%
+      width remify(600px)
       margin-top -20px
       height remify( 240px + 150px + 63px + 20px + 23px)
+      position relative
+      z-index 2
+      pointer-events none
+      transition opacity 300ms ease-in-out
+      background-size contain
+      background-size 80%
 
   .addons
+    position relative
+    z-index 1
     margin-top -23px
+    transition all 300ms ease-in-out
 
     .bt-back
       @extend $text-regular
@@ -190,19 +229,20 @@ $column-container-right
           stroke $white
           stroke-width 5px
 
-
     li
       line-height remify(150px)
       height remify(151px)
-      // overflow hidden
       padding-left remify(115px)
+      border-bottom 1px solid $grayLight
+      background-color $white
+      transition all 300ms ease-in-out
       &:last-child
         border-color $black
     a
-      border-bottom 1px solid $grayLight
       @extend $column-container-right
       color $black
-      background-color $white
+      line-height remify(150px)
+      height remify(150px)
       display block
       text-decoration none
       background-position left center
@@ -279,26 +319,46 @@ $column-container-right
     background-color $grayLighter
 
   .hidden-content
-    position fixed
-    top 0
-    left 100vw
+    // position fixed
+    // position absolute
+    // top 0
+    // left 100vw
+    float left
     width 0
-    height 100vh
-    background-color $black
-    overflow scroll
+    height 2000px
+    background-color #000
+    // overflow scroll
+    z-index 9999
     div
       height 2000px
       background-image url(/assets/images/demo/demo-hbo.png)
       background-position left top
       background-repeat no-repeat
       background-size cover
+      width 840px
+      box-shadow inset 0px -15px 10px 10px #000
 
   &.locked
-    overflow hidden
+    // overflow hidden
+
+    .column.side-content
+      color red
+        // width s("calc(50% - ( 1200px / 2 ) + (1200px * .3) )")
+        // width s("calc(50% - 600px + 360px )")
+
+    .column-title
+      margin-right 0
+
+    h2
+      font-size remify(36px)
 
     .addons
-      ul
-        height 100vh
-        overflow scroll
-        width 430px
+      margin-top 0
+      li
+        padding-left s("calc( (100vw - 1200px) / 2 + 90px )")
+      a
+        width 360px
+
+    .price-widget
+      display none
 
