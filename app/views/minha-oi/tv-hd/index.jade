@@ -1,6 +1,6 @@
 include ../../_partials/header.jade
 
-body.minha-oi
+body.minha-oi.teste
   section.container(aria-hidden="false")
 
     +buildPlan()
@@ -98,7 +98,12 @@ body.minha-oi
           .column-title 
             h2 Turbine sua TV HD
 
+          .banner-image
+
           .addons
+            button(type="button").bt-back 
+              include ../../../assets/images/icons/back.svg
+              | Voltar
             ul
               li
                 a(href="#" style="background-image: url(/assets/images/logos/height40/telecine.png)")
@@ -212,7 +217,8 @@ body.minha-oi
 
 
 
-
+      div.hidden-content
+        div
 
 
   +footer(footer)
