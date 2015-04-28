@@ -1,6 +1,31 @@
-requirejs.config({
-    baseUrl: '/assets/scripts'
+// requirejs.config({
+//   baseUrl: '/assets/scripts',
+//   paths: {
+//     velocity: 'vendor/velocity'
+//   }
+// });
+
+
+require.config({
+  baseUrl: '/assets/scripts',
+  paths: {
+    "domlib": ('__proto__' in {}) ? "vendor/zepto" : "vendor/jquery",
+    "velocity": 'vendor/velocity',
+    "velocity-ui": 'vendor/velocityui',
+  },
+  shim: {
+    "velocity": {
+      deps: ['domlib']
+    },
+    "velocity-ui":  {
+      deps: ['velocity']
+    },
+    domlib: {
+      exports: "$"
+    }
+  }
 });
+
 
 require([], function() {
 
