@@ -8,8 +8,9 @@ define([
   'velocity',
   // 'velocity-ui',
   'ScrollMagic',
+  'tags/channel-detail',
   'ScrollMagic.debug'
-  ],function ($, reqwest, lodash, riot, Velocity, ScrollMagic) {
+  ],function ($, reqwest, lodash, riot, Velocity, ScrollMagic, channelDetail) {
 
   var _public = {},
       _private = {},
@@ -24,6 +25,12 @@ define([
       margin =  ($body.width() - maxWidth)/2;
       $detail = $('#detail');
 
+  var config = {
+    api: {
+      channel: '/api/channel/'
+    }
+  }
+
   var speed = 700;
 
   _public.init = function(){
@@ -34,10 +41,11 @@ define([
 
   _private.BindOpenDetail = function(){
     $('.addons a').on('click', function(evt){
-      $(this).addClass('active')
-      var $btLi = $(this).parent('li');
       evt.preventDefault();
-      _private.openDetail($btLi);
+      var urlPage = this.href,
+          $link = $(this);
+      $link.addClass('active');
+      _private.fillDetail($link, urlPage);
     });
   };
 
@@ -48,6 +56,12 @@ define([
       var $btLi = $(this).parent('li');
       _private.closeDetail($btLi);
     });
+  };
+
+  _private.fillDetail = function($link, urlPage){
+    var urlApi = config.api.channel + urlPage.split('/').slice(-2)[0] + '.json';
+    riot.mount('channel-detail', {urlApi:urlApi})
+    _private.openDetail($link.parent('li'));
   };
 
   _private.closeDetail = function($btLi){
@@ -149,7 +163,7 @@ define([
 
   };
 
-  _private.holdScroll = function(){
+  _private.holdScroll = function(){ return
     var heightScreen = $(window).height();
         menuPos = $('.menu').offset(),
         pos = menuPos.top + menuPos.height + $detail.height() - heightScreen,
