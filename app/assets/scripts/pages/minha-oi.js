@@ -33,6 +33,7 @@ define([
 
   _private.BindOpenDetail = function(){
     $('.addons a').on('click', function(evt){
+      $(this).addClass('active')
       var $btLi = $(this).parent('li');
       evt.preventDefault();
       _private.openDetail($btLi);
@@ -49,7 +50,6 @@ define([
       o: { duration: speed/2, delay: speed/2 }
     });
 
-    // Change item bg color
     Velocity({
       e: $btLi,
       p: { backgroundColor: '#000'},
@@ -69,6 +69,12 @@ define([
             o: { duration: speed }
           }).then(function(){
           });
+      });
+
+      Velocity({
+        e: $addOns.find('li a'),
+        p: { marginLeft: margin, backgroundPositionX: 90 },
+        o: { duration: speed }
       });
 
       Velocity({
