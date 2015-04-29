@@ -96,15 +96,16 @@ body.minha-oi.teste
       div.column.side-content
         .column-container
 
+          button(type="button").bt-back 
+            include ../../../assets/images/icons/back.svg
+            | Voltar
+
           .column-title 
             h2 Turbine sua TV HD
 
           .banner-image
 
           .addons
-            button(type="button").bt-back 
-              include ../../../assets/images/icons/back.svg
-              | Voltar
             ul
               li
                 a(href="#" style="background-image: url(/assets/images/logos/height40/telecine.png)")
@@ -217,7 +218,63 @@ body.minha-oi.teste
                       +widget-price(null, '10,00', '/mês', 'small')
 
       div.hidden-content#detail
-        div
+        div.hidden-content-container
+          div.channel-info
+            h1.title Pacote HBO
+            +widget-price(null, '35,00', '/mês', 'small')
+            a(href="#").call 
+              span.number 106 31 
+              | Ligue para contratar
+            h2.subtitle Os melhores Filmes e Séries
+            div.desc
+              p A HBO exibe filmes que já foram campeões de bilheteria. Nele são exibidos grandes e recentes conhecidos filmes da Columbia Pictures, Sony Pictures Television International, Warner, New Line Cinema, TriStar Pictures e até mesmo de produções de estúdios independentes.
+              p Além disso, o canal exibe séries mundialmente aclamadas que contribuem em grande parte para o renome de qualidade do canal. Muitos desses programas são conhecidos, dividindo opiniões, por apresentar com pouca, ou nenhuma, censura temas como sexo, violência, uso de drogas, entre outros.
+
+            h2.title-list 10 Canais em HD
+
+            ul.list-channels
+              li
+                span HBO HD
+                span Canal 70
+              li
+                span HBO 2
+                span Canal 71
+              li
+                span HBO Comedy
+                span Canal 72
+              li
+                span HBO Signature
+                span Canal 73
+              li
+                span HBO Family
+                span Canal 74
+              li
+                span HBO HD
+                span Canal 70
+              li
+                span HBO 2
+                span Canal 71
+              li
+                span HBO Comedy
+                span Canal 72
+              li
+                span HBO Signature
+                span Canal 73
+              li
+                span HBO Family
+                span Canal 74
+
+            h2.title-avaliable Disponível nos planos:
+
+            ul.list-avaliable
+              li
+                a(href="") TV Mix HD
+                | — Plano a partir de R$ 69,90
+              li
+                a(href="") TV Total HD
+                | — Plano a partir de R$ 89,90
+
+            .sign-now Ainda não tem Oi TV HD? Assine agora.
 
 
   +footer(footer)

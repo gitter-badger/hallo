@@ -29,6 +29,7 @@ define([
   _public.init = function(){
     _private.holdScroll();
     _private.BindOpenDetail();
+    _private.BindCloseDetail();
   };
 
   _private.BindOpenDetail = function(){
@@ -39,6 +40,31 @@ define([
       _private.openDetail($btLi);
     });
   };
+
+  _private.BindCloseDetail = function(){
+    $('.bt-back ').on('click', function(evt){
+      evt.preventDefault();
+      $('.addons a.active').removeClass('active')
+      var $btLi = $(this).parent('li');
+      _private.closeDetail($btLi);
+    });
+  };
+
+  _private.closeDetail = function($btLi){
+    var $price = $btLi.find('.price-widget');
+    $price.velocity('reverse')
+    $btLi.velocity('reverse')
+    $body.removeClass('locked');
+    $side.velocity('reverse')
+    $addOns.velocity('reverse')
+    $('.bt-back').velocity('reverse')
+    $side.velocity('reverse')
+    $main.velocity('reverse')
+    $hiddenContent.velocity('reverse')
+    $side.find('h2').velocity('reverse')
+    $side.find('.banner-image').velocity('reverse')
+    $side.find('.rent-list ul > li').velocity('reverse')
+  }
 
   _private.openDetail = function($btLi){
     var $price = $btLi.find('.price-widget');
@@ -74,6 +100,12 @@ define([
       Velocity({
         e: $addOns.find('li a'),
         p: { marginLeft: margin, backgroundPositionX: 90 },
+        o: { duration: speed }
+      });
+
+      Velocity({
+        e: $('.bt-back'),
+        p: { height: 70 },
         o: { duration: speed }
       });
 
