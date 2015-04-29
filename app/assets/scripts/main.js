@@ -12,7 +12,7 @@ require.config({
     "domlib": ('__proto__' in {}) ? "vendor/zepto" : "vendor/jquery",
     "velocity": 'vendor/velocity',
     "velocity-ui": 'vendor/velocityui',
-    "ScrollMagic": 'vendor/scrollmagic',
+    "ScrollMagic": 'vendor/ScrollMagic',
     "ScrollMagic.debug": 'vendor/scrollmagic.debug'
   },
   shim: {
