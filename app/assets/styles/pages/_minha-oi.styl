@@ -1,3 +1,10 @@
+ .b-lazy
+  transition opacity 500ms ease-in-out
+  max-width 100%
+  opacity 0
+  &.b-loaded
+    opacity 1
+
 .testeCont
   display  none
   position fixed
@@ -149,7 +156,6 @@ $column-container-right
       padding 0  remify(15px)
       text-align right
       transform translate(0, remify(11px))
-      background-image url(/assets/images/icons/arrow.svg)
       background-repeat no-repeat
       background-size remify(10px)
       background-position right center
@@ -179,7 +185,6 @@ $column-container-right
   .main-content
     .column-container
       background-color $grayLighter
-      // background-image linear-gradient(0%, $white 0%, $grayLighter 20%, $grayLighter 70%, $white 80%)
       background-image linear-gradient(0%, $white 0%, $grayLighter 20%, $grayLighter 70%, $white 86%)
 
   .side-content
@@ -212,9 +217,7 @@ $column-container-right
           stroke-width 5px
 
     .banner-image
-      background-image url(/assets/images/demo/minha-oi-tv-hd.png)
       background-repeat no-repeat
-      // background-position remify(80px) remify(50px)
       background-position remify(50px) 0
       width remify(600px)
       margin-top -20px
@@ -327,12 +330,10 @@ $column-container-right
   .hidden-content
     float left
     width 0
-    // height 2000px
     background-color #000
     background-image url(/assets/images/demo/hbo-demo.png)
     background-position center top
     background-repeat no-repeat
-    // background-size cover
     &.fix
       right 0 !important
       margin 0 !important
@@ -370,7 +371,6 @@ $column-container-right
     @extend $title-tiny
     color $white
     font-size remify(55px)
-    height remify(60px)
     line-height remify(60px)
   .call
     height remify(60px)
@@ -406,10 +406,8 @@ $column-container-right
     display block
     li
       float left
-      height remify(30px)
       line-height remify(15px)
-      padding remify(20px) 0
-      font-size 13px
+      font-size remify(13px)
       border-bottom 1px dashed $gray
       display block
       width 41%
@@ -417,6 +415,7 @@ $column-container-right
       span
         display block
         text-align right
+        margin remify(5px) 0
   .title-avaliable
     margin-bottom remify(40px)
     font-size remify(16px) !important
