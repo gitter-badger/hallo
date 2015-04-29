@@ -1,3 +1,5 @@
+
+
 define([
   'domlib',
   'vendor/reqwest',
@@ -5,8 +7,11 @@ define([
   'vendor/riot',
   'velocity',
   // 'velocity-ui',
-  'vendor/ScrollMagic'
+  'ScrollMagic',
+  'ScrollMagic.debug'
   ],function ($, reqwest, lodash, riot, Velocity, ScrollMagic) {
+
+
 
   var _public = {},
       _private = {},
@@ -25,11 +30,13 @@ define([
   var speed = 700;
 
   _public.init = function(){
+    _private.holdScroll();
     _private.BindOpenDetail();
   };
 
   _private.BindOpenDetail = function(){
     $('.addons a').on('click', function(evt){
+
       var $btLi = $(this).parent('li');
       evt.preventDefault();
       _private.openDetail($btLi);
@@ -39,7 +46,6 @@ define([
   _private.openDetail = function($btLi){
     var $price = $btLi.find('.price-widget');
 
-    console.log('teste2', $btLi);
 
     // HIDE PRICE
     Velocity({
@@ -56,7 +62,7 @@ define([
     }).then(function(els) {
 
       $body.addClass('locked');
-      $side.height($hiddenContent.height());
+      // $side.height($hiddenContent.height());
 
       Velocity({
         e: $('header'),
@@ -67,8 +73,10 @@ define([
             e: $side,
             p: 'scroll',
             o: { duration: speed }
+          }).then(function(){
           });
       });
+
 
       Velocity({
         e: $side,
@@ -86,8 +94,6 @@ define([
         e: $hiddenContent,
         p: { width: maxWidth * .7 + margin },
         o: { duration: speed }
-      }).then(function(){
-        _private.holdScroll();
       });
 
       Velocity({
@@ -115,16 +121,39 @@ define([
   };
 
   _private.holdScroll = function(){
-    var detailPos = $detail.offset();
+    // var detailPos = $detail.offset();
     var heightScreen = $(window).height();
-    var dura = $side.height() - $detail.height();
+    // var dura = $side.height() - $detail.height();
+    // var controller = new ScrollMagic.Controller();
+    // new ScrollMagic.Scene({
+    //   duration: 1200,
+    //   offset: detailPos.top + detailPos.height - heightScreen
+    // })
+    // .setPin("#detail") // pins the element for the the scene's duration
+    // .addTo(controller); // assign the scene to the controller
+
+    var menuPos = $('.menu').offset();
+    var pos = menuPos.top + menuPos.height + $detail.height() - heightScreen;
+    console.log(pos);
+
+
     var controller = new ScrollMagic.Controller();
-    new ScrollMagic.Scene({
-      duration: dura,  // the scene should last for a scroll distance of 100px
-      offset: detailPos.top + detailPos.height - heightScreen
+    var scene = new ScrollMagic.Scene({
+      duration: 1200,
+      offset: pos
     })
     .setPin("#detail") // pins the element for the the scene's duration
-    .addTo(controller); // assign the scene to the controller
+    .addTo(controller)
+    .addIndicators(); // assign the scene to the controller
+
+    scene.on("enter", function (event) {
+      $hiddenContent.addClass('fix')
+
+    });
+
+    var triggerPosition = scene.triggerPosition();
+    console.log(triggerPosition);
+
   };
 
   return _public;
