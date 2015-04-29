@@ -28,7 +28,8 @@ var appConfig = (function() {
       fonts: './app/assets/fonts/**/*.{eot,svg,ttf,woff,woff2}',
       images: './app/assets/images/**/*.{jpg,jpeg,png,gif,svg}',
       icons: './app/assets/images/icons/**/*.svg',
-      bower: './bower_components/'
+      bower: './bower_components/',
+      api: './data/api/**/*.json'
     },
     dist: {
       root: './dist/',
@@ -37,7 +38,8 @@ var appConfig = (function() {
       images: './dist/assets/images/',
       icons: './dist/assets/fonts/icons/',
       scripts: './dist/assets/scripts/',
-      tags: './dist/assets/scripts/tags/'
+      tags: './dist/assets/scripts/tags/',
+      api: './dist/api/'
     },
     docs: {
       jade: './docs/views/**/*.jade',

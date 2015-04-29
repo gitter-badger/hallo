@@ -211,10 +211,19 @@ gulp.task('build-templates', function(){
     .pipe(gulp.dest(config.path.dist.tags))
 });
 
+gulp.task('build-api', function(){
+  gulp.src(config.path.src.api)
+    .pipe($.plumber({errorHandler: helpers.notifyError}))
+    .pipe($.changed(config.path.dist.api))
+    .pipe(gulp.dest(config.path.dist.api))
+    .pipe($.gzip())
+    .pipe(gulp.dest(config.path.dist.api))
+});
 
 gulp.task('build', function() {
   runSequence(
     'build-data',
+    'build-api',
     'build-bower',
     'build-templates',
     'build-scripts',
