@@ -49,8 +49,8 @@ body.minha-oi.teste
                 include ../../../assets/images/icons/lupa-thin.svg
                 input(type="search", placeholder="Buscar perguntas frequentes")
               label
-                span Buscar em
-                select
+                span Buscar em 
+                select.b-lazy(data-src="/assets/images/icons/arrow.svg")
                   option(value="tv-hd") em TV HD
                   option(value="fixo") em Fixo
                   option(value="internet") em Internet
@@ -69,9 +69,9 @@ body.minha-oi.teste
               li
                 a(href="#") Sem sinal de TV
               li
-                a(href="#" style="background-image:url(/assets/images/demo/video1.png)").hasimg Como usar o controle remoto
+                a.hasimg.b-lazy(href="#" data-src="/assets/images/demo/video1.png") Como usar o controle remoto
               li
-                a(href="#" style="background-image:url(/assets/images/demo/video2.png)").hasimg Como usar o gravador digital
+                a.hasimg.b-lazy(href="#" data-src="/assets/images/demo/video2.png") Como usar o gravador digital
               li
                 a(href="#") Instalação atrasada
               li
@@ -103,48 +103,48 @@ body.minha-oi.teste
           .column-title 
             h2 Turbine sua TV HD
 
-          .banner-image
+          .banner-image.b-lazy(data-src="/assets/images/demo/minha-oi-tv-hd.png")
 
           .addons
             ul
               li
-                a(href="#" style="background-image: url(/assets/images/logos/height40/telecine.png)")
+                a.b-lazy(href="/tv-hd/canal/telecine/" data-src="/assets/images/logos/height40/telecine.png")
                   span.channel-name Tele Cine
                   +widget-price(null, '45,00', '/mês', 'small')
               li
-                a(href="#" style="background-image: url(/assets/images/logos/height40/hbo.png)")
+                a.b-lazy(href="/tv-hd/canal/pacote-hbo/" data-src="/assets/images/logos/height40/hbo.png")
                   span.channel-name HBO
                   +widget-price(null, '35,00', '/mês', 'small')
               li
-                a(href="#" style="background-image: url(/assets/images/logos/height40/premiere.png)")
+                a.b-lazy(href="/tv-hd/canal/premiere/" data-src="/assets/images/logos/height40/premiere.png")
                   span.channel-name Premiere
                   +widget-price(null, '71,00', '/mês', 'small')
               li
-                a(href="#")
+                a(href="/tv-hd/ponto-adicional/")
                   span Ponto Adicional
                   +widget-price(null, '19,00', '/mês', 'small')
               li
-                a(href="#")
+                a(href="/tv-hd/gravador-digital/")
                   span Gravador Digital
                   +widget-price(null, '20,00', '/mês', 'small')
               li
-                a(href="#" style="background-image: url(/assets/images/logos/height40/combate.png)")
+                a.b-lazy(href="/tv-hd/canal/combate/" data-src="/assets/images/logos/height40/combate.png")
                   span.channel-name Combate
                   +widget-price(null, '60,00', '/mês', 'small')
               li
-                a(href="#" style="background-image: url(/assets/images/logos/height40/playboy-tv.png)")
+                a.b-lazy(href="/tv-hd/canal/playboy-tv/" data-src="/assets/images/logos/height40/playboy-tv.png")
                   span.channel-name Playboy TV
                   +widget-price(null, '19,90', '/mês', 'small')
               li
-                a(href="#" style="background-image: url(/assets/images/logos/height40/sexyhot.png)")
+                a.b-lazy(href="/tv-hd/canal/sexyhot/" data-src="/assets/images/logos/height40/sexyhot.png")
                   span.channel-name SexyHot
                   +widget-price(null, '19,90', '/mês', 'small')
               li
-                a(href="#" style="background-image: url(/assets/images/logos/height40/sexprive.png)")
+                a.b-lazy(href="/tv-hd/canal/sexprive/" data-src="/assets/images/logos/height40/sexprive.png")
                   span.channel-name SexyPrive
                   +widget-price(null, '14,90', '/mês', 'small')
               li
-                a(href="#")
+                a(href="/tv-hd/canal/canais-internacionais/")
                   span Canais Internacionais
                   +widget-price(null, '19,90', '/mês', 'small')
           
@@ -155,7 +155,7 @@ body.minha-oi.teste
             
             ul
               li
-                a(style="background-image:url(/assets/images/demo/alugue1.png)")
+                a.b-lazy(data-src="/assets/images/demo/alugue1.png")
                   div
                     div
                       span.movie-title O Hobbit
@@ -165,7 +165,7 @@ body.minha-oi.teste
                         li.availability-oifilmes Oi Filmes
                       +widget-price(null, '10,00', '/mês', 'small')
               li
-                a(style="background-image:url(/assets/images/demo/alugue2.png)")
+                a.b-lazy(data-src="/assets/images/demo/alugue2.png")
                   div
                     div
                       span.movie-title Homem Aranha 3
@@ -175,7 +175,7 @@ body.minha-oi.teste
                         li.availability-oifilmes Oi Filmes
                       +widget-price(null, '10,00', '/mês', 'small')
               li
-                a(style="background-image:url(/assets/images/demo/alugue3.png)")
+                a.b-lazy(data-src="/assets/images/demo/alugue3.png")
                   div
                     div
                       span.movie-title Os miseráveis
@@ -184,7 +184,7 @@ body.minha-oi.teste
                           acronym(title="Video On Demand") VOD
                       +widget-price(null, '10,00', '/mês', 'small')
               li
-                a(style="background-image:url(/assets/images/demo/alugue4.png)")
+                a.b-lazy(data-src="/assets/images/demo/alugue4.png")
                   div
                     div
                       span.movie-title Thor
@@ -193,7 +193,7 @@ body.minha-oi.teste
                           acronym(title="Video On Demand") VOD
                       +widget-price(null, '10,00', '/mês', 'small')
               li
-                a(style="background-image:url(/assets/images/demo/alugue5.png)")
+                a.b-lazy(data-src="/assets/images/demo/alugue5.png")
                   div
                     div
                       span.movie-title A Perseguição
@@ -203,13 +203,13 @@ body.minha-oi.teste
                         li.availability-oifilmes Oi Filmes
                       +widget-price(null, '10,00', '/mês', 'small')
               li
-                a(style="background-image:url(/assets/images/demo/alugue6.png)")
+                a.b-lazy(data-src="/assets/images/demo/alugue6.png")
                   div
                     div
                       span Oblivion
                       +widget-price(null, '10,00', '/mês', 'small')
               li
-                a(style="background-image:url(/assets/images/demo/alugue7.png)")
+                a.b-lazy(data-src="/assets/images/demo/alugue7.png")
                   div
                     div
                       span.movie-title Perfume
@@ -217,65 +217,10 @@ body.minha-oi.teste
                         li.availability-oifilmes Oi Filmes
                       +widget-price(null, '10,00', '/mês', 'small')
 
-      div.hidden-content#detail
+      div.hidden-content.xxb-lazy#detail(data-src="/assets/images/demo/hbo-demo.png")
         div.hidden-content-container
-          div.channel-info
-            h1.title Pacote HBO
-            +widget-price(null, '35,00', '/mês', 'small')
-            a(href="#").call 
-              span.number 106 31 
-              | Ligue para contratar
-            h2.subtitle Os melhores Filmes e Séries
-            div.desc
-              p A HBO exibe filmes que já foram campeões de bilheteria. Nele são exibidos grandes e recentes conhecidos filmes da Columbia Pictures, Sony Pictures Television International, Warner, New Line Cinema, TriStar Pictures e até mesmo de produções de estúdios independentes.
-              p Além disso, o canal exibe séries mundialmente aclamadas que contribuem em grande parte para o renome de qualidade do canal. Muitos desses programas são conhecidos, dividindo opiniões, por apresentar com pouca, ou nenhuma, censura temas como sexo, violência, uso de drogas, entre outros.
-
-            h2.title-list 10 Canais em HD
-
-            ul.list-channels
-              li
-                span HBO HD
-                span Canal 70
-              li
-                span HBO 2
-                span Canal 71
-              li
-                span HBO Comedy
-                span Canal 72
-              li
-                span HBO Signature
-                span Canal 73
-              li
-                span HBO Family
-                span Canal 74
-              li
-                span HBO HD
-                span Canal 70
-              li
-                span HBO 2
-                span Canal 71
-              li
-                span HBO Comedy
-                span Canal 72
-              li
-                span HBO Signature
-                span Canal 73
-              li
-                span HBO Family
-                span Canal 74
-
-            h2.title-avaliable Disponível nos planos:
-
-            ul.list-avaliable
-              li
-                a(href="") TV Mix HD
-                | — Plano a partir de R$ 69,90
-              li
-                a(href="") TV Total HD
-                | — Plano a partir de R$ 89,90
-
-            .sign-now Ainda não tem Oi TV HD? Assine agora.
-
+          channel-detail
+          
 
   +footer(footer)
   
