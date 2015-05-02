@@ -1,7 +1,7 @@
 mixin buildPlan(data)
   oi-buildplan
-    a.build-plan(href="#")
-      span.build-plan_text Combo com TV por R$ 109,90
+    a.build-plan(href="#" itemscope itemtype="http://schema.org/Offer" role="banner")
+      span.build-plan_text(itemprop="name") Combo com TV por R$ 109,90
       ul.build-plan_icons
         li
           include ../../assets/images/icons/tv.svg
