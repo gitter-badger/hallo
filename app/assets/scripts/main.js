@@ -29,7 +29,9 @@ require.config({
 });
 
 
-require([], function() {
+require(['vendor/blazy'], function(Blazy) {
+
+   var bLazy = new Blazy();
 
   // Crossroads?
 
