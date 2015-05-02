@@ -1,102 +1,96 @@
-.card
-  background $white
-  border remify(1px) solid $grayLight
-  padding-top remify(24px)
+oi-card
+  display block
   position relative
-  text-align center
-  width remify(392px)
-  display inline-block
-  float left
-  +below(415px)
-    padding-top remify(12px)
-    padding-bottom remify(6px)
-  +above(415px)
-    height remify(407px)
-  +above(767px)
-    height remify(587px)
 
-  & + .card
-    border-left 0
+.oi-card
+  background-color $white
+  border remify(1px) solid $grayLight
+  display block
+  padding remify(17px)
+  text-decoration none
+  font-family $fontTextRegular
+  color $black
+  +above('m')
+    padding remify(30px) remify(35px)
+  &:hover
+    color $green
+    .oi-card_list
+      color inherit
 
-  &-title
-    @extend $headline-small
-    color: $green
-    +below(415px)
-      color: $black
-    +above(415px)
-      margin-bottom remify(5px)
-    +above(767px)
-      margin-bottom remify(11px)
+  &_header
+    color inherit
 
-  &-list-subtitle
-    @extend $headline-small
-    border-bottom remify(1px) solid $grayLight
-    padding-bottom remify(22px)
-    width remify(210px)
-    +below(415px)
-      display none
-    +below(600px)
-      width 100%
-    +above(415px)
-      font-size remify(15px)
-      margin 0 auto remify(20px) auto
-      padding-bottom remify(25px)
-    +above(767px)
+  &_title
+    display block
+    font-family $fontTextLight
+    font-size remify(18px)
+    text-align center
+    transition: color 0.3s ease
+    +above('m')
+      color $green
       font-size remify(21px)
-      margin 0 auto remify(37px) auto
-      padding-bottom remify(22px)
+
+  &_subtitle
+    display none
+    text-align center
+    font-size remify(16px)
+    padding-bottom remify(30px)
+    border-bottom remify(1px) solid $grayLight
+    max-width remify(180px)
+    margin remify(15px) auto remify(40px) auto
+    transition: color 0.3s ease
+
+    +above('m')
+      display block
+
     li
-      circleSeparator(6px, 3px, 8px)
       display inline-block
 
-  // @todo: buggy in container width
-  &-price > div
-      +above(415px)
-        transform translateX(remify(16px))
-        margin-bottom remify(6px)
-      +above(767px)
-        transform translateX(remify(32px))
-        margin-bottom remify(16px)
+  &_main
+    display block
 
-  &-info
-    @extend $text-small
+  &_list
     color $gray
-    margin 0 auto remify(25px) auto
-    width remify(160px)
-    +below(415px)
-      display none
-    +below(500px)
-      width 100%
-    +above(415px)
-      display block
-
-  &-list
-    @extend $line-height-big
-    @extend $text-small
-    color $black
-    text-align left
     display none
-    +above(767px)
+    font-size remify(13px)
+    max-width remify(180px)
+    margin 0 auto
+    transition: color 0.3s ease
+    +above('m')
       display block
-      padding-left remify(80px)
-    +above(1023px)
-      padding-left remify(117px)
+    +above('l')
+      color $black
+    &_title
+      margin-bottom remify(10px)
+      line-height remify(30px)
+    &_items
+      line-height remify(30px)
 
-  &-action
-    @extend $button-regular
-    +below(415px)
-      display none
-    +below(480px)
-      font-size remify(12px)
-    +below(540px)
-      width s('calc(100% - %s)', remify(12px) * 2 )
-      absoluteBottomLeft(remify(30px), remify(12px))
-    +below(640px)
-      width s('calc(100% - %s)', remify(22px) * 2 )
-      absoluteBottomLeft(remify(30px), remify(22px))
-    +above(415px)
-      absoluteBottomLeft(remify(30px), remify(38px))
-      width s('calc(100% - %s)', remify(38px) * 2 )
-    +above(767px)
-      absoluteBottomLeft(remify(30px), remify(30px))
-      width s('calc(100% - %s)', remify(30px) * 2 )
+  &_footer
+    display none
+    margin-top remify(70px)
+    width 100%
+    +above('m')
+      display block
+
+    button, a
+      background-color $white
+      border 1px solid inherit
+      border-radius remify(2px)
+      color inherit
+      cursor pointer
+      display block
+      font-size remify(16px)
+      height remify(50px)
+      line-height remify(50px)
+      margin 0
+      padding 0
+      text-align center
+      width 100%
+      transition: all 0.3s ease
+
+  oi-price
+    color inherit
+    +above('m')
+      margin-bottom remify(40px)
+
