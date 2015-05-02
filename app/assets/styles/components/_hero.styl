@@ -1,50 +1,26 @@
-.hero
-  absoluteTopLeft(remify(70px))
-  background-color $gray
-  overflow hidden
+oi-hero
+  display none
+  background green
+  height remify(820px)
+  height s("calc(100vh - 70px)")
   width 100%
-  z-index 1
-  +below(415px)
-    background-color $green
-    height 66vh
-    .imgc
-      display none
-  +above(415px)
-    height remify(820px)
-  +above(767px)
-    height remify(625px)
-  .imgc
-    size(100%, 100%)
-    background-repeat no-repeat
-    background-size cover
-    background-position top center
-    position relative
+  position absolute
+  top remify(70px)
+  left 0
+  +above('m')
+    display block
 
-  img
-    width 100%
-
-  .caption-container
-    display none
+.oi-hero
+  display: none
+  +above('m')
+    display: block
     height 100%
-    color $white
-    position relative
-    +above(415px)
-      center( remify(704px))
-    +above(767px)
-      center( remify(960px))
-    +above(1023px)
-      center( remify(1170px))
-  .caption
-    position absolute
-    bottom remify(60px)
-    right 0
-    padding-right 65px
+    background-color $green
+    z-index 1
+
+  &_image
+    width 100%
+    height 100%
     background-repeat no-repeat
-    background-position right remify(3px)
-  .caption-name
-    @extend $text-bold-small
-  .caption-time
-    @extend $text-small
-  // .caption-channel
-
-
+    background-position top center
+    background-size cover
