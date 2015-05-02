@@ -1,82 +1,83 @@
-.menu
-  @extend $text-regular
-.menu
-  overflow hidden
+oi-menu
   position relative
   z-index 2
-  width 100%
+  display block
+
+.oi-menu
+  height remify(70px)
+  border-bottom remify(1px) solid #178a7f
+  background-color $green
+  padding 0 remify(15px)
+  +above('m')
+    background-color rgba(0, 0, 0, .4)
+    border-bottom none
 
   ul
     overflow hidden
-    +below(415px)
-      center(100%)
-      height remify(90px)
-      // line-height remify(90px)
-    +above(415px)
-      center(724px)
-      // line-height remify(70px)
-      height remify(70px)
-    +above(767px)
-      center(1200px)
-    +below(415px)
-      height remify(90px)
-    +above(415px)
-      height remify(70px)
+    center(1170px)
 
   li
+    height remify(70px)
+    line-height remify(70px)
     display block
     float left
-    +below(415px)
-      margin 0 remify(15px)
-    +above(415px)
-      margin 0 remify(15px) 0 remify(10px)
+    margin 0 remify(5px)
+
+    &.oi-menu_home
+      overflow hidden
+      width remify(50px)
+      svg
+        height remify(45px)
+        margin-top remify(10px)
+
+    &.oi-menu_minha-oi
+      +above('m')
+        display none
+
+    &.oi-menu_products
+      +above('m')
+        display none
+
+    &.oi-menu_search
+      float right
+      svg
+        height remify(16px)
+        fill $black
+        opacity .3
+      span
+        display none
+        +above('m')
+          display inline
+          margin-left remify(5px)
+
+    &.oi-menu_minha-oi-m
+      display none
+      +above('m')
+        float right
+        background-color red
+
+    &.oi-menu_m
+      display none
+      +above('m')
+        display block
+
+  svg
+    display inline-block
 
   a
-    display block
+    @extend $text-regular
     color $white
+    height remify(70px)
+    line-height remify(70px)
+    display inline-block
     text-decoration none
-    +below(415px)
-      font-size remify(21px)
-      line-height remify(90px)
-    +above(415px)
-      line-height remify(70px)
+    padding 0 remify(5px)
 
-  .products
-    +below(415px)
-      max-width remify(90px)
+  span > span
+    display none
+    +above('m')
+      display inline
 
-  .home
-    margin 0 remify(10px)
-    +below(415px)
-      width remify(75px)
-      height remify(90px)
-    +above(415px)
-      width remify(65px)
-      height remify(65px)
 
-    svg
-      display inline-block
-      +below(415px)
-        square( remify(60px) )
-        margin remify(15px) 0 0 remify(13px)
-      +above(415px)
-        square( remify(50px) )
-        margin remify(10px) 0 0 remify(4px)
-
-  .search
-    +below(415px)
-      size( remify(45px), remify(90px) )
-      float right
-      text-align right
-
-    svg
-      square( remify(12px) )
-      display inline-block
-      margin 0 remify(5px) remify(1px) remify(4px)
-      +below(415px)
-        square( remify(16px) )
-        margin 0 remify(10px) 0 0
-      path
-        fill $white
 
 
