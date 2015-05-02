@@ -1,39 +1,51 @@
-header.header-hero
-  // center( remify(1200px))
-  // height 64.3vh
-  min-height remify(250px)
+oi-header
+  display block
   position relative
   z-index 2
-  +below(415px)
-    height 47vh
-  +above(415px)
-    center( remify(704px))
-    height 77.3vh
-    height remify(750px)
-    max-height remify(750px)
-  +above(767px)
-    center( remify(960px))
-    height 69.3vh
-    max-height remify(517px)
-  +above(1023px)
-    center( remify(1170px))
 
-  h1
+.oi-header
+  center(1170px)
+  background-color $green
+  height s("calc(100vh - 140px)")
+  line-height $header-height-xs
+  text-align center
+  border-bottom remify(1px) solid #178a7f
+  position relative
+  z-index 2
+  +above('m')
+    border-bottom none
+    background-color transparent
+    padding 0 remify(30px)
+
+  &_title
     color $white
-    word-spacing remify(-7px)
-    padding-left remify(20px)
-    +below(415px)
-      @extend $title-big
-      // padding-top remify(165px)
-      padding-top 6vh
-      text-align center
-    +above(415px)
-      @extend $title-huge
+    font-family $fontTitle
+    font-size remify(70px)
+    height remify(355px)
+    line-height remify(355px)
+    text-align center
+    width 100%
+    +above('m')
+      width 50%
+      float left
       font-size remify(112px)
-      margin-top remify(96px)
-      padding-top 0
+      height remify(112px)
+      line-height remify(112px)
       text-align left
-    +above(767px)
-      margin-top remify(34px)
-    +above(1200px)
-      padding-left 0
+      margin-top remify(130px)
+
+  &_client-type
+    display none
+    +above('m')
+      height remify(112px)
+      line-height remify(112px)
+      margin-top remify(130px)
+      width 50%
+      float right
+      text-align right
+
+    a
+      color $white
+      @extend $text-regular
+      text-decoration none
+
