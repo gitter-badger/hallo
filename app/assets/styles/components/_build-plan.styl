@@ -6,6 +6,11 @@ $buildplan-height-m = 70px
 $buildplan-padding-m = 15px
 $buildplan-content-height-m = $buildplan-height-m - $buildplan-padding-m * 2
 
+build-plan
+  display block
+  position relative
+  z-index 2
+
 .build-plan
   @extend $text-small
   background $white
@@ -16,7 +21,6 @@ $buildplan-content-height-m = $buildplan-height-m - $buildplan-padding-m * 2
   text-align center
   text-decoration none
   vertical-align -webkit-baseline-middle
-  border 1px solid red
   +above('m')
     font-size remify(16px)
     padding remify($buildplan-padding-m) 0
