@@ -1,80 +1,60 @@
-// @todo: what happens whithout cents/sufix ?
-// @todo: buggy in container width
-.price-widget
-  display inline-block
+oi-price
+  display block
   position relative
-  text-align left
-  +below(415px)
-    transform translateX(remify(15px))
 
-  .price
-    &-prefix
-      @extend $text-small
-      line-height remify(13px)
-      margin-bottom remify(5px)
-      display block
-      +below(415px)
-        color: $black
-      +above(415px)
-        color: $black
-      +above(767px)
-        color: $gray
+.oi-price
+  color inherit
+  display block
+  height remify(44px)
+  +above('m')
+    height remify(56px)
 
-    &-value
-      font-family oiTitle, sans-serif
-      +below(415px)
-        font-size remify(43px)
-        line-height remify(43px)
-      +above(415px)
-        font-size remify(72px)
-        line-height remify(99px)
-      +above(767px)
-        font-size remify(97px)
-        line-height remify(86px)
+  &_prefix
+    display none
+    font-family $fontTextRegular
 
-    &-cents
+  &_value
+    font-family $fontTitle
+    text-align center
+    transition: color 0.3s ease
+
+    &_integer
       display inline-block
-      font-family oiTitle, sans-serif
-      +below(415px)
-        font-size remify(23px)
-        transform: translateY(remify(-14px))
-      +above(415px)
-        font-size remify(34px)
-        transform: translateY(remify(-27px))
-      +above(767px)
-        font-size remify(48px)
-        transform: translateY(remify(-34px))
+      font-size remify(35px)
+      height remify(44px)
+      line-height remify(44px)
+      +above('m')
+        font-size remify(75px)
+        height remify(56px)
+        line-height remify(56px)
 
-    &-sufix
-      @extend $text-small
+    &_cents
       display inline-block
-      text-transform uppercase
-      +below(415px)
-        font-size remify(11px)
-        transform: translateX(remify(-17px))
-        margin-left remify(-13px)
-      +below(440px)
-        transform: translateX(remify(-20px))
-        margin-left remify(-20px)
-      +below(470px)
-        margin-left remify(-10px)
-      +above(415px)
-        font-size remify(14px)
-        transform: translateX(remify(-37px))
-      +above(767px)
-        font-size remify(24px)
-        transform: translateX(remify(-64px))
+      font-size remify(17.5px)
+      height remify(22px)
+      line-height remify(22px)
+      transform translateY(remify(-10px))
+      +above('m')
+        font-size remify(37.5px)
+        height remify(28px)
+        line-height remify(28px)
+        transform translateY(remify(-27px))
 
-  &.small
-    .price
-      &-prefix
-        color: $black
-      &-value
-        font-size remify(57px)
-        line-height remify(66px)
-      &-cents
-        font-size remify(27px)
-        transform: translateY(remify(-21px))
-      &-sufix
-        font-size remify(14px)
-        transform: translateX(remify(-37px))
+  &_suffix
+    display block
+    font-family $fontTitle
+    font-size remify(8.5px)
+    height remify(22px)
+    line-height remify(22px)
+    margin-top remify(-25px)
+    text-align center
+    text-indent remify(30px)
+    transition: color 0.3s ease
+    +above('m')
+      text-indent remify(70px)
+      font-size remify(19px)
+
+    span
+      display none
+      +above('m')
+        display inline
