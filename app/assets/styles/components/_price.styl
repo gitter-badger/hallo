@@ -9,6 +9,23 @@ oi-price
   +above('m')
     height remify(56px)
 
+  &.oi-price--small
+    .oi-price_value_integer
+      font-size remify(42px)
+      height remify(44px)
+      line-height remify(44px)
+    .oi-price_value_cents
+      font-size remify(21px)
+      height remify(22px)
+      line-height remify(22px)
+      transform translateY(remify(-14px))
+    .oi-price_suffix
+      font-size remify(11px)
+      height remify(22px)
+      line-height remify(22px)
+      margin-top remify(-25px)
+      text-indent remify(45px)
+
   &_prefix
     display none
     font-family $fontTextRegular
