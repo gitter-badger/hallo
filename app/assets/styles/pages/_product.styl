@@ -1,750 +1,588 @@
-html, body
-  background-color $purple
-
-.product
-  background-position center 0
-  background-repeat no-repeat
-  position relative
-  // background-image url(tv-320.jpg)
-  // background-size 100%
-  // +above(415px)
-  //   background-image url(tv-768.jpg)
-  // +above(767px)
-  //   background-image url(tv-1024.jpg)
-  //   background-size auto
-  // +above(1023px)
-  //   background-image url(tv-1366.jpg)
-
 .cards
-  position relative
-  text-align center
   overflow hidden
-  z-index 2
-  +above('s')
-    center( remify(960px))
+  margin-bottom remify(125px)
   +above('m')
-    center( remify(1170px))
-  .card
+    margin-bottom remify(195px)
+  +above('l')
+    center( remify(1170px) )
+    margin-top remify(-127px)
+
+  oi-card
     width (100% / 3)
-
-.channels-area
-  center( remify(1366px) )
-  background-color $green
-  margin-top remify(196px)
-  +below(415px)
-    margin-top remify(125px)
-    border-top remify(2px) solid $green
-  +above(415px)
-    margin-top remify(184px)
-    padding remify(10px)
-  +above(767px)
-    margin-top remify(175px)
-  +above(1023px)
-    margin-top remify(196px)
-
-.channels-choose
-  overflow hidden
-  ul
-    overflow hidden
-  li
-    col(1/3, gutter: 1)
-  a
-    @extend $text-regular
-    background-color $white
-    color $green
-    display block
-    text-align center
-    text-decoration none
-    +below(415px)
-      line-height remify(60px)
-    +above(415px)
-      line-height remify(68px)
-    +above(767px)
-      line-height remify(54px)
-    +above(1023px)
-      line-height remify(48px)
-    &.active
-      background-color $green
-      color $white
-      cursor default
-
-.channels-header
-  background-color $white
-  border-top remify(1px) solid $green
-  overflow hidden
-  word-spacing remify(-2px)
-  +below(415px)
-    height remify(62px)
-    padding 0 remify(25px)
-    border-bottom 1px solid $gray
-  +above(415px)
-    padding remify(48px) 0 remify(43px)
-  +above(767px)
-    padding remify(37px) 0 remify(35px)
-  +above(1023px)
-    padding remify(37px) 0 remify(35px)
-  ul
-    +above(415px)
-      center( remify(704px) )
-    +above(767px)
-      center( remify(960px) )
-    +above(1023px)
-      center( remify(1170px) )
-  li
-    @extend $title-tiny
-    color $black
-    display inline-block
-    letter-spacing remify(-1px)
-    +below(415px)
-      circleSeparator(6px, 4px, 5px)
-      line-height remify(62px)
-      font-size remify(16px)
-    +above(415px)
-      circleSeparator(11px, 8px, 14px)
-      set-font-size(28px)
-    +above(767px)
-      set-font-size(42px)
-
-.channels-list-area
-  background-color $white
-
-.channels-container
-  center( remify(1170px) )
-  background-color $grayLighter
-  border-bottom remify(1px) solid $gray
-  border-top remify(1px) solid $gray
-
-.channels-lists
-  column(9/12, gutter: 0)
-  background-color $white
-  +below(415px)
-    width 100%
-  +above(415px)
-    width 100%
-  +above(767px)
-    width 80%
-  +above(1023px)
-    width 77%
-    padding-bottom remify(23px)
-
-.channels-tv
-  overflow hidden
-  +above(415px)
-    margin-bottom remify(44px)
-  +above(767px)
-    margin-bottom remify(62px)
-
-h4
-  @extend $text-regular
-  +below(415px)
-    border-bottom remify(1px) solid transparent
-    text-align left
-    font-size remify(14px)
-    text-indent remify(30px)
-    height remify(30px)
-  +above(415px)
-    height remify(70px)
-    border-bottom remify(1px) solid transparent
-    line-height remify(20px)
-    margin-top remify(45px)
-    text-align left
-    text-indent remify(30px)
-  +above(767px)
-    border-bottom remify(1px) solid $grayLight
-    line-height remify(71px)
-    margin-top 0
-    text-align center
-    text-indent 0
-  +above(1023px)
-    text-indent remify(-29px)
-  span
-    display inline
-    +above('m')
-      display none
-
-
-// div.logo-container
-//   height remify(70px)
-//   width remify(100px)
-
-.s-logo
-  background-image url(../images/sprite-logos-low.png)
-  margin remify(15px) remify(-7px)
-  display block
-  width remify(120px)
-  height remify(40px)
-
-.channels-pack
-  +below(415px)
-    width 100%
-    height remify(135px)
-    padding-top remify(25px)
-  +above(415px)
-    width 100%
-    height remify(151px)
-  +above(767px)
-    height auto
-    width (100% / 6)
     float left
+    & + oi-card .oi-card
+      border-left 0
 
-  & > div
-    +below(415px)
-      height remify(87px)
-      width 100%
-      overflow auto
-      margin-left remify(35px)
-      border-bottom 1px dashed $grayLight
-    +above(415px)
-      height remify(131px)
-      width 100%
-      overflow auto
-      margin-left remify(35px)
-      border-bottom 1px dashed $grayLight
-    +above(767px)
+.oi-channels
+  background-color $green
+  display block
+  width 100%
+  max-width remify(1366px)
+  margin 0 auto
+  overflow hidden
+  +above('m')
+    padding remify(10px)
+
+  &_tabs
+    ul
+      border-bottom remify(1px) solid $green
+      border-top remify(1px) solid $green
+      display block
       overflow hidden
-      height auto
-      border-bottom none
-      margin-left 0
-      width 100%
+      +above('m')
+        border-top none
 
-  ul
-    overflow hidden
-    +below(415px)
-      height remify(87px)
-      width 1000%
-    +above(415px)
-      width 1000%
-    +above(767px)
-      width 100%
-
-  li
-    @extend $text-regular
-    size(remify(100px), remify(105px))
-    color $gray
-    display block
-    font-size remify(12px)
-    // margin 0 remify(4px) 0
-    text-align center
-    white-space nowrap
-    color $gray
-    +below(415px)
+    li
+      display block
       float left
-      width 19vw
-    +above(415px)
-      float left
-      width 18vw
-      margin-bottom remify(7px)
-    +above(767px)
-      float none
-      width remify(100px)
-      margin-right remify(30px)
+      height remify(60px)
+      line-height remify(60px)
+      text-align center
+      width (100% / 3)
 
     a
-      size(remify(100px), remify(105px))
-      border 1px solid $white
-      color inherit
+      background-color $white
+      color $green
       display block
+      height 100%
       text-decoration none
-      transition all 300ms ease-out
-      transition-delay 100ms
-      &.inactive
-        filter gray
-        -webkit-filter grayscale(100%)
-        &.dark .logo-container
-          opacity .4
-        &:hover
-          border-color $gray
-      &:active
-        border 1px solid $purple
-        transform translateY( remify(2px) )
-        opacity .89
-        color $purple
-      &:focus
-        border 1px solid $purple
-        transform translateY( remify(2px) )
-        opacity .89
-        outline none
-        color $purple
+      width 100%
+
+      &.active
+        color $white
+        background-color $green
+
+  &_container
+    background $white
+
+  &_lists-container
+    max-width remify(1170px)
+    margin 0 auto
+    overflow hidden
+    background-color $grayLighter
+
+  &_header
+    height remify(65px)
+    padding remify(17px) remify(20px)
+    background-color $white
+    border-bottom remify(1px) solid $grayLight
+    position relative
+    max-width remify(1170px)
+    margin 0 auto
+    +above('m')
+      padding remify(50px) remify(40px)
+      height remify(130px)
+    +above('l')
+      padding remify(50px) remify(40px)
+      border-bottom remify(1px) solid $black
+    +above(1230px)
+      padding remify(50px) 0
+
+
+    &_list
+      display none
+      float left
+      font-family $fontTitle
+      font-size remify(42px)
+      text-transform uppercase
+      +above('m')
+        display block
+        width s("calc(100% - 140px - 80px)")
+        transform translateY(remify(-12px))
+      +above('l')
+        width s("calc(100% - 140px - 80px - 170px - 30px)")
+
+      ul
+        display block
+
+      li
+        display inline-block
+        &:first-child:before
+          display none
+        &:last-child
+          +above('m')
+            display none
+          +above('l')
+            display inline-block
+        &:before
+          content ''
+          display inline-block
+          width remify(12px)
+          height remify(12px)
+          border-radius remify(6px)
+          background-color $grayLight
+          transform translateY(remify(-7px))
+          margin 0 remify(7px) 0 0
+
+
+    &_client-type
+      font-family $fontTextRegular
+      width (100% / 3 * 2)
+      float left
+      +above('m')
+        width remify(140px)
+      a.oi-channels_header_client-type-trigger
+        color $green
+        text-decoration none
+        font-size remify(13px)
+        height remify(30px)
+        display block
+        span
+          height remify(15px)
+          lineheight remify(15px)
+          display block
+        svg
+          display inline-block
+          width remify(9px)
+          margin-left remify(5px)
+          & + span
+            display inline-block
+        path
+          fill $green
+
+      &_dropdow
+        background-color $white
+        border remify(1px) solid $gray
+        border-radius remify(5px)
+        display none
+        font-family $fontTextRegular
+        left remify(15px)
+        position absolute
+        top remify(55px)
+        width s("calc(100% - 30px)")
+        max-width remify(465px)
+        +above('m')
+          top remify(104px)
+          right 0
+          left auto
+        +above('l')
+          right remify(202px)
+
+        &:before
+          background $white
+          border 1px solid $gray
+          border-radius remify(4px)
+          border-width remify(1px)  0 0 remify(1px)
+          content ''
+          display block
+          height remify(15px)
+          left remify(126px)
+          position: absolute
+          top remify(-6px)
+          transform rotate(45deg)
+          width remify(15px)
+          +above('m')
+            left remify(328px)
+
+        &:after
+          background $white
+          content ''
+          display block
+          height remify(15px)
+          width remify(30px)
+          left remify(120px)
+          position: absolute
+          top remify(0)
+          +above('m')
+            left remify(320px)
+
+        ul
+          display block
+
+        li
+          height remify(115px)
+          border-bottom remify(1px) solid $grayLight
+          padding 0 remify(5px)
+          position relative
+          +above('m')
+            padding 0 remify(40px)
+
+          &:last-child
+            border-bottom none
+
+        a
+          font-size remify(16px)
+          display block
+          text-decoration none
+          color $black
+
+          & > span
+            transition color 0.3s ease
+            width s(" calc(100% - 120px)")
+            display inline-block
+            line-height remify(20px)
+            position absolute
+            top remify(30px)
+            height remify(55px)
+            & > div
+              display table-cell
+              vertical-align middle
+              height remify(55px)
+
+          &.active, &:hover, &:focus, &:active
+            & > span
+              color $green
+            svg circle.icon-inner
+              fill $green
+
+          svg
+            width remify(25px)
+            transform translateY(remify(33px))
+            margin 0 remify(5px) 0 0
+            circle
+              stroke $green
+              &.icon-inner
+                stroke $white
+                fill $white
+              &.icon-outer
+                stroke $green
+
+        oi-price
+          right remify(10px)
+          width remify(80px)
+          display inline-block
+          position absolute
+          top remify(38px)
+          +above('m')
+            right remify(40px)
+
+    &_price
+      width (100% / 3)
+      float right
+      transform translateY(remify(-5px))
+      +above('m')
+        float left
+        width remify(80px)
+
+    &_action
+      background-color $orangeLight
+      border-bottom remify(2px) solid $orange
+      border-radius remify(2px)
+      display none
+      float left
+      font-family $fontTextRegular
+      font-size remify(16px)
+      height remify(50px)
+      line-height remify(50px)
+      margin-left remify(30px)
+      margin-top remify(-10px)
+      text-align center
+      width remify(170px)
       &:hover
-        border 1px solid $purple
-        color $purple
-      +below(415px)
-        padding-top 0
+        border-bottom remify(1px) solid $orange
+        margin-top remify(-9px)
+      +above('l')
+        display block
+
+      a
+        color $black
+        text-decoration none
+
+.oi-channels-lists
+  background-color $white
+  font-family $fontTextRegular
+  +above('l')
+    // width 74.358974359%
+    // margin-right 2.564102564%
+    width 76.923076923%
+    float left
+    padding-bottom remify(120px)
+
+  &_list-tv
+    height remify(150px)
+    padding remify(25px) 0 0 remify(15px)
+    +above('m')
+      padding remify(45px) 0 0 remify(30px)
+      height remify(195px)
+    +above('l')
+      padding 0
+      height auto
+      width (100% / 6)
+      float left
+
+    &_title
+      font-size remify(13px)
+      height remify(15px)
+      margin-bottom remify(15px)
+      +above('m')
+        font-size remify(16px)
+        height remify(20px)
+      +above('l')
+        height remify(70px)
+        line-height remify(70px)
+        border-bottom remify(1px) solid $grayLight
+        text-align center
 
       span
-        width remify(100px)
-        white-space initial
-        line-height remify(13px)
-        height remify(30px)
-        vertical-align middle
-        display table-cell
+        display inline
+        +above('l')
+          display none
 
-.channels-audio, .channels-radio
-  background-color $white
-  +below(415px)
-    border-bottom 1px dashed $grayLight
-    margin remify(32px) 0 0 remify(20px)
-    padding-bottom remify(53px)
-    border-bottom remify(1px) dashed $grayLight
-  +above(415px)
-    padding-bottom remify(40px)
-    margin-left remify(30px)
-    border-bottom 1px dashed $grayLight
-    margin-bottom remify(44px)
-  +above(767px)
-    border-bottom none
-    margin-left remify(20px)
-    margin-bottom remify(15px)
-    padding-right remify(20px)
-  +above(1023px)
-    padding 0
-    margin-left 0
-    margin-bottom remify(35px)
-    padding-right remify(100px)
+    &_container
+      border-bottom remify(1px) dashed $grayLight
+      height remify(97px)
+      overflow scroll
+      +above('m')
+        height remify(115px)
+      +above('l')
+        overflow initial
+        height auto
+        border-bottom none
 
-  ul
-    max-height 4rem
-    overflow hidden
-    +above(767px)
-      line-height remify(20px)
-    +above(1023px)
-      max-height none
+      ul
+        display block
+        width 2000px
+        +above('l')
+          width auto
 
-  h5
-    // @extend $text-bold-small
-    // +above(415px)
-    //   font-family $fontTextRegular
-    //   font-size remify(16px)
-    //   margin-bottom remify(16px)
-    +above(767px)
-      @extend $text-bold-small
-      margin-bottom remify(8px)
-    //   font-weight 500
-    //   margin-bottom remify(9px)
-    +above(1023px)
-      margin-bottom remify(8px)
-      @extend $text-bold-small
+      li
+        display block
+        height remify(85px)
+        width remify(85px)
+        float left
+        text-align center
+        +above('m')
+          height remify(95px)
+          width remify(95px)
+        +above('l')
+          float none
+          margin 0 auto
+      a
+        border remify(1px) 1px solid $white
+        display block
+        height remify(85px)
+        width remify(85px)
+        text-decoration none
+        color $gray
+        transition all 0.3s ease
+        transition-delay 0.1s
+        +above('m')
+          height remify(95px)
+          width remify(95px)
+        &:hover
+          border remify(1px) 1px solid $purple
+          color $purple
 
-  li
-    @extend $line-height-regular
-    display inline-block
-    +above(1023px)
-      @extend $text-small
-    // +above(415px)
-    //   font-family $fontTextRegular
-    //   font-size remify(16px)
-    &:after
-      content: ', '
-    &:last-child
-      &:after
-        content: '.'
+    &_logo
+      background-repeat no-repeat
+      background-position center
+      width 100%
+      height remify(60px)
+      background-size remify(45px) auto
+      position relative
+      +above('m')
+        height remify(70px)
+        background-size remify(45px) auto
 
-.channels-radio
-  +above(415px)
-    margin-bottom 0
-    border-bottom 0
-  +above(767px)
-    margin-bottom remify(56px)
+    &_name
+      height remify(25px)
+      line-height remify(12px)
+      font-size remify(10px)
+      display table-cell
+      vertical-align middle
+      +above('m')
+        font-size remify(11px)
+      div
+        width remify(85px)
 
-.channels-optionals
-  background-color $grayLighter
-  column(3/12)
-  margin-right 0
-  +below(415px)
-    width 100%
-    padding-top remify(25px)
-  +above(415px)
-    width 100%
-  +above(767px)
-    width 20%
-  +above(1023px)
-    width 23%
 
-  h4
-    +below(415px)
-      text-indent remify(30px)
-    +above(415px)
-      text-indent remify(30px)
-    +above(767px)
-      text-indent 0
-
-  & > div
-    width 100%
-    +below(415px)
-      overflow auto
-      padding-left remify(30px)
-      height remify(100px)
-    +above(415px)
-      overflow auto
-      padding-left remify(30px)
-      height remify(130px)
-    +above(767px)
-      padding-left 0
-      overflow hidden
-      margin-left 0
+  &_list-audio
+    height remify(170px)
+    padding remify(25px) 0 0 remify(15px)
+    +above('m')
+      padding remify(45px) 0 0 remify(30px)
+      height remify(170px)
+    +above('l')
+      clear both
+      padding remify(50px) 0 0 remify(30px)
       height auto
 
-  .logo-container
-    width 100%
-    margin-bottom remify(10px)
-
-  .s-logo
-    margin 0 auto
-
-  ul
-    overflow hidden
-    +below(415px)
-      width 300%
-    +above(415px)
-      width 300%
-    +above(767px)
-      width 100%
-
-
-  li
-    @extend $text-small
-    color $gray
-    padding remify(25px) 0
-    text-align center
-    transition background 300ms ease-out
-    &.added
-      background-color $white
-
-      button.add
-        background-color $greenLight
-        border-color $greenLight
-        color $white
-        svg
-          absoluteTopLeft(12px, 14px)
-          opacity 1
-          // polygon
-          //   fill $white
-
-      button.remove
-        color $grayLight
-        display block
-        margin-top remify(3px)
-        &:hover, &:focus, &:active
-          color $gray
-    &:nth-last-of-type(-n+2)
-      +below(415px)
-        display none
-
     &:last-child
-      border-bottom 0
-    +below(415px)
-      padding 0
-      float left
-      width 21vw
-      height remify(100px)
-      margin-right 7vw
-    +above(415px)
-      float left
-      width 21vw
-      height remify(125px)
-    +above(767px)
+      .oi-channels-lists_list-audio_container
+        border-bottom none
+
+    &_title
+      font-size remify(13px)
+      height remify(15px)
+      margin-bottom remify(15px)
+      +above('m')
+        font-size remify(16px)
+        height remify(20px)
+      span
+        display inline
+
+    &_container
+      border-bottom remify(1px) dashed $grayLight
+      height remify(114px)
+      overflow scroll
+      +above('m')
+        height remify(90px)
+      +above('l')
+        height auto
+        border-bottom none
+        overflow initial
+
+      ul
+        display block
+        height remify(65px)
+        overflow hidden
+        +above('m')
+          width remify(1800px)
+        +above('l')
+          width auto
+          height auto
+
+      li
+        display inline-block
+        font-size remify(13px)
+        line-height remify(20px)
+        color $gray
+        +above('m')
+          font-size remify(16px)
+        +above('l')
+          font-size remify(13px)
+          color $black
+        &:after
+          content ","
+
+      button
+        font-size remify(13px)
+        background-color transparent
+        color $green
+        border none
+        padding 0
+        cursor pointer
+        +above('m')
+          display none
+
+.oi-channels-addons
+  border-top remify(1px) solid $grayLight
+  border-bottom remify(1px) solid $grayLight
+  background-color $grayLighter
+  height remify(210px)
+  padding remify(25px) 0 0 remify(15px)
+  margin-bottom 500px
+  font-family $fontTextRegular
+  +above('m')
+    height auto
+    padding remify(45px) 0 0 remify(30px)
+  +above('l')
+    border none
+    width 23.076923077%
+    background-color $grayLighter
+    height auto
+    float left
+    padding 0
+
+  &_title
+    font-size remify(13px)
+    height remify(15px)
+    margin-bottom remify(15px)
+    +above('m')
+      font-size remify(16px)
+      height remify(20px)
+    +above('l')
+      height remify(70px)
+      line-height remify(70px)
+      border-bottom remify(1px) solid $grayLight
+      text-align center
+
+  &_container
+    overflow scroll
+    height remify(153px)
+    +above('l')
+      height auto
+
+  &_list
+    display block
+    width 1500px
+    +above('l')
+      width auto
+
+  &_item
+    display block
+    width remify(66px)
+    float left
+    font-size remify(10px)
+    text-align center
+    color $gray
+    margin-right remify(24px)
+    +above('m')
+      width remify(120px)
+      margin-right remify(34px)
+    +above('l')
+      height remify(260px)
+      border-bottom remify(1px) solid $grayLight
       float none
       width 100%
-      height remify(222px)
-      border-bottom remify(1px) solid $grayLight
+      padding remify(40px) remify(50px) 0 remify(50px)
 
-  span
-    @extend $line-height-small
-    display block
-    height remify(50px)
-    +below(415px)
-      font-size remify(10px)
-      margin-top remify(-17px)
-      height remify(33px)
-      overflow hidden
-    +above(415px)
-      font-size remify(11px)
-      margin-top remify(8px)
-    +above(767px)
-      margin-top remify(-5px)
-    & + span
-      margin-top remify(13px)
+    &_logo
+      height 40px
+      background-repeat no-repeat
+      background-size contain
+      background-position center
+      +above('l')
+        margin-bottom remify(10px)
 
-  button.remove
-    height remify(20px)
-    transition all 200ms ease-out
-    background-color transparent
-    border none
-    cursor pointer
-    color $grayLighter
-    display none
-    text-align center
-    width 40%
-    margin 0 auto
-    margin-top remify(-20px)
-    position relative
-    z-index 1
-    &:focus
-      outline none
+    &_desc
+      font-size remify(9px)
+      height remify(50px)
+      padding-top remify(10px)
+      line-height 15px
+      +above('m')
+        font-size remify(11px)
+      span
+        &:last-child
+          display none
+          +above('l')
+            display block
 
-  button.add
-    @extend $button-small
-    background-color $grayLighter
-    transition all 400ms ease-out
-    position relative
-    z-index 2
-    &:focus
-      outline none
-    margin 0 auto
-    +below(415px)
-      display none
-    +above(415px)
-      display none
-    +above(767px)
-      display block
-      width 77%
-    +above(1023px)
-      width 64%
+    &_actions
 
-    svg
-      absoluteTopLeft(12px, 34px)
-      width remify(27px)
-      opacity 0
-      transition all 200ms ease-out
-      // margin-left remify(-27px)
-      // margin 0px 0px 0 remify(-27px)
-      display inline-block
-      // transform translate( remify(-6px), remify(6px))
-      polyline
-        stroke $white
-
-  .spot
-    margin-right remify(4px)
-    transition all .25s easing( "in-quad" )
-    text-decoration none
-    border-radius remify(2px)
-    background-color $grayLighter
-    border remify(1px) solid $gray
-    color $black
-    &:last-child
-      margin-right 0
-    &.selected, &:hover
-      background-color $green
-      border-color $green
-      color $white
-    +above(767px)
-      display inline-block
-      margin-top remify(5px)
-      width remify(28px)
-      height remify(36px)
-      line-height remify(36px)
-    +above(1023px)
-      display inline-block
-      margin-top 0
-      width remify(35px)
-      height remify(42px)
-      line-height remify(42px)
-
-  h5
-    @extend $text-regular
-    margin-top remify(21px)
-
-    & + span
-      margin remify(11px) remify(40px) 0
-
-.channels-area-footer
-  +above(767px)
-    center( remify(960px) )
-  +above(1023px)
-    center( remify(1170px) )
-
-.channels-help
-  @extend $line-height-regular
-  @extend $text-regular
-  overflow hidden
-  padding-top remify(25px)
-  +above(415px)
-    center(704px)
-    margin-top remify(20px)
-  +above(767px)
-    margin-top 0
-    center( remify(960px) )
-  +above(1023px)
-    center( remify(1170px) )
-
-.channels-search
-  display block
-  +below(415px)
-    text-indent remify(20px)
-  +above(415px)
-    column(50/100, gutter: 0)
-  +above(767px)
-    column(70/100, gutter: 0)
-  a
-    color $green
-  svg
-    width remify(12px)
-    path
-      fill $green
-
-.channels-faq
-  text-align right !important
-  column(30/100, gutter: 0)
-  +below(415px)
-    display none
-  +above(415px)
-    display none
-    margin-top remify(18px)
-  +above(767px)
-    display block
-    margin-top 0
-  a
-    color $green
-    text-decoration none
-
-.img
-  height remify(679px)
-  +below(415px)
-    height 25vh
-    margin-top remify(90px)
-    div
-      height 25vh
-
-  +above(415px)
-    margin-top remify(206px)
-  +above(767px)
-    margin-top remify(162px)
-  div
-    height remify(679px)
-    background-size contain
-    background-repeat no-repeat
-    background-position center
-
-
-.channels-detail-area
-  border-bottom 1px solid $grayLight
-  overflow hidden
-  +below(415px)
-    margin-top remify(38px)
-    border-bottom 1px solid $black
-  +above(415px)
-    margin-top remify(58px)
-    padding-bottom remify(10px)
-    center(704px)
-  +above(767px)
-    margin-top remify(61px)
-    padding-bottom remify(59px)
-    center(960px)
-  +above(1023px)
-    center( remify(1170px) )
-    margin-top remify(68px)
-
-.channel-detail
-  border-top remify(1px) solid $grayLight
-  color $black
-  +above(415px)
-    column(1/2, 0, 2)
-    margin-bottom remify(75px)
-    border-bottom remify(2px) solid $grayLight
-  +above(767px)
-    border none
-    column(1/4, 0, 4, 2)
-    margin-bottom 0
-  +above(1023px)
-    column(1/4, 0, 4, 2)
-    margin-bottom 0
-
-  h5
-    @extend $title-eyebrow
-    color $black
-    line-height remify(50px)
-    +below(415px)
-      line-height remify(70px)
-      text-indent remify(20px)
-      color $green
-      text-transform none
-    +above(415px)
-      margin-top remify(10px)
-    +above(767px)
-      margin-top 0
-  ul
-    margin-top remify(32px)
-    +below(415px)
-      display none
-  li
-    margin-bottom remify(30px)
-    +above(767px)
-      padding-right 0
-    +above(1023px)
-      padding-right remify(30px)
-    ul
-      margin-top 0
-      li
+      button
+        background-color transparent
+        border none
+        cursor pointer
+        display block
+        font-family $fontTextRegular
+        font-size remify(10px)
+        height remify(17px)
         line-height remify(17px)
-        margin-bottom 0
-        padding-right 0
-        a
-          @extend $text-small
-          @extend $line-height-small
-          color $green
-          text-decoration none
-  .has-image
-    position relative
-    height  remify(100px)
-    margin-bottom  remify(7px)
-    padding  remify(19px) 0 0  remify(89px)
-    img
-      size( remify(70px), remify(100px))
+        transition all 0.3s ease
+        width 100%
+        position relative
+        +above('m')
+          height remify(30px)
+          line-height remify(30px)
+        +above('l')
+          font-size remify(13px)
+          height remify(40px)
+          line-height remify(40px)
 
-  .detail-img
-    absoluteTopLeft()
-    size( remify(70px),  remify(100px))
-    overflow hidden
+      .add
+        background-color $grayLighter
+        border remify(1px) solid $grayLight
+        border-radius remify(2px)
+        color $black
+        svg
+          position absolute
+          top 10%
+          left -7%
+          height 80%
+          opacity 0
+          transition all 0.3s ease
+          +above('m')
+            left 9%
+          polyline
+            stroke $white
 
-  .detail-title
-    @extend $text-bold-small
-    // @extend $line-height-small
-    display block
+        &.added, &:hover, &:focus, &:active
+          background-color $green
+          color $white
+          svg
+            opacity 1
 
-  .detail-desc
-    @extend $text-small
-    @extend $line-height-small
-    display block
+      .remove
+        color $gray
 
-  .detail-tooltip
-    @extend $text-small
-    @extend $line-height-small
-    border remify(1px) solid $black
-    border-radius remify(2px)
-    background-color $white
-    display inline-block
-    line-height remify(19px)
-    margin 0 0 0 remify(14px)
-    padding 0 remify(6px)
-    transform translateY( remify(-2px))
-    position relative
-    &:before
-      square(0)
-      absoluteTopLeft( remify(5px), remify(-10px))
-      display block
-      content ""
-      border remify(5px) solid transparent
-      border-color transparent $black transparent transparent
-    &:after
-      square(0)
-      absoluteTopLeft( remify(5px), remify(-9px))
-      display block
-      content ""
-      border remify(5px) solid transparent
-      border-color transparent $white transparent transparent
-
-.call-help
-  @extend $text-regular
-  line-height remify(149px)
-  text-align center
-  +below(415px)
-    display none
-  +above(415px)
-    line-height remify(132px)
-  +above(767px)
-    line-height remify(138px)
-  +above(1023px)
-    line-height remify(149px)
-  a
-    color $green
-    text-decoration none
