@@ -33,6 +33,14 @@ require(['vendor/blazy'], function(Blazy) {
 
    var bLazy = new Blazy();
 
+   var bLazy2 = new Blazy({
+      container: '.oi-channels-lists_list-tv_container'
+    });
+
+  var bLazy3 = new Blazy({
+      container: '.oi-channels-addons_container'
+    });
+
   // Crossroads?
 
   var path = window.location.pathname.split('/').slice(1);
