@@ -143,6 +143,27 @@ body(itemtype="http://schema.org/WebPage").product
             
             .oi-channels-addons_container
               ul.oi-channels-addons_list
+
+                li.oi-channels-addons_item.only-l(aria-live="assertive" aria-relevant="text")
+                  h5.oi-channels-addons_item_logo=channelsgroup.addons.spots.title
+                  .oi-channels-addons_item_desc=channelsgroup.addons.spots.desc
+                  .oi-channels-addons_item_spots
+                    - var count = 1
+                    while count <= channelsgroup.addons.spots.quant
+                      - selected = (count === 1 ? ' added': '' )
+                      a(href="#", class="spot" + selected, style="width:" + ( 100 / channelsgroup.addons.spots.quant ) + "%" )=count++
+                
+                li.oi-channels-addons_item.only-l(aria-live="assertive" aria-relevant="text")
+                  h5.oi-channels-addons_item_logo=channelsgroup.addons.recorder.title
+                  .oi-channels-addons_item_desc
+                    span=channelsgroup.addons.recorder.desc
+                    span=channelsgroup.addons.recorder.info
+                  .oi-channels-addons_item_actions
+                    button.add(type="button" role="button")
+                      include ../../assets/images/icons/check.svg
+                      span Adicionar
+                    button.remove(type="button" role="button") Remover
+
                 each channel in channelsgroup.addons.channels.itens
                   li.oi-channels-addons_item(aria-live="assertive" aria-relevant="text")
                     .oi-channels-addons_item_logo.b-lazy(data-src="/assets/images/logos/height40/"+channel.img+".png")
@@ -158,24 +179,6 @@ body(itemtype="http://schema.org/WebPage").product
 
   script(src='/assets/scripts/vendor/require.js' data-main="/assets/scripts/main" async)
     
-
-  //-         .channels-optionals(role="application")
-            
-  //-           h4=channelsgroup.addons.title
-  //-           div
-  //-             ul
-  //-               li
-  //-                 h5=channelsgroup.addons.spots.title
-  //-                 span=channelsgroup.addons.spots.desc
-  //-                 - var count = 1
-  //-                 while count <= channelsgroup.addons.spots.quant
-  //-                   - selected = (count === 1 ? ' selected': '' )
-  //-                   a(href="#", class="spot" + selected )=count++
-                
-  //-               li
-  //-                 h5=channelsgroup.addons.recorder.title
-  //-                 span=channelsgroup.addons.recorder.desc
-  //-                 span.info=channelsgroup.addons.recorder.info
 
 
           

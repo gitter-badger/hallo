@@ -346,7 +346,7 @@
           width remify(95px)
         +above('l')
           float none
-          margin 0 auto
+          margin 0 auto remify(30px) 0
       a
         border remify(1px) 1px solid $white
         display block
@@ -394,7 +394,7 @@
       height remify(170px)
     +above('l')
       clear both
-      padding remify(50px) 0 0 remify(30px)
+      padding remify(50px) remify(30px) 0 remify(30px)
       height auto
 
     &:last-child
@@ -461,7 +461,6 @@
   background-color $grayLighter
   height remify(210px)
   padding remify(25px) 0 0 remify(15px)
-  margin-bottom 500px
   font-family $fontTextRegular
   +above('m')
     height auto
@@ -516,12 +515,17 @@
       float none
       width 100%
       padding remify(40px) remify(50px) 0 remify(50px)
+      &:last-child
+        border-bottom none
 
     &_logo
       height 40px
       background-repeat no-repeat
       background-size contain
       background-position center
+      text-align center
+      font-size remify(16px)
+      color $black
       +above('l')
         margin-bottom remify(10px)
 
@@ -532,11 +536,37 @@
       line-height 15px
       +above('m')
         font-size remify(11px)
+      +above('l')
+        height remify(70px)
       span
         &:last-child
           display none
           +above('l')
             display block
+
+    &_spots
+      text-align center
+      a
+        background-color $grayLighter
+        border remify(1px) solid $grayLight
+        // border-radius
+        color $black
+        display inline-block
+        height remify(40px)
+        line-height remify(40px)
+        text-decoration none
+        width remify(35px)
+        &:first-child
+          border-top-left-radius remify(2px)
+          border-bottom-left-radius remify(2px)
+        &:last-child
+          border-top-right-radius remify(2px)
+          border-bottom-right-radius remify(2px)
+        & + a
+          border-left none
+        &.added, &:hover, &:focus, &:active
+          background-color $green
+          color $white
 
     &_actions
 
@@ -548,17 +578,17 @@
         font-family $fontTextRegular
         font-size remify(10px)
         height remify(17px)
-        line-height remify(17px)
+        line-height remify(13px)
         transition all 0.3s ease
         width 100%
         position relative
         +above('m')
           height remify(30px)
-          line-height remify(30px)
+          line-height remify(26px)
         +above('l')
           font-size remify(13px)
           height remify(40px)
-          line-height remify(40px)
+          line-height remify(35px)
 
       .add
         background-color $grayLighter
@@ -572,6 +602,7 @@
           height 80%
           opacity 0
           transition all 0.3s ease
+          margin-left remify(30px)
           +above('m')
             left 9%
           polyline
@@ -580,9 +611,18 @@
         &.added, &:hover, &:focus, &:active
           background-color $green
           color $white
+          outline none
+          & + .remove
+            display block
+            opacity 1
           svg
             opacity 1
+            margin-left 0
 
       .remove
         color $gray
+        display none
+        opacity 0
+        +above('l')
+          font-size(11px)
 
