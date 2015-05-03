@@ -26,6 +26,7 @@ define([
   };
 
   _private.loadPrice = function(){
+    return
     reqwest('/api/price/rj.json', function (resp) {
       channelsPrices = resp.data;
 
