@@ -278,6 +278,30 @@
         color $black
         text-decoration none
 
+  &_search-call
+    max-width remify(1170px)
+    margin 0 auto
+    svg
+      display inline-block
+      height remify(11px)
+      width remify(11px)
+      path
+        fill $green
+    a
+      color $green
+      display block
+      font-family $fontTextRegular
+      font-size remify(13px)
+      height remify(85px)
+      line-height remify(85px)
+      text-decoration none
+      padding 0 remify(20px)
+      border-bottom remify(1px) solid $grayLight
+      +above('m')
+        border-bottom none
+      +above('l')
+        border-top remify(1px) solid $black
+
 .oi-channels-lists
   background-color $white
   font-family $fontTextRegular
@@ -625,4 +649,6 @@
         opacity 0
         +above('l')
           font-size(11px)
+
+
 
