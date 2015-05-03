@@ -302,6 +302,38 @@
       +above('l')
         border-top remify(1px) solid $black
 
+  &_footer-banner
+    height remify(360px)
+    display block
+    position relative
+    +above('m')
+      display none
+    +above('l')
+      height 0
+      display block
+
+    & > div
+      background-repeat no-repeat
+      border 1px solid red
+
+    &--small
+      background-size cover
+      display block
+      height remify(360px)
+      +above('m')
+        display none
+    &--large
+      background-size initial
+      display none
+      height remify(900px)
+      position absolute
+      right 0
+      top 0
+      width 100%
+      pointer-events none
+      +above('l')
+        display block
+
 .oi-channels-lists
   background-color $white
   font-family $fontTextRegular
