@@ -20,11 +20,11 @@
 }
 @font-face {
   font-family: 'oiTextLight';
-  src: url('/assets/fonts/simplon/simplonbp-light-webfont.eot');
-  src: url('/assets/fonts/simplon/simplonbp-light-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/assets/fonts/simplon/simplonbp-light-webfont.woff') format('woff'),
-  url('/assets/fonts/simplon/simplonbp-light-webfont.ttf') format('truetype'),
-  url('/assets/fonts/simplon/simplonbp-light-webfont.svg#simplon_bpmedium') format('svg');
+  src: url('/assets/fonts/simplon/simplonbp-medium-webfont.eot');
+  src: url('/assets/fonts/simplon/simplonbp-medium-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/simplon/simplonbp-medium-webfont.woff') format('woff'),
+  url('/assets/fonts/simplon/simplonbp-medium-webfont.ttf') format('truetype'),
+  url('/assets/fonts/simplon/simplonbp-medium-webfont.svg#simplon_bpmedium') format('svg');
   font-weight: normal;
   font-style: normal;
 }
