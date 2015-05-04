@@ -1,32 +1,50 @@
-
 mixin footer(data)
-  footer
-      
-      nav.footer-products
-        ul
-          each group in footer
-            li.footer-group
-              h5=group.title
-              ul
-                each item in group.itens
-                  li
-                    a(href=item.url)=item.label
-      
-      nav.footer-oi
-        ul
-          li.home
-            a(href="/")
-              include ../../assets/images/oi/oi-logo.svg
-              |Oi
-          li
-            a(href="/") Empresas
-          li
-            a(href="/") Investidores
-          li
-            a(href="/") Sobre a Oi
-          li
-            a(href="/") Encontre uma Loja
-          li
-            a(href="/") Visitors
-          li.search-az
-            a(href="/") Oi de A à Z
+  footer.oi-footer
+    nav.oi-footer_products
+      ul
+        li.oi-footer_products_category
+          h5.oi-footer_products_category_title TV HD
+          ul.oi-footer_products_subcategory
+            li 
+              a(href="#") Planos
+            li 
+              a(href="#") Serviços Adicionais
+            li 
+              a(href="#") Atendimento ao Cliente
+        li.oi-footer_products_category
+          h5.oi-footer_products_category_title Internet
+          ul.oi-footer_products_subcategory
+            li 
+              a(href="#") Planos
+            li 
+              a(href="#") Serviços Adicionais
+            li 
+              a(href="#") Atendimento ao Cliente
+        li.oi-footer_products_category
+          h5.oi-footer_products_category_title Fixo
+          ul.oi-footer_products_subcategory
+            li 
+              a(href="#") Planos
+            li 
+              a(href="#") Serviços Adicionais
+            li 
+              a(href="#") Atendimento ao Cliente
+        li.oi-footer_products_category
+          h5.oi-footer_products_category_title Celular
+          ul.oi-footer_products_subcategory
+            li 
+              a(href="#") Planos
+            li 
+              a(href="#") Serviços Adicionais
+            li 
+              a(href="#") Atendimento ao Cliente
+        li.oi-footer_products_category
+          h5.oi-footer_products_category_title Combo
+          ul.oi-footer_products_subcategory
+            li 
+              a(href="#") Planos
+            li 
+              a(href="#") Serviços Adicionais
+            li 
+              a(href="#") Atendimento ao Cliente
+    
