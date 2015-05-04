@@ -11,6 +11,7 @@ channel-modal
   width 100vw
   height 100vh
   z-index 3
+  transition all 1s ease
 
   &.indisponible
     filter grayscale(1)
@@ -21,7 +22,7 @@ channel-modal
 
   &.has-image
     .channel-modal_image
-      display block
+      opacity 1
 
   &_indisponible
     position absolute
@@ -60,7 +61,8 @@ channel-modal
     background-color #000
     background-repeat no-repeat
     background-position top center
-    display none
+    transition opacity 0.5s ease
+    opacity 0
 
   &_close
     color $white
