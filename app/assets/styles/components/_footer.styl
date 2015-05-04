@@ -1,8 +1,13 @@
 .oi-footer
+  background-color $grayLighter
+
   &_products
+    +above('l')
+      border-top remify(1px) solid $grayLight
+      padding-top remify(60px)
 
     & > ul
-      margin remify(25px) auto
+      margin 0 auto
       max-width remify(1170px)
       overflow hidden
 
