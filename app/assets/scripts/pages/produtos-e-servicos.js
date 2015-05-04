@@ -30,7 +30,7 @@ define([
     _private.changeClientType();
     _private.bindOpenModalChannel();
     _private.bindCloseButton();
-    // _private.bindNavKeyboard();
+    _private.bindNavKeyboard();
     // addOns.init()
     // _private.loadPrice();
   };
@@ -93,31 +93,37 @@ define([
 
   _private.bindCloseButton = function(){
     $('.channel-modal_close').on('click', function(e){
-      console.log('close');
       _private.closeModal();
     });
   };
 
-  // _private.bindNavKeyboard = function(){
-  //   document.onkeydown = function(evt) {
-  //     evt = evt || window.event;
-  //     // Esc
-  //     if (evt.keyCode == 27) {
-  //       _private.closeModal();
-  //     }
-  //     // Up / left = back
-  //     if (evt.keyCode == 37 || evt.keyCode == 38 ) {
-  //       console.log('back');
-  //     }
-  //     // Down / right = next
-  //     if (evt.keyCode == 39 || evt.keyCode == 40 ) {
-  //       console.log('next');
-  //     }
-  //   };
-  // };
+  _private.bindNavKeyboard = function(){
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      // Esc
+      if (evt.keyCode == 27) {
+        _private.closeModal();
+      }
+      // Up / left = back
+      if (evt.keyCode == 37 || evt.keyCode == 38 ) {
+        _private.previousChannel();
+      }
+      // Down / right = next
+      if (evt.keyCode == 39 || evt.keyCode == 40 ) {
+        _private.nextChannel();
+      }
+    };
+  };
+
+  _private.previousChannel = function(){
+    $channelsContainer.find('a.active').parent('li').prev().find('a').trigger('click')
+  }
+
+  _private.nextChannel = function(){
+    $channelsContainer.find('a.active').parent('li').next('li').find('a').trigger('click')
+  }
 
   _private.openModal = function(){
-    console.log('open');
     // $body.addClass('modal-opened');
   };
 
