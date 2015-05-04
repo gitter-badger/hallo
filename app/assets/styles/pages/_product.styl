@@ -76,6 +76,7 @@ main
     position relative
     max-width remify(1170px)
     margin 0 auto
+    z-index 2
     +above('m')
       padding remify(50px) remify(40px)
       height remify(130px)
@@ -92,6 +93,8 @@ main
       font-family $fontTitle
       font-size remify(42px)
       text-transform uppercase
+      position remify
+      z-index 1
       +above('m')
         display block
         width s("calc(100% - " + remify(140px + 80px) + ")")
@@ -158,6 +161,8 @@ main
         top remify(55px)
         width s("calc(100% - 30px)")
         max-width remify(465px)
+        &.open
+          display block
         +above('m')
           top remify(104px)
           right 0
@@ -426,7 +431,7 @@ main
         +above('m')
           height remify(95px)
           width remify(95px)
-        &:hover
+        &:hover, &.active
           border remify(1px) 1px solid $purple
           color $purple
 
