@@ -40,9 +40,7 @@
     var self = this;
     self.data = {}
     loadChannel(urlApi){
-      console.log('lek lek', urlApi);
       $.getJSON(urlApi, function(json){
-        console.log(json);
         self.data = json.data;
         self.update()
       });
