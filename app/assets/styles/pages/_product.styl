@@ -1,11 +1,18 @@
+main
+  position relative
+  z-index 3
+
 .cards
   overflow hidden
   margin-bottom remify(125px)
   +above('m')
     margin-bottom remify(195px)
   +above('l')
-    center( remify(1170px) )
+    max-width remify(1170px)
+    margin 0 auto
+    clear both
     margin-top remify(-127px)
+    margin-bottom remify(195px)
 
   oi-card
     width (100% / 3)
@@ -87,10 +94,10 @@
       text-transform uppercase
       +above('m')
         display block
-        width s("calc(100% - 140px - 80px)")
+        width s("calc(100% - " + remify(140px + 80px) + ")")
         transform translateY(remify(-12px))
       +above('l')
-        width s("calc(100% - 140px - 80px - 170px - 30px)")
+        width s("calc(100% - " + remify(420px) + ")")
 
       ul
         display block
@@ -300,13 +307,16 @@
       +above('m')
         border-bottom none
       +above('l')
+        font-size remify(16px)
         border-top remify(1px) solid $black
 
   &_footer-banner
     height remify(360px)
     display block
     position relative
+    z-index 1
     +above('m')
+      height 0
       display none
     +above('l')
       height 0
@@ -314,14 +324,12 @@
 
     & > div
       background-repeat no-repeat
-      border 1px solid red
 
     &--small
       background-size cover
       display block
       height remify(360px)
-      +above('m')
-        display none
+      border-bottom remify(1px) solid $grayLight
     &--large
       background-size initial
       display none
@@ -682,5 +690,269 @@
         +above('l')
           font-size(11px)
 
+.oi-channels
 
+  &_footer-item
+    position relative
+    z-index 2
+    display block
+    max-width remify(1170px)
+    margin 0 auto
+    border-bottom remify(1px) solid $grayLight
+    font-family $fontTextRegular
+    font-size remify(13px)
+    overflow hidden
+    +above('m')
+      border-bottom none
+      margin-top remify(85px)
+
+    &_title-area
+      height remify(88px)
+      padding 0 remify(20px)
+      +above('m')
+        width remify(200px)
+        padding-right remify(20px)
+        float left
+
+      &_title
+        line-height remify(88px)
+        font-size remify(13px)
+        text-transform uppercase
+        color $green
+        +above('m')
+          font-size remify(21px)
+          line-height remify(25px)
+          padding-right remify(10px)
+          color $black
+          margin-bottom remify(15px)
+
+      &_desc
+        display none
+        font-size remify(13px)
+        +above('m')
+          display block
+
+        p
+          margin-bottom remify(15px)
+
+    &_content-area
+      padding 0 0 0 remify(20px)
+      overflow hidden
+      height 0
+      +above('m')
+        height initial
+        width remify(520px)
+        padding 0
+        float left
+
+      &_desc
+        line-height remify(20px)
+        font-size remify(13px)
+        dl
+          display block
+          overflow hidden
+          +above('m')
+            margin-bottom remify(35px)
+        dt
+          display block
+          font-family $fontTextBold
+          +above('m')
+            clear both
+            float left
+            margin-bottom remify(10px)
+            width remify(135px)
+        dd
+          display block
+          margin-bottom remify(30px)
+          +above('m')
+            float left
+            width remify(380px)
+            margin-bottom remify(10px)
+        a
+          color $green
+          text-decoration none
+          display block
+          +above('m')
+            display inline-block
+
+        br
+          display none
+          +above('m')
+            display inline
+
+
+      &_movies
+
+        .list-title
+          font-family $fontTextBold
+          font-size remify(13px)
+          margin-bottom remify(15px)
+
+        .list-container
+          height remify(230px)
+          overflow scroll
+          +above('m')
+            height auto
+            overflow initial
+
+          &.rent-list
+            li
+              +above('m')
+                height remify(190px)
+
+        ul
+          display block
+          height remify(230px)
+          width (120px * 8 )
+          +above('m')
+            height auto
+            width 100%
+            overflow auto
+
+        li
+          float left
+          height remify(230px)
+          width remify(100px)
+          margin-right remify(20px)
+          color $black
+          font-size remify(10px)
+          +above('m')
+            font-size remify(11px)
+
+        .poster
+          background-repeat no-repeat
+          display block
+          height remify(150px)
+          width remify(100px)
+          margin-bottom remify(10px)
+          background-color $grayLighter
+          position relative
+
+        .dist
+          display block
+          position absolute
+          left remify(4px)
+          bottom remify(4px)
+          span
+            display inline-block
+            line-height remify(18px)
+            height remify(18px)
+            padding 0 remify(4px)
+            color $white
+            border-radius remify(2px)
+            margin-right remify(2px)
+          .vod
+            background-color $purple
+          .oi-filmes
+            background-color $purpleLight
+
+        .channel
+          display block
+          font-family $fontTextBold
+          width 100%
+          height remify(15px)
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+
+        .name
+          display block
+          width 100%
+          height remify(15px)
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+
+        .avaliable
+          font-style italic
+          color $black
+          +above('m')
+            padding-right remify(15px)
+
+      .list-bullets
+        background-repeat no-repeat
+        &.img-recorder
+          background-position -9999px
+          +above('m')
+            padding-left remify(225px)
+            background-position 0 0
+        ul
+          list-style-type disc
+          color $grayLight
+          padding-left remify(15px)
+          margin-bottom remify(10px)
+        li
+          line-height remify(20px)
+          +above('m')
+            line-height remify(27px)
+        span
+          color black
+
+      .button
+        border remify(1px) solid inherit
+        border-radius remify(2px)
+        color $black
+        display inline-block
+        font-size remify(13px)
+        height remify(50px)
+        line-height remify(50px)
+        padding 0 remify(40px)
+        text-align center
+        &:hover, &.forcus
+          color $purple
+
+.oi-channels_footer
+
+  &_faq-menu
+    background-color $grayLighter
+    font-family $fontTextRegular
+    font-size remify(13px)
+    height remify(88px)
+    overflow hidden
+    line-height remify(88px)
+    +above('m')
+      height remify(160px)
+      line-height remify(160px)
+
+    ul
+      display block
+      max-width remify(1170px)
+      margin 0 auto
+
+    li
+      display none
+      +above('m')
+        display inline-block
+        margin-right remify(10px)
+
+    a
+      color $black
+      text-decoration none
+      display block
+      padding 0 remify(10px)
+
+    .faq-menu_icon
+      display block
+      padding 0 remify(20px)
+      +above('m')
+        margin-right remify(60px)
+        display inline-block
+        font-family $fontTextBold
+
+      svg
+        display inline-block
+        width remify(30px)
+        margin-right remify(10px)
+        transform translateY(remify(6px))
+        path
+          fill $green
+          +above('m')
+            fill $black
+
+      a
+        color $green
+        margin 0
+        padding 0
+        +above('m')
+          color $black
 
