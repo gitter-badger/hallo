@@ -1,0 +1,78 @@
+{
+  "meta": {},
+  "data": {
+    "name": "Lifetime",
+    "slug": "hbo",
+    "klass": "",
+    "logo": "/assets/images/demo/logo-warner-white.png",
+    "img": "/assets/images/demo/modal-tv.jpg",
+    "channels": {
+      "sd": "64",
+      "hd": false
+    },
+    "desc": {
+      "title": "Os melhores Filmes e Séries",
+      "text": [
+        "A HBO exibe filmes que já foram campeões de bilheteria. Nele são exibidos grandes e recentes conhecidos filmes da Columbia Pictures, Sony Pictures Television International, Warner, New Line Cinema, TriStar Pictures e até mesmo de produções de estúdios independentes.",
+        "Além disso, o canal exibe séries mundialmente aclamadas que contribuem em grande parte para o renome de qualidade do canal. Muitos desses programas são conhecidos, dividindo opiniões, por apresentar com pouca, ou nenhuma, censura temas como sexo, violência, uso de drogas, entre outros."
+      ]
+    },
+    "pack": {
+      "title": "10 Canais em HD",
+      "items": [
+        {
+          "name": "HBO HD",
+          "number": "70"
+        },
+        {
+          "name": "HBO 2",
+          "number": "71"
+        },
+        {
+          "name": "HBO Comedy",
+          "number": "72"
+        },
+        {
+          "name": "HBO Signature",
+          "number": "73"
+        },
+        {
+          "name": "HBO Family",
+          "number": "74"
+        },
+        {
+          "name": "HBO HD",
+          "number": "70"
+        },
+        {
+          "name": "HBO 2",
+          "number": "71"
+        },
+        {
+          "name": "HBO Comedy",
+          "number": "72"
+        },
+        {
+          "name": "HBO Signature",
+          "number": "73"
+        },
+        {
+          "name": "HBO Family",
+          "number": "74"
+        }
+      ]
+    },
+    "plans": [
+      {
+        "name": "TV Mix HD",
+        "url": "#",
+        "price": "69,90"
+        },
+      {
+        "name": "TV Total",
+        "url": "#",
+        "price": "89,90"
+      }
+    ]
+  }
+}
