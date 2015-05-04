@@ -41,6 +41,10 @@ require(['vendor/blazy'], function(Blazy) {
       container: '.oi-channels-addons_container'
     });
 
+  var bLazy4 = new Blazy({
+      container: '.list-container'
+    });
+
   // Crossroads?
 
   var path = window.location.pathname.split('/').slice(1);
