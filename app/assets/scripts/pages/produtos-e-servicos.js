@@ -12,6 +12,7 @@ define([
 
   var _public = {},
       _private = {};
+      $body             = $('body'),
       $openClientType    = $('.oi-channels_header_client-type-trigger'),
       $dropdowClientType = $('.oi-channels_header_client-type_dropdow'),
       $clientType        = $dropdowClientType.find('a'),
@@ -74,6 +75,7 @@ define([
     $channelLink.on('click', function(e){
       e.preventDefault();
       // riot.observable(this)
+      $body.addClass('scroll-lock');
 
       $channelsContainer.find('a.active').removeClass('active')
       $(this).addClass('active')
@@ -124,11 +126,12 @@ define([
   }
 
   _private.openModal = function(){
-    // $body.addClass('modal-opened');
+    // $body.addClass('scroll-lock');
   };
 
   _private.closeModal = function(){
     $('.channel-modal').hide()
+    $body.removeClass('scroll-lock');
   };
 
   return _public;

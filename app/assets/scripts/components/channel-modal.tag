@@ -32,7 +32,11 @@
           <ul>
             <li>
               <a href="#">TV Start HD</a> - Plano à partir de R$ 59,90
+            </li>
+            <li>
               <a href="#">TV Mix HD</a> - Plano à partir de R$ 79,90
+            </li>
+            <li>
               <a href="#">TV Total HD</a> - Plano à partir de R$ 9  9,90
             </li>
           </ul>
