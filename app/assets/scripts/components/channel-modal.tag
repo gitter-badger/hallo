@@ -6,7 +6,17 @@
         Indisponível neste plano
       </div>
     </div>
-    <div class="channel-modal_close">Fechar</div>
+    <div class="channel-modal_close">
+      <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+        <g transform="translate(0, 0)">
+          <line fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="19" y1="5" x2="5" y2="19" stroke-linejoin="round"></line>
+        </g>
+        <g transform="translate(0, 0)">
+          <line fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="19" y1="19" x2="5" y2="5" stroke-linejoin="round"></line>
+        </g>
+      </svg>
+      Fechar
+    </div>
     <div class="channel-modal_content">
       <div class="channel-modal_logo" style="background-image:url(/assets/images/logos/prov/byu-tv.png);"></div>
       <div class="channel-modal_name">{ data.name }</div>
