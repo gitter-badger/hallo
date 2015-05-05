@@ -6,7 +6,8 @@ define([
   // 'velocity-ui',
   'ScrollMagic',
   'tags/channel-modal',
-  ],function ($, lodash, riot, Velocity, ScrollMagic, channelModal) {
+  'tags/channel-search',
+  ],function ($, lodash, riot, Velocity, ScrollMagic, channelModal, channelSearch) {
 
 
 
@@ -18,8 +19,8 @@ define([
       $clientType        = $dropdowClientType.find('a'),
       $channelsContainer = $('.oi-channels-lists_list-tv_container'),
       $channelLink       = $channelsContainer.find('a'),
-
-      $addOnsLink        = $('.oi-channels-addons_item_link')
+      $addOnsLink        = $('.oi-channels-addons_item_link'),
+      $btOpenSearch        = $('.oi-channels_search-call a')
 
   var config = {
     api: {
@@ -37,6 +38,7 @@ define([
     // addOns.init()
     // _private.loadPrice();
     _private.bindOpenAddOn();
+    _private.bindOpenSearch();
   };
 
   _private.openClientType = function(){
@@ -61,6 +63,22 @@ define([
     });
   }
 
+  _private.bindOpenSearch = function(){
+    $btOpenSearch.on('click', function(evt){
+      evt.preventDefault();
+      $body.addClass('scroll-lock');
+      var cSerachcmodal = riot.mount('channel-search')[0]
+      _private.bindCloseSearch()
+      $('channel-modal').show()
+    });
+  }
+
+  _private.bindCloseSearch = function(){
+    $('.channel-modal_close').on('click', function(e){
+      $('channel-modal').hide()
+    });
+  };
+
   _private.bindOpenAddOn = function(){
     $addOnsLink.on('click', function(evt){
       evt.preventDefault();
@@ -82,6 +100,7 @@ define([
   };
 
   var cmodal = riot.mount('channel-modal')[0]
+
 
   _private.fillDetail = function(urlPage){
     var urlApi = config.api.channel + urlPage.split('/').slice(-1)[0] + '.json';

@@ -1,0 +1,157 @@
+// search-modal
+
+.channel-search
+  background $white
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100vh
+  z-index 3
+
+  &_close
+    width remify(30px)
+    height remify(30px)
+    position absolute
+    top remify(30px)
+    right remify(30px)
+    overflow hidden
+    z-index 3
+    svg
+      display block
+      width remify(30px)
+      height remify(30px)
+      line
+        stroke $grayLight
+
+  &_logo
+    display none
+    margin-bottom remify(50px)
+    +above('m')
+      display block
+    svg
+      display block
+      height remify(70px)
+
+  &_form
+    display block
+    padding remify(20px)
+    height 35%
+    background $green
+    background-image linear-gradient(0deg,#47b969,#00a596)
+    +above('m')
+      padding-right 0
+      height 100%
+      width (100%  / 3)
+      float left
+    +above('l')
+      padding remify(100px)
+      padding-right 0
+
+    &_container
+      +above('l')
+        max-width remify(1170px / 3)
+        float right
+
+
+  &_legend
+    display block
+    font-family $fontTitle
+    font-size remify(35px)
+    line-height remify(37px)
+    text-transform uppercase
+    color $white
+    text-align center
+    +above('m')
+      text-align left
+    +above('l')
+      font-size remify(57px)
+      line-height remify(57px)
+
+  &_input
+    display block
+    margin 0 auto
+    max-width remify(250px)
+    position relative
+    margin-top remify(20px)
+    +above('l')
+      margin-top remify(70px)
+      max-width initial
+
+    span
+      display none
+
+    svg
+      display block
+      left 0
+      position absolute
+      top 0
+      width remify(13px)
+
+      path
+        fill $white
+        stroke $white
+
+    input
+      background transparent
+      border 0
+      border-bottom remify(1px) solid rgba(0,0,0,.3)
+      color $white
+      display block
+      font-family $fontTextRegular
+      font-size remify(13px)
+      line-height remify(53px)
+      width 100%
+      padding 0 remify(25px)
+
+      &:focus, &:active
+        outline none
+
+      &::-webkit-input-placeholder
+        font-family $fontTextRegular
+        color $white
+
+  &_results
+    display block
+    padding remify(20px)
+    height 65%
+    background-color $white
+    +above('m')
+      height 100%
+      width (100%  / 3 * 2)
+      float left
+
+    &_container
+      +above('l')
+        max-width remify(780px)
+
+  &_list
+    display block
+    +above('m')
+      padding-top remify(200px)
+    +above('l')
+      padding-top remify(386px)
+
+    &_item
+      display block
+      height remify(50px)
+      line-height remify(50px)
+      font-family $fontTextRegular
+      font-size remify(13px)
+      margin 0 auto
+      max-width remify(250px)
+
+      a
+        display block
+        text-decoration none
+        color $black
+
+    &_type TV
+      display inline-block
+      width remify(50px)
+      height remify(50px)
+
+    &_name
+      display inline-block
+      height remify(50px)
+      margin-left remify(45px)
