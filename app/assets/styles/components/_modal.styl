@@ -64,7 +64,6 @@ channel-modal
       +above('l')
         display block
 
-
   &_content
     font-family $fontTextRegular
     position relative
@@ -82,6 +81,52 @@ channel-modal
       padding-left remify(100px)
       padding-right remify(100px)
 
+    &_header
+      +above('m')
+        height remify(310px)
+        float left
+        width 50%
+      +above('l')
+        width 60%
+
+    &_price
+      margin-bottom remify(60px)
+      +above('m')
+        height remify(310px)
+        float left
+        width 43%
+        margin-left 7%
+        padding-top remify(180px)
+        margin-bottom 0
+      +above('l')
+        width 33%
+        margin-left 7%
+
+      a
+        background-color transparent
+        border remify(1px) solid $white
+        border-radius remify(2px)
+        height remify(50px)
+        line-height remify(50px)
+        text-align center
+        color $white
+        text-decoration none
+        margin-left auto
+        +above('m')
+          margin-left remify(30px)
+
+        &.add
+          display none
+          transform translate(0, remify(-17px))
+          +above('m')
+            padding 0 remify(20px)
+            display inline-block
+          +above('xl')
+            padding 0 remify(40px)
+        &.tel
+          display block
+          +above('m')
+            display none
 
   &_image
     position absolute
@@ -104,7 +149,6 @@ channel-modal
     position absolute
     top remify(30px)
     right remify(30px)
-    // background-image url('/assets/images/icons/close.svg')
     width remify(30px)
     height remify(30px)
     cursor pointer
@@ -122,6 +166,9 @@ channel-modal
     height remify(120px)
     margin-bottom remify(60px)
     background-repeat no-repeat
+    display none
+    +above('m')
+      display block
 
   &_name
     color $white
@@ -152,6 +199,41 @@ channel-modal
     p
       color $white
       margin-bottom remify(40px)
+
+    &_list
+      margin-bottom remify(70px)
+      h3
+        display block
+        margin-bottom remify(50px)
+      ul
+        display block
+        overflow hidden
+      li
+        background-position left center
+        background-repeat no-repeat
+        border-bottom remify(1px) dashed $grayLight
+        font-size remify(13px)
+        height remify(60px)
+        padding remify(10px)
+        width 100%
+        &:first-child
+          border-top remify(1px) solid $grayLight
+        &:nth-child(0n+2)
+          +above('m')
+            border-top remify(1px) solid $grayLight
+        &:last-child
+          border-bottom remify(1px) solid $grayLight
+        &:nth-last-child(2)
+          +above('m')
+            border-bottom remify(1px) solid $grayLight
+        +above('m')
+          float left
+          width 47%
+          margin-right 3%
+      span
+        display block
+        line-height remify(20px)
+        text-align right
 
   &_disponible
     color $white
@@ -199,3 +281,13 @@ channel-modal
       color $white
       a
         color $white
+
+  oi-price
+    display none
+    +above('m')
+      display inline-block
+
+  .oi-price
+    zoom 82px
+    transform scale(.8)
+    color $white

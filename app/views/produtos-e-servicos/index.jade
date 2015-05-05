@@ -166,10 +166,11 @@ body(itemtype="http://schema.org/WebPage").product
 
                 each channel in channelsgroup.addons.channels.itens
                   li.oi-channels-addons_item(aria-live="assertive" aria-relevant="text")
-                    .oi-channels-addons_item_logo.b-lazy(data-src="/assets/images/logos/height40/"+channel.img+".png")
-                    .oi-channels-addons_item_desc
-                      each info in channel.desc
-                        span!=info
+                    a.oi-channels-addons_item_link(href=channel.img)
+                      .oi-channels-addons_item_logo.b-lazy(data-src="/assets/images/logos/height40/"+channel.img+".png")
+                      .oi-channels-addons_item_desc
+                        each info in channel.desc
+                          span!=info
                     .oi-channels-addons_item_actions
                       button.add(type="button" role="button")
                         include ../../assets/images/icons/check.svg

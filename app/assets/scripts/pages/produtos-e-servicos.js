@@ -12,12 +12,14 @@ define([
 
   var _public = {},
       _private = {};
-      $body             = $('body'),
+      $body              = $('body'),
       $openClientType    = $('.oi-channels_header_client-type-trigger'),
       $dropdowClientType = $('.oi-channels_header_client-type_dropdow'),
       $clientType        = $dropdowClientType.find('a'),
       $channelsContainer = $('.oi-channels-lists_list-tv_container'),
-      $channelLink       = $channelsContainer.find('a')
+      $channelLink       = $channelsContainer.find('a'),
+
+      $addOnsLink        = $('.oi-channels-addons_item_link')
 
   var config = {
     api: {
@@ -34,6 +36,7 @@ define([
     _private.bindNavKeyboard();
     // addOns.init()
     // _private.loadPrice();
+    _private.bindOpenAddOn();
   };
 
   _private.openClientType = function(){
@@ -57,26 +60,20 @@ define([
       $('.oi-channels_header_price .oi-price_value_integer').text(price)
     });
   }
-  // _private.loadPrice = function(){
-  //   return
-  //   reqwest('/api/price/rj.json', function (resp) {
-  //     channelsPrices = resp.data;
 
-  //     _.find(channelsPrices, function(channelPrices){
-  //       return channelPrices.default;
-  //     });
-
-  //      riot.mount('oi-card', { greeting: 'Hola', punctuation: "?"})
-  //      riot.mount('oi-price')
-  //   });
-  // }
+  _private.bindOpenAddOn = function(){
+    $addOnsLink.on('click', function(evt){
+      evt.preventDefault();
+      $body.addClass('scroll-lock');
+      var urlPage = $(this)[0].href
+      _private.fillDetail(urlPage);
+    });
+  }
 
   _private.bindOpenModalChannel = function(){
     $channelLink.on('click', function(e){
       e.preventDefault();
-      // riot.observable(this)
       $body.addClass('scroll-lock');
-
       $channelsContainer.find('a.active').removeClass('active')
       $(this).addClass('active')
       var urlPage = $(this)[0].href
