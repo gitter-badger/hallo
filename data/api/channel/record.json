@@ -5,7 +5,7 @@
     "slug": "hbo",
     "klass": "has-image indisponible",
     "logo": "/assets/images/demo/logo-warner-white.png",
-    "img": "/assets/images/demo/modal-tv.jpg",
+    "img": "/assets/images/demo/modal-bg-2.jpg",
     "channels": {
       "sd": "64",
       "hd": false
