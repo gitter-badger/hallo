@@ -177,10 +177,11 @@ body(itemtype="http://schema.org/WebPage").product
                         span=channelsgroup.addons.channels.actions.add
                       button.remove(type="button" role="button")=channelsgroup.addons.channels.actions.remove
                   
-        .oi-channels_search-call
-          a(href="#")
-            include ../../assets/images/icons/lupa.svg
-            |Busque um canal específico
+        channel-search
+        //- .oi-channels_search-call
+        //-   a(href="#")
+        //-     include ../../assets/images/icons/lupa.svg
+        //-     |Busque um canal específico
         
         .oi-channels_footer-banner
           .oi-channels_footer-banner--small.b-lazy(data-src="/assets/images/demo/oi-channels_footer-banner.jpg" style="background-position: 70px 100px;")
@@ -253,53 +254,61 @@ body(itemtype="http://schema.org/WebPage").product
               .list-container.rent-list
                 ul
                   li
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/9.jpg")
-                      .dist
-                        span.vod VOD
-                        span.oi-filmes Oi Filmes
-                    .channel Universidade Monstro
-                  li                  
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/10.jpg")
-                      .dist
-                        span.vod VOD
-                        span.oi-filmes Oi Filmes
-                    .channel Start Trek
-                  li                  
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/11.jpg")
-                      .dist
-                        span.vod VOD
-                        span.oi-filmes Oi Filmes
-                    .channel As Aventuras de PI
-                  li                  
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/12.jpg")
-                      .dist
-                        span.vod VOD
-                        span.oi-filmes Oi Filmes
-                    .channel Rush
-                  li                  
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/13.jpg")
-                      .dist
-                        span.vod VOD
-                        span.oi-filmes Oi Filmes
-                    .channel O Lobo de Wall Street
-                  li                  
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/14.jpg")
-                      .dist
-                        span.vod VOD
-                        span.oi-filmes Oi Filmes
-                    .channel Detona Ralph
-                  li                  
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/15.jpg")
-                      .dist
-                        span.vod VOD
-                        span.oi-filmes Oi Filmes
-                    .channel Batman: O Cavaleiro das Trevas
-                  li                  
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/16.jpg")
-                      .dist
-                        span.vod VOD
-                        span.oi-filmes Oi Filmes
-                    .channel Tron Legacy
+                    a(href="#")
+                      .poster.b-lazy(data-src="/assets/images/demo/shows/9.jpg")
+                        .dist
+                          span.vod VOD
+                          span.oi-filmes Oi Filmes
+                      .channel Universidade Monstro
+                  li
+                    a(href="#")                  
+                      .poster.b-lazy(data-src="/assets/images/demo/shows/10.jpg")
+                        .dist
+                          span.vod VOD
+                          span.oi-filmes Oi Filmes
+                      .channel Start Trek
+                  li
+                    a(href="#")                  
+                      .poster.b-lazy(data-src="/assets/images/demo/shows/11.jpg")
+                        .dist
+                          span.vod VOD
+                          span.oi-filmes Oi Filmes
+                      .channel As Aventuras de PI
+                  li
+                    a(href="#")                  
+                      .poster.b-lazy(data-src="/assets/images/demo/shows/12.jpg")
+                        .dist
+                          span.vod VOD
+                          span.oi-filmes Oi Filmes
+                      .channel Rush
+                  li
+                    a(href="#")                  
+                      .poster.b-lazy(data-src="/assets/images/demo/shows/13.jpg")
+                        .dist
+                          span.vod VOD
+                          span.oi-filmes Oi Filmes
+                      .channel O Lobo de Wall Street
+                  li
+                    a(href="#")                  
+                      .poster.b-lazy(data-src="/assets/images/demo/shows/14.jpg")
+                        .dist
+                          span.vod VOD
+                          span.oi-filmes Oi Filmes
+                      .channel Detona Ralph
+                  li
+                    a(href="#")                  
+                      .poster.b-lazy(data-src="/assets/images/demo/shows/15.jpg")
+                        .dist
+                          span.vod VOD
+                          span.oi-filmes Oi Filmes
+                      .channel Batman: O Cavaleiro das Trevas
+                  li
+                    a(href="#")                  
+                      .poster.b-lazy(data-src="/assets/images/demo/shows/16.jpg")
+                        .dist
+                          span.vod VOD
+                          span.oi-filmes Oi Filmes
+                      .channel Tron Legacy
 
         .oi-channels_footer-item
           .oi-channels_footer-item_title-area
@@ -389,8 +398,6 @@ body(itemtype="http://schema.org/WebPage").product
     +footer(footer)
 
   channel-modal
-
-  channel-search
   
   script(src='/assets/scripts/vendor/require.js' data-main="/assets/scripts/main" async)
     
