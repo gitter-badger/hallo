@@ -1,0 +1,1444 @@
+{
+  "meta": {
+    "types": {
+      "1": "tv",
+      "2": "audio"
+    },
+    "subtypes": {
+      "1": "Abertos",
+      "2": "Filmes & Séries",
+      "3": "Esportes",
+      "4": "Infantis & Básicos",
+      "5": "Notícias & Cultura",
+      "6": "Variedades",
+      "7": "Canais de Áudio",
+      "8": "Rádios"
+    }
+  },
+  "data": [
+    {
+      "img": "globo",
+      "slug": "globo",
+      "name": "Globo HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "record",
+      "slug": "record",
+      "name": "Record HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "sbt",
+      "slug": "sbt",
+      "name": "SBT HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "band",
+      "slug": "band",
+      "name": "Band HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "rede-tv",
+      "slug": "rede-tv",
+      "name": "Rede TV",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "tv-cultura",
+      "slug": "tv-cultura",
+      "name": "Tv Cultura",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "aparecida",
+      "slug": "aparecida",
+      "name": "Aparecida",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "cancao-nova",
+      "slug": "cancao-nova",
+      "name": "Canção Nova",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "cnt",
+      "slug": "cnt",
+      "name": "CNT",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "ideal-tv",
+      "slug": "ideal-tv",
+      "name": "Ideal TV",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "nbr",
+      "slug": "nbr",
+      "name": "NBR",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "rbi-tv",
+      "slug": "rbi-tv",
+      "name": "RBI TV",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "rede-brasil",
+      "slug": "rede-brasil",
+      "name": "Rede Brasil",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "rede-vida",
+      "slug": "rede-vida",
+      "name": "Rede Vida",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "rit",
+      "slug": "rit",
+      "name": "RIT",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "tv-diario",
+      "slug": "tv-diario",
+      "name": "TV Diário",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "tv-brasil",
+      "slug": "tv-brasil",
+      "name": "TV Brasil",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "tv-camara",
+      "slug": "tv-camara",
+      "name": "TV Câmara",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "tv-escola",
+      "slug": "tv-escola",
+      "name": "TV Escola",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "tv-justica",
+      "slug": "tv-justica",
+      "name": "TV Justiça",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "tv-senado",
+      "slug": "tv-senado",
+      "name": "TV Senado",
+      "number": 71,
+      "type": 1,
+      "subtype": 1
+    },
+    {
+      "img": "warner",
+      "slug": "warner",
+      "name": "Warner HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "sony",
+      "slug": "sony",
+      "name": "Sony HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "tnt",
+      "slug": "tnt",
+      "name": "Tnt HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "universal-channel",
+      "slug": "universal-channel",
+      "name": "Universal Channel HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "fox-hd",
+      "slug": "fox-hd",
+      "name": "Fox HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "fx",
+      "slug": "fx",
+      "name": "Fx HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "paramount",
+      "slug": "paramount",
+      "name": "Paramount Channel HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "axn",
+      "slug": "axn",
+      "name": "AXN HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "megapix",
+      "slug": "megapix",
+      "name": "Megapix HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "canal-brasil",
+      "slug": "canal-brasil",
+      "name": "Canal Brasil HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "space",
+      "slug": "space",
+      "name": "Space HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "cinemax",
+      "slug": "cinemax",
+      "name": "Cinemax",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "curta",
+      "slug": "curta",
+      "name": "Curta!",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "id",
+      "slug": "id",
+      "name": "ID",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "lifetime",
+      "slug": "lifetime",
+      "name": "Lifetime",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "studio-universal",
+      "slug": "studio-universal",
+      "name": "Studio Universal",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "syfy",
+      "slug": "syfy",
+      "name": "Syfy",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "tcm",
+      "slug": "tcm",
+      "name": "TCM",
+      "number": 71,
+      "type": 1,
+      "subtype": 2
+    },
+    {
+      "img": "sportv",
+      "slug": "sportv",
+      "name": "SporTV HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 3
+    },
+    {
+      "img": "sportv2",
+      "slug": "sportv2",
+      "name": "SporTV 2 HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 3
+    },
+    {
+      "img": "sportv3",
+      "slug": "sportv3",
+      "name": "SporTv 3",
+      "number": 71,
+      "type": 1,
+      "subtype": 3
+    },
+    {
+      "img": "fox-sports",
+      "slug": "fox-sports",
+      "name": "Fox Sports HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 3
+    },
+    {
+      "img": "fox-sports-2",
+      "slug": "fox-sports-2",
+      "name": "Fox Sports 2 HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 3
+    },
+    {
+      "img": "espn-brasil",
+      "slug": "espn-brasil",
+      "name": "ESPN Brasil HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 3
+    },
+    {
+      "img": "espn",
+      "slug": "espn",
+      "name": "ESPN HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 3
+    },
+    {
+      "img": "espn-plus",
+      "slug": "espn-plus",
+      "name": "ESPN+ HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 3
+    },
+    {
+      "img": "band-sports",
+      "slug": "band-sports",
+      "name": "Band Sports HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 3
+    },
+    {
+      "img": "esporte-interativo",
+      "slug": "esporte-interativo",
+      "name": "Esporte Interativo HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 3
+    },
+    {
+      "img": "esporte-interativo-nordeste",
+      "slug": "esporte-interativo-nordeste",
+      "name": "Esporte Interativo Nordeste HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 3
+    },
+    {
+      "img": "discovery-turbo",
+      "slug": "discovery-turbo",
+      "name": "Discovery Turbo",
+      "number": 71,
+      "type": 1,
+      "subtype": 3
+    },
+    {
+      "img": "off",
+      "slug": "off",
+      "name": "Off HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 3
+    },
+    {
+      "img": "woohoo",
+      "slug": "woohoo",
+      "name": "Woohoo",
+      "number": 71,
+      "type": 1,
+      "subtype": 3
+    },
+    {
+      "img": "cartoon-network",
+      "slug": "cartoon-network",
+      "name": "Cartoon Network HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "discovery-kids",
+      "slug": "discovery-kids",
+      "name": "Discovery Kids HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "nick",
+      "slug": "nick",
+      "name": "Nickelodeon HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "nick-jr",
+      "slug": "nick-jr",
+      "name": "Nick Jr",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "disney-channel",
+      "slug": "disney-channel",
+      "name": "Disney Channel HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "disney-jr",
+      "slug": "disney-jr",
+      "name": "Disney Junior",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "disney-xd",
+      "slug": "disney-xd",
+      "name": "Disney XD",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "gloob",
+      "slug": "gloob",
+      "name": "Gloob HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "boomerang",
+      "slug": "boomerang",
+      "name": "Boomerang",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "tooncast",
+      "slug": "tooncast",
+      "name": "Tooncast",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "baby-tv",
+      "slug": "baby-tv",
+      "name": "Baby TV",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "tv-ra-tim-bum",
+      "slug": "tv-ra-tim-bum",
+      "name": "TV Rá Tim Bum",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "canal-oi",
+      "slug": "canal-oi",
+      "name": "Canal Oi",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "polishop",
+      "slug": "polishop",
+      "name": "Polishop",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "shoptime",
+      "slug": "shoptime",
+      "name": "Shoptime",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "tv-novo-tempo",
+      "slug": "tv-novo-tempo",
+      "name": "Tv Novo Tempo",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "rede-genesis",
+      "slug": "rede-genesis",
+      "name": "Rede Gênesis",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "rede-super",
+      "slug": "rede-super",
+      "name": "Rede Super",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "terra-viva",
+      "slug": "terra-viva",
+      "name": "Terra Viva",
+      "number": 71,
+      "type": 1,
+      "subtype": 4
+    },
+    {
+      "img": "globo-news",
+      "slug": "globo-news",
+      "name": "GloboNews HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "record-news",
+      "slug": "record-news",
+      "name": "Record News",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "band-news",
+      "slug": "band-news",
+      "name": "BandNews",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "bbc",
+      "slug": "bbc",
+      "name": "BBC HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "bloomberg",
+      "slug": "bloomberg",
+      "name": "Bloomberg",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "cnn-en-espanol",
+      "slug": "cnn-en-espanol",
+      "name": "CNN en Español",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "cnn",
+      "slug": "cnn",
+      "name": "CNN Internacional",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "climatempo",
+      "slug": "climatempo",
+      "name": "Climatempo",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "discovery-channel",
+      "slug": "discovery-channel",
+      "name": "Discovery Channel HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "discovery-civilization",
+      "slug": "discovery-civilization",
+      "name": "Discovery Civilization",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "discovery-science",
+      "slug": "discovery-science",
+      "name": "Discovery  Science",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "discovery-theater",
+      "slug": "discovery-theater",
+      "name": "Discovery Theater HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "history-channel",
+      "slug": "history-channel",
+      "name": "History Channel HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "history-channel-2",
+      "slug": "history-channel-2",
+      "name": "History Channel 2 HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "national-geographic-channel",
+      "slug": "national-geographic-channel",
+      "name": "National Geographic HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "nat-geo-wild",
+      "slug": "nat-geo-wild",
+      "name": "Nat Geo Wild HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "animal-planet",
+      "slug": "animal-planet",
+      "name": "Animal Planet",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "arte-1",
+      "slug": "arte-1",
+      "name": "Arte1",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "futura",
+      "slug": "futura",
+      "name": "Futura",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "canal-rural",
+      "slug": "canal-rural",
+      "name": "Canal Rural",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "sesc-tv",
+      "slug": "sesc-tv",
+      "name": "SESC TV",
+      "number": 71,
+      "type": 1,
+      "subtype": 5
+    },
+    {
+      "img": "gnt",
+      "slug": "gnt",
+      "name": "GNT HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "multishow",
+      "slug": "multishow",
+      "name": "Multishow HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "canal-viva",
+      "slug": "canal-viva",
+      "name": "Canal Viva HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "mtv",
+      "slug": "mtv",
+      "name": "MTV HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "globosat",
+      "slug": "globosat",
+      "name": "Globosat HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "home-health",
+      "slug": "home-health",
+      "name": "Home & Health HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "a-e",
+      "slug": "a-e",
+      "name": "A&E HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "bis",
+      "slug": "bis",
+      "name": "Bis HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "byu-tv",
+      "slug": "byu-tv",
+      "name": "BYU",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "chef-tv",
+      "slug": "chef-tv",
+      "name": "Chef TV",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "comedy-central",
+      "slug": "comedy-central",
+      "name": "Comedy Central HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "e",
+      "slug": "e",
+      "name": "E!",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "fox-life",
+      "slug": "fox-life",
+      "name": "Fox Life",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "glitz",
+      "slug": "glitz",
+      "name": "Glitz",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "isat",
+      "slug": "isat",
+      "name": "I.SAT",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "mix-tv",
+      "slug": "mix-tv",
+      "name": "Mix TV",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "play-tv",
+      "slug": "play-tv",
+      "name": "Play TV",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "tbs",
+      "slug": "tbs",
+      "name": "TBS HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "tlc",
+      "slug": "tlc",
+      "name": "TLC HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "tru-tv",
+      "slug": "tru-tv",
+      "name": "Tru TV HD",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": "vh1-mega-hits",
+      "slug": "vh1-mega-hits",
+      "name": "VH1 Mega Hits",
+      "number": 71,
+      "type": 1,
+      "subtype": 6
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Anos 60",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Anos 70",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Anos 80",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Anos 90",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Axé",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Baladas",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Blues",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Bossa Nova",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Disco",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Easy Listening",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Festa",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Forró",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Gospel",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Hip Hop",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Jazz Clássico",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Jazz Contemporâneo",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Kids",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Latina",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Lounge",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "MPB",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Música Clássica",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Música Eletrônica",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "New Rock",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Pagode",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "R&B",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Reggae",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Trilhas Sonoras",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rock Clássico",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Samba de Raiz",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Sertanejo",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Standards",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Sucessos",
+      "number": null,
+      "type": 2,
+      "subtype": 7
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Globo RJ",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Globo SP",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Globo FM",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "CBN",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Nativa FM",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Band News",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Bandeirantes",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Bradesco esportes",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Band FM",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Disney",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Sara Brasil FM",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Super",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Beat 98 FM",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "CBN RJ",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "CBN BH",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "CBN BSB",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "BH FM",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Clube do Pará",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Verdes Mares AM",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Tamoio AM e RFI",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Gaúcha",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Atlântica",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Cultura e Cultura FM",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Globo FM Bahia",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Bahia FM",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio 93 FM",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Jovem Pan",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Jovem Pan News",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Grenal",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Novo Tempo",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio LBV",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    },
+    {
+      "img": null,
+      "slug": null,
+      "name": "Rádio Canção Nova",
+      "number": null,
+      "type": 2,
+      "subtype": 8
+    }
+  ]
+}
