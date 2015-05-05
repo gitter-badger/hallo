@@ -1,6 +1,14 @@
 <channel-search>
-  <div class="channel-search">
-    <div class="channel-search_close">
+  <div class="oi-channels_search-call">
+    <a href="#" onclick={ open }>
+      <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" class="icon-search" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+        <path fill-rule="evenodd" clip-rule="evenodd" stroke="#000000" stroke-miterlimit="10" d="M488.4,427.1L387.1,325.8 c22-33.2,34.8-73,34.8-115.8C421.9,94,327.9,0,212,0C96,0,2,94,2,209.9c0,116,94,210,210,210c42.8,0,82.6-12.8,115.8-34.8 l101.3,101.3c16.4,16.5,42.9,16.5,59.3,0C504.8,470,504.8,443.5,488.4,427.1z M211.4,335.2c-69.5,0-125.9-56.3-125.9-125.9 c0-69.5,56.3-125.9,125.9-125.9c69.5,0,125.8,56.4,125.8,125.9C337.3,278.9,280.9,335.2,211.4,335.2z"> </path>
+      </svg>
+      Busque um canal específico
+    </a>
+  </div>
+  <div class="channel-search" show={ visible }>
+    <div class="channel-search_close" onclick={ close }>
       <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
         <g transform="translate(0, 0)">
           <line fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="19" y1="5" x2="5" y2="19" stroke-linejoin="round"></line>
@@ -37,40 +45,117 @@
           <label>
             <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" class="icon-search" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve"> <path fill-rule="evenodd" clip-rule="evenodd" stroke="#000000" stroke-miterlimit="10" d="M488.4,427.1L387.1,325.8 c22-33.2,34.8-73,34.8-115.8C421.9,94,327.9,0,212,0C96,0,2,94,2,209.9c0,116,94,210,210,210c42.8,0,82.6-12.8,115.8-34.8 l101.3,101.3c16.4,16.5,42.9,16.5,59.3,0C504.8,470,504.8,443.5,488.4,427.1z M211.4,335.2c-69.5,0-125.9-56.3-125.9-125.9 c0-69.5,56.3-125.9,125.9-125.9c69.5,0,125.8,56.4,125.8,125.9C337.3,278.9,280.9,335.2,211.4,335.2z"> </path></svg>
             <span>Busque um canal específico</span>
-            <input type="text" placeholder="Busque um canal específico">
+            <input onkeyup={ search } value={query} type="text" autofocus placeholder="Busque um canal específico">
           </label>
         </div>
       </div>
     </div>
-  <div class="channel-search_results">
-    <div class="channel-search_results_container">
-      <ol class="channel-search_list">
-        <li class="channel-search_list_item">
-          <a href="#">
-            <span class="channel-search_list_type">TV</span>
-            <span class="channel-search_list_name">Animal Planet</span>
-          </a>
-        </li>
-        <li class="channel-search_list_item">
-          <a href="#">
-            <span class="channel-search_list_type">TV</span>
-            <span class="channel-search_list_name">Animal Planet</span>
-          </a>
-        </li>
-        <li class="channel-search_list_item">
-          <a href="#">
-            <span class="channel-search_list_type">TV</span>
-            <span class="channel-search_list_name">Animal Planet</span>
-          </a>
-        </li>
-        <li class="channel-search_list_item">
-          <a href="#">
-            <span class="channel-search_list_type">TV</span>
-            <span class="channel-search_list_name">Animal Planet</span>
-          </a>
-        </li>
-      </ol>
+    <div class="channel-search_results">
+      <div class="channel-search_results_container">
+        <ol class="channel-search_list">
+          <li class="channel-search_list_item" each={channel in results}>
+            <a href="#">
+              <span class="channel-search_list_type type-{ channel.type }" style="{ channel.type == '1' ? 'background-image:url(/assets/images/logos/height40/' + channel.img + '.png)' : '' }"></span>
+              <span class="channel-search_list_name">{ channel.name }</span>
+            </a>
+          </li>
+        </ol>
+      </div>
     </div>
   </div>
-</div>
+  <script>
+    var self = this;
+    self.channels = [];
+    self.meta = {};
+    self.results = [];
+    self.query = '';
+
+    self.visible = false;
+
+    this.on('mount', function(){
+      self.loadChannels();
+    });
+
+    this.open = function(e) {
+      self.visible = true;
+      $('body').addClass('scroll-lock');
+    }
+
+    this.close = function(e) {
+      self.visible = false;
+      $('body').removeClass('scroll-lock');
+    }
+
+    this.search = function(e) {
+      self.query = e.target.value;
+      var arr = self.channels.filter(filterLv)
+      var results;
+
+      results = _.sortBy(arr, function(channel) {
+        var query = self.query.replace(/ /g,'').toLowerCase();
+        var channelName = channel.name.replace(/ /g,'').toLowerCase();
+        var startsWith =  _.startsWith(channelName, query);
+        return startsWith ? -1 : 0;
+      });
+
+      results = _.sortBy(arr, function(channel) {
+        var query = self.query.replace(/ /g,'').toLowerCase();
+        var channelName = channel.name.replace(/ /g,'').toLowerCase();
+        var includes =  _.include(channelName, query);
+        return includes ? -1 : 0;
+      });
+
+      self.results = results;
+
+      // self.results = _.sortBy(self.channels.filter(filterLv), "name");
+
+      // _.debounce(function(){
+      //   self.test
+      // }, 500)
+
+      self.update();
+    }.bind(this);
+
+    function filterLv(channel){
+      var query = self.query.replace(/ /g,'').toLowerCase();
+      var channelName = channel.name.replace(/ /g,'').toLowerCase();
+      var channelKeywords = channel.keywords.replace(/,/g,'').toLowerCase();
+      var distL = 0;
+
+      if( _.include(channelName, query) ){
+        return true;
+      }
+
+      // if( channelName.length < query.length ){
+      //   return false;
+      // }
+
+      var distL = _.levenshtein( query, channelKeywords)
+        console.log(channelKeywords, query);
+      if(distL <= 4){
+        return true;
+      } else {
+        return false;
+      }
+
+      var distL = _.levenshtein( query, channelName)
+      if(distL <= 3){
+        return true;
+      } else {
+        return false;
+      }
+
+    }
+
+    loadChannels(){
+      $.getJSON('/api/channel/list.json', function(json){
+
+        // self.channels = json.data;
+        self.channels = _.sortBy(json.data, "name");
+        self.meta = json.meta;
+        self.results = self.channels.slice(0, 8)
+      });
+    }
+
+  </script>
 </channel-search>

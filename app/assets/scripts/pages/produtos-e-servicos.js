@@ -1,15 +1,16 @@
 define([
   'domlib',
   'vendor/lodash',
+  'vendor/underscore.string',
   'vendor/riot',
   'velocity',
   // 'velocity-ui',
   'ScrollMagic',
   'tags/channel-modal',
   'tags/channel-search',
-  ],function ($, lodash, riot, Velocity, ScrollMagic, channelModal, channelSearch) {
+  ],function ($, _, _s, riot, Velocity, ScrollMagic, channelModal, channelSearch) {
 
-
+  _.mixin(_s.exports());
 
   var _public = {},
       _private = {};
@@ -63,21 +64,21 @@ define([
     });
   }
 
+  var cSerachcmodal = riot.mount('channel-search')[0]
   _private.bindOpenSearch = function(){
-    $btOpenSearch.on('click', function(evt){
-      evt.preventDefault();
-      $body.addClass('scroll-lock');
-      var cSerachcmodal = riot.mount('channel-search')[0]
-      _private.bindCloseSearch()
-      $('channel-modal').show()
-    });
+    // $btOpenSearch.on('click', function(evt){
+    //   evt.preventDefault();
+    //   $body.addClass('scroll-lock');
+    //   // _private.bindCloseSearch()
+    //   $('channel-modal').show()
+    // });
   }
 
-  _private.bindCloseSearch = function(){
-    $('.channel-modal_close').on('click', function(e){
-      $('channel-modal').hide()
-    });
-  };
+  // _private.bindCloseSearch = function(){
+  //   $('.channel-modal_close').on('click', function(e){
+  //     $('channel-modal').hide()
+  //   });
+  // };
 
   _private.bindOpenAddOn = function(){
     $addOnsLink.on('click', function(evt){

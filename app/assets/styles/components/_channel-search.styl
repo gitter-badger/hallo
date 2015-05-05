@@ -64,7 +64,9 @@
     text-align center
     +above('m')
       text-align left
+      padding-right remify(50px)
     +above('l')
+      padding-right 0
       font-size remify(57px)
       line-height remify(57px)
 
@@ -74,9 +76,10 @@
     max-width remify(250px)
     position relative
     margin-top remify(20px)
+    +above('m')
+      max-width initial
     +above('l')
       margin-top remify(70px)
-      max-width initial
 
     span
       display none
@@ -128,9 +131,9 @@
   &_list
     display block
     +above('m')
-      padding-top remify(200px)
+      padding-top remify(104px)
     +above('l')
-      padding-top remify(386px)
+      padding-top remify(186px)
 
     &_item
       display block
@@ -145,13 +148,28 @@
         display block
         text-decoration none
         color $black
+        position relative
+        overflow hidden
+        &:hover
+          background-color $grayLighter
 
-    &_type TV
-      display inline-block
+    &_type
+      display block
+      float left
       width remify(50px)
       height remify(50px)
+      background-repeat no-repeat
+      background-size contain
+      background-position center
+      &.type-1
+        background-size remify(36px)
+      &.type-2
+        background-image url(/assets/images/icons/music.svg)
+        background-size remify(30px)
+
 
     &_name
-      display inline-block
+      display block
+      float left
       height remify(50px)
-      margin-left remify(45px)
+      margin-left remify(20px)
