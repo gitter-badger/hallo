@@ -98,14 +98,16 @@
         return startsWith ? -1 : 0;
       });
 
-      results = _.sortBy(arr, function(channel) {
+      results = _.sortBy(results, function(channel) {
         var query = self.query.replace(/ /g,'').toLowerCase();
         var channelName = channel.name.replace(/ /g,'').toLowerCase();
         var includes =  _.include(channelName, query);
         return includes ? -1 : 0;
       });
 
-      self.results = results;
+      results = _.sortBy(arr, "type");
+
+      self.results = results.slice(0, 8);
 
       // self.results = _.sortBy(self.channels.filter(filterLv), "name");
 
@@ -130,12 +132,14 @@
       //   return false;
       // }
 
-      var distL = _.levenshtein( query, channelKeywords)
-        console.log(channelKeywords, query);
-      if(distL <= 4){
-        return true;
-      } else {
-        return false;
+      if(channelKeywords.length > 0){
+        var distL = _.levenshtein( query, channelKeywords)
+          console.log(channelKeywords, query);
+        if(distL <= 4){
+          return true;
+        } else {
+          return false;
+        }
       }
 
       var distL = _.levenshtein( query, channelName)
