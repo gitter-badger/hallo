@@ -469,6 +469,14 @@ main
       padding remify(50px) remify(30px) 0 remify(30px)
       height auto
 
+    &.open
+      height initial
+      padding-bottom remify(20px)
+      .oi-channels-lists_list-audio_container
+        height initial
+      .oi-channels-lists_list-audio_container ul
+        height initial
+
     &:last-child
       .oi-channels-lists_list-audio_container
         border-bottom none
@@ -494,6 +502,7 @@ main
         border-bottom none
         overflow initial
 
+
       ul
         display block
         height remify(65px)
@@ -516,6 +525,9 @@ main
           color $black
         &:after
           content ","
+        &:last-child
+          &:after
+            content "."
 
       button
         font-size remify(13px)

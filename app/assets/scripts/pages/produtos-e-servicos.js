@@ -45,7 +45,17 @@ define([
     _private.bindOpenContract();
     _private.bindOpenFooterItem();
     _private.openModalRent();
+    _private.showAllAudio();
   };
+
+  _private.showAllAudio = function(){
+    $('.oi-channels-lists_list-audio_container button').on('click', function(evt) {
+      evt.preventDefault();
+      $(this).parents('.oi-channels-lists_list-audio').addClass('open');
+      $(this).hide();
+    });
+  }
+
 
   var riotMovieRent = riot.mount('movie-rent')[0]
 
