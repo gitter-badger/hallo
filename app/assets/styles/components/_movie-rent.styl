@@ -1,0 +1,301 @@
+contract-rules
+  display block
+
+.movie-rent
+  background-color $green
+  background-image linear-gradient(0deg,#47b969,#00a596)
+  // display none
+  position fixed
+  top 0
+  left 0
+  z-index 3
+  transition all 1s ease
+  width 100%
+  height 100vh
+  overflow scroll
+  font-family $fontTextRegular
+  color $white
+  +above('l')
+    width 100vw
+    padding-top remify(330px)
+
+  &.has-image
+    background-color #000
+    background-image none
+    .movie-rent_image
+      opacity 1
+
+  &_close
+    color $white
+    position absolute
+    top remify(30px)
+    right remify(30px)
+    width remify(30px)
+    height remify(30px)
+    cursor pointer
+    overflow hidden
+    text-indent remify(-999px)
+    z-index 4
+    svg
+      display block
+      width remify(30px)
+      height remify(30px)
+      line
+        stroke $white
+
+  &_image
+    position absolute
+    z-index 1
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background-color #000
+    background-repeat no-repeat
+    background-position top center
+    transition opacity 0.5s ease
+    opacity 0
+    display none
+    +above('m')
+      display block
+
+  &_container
+    max-width remify(1170px)
+    margin 0 auto
+    padding remify(20px)
+    position relative
+    z-index 2
+    +above('l')
+      padding 0
+
+  &_header
+    overflow hidden
+    +above('l')
+      padding-bottom remify(100px)
+
+  &_broadcast
+    margin-bottom remify(30px)
+    ul
+      display block
+    li
+      display inline-block
+      margin-left remify(4px)
+    span
+      display inline-block
+      padding 0 remify(10px)
+      line-height remify(20px)
+      font-size remify(13px)
+      border-radius remify(2px)
+      &.vod
+        background-color $purple
+      &.oi-filmes
+        background-color $purpleLight
+
+  &_title
+    color $white
+    font-size remify(47px)
+    line-height remify(47px)
+    font-family $fontTitle
+    +above('l')
+      font-size remify(57px)
+      line-height remify(57px)
+      width (100% / 3 * 2)
+      float left
+
+  &_price
+    position relative
+    margin-top remify(30px)
+    +above('l')
+      margin-top 0
+      width (100% / 3 * 1)
+      float left
+
+    oi-price
+      +above('l')
+        transform scale(.8)
+        display inline-block
+
+  &_action
+    background-color $white
+    border-radius remify(4px)
+    color $black
+    display block
+    font-family $fontTextRegular
+    height remify(57px)
+    line-height remify(57px)
+    margin-top remify(30px)
+    padding 0 remify(25px)
+    text-align center
+    text-decoration none
+    transform translate(0, -15px)
+    +above('l')
+      display inline-block
+      margin-left remify(47px)
+      margin-top 0
+      position absolute
+      right 0
+      top remify(12px)
+
+    span
+      display inline-block
+    &_number
+      font-size remify(16px)
+      font-family $fontTextBold
+      margin-left rem(10px)
+      margin-right remify(30px)
+    &_text
+      font-size remify(13px)
+
+  &_content
+    margin-top remify(70px)
+    +above('l')
+      margin-top 0
+      width (100% / 3 * 2)
+      float left
+
+  &_info
+    font-family $fontTextBold
+    font-size remify(18px)
+    padding-bottom remify(30px)
+    span
+      display inline-block
+      margin-right remify(10px)
+
+  &_desc
+    margin-bottom remify(30px)
+    font-family $fontTextRegular
+    p
+      line-height remify(30px)
+      margin-bottom remify(30px)
+
+  &_table
+    margin-bottom remify(70px)
+    font-family $fontTextRegular
+    +above('l')
+      margin-bottom remify(120px)
+    &_title
+      font-family $fontTextBold
+      font-size remify(18px)
+      margin-bottom remify(50px)
+
+    caption
+      @extend $visuallyhidden
+
+    table
+      border-top remify(1px) solid $white
+      border-bottom remify(1px) solid $white
+      width 100%
+      font-size remify(13px)
+      +above('l')
+        font-size remify(16px)
+
+    thead
+      border-bottom remify(1px) solid $grayLight
+
+    tbody
+      tr
+        border-bottom remify(1px) dashed $grayLight
+
+    tr
+      vertical-align middle
+
+    th
+      height remify(60px)
+      vertical-align middle
+      text-align center
+      padding remify(10px)
+      +above('l')
+        padding 0 remify(10px)
+        min-width rem(150px)
+        height remify(115px)
+
+    td
+      height remify(60px)
+      vertical-align middle
+      text-align center
+      padding remify(10px)
+      +above('l')
+        padding 0 remify(40px)
+        min-width rem(200px)
+        height remify(115px)
+
+  &_question
+    margin-bottom remify(70px)
+    font-family $fontTextRegular
+    +above('l')
+      margin-bottom remify(100px)
+    &_title
+      font-family $fontTextBold
+      font-size remify(18px)
+      margin-bottom remify(30px)
+
+    &_text
+      ol
+        display block
+        counter-reset counter
+      li
+        line-height remify(30px)
+        margin-bottom remify(10px)
+        +above('l')
+          margin-bottom 0
+          line-height remify(40px)
+        &:before
+          content counter(counter)
+          counter-increment counter
+          display inline-block
+          margin-right remify(20px)
+
+  &_avaliability
+    +above('l')
+      width (100% / 3 * 1)
+      padding-left remify(120px)
+      float left
+
+    &_title
+      font-family $fontTextBold
+      font-size remify(18px)
+      margin-bottom remify(30px)
+
+    &_list
+      li
+        display block
+        line-height remify(30px)
+      a
+        display inline-block
+        color $white
+
+
+
+  // &_image
+  //   position absolute
+  //   z-index 1
+  //   top 0
+  //   left 0
+  //   width 100%
+  //   height 100%
+  //   background-color #000
+  //   background-repeat no-repeat
+  //   background-position top center
+  //   transition opacity 0.5s ease
+  //   opacity 0
+  //   display none
+  //   +above('l')
+  //     display block
+
+  // &_close
+  //   color $white
+  //   position absolute
+  //   top remify(30px)
+  //   right remify(30px)
+  //   width remify(30px)
+  //   height remify(30px)
+  //   cursor pointer
+  //   overflow hidden
+  //   text-indent remify(-999px)
+  //   z-index 4
+  //   svg
+  //     display block
+  //     width remify(30px)
+  //     height remify(30px)
+  //     line
+  //       stroke $white

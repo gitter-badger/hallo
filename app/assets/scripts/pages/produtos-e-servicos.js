@@ -8,8 +8,9 @@ define([
   'ScrollMagic',
   'tags/channel-modal',
   'tags/channel-search',
-  'tags/contracts-rules'
-  ],function ($, _, _s, riot, Velocity, ScrollMagic, channelModal, channelSearch) {
+  'tags/contracts-rules',
+  'tags/movie-rent'
+  ],function ($, _, _s, riot, Velocity, ScrollMagic, channelModal, channelSearch, movieRent) {
 
   _.mixin(_s.exports());
 
@@ -40,11 +41,21 @@ define([
     // addOns.init()
     // _private.loadPrice();
     _private.bindOpenAddOn();
-    _private.bindOpenSearch();
+    // _private.bindOpenSearch();
     _private.bindOpenContract();
     _private.bindOpenFooterItem();
+    _private.openModalRent();
   };
 
+  var riotMovieRent = riot.mount('movie-rent')[0]
+
+  _private.openModalRent = function(){
+    $('.oi-channels_footer-item_content-area_movies a').on('click', function(event) {
+      event.preventDefault();
+      var url = $(this)[0].href.split('/').slice(-1)[0]
+      riotMovieRent.open(url)
+    });
+  }
 
   _private.bindOpenFooterItem = function(){
     $('.oi-channels_footer-item_title-area').on('click', function(event) {
@@ -88,21 +99,6 @@ define([
 
 
 
-
-  _private.bindOpenSearch = function(){
-    // $btOpenSearch.on('click', function(evt){
-    //   evt.preventDefault();
-    //   $body.addClass('scroll-lock');
-    //   // _private.bindCloseSearch()
-    //   $('channel-modal').show()
-    // });
-  }
-
-  // _private.bindCloseSearch = function(){
-  //   $('.channel-modal_close').on('click', function(e){
-  //     $('channel-modal').hide()
-  //   });
-  // };
 
   _private.bindOpenAddOn = function(){
     $addOnsLink.on('click', function(evt){
