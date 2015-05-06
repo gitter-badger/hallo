@@ -42,7 +42,17 @@ define([
     _private.bindOpenAddOn();
     _private.bindOpenSearch();
     _private.bindOpenContract();
+    _private.bindOpenFooterItem();
   };
+
+
+  _private.bindOpenFooterItem = function(){
+    $('.oi-channels_footer-item_title-area').on('click', function(event) {
+      event.preventDefault();
+      var $this = $(this);
+      $this.next('.oi-channels_footer-item_content-area').toggleClass('open');
+    });
+  }
 
   _private.bindOpenContract = function(){
     $('#openContract').on('click', function(event) {

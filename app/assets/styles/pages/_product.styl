@@ -719,10 +719,14 @@ main
       border-bottom none
       margin-top remify(85px)
 
+    &.open
+
     &_title-area
       height remify(88px)
       padding 0 remify(20px)
+      cursor pointer
       +above('m')
+        cursor default
         width remify(200px)
         padding-right remify(20px)
         float left
@@ -752,15 +756,25 @@ main
       padding 0 0 0 remify(20px)
       overflow hidden
       height 0
+      opacity 0
+      transition all 0.3s ease
       +above('m')
+        padding-bottom 0
         height initial
         width remify(520px)
         padding 0
         float left
+        opacity 1
+      &.open
+        height initial
+        opacity 1
 
       &_desc
         line-height remify(20px)
         font-size remify(13px)
+        padding-bottom remify(50px)
+        +above('m')
+          padding-bottom 0
         dl
           display block
           overflow hidden
