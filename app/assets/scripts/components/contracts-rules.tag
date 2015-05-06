@@ -1,7 +1,4 @@
 <contract-rules>
-  <a href="#" onclick={ open }>
-    Contrato e Regras da Oferta
-  </a>
   <div class="contract-rules" show={ visible }>
     <div class="contract-rules_close" onclick={ close }>
       <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
