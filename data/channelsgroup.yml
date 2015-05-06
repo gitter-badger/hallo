@@ -722,7 +722,7 @@ channelsgroup:
             - "Canais Internacionais"
             - "Deutsche Welle, TVE, TV5 e RTP"
     spots:
-      title: "Pontos em HD"
+      title: "Pontos Adicionais"
       desc: "Quantidade de aparelhos receptores do sinal da Oi TV VD"
       quant: 5
     recorder:
