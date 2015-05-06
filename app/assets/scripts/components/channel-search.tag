@@ -134,7 +134,6 @@
 
       if(channelKeywords.length > 0){
         var distL = _.levenshtein( query, channelKeywords)
-          console.log(channelKeywords, query);
         if(distL <= 4){
           return true;
         } else {
@@ -153,8 +152,6 @@
 
     loadChannels(){
       $.getJSON('/api/channel/list.json', function(json){
-
-        // self.channels = json.data;
         self.channels = _.sortBy(json.data, "name");
         self.meta = json.meta;
         self.results = self.channels.slice(0, 8)
