@@ -148,9 +148,9 @@ body(itemtype="http://schema.org/WebPage").product
                   h5.oi-channels-addons_item_logo=channelsgroup.addons.spots.title
                   .oi-channels-addons_item_desc=channelsgroup.addons.spots.desc
                   .oi-channels-addons_item_spots
-                    - var count = 1
-                    while count <= channelsgroup.addons.spots.quant
-                      - selected = (count === 1 ? ' added': '' )
+                    - var count = 0
+                    while count <= channelsgroup.addons.spots.quant -1
+                      - selected = (count === 0 ? ' added': '' )
                       a(href="#", class="spot" + selected, style="width:" + ( 100 / channelsgroup.addons.spots.quant ) + "%" )=count++
                 
                 li.oi-channels-addons_item.only-l(aria-live="assertive" aria-relevant="text")
@@ -394,8 +394,7 @@ body(itemtype="http://schema.org/WebPage").product
           a(href="#") TV Bloqueada
         li
           a(href="#") Perguntas frequentes
-
-    
+  
     +footer(footer)
 
   channel-modal
