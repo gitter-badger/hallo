@@ -471,11 +471,11 @@ main
 
     &.open
       height initial
-      padding-bottom remify(20px)
       .oi-channels-lists_list-audio_container
         height initial
       .oi-channels-lists_list-audio_container ul
         height initial
+        padding-bottom remify(20px)
 
     &:last-child
       .oi-channels-lists_list-audio_container
@@ -494,8 +494,8 @@ main
     &_container
       border-bottom remify(1px) dashed $grayLight
       height remify(114px)
-      overflow scroll
       +above('m')
+        overflow scroll
         height remify(90px)
       +above('l')
         height auto
@@ -507,7 +507,11 @@ main
         display block
         height remify(65px)
         overflow hidden
+        padding 0 remify(15px)
+        margin-left remify(-15px)
         +above('m')
+          padding 0
+          margin-left 0
           width remify(1800px)
         +above('l')
           width auto
