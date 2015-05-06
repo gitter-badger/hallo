@@ -54,7 +54,7 @@
       <div class="channel-search_results_container">
         <ol class="channel-search_list">
           <li class="channel-search_list_item" each={channel in results}>
-            <a href="#">
+            <a href="#{ channel.slug }">
               <span class="channel-search_list_type type-{ channel.type }" style="{ channel.type == '1' ? 'background-image:url(/assets/images/logos/height40/' + channel.img + '.png)' : '' }"></span>
               <span class="channel-search_list_name">{ channel.name }</span>
             </a>

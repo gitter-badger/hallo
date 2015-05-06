@@ -8,6 +8,7 @@ define([
   'ScrollMagic',
   'tags/channel-modal',
   'tags/channel-search',
+  'tags/contracts-rules'
   ],function ($, _, _s, riot, Velocity, ScrollMagic, channelModal, channelSearch) {
 
   _.mixin(_s.exports());
@@ -40,7 +41,15 @@ define([
     // _private.loadPrice();
     _private.bindOpenAddOn();
     _private.bindOpenSearch();
+    _private.bindOpenContract();
   };
+
+  _private.bindOpenContract = function(){
+    $('#openContract').on('click', function(event) {
+      event.preventDefault();
+      cContractModal.open()
+    });
+  }
 
   _private.openClientType = function(){
     $openClientType.on('click', function(evt){
@@ -65,6 +74,11 @@ define([
   }
 
   var cSerachcmodal = riot.mount('channel-search')[0]
+  var cContractModal = riot.mount('contract-rules')[0]
+
+
+
+
   _private.bindOpenSearch = function(){
     // $btOpenSearch.on('click', function(evt){
     //   evt.preventDefault();
@@ -116,7 +130,12 @@ define([
     });
   };
 
+  $(document).on('searchchannel', function(){
+    console.log('abriu');
+  })
+
   _private.bindNavKeyboard = function(){
+    return false
     document.onkeydown = function(evt) {
       evt = evt || window.event;
       // Esc

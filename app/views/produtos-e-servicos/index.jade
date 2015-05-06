@@ -355,7 +355,8 @@ body(itemtype="http://schema.org/WebPage").product
                 dd 01/01/2015 à 30/03/2015.
                 dt Informações Legais 
                 dd 
-                  a(href="#") Contrato e Regras da Oferta
+                  a#openContract(href="#") Contrato e Regras da Oferta
+
                   br
                   a(href="#") Lista de Todos os Planos
                 dt Outros Planos
@@ -398,6 +399,7 @@ body(itemtype="http://schema.org/WebPage").product
     +footer(footer)
 
   channel-modal
+  contract-rules
   
   script(src='/assets/scripts/vendor/require.js' data-main="/assets/scripts/main" async)
     
