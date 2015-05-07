@@ -33,23 +33,21 @@
 
         <div class="movie-rent_price">
           <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-            <oi-price>
-              <div class="oi-price">
-                <meta itemprop="priceCurrency" content="BRL" />
-                <meta itemprop="availabilityEnds" content="2015-04-29" />
-                <div class="oi-price_prefix">
-                  A partir de
-                </div>
-                <div class="oi-price_value" itemprop="price" content="10.00">
-                  <span class="oi-price_value_integer">
-                    { data.offers.price.split('.')[0] }
-                  </span>
-                  <span class="oi-price_value_cents">
-                   ,{ data.offers.price.split('.')[1] }
-                  </span>
-                </div>
+            <div class="oi-price">
+              <meta itemprop="priceCurrency" content="BRL" />
+              <meta itemprop="availabilityEnds" content="2015-04-29" />
+              <div class="oi-price_prefix">
+                A partir de
               </div>
-            </oi-price>
+              <div class="oi-price_value" itemprop="price" content="10.00">
+                <span class="oi-price_value_integer">
+                  { data.offers.price.split('.')[0] }
+                </span>
+                <span class="oi-price_value_cents">
+                 ,{ data.offers.price.split('.')[1] }
+                </span>
+              </div>
+            </div>
 
             <span itemprop="potentialAction">
               <a class="movie-rent_action" href="tel:+10631" itemscope itemtype="http://schema.org/RentAction">
