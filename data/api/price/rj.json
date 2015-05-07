@@ -1,25 +1,86 @@
 {
-  "meta": {},
-  "data":
-  {
-    "basic":{
+  "meta": {
+  },
+  "data":[
+    {
+      "name": "Start HD",
+      "slug": "start",
+      "type": "basic",
+      "price": 59.90,
+      "quant": 0,
       "modifier": null,
       "plans": {
         "start": {
           "price": 59.90,
+          "quant": 0,
           "modifier": null
         },
         "mix": {
           "price": 79.90,
+          "quant": 0,
           "modifier": null
         },
         "total": {
           "price": 99.90,
+          "quant": 0,
           "modifier": null
         }
       }
     },
-    "phone":{
+    {
+      "name": "Mix HD",
+      "slug": "mix",
+      "type": "basic",
+      "price": 79.90,
+      "quant": 0,
+      "modifier": null,
+      "plans": {
+        "start": {
+          "price": 59.90,
+          "quant": 0,
+          "modifier": null
+        },
+        "mix": {
+          "price": 79.90,
+          "quant": 0,
+          "modifier": null
+        },
+        "total": {
+          "price": 99.90,
+          "quant": 0,
+          "modifier": null
+        }
+      }
+    },
+    {
+      "name": "Total HD",
+      "slug": "total",
+      "type": "basic",
+      "price": 99.90,
+      "quant": 0,
+      "modifier": null,
+      "plans": {
+        "start": {
+          "price": 59.90,
+          "quant": 0,
+          "modifier": null
+        },
+        "mix": {
+          "price": 79.90,
+          "quant": 0,
+          "modifier": null
+        },
+        "total": {
+          "price": 99.90,
+          "quant": 0,
+          "modifier": null
+        }
+      }
+    },
+    {
+      "name": "Telefone Fixo da Oi",
+      "slug": "phone",
+      "type": "client-type",
       "modifier": null,
       "plans": {
         "start": {
@@ -39,7 +100,10 @@
         }
       }
     },
-    "spot":{
+    {
+      "name": "Ponto adicional",
+      "slug": "spot",
+      "type": "addon",
       "modifier": null,
       "plans": {
         "start": {
@@ -61,7 +125,10 @@
         }
       }
     },
-    "recorder": {
+    {
+      "name": "Gravador digital",
+      "slug": "recorder",
+      "type": "addon",
       "modifier": null,
       "plans": {
         "start": {
@@ -81,7 +148,10 @@
         }
       }
     },
-    "hbo": {
+    {
+      "name": "HBO",
+      "slug": "hbo",
+      "type": "addon",
       "modifier": {
         "telecine": { "price": 25, "message": "Só mais R$ 25"},
         "premiere": { "price": 35, "message": "Só mais R$ 45"}
@@ -101,7 +171,10 @@
         }
       }
     },
-    "telecine": {
+    {
+      "name": "Telecine",
+      "slug": "telecine",
+      "type": "addon",
       "modifier": {
         "hbo": { "price": 35, "message": "Só mais R$ 35"}
       },
@@ -120,7 +193,10 @@
         }
       }
     },
-    "premiere": {
+    {
+      "name": "Première",
+      "slug": "premiere",
+      "type": "addon",
       "modifier": null,
       "plans": {
         "start": {
@@ -137,7 +213,10 @@
         }
       }
     },
-    "combate": {
+    {
+      "name": "Combate",
+      "slug": "combate",
+      "type": "addon",
       "modifier": null,
       "plans": {
         "start": {
@@ -154,7 +233,10 @@
         }
       }
     },
-    "playboy-tv":{
+    {
+      "name": "PlayboyTV",
+      "slug": "playboy-tv",
+      "type": "addon",
       "modifier": {
         "sexyhot": { "price": 10, "message": "Só mais R$ 10" }
       },
@@ -173,7 +255,10 @@
         }
       }
     },
-    "sexyhot":{
+    {
+      "name": "SexyHot",
+      "slug": "sexyhot",
+      "type": "addon",
       "modifier": {
         "playboytv": { "price": 10, "message": "Só mais R$ 10"}
       },
@@ -192,7 +277,10 @@
         }
       }
     },
-    "sexprive":{
+    {
+      "name": "Sex Privé",
+      "slug": "sexprive",
+      "type": "addon",
       "modifier": null,
       "plans": {
         "start": {
@@ -209,7 +297,10 @@
         }
       }
     },
-    "canais-internacionais":{
+    {
+      "name": "Canais Internacionais",
+      "slug": "canais-internacionais",
+      "type": "addon",
       "modifier": null,
       "plans": {
         "start": {
@@ -226,6 +317,6 @@
         }
       }
     }
-  }
+  ]
 }
 
