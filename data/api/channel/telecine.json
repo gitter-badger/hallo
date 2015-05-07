@@ -2,7 +2,7 @@
   "meta": {},
   "data": {
     "name": "Telecine",
-    "slug": "hbo",
+    "slug": "telecine",
     "klass": "has-image",
     "logo": "/assets/images/demo/logo-warner-white.png",
     "img": "/assets/images/demo/hbo-demo.png",
