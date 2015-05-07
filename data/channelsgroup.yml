@@ -675,48 +675,56 @@ channelsgroup:
       itens:
         -
           img: "telecine"
+          slug: "telecine"
           name: "Telecine"
           desc:
             - "6 Canais Telecine em HD"
             - "Filmes inéditos e clássicos"
         -
           img: "hbo"
+          slug: "hbo"
           name: "HBO"
           desc:
             - "10 Canais HBO em HD"
             - "Filmes e Séries"
         -
           img: "premiere"
+          slug: "premiere"
           name: "Premiere"
           desc:
             - "Premiere"
             - "Brasileirão e Estaduais"
         -
           img: "combate"
+          slug: "combate"
           name: "Combate"
           desc:
             - "Combate"
             - "UFC, MMA, Luta Livre e Boxe"
         -
           img: "playboy-tv"
+          slug: "playboy-tv"
           name: "Playboy TV"
           desc:
             - "Playboy TV"
             - "Conteúdo adulto explícito"
         -
           img: "sexyhot"
+          slug: "sexyhot"
           name: "Sexy Hot"
           desc:
             - "Sexy Hot"
             - "Conteúdo adulto brasileiro"
         -
           img: "sexprive"
+          slug: "sexprive"
           name: "Sex Privê"
           desc:
             - "Sex Privê"
             - "Filmes e séries adultas"
         -
           img: "canais-internacionais"
+          slug: "canais-internacionais"
           name: "Canais Internacionais"
           desc:
             - "Canais Internacionais"

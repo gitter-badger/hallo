@@ -26,26 +26,24 @@
       </div>
 
       <div class="channel-modal_content_price" if={ data.price }>
-        <oi-price>
           <div class="oi-price">
             <div class="oi-price_prefix">
               A partir de
             </div>
             <div class="oi-price_value">
               <span class="oi-price_value_integer">
-                59
+                { data.integer }
               </span>
               <span class="oi-price_value_cents">
-               ,90
+                ,00
               </span>
               <div class="oi-price_suffix">
                 <span>/</span>Mês
               </div>
             </div>
           </div>
-        </oi-price>
-        <a class="add" href="#">Adicionar</a>
-        <a class="tel" href="tel:">Ligue para contratar por R$ 35/Mês</a>
+        <a class="add" href="#" data-slug="{ data.slug }">Adicionar</a>
+        <a class="tel" href="tel:">Ligue para contratar por R$ { data.price }/Mês</a>
       </div>
 
       <div class="channel-modal_info">
@@ -128,6 +126,9 @@
     loadChannel(urlApi){
       $.getJSON(urlApi, function(json){
         self.data = json.data;
+        self.data.price = parseInt(self.data.price, 10)
+        self.data.integer = Math.floor(self.data.price);
+        self.data.cents = (self.data.price + "").split('.')[1];
         self.update()
       });
     }

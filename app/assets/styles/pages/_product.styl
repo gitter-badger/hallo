@@ -100,7 +100,7 @@ main
         width s("calc(100% - " + remify(140px + 80px) + ")")
         transform translateY(remify(-12px))
       +above('l')
-        width s("calc(100% - " + remify(420px) + ")")
+        width s("calc(100% - " + remify(436px) + ")")
 
       ul
         display block
@@ -264,7 +264,7 @@ main
       transform translateY(remify(-5px))
       +above('m')
         float left
-        width remify(80px)
+        width remify(96px)
 
     &_action
       background-color $orangeLight
@@ -688,6 +688,9 @@ main
         border remify(1px) solid $grayLight
         border-radius remify(2px)
         color $black
+        display none
+        +above('m')
+          display block
         svg
           position absolute
           top 10%
@@ -705,9 +708,13 @@ main
           background-color $green
           color $white
           outline none
+          display block
+
+        &.added
           & + .remove
-            display block
-            opacity 1
+            +above('m')
+              display block
+              opacity 1
           svg
             opacity 1
             margin-left 0

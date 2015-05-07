@@ -1,0 +1,230 @@
+{
+  "meta": {},
+  "data":
+  {
+    "basic":{
+      "modifier": {},
+      "plans": {
+        "start": {
+          "price": 59.90,
+          "modifier": {}
+        },
+        "mix": {
+          "price": 79.90,
+          "modifier": {}
+        },
+        "total": {
+          "price": 99.90,
+          "modifier": {}
+        }
+      }
+    },
+    "phone":{
+      "modifier": {},
+      "plans": {
+        "start": {
+          "price": 20,
+          "quant": 0,
+          "modifier": {}
+        },
+        "mix": {
+          "price": 20,
+          "quant": 0,
+          "modifier": {}
+        },
+        "total": {
+          "price": 20,
+          "quant": 0,
+          "modifier": {}
+        }
+      }
+    },
+    "spot":{
+      "modifier": {},
+      "plans": {
+        "start": {
+          "price": 20,
+          "quant": 0,
+          "modifier": {}
+        },
+        "mix": {
+          "price": 20,
+          "quant": 0,
+          "modifier": {
+            "spot": {"price": 10, "message": "Mude para o Total HD pelo mesmo preço. Ele já vem com 1 Ponto adicional" }
+          }
+        },
+        "total": {
+          "price": 20,
+          "quant": 1,
+          "modifier": {}
+        }
+      }
+    },
+    "recorder": {
+      "modifier": {},
+      "plans": {
+        "start": {
+          "price": 10,
+          "quant": 0,
+          "modifier": {}
+        },
+        "mix": {
+          "price": 10,
+          "quant": 0,
+          "modifier": {}
+        },
+        "total": {
+          "price": 10,
+          "quant": 0,
+          "modifier": {}
+        }
+      }
+    },
+    "hbo": {
+      "modifier": {
+        "telecine": { "price": 25, "message": "Só mais R$ 25"}
+      },
+      "plans": {
+        "start": {
+          "price": 25,
+          "modifier": {}
+        },
+        "mix": {
+          "price": 25,
+          "modifier": {}
+        },
+        "total": {
+          "price": 25,
+          "modifier": {}
+        }
+      }
+    },
+    "telecine": {
+      "modifier": {
+        "hbo": { "price": 35, "message": "Só mais R$ 35"}
+      },
+      "plans": {
+        "start": {
+          "price": 35,
+          "modifier": {}
+        },
+        "mix": {
+          "price": 35,
+          "modifier": {}
+        },
+        "total": {
+          "price": 35,
+          "modifier": {}
+        }
+      }
+    },
+    "premiere": {
+      "modifier": {},
+      "plans": {
+        "start": {
+          "price": 40,
+          "modifier": {}
+        },
+        "mix": {
+          "price": 40,
+          "modifier": {}
+        },
+        "total": {
+          "price": 40,
+          "modifier": {}
+        }
+      }
+    },
+    "combate": {
+      "modifier": {},
+      "plans": {
+        "start": {
+          "price": 50,
+          "modifier": {}
+        },
+        "mix": {
+          "price": 50,
+          "modifier": {}
+        },
+        "total": {
+          "price": 50,
+          "modifier": {}
+        }
+      }
+    },
+    "playboy-tv":{
+      "modifier": {
+        "sexyhot": { "price": 10, "message": "Só mais R$ 10" }
+      },
+      "plans": {
+        "start": {
+          "price": 50,
+          "modifier": {}
+        },
+        "mix": {
+          "price": 50,
+          "modifier": {}
+        },
+        "total": {
+          "price": 50,
+          "modifier": {}
+        }
+      }
+    },
+    "sexyhot":{
+      "modifier": {
+        "playboytv": { "price": 10, "message": "Só mais R$ 10"}
+      },
+      "plans": {
+        "start": {
+          "price": 50,
+          "modifier": {}
+        },
+        "mix": {
+          "price": 50,
+          "modifier": {}
+        },
+        "total": {
+          "price": 50,
+          "modifier": {}
+        }
+      }
+    },
+    "sexprive":{
+      "modifier": {},
+      "plans": {
+        "start": {
+          "price": 50,
+          "modifier": {}
+        },
+        "mix": {
+          "price": 50,
+          "modifier": {}
+        },
+        "total": {
+          "price": 50,
+          "modifier": {}
+        }
+      }
+    },
+    "canais-internacionais":{
+      "modifier": {},
+      "plans": {
+        "start": {
+          "price": 50,
+          "modifier": {}
+        },
+        "mix": {
+          "price": 50,
+          "modifier": {}
+        },
+        "total": {
+          "price": 50,
+          "modifier": {}
+        }
+      }
+    }
+  }
+}
+

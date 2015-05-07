@@ -171,7 +171,6 @@
         self.visible = true;
         self.data = json.data;
         self.data.klass = self.data.image !== undefined ? 'has-image' : '';
-        console.log(self.data.image, self.data.klass);
         self.update()
       });
       $('body').addClass('scroll-lock');

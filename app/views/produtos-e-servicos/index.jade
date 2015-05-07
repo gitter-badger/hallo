@@ -12,8 +12,10 @@ body(itemtype="http://schema.org/WebPage").product
 
   main
 
+    .minha-classe
+
     .cards
-      each val, index in ['zero', 'one', 'two']
+      each val, index in ['start', 'mix', 'total']
         oi-card
           a(href="#").oi-card
             .oi-card_header
@@ -22,15 +24,16 @@ body(itemtype="http://schema.org/WebPage").product
                 li 119 Canais
                 li 20 HD
             .oi-card_main
-              oi-price
-                .oi-price
-                  .oi-price_prefix A partir de 
-                  .oi-price_value
-                    span.oi-price_value_integer 59
-                    span.oi-price_value_cents ,90
-                  .oi-price_suffix
-                    span /
-                    |Mês 
+              oi-price(id="card-price-"+val)
+              //- oi-price
+              //-   .oi-price
+              //-     .oi-price_prefix A partir de 
+              //-     .oi-price_value
+              //-       span.oi-price_value_integer 59
+              //-       span.oi-price_value_cents ,90
+              //-     .oi-price_suffix
+              //-       span /
+              //-       |Mês 
               .oi-card_list
                 h5.oi-card_list_title Você ainda pode adicionar
                 ul.oi-card_list_items
@@ -66,43 +69,43 @@ body(itemtype="http://schema.org/WebPage").product
             .oi-channels_header_client-type_dropdow
               ul
                 li 
-                  a(href="#").active
+                  a(href="#").has-phone.active
                     include ../../assets/images/icons/radio-check.svg
                     span 
                       div Clientes de Telefone Fixo da Oi 
-                    oi-price
-                      .oi-price.oi-price--small
-                        .oi-price_prefix A partir de 
-                        .oi-price_value
-                          span.oi-price_value_integer 79
-                          span.oi-price_value_cents ,90
-                        .oi-price_suffix
-                          span /
-                          |Mês 
+                    oi-price#price-has-phone
+                      //- .oi-price.oi-price--small
+                      //-   .oi-price_prefix A partir de 
+                      //-   .oi-price_value
+                      //-     span.oi-price_value_integer 79
+                      //-     span.oi-price_value_cents ,90
+                      //-   .oi-price_suffix
+                      //-     span /
+                      //-     |Mês 
                 li 
                   a(href="#")
                     include ../../assets/images/icons/radio-check.svg
                     span 
                       div Não Clientes de Telefone Fixo da Oi
-                    oi-price
-                      .oi-price.oi-price--small
-                        .oi-price_prefix A partir de 
-                        .oi-price_value
-                          span.oi-price_value_integer 59
-                          span.oi-price_value_cents ,90
-                        .oi-price_suffix
-                          span /
-                          |Mês 
+                    oi-price#price-has-no-phone
+                      //- .oi-price.oi-price--small
+                      //-   .oi-price_prefix A partir de 
+                      //-   .oi-price_value
+                      //-     span.oi-price_value_integer 59
+                      //-     span.oi-price_value_cents ,90
+                      //-   .oi-price_suffix
+                      //-     span /
+                      //-     |Mês 
           .oi-channels_header_price
-            oi-price
-              .oi-price.oi-price--small
-                .oi-price_prefix A partir de 
-                .oi-price_value
-                  span.oi-price_value_integer 79
-                  span.oi-price_value_cents ,90
-                .oi-price_suffix
-                  span /
-                  |Mês 
+            oi-price#price-total
+              //- .oi-price.oi-price--small
+              //-   .oi-price_prefix A partir de 
+              //-   .oi-price_value
+              //-     span.oi-price_value_integer 79
+              //-     span.oi-price_value_cents ,90
+              //-   .oi-price_suffix
+              //-     span /
+              //-     |Mês 
           .oi-channels_header_action
             a(href="") Peça Já
         
@@ -150,8 +153,8 @@ body(itemtype="http://schema.org/WebPage").product
                   .oi-channels-addons_item_spots
                     - var count = 0
                     while count <= channelsgroup.addons.spots.quant -1
-                      - selected = (count === 0 ? ' added': '' )
-                      a(href="#", class="spot" + selected, style="width:" + ( 100 / channelsgroup.addons.spots.quant ) + "%" )=count++
+                      //- - selected = (count === 0 ? ' added': '' )
+                      a(href="#", class="spot", style="width:" + ( 100 / channelsgroup.addons.spots.quant ) + "%" )=count++
                 
                 li.oi-channels-addons_item.only-l(aria-live="assertive" aria-relevant="text")
                   h5.oi-channels-addons_item_logo=channelsgroup.addons.recorder.title
@@ -159,10 +162,10 @@ body(itemtype="http://schema.org/WebPage").product
                     span=channelsgroup.addons.recorder.desc
                     span=channelsgroup.addons.recorder.info
                   .oi-channels-addons_item_actions
-                    button.add(type="button" role="button")
+                    button.add(type="button" role="button" data-slug="recorder")
                       include ../../assets/images/icons/check.svg
                       span Adicionar
-                    button.remove(type="button" role="button") Remover
+                    button.remove(type="button" role="button" data-slug="recorder") Remover
 
                 each channel in channelsgroup.addons.channels.itens
                   li.oi-channels-addons_item(aria-live="assertive" aria-relevant="text")
@@ -172,10 +175,10 @@ body(itemtype="http://schema.org/WebPage").product
                         each info in channel.desc
                           span!=info
                     .oi-channels-addons_item_actions
-                      button.add(type="button" role="button")
+                      button.add(type="button" role="button" data-slug=channel.slug)
                         include ../../assets/images/icons/check.svg
                         span=channelsgroup.addons.channels.actions.add
-                      button.remove(type="button" role="button")=channelsgroup.addons.channels.actions.remove
+                      button.remove(type="button" role="button" data-slug=channel.slug)=channelsgroup.addons.channels.actions.remove
                   
         channel-search
         //- .oi-channels_search-call

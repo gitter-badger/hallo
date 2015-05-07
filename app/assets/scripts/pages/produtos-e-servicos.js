@@ -1,3 +1,136 @@
+define('price',[
+  'domlib',
+  'vendor/lodash',
+  'vendor/riot',
+  'tags/price',
+], function($, _, riot, pricetag){
+  var _public = {},
+      _private = {},
+      price,
+      tagsPrice = {},
+      defaultPlan = 'start',
+      cart = {},
+      $openClientType    = $('.oi-channels_header_client-type-trigger'),
+      $dropdowClientType = $('.oi-channels_header_client-type_dropdow'),
+      $clientType        = $dropdowClientType.find('a');
+
+  _public.init = function (){
+    _private.loadPrice('rj');
+    // riot.route('customers/267393/edit')
+    // riot.route.stop()
+    // riot.route.start()
+      _private.openClientType();
+    _private.changeClientType();
+    _private.bindbtAddon();
+    _private.bindbtAddonModal()
+  }
+
+  _private.bindbtAddonModal = function(){
+    $('.channel-modal_content_price a').live('click', function(evt){
+      evt.preventDefault();
+      var $bt = $(this);
+      var slug = $bt.data('slug')
+      var quant = $bt.hasClass('add') ? 1 : 0;
+      if( $bt.hasClass('add') ){
+        $bt.addClass('added').text('Adicionado')
+      } else{
+        $bt.prev('.add').removeClass('added').text('Adicionar');
+      }
+      _private.shoppingCartAdd(slug, quant);
+    });
+
+
+  }
+
+  _private.bindbtAddon = function(){
+    $('.oi-channels-addons_item_actions button').on('click', function(evt){
+      evt.preventDefault();
+      var $bt = $(this);
+      var slug = $bt.data('slug')
+      var quant = $bt.hasClass('add') ? 1 : 0;
+      if( $bt.hasClass('add') ){
+        $bt.addClass('added').children('span').text('Adicionado')
+      } else{
+        $bt.prev('.add').removeClass('added').children('span').text('Adicionar');
+      }
+      _private.shoppingCartAdd(slug, quant);
+    });
+  }
+
+  _private.openClientType = function(){
+    $openClientType.on('click', function(evt){
+      evt.preventDefault();
+      $dropdowClientType.toggleClass('open');
+    });
+  }
+
+  _private.changeClientType = function(){
+    $clientType.on('click', function(evt){
+      evt.preventDefault();
+      $clientType.removeClass('active');
+      $(this).addClass('active')
+      $dropdowClientType.removeClass('open');
+      var quant = $(this).hasClass('has-phone') ? 0 : 1;
+      _private.shoppingCartAdd('phone', quant);
+    });
+  }
+
+  _private.loadPrice = function (local){
+    $.getJSON('/api/price/' + local + '.json', function(json, textStatus) {
+      price = json.data;
+      _private.fillCards();
+      _private.shoppingCartStart();
+      _private.setSpot();
+      _private.changeSpot()
+    });
+  }
+
+  _private.fillCards = function (){
+    _(price.basic.plans).forEach(function(planData, planSlug) {
+      riot.mount('#card-price-'+ planSlug, { price: planData.price });
+    }).value();
+  }
+
+  _private.shoppingCartStart = function (){
+    cart.basic = { quant: 1 }
+    tagsPrice.total = riot.mount('#price-total', { price: price.basic.plans[defaultPlan].price , small: true })[0];
+    riot.mount('#price-has-phone', { price: price.basic.plans.start.price, small: true });
+    riot.mount('#price-has-no-phone', { price: price.basic.plans.start.price+20, small: true });
+  }
+
+  $spots = $('.oi-channels-addons_item_spots a')
+
+  _private.setSpot = function (){
+    $('.oi-channels-addons_item_spots a').eq(price.spot.plans[defaultPlan].quant).addClass('added');
+  }
+
+  _private.changeSpot = function (){
+    $spots.on('click', function (evt) {
+      evt.preventDefault();
+      var $opt = $(this)
+      $spots.filter('.added').removeClass('added');
+      $opt.addClass('added');
+      var quant = $opt.index()
+      _private.shoppingCartAdd('spot', quant);
+    });
+  }
+
+  _private.shoppingCartAdd = function (product, quant){
+    cart[product] = {  quant: quant }
+    _private.updatePrices();
+  }
+
+  _private.updatePrices = function (){
+    var total = _.sum(cart, function(item, product) {
+      return item.quant * price[product].plans[defaultPlan].price
+    });
+    tagsPrice.total.updatePrice(total)
+  }
+
+  return _public;
+
+});
+
 define([
   'domlib',
   'vendor/lodash',
@@ -9,17 +142,17 @@ define([
   'tags/channel-modal',
   'tags/channel-search',
   'tags/contracts-rules',
-  'tags/movie-rent'
-  ],function ($, _, _s, riot, Velocity, ScrollMagic, channelModal, channelSearch, movieRent) {
+  'tags/movie-rent',
+  'price'
+  ],function ($, _, _s, riot, Velocity, ScrollMagic, channelModal, channelSearch, rules, movieRent, price) {
+
+  price.init();
 
   _.mixin(_s.exports());
 
   var _public = {},
       _private = {};
       $body              = $('body'),
-      $openClientType    = $('.oi-channels_header_client-type-trigger'),
-      $dropdowClientType = $('.oi-channels_header_client-type_dropdow'),
-      $clientType        = $dropdowClientType.find('a'),
       $channelsContainer = $('.oi-channels-lists_list-tv_container'),
       $channelLink       = $channelsContainer.find('a'),
       $addOnsLink        = $('.oi-channels-addons_item_link'),
@@ -33,8 +166,8 @@ define([
 
 
   _public.init = function(){
-    _private.openClientType();
-    _private.changeClientType();
+
+
     _private.bindOpenModalChannel();
     _private.bindCloseButton();
     _private.bindNavKeyboard();
@@ -82,27 +215,7 @@ define([
     });
   }
 
-  _private.openClientType = function(){
-    $openClientType.on('click', function(evt){
-      evt.preventDefault();
-      $dropdowClientType.toggleClass('open');
-    });
-  }
 
-  _private.changeClientType = function(){
-    $clientType.on('click', function(evt){
-      evt.preventDefault();
-      $clientType.removeClass('active');
-      $(this).addClass('active')
-      // setTimeout( function () {
-        $dropdowClientType.removeClass('open');
-       // }, 500);
-      // @mock
-      var $bt = $(this)
-      var price = $bt.find('.oi-price_value_integer').text()
-      $('.oi-channels_header_price .oi-price_value_integer').text(price)
-    });
-  }
 
   var cSerachcmodal = riot.mount('channel-search')[0]
   var cContractModal = riot.mount('contract-rules')[0]
@@ -147,7 +260,6 @@ define([
   };
 
   $(document).on('searchchannel', function(){
-    console.log('abriu');
   })
 
   _private.bindNavKeyboard = function(){
