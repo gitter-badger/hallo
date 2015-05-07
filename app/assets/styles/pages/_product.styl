@@ -93,14 +93,13 @@ main
       font-family $fontTitle
       font-size remify(42px)
       text-transform uppercase
-      position remify
+      position relative
       z-index 1
+      height remify(58px)
+      width s("calc(100% - " + remify(140px + 100px + 170px) + ")")
       +above('m')
         display block
-        width s("calc(100% - " + remify(140px + 80px) + ")")
-        transform translateY(remify(-12px))
-      +above('l')
-        width s("calc(100% - " + remify(436px) + ")")
+        margin-top remify(-12px)
 
       ul
         display block
@@ -127,10 +126,11 @@ main
 
     &_client-type
       font-family $fontTextRegular
-      width (100% / 3 * 2)
+      width remify(140px)
       float left
-      +above('m')
-        width remify(140px)
+      height remify(58px)
+      margin-top remify(-12px)
+      padding remify(12px) 0
       a.oi-channels_header_client-type-trigger
         color $green
         text-decoration none
@@ -165,10 +165,13 @@ main
           display block
         +above('m')
           top remify(104px)
-          right 0
+          // right 0
+          right remify(191px)
           left auto
         +above('l')
-          right remify(202px)
+          right remify(191px)
+        +above('xl')
+          right remify(151px)
 
         &:before
           background $white
@@ -220,7 +223,7 @@ main
 
           & > span
             transition color 0.3s ease
-            width s(" calc(100% - 120px)")
+            width s(" calc(100% - 140px)")
             display inline-block
             line-height remify(20px)
             position absolute
@@ -250,7 +253,7 @@ main
                 stroke $green
 
         oi-price
-          right remify(10px)
+          right remify(20px)
           width remify(80px)
           display inline-block
           position absolute
@@ -259,36 +262,41 @@ main
             right remify(40px)
 
     &_price
-      width (100% / 3)
+      width remify(100px)
       float right
+      height remify(58px)
       transform translateY(remify(-5px))
+      margin remify(-7px) 0
+      padding remify(10px) 0
       +above('m')
         float left
-        width remify(96px)
 
     &_action
-      background-color $orangeLight
-      border-bottom remify(2px) solid $orange
-      border-radius remify(2px)
+      height remify(58px)
       display none
       float left
       font-family $fontTextRegular
-      font-size remify(16px)
-      height remify(50px)
-      line-height remify(50px)
-      margin-left remify(30px)
-      margin-top remify(-10px)
-      text-align center
+      margin remify(-12px) 0 0 0
       width remify(170px)
-      &:hover
-        border-bottom remify(1px) solid $orange
-        margin-top remify(-9px)
-      +above('l')
+      +above('m')
         display block
 
       a
         color $black
+        display block
         text-decoration none
+        background-color $orangeLight
+        border-bottom remify(2px) solid $orange
+        border-radius remify(2px)
+        font-size remify(16px)
+        height remify(50px)
+        line-height remify(50px)
+        margin-left remify(30px)
+        margin-top remify(4px)
+        text-align center
+        &:hover
+          border-bottom remify(1px) solid $orange
+          margin-top remify(5px)
 
   &_search-call
     max-width remify(1170px)
