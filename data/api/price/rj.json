@@ -3,49 +3,49 @@
   "data":
   {
     "basic":{
-      "modifier": {},
+      "modifier": null,
       "plans": {
         "start": {
           "price": 59.90,
-          "modifier": {}
+          "modifier": null
         },
         "mix": {
           "price": 79.90,
-          "modifier": {}
+          "modifier": null
         },
         "total": {
           "price": 99.90,
-          "modifier": {}
+          "modifier": null
         }
       }
     },
     "phone":{
-      "modifier": {},
+      "modifier": null,
       "plans": {
         "start": {
           "price": 20,
           "quant": 0,
-          "modifier": {}
+          "modifier": null
         },
         "mix": {
           "price": 20,
           "quant": 0,
-          "modifier": {}
+          "modifier": null
         },
         "total": {
           "price": 20,
           "quant": 0,
-          "modifier": {}
+          "modifier": null
         }
       }
     },
     "spot":{
-      "modifier": {},
+      "modifier": null,
       "plans": {
         "start": {
           "price": 20,
           "quant": 0,
-          "modifier": {}
+          "modifier": null
         },
         "mix": {
           "price": 20,
@@ -57,46 +57,47 @@
         "total": {
           "price": 20,
           "quant": 1,
-          "modifier": {}
+          "modifier": null
         }
       }
     },
     "recorder": {
-      "modifier": {},
+      "modifier": null,
       "plans": {
         "start": {
           "price": 10,
           "quant": 0,
-          "modifier": {}
+          "modifier": null
         },
         "mix": {
           "price": 10,
           "quant": 0,
-          "modifier": {}
+          "modifier": null
         },
         "total": {
           "price": 10,
           "quant": 0,
-          "modifier": {}
+          "modifier": null
         }
       }
     },
     "hbo": {
       "modifier": {
-        "telecine": { "price": 25, "message": "Só mais R$ 25"}
+        "telecine": { "price": 25, "message": "Só mais R$ 25"},
+        "premiere": { "price": 35, "message": "Só mais R$ 45"}
       },
       "plans": {
         "start": {
           "price": 25,
-          "modifier": {}
+          "modifier": null
         },
         "mix": {
           "price": 25,
-          "modifier": {}
+          "modifier": null
         },
         "total": {
           "price": 25,
-          "modifier": {}
+          "modifier": null
         }
       }
     },
@@ -107,49 +108,49 @@
       "plans": {
         "start": {
           "price": 35,
-          "modifier": {}
+          "modifier": null
         },
         "mix": {
           "price": 35,
-          "modifier": {}
+          "modifier": null
         },
         "total": {
           "price": 35,
-          "modifier": {}
+          "modifier": null
         }
       }
     },
     "premiere": {
-      "modifier": {},
+      "modifier": null,
       "plans": {
         "start": {
           "price": 40,
-          "modifier": {}
+          "modifier": null
         },
         "mix": {
           "price": 40,
-          "modifier": {}
+          "modifier": null
         },
         "total": {
           "price": 40,
-          "modifier": {}
+          "modifier": null
         }
       }
     },
     "combate": {
-      "modifier": {},
+      "modifier": null,
       "plans": {
         "start": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         },
         "mix": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         },
         "total": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         }
       }
     },
@@ -160,15 +161,15 @@
       "plans": {
         "start": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         },
         "mix": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         },
         "total": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         }
       }
     },
@@ -179,49 +180,49 @@
       "plans": {
         "start": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         },
         "mix": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         },
         "total": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         }
       }
     },
     "sexprive":{
-      "modifier": {},
+      "modifier": null,
       "plans": {
         "start": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         },
         "mix": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         },
         "total": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         }
       }
     },
     "canais-internacionais":{
-      "modifier": {},
+      "modifier": null,
       "plans": {
         "start": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         },
         "mix": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         },
         "total": {
           "price": 50,
-          "modifier": {}
+          "modifier": null
         }
       }
     }

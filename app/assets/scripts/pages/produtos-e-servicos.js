@@ -38,8 +38,6 @@ define('price',[
       }
       _private.shoppingCartAdd(slug, quant);
     });
-
-
   }
 
   _private.bindbtAddon = function(){
@@ -48,6 +46,24 @@ define('price',[
       var $bt = $(this);
       var slug = $bt.data('slug')
       var quant = $bt.hasClass('add') ? 1 : 0;
+
+
+
+      var modifiers = price[slug].plans[defaultPlan].modifier || price[slug].modifier;
+
+      console.log();
+
+      _(modifiers).forEach(function(rule, addon) {
+        console.log(rule, addon);
+        var $tooltip = $('#addon-tooltip-'+addon);
+        console.log($tooltip);
+        $tooltip
+          .text(rule.message)
+          .addClass('visible')
+
+      }).value();
+
+
       if( $bt.hasClass('add') ){
         $bt.addClass('added').children('span').text('Adicionado')
       } else{

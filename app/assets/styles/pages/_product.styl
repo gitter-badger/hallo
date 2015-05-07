@@ -594,6 +594,7 @@ main
     text-align center
     color $gray
     margin-right remify(24px)
+    position relative
     +above('m')
       width remify(120px)
       margin-right remify(34px)
@@ -605,6 +606,61 @@ main
       padding remify(40px) remify(50px) 0 remify(50px)
       &:last-child
         border-bottom none
+
+    &_tooltip
+      position absolute
+      top remify(10px)
+      left 0
+      width 100%
+
+
+      div
+        margin 0 auto
+        height remify(20px)
+        line-height remify(20px)
+        padding 0 10px
+        background-color $white
+        border-radius remify(2px)
+        border remify(1px) solid $black
+        color $black
+        position relative
+        transition all 0.3s ease
+        margin-top remify(10px)
+        display none
+        opacity 0
+
+        &.visible
+          margin-top 0
+          display inline-block
+          opacity 1
+
+        &:before
+          content ''
+          display block
+          height 0
+          width 0
+          border 5px solid transparent
+          border-color $black transparent transparent transparent
+          position absolute
+          bottom remify(-10px)
+          margin-left remify(-5px)
+          left 50%
+          z-index 1
+        &:after
+          content ''
+          display block
+          height 0
+          width 0
+          border 5px solid transparent
+          border-color $white transparent transparent transparent
+          position absolute
+          bottom remify(-9px)
+          margin-left remify(-5px)
+          left 50%
+          z-index 2
+
+
+
 
     &_link
       display block
