@@ -21,9 +21,7 @@ define('price',[
     // riot.route('customers/267393/edit')
     // riot.route.stop()
     // riot.route.start()
-
     _private.bindBtAddon();
-    // _private.bindbtAddonModal()
   }
 
   _private.loadPrice = function (local){
@@ -57,7 +55,6 @@ define('price',[
 
   _private.cartStart = function(){
     _private.cartUpdateValue(defaultPlan, 1)
-
   }
 
   _private.cartUpdateValue = function (product, quant){
@@ -69,7 +66,6 @@ define('price',[
       });
       cart[product] = {  quant: quant, name: prodAdd.name, type: prodAdd.type }
     }
-    console.clear()
     console.table(cart);
     _private.cartUpdateView();
   }
@@ -92,7 +88,7 @@ define('price',[
   _private.startSpot = function (){
     var spotProduct = _.find(price, function(product) {
       return product.slug === 'spot';
-    })
+    });
     $spots.eq( spotProduct.plans[defaultPlan].quant).addClass('added');
   }
 
@@ -110,29 +106,33 @@ define('price',[
   _private.bindBtAddon = function(){
     $('.add-addon').live('click', function (evt){
       evt.preventDefault();
-      var $bt = $(this);
-      var slug = $bt.data('slug');
-      var quant = $bt.hasClass('add') ? 1 : 0;
-      // var modifiers = price[slug].plans[defaultPlan].modifier || price[slug].modifier;
-      // _(modifiers).forEach(function(rule, addon) {
-      //   console.log(rule, addon);
-      //   var $tooltip = $('#addon-tooltip-'+addon);
-      //   console.log($tooltip);
-      //   $tooltip
-      //     .text(rule.message)
-      //     .addClass('visible')
-      // }).value();
+      var $bt = $(this),
+          slug = $bt.data('slug'),
+          quant = $bt.hasClass('add') ? 1 : 0;
 
       if( $bt.hasClass('add') ){
         $('[data-slug="' + slug + '"]').addClass('added').children('span').text('Adicionado');
+        $('#addon-tooltip-'+slug).removeClass('visible')
       } else{
         $bt.prev('.add').removeClass('added').children('span').text('Adicionar');
       }
-
+      _private.toggleAddonTooltip(slug, quant)
       _private.cartUpdateValue(slug, quant)
 
     });
+  }
 
+  _private.toggleAddonTooltip = function(slug, show){
+    var addProduct = _.find(price, function(product) {
+          return product.slug === slug;
+        }),
+        modifiers = addProduct.plans[defaultPlan].modifier || addProduct.modifier;
+
+    _(modifiers).forEach(function(rule, addon) {
+      if( !cart[addon] ){
+        $('#addon-tooltip-'+addon).text(rule.message).toggleClass('visible', show)
+      }
+    }).value();
   }
 
   _private.openClientType = function(){
@@ -153,29 +153,6 @@ define('price',[
       _private.cartUpdateValue('phone', quant)
     });
   }
-
-
-
-
-
-  // _private.shoppingCartStart = function (){
-    // cart.basic = { quant: 1 }
-    // tagsPrice.total = riot.mount('#price-total', { price: price.basic.plans[defaultPlan].price , small: true })[0];
-    // riot.mount('#price-has-phone', { price: price.basic.plans.start.price, small: true });
-    // riot.mount('#price-has-no-phone', { price: price.basic.plans.start.price+20, small: true });
-  // }
-
-
-
-
-
-
-
-  // _private.updateCart = function (){
-
-  // }
-
-
 
   return _public;
 
