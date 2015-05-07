@@ -162,10 +162,10 @@ body(itemtype="http://schema.org/WebPage").product
                     span=channelsgroup.addons.recorder.desc
                     span=channelsgroup.addons.recorder.info
                   .oi-channels-addons_item_actions
-                    button.add(type="button" role="button" data-slug="recorder")
+                    button.add.add-addon(type="button" role="button" data-slug="recorder")
                       include ../../assets/images/icons/check.svg
                       span Adicionar
-                    button.remove(type="button" role="button" data-slug="recorder") Remover
+                    button.remove.add-addon(type="button" role="button" data-slug="recorder") Remover
 
                 each channel in channelsgroup.addons.channels.itens
                   li.oi-channels-addons_item(aria-live="assertive" aria-relevant="text")
@@ -177,10 +177,10 @@ body(itemtype="http://schema.org/WebPage").product
                         each info in channel.desc
                           span!=info
                     .oi-channels-addons_item_actions
-                      button.add(type="button" role="button" data-slug=channel.slug)
+                      button.add.add-addon(type="button" role="button" data-slug=channel.slug)
                         include ../../assets/images/icons/check.svg
                         span=channelsgroup.addons.channels.actions.add
-                      button.remove(type="button" role="button" data-slug=channel.slug)=channelsgroup.addons.channels.actions.remove
+                      button.remove.add-addon(type="button" role="button" data-slug=channel.slug)=channelsgroup.addons.channels.actions.remove
                   
         channel-search
         //- .oi-channels_search-call
@@ -334,7 +334,7 @@ body(itemtype="http://schema.org/WebPage").product
                     span Grave 2 canais ao mesmo tempo
                   li 
                     span Pause ao vivo
-                a(href="#") Adicione o Gravador Digital
+                button.add.add-addon(type="button" data-slug="recorder" ) Adicione o Gravador Digital
 
         .oi-channels_footer-item
           .oi-channels_footer-item_title-area

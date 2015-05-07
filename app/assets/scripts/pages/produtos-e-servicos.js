@@ -7,9 +7,11 @@ define('price',[
   var _public = {},
       _private = {},
       price,
+      meta,
       tagsPrice = {},
       defaultPlan = 'start',
       cart = {},
+      $spots = $('.oi-channels-addons_item_spots a'),
       $openClientType    = $('.oi-channels_header_client-type-trigger'),
       $dropdowClientType = $('.oi-channels_header_client-type_dropdow'),
       $clientType        = $dropdowClientType.find('a');
@@ -19,105 +21,79 @@ define('price',[
     // riot.route('customers/267393/edit')
     // riot.route.stop()
     // riot.route.start()
-      _private.openClientType();
-    _private.changeClientType();
-    _private.bindbtAddon();
-    _private.bindbtAddonModal()
-  }
 
-  _private.bindbtAddonModal = function(){
-    $('.channel-modal_content_price a').live('click', function(evt){
-      evt.preventDefault();
-      var $bt = $(this);
-      var slug = $bt.data('slug')
-      var quant = $bt.hasClass('add') ? 1 : 0;
-      if( $bt.hasClass('add') ){
-        $bt.addClass('added').text('Adicionado')
-      } else{
-        $bt.prev('.add').removeClass('added').text('Adicionar');
-      }
-      _private.shoppingCartAdd(slug, quant);
-    });
-  }
-
-  _private.bindbtAddon = function(){
-    $('.oi-channels-addons_item_actions button').on('click', function(evt){
-      evt.preventDefault();
-      var $bt = $(this);
-      var slug = $bt.data('slug')
-      var quant = $bt.hasClass('add') ? 1 : 0;
-
-
-
-      var modifiers = price[slug].plans[defaultPlan].modifier || price[slug].modifier;
-
-      console.log();
-
-      _(modifiers).forEach(function(rule, addon) {
-        console.log(rule, addon);
-        var $tooltip = $('#addon-tooltip-'+addon);
-        console.log($tooltip);
-        $tooltip
-          .text(rule.message)
-          .addClass('visible')
-
-      }).value();
-
-
-      if( $bt.hasClass('add') ){
-        $bt.addClass('added').children('span').text('Adicionado')
-      } else{
-        $bt.prev('.add').removeClass('added').children('span').text('Adicionar');
-      }
-      _private.shoppingCartAdd(slug, quant);
-    });
-  }
-
-  _private.openClientType = function(){
-    $openClientType.on('click', function(evt){
-      evt.preventDefault();
-      $dropdowClientType.toggleClass('open');
-    });
-  }
-
-  _private.changeClientType = function(){
-    $clientType.on('click', function(evt){
-      evt.preventDefault();
-      $clientType.removeClass('active');
-      $(this).addClass('active')
-      $dropdowClientType.removeClass('open');
-      var quant = $(this).hasClass('has-phone') ? 0 : 1;
-      _private.shoppingCartAdd('phone', quant);
-    });
+    _private.bindBtAddon();
+    // _private.bindbtAddonModal()
   }
 
   _private.loadPrice = function (local){
     $.getJSON('/api/price/' + local + '.json', function(json, textStatus) {
       price = json.data;
       _private.fillCards();
-      _private.shoppingCartStart();
-      _private.setSpot();
-      _private.changeSpot()
+      _private.fillClientType();
+      _private.cartStart();
+      _private.startSpot();
+      _private.changeSpot();
+      _private.openClientType();
     });
   }
 
   _private.fillCards = function (){
-    _(price.basic.plans).forEach(function(planData, planSlug) {
-      riot.mount('#card-price-'+ planSlug, { price: planData.price });
-    }).value();
+    _.filter(price, function(product) {
+      return product.type === 'basic';
+    })
+    .forEach(function(basic, key) {
+      riot.mount('#card-price-'+ basic.slug, { price: basic.price });
+    });
   }
 
-  _private.shoppingCartStart = function (){
-    cart.basic = { quant: 1 }
-    tagsPrice.total = riot.mount('#price-total', { price: price.basic.plans[defaultPlan].price , small: true })[0];
-    riot.mount('#price-has-phone', { price: price.basic.plans.start.price, small: true });
-    riot.mount('#price-has-no-phone', { price: price.basic.plans.start.price+20, small: true });
+  _private.fillClientType = function (){
+    var startPlan = _.find(price, function(product) {
+      return product.slug === defaultPlan;
+    })
+    riot.mount('#price-has-phone', { price: startPlan.price, small: true });
+    riot.mount('#price-has-no-phone', { price: startPlan.price+20, small: true });
   }
 
-  $spots = $('.oi-channels-addons_item_spots a')
+  _private.cartStart = function(){
+    _private.cartUpdateValue(defaultPlan, 1)
 
-  _private.setSpot = function (){
-    $('.oi-channels-addons_item_spots a').eq(price.spot.plans[defaultPlan].quant).addClass('added');
+  }
+
+  _private.cartUpdateValue = function (product, quant){
+    if(quant == 0){
+      delete cart[product]
+    } else {
+      var prodAdd = _.find(price, function(productItem) {
+        return productItem.slug === product;
+      });
+      cart[product] = {  quant: quant, name: prodAdd.name, type: prodAdd.type }
+    }
+    console.clear()
+    console.table(cart);
+    _private.cartUpdateView();
+  }
+
+  _private.cartUpdateView = function (){
+    var total = _.sum(cart, function(item, product) {
+      var prodAdded = _.find(price, function(productItem) {
+        return productItem.slug === product;
+      })
+      return item.quant * prodAdded.plans[defaultPlan].price
+    });
+
+    if(!tagsPrice.total){
+      tagsPrice.total = riot.mount('#price-total', { price: total , small: true })[0];
+    } else {
+      tagsPrice.total.updatePrice(total);
+    }
+  }
+
+  _private.startSpot = function (){
+    var spotProduct = _.find(price, function(product) {
+      return product.slug === 'spot';
+    })
+    $spots.eq( spotProduct.plans[defaultPlan].quant).addClass('added');
   }
 
   _private.changeSpot = function (){
@@ -127,25 +103,154 @@ define('price',[
       $spots.filter('.added').removeClass('added');
       $opt.addClass('added');
       var quant = $opt.index()
-      _private.shoppingCartAdd('spot', quant);
+      _private.cartUpdateValue('spot', quant);
     });
   }
 
-  _private.shoppingCartAdd = function (product, quant){
-    cart[product] = {  quant: quant }
-    _private.updatePrices();
+  _private.bindBtAddon = function(){
+    $('.add-addon').live('click', function (evt){
+      evt.preventDefault();
+      var $bt = $(this);
+      var slug = $bt.data('slug');
+      var quant = $bt.hasClass('add') ? 1 : 0;
+      // var modifiers = price[slug].plans[defaultPlan].modifier || price[slug].modifier;
+      // _(modifiers).forEach(function(rule, addon) {
+      //   console.log(rule, addon);
+      //   var $tooltip = $('#addon-tooltip-'+addon);
+      //   console.log($tooltip);
+      //   $tooltip
+      //     .text(rule.message)
+      //     .addClass('visible')
+      // }).value();
+
+      if( $bt.hasClass('add') ){
+        $('[data-slug="' + slug + '"]').addClass('added').children('span').text('Adicionado');
+      } else{
+        $bt.prev('.add').removeClass('added').children('span').text('Adicionar');
+      }
+
+      _private.cartUpdateValue(slug, quant)
+
+    });
+
   }
 
-  _private.updatePrices = function (){
-    var total = _.sum(cart, function(item, product) {
-      return item.quant * price[product].plans[defaultPlan].price
+  _private.openClientType = function(){
+    $openClientType.on('click', function(evt){
+      evt.preventDefault();
+      $dropdowClientType.toggleClass('open');
     });
-    tagsPrice.total.updatePrice(total)
+    _private.changeClientType();
   }
+
+  _private.changeClientType = function(){
+    $clientType.on('click', function(evt){
+      evt.preventDefault();
+      $clientType.removeClass('active');
+      $(this).addClass('active')
+      $dropdowClientType.removeClass('open');
+      var quant = $(this).hasClass('has-phone') ? 0 : 1;
+      _private.cartUpdateValue('phone', quant)
+    });
+  }
+
+
+
+
+
+  // _private.shoppingCartStart = function (){
+    // cart.basic = { quant: 1 }
+    // tagsPrice.total = riot.mount('#price-total', { price: price.basic.plans[defaultPlan].price , small: true })[0];
+    // riot.mount('#price-has-phone', { price: price.basic.plans.start.price, small: true });
+    // riot.mount('#price-has-no-phone', { price: price.basic.plans.start.price+20, small: true });
+  // }
+
+
+
+
+
+
+
+  // _private.updateCart = function (){
+
+  // }
+
+
 
   return _public;
 
 });
+
+
+
+
+
+
+
+
+define('scrollp',[
+  'domlib',
+  'vendor/lodash',
+  'velocity',
+  // 'velocity-ui',
+  'ScrollMagic',
+  'ScrollMagic.debug'
+  ],function ($, lodash, Velocity, ScrollMagic) {
+  var _public = {},
+      _private = {}
+
+  _public.init = function(){
+
+    return
+
+    var controller = new ScrollMagic.Controller();
+
+    var scene = new ScrollMagic.Scene({
+      triggerHook: 'onLeave',
+      duration: 515,
+      offset: 670
+    })
+    .setPin("main")
+    .addTo(controller)
+    .addIndicators();
+    scene.on("enter", function (event) {
+      console.log('enter');
+    });
+
+  }
+
+  _private.holdScroll = function(){ return
+    var heightScreen = $(window).height();
+        menuPos = $('.menu').offset(),
+        pos = menuPos.top + menuPos.height + $detail.height() - heightScreen,
+        controller = new ScrollMagic.Controller();
+
+    var scene = new ScrollMagic.Scene({
+      duration: 1350,
+      offset: pos
+    })
+    .setPin("#detail")
+    .addTo(controller)
+    .addIndicators();
+    scene.on("enter", function (event) {
+      $hiddenContent.addClass('fix')
+    });
+  };
+
+  return _public
+
+});
+
+
+
+
+
+
+
+
+
+
+
 
 define([
   'domlib',
@@ -159,10 +264,12 @@ define([
   'tags/channel-search',
   'tags/contracts-rules',
   'tags/movie-rent',
-  'price'
-  ],function ($, _, _s, riot, Velocity, ScrollMagic, channelModal, channelSearch, rules, movieRent, price) {
+  'price',
+  'scrollp',
+  ],function ($, _, _s, riot, Velocity, ScrollMagic, channelModal, channelSearch, rules, movieRent, price, scrollp) {
 
   price.init();
+  scrollp.init();
 
   _.mixin(_s.exports());
 

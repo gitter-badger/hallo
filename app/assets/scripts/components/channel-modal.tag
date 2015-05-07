@@ -42,7 +42,11 @@
               </div>
             </div>
           </div>
-        <a class="add" href="#" data-slug="{ data.slug }">Adicionar</a>
+        <a class="add add-addon" href="#" data-slug="{ data.slug }">
+          <span>
+            Adicionar
+          </span>
+        </a>
         <a class="tel" href="tel:">Ligue para contratar por R$ { data.price }/Mês</a>
       </div>
 
@@ -115,7 +119,7 @@
       <div class="channel-modal_action">
         <div class="channel-modal_action_title">Já é cliente Oi TV HD?</div>
         <div class="channel-modal_action_link">
-          <a href="">Faça um Upgrade do seu plano</a>
+          <a href="#">Faça um Upgrade do seu plano</a>
         </div>
       </div>
     </div>
