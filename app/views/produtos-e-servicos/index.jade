@@ -24,16 +24,17 @@ body(itemtype="http://schema.org/WebPage").product
                 li 119 Canais
                 li 20 HD
             .oi-card_main
-              oi-price(id="card-price-"+val)
-              //- oi-price
-              //-   .oi-price
-              //-     .oi-price_prefix A partir de 
-              //-     .oi-price_value
-              //-       span.oi-price_value_integer 59
-              //-       span.oi-price_value_cents ,90
-              //-     .oi-price_suffix
-              //-       span /
-              //-       |Mês 
+              .oi-card_main_price
+                oi-price(id="card-price-"+val)
+                //- oi-price
+                //-   .oi-price
+                //-     .oi-price_prefix A partir de 
+                //-     .oi-price_value
+                //-       span.oi-price_value_integer 59
+                //-       span.oi-price_value_cents ,90
+                //-     .oi-price_suffix
+                //-       span /
+                //-       |Mês 
               .oi-card_list
                 h5.oi-card_list_title Você ainda pode adicionar
                 ul.oi-card_list_items
