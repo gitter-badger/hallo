@@ -22,14 +22,33 @@ define('price',[
     // riot.route.stop()
     // riot.route.start()
     _private.bindBtAddon();
+    _private.bindBtPlan();
+  }
+
+
+  _private.bindBtPlan = function(){
+    $('.oi-channels_tabs a').on('click', function (evt){
+      evt.preventDefault();
+      var $bt = $(this),
+          slug = $bt.data('slug');
+      $('.oi-channels_tabs a.active').removeClass('active');
+      $bt.addClass('active');
+      defaultPlan = slug;
+      _private.startPlan();
+    });
+  }
+
+  _private.startPlan = function (local){
+    _private.fillClientType();
+    _private.cartStart();
   }
 
   _private.loadPrice = function (local){
     $.getJSON('/api/price/' + local + '.json', function(json, textStatus) {
       price = json.data;
       _private.fillCards();
-      _private.fillClientType();
-      _private.cartStart();
+      _private.fillClientType(); //
+      _private.cartStart(); //
       _private.startSpot();
       _private.changeSpot();
       _private.openClientType();
@@ -49,8 +68,13 @@ define('price',[
     var startPlan = _.find(price, function(product) {
       return product.slug === defaultPlan;
     })
-    riot.mount('#price-has-phone', { price: startPlan.price, small: true });
-    riot.mount('#price-has-no-phone', { price: startPlan.price+20, small: true });
+    if( !tagsPrice.hasPhone && !tagsPrice.noPhone ){
+      tagsPrice.hasPhone = riot.mount('#price-has-phone', { price: startPlan.price, small: true })[0];
+      tagsPrice.noPhone = riot.mount('#price-has-no-phone', { price: startPlan.price+20, small: true })[0];
+    } else {
+      tagsPrice.hasPhone.updatePrice(startPlan.price)
+      tagsPrice.noPhone.updatePrice(startPlan.price+20)
+    }
   }
 
   _private.cartStart = function(){
@@ -64,13 +88,21 @@ define('price',[
       var prodAdd = _.find(price, function(productItem) {
         return productItem.slug === product;
       });
+      if(prodAdd.type === 'basic'){
+        cart[product] = {  quant: quant, name: prodAdd.name, type: prodAdd.type }
+        // ugh 2
+        delete cart.start
+        delete cart.mix
+        delete cart.total
+      }
       cart[product] = {  quant: quant, name: prodAdd.name, type: prodAdd.type }
     }
     console.table(cart);
-    _private.cartUpdateView();
+    _private.cartUpdatePrice();
+    _private.cartUpdateList();
   }
 
-  _private.cartUpdateView = function (){
+  _private.cartUpdatePrice = function (){
     var total = _.sum(cart, function(item, product) {
       var prodAdded = _.find(price, function(productItem) {
         return productItem.slug === product;
@@ -83,6 +115,49 @@ define('price',[
     } else {
       tagsPrice.total.updatePrice(total);
     }
+  }
+
+  var $cartList = $('#cart-list'),
+      cartWidth = $cartList.width();
+
+  _private.cartUpdateList = function (){
+    var listHtml = '';
+    var sumWidth = 0;
+
+    for (var item in cart) {
+      if (cart.hasOwnProperty(item)) {
+        if(item === 'spot'){
+          listHtml += '<li>' + cart[item].quant + ' ' + ( cart[item].quant === 1 ? cart[item].name : 'Pontos' ) + '</li>';
+        } else {
+          listHtml += '<li>' + cart[item].name + '</li>';
+        }
+      }
+    }
+    $cartList.html(listHtml);
+    listHtml = '';
+    // Ugh! ude promises!!!
+    setTimeout( function () {
+      var $itensTitle = $cartList.find('li');
+      $itensTitle.each(function (i,el){
+        var $el = $(el)
+        sumWidth += $el.width()
+        if( i + 1 === $itensTitle.size()){
+          if(cartWidth > sumWidth){
+            $itensTitle.addClass('visible');
+          } else {
+            var plan = _.find(cart, function(productItem) {
+              return productItem.type === 'basic';
+            });
+            listHtml += '<li>' + plan.name + '</li>';
+            var channelsQuant = _.countBy(cart, function(productItem) {
+              return productItem.type !== 'basic';
+            }).true;
+            listHtml += '<li>' + channelsQuant + ' Opcionais</li>';
+            $cartList.html(listHtml).find('li').addClass('visible');
+          }
+        }
+      });
+    }, 100);
   }
 
   _private.startSpot = function (){
@@ -118,7 +193,6 @@ define('price',[
       }
       _private.toggleAddonTooltip(slug, quant)
       _private.cartUpdateValue(slug, quant)
-
     });
   }
 

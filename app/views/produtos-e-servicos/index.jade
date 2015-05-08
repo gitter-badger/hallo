@@ -39,19 +39,19 @@ body(itemtype="http://schema.org/WebPage").product
       nav.oi-channels_tabs
         ul
           li
-            a(href="#") Start HD
+            a.active(href="#" data-slug="start") Start HD
           li
-            a.active(href="#") Mix HD
+            a(href="#" data-slug="mix") Mix HD
           li
-            a(href="#") Total HD
+            a(href="#" data-slug="total") Total HD
 
       .oi-channels_container
 
         header.oi-channels_header
           .oi-channels_header_list
-            ul
-              each title in channelsgroup.header.title
-                li=title
+            ul#cart-list
+              //- each title in channelsgroup.header.title
+                //- li=title
           .oi-channels_header_client-type
             a(href="#").oi-channels_header_client-type-trigger
               span Valor para clientes 

@@ -97,15 +97,25 @@ main
       z-index 1
       height remify(58px)
       width s("calc(100% - " + remify(140px + 100px + 170px) + ")")
+      padding-right remify(30px)
       +above('m')
         display block
         margin-top remify(-12px)
 
       ul
         display block
+        height remify(70px)
+        overflow hidden
+        white-space nowrap
 
       li
+        // display none
         display inline-block
+        opacity 0
+        transition all 0.5s ease
+        &.visible
+          opacity 1
+
         &:first-child:before
           display none
         &:last-child
@@ -114,14 +124,15 @@ main
           +above('l')
             display inline-block
         &:before
-          content ''
-          display inline-block
-          width remify(12px)
-          height remify(12px)
-          border-radius remify(6px)
-          background-color $grayLight
-          transform translateY(remify(-7px))
-          margin 0 remify(7px) 0 0
+          content '+'
+          color $grayLight
+          // display inline-block
+          // width remify(12px)
+          // height remify(12px)
+          // border-radius remify(6px)
+          // background-color $grayLight
+          // transform translateY(remify(-7px))
+          // margin 0 remify(7px) 0 0
 
 
     &_client-type
@@ -618,10 +629,13 @@ main
         border-bottom none
 
     &_tooltip
+      display: none
       position absolute
       top remify(10px)
       left 0
       width 100%
+      +above('m')
+        display block
 
 
       div
@@ -668,9 +682,6 @@ main
           margin-left remify(-5px)
           left 50%
           z-index 2
-
-
-
 
     &_link
       display block
@@ -778,9 +789,8 @@ main
 
         &.added
           & + .remove
-            +above('m')
-              display block
-              opacity 1
+            display block
+            opacity 1
           svg
             opacity 1
             margin-left 0

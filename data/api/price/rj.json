@@ -6,22 +6,22 @@
       "name": "Start HD",
       "slug": "start",
       "type": "basic",
-      "price": 59.90,
+      "price": 11.90,
       "quant": 0,
       "modifier": null,
       "plans": {
         "start": {
-          "price": 59.90,
+          "price": 12.90,
           "quant": 0,
           "modifier": null
         },
         "mix": {
-          "price": 79.90,
+          "price": 13.90,
           "quant": 0,
           "modifier": null
         },
         "total": {
-          "price": 99.90,
+          "price": 14.90,
           "quant": 0,
           "modifier": null
         }
@@ -31,22 +31,22 @@
       "name": "Mix HD",
       "slug": "mix",
       "type": "basic",
-      "price": 79.90,
+      "price": 22.90,
       "quant": 0,
       "modifier": null,
       "plans": {
         "start": {
-          "price": 59.90,
+          "price": 23.90,
           "quant": 0,
           "modifier": null
         },
         "mix": {
-          "price": 79.90,
+          "price": 24.90,
           "quant": 0,
           "modifier": null
         },
         "total": {
-          "price": 99.90,
+          "price": 25.90,
           "quant": 0,
           "modifier": null
         }
@@ -56,22 +56,22 @@
       "name": "Total HD",
       "slug": "total",
       "type": "basic",
-      "price": 99.90,
+      "price": 33.90,
       "quant": 0,
       "modifier": null,
       "plans": {
         "start": {
-          "price": 59.90,
+          "price": 34.90,
           "quant": 0,
           "modifier": null
         },
         "mix": {
-          "price": 79.90,
+          "price": 35.90,
           "quant": 0,
           "modifier": null
         },
         "total": {
-          "price": 99.90,
+          "price": 36.90,
           "quant": 0,
           "modifier": null
         }
@@ -101,9 +101,9 @@
       }
     },
     {
-      "name": "Ponto adicional",
+      "name": "Ponto",
       "slug": "spot",
-      "type": "addon",
+      "type": "channel",
       "modifier": null,
       "plans": {
         "start": {
@@ -126,9 +126,9 @@
       }
     },
     {
-      "name": "Gravador digital",
+      "name": "Gravador",
       "slug": "recorder",
-      "type": "addon",
+      "type": "device",
       "modifier": null,
       "plans": {
         "start": {
@@ -151,7 +151,7 @@
     {
       "name": "HBO",
       "slug": "hbo",
-      "type": "addon",
+      "type": "channel",
       "modifier": {
         "telecine": { "price": 25, "message": "Só mais R$ 25"},
         "premiere": { "price": 35, "message": "Só mais R$ 45"}
@@ -174,7 +174,7 @@
     {
       "name": "Telecine",
       "slug": "telecine",
-      "type": "addon",
+      "type": "channel",
       "modifier": {
         "hbo": { "price": 35, "message": "Só mais R$ 35"}
       },
@@ -196,7 +196,7 @@
     {
       "name": "Première",
       "slug": "premiere",
-      "type": "addon",
+      "type": "channel",
       "modifier": null,
       "plans": {
         "start": {
@@ -216,7 +216,7 @@
     {
       "name": "Combate",
       "slug": "combate",
-      "type": "addon",
+      "type": "channel",
       "modifier": null,
       "plans": {
         "start": {
@@ -236,7 +236,7 @@
     {
       "name": "PlayboyTV",
       "slug": "playboy-tv",
-      "type": "addon",
+      "type": "channel",
       "modifier": {
         "sexyhot": { "price": 10, "message": "Só mais R$ 10" }
       },
@@ -258,7 +258,7 @@
     {
       "name": "SexyHot",
       "slug": "sexyhot",
-      "type": "addon",
+      "type": "channel",
       "modifier": {
         "playboytv": { "price": 10, "message": "Só mais R$ 10"}
       },
@@ -280,7 +280,7 @@
     {
       "name": "Sex Privé",
       "slug": "sexprive",
-      "type": "addon",
+      "type": "channel",
       "modifier": null,
       "plans": {
         "start": {
@@ -300,7 +300,7 @@
     {
       "name": "Canais Internacionais",
       "slug": "canais-internacionais",
-      "type": "addon",
+      "type": "channel",
       "modifier": null,
       "plans": {
         "start": {
