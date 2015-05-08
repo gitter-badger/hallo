@@ -108,7 +108,7 @@ define('price',[
         return productItem.slug === product;
       })
       return item.quant * prodAdded.plans[defaultPlan].price
-    });
+    }).toFixed(2)
 
     if(!tagsPrice.total){
       tagsPrice.total = riot.mount('#price-total', { price: total , small: true })[0];
@@ -243,48 +243,34 @@ define('scrollp',[
   'domlib',
   'vendor/lodash',
   'velocity',
+  'vendor/animation.velocity',
   // 'velocity-ui',
   'ScrollMagic',
   'ScrollMagic.debug'
-  ],function ($, lodash, Velocity, ScrollMagic) {
+  ],function ($, lodash, Velocity, va,  ScrollMagic) {
   var _public = {},
       _private = {}
 
   _public.init = function(){
 
-    return
-
-    var controller = new ScrollMagic.Controller();
-
-    var scene = new ScrollMagic.Scene({
-      triggerHook: 'onLeave',
-      duration: 515,
-      offset: 670
-    })
-    .setPin("main")
-    .addTo(controller)
-    .addIndicators();
-    scene.on("enter", function (event) {
-      console.log('enter');
-    });
-
   }
 
-  _private.holdScroll = function(){ return
+  _private.holdScroll = function(){
     var heightScreen = $(window).height();
         menuPos = $('.menu').offset(),
         pos = menuPos.top + menuPos.height + $detail.height() - heightScreen,
         controller = new ScrollMagic.Controller();
 
     var scene = new ScrollMagic.Scene({
-      duration: 1350,
-      offset: pos
+      triggerElement: 'main'
+      // duration: 1350,
+      // offset: pos
     })
-    .setPin("#detail")
+    // .setPin("#detail")
     .addTo(controller)
     .addIndicators();
     scene.on("enter", function (event) {
-      $hiddenContent.addClass('fix')
+      // $hiddenContent.addClass('fix')
     });
   };
 
