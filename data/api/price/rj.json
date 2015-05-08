@@ -6,22 +6,22 @@
       "name": "Start HD",
       "slug": "start",
       "type": "basic",
-      "price": 11.90,
+      "price": 10.00,
       "quant": 0,
       "modifier": null,
       "plans": {
         "start": {
-          "price": 12.90,
+          "price": 10.01,
           "quant": 0,
           "modifier": null
         },
         "mix": {
-          "price": 13.90,
+          "price": 20.02,
           "quant": 0,
           "modifier": null
         },
         "total": {
-          "price": 14.90,
+          "price": 30.03,
           "quant": 0,
           "modifier": null
         }
@@ -31,22 +31,22 @@
       "name": "Mix HD",
       "slug": "mix",
       "type": "basic",
-      "price": 22.90,
+      "price": 20.00,
       "quant": 0,
       "modifier": null,
       "plans": {
         "start": {
-          "price": 23.90,
+          "price": 20.01,
           "quant": 0,
           "modifier": null
         },
         "mix": {
-          "price": 24.90,
+          "price": 20.02,
           "quant": 0,
           "modifier": null
         },
         "total": {
-          "price": 25.90,
+          "price": 20.03,
           "quant": 0,
           "modifier": null
         }
@@ -56,22 +56,22 @@
       "name": "Total HD",
       "slug": "total",
       "type": "basic",
-      "price": 33.90,
+      "price": 30.00,
       "quant": 0,
       "modifier": null,
       "plans": {
         "start": {
-          "price": 34.90,
+          "price": 30.01,
           "quant": 0,
           "modifier": null
         },
         "mix": {
-          "price": 35.90,
+          "price": 30.02,
           "quant": 0,
           "modifier": null
         },
         "total": {
-          "price": 36.90,
+          "price": 30.03,
           "quant": 0,
           "modifier": null
         }
