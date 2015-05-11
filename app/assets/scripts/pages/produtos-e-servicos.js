@@ -266,64 +266,69 @@ define('scrollp',[
   _public.init = function(){
 
 
-    var docWidth = $(document).width();
 
-    var $cards = $('.cards')
-        cardsOffset = $cards.offset()
-    var $cardsContainer = $('.cards_container')
-        cardsContainerOffset = $cardsContainer.offset()
-    var $cardsContainerBg = $('.cards_container--bg')
-    var $cardHeader = $('.oi-card_header')
-        cardHeaderOffset = $cardHeader.offset()
-    var $cardMain = $('.oi-card_main')
-        cardMainOffset = $cardMain.offset()
-    var $cardFooter = $('.oi-card_footer')
-        cardFooterOffset = $cardFooter.offset()
-    var $cardFooterAction = $('.oi-card_action')
-        cardFooterActionOffset = $cardFooterAction.offset()
-    var $channels = $('.oi-channels')
-        channelsOffset = $channels.offset()
-    var $channelInfo = $('#channel-info')
-        channelInfoOffset = $channelInfo.offset()
+    var docWidth = $(document).width(),
+        $win = $(window),
+        $cards = $('.cards'),
+        cardsOffset = $cards.offset(),
+        $cardsContainer = $('.cards_container'),
+        cardsContainerOffset = $cardsContainer.offset(),
+        $cardsContainerBg = $('.cards_container--bg'),
+        $cardHeader = $('.oi-card_header'),
+        cardHeaderOffset = $cardHeader.offset(),
+        $cardSubtitle = $('.oi-card_subtitle'),
+        $cardTitle = $('.oi-card_title'),
+        $cardMain = $('.oi-card_main'),
+        cardMainOffset = $cardMain.offset(),
+        $cardFooter = $('.oi-card_footer'),
+        cardFooterOffset = $cardFooter.offset(),
+        $cardFooterAction = $('.oi-card_action'),
+        cardFooterActionOffset = $cardFooterAction.offset(),
+        $channels = $('.oi-channels'),
+        channelsOffset = $channels.offset(),
+        $channelInfo = $('#channel-info'),
+        channelInfoOffset = $channelInfo.offset(),
+        $channelTabs = $('.oi-channels_tabs')
 
-    // _public.setMarker(cardHeaderOffset.top + cardHeaderOffset.height)
-    // _public.setMarker(cardMainOffset.top + cardMainOffset.height)
-    // _public.setMarker(cardsOffset.top + cardsOffset.height)
-
-    // function remify (nr){
-    //   return nr / 16;
-    // }
     $channels.addClass('nopad')
-    $('.oi-channels_tabs').hide()
+    $channelTabs.hide()
 
     $(window).on('scroll', _.throttle( function(){
-      var scrollTop = $(window).scrollTop();
-      // if(scrollTop >= cardsOffset.top &&  scrollTop < channelsOffset.top ){
-      if(scrollTop >= cardsOffset.top &&  scrollTop < 15000 ){
+      var scrollTop = $win.scrollTop();
+      if(scrollTop >= cardsOffset.top &&  scrollTop < 7235 ){
+        var cardPos = (scrollTop - cardsOffset.top);
+            sumMainFooter = cardMainOffset.height + cardFooterOffset.height + 1;
+            stageAnim = cardPos/sumMainFooter <= 1 ? cardPos/sumMainFooter: 1 ;
+            cardsWidth = 73.125;
+            docWidthREM = docWidth/16;
+            newWidth = docWidthREM * stageAnim >= cardsWidth ? docWidthREM * stageAnim : cardsWidth;
+            newHeight = cardPos > sumMainFooter ? sumMainFooter  : cardPos;
+
         // pin card
         $cards.css({ marginTop: scrollTop - cardsOffset.top, marginBottom: 0 })
 
-        var cardPos = (scrollTop - cardsOffset.top);
-        var sumMainFooter = cardMainOffset.height + cardFooterOffset.height + 1;
-        var stageAnim = cardPos/sumMainFooter <= 1 ? cardPos/sumMainFooter: 1 ;
-
         // cards full width
-        // var cardsWidth = cardsContainerOffset.width/16
-        var cardsWidth = 73.125
-        var docWidthREM = docWidth/16;
-        var newWidth = docWidthREM * stageAnim >= cardsWidth ? docWidthREM * stageAnim : cardsWidth
         $cardsContainer.css({
           maxWidth: newWidth + 'rem',
           marginBottom: 12.25 * (1-stageAnim) + 'rem'
         })
 
         // hide card main & footer
-        var newHeight = cardPos > sumMainFooter ? sumMainFooter  : cardPos;
         $cardMain.css({ marginTop: -newHeight, opacity: 1 - stageAnim })
         $cardFooter.css({ opacity: 1 - stageAnim })
 
         // adjust header card height
-        // $cardHeader.css({height: 70 * stageAnim })
+        $cardHeader.css({
+          paddingTop: 1.875 * (1-stageAnim) + 'rem',
+          paddingBottom: 1.875 * (1-stageAnim) + 'rem',
+          height: 3.75 * stageAnim + 'rem',
+        })
+        $cardSubtitle.css({opacity: (1-stageAnim)  })
+        $cardTitle.css({
+          height: 3.75 * stageAnim + 'rem',
+          lineHeight: 3.75 * stageAnim + 'rem',
+          fontSize: stageAnim + 'rem'
+        })
 
         // Show border channels area
         $cardsContainerBg.css({
@@ -333,36 +338,19 @@ define('scrollp',[
         })
         $channels.css({paddingLeft: 10 * (stageAnim), paddingRight: 10 * (stageAnim) })
 
-
         if(stageAnim >= 1){
           $channelInfo.css({
-            marginTop: -(scrollTop - 818)
-          })
+            marginTop: -(scrollTop - 1032)
+          });
         }
       }
 
-    }, 10, true));
-
+    }, 5, true));
 
   }
 
   _private.holdScroll = function(){
-    var heightScreen = $(window).height();
-        menuPos = $('.menu').offset(),
-        pos = menuPos.top + menuPos.height + $detail.height() - heightScreen,
-        controller = new ScrollMagic.Controller();
 
-    var scene = new ScrollMagic.Scene({
-      triggerElement: 'main'
-      // duration: 1350,
-      // offset: pos
-    })
-    // .setPin("#detail")
-    .addTo(controller)
-    .addIndicators();
-    scene.on("enter", function (event) {
-      // $hiddenContent.addClass('fix')
-    });
   };
 
   return _public
