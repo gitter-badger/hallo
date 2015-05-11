@@ -1,18 +1,37 @@
+.marker
+  position absolute
+  top 0
+  right 0
+  width 100%
+  height 0
+  border-bottom 1px dashed red
+  z-index 99999
+
+
 main
   position relative
   z-index 3
 
 .cards
-  overflow hidden
-  margin-bottom remify(125px)
-  +above('m')
-    margin-bottom remify(195px)
-  +above('l')
-    max-width remify(1170px)
-    margin 0 auto
-    clear both
-    margin-top remify(-127px)
-    margin-bottom remify(195px)
+  width 100%
+  // padding 0 remify(10px)
+  position relative
+  z-index 1
+
+  &_container
+    overflow hidden
+    margin-bottom remify(125px)
+    +above('m')
+      margin-bottom remify(195px)
+    +above('l')
+      max-width remify(1170px)
+      margin 0 auto
+      clear both
+      margin-top remify(-127px)
+      margin-bottom remify(195px)
+    &--bg
+      background-color $green
+      overflow hidden
 
   oi-card
     width (100% / 3)
@@ -24,11 +43,18 @@ main
   background-color $green
   display block
   width 100%
-  max-width remify(1366px)
+  // max-width remify(1366px)
   margin 0 auto
   overflow hidden
+  position relative
+  z-index 2
+  // opacity 0
   +above('m')
     padding remify(10px)
+    &.nopad
+      padding-left 0
+      padding-right 0
+      padding-top 0
 
   &_tabs
     ul
@@ -64,11 +90,16 @@ main
 
   &_container
     background $white
+    position relative
+    z-index 2
+    &#channel-info
+      z-index 1
 
   &_lists-container
     max-width remify(1170px)
     margin 0 auto
     overflow hidden
+    width 100%
     background-color $grayLighter
 
   &_header
@@ -960,7 +991,6 @@ main
           width remify(100px)
           margin-bottom remify(10px)
           background-color $grayLighter
-          background-color red
           position relative
 
         .dist

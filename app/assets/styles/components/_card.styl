@@ -6,12 +6,10 @@ oi-card
   background-color $white
   border remify(1px) solid $grayLight
   display block
-  padding remify(17px)
   text-decoration none
   font-family $fontTextRegular
   color $black
-  +above('m')
-    padding remify(30px) remify(35px)
+  overflow hidden
   &:hover
     color $green
     .oi-card_list
@@ -19,6 +17,15 @@ oi-card
 
   &_header
     color inherit
+    background-color $white
+    position relative
+    z-index 3
+    overflow hidden
+    border-bottom remify(1px) solid $grayLight
+    margin 0 auto
+    +above('m')
+      padding remify(30px) 0
+      max-width remify(180px)
 
   &_title
     display block
@@ -34,10 +41,7 @@ oi-card
     display none
     text-align center
     font-size remify(16px)
-    padding-bottom remify(30px)
-    border-bottom remify(1px) solid $grayLight
-    max-width remify(180px)
-    margin remify(15px) auto remify(40px) auto
+    margin remify(15px) auto 0 auto
     transition: color 0.3s ease
 
     +above('m')
@@ -48,11 +52,19 @@ oi-card
 
   &_main
     display block
+    position relative
+    z-index 1
+    margin 0 auto
+    overflow hidden
+    +above('m')
+      // padding remify(30px) 0
+      max-width remify(180px)
 
     &_price
       height remify(44px)
       +above('m')
         height remify(80px)
+        margin-top remify(30px)
 
   &_list
     color $gray
@@ -63,6 +75,7 @@ oi-card
     transition: color 0.3s ease
     +above('m')
       display block
+      margin-bottom remify(30px)
     +above('l')
       color $black
     &_title
@@ -77,8 +90,11 @@ oi-card
 
   &_footer
     display none
-    margin-top remify(70px)
     width 100%
+    position relative
+    z-index 2
+    overflow hidden
+    padding 0 remify(35px)
     +above('m')
       display block
 
@@ -92,7 +108,7 @@ oi-card
       font-size remify(16px)
       height remify(50px)
       line-height remify(50px)
-      margin 0
+      margin remify(35px) auto
       padding 0
       text-align center
       width 100%

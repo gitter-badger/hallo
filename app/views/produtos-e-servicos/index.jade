@@ -15,24 +15,26 @@ body(itemtype="http://schema.org/WebPage").product
     .minha-classe
 
     .cards
-      each val, index in ['start', 'mix', 'total']
-        oi-card
-          a(href="#").oi-card
-            .oi-card_header
-              h2.oi-card_title Start HD
-              ul.oi-card_subtitle
-                li 119 Canais
-                li 20 HD
-            .oi-card_main
-              .oi-card_main_price
-                oi-price(id="card-price-"+val)
-              .oi-card_list
-                h5.oi-card_list_title Você ainda pode adicionar
-                ul.oi-card_list_items
-                  li 1 Ponto Adicional
-                  li HBO, Telecine, Premiere e mais
-            .oi-card_footer
-              button.oi-card_action Conheça o Start HD
+      .cards_container
+        .cards_container--bg
+          each val, index in ['start', 'mix', 'total']
+            oi-card
+              a(href="#").oi-card
+                .oi-card_header
+                  h2.oi-card_title Start HD
+                  ul.oi-card_subtitle
+                    li 119 Canais
+                    li 20 HD
+                .oi-card_main
+                  .oi-card_main_price
+                    oi-price(id="card-price-"+val)
+                  .oi-card_list
+                    h5.oi-card_list_title Você ainda pode adicionar
+                    ul.oi-card_list_items
+                      li 1 Ponto Adicional
+                      li HBO, Telecine, Premiere e mais
+                .oi-card_footer
+                  button.oi-card_action Conheça o Start HD
     
     .oi-channels
       
@@ -76,7 +78,8 @@ body(itemtype="http://schema.org/WebPage").product
             oi-price#price-total
           .oi-channels_header_action
             a(href="") Peça Já
-        
+      
+      .oi-channels_container#channel-info
         .oi-channels_lists-container
 
           .oi-channels-lists

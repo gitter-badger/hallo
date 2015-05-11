@@ -9,12 +9,15 @@ define('price',[
       price,
       meta,
       tagsPrice = {},
-      defaultPlan = 'start',
+      defaultPlan = 'total',
       cart = {},
       $spots = $('.oi-channels-addons_item_spots a'),
       $openClientType    = $('.oi-channels_header_client-type-trigger'),
       $dropdowClientType = $('.oi-channels_header_client-type_dropdow'),
-      $clientType        = $dropdowClientType.find('a');
+      $clientType        = $dropdowClientType.find('a'),
+      $cartList = $('#cart-list'),
+      cartWidth = $cartList.width();
+
 
   _public.init = function (){
     _private.loadPrice('rj');
@@ -117,8 +120,6 @@ define('price',[
     }
   }
 
-  var $cartList = $('#cart-list'),
-      cartWidth = $cartList.width();
 
   _private.cartUpdateList = function (){
     var listHtml = '';
@@ -251,7 +252,97 @@ define('scrollp',[
   var _public = {},
       _private = {}
 
+  var $body = $('body')
+  var contMarker = 1;
+  var markers = []
+  _public.setMarker = function(pos, label){
+    if(_.indexOf(markers, pos) === -1){
+      markers.push(pos)
+      $body.append('<div class="marker" style="top:'+pos+'px">'+( label || 'Marker '+contMarker )+'</div>')
+      contMarker++
+    }
+  }
+
   _public.init = function(){
+
+
+    var docWidth = $(document).width();
+
+    var $cards = $('.cards')
+        cardsOffset = $cards.offset()
+    var $cardsContainer = $('.cards_container')
+        cardsContainerOffset = $cardsContainer.offset()
+    var $cardsContainerBg = $('.cards_container--bg')
+    var $cardHeader = $('.oi-card_header')
+        cardHeaderOffset = $cardHeader.offset()
+    var $cardMain = $('.oi-card_main')
+        cardMainOffset = $cardMain.offset()
+    var $cardFooter = $('.oi-card_footer')
+        cardFooterOffset = $cardFooter.offset()
+    var $cardFooterAction = $('.oi-card_action')
+        cardFooterActionOffset = $cardFooterAction.offset()
+    var $channels = $('.oi-channels')
+        channelsOffset = $channels.offset()
+    var $channelInfo = $('#channel-info')
+        channelInfoOffset = $channelInfo.offset()
+
+    // _public.setMarker(cardHeaderOffset.top + cardHeaderOffset.height)
+    // _public.setMarker(cardMainOffset.top + cardMainOffset.height)
+    // _public.setMarker(cardsOffset.top + cardsOffset.height)
+
+    // function remify (nr){
+    //   return nr / 16;
+    // }
+    $channels.addClass('nopad')
+    $('.oi-channels_tabs').hide()
+
+    $(window).on('scroll', _.throttle( function(){
+      var scrollTop = $(window).scrollTop();
+      // if(scrollTop >= cardsOffset.top &&  scrollTop < channelsOffset.top ){
+      if(scrollTop >= cardsOffset.top &&  scrollTop < 15000 ){
+        // pin card
+        $cards.css({ marginTop: scrollTop - cardsOffset.top, marginBottom: 0 })
+
+        var cardPos = (scrollTop - cardsOffset.top);
+        var sumMainFooter = cardMainOffset.height + cardFooterOffset.height + 1;
+        var stageAnim = cardPos/sumMainFooter <= 1 ? cardPos/sumMainFooter: 1 ;
+
+        // cards full width
+        // var cardsWidth = cardsContainerOffset.width/16
+        var cardsWidth = 73.125
+        var docWidthREM = docWidth/16;
+        var newWidth = docWidthREM * stageAnim >= cardsWidth ? docWidthREM * stageAnim : cardsWidth
+        $cardsContainer.css({
+          maxWidth: newWidth + 'rem',
+          marginBottom: 12.25 * (1-stageAnim) + 'rem'
+        })
+
+        // hide card main & footer
+        var newHeight = cardPos > sumMainFooter ? sumMainFooter  : cardPos;
+        $cardMain.css({ marginTop: -newHeight, opacity: 1 - stageAnim })
+        $cardFooter.css({ opacity: 1 - stageAnim })
+
+        // adjust header card height
+        // $cardHeader.css({height: 70 * stageAnim })
+
+        // Show border channels area
+        $cardsContainerBg.css({
+          paddingTop: 10 * (stageAnim),
+          paddingLeft: 10 * (stageAnim),
+          paddingRight: 10 * (stageAnim)
+        })
+        $channels.css({paddingLeft: 10 * (stageAnim), paddingRight: 10 * (stageAnim) })
+
+
+        if(stageAnim >= 1){
+          $channelInfo.css({
+            marginTop: -(scrollTop - 818)
+          })
+        }
+      }
+
+    }, 10, true));
+
 
   }
 
