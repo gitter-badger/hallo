@@ -30,11 +30,11 @@ define('price',[
 
 
   _private.bindBtPlan = function(){
-    $('.oi-channels_tabs a').on('click', function (evt){
+    $('.oi-channels_tabs a, .oi-card').on('click', function (evt){
       evt.preventDefault();
       var $bt = $(this),
           slug = $bt.data('slug');
-      $('.oi-channels_tabs a.active').removeClass('active');
+      $('.oi-channels_tabs a.active, .oi-card.active').removeClass('active');
       $bt.addClass('active');
       defaultPlan = slug;
       _private.startPlan();
@@ -243,12 +243,7 @@ define('price',[
 define('scrollp',[
   'domlib',
   'vendor/lodash',
-  'velocity',
-  'vendor/animation.velocity',
-  // 'velocity-ui',
-  'ScrollMagic',
-  'ScrollMagic.debug'
-  ],function ($, lodash, Velocity, va,  ScrollMagic) {
+  ],function ($, lodash ) {
   var _public = {},
       _private = {}
 
@@ -264,9 +259,6 @@ define('scrollp',[
   }
 
   _public.init = function(){
-
-
-
     var docWidth = $(document).width(),
         $win = $(window),
         $cards = $('.cards'),
@@ -295,6 +287,7 @@ define('scrollp',[
 
     $(window).on('scroll', _.throttle( function(){
       var scrollTop = $win.scrollTop();
+
       if(scrollTop >= cardsOffset.top &&  scrollTop < 7235 ){
         var cardPos = (scrollTop - cardsOffset.top);
             sumMainFooter = cardMainOffset.height + cardFooterOffset.height + 1;
@@ -302,10 +295,12 @@ define('scrollp',[
             cardsWidth = 73.125;
             docWidthREM = docWidth/16;
             newWidth = docWidthREM * stageAnim >= cardsWidth ? docWidthREM * stageAnim : cardsWidth;
-            newHeight = cardPos > sumMainFooter ? sumMainFooter  : cardPos;
+            newHeight = cardPos > sumMainFooter ? sumMainFooter  : cardPos,
+            newFsCardTitle = 1 + .375 * (1-stageAnim ) + 'rem';
 
         // pin card
         $cards.css({ marginTop: scrollTop - cardsOffset.top, marginBottom: 0 })
+        $cards.addClass('is-tabs')
 
         // cards full width
         $cardsContainer.css({
@@ -315,28 +310,31 @@ define('scrollp',[
 
         // hide card main & footer
         $cardMain.css({ marginTop: -newHeight, opacity: 1 - stageAnim })
-        $cardFooter.css({ opacity: 1 - stageAnim })
+        $cardFooter.css({ opacity: 1 - stageAnim - 0.3 })
 
         // adjust header card height
         $cardHeader.css({
-          paddingTop: 1.875 * (1-stageAnim) + 'rem',
-          paddingBottom: 1.875 * (1-stageAnim) + 'rem',
-          height: 3.75 * stageAnim + 'rem',
+          paddingTop: 1.875 * (1-stageAnim ) + 'rem',
+          paddingBottom: 1.875 * (1-stageAnim ) + 'rem',
+          maxWidth: stageAnim*100 + '%'
         })
-        $cardSubtitle.css({opacity: (1-stageAnim)  })
+
         $cardTitle.css({
-          height: 3.75 * stageAnim + 'rem',
-          lineHeight: 3.75 * stageAnim + 'rem',
-          fontSize: stageAnim + 'rem'
+          fontSize: newFsCardTitle
+        })
+
+        $cardSubtitle.css({
+          opacity: (1-stageAnim - .3),
+          height: 1.375 * (1-stageAnim) + 'rem'
         })
 
         // Show border channels area
-        $cardsContainerBg.css({
-          paddingTop: 10 * (stageAnim),
-          paddingLeft: 10 * (stageAnim),
-          paddingRight: 10 * (stageAnim)
-        })
-        $channels.css({paddingLeft: 10 * (stageAnim), paddingRight: 10 * (stageAnim) })
+        // $cardsContainerBg.css({
+        //   paddingTop: 10 * (stageAnim),
+        //   paddingLeft: 10 * (stageAnim),
+        //   paddingRight: 10 * (stageAnim)
+        // })
+        // $channels.css({paddingLeft: 10 * (stageAnim), paddingRight: 10 * (stageAnim) })
 
         if(stageAnim >= 1){
           $channelInfo.css({
@@ -344,6 +342,7 @@ define('scrollp',[
           });
         }
       }
+
 
     }, 5, true));
 
