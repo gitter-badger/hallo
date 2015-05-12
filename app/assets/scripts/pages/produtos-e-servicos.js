@@ -243,7 +243,8 @@ define('price',[
 define('scrollp',[
   'domlib',
   'vendor/lodash',
-  ],function ($, lodash ) {
+  'velocity'
+  ],function ($, lodash, Velocity ) {
   var _public = {},
       _private = {}
 
@@ -291,7 +292,13 @@ define('scrollp',[
 
     $hero = $('oi-hero')
 
-
+    $cards.find('a').on('click', function (evt){
+      evt.preventDefault();
+      $channels.velocity("scroll", {
+        duration: 3000,
+        delay: 200
+      });
+    })
 
     $(window).on('scroll', _.throttle( function(){
       var scrollTop = $win.scrollTop();
