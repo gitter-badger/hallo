@@ -7,8 +7,15 @@ oi-hero
   position absolute
   top remify(70px)
   left 0
+  transition all 1s ease
+  box-shadow 0 0 remify(100px) remify(100px) rgba(0,0,0,1)
   +above('m')
     display block
+
+  &.show-shaddow
+    box-shadow 0 0 0 remify(700px) rgba(0,0,0,1)
+  &.hide-shaddow
+    box-shadow 0 0 0 remify(700px) rgba(0,0,0,0)
 
 .oi-hero
   display: none
@@ -24,3 +31,4 @@ oi-hero
     background-repeat no-repeat
     background-position top center
     background-size cover
+    box-shadow inset 0px -40px 40px #000

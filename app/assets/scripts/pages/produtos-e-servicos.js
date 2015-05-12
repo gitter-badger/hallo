@@ -262,6 +262,7 @@ define('scrollp',[
     var docWidth = $(document).width(),
         $win = $(window),
         $cards = $('.cards'),
+        $main = $('main'),
         cardsOffset = $cards.offset(),
         $cardsContainer = $('.cards_container'),
         cardsContainerOffset = $cardsContainer.offset(),
@@ -281,14 +282,32 @@ define('scrollp',[
         $channelInfo = $('#channel-info'),
         channelInfoOffset = $channelInfo.offset(),
         $channelTabs = $('.oi-channels_tabs')
+        $channelsContainer = $('.oi-channels_container')
 
     $channels.addClass('nopad')
-    $channelTabs.hide()
+    // $main.addClass('has-scroll');
+    $channelTabs.hide();
+    $channels.css({opacity: 0});
+
+    $hero = $('oi-hero')
+
+
 
     $(window).on('scroll', _.throttle( function(){
       var scrollTop = $win.scrollTop();
 
+
+
       if(scrollTop >= cardsOffset.top &&  scrollTop < 7235 ){
+
+        $hero.removeClass('show-shaddow')
+        $cards.addClass('is-tabs');
+
+        // set mix as active if user dont made a selection
+        if( !$cardsContainer.find('.active')[0]){
+          $cardsContainer.find('[data-slug="mix"]').trigger('click')
+        }
+
         var cardPos = (scrollTop - cardsOffset.top);
             sumMainFooter = cardMainOffset.height + cardFooterOffset.height + 1;
             stageAnim = cardPos/sumMainFooter <= 1 ? cardPos/sumMainFooter: 1 ;
@@ -300,7 +319,7 @@ define('scrollp',[
 
         // pin card
         $cards.css({ marginTop: scrollTop - cardsOffset.top, marginBottom: 0 })
-        $cards.addClass('is-tabs')
+
 
         // cards full width
         $cardsContainer.css({
@@ -328,6 +347,10 @@ define('scrollp',[
           height: 1.375 * (1-stageAnim) + 'rem'
         })
 
+        $channels.css({
+          opacity: stageAnim,
+        })
+
         // Show border channels area
         // $cardsContainerBg.css({
         //   paddingTop: 10 * (stageAnim),
@@ -341,6 +364,9 @@ define('scrollp',[
             marginTop: -(scrollTop - 1032)
           });
         }
+      } else {
+        $cards.removeClass('is-tabs');
+        $hero.addClass('show-shaddow')
       }
 
 
