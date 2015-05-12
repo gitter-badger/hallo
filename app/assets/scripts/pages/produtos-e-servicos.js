@@ -100,7 +100,7 @@ define('price',[
       }
       cart[product] = {  quant: quant, name: prodAdd.name, type: prodAdd.type }
     }
-    console.table(cart);
+    // console.table(cart);
     _private.cartUpdatePrice();
     _private.cartUpdateList();
   }
@@ -152,7 +152,7 @@ define('price',[
             listHtml += '<li>' + plan.name + '</li>';
             var channelsQuant = _.countBy(cart, function(productItem) {
               return productItem.type !== 'basic';
-            }).true;
+            })['true'];
             listHtml += '<li>' + channelsQuant + ' Opcionais</li>';
             $cartList.html(listHtml).find('li').addClass('visible');
           }
@@ -180,7 +180,9 @@ define('price',[
   }
 
   _private.bindBtAddon = function(){
-    $('.add-addon').live('click', function (evt){
+
+    $(document).delegate('.add-addon','click', function (evt){
+    // $('.add-addon').live('click', function (evt){
       evt.preventDefault();
       var $bt = $(this),
           slug = $bt.data('slug'),
@@ -280,6 +282,11 @@ define('scrollp',[
 
 
   _public.init = function(){
+
+    if(!('__proto__' in {})){
+      return
+    }
+
     _private.loadSizes();
     _private.bindCard();
     _private.bindResize();
@@ -439,7 +446,7 @@ define('scrollp',[
       }
 
 
-    }, 1, true));
+    }, 10, true));
   }
 
   return _public
@@ -453,14 +460,13 @@ define([
   'vendor/riot',
   'velocity',
   // 'velocity-ui',
-  'ScrollMagic',
   'tags/channel-modal',
   'tags/channel-search',
   'tags/contracts-rules',
   'tags/movie-rent',
   'price',
   'scrollp',
-  ],function ($, _, _s, riot, Velocity, ScrollMagic, channelModal, channelSearch, rules, movieRent, price, scrollp) {
+  ],function ($, _, _s, riot, Velocity, channelModal, channelSearch, rules, movieRent, price, scrollp) {
 
   price.init();
   scrollp.init();
