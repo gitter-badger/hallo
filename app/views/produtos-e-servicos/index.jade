@@ -19,7 +19,7 @@ body(itemtype="http://schema.org/WebPage").product
         .cards_container--bg
           each val, index in ['start', 'mix', 'total']
             oi-card
-              a(href="#" data-slug=val).oi-card
+              a(href="#" data-slug=val class="oi-card "+ (val == 'mix' ? 'active': '') )
                 .oi-card_header
                   h2.oi-card_title=val+ ' HD'
                   ul.oi-card_subtitle

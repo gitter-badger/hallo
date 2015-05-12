@@ -9,7 +9,7 @@ define('price',[
       price,
       meta,
       tagsPrice = {},
-      defaultPlan = 'total',
+      defaultPlan = 'mix',
       cart = {},
       $spots = $('.oi-channels-addons_item_spots a'),
       $openClientType    = $('.oi-channels_header_client-type-trigger'),
@@ -111,7 +111,7 @@ define('price',[
         return productItem.slug === product;
       })
       return item.quant * prodAdded.plans[defaultPlan].price
-    }).toFixed(2)
+    })
 
     if(!tagsPrice.total){
       tagsPrice.total = riot.mount('#price-total', { price: total , small: true })[0];
@@ -309,13 +309,13 @@ define('scrollp',[
   }
 
   _private.bindCard = function(){
-    // $cards.find('a').on('click.card', function (evt){
-    //   evt.preventDefault();
-    //   $channels.velocity("scroll", {
-    //     duration: 3000,
-    //     delay: 200
-    //   });
-    // })
+    $cards.find('a').on('click.card', function (evt){
+      evt.preventDefault();
+      $channels.velocity("scroll", {
+        duration: 3000,
+        delay: 200
+      });
+    })
   }
 
   _private.resetAnim = function(){
@@ -375,15 +375,15 @@ define('scrollp',[
 
       }
 
-      if(scrollTop >= cardsOffset.top &&  scrollTop < 7235 ){
+      if(scrollTop >= cardsOffset.top &&  scrollTop < 8000 ){
 
         $hero.removeClass('show-shaddow')
         $cards.addClass('is-tabs');
 
         // set mix as active if user dont made a selection
-        if( !$cardsContainer.find('.active')[0]){
-          $cardsContainer.find('[data-slug="mix"]').trigger('click')
-        }
+        // if( !$cardsContainer.find('.active')[0]){
+        //   $cardsContainer.find('[data-slug="mix"]').trigger('click')
+        // }
 
         var cardPos = (scrollTop - cardsOffset.top),
             sumMainFooter = cardMainOffset.height + cardFooterOffset.height + 1,
