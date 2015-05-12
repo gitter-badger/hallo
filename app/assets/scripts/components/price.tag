@@ -18,7 +18,7 @@
 
     self.prefix = 'A partir de';
     self.integer = Math.floor(opts.price);
-    self.cents = (opts.price + "").split('.')[1] || '00';
+    self.cents = (opts.price.toFixed(2) + "").split('.')[1] || '00';
     self.suffix = 'Mês';
     self.small = opts.small ? 'oi-price--small' : '';
 
