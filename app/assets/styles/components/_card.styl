@@ -10,7 +10,8 @@ oi-card
   font-family $fontTextRegular
   color $black
   overflow hidden
-  &:hover
+  transition all 0.3s ease
+  &:hover, &.active
     color $green
     .oi-card_list
       color inherit
@@ -26,23 +27,26 @@ oi-card
     +above('m')
       padding remify(30px) 0
       max-width remify(180px)
+      min-width remify(180px)
 
   &_title
     display block
     font-family $fontTextLight
     font-size remify(18px)
     text-align center
-    transition: color 0.3s ease
+    transition color 0.3s ease
     +above('m')
       color $green
       font-size remify(21px)
+      line-height remify(70px)
+      height remify(70px)
 
   &_subtitle
     display none
     text-align center
     font-size remify(16px)
-    margin remify(15px) auto 0 auto
-    transition: color 0.3s ease
+    margin 0 auto
+    transition color 0.3s ease
 
     +above('m')
       display block
@@ -72,7 +76,7 @@ oi-card
     font-size remify(13px)
     max-width remify(180px)
     margin 0 auto
-    transition: color 0.3s ease
+    transition color 0.3s ease
     +above('m')
       display block
       margin-bottom remify(30px)
@@ -112,7 +116,7 @@ oi-card
       padding 0
       text-align center
       width 100%
-      transition: all 0.3s ease
+      transition all 0.3s ease
 
   oi-price
     color inherit

@@ -18,6 +18,24 @@ main
   position relative
   z-index 1
 
+  &.is-tabs
+    .oi-card.active
+      background-color $green
+      .oi-card_header
+        background-color $green
+        h2
+          color $white
+      .oi-card_subtitle
+        color $white
+      .oi-price
+        color $white
+      .oi-card_list
+        color $white
+      .oi-card_action
+        background-color $green
+        border-color $white
+        color $white
+
   &_container
     overflow hidden
     margin-bottom remify(125px)
