@@ -245,65 +245,135 @@ define('scrollp',[
   'vendor/lodash',
   'velocity'
   ],function ($, lodash, Velocity ) {
+
   var _public = {},
       _private = {}
 
-  var $body = $('body')
-  var contMarker = 1;
-  var markers = []
-  _public.setMarker = function(pos, label){
-    if(_.indexOf(markers, pos) === -1){
-      markers.push(pos)
-      $body.append('<div class="marker" style="top:'+pos+'px">'+( label || 'Marker '+contMarker )+'</div>')
-      contMarker++
-    }
-  }
+  var $body = $('body'),
+      $win = $(window),
+      $main = $('main'),
+      $cardsContainer = $('.cards_container'),
+      $cardsContainerBg = $('.cards_container--bg'),
+      $cards = $('.cards'),
+      $cardHeader = $('.oi-card_header'),
+      $cardSubtitle = $('.oi-card_subtitle'),
+      $cardTitle = $('.oi-card_title'),
+      $cardMain = $('.oi-card_main'),
+      $cardFooter = $('.oi-card_footer'),
+      $cardFooterAction = $('.oi-card_action'),
+      $channels = $('.oi-channels'),
+      $channelInfo = $('#channel-info'),
+      $channelTabs = $('.oi-channels_tabs'),
+      $channelsContainer = $('.oi-channels_container'),
+      $channelsheader = $('.oi-channels_header'),
+      $hero = $('oi-hero'),
+      cardsOffset = {},
+      cardsContainerOffset = {},
+      cardHeaderOffset = {},
+      cardMainOffset = {},
+      cardFooterOffset = {},
+      cardFooterActionOffset = {},
+      channelsOffset = {},
+      channelInfoOffset = {},
+      channelsheaderOffset = {},
+      docWidth;
+
 
   _public.init = function(){
-    var docWidth = $(document).width(),
-        $win = $(window),
-        $cards = $('.cards'),
-        $main = $('main'),
-        cardsOffset = $cards.offset(),
-        $cardsContainer = $('.cards_container'),
-        cardsContainerOffset = $cardsContainer.offset(),
-        $cardsContainerBg = $('.cards_container--bg'),
-        $cardHeader = $('.oi-card_header'),
-        cardHeaderOffset = $cardHeader.offset(),
-        $cardSubtitle = $('.oi-card_subtitle'),
-        $cardTitle = $('.oi-card_title'),
-        $cardMain = $('.oi-card_main'),
-        cardMainOffset = $cardMain.offset(),
-        $cardFooter = $('.oi-card_footer'),
-        cardFooterOffset = $cardFooter.offset(),
-        $cardFooterAction = $('.oi-card_action'),
-        cardFooterActionOffset = $cardFooterAction.offset(),
-        $channels = $('.oi-channels'),
-        channelsOffset = $channels.offset(),
-        $channelInfo = $('#channel-info'),
-        channelInfoOffset = $channelInfo.offset(),
-        $channelTabs = $('.oi-channels_tabs')
-        $channelsContainer = $('.oi-channels_container')
+    _private.loadSizes();
+    _private.bindCard();
+    _private.bindResize();
 
+  }
+  _private.bindResize = function(){
+    $(window).on('resize', function (){
+      $(window).off('scroll.anim');
+      window.scrollTo(0, 0);
+      _private.loadSizes();
+      $(window).trigger('scroll.anim')
+    });
+  }
+
+  _private.loadSizes = function(){
+      docWidth = $(document).width(),
+      cardsOffset = $cards.offset(),
+      cardsContainerOffset = $cardsContainer.offset(),
+      cardHeaderOffset = $cardHeader.offset(),
+      cardMainOffset = $cardMain.offset(),
+      cardFooterOffset = $cardFooter.offset(),
+      cardFooterActionOffset = $cardFooterAction.offset(),
+      channelsOffset = $channels.offset(),
+      channelInfoOffset = $channelInfo.offset(),
+      channelsheaderOffset = $channelsheader.offset();
+      _private.bindScroll();
+  }
+
+  _private.bindCard = function(){
+    // $cards.find('a').on('click.card', function (evt){
+    //   evt.preventDefault();
+    //   $channels.velocity("scroll", {
+    //     duration: 3000,
+    //     delay: 200
+    //   });
+    // })
+  }
+
+  _private.resetAnim = function(){
+    $cards.css({ marginTop: 0, marginBottom: 0 })
+      $cardsContainer.css({
+        maxWidth: '73.125rem',
+        marginBottom: '12.1875rem'
+      })
+      $cardMain.css({ marginTop: 0 })
+      $cardFooter.css({ opacity: 1  })
+      $cardHeader.css({
+        paddingTop: '1.875rem',
+        paddingBottom: '1.875rem',
+        maxWidth: '11.25rem'
+      })
+      $cardTitle.css({
+        fontSize: '1.3125rem'
+      })
+      $cardSubtitle.css({
+        opacity: 1,
+        height: '1.375rem'
+      })
+      $channels.css({
+        opacity: 1
+      })
+      $channelInfo.css({
+        marginTop: 0
+      });
+  }
+
+  _private.bindScroll = function(){
     $channels.addClass('nopad')
-    // $main.addClass('has-scroll');
     $channelTabs.hide();
     $channels.css({opacity: 0});
 
-    $hero = $('oi-hero')
-
-    $cards.find('a').on('click', function (evt){
-      evt.preventDefault();
-      $channels.velocity("scroll", {
-        duration: 3000,
-        delay: 200
-      });
-    })
-
-    $(window).on('scroll', _.throttle( function(){
+    $(window).on('scroll.anim', _.throttle( function(){
       var scrollTop = $win.scrollTop();
 
+      if(scrollTop >= cardsOffset.top + cardsOffset.height - channelsheaderOffset.height &&  scrollTop < cardsOffset.top + cardsOffset.height - channelsheaderOffset.height +100 ){
+        var stageAnim2 = (scrollTop - (cardsOffset.top + cardsOffset.height - channelsheaderOffset.height))/100
+        // Show border channels area
+        $cardsContainerBg.css({
+          paddingTop: .625 * (stageAnim2) + 'rem',
+          paddingLeft: .625 * (stageAnim2) + 'rem',
+          paddingRight: .625 * (stageAnim2) + 'rem'
+        })
+        $channels.css({paddingLeft: .625 * (stageAnim2) + 'rem', paddingRight: .625 * (stageAnim2) + 'rem' })
+      }
 
+      if(scrollTop <= cardsOffset.top + cardsOffset.height - channelsheaderOffset.height ){
+        $cardsContainerBg.css({
+          paddingTop: 0,
+          paddingLeft: 0,
+          paddingRight: 0
+        })
+        $channels.css({paddingLeft:0, paddingRight:0 })
+
+      }
 
       if(scrollTop >= cardsOffset.top &&  scrollTop < 7235 ){
 
@@ -315,18 +385,17 @@ define('scrollp',[
           $cardsContainer.find('[data-slug="mix"]').trigger('click')
         }
 
-        var cardPos = (scrollTop - cardsOffset.top);
-            sumMainFooter = cardMainOffset.height + cardFooterOffset.height + 1;
-            stageAnim = cardPos/sumMainFooter <= 1 ? cardPos/sumMainFooter: 1 ;
-            cardsWidth = 73.125;
-            docWidthREM = docWidth/16;
-            newWidth = docWidthREM * stageAnim >= cardsWidth ? docWidthREM * stageAnim : cardsWidth;
+        var cardPos = (scrollTop - cardsOffset.top),
+            sumMainFooter = cardMainOffset.height + cardFooterOffset.height + 1,
+            stageAnim = cardPos/sumMainFooter <= 1 ? cardPos/sumMainFooter: 1 ,
+            cardsWidth = 73.125,
+            docWidthREM = docWidth/16,
+            newWidth = docWidthREM * stageAnim >= cardsWidth ? docWidthREM * stageAnim : cardsWidth,
             newHeight = cardPos > sumMainFooter ? sumMainFooter  : cardPos,
             newFsCardTitle = 1 + .375 * (1-stageAnim ) + 'rem';
 
         // pin card
         $cards.css({ marginTop: scrollTop - cardsOffset.top, marginBottom: 0 })
-
 
         // cards full width
         $cardsContainer.css({
@@ -358,47 +427,24 @@ define('scrollp',[
           opacity: stageAnim,
         })
 
-        // Show border channels area
-        // $cardsContainerBg.css({
-        //   paddingTop: 10 * (stageAnim),
-        //   paddingLeft: 10 * (stageAnim),
-        //   paddingRight: 10 * (stageAnim)
-        // })
-        // $channels.css({paddingLeft: 10 * (stageAnim), paddingRight: 10 * (stageAnim) })
-
         if(stageAnim >= 1){
           $channelInfo.css({
-            marginTop: -(scrollTop - 1032)
+            marginTop: -(scrollTop - ( cardsOffset.top + cardsOffset.height - channelsheaderOffset.height -18 ))
           });
         }
       } else {
         $cards.removeClass('is-tabs');
-        $hero.addClass('show-shaddow')
+        $hero.addClass('show-shaddow');
+        _private.resetAnim();
       }
 
 
-    }, 5, true));
-
+    }, 1, true));
   }
-
-  _private.holdScroll = function(){
-
-  };
 
   return _public
 
 });
-
-
-
-
-
-
-
-
-
-
-
 
 define([
   'domlib',
