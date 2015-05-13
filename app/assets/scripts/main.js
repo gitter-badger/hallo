@@ -49,7 +49,7 @@ require(['vendor/blazy'], function(Blazy) {
 
   var path = window.location.pathname.split('/').slice(1);
 
-  require( ['pages/' + path[0]], function(page){
+  require( ['/assets/scripts/pages/' + path[0] + '/main.js'], function(page){
     page.init();
   });
 
