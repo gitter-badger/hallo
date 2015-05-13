@@ -1,6 +1,6 @@
 include ../_partials/head.jade
 
-body(onload="measureCRP()" itemtype="http://schema.org/WebPage").product
+body(onload="measureCRP()" itemtype="http://schema.org/WebPage")
   
   include ../_partials/build-plan.jade
   
@@ -12,146 +12,24 @@ body(onload="measureCRP()" itemtype="http://schema.org/WebPage").product
 
   main
 
-    .minha-classe
-
-    .cards
-      .cards_container
-        .cards_container--bg
-          each val, index in ['start', 'mix', 'total']
-            oi-card
-              a(href="#" data-slug=val class="oi-card "+ (val == 'mix' ? 'active': '') )
-                .oi-card_header
-                  h2.oi-card_title=val+ ' HD'
-                  ul.oi-card_subtitle
-                    li 119 Canais
-                    li 20 HD
-                .oi-card_main
-                  .oi-card_main_price
-                    oi-price(id="card-price-"+val)
-                  .oi-card_list
-                    h5.oi-card_list_title Você ainda pode adicionar
-                    ul.oi-card_list_items
-                      li 1 Ponto Adicional
-                      li HBO, Telecine, Premiere e mais
-                .oi-card_footer
-                  button.oi-card_action Conheça o Start HD
+    include _cards.jade
     
     .oi-channels
       
-      nav.oi-channels_tabs
-        ul
-          li
-            a.active(href="#" data-slug="start") Start HD
-          li
-            a(href="#" data-slug="mix") Mix HD
-          li
-            a(href="#" data-slug="total") Total HD
+      include _tabs.jade
+      
 
       .oi-channels_container
 
-        header.oi-channels_header
-          .oi-channels_header_list
-            ul#cart-list
-              //- each title in channelsgroup.header.title
-                //- li=title
-          .oi-channels_header_client-type
-            a(href="#").oi-channels_header_client-type-trigger
-              span Valor para clientes 
-              span
-                |de Telefone Fixo da Oi
-                include ../../assets/images/icons/arrow.svg
-            .oi-channels_header_client-type_dropdow
-              ul
-                li 
-                  a(href="#").has-phone.active
-                    include ../../assets/images/icons/radio-check.svg
-                    span 
-                      div Clientes de Telefone Fixo da Oi 
-                    oi-price#price-has-phone
-                li 
-                  a(href="#")
-                    include ../../assets/images/icons/radio-check.svg
-                    span 
-                      div Não Clientes de Telefone Fixo da Oi
-                    oi-price#price-has-no-phone
-          .oi-channels_header_price
-            oi-price#price-total
-          .oi-channels_header_action
-            a(href="") Peça Já
-      
+        include _channels_header.jade
+        
       .oi-channels_container#channel-info
+        
         .oi-channels_lists-container
 
-          .oi-channels-lists
-            each group in channelsgroup.tv
-              .oi-channels-lists_list-tv
-                h4.oi-channels-lists_list-tv_title=group.label
-                  span= ' [' + group.channels.length + ']'
-                .oi-channels-lists_list-tv_container
-                  ul
-                    each channel in group.channels
-                      li
-                        a(href=channel.slug class=channel.color)
-                          .oi-channels-lists_list-tv_logo.b-lazy(data-src="/assets/images/logos/height40/"+channel.img+".png")
-                          .oi-channels-lists_list-tv_name
-                            div=channel.name
+          include _channel-lists.jade
           
-            .oi-channels-lists_list-audio
-              h5.oi-channels-lists_list-audio_title=channelsgroup.audio.label + ' ['+ channelsgroup.audio.channels.length + ']'
-              .oi-channels-lists_list-audio_container
-                ul
-                  each audio in channelsgroup.audio.channels
-                    li=audio
-                button(type="button") Ver todos
-
-            .oi-channels-lists_list-audio
-              h5.oi-channels-lists_list-audio_title=channelsgroup.radio.label + ' ['+ channelsgroup.radio.channels.length + ']'
-              .oi-channels-lists_list-audio_container
-                ul
-                  each audio in channelsgroup.radio.channels
-                    li=audio
-                button(type="button") Ver todos
-            
-          .oi-channels-addons
-            h4.oi-channels-addons_title=channelsgroup.addons.title
-            
-            .oi-channels-addons_container
-              ul.oi-channels-addons_list
-
-                li.oi-channels-addons_item.only-l(aria-live="assertive" aria-relevant="text")
-                  h5.oi-channels-addons_item_logo=channelsgroup.addons.spots.title
-                  .oi-channels-addons_item_desc=channelsgroup.addons.spots.desc
-                  .oi-channels-addons_item_spots
-                    - var count = 0
-                    while count <= channelsgroup.addons.spots.quant -1
-                      //- - selected = (count === 0 ? ' added': '' )
-                      a(href="#", class="spot", style="width:" + ( 100 / channelsgroup.addons.spots.quant ) + "%" )=count++
-                
-                li.oi-channels-addons_item.only-l(aria-live="assertive" aria-relevant="text")
-                  h5.oi-channels-addons_item_logo=channelsgroup.addons.recorder.title
-                  .oi-channels-addons_item_desc
-                    span=channelsgroup.addons.recorder.desc
-                    span=channelsgroup.addons.recorder.info
-                  .oi-channels-addons_item_actions
-                    button.add.add-addon(type="button" role="button" data-slug="recorder")
-                      include ../../assets/images/icons/check.svg
-                      span Adicionar
-                    button.remove.add-addon(type="button" role="button" data-slug="recorder") Remover
-
-                each channel in channelsgroup.addons.channels.itens
-                  li.oi-channels-addons_item(aria-live="assertive" aria-relevant="text")
-                    a.oi-channels-addons_item_link(href=channel.img)
-                      .oi-channels-addons_item_tooltip
-                        div(id="addon-tooltip-"+channel.slug)
-                      .oi-channels-addons_item_logo.b-lazy(data-src="/assets/images/logos/height40/"+channel.img+".png")
-                      .oi-channels-addons_item_desc
-                        each info in channel.desc
-                          span!=info
-                    .oi-channels-addons_item_actions
-                      button.add.add-addon(type="button" role="button" data-slug=channel.slug)
-                        include ../../assets/images/icons/check.svg
-                        span=channelsgroup.addons.channels.actions.add
-                      button.remove.add-addon(type="button" role="button" data-slug=channel.slug)=channelsgroup.addons.channels.actions.remove
+          include _channel_addons.jade 
                   
         channel-search
         //- .oi-channels_search-call

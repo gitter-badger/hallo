@@ -1,0 +1,29 @@
+.oi-channels-lists
+  each group in channelsgroup.tv
+    .oi-channels-lists_list-tv
+      h4.oi-channels-lists_list-tv_title=group.label
+        span= ' [' + group.channels.length + ']'
+      .oi-channels-lists_list-tv_container
+        ul
+          each channel in group.channels
+            li
+              a(href=channel.slug class=channel.color)
+                .oi-channels-lists_list-tv_logo.b-lazy(data-src="/assets/images/logos/height40/"+channel.img+".png")
+                .oi-channels-lists_list-tv_name
+                  div=channel.name
+
+.oi-channels-lists_list-audio
+  h5.oi-channels-lists_list-audio_title=channelsgroup.audio.label + ' ['+ channelsgroup.audio.channels.length + ']'
+  .oi-channels-lists_list-audio_container
+    ul
+      each audio in channelsgroup.audio.channels
+        li=audio
+    button(type="button") Ver todos
+
+.oi-channels-lists_list-audio
+  h5.oi-channels-lists_list-audio_title=channelsgroup.radio.label + ' ['+ channelsgroup.radio.channels.length + ']'
+  .oi-channels-lists_list-audio_container
+    ul
+      each audio in channelsgroup.radio.channels
+        li=audio
+    button(type="button") Ver todos

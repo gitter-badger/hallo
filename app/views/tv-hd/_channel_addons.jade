@@ -1,0 +1,40 @@
+.oi-channels-addons
+  h4.oi-channels-addons_title=channelsgroup.addons.title
+  
+  .oi-channels-addons_container
+    ul.oi-channels-addons_list
+
+      li.oi-channels-addons_item.only-l(aria-live="assertive" aria-relevant="text")
+        h5.oi-channels-addons_item_logo=channelsgroup.addons.spots.title
+        .oi-channels-addons_item_desc=channelsgroup.addons.spots.desc
+        .oi-channels-addons_item_spots
+          - var count = 0
+          while count <= channelsgroup.addons.spots.quant -1
+            //- - selected = (count === 0 ? ' added': '' )
+            a(href="#", class="spot", style="width:" + ( 100 / channelsgroup.addons.spots.quant ) + "%" )=count++
+      
+      li.oi-channels-addons_item.only-l(aria-live="assertive" aria-relevant="text")
+        h5.oi-channels-addons_item_logo=channelsgroup.addons.recorder.title
+        .oi-channels-addons_item_desc
+          span=channelsgroup.addons.recorder.desc
+          span=channelsgroup.addons.recorder.info
+        .oi-channels-addons_item_actions
+          button.add.add-addon(type="button" role="button" data-slug="recorder")
+            include ../../assets/images/icons/check.svg
+            span Adicionar
+          button.remove.add-addon(type="button" role="button" data-slug="recorder") Remover
+
+      each channel in channelsgroup.addons.channels.itens
+        li.oi-channels-addons_item(aria-live="assertive" aria-relevant="text")
+          a.oi-channels-addons_item_link(href=channel.img)
+            .oi-channels-addons_item_tooltip
+              div(id="addon-tooltip-"+channel.slug)
+            .oi-channels-addons_item_logo.b-lazy(data-src="/assets/images/logos/height40/"+channel.img+".png")
+            .oi-channels-addons_item_desc
+              each info in channel.desc
+                span!=info
+          .oi-channels-addons_item_actions
+            button.add.add-addon(type="button" role="button" data-slug=channel.slug)
+              include ../../assets/images/icons/check.svg
+              span=channelsgroup.addons.channels.actions.add
+            button.remove.add-addon(type="button" role="button" data-slug=channel.slug)=channelsgroup.addons.channels.actions.remove
