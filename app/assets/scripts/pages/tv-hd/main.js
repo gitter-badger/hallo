@@ -35,10 +35,7 @@ define([
     }
   }
 
-
   _public.init = function(){
-
-
     _private.bindOpenModalChannel();
     _private.bindCloseButton();
     _private.bindNavKeyboard();
