@@ -26,6 +26,8 @@
   &_container
     overflow hidden
     margin-bottom remify(125px)
+    transition-property max-width
+    transition-duration inherit
     +above('m')
       margin-bottom remify(195px)
     +above('l')
@@ -37,6 +39,8 @@
     &--bg
       background-color $green
       overflow hidden
+    &.open
+      max-width 100%
 
   oi-card
     width (100% / 3)

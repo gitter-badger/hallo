@@ -1,5 +1,5 @@
 .oi-channels
-  background-color $green
+  // background-color $green
   display block
   width 100%
   margin 0 auto
@@ -7,11 +7,13 @@
   position relative
   z-index 2
   +above('m')
-    padding remify(10px)
-    &.nopad
-      padding-left 0
-      padding-right 0
-      padding-top 0
+    border remify(10px) solid transparent
+    border-top 0
+    // padding remify(10px)
+    // &.nopad
+    //   padding-left 0
+    //   padding-right 0
+    //   padding-top 0
 
   &_container
     background $white

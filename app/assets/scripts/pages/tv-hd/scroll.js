@@ -1,4 +1,183 @@
 define([
+  'domlib'
+  ], function($){
+
+  var _public = {},
+      _private = {};
+
+  var cardSize = parseInt(document.querySelector('oi-card').getBoundingClientRect().height);
+  var cardsContainer = document.querySelector('.cards_container');
+  var openPosition = parseInt($('.cards_container').offset().top);
+  var lockPosition = openPosition + parseInt(cardsContainer.getBoundingClientRect().height - document.querySelector('.oi-card_header').getBoundingClientRect().height - 10);
+
+  /**
+   * init
+   * ***/
+  _public.init = function(){
+
+    if(!('__proto__' in {})){
+      return;
+    }
+
+    _private.scrollSpeed();
+    _private.scroller();
+  };
+
+  /**
+   * baseFromPoint
+   * ***/
+  _private.baseFromPoint = function(p, initialPoint, finalPoint, base){
+    if (!base) { base = 100; }
+
+    var point = 0;
+    if (p > initialPoint && p < finalPoint) {
+      point = ((p - initialPoint) / (finalPoint - initialPoint)) * base;
+    } else if (p <= initialPoint) {
+      point = 0;
+    } else if (p >= finalPoint) {
+      point = base;
+    }
+
+    return point.toFixed(2);
+  };
+
+  /**
+   * scroller
+   * ***/
+  _private.scroller = function(){
+
+    var selected = null;
+    var titles = document.querySelectorAll('.product-card .product-card-title');
+    var images = document.querySelectorAll('.product-image');
+    var cards = document.querySelectorAll('.product-card');
+    // var toc = document.querySelector('.oi-channels');
+    var oiChannels = document.querySelector('.oi-channels');
+    var product = document.querySelector('#product-contents .product');
+    var body = document.querySelector('body');
+    var bodyColor = document.querySelector('.backColor');
+
+    var dynamicTable = function(y, initialPoint, finalPoint){
+      var p = _private.baseFromPoint(y, initialPoint, finalPoint, 10);
+      oiChannels.style.top = (25 - p*2.5)+'vh';
+    };
+
+    var dynamicTableOpacity = function(){
+
+    };
+
+    var dynamicCards = function(){
+
+    };
+
+    var dynamicTitle = function(){
+
+    };
+
+    var dynamicBackgrounds = function(){
+
+    };
+
+    var open = function(){
+
+      if (window.scrollY >= openPosition) {
+        if (!cardsContainer.classList.contains('open')) {
+          cardsContainer.className += " open";
+          // checkSelected();
+          // selected = document.querySelector('.product-card.selected .selector');
+        }
+      } else {
+        cardsContainer.className = cardsContainer.className.replace(' open', '');
+        // body.className = body.className.replace("open-card", "");
+        // $('.product-card').removeClass('selected');
+      }
+    };
+
+    var lock = function(){
+      if (window.scrollY >= lockPosition) {
+        if (!lock.done) {
+          lock.done = true;
+          oiChannels.className += 'lock';
+          cardsContainer.className += ' lock';
+        }
+      } else {
+        lock.done = false;
+        oiChannels.className = oiChannels.className.replace('lock', '');
+        cardsContainer.className = cardsContainer.className.replace('lock', '');
+      }
+    };
+
+    var scrollSpy = function(e){
+      window.scrollY = window.pageYOffset;
+
+      if (window.scrollY <= 1){
+        $('.product-card').removeClass('selected');
+      }
+
+      dynamicTable(window.scrollY, -window.innerHeight*3, openPosition );
+      dynamicTableOpacity(window.scrollY, openPosition, openPosition + cardSize*0.21 );
+
+      dynamicCards(window.scrollY, openPosition, openPosition + cardSize*0.89);
+      dynamicTitle(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize * 0.89);
+
+      dynamicBackgrounds(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize * 0.89);
+
+      open(window.scrollY);
+      lock(window.scrollY);
+
+      lastScroll = window.scrollY;
+    };
+
+    window.addEventListener('scroll', scrollSpy);
+  };
+
+  _private.scrollSpeed = function(){
+
+    var lastSpeeds = [];
+    var html = document.querySelector('html');
+    var baseTime = 0.610;
+    var lastScroll = 0;
+    var lastTime = 0;
+
+    var update = function(){
+
+      var currentTime = Date.now();
+
+      var timeDiff = currentTime - lastTime;
+      var scrollDiff = window.scrollY - lastScroll;
+
+      var diff = Math.abs((scrollDiff / timeDiff) * 0.610).toFixed(2);
+      var finalTimer = baseTime - diff;
+      finalTimer = finalTimer < 0 ? 0 : finalTimer;
+      finalTimer = finalTimer > baseTime ? baseTime : finalTimer;
+
+      if (lastSpeeds.length > 9) { lastSpeeds.splice(0,1); }
+      lastSpeeds.push(finalTimer);
+
+      var m = 0;
+      for (var i = lastSpeeds.length - 1; i >= 0; i--) { m += lastSpeeds[i]; };
+      var media = (m/lastSpeeds.length).toFixed(2);
+
+      window.requestAnimationFrame(function(){
+        // html.style.transitionDuration = media+'s';
+        cardsContainer.style.transitionDuration = media+'s';
+        // for (var i = 0; i < 3; i++) {
+        //   titles[i].style.transitionDuration = media+'s';
+        // }
+      });
+
+      lastScroll = window.scrollY;
+      lastTime = currentTime;
+    };
+
+    window.addEventListener('scroll', update);
+    update();
+  };
+
+  return _public;
+})
+
+/*
+define([
   'domlib',
   'vendor/lodash',
   'velocity'
@@ -206,5 +385,5 @@ define([
   }
 
   return _public
-
 });
+*/
