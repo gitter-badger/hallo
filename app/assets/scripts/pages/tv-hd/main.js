@@ -3,15 +3,13 @@ define([
   'vendor/lodash',
   'vendor/underscore.string',
   'vendor/riot',
-  'velocity',
-  // 'velocity-ui',
   'tags/channel-modal',
   'tags/channel-search',
   'tags/contracts-rules',
   'tags/movie-rent',
   'pages/tv-hd/price',
   'pages/tv-hd/scroll',
-  ],function ($, _, _s, riot, Velocity, channelModal, channelSearch, rules, movieRent, price, scroll) {
+  ],function ($, _, _s, riot, channelModal, channelSearch, rules, movieRent, price, scroll) {
 
   price.init();
   scroll.init();
