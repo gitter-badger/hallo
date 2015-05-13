@@ -2,7 +2,7 @@ define('price',[
   'domlib',
   'vendor/lodash',
   'vendor/riot',
-  'tags/price',
+  'tags/oi-price',
 ], function($, _, riot, pricetag){
   var _public = {},
       _private = {},
