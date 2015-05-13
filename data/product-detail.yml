@@ -1,0 +1,658 @@
+product-details:
+  -
+    slug: 'start-hd'
+    footer-items:
+    -
+      type: 'contents'
+      title: 'Está incluso no plano'
+      features:
+        -
+          title: '159 Canais'
+          content: '42 HD, 50 SD e 66 áudio.'
+          link:
+            text: 'Imprima a grade de canais'
+            url: '#imprima-a-grade-de-canais'
+        -
+          title: '1º Ponto de TV HD'
+          content: 'Receptor com controle remoto.'
+          link:
+            text: 'Veja a lista de receptores'
+            url: '#veja-a-lista-de-receptores'
+        -
+          title: '1 Antena Digital'
+          content: 'Com as dimensões de 32 x 57 x 42 cm.'
+      channels:
+        -
+          poster: '/assets/images/demo/shows/1.jpg'
+          name: 'Life'
+          channel: 'Animal Planet'
+        -
+          poster: '/assets/images/demo/shows/2.jpg'
+          name: 'Bob Esponja'
+          channel: 'Nick Jr.'
+        -
+          poster: '/assets/images/demo/shows/3.jpg'
+          name: 'Vikings'
+          channel: 'History Channel'
+        -
+          poster: '/assets/images/demo/shows/4.jpg'
+          name: 'Animals Gone Wild'
+          channel: 'NatGeo Wild'
+        -
+          poster: '/assets/images/demo/shows/5.jpg'
+          name: 'Dr House'
+          channel: 'Universal Channel'
+          avaliable: 'Disponível no Total HD'
+        -
+          poster: '/assets/images/demo/shows/6.jpg'
+          name: 'Liga dos Campeões'
+          channel: 'ESPN'
+        -
+          poster: '/assets/images/demo/shows/7.jpg'
+          name: 'Arrow'
+          channel: 'Warner Channel'
+        -
+          poster: '/assets/images/demo/shows/8.jpg'
+          name: 'Phineas e Ferb'
+          channel: 'Disney XD'
+          avaliable: 'Disponível no Total HD'
+    -
+      type: 'rentals'
+      title: 'Filmes para alugar'
+      obs:
+        - 'Por R$ 10 cada filme.'
+        - '<span>VOD: Assista quando quiser.</span>'
+        - '<span>Oi Filmes: Horários fixos.</span>'
+      movies:
+        -
+          link: 'universidade-monstro'
+          poster: '/assets/images/demo/shows/9.jpg'
+          channel: 'Universidade Monstro'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'star-trek'
+          poster: '/assets/images/demo/shows/10.jpg'
+          channel: 'Stat Trek'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'as-aventuras-de-pi'
+          poster: '/assets/images/demo/shows/11.jpg'
+          channel: 'As Aventuras de PI'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'rush'
+          poster: '/assets/images/demo/shows/12.jpg'
+          channel: 'Rush'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'o-lobo-de-wall-street'
+          poster: '/assets/images/demo/shows/13.jpg'
+          channel: 'O Lobo de Wall Street'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'detona-ralph'
+          poster: '/assets/images/demo/shows/14.jpg'
+          channel: 'Detona Ralph'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'batman'
+          poster: '/assets/images/demo/shows/15.jpg'
+          channel: 'Batman: O Cavaleiro das Trevas'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'tron-legacy'
+          poster: '/assets/images/demo/shows/16.jpg'
+          channel: 'Tron Legacy'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+    -
+      type: 'recorder'
+      title: 'Adicione o Gravador'
+      obs:
+        - 'Por R$ 20/mês'
+      poster: '/assets/images/layout/tv-hd-gravador.jpg'
+      features:
+        - 'Acesso aos filmes do Video on Demand (VOD)'
+        - 'Reveja, pause e volte quando quiser'
+        - 'Guarde até 250 filmes no HD'
+        - 'Grave 2 canais ao mesmo tempo'
+        - 'Pause ao vivo'
+    -
+      type: 'Condições de compra'
+      obs:
+        - 'Por R$ 20/mês'
+      features:
+        -
+          title: 'Instalação'
+          content: 'Gratuita. 7 dias úteis. De seg. à sáb. 8h às 20h.'
+          link:
+            text: 'Acompanhe a instalação'
+            url: '#acompanhe-a-instalacao'
+        -
+          title: 'Pagamento'
+          content: 'Débito Automático ou na conta do Fixo (desconto de R$ 10).'
+        -
+          title: 'Fidelização'
+          content: '12 meses (desconto de R$ 30). No período, multa de R$ 280.'
+        -
+          title: 'Descontos'
+          content: 'R$ 10 para quem já é cliente de Telefone Fixo.'
+        -
+          title: 'Cobertura'
+          link:
+            text: 'Consulte a disponibilidade'
+            url: '#consulte-a-disponibilidade'
+        -
+          title: 'Validade da Oferta'
+          content: '01/01/2015 à 30/03/2015.'
+        -
+          title: 'Informações Legais'
+          links:
+            -
+              text: 'Contrato e Regras da Oferta'
+              url: '#contrato-e-regras-da-oferta'
+            -
+              text: 'Lista de Todos os Planos'
+              url: '#lista-de-todos-os-planos'
+        -
+          title: 'Outros Planos'
+          links:
+            -
+              text: 'TV + Internet via Fibra'
+              url: '#tv-internet-via-fibra'
+            -
+              text: 'Antena Oi TV Livre HD'
+              url: '#antena-oi-tv-livre-hd'
+            -
+              text: 'Plano Básico'
+              url: '#plano-basico'
+    -
+      type: 'help'
+      title: 'Ajuda para comprar?'
+      content:
+        button: 'Compre com um especialista'
+  -
+    slug: 'mix-hd'
+    footer-items:
+    -
+      type: 'contents'
+      title: 'Está incluso no plano'
+      features:
+        -
+          title: '159 Canais'
+          content: '42 HD, 50 SD e 66 áudio.'
+          link:
+            text: 'Imprima a grade de canais'
+            url: '#imprima-a-grade-de-canais'
+        -
+          title: '1º Ponto de TV HD'
+          content: 'Receptor com controle remoto.'
+          link:
+            text: 'Veja a lista de receptores'
+            url: '#veja-a-lista-de-receptores'
+        -
+          title: '1 Antena Digital'
+          content: 'Com as dimensões de 32 x 57 x 42 cm.'
+      channels:
+        -
+          poster: '/assets/images/demo/shows/1.jpg'
+          name: 'Life'
+          channel: 'Animal Planet'
+        -
+          poster: '/assets/images/demo/shows/2.jpg'
+          name: 'Bob Esponja'
+          channel: 'Nick Jr.'
+        -
+          poster: '/assets/images/demo/shows/3.jpg'
+          name: 'Vikings'
+          channel: 'History Channel'
+        -
+          poster: '/assets/images/demo/shows/4.jpg'
+          name: 'Animals Gone Wild'
+          channel: 'NatGeo Wild'
+        -
+          poster: '/assets/images/demo/shows/5.jpg'
+          name: 'Dr House'
+          channel: 'Universal Channel'
+          avaliable: 'Disponível no Total HD'
+        -
+          poster: '/assets/images/demo/shows/6.jpg'
+          name: 'Liga dos Campeões'
+          channel: 'ESPN'
+        -
+          poster: '/assets/images/demo/shows/7.jpg'
+          name: 'Arrow'
+          channel: 'Warner Channel'
+        -
+          poster: '/assets/images/demo/shows/8.jpg'
+          name: 'Phineas e Ferb'
+          channel: 'Disney XD'
+          avaliable: 'Disponível no Total HD'
+    -
+      type: 'rentals'
+      title: 'Filmes para alugar'
+      obs:
+        - 'Por R$ 10 cada filme.'
+        - '<span>VOD: Assista quando quiser.</span>'
+        - '<span>Oi Filmes: Horários fixos.</span>'
+      movies:
+        -
+          link: 'universidade-monstro'
+          poster: '/assets/images/demo/shows/9.jpg'
+          channel: 'Universidade Monstro'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'star-trek'
+          poster: '/assets/images/demo/shows/10.jpg'
+          channel: 'Stat Trek'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'as-aventuras-de-pi'
+          poster: '/assets/images/demo/shows/11.jpg'
+          channel: 'As Aventuras de PI'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'rush'
+          poster: '/assets/images/demo/shows/12.jpg'
+          channel: 'Rush'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'o-lobo-de-wall-street'
+          poster: '/assets/images/demo/shows/13.jpg'
+          channel: 'O Lobo de Wall Street'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'detona-ralph'
+          poster: '/assets/images/demo/shows/14.jpg'
+          channel: 'Detona Ralph'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'batman'
+          poster: '/assets/images/demo/shows/15.jpg'
+          channel: 'Batman: O Cavaleiro das Trevas'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'tron-legacy'
+          poster: '/assets/images/demo/shows/16.jpg'
+          channel: 'Tron Legacy'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+    -
+      type: 'recorder'
+      title: 'Adicione o Gravador'
+      obs:
+        - 'Por R$ 20/mês'
+      poster: '/assets/images/layout/tv-hd-gravador.jpg'
+      features:
+        - 'Acesso aos filmes do Video on Demand (VOD)'
+        - 'Reveja, pause e volte quando quiser'
+        - 'Guarde até 250 filmes no HD'
+        - 'Grave 2 canais ao mesmo tempo'
+        - 'Pause ao vivo'
+    -
+      type: 'Condições de compra'
+      obs:
+        - 'Por R$ 20/mês'
+      features:
+        -
+          title: 'Instalação'
+          content: 'Gratuita. 7 dias úteis. De seg. à sáb. 8h às 20h.'
+          link:
+            text: 'Acompanhe a instalação'
+            url: '#acompanhe-a-instalacao'
+        -
+          title: 'Pagamento'
+          content: 'Débito Automático ou na conta do Fixo (desconto de R$ 10).'
+        -
+          title: 'Fidelização'
+          content: '12 meses (desconto de R$ 30). No período, multa de R$ 280.'
+        -
+          title: 'Descontos'
+          content: 'R$ 10 para quem já é cliente de Telefone Fixo.'
+        -
+          title: 'Cobertura'
+          link:
+            text: 'Consulte a disponibilidade'
+            url: '#consulte-a-disponibilidade'
+        -
+          title: 'Validade da Oferta'
+          content: '01/01/2015 à 30/03/2015.'
+        -
+          title: 'Informações Legais'
+          links:
+            -
+              text: 'Contrato e Regras da Oferta'
+              url: '#contrato-e-regras-da-oferta'
+            -
+              text: 'Lista de Todos os Planos'
+              url: '#lista-de-todos-os-planos'
+        -
+          title: 'Outros Planos'
+          links:
+            -
+              text: 'TV + Internet via Fibra'
+              url: '#tv-internet-via-fibra'
+            -
+              text: 'Antena Oi TV Livre HD'
+              url: '#antena-oi-tv-livre-hd'
+            -
+              text: 'Plano Básico'
+              url: '#plano-basico'
+    -
+      type: 'help'
+      title: 'Ajuda para comprar?'
+      content:
+        button: 'Compre com um especialista'
+  -
+    slug: 'total-hd'
+    footer-items:
+    -
+      type: 'contents'
+      title: 'Está incluso no plano'
+      features:
+        -
+          title: '159 Canais'
+          content: '42 HD, 50 SD e 66 áudio.'
+          link:
+            text: 'Imprima a grade de canais'
+            url: '#imprima-a-grade-de-canais'
+        -
+          title: '1º Ponto de TV HD'
+          content: 'Receptor com controle remoto.'
+          link:
+            text: 'Veja a lista de receptores'
+            url: '#veja-a-lista-de-receptores'
+        -
+          title: '1 Antena Digital'
+          content: 'Com as dimensões de 32 x 57 x 42 cm.'
+      channels:
+        -
+          poster: '/assets/images/demo/shows/1.jpg'
+          name: 'Life'
+          channel: 'Animal Planet'
+        -
+          poster: '/assets/images/demo/shows/2.jpg'
+          name: 'Bob Esponja'
+          channel: 'Nick Jr.'
+        -
+          poster: '/assets/images/demo/shows/3.jpg'
+          name: 'Vikings'
+          channel: 'History Channel'
+        -
+          poster: '/assets/images/demo/shows/4.jpg'
+          name: 'Animals Gone Wild'
+          channel: 'NatGeo Wild'
+        -
+          poster: '/assets/images/demo/shows/5.jpg'
+          name: 'Dr House'
+          channel: 'Universal Channel'
+          avaliable: 'Disponível no Total HD'
+        -
+          poster: '/assets/images/demo/shows/6.jpg'
+          name: 'Liga dos Campeões'
+          channel: 'ESPN'
+        -
+          poster: '/assets/images/demo/shows/7.jpg'
+          name: 'Arrow'
+          channel: 'Warner Channel'
+        -
+          poster: '/assets/images/demo/shows/8.jpg'
+          name: 'Phineas e Ferb'
+          channel: 'Disney XD'
+          avaliable: 'Disponível no Total HD'
+    -
+      type: 'rentals'
+      title: 'Filmes para alugar'
+      obs:
+        - 'Por R$ 10 cada filme.'
+        - '<span>VOD: Assista quando quiser.</span>'
+        - '<span>Oi Filmes: Horários fixos.</span>'
+      movies:
+        -
+          link: 'universidade-monstro'
+          poster: '/assets/images/demo/shows/9.jpg'
+          channel: 'Universidade Monstro'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'star-trek'
+          poster: '/assets/images/demo/shows/10.jpg'
+          channel: 'Stat Trek'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'as-aventuras-de-pi'
+          poster: '/assets/images/demo/shows/11.jpg'
+          channel: 'As Aventuras de PI'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'rush'
+          poster: '/assets/images/demo/shows/12.jpg'
+          channel: 'Rush'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'o-lobo-de-wall-street'
+          poster: '/assets/images/demo/shows/13.jpg'
+          channel: 'O Lobo de Wall Street'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'detona-ralph'
+          poster: '/assets/images/demo/shows/14.jpg'
+          channel: 'Detona Ralph'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'batman'
+          poster: '/assets/images/demo/shows/15.jpg'
+          channel: 'Batman: O Cavaleiro das Trevas'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+        -
+          link: 'tron-legacy'
+          poster: '/assets/images/demo/shows/16.jpg'
+          channel: 'Tron Legacy'
+          tags:
+            -
+              tag: 'vod'
+              text: 'VOD'
+            -
+              tag: 'oi-filmes'
+              text: 'Oi Filmes'
+    -
+      type: 'recorder'
+      title: 'Adicione o Gravador'
+      obs:
+        - 'Por R$ 20/mês'
+      poster: '/assets/images/layout/tv-hd-gravador.jpg'
+      features:
+        - 'Acesso aos filmes do Video on Demand (VOD)'
+        - 'Reveja, pause e volte quando quiser'
+        - 'Guarde até 250 filmes no HD'
+        - 'Grave 2 canais ao mesmo tempo'
+        - 'Pause ao vivo'
+    -
+      type: 'Condições de compra'
+      obs:
+        - 'Por R$ 20/mês'
+      features:
+        -
+          title: 'Instalação'
+          content: 'Gratuita. 7 dias úteis. De seg. à sáb. 8h às 20h.'
+          link:
+            text: 'Acompanhe a instalação'
+            url: '#acompanhe-a-instalacao'
+        -
+          title: 'Pagamento'
+          content: 'Débito Automático ou na conta do Fixo (desconto de R$ 10).'
+        -
+          title: 'Fidelização'
+          content: '12 meses (desconto de R$ 30). No período, multa de R$ 280.'
+        -
+          title: 'Descontos'
+          content: 'R$ 10 para quem já é cliente de Telefone Fixo.'
+        -
+          title: 'Cobertura'
+          link:
+            text: 'Consulte a disponibilidade'
+            url: '#consulte-a-disponibilidade'
+        -
+          title: 'Validade da Oferta'
+          content: '01/01/2015 à 30/03/2015.'
+        -
+          title: 'Informações Legais'
+          links:
+            -
+              text: 'Contrato e Regras da Oferta'
+              url: '#contrato-e-regras-da-oferta'
+            -
+              text: 'Lista de Todos os Planos'
+              url: '#lista-de-todos-os-planos'
+        -
+          title: 'Outros Planos'
+          links:
+            -
+              text: 'TV + Internet via Fibra'
+              url: '#tv-internet-via-fibra'
+            -
+              text: 'Antena Oi TV Livre HD'
+              url: '#antena-oi-tv-livre-hd'
+            -
+              text: 'Plano Básico'
+              url: '#plano-basico'
+    -
+      type: 'help'
+      title: 'Ajuda para comprar?'
+      content:
+        button: 'Compre com um especialista'
