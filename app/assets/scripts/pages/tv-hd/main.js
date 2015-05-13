@@ -11,9 +11,7 @@ define([
   'tags/movie-rent',
   'pages/tv-hd/price',
   'pages/tv-hd/scroll',
-  ],function ($, _, _s, riot, Velocity, channelModal, channelSearch, rules, movieRent, scroll, price) {
-
-    console.log(arguments);
+  ],function ($, _, _s, riot, Velocity, channelModal, channelSearch, rules, movieRent, price, scroll) {
 
   price.init();
   scroll.init();
@@ -28,6 +26,11 @@ define([
       $addOnsLink        = $('.oi-channels-addons_item_link'),
       $btOpenSearch        = $('.oi-channels_search-call a')
 
+      var riotMovieRent = riot.mount('movie-rent')[0]
+      var cSerachcmodal = riot.mount('channel-search')[0]
+      var cContractModal = riot.mount('contract-rules')[0]
+      var cmodal = riot.mount('channel-modal')[0]
+
   var config = {
     api: {
       channel: '/api/channel/'
@@ -41,10 +44,7 @@ define([
     _private.bindOpenModalChannel();
     _private.bindCloseButton();
     _private.bindNavKeyboard();
-    // addOns.init()
-    // _private.loadPrice();
     _private.bindOpenAddOn();
-    // _private.bindOpenSearch();
     _private.bindOpenContract();
     _private.bindOpenFooterItem();
     _private.openModalRent();
@@ -58,9 +58,6 @@ define([
       $(this).hide();
     });
   }
-
-
-  var riotMovieRent = riot.mount('movie-rent')[0]
 
   _private.openModalRent = function(){
     $('.oi-channels_footer-item_content-area_movies a').on('click', function(event) {
@@ -85,14 +82,6 @@ define([
     });
   }
 
-
-
-  var cSerachcmodal = riot.mount('channel-search')[0]
-  var cContractModal = riot.mount('contract-rules')[0]
-
-
-
-
   _private.bindOpenAddOn = function(){
     $addOnsLink.on('click', function(evt){
       evt.preventDefault();
@@ -113,9 +102,6 @@ define([
     });
   };
 
-  var cmodal = riot.mount('channel-modal')[0]
-
-
   _private.fillDetail = function(urlPage){
     var urlApi = config.api.channel + urlPage.split('/').slice(-1)[0] + '.json';
     $('.channel-modal').show()
@@ -128,9 +114,6 @@ define([
       _private.closeModal();
     });
   };
-
-  $(document).on('searchchannel', function(){
-  })
 
   _private.bindNavKeyboard = function(){
     return false
@@ -158,10 +141,6 @@ define([
   _private.nextChannel = function(){
     $channelsContainer.find('a.active').parent('li').next('li').find('a').trigger('click')
   }
-
-  _private.openModal = function(){
-    // $body.addClass('scroll-lock');
-  };
 
   _private.closeModal = function(){
     $('.channel-modal').hide()
