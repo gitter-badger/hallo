@@ -112,9 +112,12 @@ gulp.task('build-stylus', function () {
     .pipe($.plumber({errorHandler: helpers.notifyError}))
     // .pipe($.changed(config.path.src.stylus))
     .pipe($.filter(helpers.filterPartials))
-    .pipe($.if(!config.isProd, $.sourcemaps.init() ))
+    .pipe($.sourcemaps.init())
     .pipe($.stylus({
-      use: [jeet(), koutoSwiss(), rupture()]
+      use: [jeet(), koutoSwiss(), rupture()],
+      include: './app/assets/styles/'
+      // compress: true,
+      // linenos: true
     }))
     .pipe($.combineMediaQueries())
     .pipe($.autoprefixer({
@@ -123,7 +126,7 @@ gulp.task('build-stylus', function () {
     }))
     .pipe($.minifyCss())
     .pipe($.csso())
-    .pipe($.if(!config.isProd, $.sourcemaps.write('.')))
+    .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(config.path.dist.css))
     .pipe($.if(config.isProd, $.gzip()))
     .pipe(gulp.dest(config.path.dist.css));
