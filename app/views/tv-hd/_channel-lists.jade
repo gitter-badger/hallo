@@ -12,18 +12,18 @@
                 .oi-channels-lists_list-tv_name
                   div=channel.name
 
-.oi-channels-lists_list-audio
-  h5.oi-channels-lists_list-audio_title=channelsgroup.audio.label + ' ['+ channelsgroup.audio.channels.length + ']'
-  .oi-channels-lists_list-audio_container
-    ul
-      each audio in channelsgroup.audio.channels
-        li=audio
-    button(type="button") Ver todos
+  .oi-channels-lists_list-audio
+    h5.oi-channels-lists_list-audio_title=channelsgroup.audio.label + ' ['+ channelsgroup.audio.channels.length + ']'
+    .oi-channels-lists_list-audio_container
+      ul
+        each audio in channelsgroup.audio.channels
+          li=audio
+      button(type="button") Ver todos
 
-.oi-channels-lists_list-audio
-  h5.oi-channels-lists_list-audio_title=channelsgroup.radio.label + ' ['+ channelsgroup.radio.channels.length + ']'
-  .oi-channels-lists_list-audio_container
-    ul
-      each audio in channelsgroup.radio.channels
-        li=audio
-    button(type="button") Ver todos
+  .oi-channels-lists_list-audio
+    h5.oi-channels-lists_list-audio_title=channelsgroup.radio.label + ' ['+ channelsgroup.radio.channels.length + ']'
+    .oi-channels-lists_list-audio_container
+      ul
+        each audio in channelsgroup.radio.channels
+          li=audio
+      button(type="button") Ver todos
