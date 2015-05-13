@@ -11,35 +11,35 @@
       "source" : "**/*.@(jpg|jpeg|gif|png)",
       "headers" : [ {
         "key" : "Cache-Control",
-        "value" : "max-age=1209600"
+        "value" : "max-age=60"
       } ]
     },
     {
       "source" : "**/*.@(woff|woff2|eot|svg|ttf)",
       "headers" : [ {
         "key" : "Cache-Control",
-        "value" : "max-age=1209600"
+        "value" : "max-age=60"
       } ]
     },
     {
       "source" : "**/*.@(css)",
       "headers" : [ {
         "key" : "Cache-Control",
-        "value" : "max-age=1209600"
+        "value" : "max-age=60"
       } ]
     },
     {
       "source" : "**/*.@(js|json)",
       "headers" : [ {
         "key" : "Cache-Control",
-        "value" : "max-age=1209600"
+        "value" : "max-age=60"
       } ]
     },
     {
       "source" : "**/*.@(html|htm)",
       "headers" : [ {
         "key" : "Cache-Control",
-        "value" : "max-age=1209600"
+        "value" : "max-age=60"
       } ]
     }
   ]
