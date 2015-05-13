@@ -1,237 +1,32 @@
-.oi-channels-addons
-  border-top remify(1px) solid $grayLight
-  border-bottom remify(1px) solid $grayLight
-  background-color $grayLighter
-  height remify(210px)
-  padding remify(25px) 0 0 remify(15px)
-  font-family $fontTextRegular
-  +above('m')
-    height auto
-    padding remify(45px) 0 0 remify(30px)
-  +above('l')
-    border none
-    width 23.076923077%
-    background-color $grayLighter
-    height auto
-    float left
-    padding 0
-
-  &_title
-    font-size remify(13px)
-    height remify(15px)
-    margin-bottom remify(15px)
-    +above('m')
-      font-size remify(16px)
-      height remify(20px)
-    +above('l')
-      height remify(70px)
-      line-height remify(70px)
-      border-bottom remify(1px) solid $grayLight
-      text-align center
-
-  &_container
-    overflow auto
-    height remify(153px)
-    +above('l')
-      height auto
-
-  &_list
-    display block
-    width 1500px
-    +above('l')
-      width auto
-
-  &_item
-    display block
-    width remify(66px)
-    float left
-    font-size remify(10px)
-    text-align center
-    color $gray
-    margin-right remify(24px)
-    position relative
-    +above('m')
-      width remify(120px)
-      margin-right remify(34px)
-    +above('l')
-      height remify(260px)
-      border-bottom remify(1px) solid $grayLight
-      float none
-      width 100%
-      padding remify(40px) remify(50px) 0 remify(50px)
-      &:last-child
-        border-bottom none
-
-    &_tooltip
-      display: none
-      position absolute
-      top remify(10px)
-      left 0
-      width 100%
-      +above('m')
-        display block
-
-
-      div
-        margin 0 auto
-        height remify(20px)
-        line-height remify(20px)
-        padding 0 10px
-        background-color $white
-        border-radius remify(2px)
-        border remify(1px) solid $black
-        color $black
-        position relative
-        transition all 0.3s ease
-        margin-top remify(10px)
-        display none
-        opacity 0
-
-        &.visible
-          margin-top 0
-          display inline-block
-          opacity 1
-
-        &:before
-          content ''
-          display block
-          height 0
-          width 0
-          border remify(5px) solid transparent
-          border-color $black transparent transparent transparent
-          position absolute
-          bottom remify(-10px)
-          margin-left remify(-5px)
-          left 50%
-          z-index 1
-        &:after
-          content ''
-          display block
-          height 0
-          width 0
-          border remify(5px) solid transparent
-          border-color $white transparent transparent transparent
-          position absolute
-          bottom remify(-9px)
-          margin-left remify(-5px)
-          left 50%
-          z-index 2
-
-    &_link
+.oi-channels
+  &_tabs
+    ul
+      border-bottom remify(1px) solid $green
+      border-top remify(1px) solid $green
       display block
-      color $gray
-      text-decoration none
-
-    &_logo
-      height 40px
-      background-repeat no-repeat
-      background-size contain
-      background-position center
-      text-align center
-      font-size remify(16px)
-      color $black
-      +above('l')
-        margin-bottom remify(10px)
-
-    &_desc
-      font-size remify(9px)
-      height remify(50px)
-      padding-top remify(10px)
-      line-height 15px
+      overflow hidden
       +above('m')
-        font-size remify(11px)
-      +above('l')
-        height remify(70px)
-      span
-        &:last-child
-          display none
-          +above('l')
-            display block
+        border-top none
 
-    &_spots
+    li
+      display block
+      float left
+      height remify(60px)
+      line-height remify(60px)
       text-align center
-      a
-        background-color $grayLighter
-        border remify(1px) solid $grayLight
-        // border-radius
-        color $black
-        display inline-block
-        height remify(40px)
-        line-height remify(40px)
-        text-decoration none
-        width remify(35px)
-        &:first-child
-          border-top-left-radius remify(2px)
-          border-bottom-left-radius remify(2px)
-        &:last-child
-          border-top-right-radius remify(2px)
-          border-bottom-right-radius remify(2px)
-        & + a
-          border-left none
-        &.added, &:hover, &:focus, &:active
-          background-color $green
-          color $white
+      width (100% / 3)
+      &:nth-child(0n+2)
+        border-right remify(1px) solid $green
+        border-left remify(1px) solid $green
 
-    &_actions
+    a
+      background-color $white
+      color $green
+      display block
+      height 100%
+      text-decoration none
+      width 100%
 
-      button
-        background-color transparent
-        border none
-        cursor pointer
-        display block
-        font-family $fontTextRegular
-        font-size remify(10px)
-        height remify(17px)
-        line-height remify(13px)
-        transition all 0.3s ease
-        width 100%
-        position relative
-        +above('m')
-          height remify(30px)
-          line-height remify(26px)
-        +above('l')
-          font-size remify(13px)
-          height remify(40px)
-          line-height remify(35px)
-
-      .add
-        background-color $grayLighter
-        border remify(1px) solid $grayLight
-        border-radius remify(2px)
-        color $black
-        display none
-        +above('m')
-          display block
-        svg
-          position absolute
-          top 10%
-          left -7%
-          height 80%
-          opacity 0
-          transition all 0.3s ease
-          margin-left remify(30px)
-          +above('m')
-            left 9%
-          polyline
-            stroke $white
-
-        &.added, &:hover, &:focus, &:active
-          background-color $green
-          color $white
-          outline none
-          display block
-
-        &.added
-          & + .remove
-            display block
-            opacity 1
-          svg
-            opacity 1
-            margin-left 0
-
-      .remove
-        color $gray
-        display none
-        opacity 0
-        +above('l')
-          font-size(11px)
+      &.active
+        color $white
+        background-color $green

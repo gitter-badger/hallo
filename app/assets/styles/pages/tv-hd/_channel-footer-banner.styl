@@ -1,0 +1,35 @@
+.oi-channels
+  &_footer-banner
+    height remify(360px)
+    display block
+    position relative
+    z-index 1
+    +above('m')
+      height 0
+      display none
+    +above('l')
+      height 0
+      display block
+
+    & > div
+      background-repeat no-repeat
+
+    &--small
+      background-size cover
+      display block
+      height remify(360px)
+      border-bottom remify(1px) solid $grayLight
+      +above('m')
+        display none
+
+    &--large
+      background-size initial
+      display none
+      height remify(900px)
+      position absolute
+      right 0
+      top 0
+      width 100%
+      pointer-events none
+      +above('l')
+        display block
