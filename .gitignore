@@ -31,3 +31,4 @@ node_modules
 dist/
 .publish
 bower_components/
+etc.md
