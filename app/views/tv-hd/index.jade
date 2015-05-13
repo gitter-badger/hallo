@@ -18,10 +18,9 @@ body(onload="measureCRP()" itemtype="http://schema.org/WebPage")
       
       include _tabs.jade
       
-
       .oi-channels_container
 
-        include _channels_header.jade
+        include _channel_header.jade
         
       .oi-channels_container#channel-info
         
@@ -32,223 +31,14 @@ body(onload="measureCRP()" itemtype="http://schema.org/WebPage")
           include _channel_addons.jade 
                   
         channel-search
-        //- .oi-channels_search-call
-        //-   a(href="#")
-        //-     include ../../assets/images/icons/lupa.svg
-        //-     |Busque um canal específico
         
-        .oi-channels_footer-banner
-          .oi-channels_footer-banner--small.b-lazy(data-src="/assets/images/demo/oi-channels_footer-banner.jpg" style="background-position: 70px 100px;")
-          .oi-channels_footer-banner--large.b-lazy(data-src="/assets/images/demo/oi-channels_footer-banner.jpg" style="background-position: 830px 40px;")
+        include _channel-footer-banner.jade
 
-        .oi-channels_footer-item
-          .oi-channels_footer-item_title-area
-            h3.oi-channels_footer-item_title-area_title Está incluso no plano
-          .oi-channels_footer-item_content-area
-            .oi-channels_footer-item_content-area_desc
-              dl
-                dt 159 Canais
-                dd 42 HD, 50 SD e 66 áudio. 
-                  a(href="#") Imprima a grade de canais
-                dt 1º Ponto de TV HD
-                dd Receptor com controle remoto.
-                  a(href="#") Veja a lista de receptores
-                dt 1 Antena Digital  
-                dd Com as dimensões de 32 x 57 x 42 cm.
-            .oi-channels_footer-item_content-area_movies
-              h4.list-title Você pode assistir
-              .list-container
-                ul
-                  li
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/1.jpg")
-                    .name Life
-                    .channel Animal Planet
-                  li
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/2.jpg")
-                    .name Bob Esponja
-                    .channel Nick Jr.
-                  li
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/3.jpg")
-                    .name Vikings
-                    .channel History Channel
-                  li
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/4.jpg")
-                    .name Animals Gone Wild
-                    .channel NatGeo Wild
-                  li
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/5.jpg")
-                    .name Dr House
-                    .channel Universal Channel
-                    .avaliable Disponível no Total HD
-                  li
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/6.jpg")
-                    .name Liga dos Campeões
-                    .channel ESPN
-                  li
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/7.jpg")
-                    .name Arrow
-                    .channel Warner Channel
-                  li
-                    .poster.b-lazy(data-src="/assets/images/demo/shows/8.jpg")
-                    .name Phineas e Ferb
-                    .channel Disney XD
-                    .avaliable Disponível no Total HD
+        include _channel-footer-item.jade 
+      
 
-        .oi-channels_footer-item
-          .oi-channels_footer-item_title-area
-            h3.oi-channels_footer-item_title-area_title Filmes para alugar
-            .oi-channels_footer-item_title-area_desc
-              p Por R$ 10 cada filme. 
-              p 
-                span VOD: Assista quando quiser. 
-                span Oi Filmes: Horários fixos.
-          .oi-channels_footer-item_content-area
-            .oi-channels_footer-item_content-area_desc
-            .oi-channels_footer-item_content-area_movies
-              .list-container.rent-list
-                ul
-                  li
-                    a(href="universidade-monstro")
-                      .poster.b-lazy(data-src="/assets/images/demo/shows/9.jpg")
-                        .dist
-                          span.vod VOD
-                          span.oi-filmes Oi Filmes
-                      .channel Universidade Monstro
-                  li
-                    a(href="star-trek")
-                      .poster.b-lazy(data-src="/assets/images/demo/shows/10.jpg")
-                        .dist
-                          span.vod VOD
-                          span.oi-filmes Oi Filmes
-                      .channel Stat Trek
-                  li
-                    a(href="as-aventuras-de-pi")                  
-                      .poster.b-lazy(data-src="/assets/images/demo/shows/11.jpg")
-                        .dist
-                          span.vod VOD
-                          span.oi-filmes Oi Filmes
-                      .channel As Aventuras de PI
-                  li
-                    a(href="rush")
-                      .poster.b-lazy(data-src="/assets/images/demo/shows/12.jpg")
-                        .dist
-                          span.vod VOD
-                          span.oi-filmes Oi Filmes
-                      .channel Rush
-                  li
-                    a(href="o-lobo-de-wall-street")
-                      .poster.b-lazy(data-src="/assets/images/demo/shows/13.jpg")
-                        .dist
-                          span.vod VOD
-                          span.oi-filmes Oi Filmes
-                      .channel O Lobo de Wall Street
-                  li
-                    a(href="detona-ralph")
-                      .poster.b-lazy(data-src="/assets/images/demo/shows/14.jpg")
-                        .dist
-                          span.vod VOD
-                          span.oi-filmes Oi Filmes
-                      .channel Detona Ralph
-                  li
-                    a(href="batman")
-                      .poster.b-lazy(data-src="/assets/images/demo/shows/15.jpg")
-                        .dist
-                          span.vod VOD
-                          span.oi-filmes Oi Filmes
-                      .channel Batman: O Cavaleiro das Trevas
-                  li
-                    a(href="tron-legacy")
-                      .poster.b-lazy(data-src="/assets/images/demo/shows/16.jpg")
-                        .dist
-                          span.vod VOD
-                          span.oi-filmes Oi Filmes
-                      .channel Tron Legacy
+    include _channel-footer-faq.jade 
 
-        .oi-channels_footer-item
-          .oi-channels_footer-item_title-area
-            h3.oi-channels_footer-item_title-area_title Adicione o Gravador
-            .oi-channels_footer-item_title-area_desc
-              p Por R$ 20/mês
-          .oi-channels_footer-item_content-area
-            .oi-channels_footer-item_content-area_desc
-              .list-bullets.img-recorder.b-lazy(data-src="/assets/images/layout/tv-hd-gravador.jpg")
-                ul
-                  li 
-                    span Acesso aos filmes do Video on Demand (VOD)
-                  li 
-                    span Reveja, pause e volte quando quiser
-                  li 
-                    span Guarde até 250 filmes no HD
-                  li 
-                    span Grave 2 canais ao mesmo tempo
-                  li 
-                    span Pause ao vivo
-                button.add.add-addon(type="button" data-slug="recorder" ) Adicione o Gravador Digital
-
-        .oi-channels_footer-item
-          .oi-channels_footer-item_title-area
-            h3.oi-channels_footer-item_title-area_title Condições de compra
-            .oi-channels_footer-item_title-area_desc
-              p Por R$ 20/mês
-          .oi-channels_footer-item_content-area
-            .oi-channels_footer-item_content-area_desc
-              dl
-                dt Instalação
-                dd Gratuita. 7 dias úteis. De seg. à sáb. 8h às 20h.
-                  a(href="#") Acompanhe a instalação
-                dt Pagamento
-                dd Débito Automático ou na conta do Fixo (desconto de R$ 10).
-                dt Fidelização
-                dd 12 meses (desconto de R$ 30). No período, multa de R$ 280.
-                dt Descontos
-                dd R$ 10 para quem já é cliente de Telefone Fixo.
-                dt Cobertura
-                dd 
-                  a(href="#") Consulte a disponibilidade
-                dt Validade da Oferta
-                dd 01/01/2015 à 30/03/2015.
-                dt Informações Legais 
-                dd 
-                  a#openContract(href="#") Contrato e Regras da Oferta
-
-                  br
-                  a(href="#") Lista de Todos os Planos
-                dt Outros Planos
-                dd 
-                  a(href="#") TV + Internet via Fibra
-                  br
-                  a(href="#") Antena Oi TV Livre HD
-                  br
-                  a(href="#") Plano Básico
-
-        .oi-channels_footer-item
-          .oi-channels_footer-item_title-area
-            h3.oi-channels_footer-item_title-area_title ajuda para comprar?
-          .oi-channels_footer-item_content-area
-            .oi-channels_footer-item_content-area_desc
-              a.button(href="#") Compre com um especialista
-
-    nav.oi-channels_footer_faq-menu
-      ul
-        li.faq-menu_icon
-          a(href="#") 
-            include ../../assets/images/icons/tv.svg
-            span Já é cliente Oi TV HD?
-        li
-          a(href="#") 2ª via
-        li
-          a(href="#") Altere seu plano
-        li
-          a(href="#") Entenda a sua conta
-        li
-          a(href="#") Fatura Atrasada
-        li
-          a(href="#") Sem sinal na TV
-        li
-          a(href="#") TV Bloqueada
-        li
-          a(href="#") Perguntas frequentes
-  
     include ../_partials/footer.jade
 
   channel-modal
