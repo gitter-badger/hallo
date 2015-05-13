@@ -1,7 +1,10 @@
 include ./_partials/head.jade
 
-body
-  section.container
+body(onload="measureCRP()" itemtype="http://schema.org/WebPage").product
+  
+  include ./_partials/build-plan.jade
+  
+  include ./_partials/menu.jade
 
     nav
       ul
