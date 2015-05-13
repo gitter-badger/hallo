@@ -40,12 +40,6 @@ var appConfig = (function() {
       scripts: './dist/assets/scripts/',
       tags: './dist/assets/scripts/tags/',
       api: './dist/api/'
-    },
-    docs: {
-      jade: './docs/views/**/*.jade',
-      partials: './docs/views/_partials/**/*.jade',
-      stylus: './docs/assets/styles/**/*.styl',
-      root: './dist/docs/'
     }
 
   }

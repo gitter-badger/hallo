@@ -10,12 +10,11 @@ var logdown= require('logdown')
 var msg    = new logdown({prefix: 'Message:'})
 
 
-gulp.task('watch', ['build-data', 'build-api', 'build-scripts', 'build-templates', 'build-jade', 'build-stylus', 'build-fonts', 'build-docs'],  function() {
+gulp.task('watch', ['build-data', 'build-api', 'build-scripts', 'build-templates', 'build-jade', 'build-stylus', 'build-fonts'],  function() {
     gulp.watch(config.path.src.data, ['build-jade', reload]);
     gulp.watch(config.path.src.api, ['build-api', reload]);
     gulp.watch(config.path.src.tags, ['build-templates', reload]);
     gulp.watch(config.path.src.scripts, ['build-scripts', reload]);
-    gulp.watch(config.path.docs.jade, ['build-docs', reload]);
     gulp.watch(config.path.src.jade, ['build-jade', reload]);
     gulp.watch(config.path.src.stylus, ['build-stylus', reload]);
     gulp.watch(config.path.src.fonts, ['build-fonts', reload]);
