@@ -3,9 +3,9 @@ include ../../_partials/head.jade
 body.minha-oi.teste
   section.container(aria-hidden="false")
 
-    +buildPlan()
+    include ../../_partials/build-plan.jade
 
-    +menu()
+    include ../../_partials/menu.jade
     
     header
       .pre-title
@@ -222,11 +222,7 @@ body.minha-oi.teste
           channel-detail
           
 
-  +footer(footer)
+  include ../../_partials/menu.jade
   
-  .testeCont
-    .colLeft
-    .colRight
-
   script(src='/assets/scripts/vendor/require.js' data-main="/assets/scripts/main" async)
 

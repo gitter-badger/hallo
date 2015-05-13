@@ -2,13 +2,13 @@ include ../_partials/head.jade
 
 body(onload="measureCRP()" itemtype="http://schema.org/WebPage").product
   
-  +buildPlan()
+  include ../_partials/build-plan.jade
   
-  +menu()
+  include ../_partials/menu.jade
 
-  +hero()
+  include ../_partials/hero.jade
 
-  +header()
+  include ../_partials/header.jade
 
   main
 
@@ -371,22 +371,10 @@ body(onload="measureCRP()" itemtype="http://schema.org/WebPage").product
         li
           a(href="#") Perguntas frequentes
   
-    +footer(footer)
+    include ../_partials/footer.jade
 
   channel-modal
   contract-rules
   movie-rent
   
   script(src='/assets/scripts/vendor/require.js' data-main="/assets/scripts/main" async)
-    
-
-
-          
-
-
-  //- +modal()
-
-  //- #text1(role="alert" aria-live="assertive")
-
-  //- //- script(src='/assets/scripts/main-0.0.0.js')
-  
