@@ -3,11 +3,12 @@ oi-price
   position relative
 
 .oi-price
+  position relative
   color inherit
   display block
   height remify(44px)
   +above('m')
-    height remify(56px)
+    height remify(110px)
 
   &.oi-price--small
     .oi-price_value_integer
@@ -34,51 +35,63 @@ oi-price
       width remify(31px)
 
   &_prefix
-    display none
+    position absolute;
+    font-size remify(13px)
     font-family $fontTextRegular
+    text-transform lowercase
+    color $grayLight
+    +above('m')
+      width: 100%
+      top: remify(4px);
+      left: remify(51px);
 
   &_value
+    position relative;
+    width: 100%
+    height: 100%
+    margin 0 auto
     font-family $fontTitle
     text-align center
-    transition: color 0.3s ease
 
     &_integer
+      position absolute;
       display inline-block
       font-size remify(35px)
-      height remify(44px)
       line-height remify(44px)
+      text-align: right
       +above('m')
-        font-size remify(75px)
-        height remify(56px)
-        line-height remify(56px)
+        top: remify(21px)
+        right: 43%
+        font-size remify(96px)
+        line-height remify(96px)
 
     &_cents
+      position absolute;
       display inline-block
-      font-size remify(17.5px)
-      height remify(22px)
-      line-height remify(22px)
-      transform translateY(remify(-10px))
+      font-size: remify(16px)
+      height: auto
+      line-height: remify(22px)
+      text-align: left
       +above('m')
-        font-size remify(37.5px)
-        height remify(28px)
-        line-height remify(28px)
-        transform translateY(remify(-27px))
+        top: remify(26px)
+        left: 57%
+        font-size: remify(48px)
+        line-height: remify(48px)
 
-  &_suffix
-    display block
-    font-family $fontTitle
-    font-size remify(8.5px)
-    height remify(22px)
-    line-height remify(22px)
-    margin-top remify(-25px)
-    text-align center
-    text-indent remify(50px)
-    transition: color 0.3s ease
-    +above('m')
-      text-indent remify(80px)
-      font-size remify(19px)
-
-    span
-      display none
+    &_suffix
+      position absolute;
+      display block
+      height auto
+      font-size remify(11px)
+      line-height remify(11px)
+      text-align left
       +above('m')
-        display inline
+        top: remify(80px)
+        left: 59%
+        font-size remify(24px)
+        line-height remify(24px)
+
+    // span
+    //   display none
+    //   +above('m')
+    //     display inline
