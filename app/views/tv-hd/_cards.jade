@@ -1,21 +1,23 @@
 .cards
   .cards_container
-    .cards_container--bg
+    .cards_container_box
       each val, index in ['start', 'mix', 'total']
         oi-card
           a(href="#" data-slug=val class="oi-card "+ (val == 'mix' ? 'active': '') )
             .oi-card_header
-              h2.oi-card_title=val+ ' HD'
-              ul.oi-card_subtitle
-                li 119 Canais
-                li 20 HD
-            .oi-card_main
-              .oi-card_main_price
+              h2.oi-card_header_title=val+ ' HD'
+              h5.oi-card_header_subtitle
+                | 119 Canais 
+                i.heading-bullet
+                |  20 HD
+              i.oi-card_header_line
+            .oi-card_content
+              .oi-card_content_price
                 oi-price(id="card-price-"+val)
-              .oi-card_list
-                h5.oi-card_list_title Você ainda pode adicionar
-                ul.oi-card_list_items
+              .oi-card_content_list
+                h5.oi-card_content_list_title Você ainda pode adicionar
+                ul.oi-card_content_list_items
                   li 1 Ponto Adicional
                   li HBO, Telecine, Premiere e mais
-            .oi-card_footer
-              button.oi-card_action Conheça o Start HD
+              .oi-card_content_footer
+                button.oi-card_content_footer_action Conheça o Start HD
