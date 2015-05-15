@@ -1,49 +1,77 @@
 .cards
   width 100%
-  // padding 0 remify(10px)
+  height $cardSizeMobile
   position relative
-  z-index 1
-
-  &.is-tabs
-    .oi-card.active
-      background-color $green
-      border-width 0
-      .oi-card_header
-        background-color $green
-        h2
-          color $white
-      .oi-card_subtitle
-        color $white
-      .oi-price
-        color $white
-      .oi-card_list
-        color $white
-      .oi-card_action
-        background-color $green
-        border-color $white
-        color $white
+  z-index 2
+  +above('m')
+    height $cardSize
 
   &_container
+    position relative
+    width 100%
+    height $cardSizeMobile
     overflow hidden
-    margin-bottom remify(125px)
-    transition-property max-width
     transition-duration inherit
+    transition-property border
+    border 0 solid $green
+    pointer-events: none
     +above('m')
-      margin-bottom remify(195px)
-    +above('l')
+      height 100vh
+
+    &_box
+      position relative
+      height $cardSizeMobile
       max-width remify(1170px)
       margin 0 auto
+      transition-duration inherit
       clear both
-      margin-top remify(-127px)
-      margin-bottom remify(195px)
-    &--bg
-      background-color $green
-      overflow hidden
-    &.open
-      max-width 100%
+      pointer-events: none
+      +above('m')
+        height $cardSize
 
   oi-card
     width (100% / 3)
     float left
-    & + oi-card .oi-card
-      border-left 0
+    border-right-width 0
+    pointer-events: initial
+    &:last-child
+      border-right-width remify(1px)
+
+  oi-card.selected .oi-card, .oi-card:hover, .oi-card:active
+      color: $green
+      .oi-card_header_subtitle .heading-bullet
+        background-color: $green
+        opacity 0.21
+      oi-price
+        .oi-price_prefix
+          color $green
+      .oi-card_content_footer_action
+        border-color $green
+
+.cards.open
+  .cards_container
+    position fixed
+    top 0
+  .cards_container_box
+    max-width 100%
+  oi-card
+    border-color $green
+  .oi-card_header_title
+    padding-top remify(6px)
+  .oi-card_header_line
+    width: 100%
+    left: 0
+    background-color $green
+
+.cards.parse
+  .cards_container
+    +above('m')
+      border remify(10px) solid $green
+  oi-card.selected
+    .oi-card_header
+      background-color $green
+    .oi-card_header_title
+      color white
+    .oi-card_header_subtitle
+      color $green
+
