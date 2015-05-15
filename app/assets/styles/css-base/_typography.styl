@@ -8,6 +8,9 @@ $baseline  = .625rem // 10px
 .container
   font-family oiText, sans-serif
 
+//
+// Line
+//
 $line-height-small
   line-height remify(16px)
 $line-height-regular
@@ -83,3 +86,22 @@ $text-bold-small
   @extend $text
   font-family $fontTextBold
   font-size remify(13px)
+
+
+/**
+ *
+ * Bullet
+ *
+ * Bullet has a proportional size agains the text headline
+ * Keep this only on headlines
+ *
+ * **/
+.heading-bullet
+  position relative
+  top -0.21em
+  display inline-block
+  border-radius 50%
+  width 0.3125em
+  height 0.3125em
+  background-color $grayLight
+
