@@ -27,6 +27,11 @@ define([
 
   /**
    * init
+   *
+   * self explanatory definition
+   *
+   * @method init
+   *
    * ***/
   _public.init = function(){
 
@@ -40,11 +45,22 @@ define([
 
   /**
    * baseFromPoint
+   *
+   * Calculates and returns a point value between initial and final points based on a base number
+   *
+   * @method baseFromPoint
+   * @param p {number} point to discover
+   * @param initialPoint {number} initial value, also as minimum value
+   * @param finalPoint {number} final value for point, also as maximum value
+   * @param base {number} base distance between points, best don't be negative, if bas has not been set, assumes value 100
+   * @return {number} calculated number
+   *
    * ***/
   _private.baseFromPoint = function(p, initialPoint, finalPoint, base){
+    // TODO: default values need to be added
     if (!base) { base = 100; }
 
-    var point = 0;
+    var point = 0; // TODO: Math.max improvements ?
     if (p > initialPoint && p < finalPoint) {
       point = ((p - initialPoint) / (finalPoint - initialPoint)) * base;
     } else if (p <= initialPoint) {
@@ -57,7 +73,13 @@ define([
   };
 
   /**
-   * baseFromPoint
+   * checkSelected
+   *
+   * checks if a cards has selected, if not, select the last card form the list, returns the selected object
+   *
+   * @method checkSelected
+   * @return {Object}
+   *
    * ***/
   _private.checkSelected = function(){
     var hasSelected = 0;
@@ -73,33 +95,36 @@ define([
       oiCard[2].className += 'selected';
     }
 
-    return;
-
-    // return;
-
-    // return;
-
-    // if(!$('.product-card').hasClass('selected')) {
-    //   var placeholder = $($('.product-card')[1]).attr('data-placeholder');
-    //   $('.product-card[data-placeholder="'+placeholder+'"]').addClass('selected');
-    // }
+    return oiCard[2];
   };
 
   /**
    * scroller
+   *
+   * listen the page scrollY and dispatch some funcitons
+   *
+   * @method scroller
+   * @return null
+   *
    * ***/
   _private.scroller = function(){
 
+    // change table position
+    // TODO: performance check
     var dynamicTable = function(y, initialPoint, finalPoint){
       var p = _private.baseFromPoint(y, initialPoint, finalPoint, 10);
       oiChannels.style.top = (25 - p*2.5)+'vh';
     };
 
+    // change table opacity
+    // TODO: performance check
     var dynamicTableOpacity = function(y, initialPoint, finalPoint){
       var p = _private.baseFromPoint(y, initialPoint, finalPoint, 10);
       oiChannels.style.opacity = (p/10);
     };
 
+    // change cards height
+    // TODO: performance check
     var dynamicCards = function(y, initialPoint, finalPoint){
       var p = _private.baseFromPoint(y, initialPoint, finalPoint, 100);
       for (var i = 0; i < 3; i++) {
@@ -107,6 +132,8 @@ define([
       }
     };
 
+    // add thin class on titles
+    // TODO: performance check
     var dynamicTitle = function(y, initialPoint, finalPoint){
       var thinTitle = (y >= initialPoint);
       for (var i = 0; i < 3; i++) {
@@ -122,8 +149,11 @@ define([
       }
     };
 
+    // add parse class on backgrounds
+    // TODO: performance check
+    // TODO: clear comments
     var dynamicBackgrounds = function(y, initialPoint, finalPoint){
-      // oiCardHeader
+
       var initialPointClass = (y >= initialPoint);
 
       if (initialPointClass) {
@@ -166,9 +196,12 @@ define([
 
         };
       }
+
       return;
     };
 
+    // add open class to cards
+    // TODO: performance check
     var open = function(){
       if (window.scrollY >= openPosition) {
         if (!cards.classList.contains('open')) {
@@ -183,6 +216,8 @@ define([
       }
     };
 
+    // add open class to cards and channels
+    // TODO: performance check
     var lock = function(){
       if (window.scrollY >= lockPosition) {
         if (!lock.done) {
@@ -197,6 +232,8 @@ define([
       }
     };
 
+    // spy the scroll value
+    // TODO: performance check
     var scrollSpy = function(e){
       window.scrollY = window.pageYOffset;
 
@@ -225,14 +262,13 @@ define([
   /**
    * scrollSpeed
    *
-   * @TODO
-   * - speed improvements
-   * - accell easing
+   * change transition-duration on some elements relative to scroll speed
+   *
+   * @method scrollSpeed
+   * @return null
    *
    * ***/
   _private.scrollSpeed = function(){
-
-    var lastSpeeds = [];
     var baseTime = 0.610;
     var lastScroll = 0;
     var lastTime = 0;
@@ -279,219 +315,9 @@ define([
 
     window.addEventListener('scroll', update);
     update();
+
+    return;
   };
 
   return _public;
-})
-
-/*
-define([
-  'domlib',
-  'vendor/lodash',
-  'velocity'
-  ],function ($, lodash, Velocity ) {
-
-  var _public = {},
-      _private = {}
-
-  var $body = $('body'),
-      $win = $(window),
-      $main = $('main'),
-      $cardsContainer = $('.cards_container'),
-      $cardsContainerBg = $('.cards_container--bg'),
-      $cards = $('.cards'),
-      $cardHeader = $('.oi-card_header'),
-      $cardSubtitle = $('.oi-card_subtitle'),
-      $cardTitle = $('.oi-card_title'),
-      $cardMain = $('.oi-card_main'),
-      $cardFooter = $('.oi-card_footer'),
-      $cardFooterAction = $('.oi-card_action'),
-      $channels = $('.oi-channels'),
-      $channelInfo = $('#channel-info'),
-      $channelTabs = $('.oi-channels_tabs'),
-      $channelsContainer = $('.oi-channels_container'),
-      $channelsheader = $('.oi-channels_header'),
-      $hero = $('oi-hero'),
-      cardsOffset = {},
-      cardsContainerOffset = {},
-      cardHeaderOffset = {},
-      cardMainOffset = {},
-      cardFooterOffset = {},
-      cardFooterActionOffset = {},
-      channelsOffset = {},
-      channelInfoOffset = {},
-      channelsheaderOffset = {},
-      docWidth;
-
-
-  _public.init = function(){
-
-    if(!('__proto__' in {})){
-      return
-    }
-
-    _private.loadSizes();
-    _private.bindCard();
-    _private.bindResize();
-
-  }
-  _private.bindResize = function(){
-    $(window).on('resize', function (){
-      $(window).off('scroll.anim');
-      window.scrollTo(0, 0);
-      _private.loadSizes();
-      $(window).trigger('scroll.anim')
-    });
-  }
-
-  _private.loadSizes = function(){
-      docWidth = $(document).width(),
-      cardsOffset = $cards.offset(),
-      cardsContainerOffset = $cardsContainer.offset(),
-      cardHeaderOffset = $cardHeader.offset(),
-      cardMainOffset = $cardMain.offset(),
-      cardFooterOffset = $cardFooter.offset(),
-      cardFooterActionOffset = $cardFooterAction.offset(),
-      channelsOffset = $channels.offset(),
-      channelInfoOffset = $channelInfo.offset(),
-      channelsheaderOffset = $channelsheader.offset();
-      _private.bindScroll();
-  }
-
-  _private.bindCard = function(){
-    $cards.find('a').on('click.card', function (evt){
-      evt.preventDefault();
-      $channels.velocity("scroll", {
-        duration: 3000,
-        delay: 200
-      });
-    })
-  }
-
-  _private.resetAnim = function(){
-    $cards.css({ marginTop: 0, marginBottom: 0 })
-      $cardsContainer.css({
-        maxWidth: '73.125rem',
-        marginBottom: '12.1875rem'
-      })
-      $cardMain.css({ marginTop: 0 })
-      $cardFooter.css({ opacity: 1  })
-      $cardHeader.css({
-        paddingTop: '1.875rem',
-        paddingBottom: '1.875rem',
-        maxWidth: '11.25rem'
-      })
-      $cardTitle.css({
-        fontSize: '1.3125rem'
-      })
-      $cardSubtitle.css({
-        opacity: 1,
-        height: '1.375rem'
-      })
-      $channels.css({
-        opacity: 1
-      })
-      $channelInfo.css({
-        marginTop: 0
-      });
-  }
-
-  _private.bindScroll = function(){
-    $channels.addClass('nopad')
-    $channelTabs.hide();
-    $channels.css({opacity: 0});
-
-    $(window).on('scroll.anim', _.throttle( function(){
-      var scrollTop = $win.scrollTop();
-
-      if(scrollTop >= cardsOffset.top + cardsOffset.height - channelsheaderOffset.height &&  scrollTop < cardsOffset.top + cardsOffset.height - channelsheaderOffset.height +100 ){
-        var stageAnim2 = (scrollTop - (cardsOffset.top + cardsOffset.height - channelsheaderOffset.height))/100
-        // Show border channels area
-        $cardsContainerBg.css({
-          paddingTop: .625 * (stageAnim2) + 'rem',
-          paddingLeft: .625 * (stageAnim2) + 'rem',
-          paddingRight: .625 * (stageAnim2) + 'rem'
-        })
-        $channels.css({paddingLeft: .625 * (stageAnim2) + 'rem', paddingRight: .625 * (stageAnim2) + 'rem' })
-      }
-
-      if(scrollTop <= cardsOffset.top + cardsOffset.height - channelsheaderOffset.height ){
-        $cardsContainerBg.css({
-          paddingTop: 0,
-          paddingLeft: 0,
-          paddingRight: 0
-        })
-        $channels.css({paddingLeft:0, paddingRight:0 })
-
-      }
-
-      if(scrollTop >= cardsOffset.top &&  scrollTop < 8000 ){
-
-        $hero.removeClass('show-shaddow')
-        $cards.addClass('is-tabs');
-
-        // set mix as active if user dont made a selection
-        // if( !$cardsContainer.find('.active')[0]){
-        //   $cardsContainer.find('[data-slug="mix"]').trigger('click')
-        // }
-
-        var cardPos = (scrollTop - cardsOffset.top),
-            sumMainFooter = cardMainOffset.height + cardFooterOffset.height + 1,
-            stageAnim = cardPos/sumMainFooter <= 1 ? cardPos/sumMainFooter: 1 ,
-            cardsWidth = 73.125,
-            docWidthREM = docWidth/16,
-            newWidth = docWidthREM * stageAnim >= cardsWidth ? docWidthREM * stageAnim : cardsWidth,
-            newHeight = cardPos > sumMainFooter ? sumMainFooter  : cardPos,
-            newFsCardTitle = 1 + .375 * (1-stageAnim ) + 'rem';
-
-        // pin card
-        $cards.css({ marginTop: scrollTop - cardsOffset.top, marginBottom: 0 })
-
-        // cards full width
-        $cardsContainer.css({
-          maxWidth: newWidth + 'rem',
-          marginBottom: 12.25 * (1-stageAnim) + 'rem'
-        })
-
-        // hide card main & footer
-        $cardMain.css({ marginTop: -newHeight, opacity: 1 - stageAnim })
-        $cardFooter.css({ opacity: 1 - stageAnim - 0.3 })
-
-        // adjust header card height
-        $cardHeader.css({
-          paddingTop: 1.875 * (1-stageAnim ) + 'rem',
-          paddingBottom: 1.875 * (1-stageAnim ) + 'rem',
-          maxWidth: stageAnim*100 + '%'
-        })
-
-        $cardTitle.css({
-          fontSize: newFsCardTitle
-        })
-
-        $cardSubtitle.css({
-          opacity: (1-stageAnim - .3),
-          height: 1.375 * (1-stageAnim) + 'rem'
-        })
-
-        $channels.css({
-          opacity: stageAnim,
-        })
-
-        if(stageAnim >= 1){
-          $channelInfo.css({
-            marginTop: -(scrollTop - ( cardsOffset.top + cardsOffset.height - channelsheaderOffset.height -18 ))
-          });
-        }
-      } else {
-        $cards.removeClass('is-tabs');
-        $hero.addClass('show-shaddow');
-        _private.resetAnim();
-      }
-
-
-    }, 10, true));
-  }
-
-  return _public
 });
-*/
