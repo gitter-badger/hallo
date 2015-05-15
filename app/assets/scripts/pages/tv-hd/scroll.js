@@ -5,8 +5,23 @@ define([
   var _public = {},
       _private = {};
 
+  // html
+  // var html = document.querySelector('html');
+
+  // sizes
   var cardSize = parseInt(document.querySelector('oi-card').getBoundingClientRect().height);
+
+  // cards
+  var cards = document.querySelector('.cards');
   var cardsContainer = document.querySelector('.cards_container');
+  var cardsContainerBox = document.querySelector('.cards_container_box');
+  var oiCard = document.querySelectorAll('oi-card');
+  var oiCardHeader = document.querySelectorAll('.oi-card_header');
+
+  // channels
+  var oiChannels = document.querySelector('.oi-channels');
+
+  // positions
   var openPosition = parseInt($('.cards_container').offset().top);
   var lockPosition = openPosition + parseInt(cardsContainer.getBoundingClientRect().height - document.querySelector('.oi-card_header').getBoundingClientRect().height - 10);
 
@@ -42,51 +57,127 @@ define([
   };
 
   /**
+   * baseFromPoint
+   * ***/
+  _private.checkSelected = function(){
+    var hasSelected = 0;
+    [].forEach.call(oiCard, function(card){
+      if (card.classList.contains('selected')){
+        hasSelected++;
+      }
+    });
+
+    if (hasSelected > 0){
+      return;
+    } else {
+      oiCard[2].className += 'selected';
+    }
+
+    return;
+
+    // return;
+
+    // return;
+
+    // if(!$('.product-card').hasClass('selected')) {
+    //   var placeholder = $($('.product-card')[1]).attr('data-placeholder');
+    //   $('.product-card[data-placeholder="'+placeholder+'"]').addClass('selected');
+    // }
+  };
+
+  /**
    * scroller
    * ***/
   _private.scroller = function(){
-
-    var selected = null;
-    var titles = document.querySelectorAll('.product-card .product-card-title');
-    var images = document.querySelectorAll('.product-image');
-    var cards = document.querySelectorAll('.product-card');
-    // var toc = document.querySelector('.oi-channels');
-    var oiChannels = document.querySelector('.oi-channels');
-    var product = document.querySelector('#product-contents .product');
-    var body = document.querySelector('body');
-    var bodyColor = document.querySelector('.backColor');
 
     var dynamicTable = function(y, initialPoint, finalPoint){
       var p = _private.baseFromPoint(y, initialPoint, finalPoint, 10);
       oiChannels.style.top = (25 - p*2.5)+'vh';
     };
 
-    var dynamicTableOpacity = function(){
-
+    var dynamicTableOpacity = function(y, initialPoint, finalPoint){
+      var p = _private.baseFromPoint(y, initialPoint, finalPoint, 10);
+      oiChannels.style.opacity = (p/10);
     };
 
-    var dynamicCards = function(){
-
+    var dynamicCards = function(y, initialPoint, finalPoint){
+      var p = _private.baseFromPoint(y, initialPoint, finalPoint, 100);
+      for (var i = 0; i < 3; i++) {
+        oiCard[i].style.height = (100 - p)+'%';
+      }
     };
 
-    var dynamicTitle = function(){
-
+    var dynamicTitle = function(y, initialPoint, finalPoint){
+      var thinTitle = (y >= initialPoint);
+      for (var i = 0; i < 3; i++) {
+        if (thinTitle) {
+          if (!oiCardHeader[i].classList.contains('thin')){
+            oiCardHeader[i].className += ' thin';
+          }
+        } else {
+          if (oiCardHeader[i].classList.contains('thin')){
+            oiCardHeader[i].className = oiCardHeader[i].className.replace(' thin', '');
+          }
+        }
+      }
     };
 
-    var dynamicBackgrounds = function(){
+    var dynamicBackgrounds = function(y, initialPoint, finalPoint){
+      // oiCardHeader
+      var initialPointClass = (y >= initialPoint);
 
+      if (initialPointClass) {
+        if (!cards.classList.contains('parse')){
+          cards.className += ' parse';
+        }
+      } else {
+        if (cards.classList.contains('parse')){
+          cards.className = cards.className.replace(' parse', '');
+        }
+      }
+
+      return;
+
+      // if (initialPointClass) {
+      //   if (!subtitle.classList.contains('subtitle-opacity')) {
+      //     subtitle.className += ' subtitle-opacity';
+      //   }
+      // } else {
+      //   subtitle.className = subtitle.className.replace(' subtitle-opacity', '');
+      // }
+
+
+      if (oiCardHeader.length > 0) {
+        for (var i = 0; i < 3; i++) {
+          console.log(oiCardHeader.classList.contains('selected'));
+
+          // var title = oiCardHeader[i].querySelector('.product-card-title');
+          // var subtitle = oiCardHeader[i].querySelector('.product-card-title .subtitle');
+          // if (oiCardHeader[i].classList.contains('selected')) {
+          //   if (initialPointClass) {
+          //     if (!title.classList.contains('product-card-title-green')) {
+          //       title.className += ' product-card-title-green';
+          //     }
+          //   } else {
+          //     title.className = title.className.replace(' product-card-title-green', '');
+          //   }
+          // }
+
+
+        };
+      }
+      return;
     };
 
     var open = function(){
-
       if (window.scrollY >= openPosition) {
-        if (!cardsContainer.classList.contains('open')) {
-          cardsContainer.className += " open";
-          // checkSelected();
+        if (!cards.classList.contains('open')) {
+          cards.className += ' open';
+          _private.checkSelected();
           // selected = document.querySelector('.product-card.selected .selector');
         }
       } else {
-        cardsContainer.className = cardsContainer.className.replace(' open', '');
+        cards.className = cards.className.replace(' open', '');
         // body.className = body.className.replace("open-card", "");
         // $('.product-card').removeClass('selected');
       }
@@ -96,22 +187,22 @@ define([
       if (window.scrollY >= lockPosition) {
         if (!lock.done) {
           lock.done = true;
-          oiChannels.className += 'lock';
-          cardsContainer.className += ' lock';
+          oiChannels.className += ' lock';
+          cards.className += ' lock';
         }
       } else {
         lock.done = false;
-        oiChannels.className = oiChannels.className.replace('lock', '');
-        cardsContainer.className = cardsContainer.className.replace('lock', '');
+        oiChannels.className = oiChannels.className.replace(' lock', '');
+        cards.className = cards.className.replace(' lock', '');
       }
     };
 
     var scrollSpy = function(e){
       window.scrollY = window.pageYOffset;
 
-      if (window.scrollY <= 1){
-        $('.product-card').removeClass('selected');
-      }
+      // if (window.scrollY <= 1){
+      //   $('.product-card').removeClass('selected');
+      // }
 
       dynamicTable(window.scrollY, -window.innerHeight*3, openPosition );
       dynamicTableOpacity(window.scrollY, openPosition, openPosition + cardSize*0.21 );
@@ -128,15 +219,24 @@ define([
     };
 
     window.addEventListener('scroll', scrollSpy);
+    scrollSpy();
   };
 
+  /**
+   * scrollSpeed
+   *
+   * @TODO
+   * - speed improvements
+   * - accell easing
+   *
+   * ***/
   _private.scrollSpeed = function(){
 
     var lastSpeeds = [];
-    var html = document.querySelector('html');
     var baseTime = 0.610;
     var lastScroll = 0;
     var lastTime = 0;
+    var checkStopTimeout = 0;
 
     var update = function(){
 
@@ -153,16 +253,24 @@ define([
       if (lastSpeeds.length > 9) { lastSpeeds.splice(0,1); }
       lastSpeeds.push(finalTimer);
 
-      var m = 0;
-      for (var i = lastSpeeds.length - 1; i >= 0; i--) { m += lastSpeeds[i]; };
-      var media = (m/lastSpeeds.length).toFixed(2);
+      // calculating media
+      var media = 0;
+      lastSpeeds.forEach(function(e){
+        media += e;
+      });
+      media = (media/lastSpeeds.length).toFixed(2);
 
-      window.requestAnimationFrame(function(){
-        // html.style.transitionDuration = media+'s';
-        cardsContainer.style.transitionDuration = media+'s';
-        // for (var i = 0; i < 3; i++) {
-        //   titles[i].style.transitionDuration = media+'s';
-        // }
+      // checking stop
+      clearTimeout(checkStopTimeout);
+      checkStopTimeout = window.setTimeout(function(){
+        lastSpeeds = [];
+      }, 1000);
+
+      // updating elements
+      // html.style.transitionDuration = media+'s';
+      cards.style.transitionDuration = media+'s';
+      [].forEach.call(oiCardHeader, function(e){
+        e.style.transitionDuration = media+'s';
       });
 
       lastScroll = window.scrollY;
