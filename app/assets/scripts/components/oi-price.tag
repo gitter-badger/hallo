@@ -6,10 +6,7 @@
     <div class="oi-price_value">
       <span class="oi-price_value_integer">{ integer }</span>
       <span class="oi-price_value_cents">,{ cents }</span>
-
-    </div>
-    <div class="oi-price_suffix">
-      <span>/</span>{ suffix }
+      <span class="oi-price_value_suffix">/{ suffix }</span>
     </div>
   </div>
 
