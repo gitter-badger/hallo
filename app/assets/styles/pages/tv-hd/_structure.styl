@@ -1,23 +1,28 @@
+body
+  +above('m')
+    &.white-background
+      background-color white
+body >header
+    position relative
+    min-height remify(370px)
+    height 100vh
+    max-height remify(768px)
+    margin-bottom -($cardSizeMobile)
+    +above('m')
+      margin-bottom remify(-64px)
+
 .oi-channels
-  // background-color $green
   display block
   width 100%
   margin 0 auto
   overflow hidden
   position relative
-  z-index 2
+  top: 25vh
+  z-index 1
   +above('m')
     border remify(10px) solid transparent
     border-top 0
-    // padding remify(10px)
-    // &.nopad
-    //   padding-left 0
-    //   padding-right 0
-    //   padding-top 0
 
   &_container
     background $white
     position relative
-    z-index 2
-    &#channel-info
-      z-index 1
