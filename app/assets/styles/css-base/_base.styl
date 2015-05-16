@@ -1,11 +1,20 @@
 
 html
   font-size 16px
+  +above('m')
+    font-size 92%
+  +above('l')
+    font-size 100%
+  +above('xxl')
+    font-size 134%
   +above('xxxl')
+    font-size 155%
+  +above('4k')
     font-size 1vw
 
 body
-  font-family font-stack( 'Helvetica' )
+  // font-family font-stack( 'Helvetica' )
+  font-family sans-serif
   font-size 1rem
   line-height 1.4
   opacity 1
