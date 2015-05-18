@@ -127,7 +127,9 @@ define([
         if(item === 'spot'){
           listHtml += '<li>' + cart[item].quant + ' ' + ( cart[item].quant === 1 ? cart[item].name : 'Pontos' ) + '</li>';
         } else {
-          listHtml += '<li>' + cart[item].name + '</li>';
+          if(item !== 'phone'){
+            listHtml += '<li>' + cart[item].name + '</li>';
+          }
         }
       }
     }
