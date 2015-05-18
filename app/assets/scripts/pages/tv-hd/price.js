@@ -13,6 +13,7 @@ define([
       cart = {},
       $spots = $('.oi-channels-addons_item_spots a'),
       $openClientType    = $('.oi-channels_header_client-type-trigger'),
+      $openClientTypeText = $openClientType.find('span').eq(0),
       $dropdowClientType = $('.oi-channels_header_client-type_dropdow'),
       $clientType        = $dropdowClientType.find('a'),
       $cartList = $('#cart-list'),
@@ -252,12 +253,22 @@ define([
   _private.changeClientType = function(){
     $clientType.on('click', function(evt){
       evt.preventDefault();
+      if( !$(this).hasClass('active') ){
+        _private.toggleClientText();
+      }
       $clientType.removeClass('active');
       $(this).addClass('active')
       // $dropdowClientType.removeClass('open');
       var quant = $(this).hasClass('has-phone') ? 0 : 1;
       _private.cartUpdateValue('phone', quant)
     });
+  }
+
+  _private.toggleClientText = function  (){
+    var origText = $openClientTypeText.text();
+    var altText = $openClientTypeText.data('text');
+    $openClientTypeText.text(altText)
+    var altText = $openClientTypeText.data('text', origText);
   }
 
 
