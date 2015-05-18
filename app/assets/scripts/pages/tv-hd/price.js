@@ -51,7 +51,7 @@ define([
       _private.cartStart(); //
       _private.startSpot();
       _private.changeSpot();
-      _private.openClientType();
+      _private.bindOpenClientType();
     });
   }
 
@@ -208,13 +208,44 @@ define([
     }).value();
   }
 
-  _private.openClientType = function(){
+  _private.bindOpenClientType = function(){
     $openClientType.on('click', function(evt){
       evt.preventDefault();
-      $dropdowClientType.toggleClass('open');
+      evt.stopPropagation()
+      _private.openClientType();
     });
     _private.changeClientType();
   }
+
+  _private.openClientType = function(){
+    $dropdowClientType.addClass('open');
+      _private.bindCloseClientType();
+      _private.bindNavKeyboardClientType();
+  }
+
+  _private.closeClientType = function(){
+    $dropdowClientType.removeClass('open');
+  }
+
+  _private.bindCloseClientType = function (){
+    $('body').on('click.bodyClientType', function (evt) {
+      evt.preventDefault();
+      console.log('aaa');
+      $('body').off('click.bodyClientType')
+      _private.closeClientType();
+    })
+  }
+
+  _private.bindNavKeyboardClientType = function(){
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      // Esc
+      if (evt.keyCode == 27) {
+        $('body').off('click.bodyClientType')
+        _private.closeClientType();
+      }
+    };
+  };
 
   _private.changeClientType = function(){
     $clientType.on('click', function(evt){
