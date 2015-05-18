@@ -1,10 +1,19 @@
-$buildplan-height-s = 50px
+$buildplan-height-s = 28px
 $buildplan-padding-s = 10px
-$buildplan-content-height-s = $buildplan-height-s - $buildplan-padding-s * 2
+// $buildplan-content-height-s = $buildplan-height-s - $buildplan-padding-s * 2
+$buildplan-content-height-s = 48px
 
-$buildplan-height-m = 70px
+$buildplan-height-m = 40px
 $buildplan-padding-m = 15px
-$buildplan-content-height-m = $buildplan-height-m - $buildplan-padding-m * 2
+// $buildplan-content-height-m = $buildplan-height-m - $buildplan-padding-m * 2
+$buildplan-content-height-m = 70px
+
+@keyframes kf-text
+  0%
+    width: 0rem
+  100%
+    width: 25%
+
 
 oi-buildplan
   display block
@@ -12,108 +21,114 @@ oi-buildplan
   z-index 2
 
 .build-plan
-  @extend $text-small
   background $white
   color $black
   display block
-  height remify($buildplan-height-s)
-  padding remify($buildplan-padding-s) 0
+  height: remify($buildplan-content-height-s);
+  padding remify($buildplan-padding-s) remify(20px)
   text-align center
   text-decoration none
-  vertical-align -webkit-baseline-middle
   +above('m')
+    max-width: remify(1170px)
+    margin: 0 auto
     font-size remify(16px)
     padding remify($buildplan-padding-m) 0
-    height remify($buildplan-height-m)
+    height remify($buildplan-content-height-m)
 
-  @keyframes build-plan-text-s
-    0%
-      width 0
-      opacity 0
-    100%
-      opacity 1
-      width remify(176px + 15px)
-
-  @keyframes build-plan-text-m
-    0%
-      width 0
-      opacity 0
-    100%
-      opacity 1
-      width remify(217px + 30px)
-
+  // right box
   &_text
-    animation-count 1
-    animation-delay 1s
-    animation-duration 700ms
-    animation-fill-mode forwards
-    animation-name build-plan-text-s
     display none
-    line-height remify($buildplan-content-height-s)
-    position relative
-    text-align left
-    transition-timing-function ease-out
-    vertical-align top
-    white-space nowrap
-    width 0
-    opacity 0
-    z-index 1
     +above('m')
-      animation-name build-plan-text-m
-      line-height remify($buildplan-content-height-m)
+      position relative
       display inline-block
+      width 0rem
+      max-width: remify(196px)
+      margin-right remify(30px)
+      text-align right
+      line-height remify(44px)
+      white-space nowrap
+      opacity 1
+      overflow: hidden
+      vertical-align top
+      animation: kf-text 0.610s
+      animation-delay: 3s
+      animation-timing-function: ease-out
+      animation-fill-mode: forwards;
 
+  // left box
   &_icons
-    background $white
-    border 1px solid $black
-    display inline-block
-    height remify($buildplan-content-height-s)
-    padding 0 remify(7px)
     position relative
+    display inline-block
+    min-width: remify(163px)
+    height remify($buildplan-height-s)
+    padding 0 remify(7px)
     z-index 2
+    background-image: url(../../../../assets/images/icons/bracer-left.svg), url(../../../../assets/images/icons/bracer-right.svg)
+    background-repeat: no-repeat
+    background-size: auto 100%
+    background-position:left center, right center
+    text-align: center
     +above('m')
-      height remify($buildplan-content-height-m)
+      height remify($buildplan-height-m)
 
     li
-      border 1px solid $white
-      display block
-      float left
-      height remify($buildplan-content-height-s)
-      margin -1px 0 0 0
-      text-align center
-      background right
-      width remify(36px)
-      +above('m')
-        height remify($buildplan-content-height-m)
-
-    svg
       display inline-block
-      height remify(24px)
-      margin-top remify(2px)
+      width remify(22px)
+      height remify(22px)
+      margin remify(3px) remify(5px)
+      text-align center
       +above('m')
-        margin-top remify(6px)
+        width remify(24px)
+        height remify(24px)
+        margin remify(8px)
 
+      div
+        width: 100%
+        height: 100%
+        svg
+          display block
+          width: 100%
+          height: 100%
+      div:first-child
+        display: block
+        +above('m')
+          display: none
+      div:last-child
+        display: none
+        +above('m')
+          display: block
   &_action
     display inline-block
-    margin-left remify(15px)
-    vertical-align top
-    border-radius remify(4px)
-    border remify(1px) solid $black
-    line-height remify($buildplan-content-height-s)
-    height remify($buildplan-content-height-s)
+    width: remify(100px)
+    height remify($buildplan-height-s)
     padding 0 remify(30px)
+    margin-left: remify(10px)
+    vertical-align: top;
+    border remify(1px) solid $black
+    border-radius remify(2px)
+    font-size: remify(11px)
+    text-align: center
+    line-height: remify($buildplan-height-s)
     +above('m')
+      width: auto
+      height remify($buildplan-height-m)
       margin-left remify(30px)
-      line-height remify($buildplan-content-height-m)
-      height remify($buildplan-content-height-m)
-      padding 0 remify(15px)
+      padding 0 remify(20px)
+      font-size: remify(16px)
+      line-height remify($buildplan-height-m)
 
     &:hover, &:active, &:focus
       color $purple
       border-color $purple
       outline none
 
-    & > span
-      display none
-      +above('m')
+    span
+      &:first-child
         display inline
+        +above('m')
+          display none
+      &:last-child
+        display none
+        +above('m')
+          display inline
+
