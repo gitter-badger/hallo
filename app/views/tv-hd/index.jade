@@ -1,42 +1,18 @@
 include ../_partials/head.jade
 
-body(onload="measureCRP()" itemtype="http://schema.org/WebPage")
-  
+//- body(onload="measureCRP()" itemtype="http://schema.org/WebPage")
+body
+
   header
-
     include ../_partials/build-plan.jade
-    
     include ../_partials/menu.jade
-
     include ../_partials/hero.jade
 
-    include ../_partials/header.jade
-
   main
-
     include _cards.jade
-    
-    .oi-channels
-      
-      .oi-channels_container
+    include _content.jade
 
-      .oi-channels_container#channel-info
-        .oi-channels_lists-container
-
-          include _channel-lists.jade
-          
-          include _channel-addons.jade 
-                  
-        channel-search
-        
-        include _channel-footer-banner.jade
-
-        include _channel-footer-item.jade 
-      
-
-    include _channel-footer-faq.jade 
-
-    include ../_partials/footer.jade
+  include ../_partials/footer.jade
 
   channel-modal
   contract-rules
