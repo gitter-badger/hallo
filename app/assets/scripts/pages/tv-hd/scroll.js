@@ -7,9 +7,7 @@ define([
 
   // html
   // var html = document.querySelector('html');
-
-  // sizes
-  var cardSize = parseInt(document.querySelector('oi-card').getBoundingClientRect().height);
+  var header = document.querySelector('body >header');
 
   // cards
   var cards = document.querySelector('.cards');
@@ -17,13 +15,26 @@ define([
   var cardsContainerBox = document.querySelector('.cards_container_box');
   var oiCard = document.querySelectorAll('oi-card');
   var oiCardHeader = document.querySelectorAll('.oi-card_header');
+  var oiCardHeaderTitle = document.querySelectorAll('.oi-card_header_title');
 
   // channels
-  var oiChannels = document.querySelector('.oi-channels');
+  var content = document.querySelector('.content');
+  var contentHeader = document.querySelector('.content_header');
+  var contentTableContainer = document.querySelector('.content_table_container');
+
+  var contentListsTitles = document.querySelectorAll('.oi-channels-lists_list-tv_title, .oi-channels-addons_title');
+  var contentContainer = document.querySelector('.oi-channels_container');
+
+  // sizes
+  var cardSize = cardsContainerBox.getBoundingClientRect().height;
+  var contentHeaderWidth = contentHeader.getBoundingClientRect().width;
+  var contentListsListTvTitleWidth = Math.round((contentHeaderWidth/100)*12.820512821);
+  var contentAddonsTitleWidth = Math.round((contentHeaderWidth/100)*23.076923077);
 
   // positions
-  var openPosition = parseInt($('.cards_container').offset().top);
-  var lockPosition = openPosition + parseInt(cardsContainer.getBoundingClientRect().height - document.querySelector('.oi-card_header').getBoundingClientRect().height - 10);
+  var openPosition = cards.offsetTop;
+  var lockPosition = content.offsetTop;
+  var foldPosition = contentContainer.offsetTop;
 
   /**
    * init
@@ -41,6 +52,8 @@ define([
 
     _private.scrollSpeed();
     _private.scroller();
+    _private.keys();
+    _private.updateOnResize();
   };
 
   /**
@@ -99,167 +112,6 @@ define([
   };
 
   /**
-   * scroller
-   *
-   * listen the page scrollY and dispatch some funcitons
-   *
-   * @method scroller
-   * @return null
-   *
-   * ***/
-  _private.scroller = function(){
-
-    // change table position
-    // TODO: performance check
-    var dynamicTable = function(y, initialPoint, finalPoint){
-      var p = _private.baseFromPoint(y, initialPoint, finalPoint, 10);
-      oiChannels.style.top = (25 - p*2.5)+'vh';
-    };
-
-    // change table opacity
-    // TODO: performance check
-    var dynamicTableOpacity = function(y, initialPoint, finalPoint){
-      var p = _private.baseFromPoint(y, initialPoint, finalPoint, 10);
-      oiChannels.style.opacity = (p/10);
-    };
-
-    // change cards height
-    // TODO: performance check
-    var dynamicCards = function(y, initialPoint, finalPoint){
-      var p = _private.baseFromPoint(y, initialPoint, finalPoint, 100);
-      for (var i = 0; i < 3; i++) {
-        oiCard[i].style.height = (100 - p)+'%';
-      }
-    };
-
-    // add thin class on titles
-    // TODO: performance check
-    var dynamicTitle = function(y, initialPoint, finalPoint){
-      var thinTitle = (y >= initialPoint);
-      for (var i = 0; i < 3; i++) {
-        if (thinTitle) {
-          if (!oiCardHeader[i].classList.contains('thin')){
-            oiCardHeader[i].className += ' thin';
-          }
-        } else {
-          if (oiCardHeader[i].classList.contains('thin')){
-            oiCardHeader[i].className = oiCardHeader[i].className.replace(' thin', '');
-          }
-        }
-      }
-    };
-
-    // add parse class on backgrounds
-    // TODO: performance check
-    // TODO: clear comments
-    var dynamicBackgrounds = function(y, initialPoint, finalPoint){
-
-      var initialPointClass = (y >= initialPoint);
-
-      if (initialPointClass) {
-        if (!cards.classList.contains('parse')){
-          cards.className += ' parse';
-        }
-      } else {
-        if (cards.classList.contains('parse')){
-          cards.className = cards.className.replace(' parse', '');
-        }
-      }
-
-      return;
-
-      // if (initialPointClass) {
-      //   if (!subtitle.classList.contains('subtitle-opacity')) {
-      //     subtitle.className += ' subtitle-opacity';
-      //   }
-      // } else {
-      //   subtitle.className = subtitle.className.replace(' subtitle-opacity', '');
-      // }
-
-
-      if (oiCardHeader.length > 0) {
-        for (var i = 0; i < 3; i++) {
-          console.log(oiCardHeader.classList.contains('selected'));
-
-          // var title = oiCardHeader[i].querySelector('.product-card-title');
-          // var subtitle = oiCardHeader[i].querySelector('.product-card-title .subtitle');
-          // if (oiCardHeader[i].classList.contains('selected')) {
-          //   if (initialPointClass) {
-          //     if (!title.classList.contains('product-card-title-green')) {
-          //       title.className += ' product-card-title-green';
-          //     }
-          //   } else {
-          //     title.className = title.className.replace(' product-card-title-green', '');
-          //   }
-          // }
-
-
-        };
-      }
-
-      return;
-    };
-
-    // add open class to cards
-    // TODO: performance check
-    var open = function(){
-      if (window.scrollY >= openPosition) {
-        if (!cards.classList.contains('open')) {
-          cards.className += ' open';
-          _private.checkSelected();
-          // selected = document.querySelector('.product-card.selected .selector');
-        }
-      } else {
-        cards.className = cards.className.replace(' open', '');
-        // body.className = body.className.replace("open-card", "");
-        // $('.product-card').removeClass('selected');
-      }
-    };
-
-    // add open class to cards and channels
-    // TODO: performance check
-    var lock = function(){
-      if (window.scrollY >= lockPosition) {
-        if (!lock.done) {
-          lock.done = true;
-          oiChannels.className += ' lock';
-          cards.className += ' lock';
-        }
-      } else {
-        lock.done = false;
-        oiChannels.className = oiChannels.className.replace(' lock', '');
-        cards.className = cards.className.replace(' lock', '');
-      }
-    };
-
-    // spy the scroll value
-    // TODO: performance check
-    var scrollSpy = function(e){
-      window.scrollY = window.pageYOffset;
-
-      // if (window.scrollY <= 1){
-      //   $('.product-card').removeClass('selected');
-      // }
-
-      dynamicTable(window.scrollY, -window.innerHeight*3, openPosition );
-      dynamicTableOpacity(window.scrollY, openPosition, openPosition + cardSize*0.21 );
-
-      dynamicCards(window.scrollY, openPosition, openPosition + cardSize*0.89);
-      dynamicTitle(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize * 0.89);
-
-      dynamicBackgrounds(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize * 0.89);
-
-      open(window.scrollY);
-      lock(window.scrollY);
-
-      lastScroll = window.scrollY;
-    };
-
-    window.addEventListener('scroll', scrollSpy);
-    scrollSpy();
-  };
-
-  /**
    * scrollSpeed
    *
    * change transition-duration on some elements relative to scroll speed
@@ -269,6 +121,8 @@ define([
    *
    * ***/
   _private.scrollSpeed = function(){
+
+    var lastSpeeds = [];
     var baseTime = 0.610;
     var lastScroll = 0;
     var lastTime = 0;
@@ -317,6 +171,387 @@ define([
     update();
 
     return;
+  };
+
+  /**
+   * scroller
+   *
+   * listen the page scrollY and dispatch some funcitons
+   *
+   * @method scroller
+   * @return null
+   *
+   * ***/
+  _private.scroller = function(){
+
+    // change table position
+    // TODO: performance check
+    var dynamicTable = function(y, initialPoint, finalPoint){
+      var p = _private.baseFromPoint(y, initialPoint, finalPoint, 10);
+      content.style.top = (25 - p*2.5)+'vh';
+
+      content.style.opacity = _private.baseFromPoint(y, initialPoint, finalPoint, 1);
+    };
+
+    // change table opacity
+    // TODO: performance check
+    // TODO: bound to dynamicTable method
+    var dynamicTableOpacity = function(y, initialPoint, finalPoint){
+      var p = _private.baseFromPoint(y, initialPoint, finalPoint, 10);
+      content.style.opacity = (p/10);
+    };
+
+    // change cards height
+    // TODO: performance check
+    var dynamicCards = function(y, initialPoint, finalPoint){
+      var p = _private.baseFromPoint(y, initialPoint, finalPoint, 100);
+      for (var i = 0; i < 3; i++) {
+        oiCard[i].style.height = (100 - p)+'%';
+      }
+    };
+
+    // add thin class on titles
+    // TODO: performance check
+    var dynamicTitle = function(y, initialPoint, finalPoint){
+      var thinTitle = (y >= initialPoint);
+      for (var i = 0; i < 3; i++) {
+        if (thinTitle) {
+          if (!oiCardHeader[i].classList.contains('thin')){
+            oiCardHeader[i].className += ' thin';
+          }
+        } else {
+          if (oiCardHeader[i].classList.contains('thin')){
+            oiCardHeader[i].className = oiCardHeader[i].className.replace(' thin', '');
+          }
+        }
+      }
+    };
+
+    // add parse class on backgrounds
+    // TODO: performance check
+    // TODO: clear comments
+    var dynamicBackgrounds = function(y, initialPoint, finalPoint){
+
+      if (y >= initialPoint) {
+        if (!cards.classList.contains('parse')){
+          cards.className += ' parse';
+        }
+      } else {
+        if (cards.classList.contains('parse')){
+          cards.className = cards.className.replace(' parse', '');
+        }
+      }
+
+      return;
+    };
+
+    // change the size of border realtive to the table depth
+    // TODO: performance check
+    // TODO: clear componentes
+    // TODO: increase logic
+    var dynamicBorderSize = function(){
+      var newSize = contentTableContainer.getBoundingClientRect().bottom;
+      if (newSize < window.innerHeight){
+        cardsContainer.style.height = newSize+'px';
+      } else {
+        cardsContainer.style.height = '100vh';
+      }
+    };
+
+    var dynamiciPhoneSizeHack = function(){
+      if (navigator.userAgent.match(/iPhone/i)){
+        header.style.height = 'calc(100vh - 68px)';
+      }
+    };
+
+      // add open class to cards
+    // TODO: performance check
+    var open = function(){
+      if (window.scrollY >= openPosition) {
+        if (!cards.classList.contains('open')) {
+          cards.className += ' open';
+          _private.checkSelected();
+        }
+      } else {
+        cards.className = cards.className.replace(' open', '');
+      }
+    };
+
+    // add open class to cards and channels
+    // TODO: performance check
+    var lock = function(){
+      if (window.scrollY >= lockPosition) {
+        if (!lock.done) {
+          lock.done = true;
+          content.className += ' lock';
+          cards.className += ' lock';
+          // frameSpy.loop = true;
+          // frameSpy();
+        }
+      } else {
+        lock.done = false;
+        content.className = content.className.replace(' lock', '');
+        cards.className = cards.className.replace(' lock', '');
+       //  frameSpy.loop = false;
+       // _private.updateTitles(0, 0);
+      }
+
+      return;
+    };
+
+    // add fold class to channels
+    // TODO: performance check
+    var fold = function(){
+      if (window.scrollY >= foldPosition) {
+        if (!content.classList.contains('fold')) {
+          cards.className += ' fold';
+          content.className += ' fold';
+        }
+      } else {
+        cards.className = cards.className.replace(' fold', '');
+        content.className = content.className.replace(' fold', '');
+        // frameSpy.loop = false;
+      }
+      return;
+    };
+
+    // spy the scroll value
+    // TODO: performance check
+    var scrollSpy = _private.scrollSpy =  function(e){
+      window.scrollY = window.pageYOffset;
+
+      lockPosition = content.offsetTop - oiCardHeaderTitle[0].getBoundingClientRect().height - 10;
+      foldPosition = lockPosition + contentHeader.offsetHeight;
+
+      if (window.innerWidth >= 768) {
+        dynamicTable(window.scrollY, openPosition, openPosition + cardSize*0.21 );
+        // dynamicTable(window.scrollY, -window.innerHeight*3, openPosition );
+        // dynamicTableOpacity(window.scrollY, openPosition, openPosition + cardSize*0.21 );
+
+        dynamicCards(window.scrollY, openPosition, openPosition + cardSize*0.89);
+        dynamicTitle(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize * 0.89);
+
+        dynamicBorderSize();
+      } else {
+
+        dynamiciPhoneSizeHack();
+      }
+
+      dynamicBackgrounds(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize * 0.89);
+
+      open();
+      lock();
+
+      fold();
+
+      lastScroll = window.scrollY;
+    };
+
+    var frameSpy = function(){
+
+      var update = function(){
+        _private.updateTitles(contentHeader.getBoundingClientRect().bottom, contentHeader.getBoundingClientRect().left);
+        if (frameSpy.loop == true){
+          animationLoopback();
+        }
+      };
+
+      var animationLoopback = function(){
+        window.requestAnimationFrame(update);
+      };
+      animationLoopback();
+
+      return;
+    };
+
+    window.addEventListener('scroll', scrollSpy);
+    scrollSpy();
+  };
+
+  /**
+   * updateTitles
+   *
+   * update table titles postion when locked
+   *
+   * @method updateTitles
+   * @param top {number} top position of title
+   * @param left {number} left position of title
+   * @return null
+   *
+   * ***/
+  _private.updateTitles = function(top, left){
+    var nextLeft = left;
+    [].forEach.call(contentListsTitles, function(e){
+      e.style.top = top+'px';
+
+      if (top > 0){
+        e.style.left = nextLeft+'px';
+      } else {
+        e.style.left = '0px';
+      }
+
+      if (e.classList.contains('oi-channels-addons_title')){
+        e.style.width = contentAddonsTitleWidth+'px';
+      } else {
+        e.style.width = contentListsListTvTitleWidth+'px';
+      }
+
+      nextLeft += contentListsListTvTitleWidth;
+    });
+
+    return;
+  };
+
+  /**
+   * keys
+   *
+   * load keyboard letters to use on page points
+   *
+   * @method scrollSpeed
+   * @return null
+   *
+   * ***/
+  _private.keys = function(){
+
+    var moveToOpenPosition = function(){
+      window.scroll(0, openPosition);
+      // $('html, body').animate({
+      //   scrollTop: parseInt(cards.offsetTop)
+      // }, 610);
+    };
+
+    var moveToCardPosition = function(){
+      var cardSize = window.cardSize;
+      var openPosition = parseInt($('#product-contents').offset().top);
+      $('html, body').animate({
+        scrollTop: parseInt(openPosition + cardSize*0.55)
+      }, 610);
+    };
+
+    var moveToLockPosition = function(){
+      // window.scroll(0, parseInt(cards.offsetTop + cardsContainerBox.getBoundingClientRect().height - oiCardHeader[0].getBoundingClientRect().height - 10));
+      window.scroll(0, lockPosition);
+      // $('html, body').animate({
+      //   scrollTop: parseInt(cards.offsetTop + cardsContainerBox.getBoundingClientRect().height - oiCardHeader[0].getBoundingClientRect().height - 10)
+      // }, 610);
+    };
+
+    var moveToTopPosition = function(){
+      oi.visual.scrollIt.disableScroll();
+      $('html, body').animate({
+        scrollTop: 0
+      }, 610);
+    };
+
+    var checkSelected = function(){
+      if(!$('.product-card').hasClass('selected')) {
+        var placeholder = $($('.product-card')[1]).attr('data-placeholder');
+        $('.product-card[data-placeholder="'+placeholder+'"]').addClass('selected');
+      }
+    };
+
+    var selectBack = function(){
+      if (!$('.product-card').hasClass('selected')) {
+        moveToLockPosition();
+      } else {
+        var placeholder = $('.product-card.selected').attr('data-placeholder');
+        $('.product-card').each(function(i, e){
+          if ($(e).attr('data-placeholder') == placeholder) {
+            if ($('.product-card')[i-1]) {
+              $('.product-card').removeClass('selected');
+              $($('.product-card')[i-1]).addClass('selected');
+              $('.product-card .product-card-title').attr('style', 'height: 4rem');
+            }
+          }
+        });
+      }
+    };
+
+    var selectFowrad = function(){
+      if (!$('.product-card').hasClass('selected')) {
+        moveToLockPosition();
+      } else {
+        var placeholder = $('.product-card.selected').attr('data-placeholder');
+        $('.product-card').each(function(i, e){
+          if ($(e).attr('data-placeholder') == placeholder) {
+            if ($('.product-card')[i+1]) {
+              $('.product-card').removeClass('selected');
+              $($('.product-card')[i+1]).addClass('selected');
+              $('.product-card .product-card-title').attr('style', 'height: 4rem');
+            }
+          }
+        });
+      }
+    };
+
+    var keypress = function(e){
+      if (e.keyCode == 40) {
+        e.preventDefault();
+        moveToLockPosition();
+      } else if (e.keyCode == 38) {
+        e.preventDefault();
+        moveToTopPosition();
+      } else if (e.keyCode == 65) {
+        e.preventDefault();
+        moveToOpenPosition();
+      } else if (e.keyCode == 66) {
+        e.preventDefault();
+        moveToCardPosition();
+      } else if (e.keyCode == 37) {
+        e.preventDefault();
+        selectBack();
+      } else if (e.keyCode == 39) {
+        e.preventDefault();
+        selectFowrad();
+      } else {
+        console.log(e.keyCode);
+      }
+    };
+
+    document.addEventListener('keydown', keypress);
+  };
+
+  /**
+   * updateOnResize
+   *
+   * update base numbers on resize
+   *
+   * @method updateOnResize
+   * @return null
+   *
+   * ***/
+  _private.updateOnResize = function(){
+
+    var update = function(e){
+      openPosition = cards.offsetTop;
+      foldPosition = contentContainer.offsetTop;
+
+      cardSize = cardsContainerBox.getBoundingClientRect().height;
+
+      contentHeaderWidth = contentHeader.getBoundingClientRect().width;
+      contentListsListTvTitleWidth = (contentHeaderWidth/100)*12.820512821;
+      contentAddonsTitleWidth = (contentHeaderWidth/100)*23.076923077;
+
+      _private.scrollSpy(e);
+    };
+
+    window.addEventListener('resize', update);
+    update();
+
+    return;
+  };
+
+  /**
+   * changeTableTo
+   *
+   * change between tables by indexs
+   *
+   * @method changeTableTo
+   * @return {boolean} true, if we have a valid index, false if not
+   *
+   * ***/
+  _public.changeTableTo = function(index){
+    return false;
   };
 
   return _public;
