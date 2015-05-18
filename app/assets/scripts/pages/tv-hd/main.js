@@ -5,11 +5,12 @@ define([
   'vendor/riot',
   'tags/channel-modal',
   'tags/channel-search',
+  'tags/channel-print',
   'tags/contracts-rules',
   'tags/movie-rent',
   'pages/tv-hd/price',
   'pages/tv-hd/scroll',
-  ],function ($, _, _s, riot, channelModal, channelSearch, rules, movieRent, price, scroll) {
+  ],function ($, _, _s, riot, channelModal, channelSearch, channerlPrint, rules, movieRent, price, scroll) {
 
   price.init();
   scroll.init();
@@ -22,12 +23,14 @@ define([
       $channelsContainer = $('.oi-channels-lists_list-tv_container'),
       $channelLink       = $channelsContainer.find('a'),
       $addOnsLink        = $('.oi-channels-addons_item_link'),
-      $btOpenSearch        = $('.oi-channels_search-call a')
+      $btOpenSearch        = $('.oi-channels_search-call a'),
+      $btOpenPrint       = $('a.oi-channels_print')
 
       var riotMovieRent = riot.mount('movie-rent')[0]
       var cSerachcmodal = riot.mount('channel-search')[0]
       var cContractModal = riot.mount('contract-rules')[0]
       var cmodal = riot.mount('channel-modal')[0]
+      var cPrint = riot.mount('channel-print')[0]
 
   var config = {
     api: {
@@ -41,6 +44,7 @@ define([
     _private.bindNavKeyboard();
     _private.bindOpenAddOn();
     _private.bindOpenContract();
+    _private.bindOpenPrint();
     _private.bindOpenFooterItem();
     _private.openModalRent();
     _private.showAllAudio();
@@ -74,6 +78,13 @@ define([
     $('#openContract').on('click', function(event) {
       event.preventDefault();
       cContractModal.open()
+    });
+  }
+
+  _private.bindOpenPrint = function(){
+    $btOpenPrint.on('click', function(event) {
+      event.preventDefault();
+      cPrint.open()
     });
   }
 
