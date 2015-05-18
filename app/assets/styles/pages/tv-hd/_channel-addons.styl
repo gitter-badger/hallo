@@ -15,25 +15,35 @@
     height auto
     float left
     padding 0
+    position: relative;
 
   &_title
     font-size remify(13px)
     height remify(15px)
     margin-bottom remify(15px)
+    transition-property height, line-height
+    transition-duration 610ms
     +above('m')
       font-size remify(16px)
       height remify(20px)
     +above('l')
+      background-color: $grayLighter
       height remify(70px)
       line-height remify(70px)
       border-bottom remify(1px) solid $grayLight
       text-align center
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
 
   &_container
     overflow auto
     height remify(153px)
     +above('l')
       height auto
+      position: relative;
+      top: remify(70px);
 
   &_list
     display block
