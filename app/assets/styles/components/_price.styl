@@ -1,6 +1,6 @@
 oi-price
-  display block
   position relative
+  display block
 
 .oi-price
   position relative
@@ -10,37 +10,39 @@ oi-price
   +above('m')
     height remify(110px)
 
-  &.oi-price--small
-    .oi-price_value_integer
-      font-size remify(42px)
-      height remify(44px)
-      line-height remify(44px)
-      float right
-      margin-right remify(30px)
-    .oi-price_value_cents
-      font-size remify(21px)
-      height remify(22px)
-      line-height remify(22px)
-      transform translate(0px, remify(-41px))
-      float right
-    .oi-price_suffix
-      font-size remify(11px)
-      height remify(22px)
-      line-height remify(22px)
-      // margin-top remify(-25px)
-      // text-indent remify(43px)
-      text-indent 0
-      float right
-      margin-right remify(-30px)
-      width remify(31px)
+  // &.oi-price--small
+  //   .oi-price_value_integer
+  //     font-size remify(42px)
+  //     height remify(44px)
+  //     line-height remify(44px)
+  //     float right
+  //     margin-right remify(30px)
+  //   .oi-price_value_cents
+  //     font-size remify(21px)
+  //     height remify(22px)
+  //     line-height remify(22px)
+  //     transform translate(0px, remify(-41px))
+  //     float right
+  //   .oi-price_suffix
+  //     font-size remify(11px)
+  //     height remify(22px)
+  //     line-height remify(22px)
+  //     // margin-top remify(-25px)
+  //     // text-indent remify(43px)
+  //     text-indent 0
+  //     float right
+  //     margin-right remify(-30px)
+  //     width remify(31px)
 
   &_prefix
-    position absolute;
-    font-size remify(13px)
-    font-family $fontTextRegular
-    text-transform lowercase
-    color $grayLight
+    display: none
     +above('m')
+      position absolute;
+      display: block
+      font-size remify(13px)
+      font-family $fontTextRegular
+      text-transform lowercase
+      color $grayLight
       width: 100%
       top: remify(4px);
       left: remify(51px);
@@ -52,46 +54,62 @@ oi-price
     margin 0 auto
     font-family $fontTitle
     text-align center
+    white-space nowrap
+    line-height: remify(46px)
+    +above('m')
+      line-height: remify(94px)
 
     &_integer
-      position absolute;
+      position relative;
       display inline-block
-      font-size remify(35px)
-      line-height remify(44px)
-      text-align: right
+      top: remify(-7px)
+      left: remify(7px)
+      font-size remify(34px)
       +above('m')
         top: remify(21px)
-        right: 43%
+        left: remify(29px)
         font-size remify(96px)
-        line-height remify(96px)
 
     &_cents
-      position absolute;
+      position relative;
       display inline-block
-      font-size: remify(16px)
-      height: auto
-      line-height: remify(22px)
-      text-align: left
+      top: remify(-19px)
+      left: remify(9px)
+      font-size: remify(18px)
       +above('m')
-        top: remify(26px)
-        left: 57%
+        top: remify(-14px)
+        left: remify(29px)
         font-size: remify(48px)
-        line-height: remify(48px)
 
     &_suffix
-      position absolute;
-      display block
-      height auto
-      font-size remify(11px)
-      line-height remify(11px)
-      text-align left
+      position relative;
+      display inline-block
+      font-size remify(9px)
+      top: remify(-6px)
+      left: remify(-14px)
       +above('m')
-        top: remify(80px)
-        left: 59%
+        top: remify(21px)
+        left: remify(-32px)
         font-size remify(24px)
-        line-height remify(24px)
+      span
+        +below('m')
+          display: none
 
-    // span
-    //   display none
-    //   +above('m')
-    //     display inline
+
+
+.oi-price.small
+  .oi-price_value_integer
+    font-size remify(42px)
+    height remify(44px)
+    line-height remify(44px)
+  .oi-price_value_cents
+    font-size remify(21px)
+    height remify(22px)
+    line-height remify(22px)
+    transform translateY(remify(-14px))
+  .oi-price_suffix
+    font-size remify(11px)
+    height remify(22px)
+    line-height remify(22px)
+    margin-top remify(-25px)
+    text-indent remify(43px)
