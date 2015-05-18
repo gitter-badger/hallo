@@ -34,9 +34,14 @@
       position relative
       z-index 1
       height remify(58px)
-      width s("calc(100% - " + remify(140px + 100px + 170px) + ")")
       padding-right remify(30px)
+      margin remify(-10px) 0
+      +above('s')
+        display block
+        width s("calc(100% - " + remify(140px + 100px) + ")")
       +above('m')
+        margin 0
+        width s("calc(100% - " + remify(140px + 100px + 200px) + ")")
         display block
         margin-top remify(-12px)
 
@@ -222,12 +227,17 @@
 
     &_action
       height remify(58px)
-      display none
+      display block
       float left
       font-family $fontTextRegular
-      margin remify(-12px) 0 0 0
-      width remify(170px)
+      position fixed
+      bottom 0
+      left 0
+      width 100%
       +above('m')
+        width remify(170px)
+        position relative
+        margin remify(-12px) 0 0 0
         display block
 
       a
@@ -240,9 +250,14 @@
         font-size remify(16px)
         height remify(50px)
         line-height remify(50px)
-        margin-left remify(30px)
-        margin-top remify(4px)
         text-align center
+        max-width 50%
+        margin 0 auto
         &:hover
           border-bottom remify(1px) solid $orange
           margin-top remify(5px)
+        +above('m')
+          max-width 100%
+          margin-left remify(30px)
+          margin-top remify(4px)
+          width remify(170px)
