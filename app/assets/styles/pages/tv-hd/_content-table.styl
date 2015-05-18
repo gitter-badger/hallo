@@ -1,0 +1,35 @@
+// the value of table height, reflects on content_table space on top, relative to fixed propourses
+$contentTableHeaderHeight = 70px;
+
+.content_table_header
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: remify($contentTableHeaderHeight)
+  background-color: $white
+  overflow: hidden;
+  z-index: 1;
+  transition-property: transform
+  transition-duration: 610ms
+  ul
+    position: absolute
+    top: 0
+    left: 0
+    display: block;
+    width: 100%
+    +above('m')
+      position: relative
+      display: table
+      margin: 0 auto
+      max-width: remify(1170px)
+    li
+      +above('m')
+        position: relative
+        display: table-cell
+        width: 20px
+
+.content_table
+  position: relative
+  top: remify($contentTableHeaderHeight)
+  background-color: $white
