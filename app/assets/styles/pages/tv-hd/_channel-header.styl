@@ -183,19 +183,23 @@
               vertical-align middle
               height remify(55px)
 
-          &.active, &:hover, &:focus, &:active
+          &.active, &:focus, &:active
             & > span
               color $green
             svg circle.icon-inner
+              transform scale(1.2)
               fill $green
 
           svg
-            width remify(25px)
+            width remify(33px)
             transform translateY(remify(33px))
             margin 0 remify(5px) 0 0
             circle
               stroke $green
               &.icon-inner
+                transform scale(0)
+                transform-origin remify(25px) remify(25px)
+                transition all 0.2s ease
                 stroke $white
                 fill $white
               &.icon-outer

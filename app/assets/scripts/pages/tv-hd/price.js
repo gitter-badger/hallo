@@ -224,7 +224,9 @@ define([
   }
 
   _private.closeClientType = function(){
-    $dropdowClientType.removeClass('open');
+    setTimeout(function(){
+      $dropdowClientType.removeClass('open');
+    }, 400)
   }
 
   _private.bindCloseClientType = function (){
@@ -252,7 +254,7 @@ define([
       evt.preventDefault();
       $clientType.removeClass('active');
       $(this).addClass('active')
-      $dropdowClientType.removeClass('open');
+      // $dropdowClientType.removeClass('open');
       var quant = $(this).hasClass('has-phone') ? 0 : 1;
       _private.cartUpdateValue('phone', quant)
     });
