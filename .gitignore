@@ -30,5 +30,8 @@ node_modules
 .vagrant/
 dist/
 .publish
+.cache/
+.npm/
+tmp/
 bower_components/
 etc.md
