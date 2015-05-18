@@ -32,21 +32,10 @@
   oi-card
     width (100% / 3)
     float left
-    border-right-width 0
     pointer-events: initial
+    border-right-width 0
     &:last-child
       border-right-width remify(1px)
-
-  oi-card.selected .oi-card, .oi-card:hover, .oi-card:active
-      color: $green
-      .oi-card_header_subtitle .heading-bullet
-        background-color: $green
-        opacity 0.21
-      oi-price
-        .oi-price_prefix
-          color $green
-      .oi-card_content_footer_action
-        border-color $green
 
 .cards.open
   .cards_container
@@ -57,21 +46,35 @@
   oi-card
     border-color $green
   .oi-card_header_title
-    padding-top remify(6px)
+    +above('m')
+      padding-top remify(6px)
   .oi-card_header_line
-    width: 100%
-    left: 0
-    background-color $green
+    +above('m')
+      width: 100%
+      left: 0
+      background-color $green
+
 
 .cards.parse
   .cards_container
     +above('m')
       border remify(10px) solid $green
   oi-card.selected
+    +below('xs')
+      background-color: $green
     .oi-card_header
       background-color $green
     .oi-card_header_title
       color white
     .oi-card_header_subtitle
       color $green
+    oi-price
+      +below('xs')
+        color: $white
 
+
+.cards.fold
+  .cards_container_box
+    +above('m')
+      transition-duration: 610ms
+      transform: translateY(remify(-64px));
