@@ -9,16 +9,21 @@ oi-card
   overflow hidden
   border remify(1px) solid $grayLight
   background-color white
-  // background-image: url(../../../images/oi/card-mask.png)
+  // background-image: url(../../../images/oi/card-mobile-mask.png) // mobile
+  background-position: center top
+  background-size: auto 100%
   transition-duration 0s
   +above('m')
+    // background-image: url(../../../images/oi/card-mask.png) // desktop
     height $cardSize
     min-height remify(64px)
 
   oi-price
     color inherit
-    width: remify(256px)
-    margin: 0 auto
+    width: 100%
+    +above('m')
+      width: remify(256px)
+      margin: 0 auto
 
 
 .oi-card
@@ -30,77 +35,87 @@ oi-card
   overflow hidden
 
   &_header
-    color inherit
-    background-color $white
     position relative
     width 100%
-    height 7.25rem
+    height: remify(44px)
     z-index 4
     overflow hidden
+    color inherit
     transition-property height, background-color
+    +above('m')
+      height 7.25rem
+      background-color $white
+
     &.thin
-      height remify(64px)
-      z-index 99
+      +above('m')
+        height remify(64px)
+        z-index 99
 
     &_title
       display block
       font-family $fontTextLight
-      font-size remify(16px)
+      font-size remify(18px)
       text-align center
       text-transform capitalize
-      padding-top remify(10px)
-      color $green
+      padding-top remify(15px)
       +above('m')
+        color $green
+        padding-top remify(10px)
         font-size remify(21px)
         line-height remify(55px)
         height remify(64px)
 
     &_subtitle
       display none
-      text-align center
-      font-size remify(16px)
+      +above('s')
+        font-size remify(16px)
       +above('m')
+        text-align center
         font-size remify(21px)
         display block
 
     &_line
-      content: " "
-      display: block
-      position: absolute
-      bottom: 0
-      left: 22.5%
-      width: 55%;
-      height: 1px
-      background-color: $grayLight
-      transition-property: left, width, background-color
-      transition-timing-function: ease-in
-      transition-duration: inherit
+      display: none
+      +above('m')
+        content: " "
+        display: block
+        position: absolute
+        bottom: 0
+        left: 22.5%
+        width: 55%;
+        height: 1px
+        background-color: $grayLight
+        transition-property: left, width, background-color
+        transition-timing-function: ease-in
+        transition-duration: inherit
 
   &_content
     position absolute
     display block
     bottom 0
     width 100%
+    height: remify(48px)
     +above('m')
       height remify(438px)
 
     &_price
       position relative
+      width: 100%
       height remify(44px)
       +above('m')
         height remify(143px)
 
     &_list
-      position: relative
-      top: 0
       display none
-      font-size remify(13px)
-      color inherit
       +above('m')
+        position: relative
+        top: 0
         display block
         width: remify(256px)
         margin: 0 auto
         padding-left: remify(50px)
+        font-size remify(13px)
+        color inherit
       &_title
         font-size remify(13px)
       &_items
@@ -109,27 +124,40 @@ oi-card
         line-height remify(30px)
 
     &_footer
-      position relative
       display none
-      width 100%
       +above('m')
+        position absolute
+        bottom remify(31px)
         display block
+        width 100%
 
       &_action
         display block
-        width remify(328px)
+        min-width remify(228px)
+        width 100%
+        max-width remify(278px)
         height remify(50px)
         background-color $white
         border remify(1px) solid $black
         border-radius remify(2px)
+        margin remify(123px) auto 0
+        padding 0
         color inherit
         cursor pointer
         font-size remify(16px)
         font-family $fontTextRegular
         line-height remify(50px)
-        margin remify(123px) auto 0
-        padding 0
         text-align center
-        transition all 0.3s ease
+        +above('xl')
+          max-width remify(328px)
 
-
+oi-card.selected .oi-card, .oi-card:hover, .oi-card:active
+  color: $green
+  .oi-card_header_subtitle .heading-bullet
+    background-color: $green
+    opacity 0.21
+  oi-price
+    .oi-price_prefix
+      color $green
+  .oi-card_content_footer_action
+    border-color $green
