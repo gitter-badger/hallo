@@ -21,7 +21,6 @@ channel-modal
     filter grayscale(1)
     .channel-modal_indisponible
       opacity 1
-      // display block
     .channel-modal_content
       opacity .8
 
@@ -36,13 +35,10 @@ channel-modal
     z-index 3
     left 0
     width 100%
-    // display none
     opacity 0
     top remify(80px)
     text-align center
     transition all 1s ease
-    +above('m')
-      top remify(20px)
     +above('l')
       top remify(60px)
 
@@ -57,12 +53,11 @@ channel-modal
       color $white
       display inline-block
       padding 0 remify(20px)
-      +above('m')
+      +above('l')
         padding 0 remify(100px)
         margin 0 remify(100px)
         height remify(70px)
         line-height remify(70px)
-      +above('l')
         display block
 
   &_content
@@ -74,25 +69,20 @@ channel-modal
     padding-top remify(140px)
     max-width remify(1170px)
     margin 0 auto
-    +above('m')
-      padding remify(70px)
-      padding-top remify(140px)
     +above('l')
       padding-top remify(140px)
       padding-left remify(100px)
       padding-right remify(100px)
 
     &_header
-      +above('m')
-        height remify(310px)
-        float left
-        width 50%
       +above('l')
+        float left
+        height remify(310px)
         width 50%
 
     &_price
       margin-bottom remify(60px)
-      +above('m')
+      +above('l')
         height remify(310px)
         float left
         width 43%
@@ -113,20 +103,20 @@ channel-modal
         color $white
         text-decoration none
         margin-left auto
-        +above('m')
+        +above('l')
           margin-left remify(30px)
 
         &.add
           display none
           transform translate(0, remify(-17px))
-          +above('m')
+          +above('l')
             padding 0 remify(20px)
             display inline-block
           +above('xl')
             padding 0 remify(40px)
         &.tel
           display block
-          +above('m')
+          +above('l')
             display none
 
   &_image
@@ -192,10 +182,8 @@ channel-modal
     line-height remify(30px)
     font-family $fontTextRegular
     width 100%
-    +above('m')
-      float left
-      width 50%
     +above('l')
+      float left
       width 60%
 
     p
@@ -240,11 +228,8 @@ channel-modal
   &_disponible
     color $white
     width 100%
-    +above('m')
-      float left
-      width 43%
-      margin-left 7%
     +above('l')
+      float left
       width 33%
       margin-left 7%
 
@@ -269,11 +254,8 @@ channel-modal
   &_action
     color $white
     width 100%
-    +above('m')
-      float left
-      width 43%
-      margin-left 7%
     +above('l')
+      float left
       width 33%
       margin-left 7%
 
