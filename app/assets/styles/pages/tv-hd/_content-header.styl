@@ -2,23 +2,22 @@
   height remify(65px)
   padding remify(17px) remify(20px)
   background-color $white
-  border-bottom remify(1px) solid $grayLight
   position relative
   max-width remify(1170px)
   margin 0 auto
   z-index 2
+  overflow: hidden
+  border-bottom: remify(1.1px) solid $black
   transition-property: height, padding
   transition-duration: 610ms
-  background-image: url('../../../images/oi/cart-mask.png')
-  background-position: center
+  // background-image: url('../../../images/oi/cart-mask.png')
+  // background-position: center
 
   +above('m')
     padding remify(50px) remify(30px)
     height remify(130px)
   +above('l')
     padding remify(50px) 0
-    border-bottom remify(1px) solid $black
-
 
   &_list
     display none
@@ -69,7 +68,9 @@
 
   &_sidewalk
     float: right
-    width: 38%
+    width: 100%
+    +above('m')
+      width: 38%
 
 
   // the _sidewalk
@@ -361,14 +362,14 @@
       float left
 
   &_action
-    height remify(58px)
     display none
-    float left
     font-family $fontTextRegular
-    margin remify(-12px) 0 0 0
-    width remify(170px)
     +above('m')
       display block
+      width remify(170px)
+      height remify(58px)
+      float left
+      margin remify(-11px) 0 0 remify(23px)
 
     a
       color $black
@@ -378,11 +379,16 @@
       border-bottom remify(2px) solid $orange
       border-radius remify(2px)
       font-size remify(16px)
-      height remify(50px)
-      line-height remify(50px)
-      margin-left remify(30px)
+      height remify(62px)
+      line-height remify(62px)
       margin-top remify(4px)
       text-align center
+      +above('m')
+        height remify(50px)
+        line-height remify(50px)
+      +below('m')
+        text-indent: remify(30px)
+        text-align: left
       &:hover
         border-bottom remify(1px) solid $orange
         margin-top remify(5px)

@@ -54,11 +54,24 @@
       left: 0
       background-color $green
 
-
 .cards.parse
   .cards_container
     +above('m')
       border remify(10px) solid $green
+  .cards_container_box
+    +below('s')
+      height: remify(56px)
+    oi-card
+      +below('m')
+        height: remify(56px)
+        min-height: remify(56px)
+        transition-duration: 610ms
+        transition-property: height
+      +above('m')
+        transition-duration: 0s
+  .oi-card_content
+    +below('s')
+      display: none
   oi-card.selected
     +below('xs')
       background-color: $green
@@ -72,9 +85,15 @@
       +below('xs')
         color: $white
 
+.cards.lock
+  .cards_container_box
+    oi-card
+      +above('m')
+        transition-duration: 610ms
 
 .cards.fold
   .cards_container_box
-    +above('m')
-      transition-duration: 610ms
-      transform: translateY(remify(-64px));
+    oi-card
+      +above('m')
+        transition-duration: 610ms
+        transform: translateY(remify(-64px));

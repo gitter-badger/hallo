@@ -6,7 +6,7 @@
   position relative
   z-index 1
   +above('m')
-    top: 25vh
+    top: 0
     border remify(10px) solid transparent
     border-top 0
 
@@ -16,7 +16,7 @@
     left 0
     width: 100%
     background $white
-    z-index: 1
+    z-index: 2
 
   &_table_container
     position relative
@@ -24,24 +24,59 @@
     +above('m')
       top remify(130px)
 
+
 .content.lock
   .content_header_container
+    +below('s')
+      position: fixed
+      top: 100%
+      background-color: transparent;
     +above('m')
       position: fixed
-      top: remify(74px)
+      top: remify(74px);
       left: 0
       width: 100%
       border-left: remify(10px) solid transparent
       border-right: remify(10px) solid transparent
+  .content_header
+    +below('m')
+      background-color: transparent
+  .content_header_client-type
+    +below('m')
+      display: none
   .content_table_header
-    +above('m')
+    +above('l')
       position: fixed
-      top: remify(74px + 130px)
+      top: remify(74px + 130px);
+      transition-duration: 610ms
+      transition-property: transform
+
+
+.content.parse
+  .content_header_container
+    +below('s')
+      transform: translateY(remify(-100px))
+      transition-duration: 610ms
+      transition-property: transform
+  .content_header
+    +below('s')
+      overflow: visible
+      border-bottom: 0
+  .content_header_price
+    +below('s')
+      position: relative
+      top: 22px
+      left: -12px
+  .content_header_action
+    +below('s')
+      display: block
+
+
+
 
 .content.fold
   .content_header_container
     +above('m')
-      transition-property: transform
       transition-duration: 610ms
       transform: translateY(remify(-64px));
 
@@ -54,9 +89,24 @@
       height remify(90px)
 
   .content_table_header
-    +above('m')
+    +above('l')
+      height remify(48px)
+      transition-duration: 610ms
       transform: translateY(remify(-104px));
     ul li
-      +above('m')
+      +above('l')
         height remify(48px)
         line-height remify(48px)
+      h4
+        +above('l')
+          line-height: remify(50px)
+
+.content.hide
+  .content_table_header
+    +above('l')
+      transition-duration: 610ms;
+      // transform: translateY(remify(-255px));
+      transform: translateY(remify(-154px));
+
+
+
