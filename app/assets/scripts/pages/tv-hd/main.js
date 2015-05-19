@@ -7,11 +7,11 @@ define([
   'tags/channel-search',
   'tags/contracts-rules',
   'tags/movie-rent',
-  'pages/tv-hd/price',
+  'pages/tv-hd/cart',
   'pages/tv-hd/scroll',
-  ],function ($, _, _s, riot, channelModal, channelSearch, rules, movieRent, price, scroll) {
+  ],function ($, _, _s, riot, channelModal, channelSearch, rules, movieRent, cart, scroll) {
 
-  price.init();
+  cart.init();
   scroll.init();
 
   _.mixin(_s.exports());
