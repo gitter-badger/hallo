@@ -1,0 +1,34 @@
+cards:
+  -
+    title: 'Start HD'
+    slug: 'start'
+    subtitle:
+      - ''
+      - ''
+    list:
+      title: ''
+      items:
+        - ''
+    action: ''
+  -
+    title: 'Mix HD'
+    slug: 'mix'
+    subtitle:
+      - ''
+      - ''
+    list:
+      title: ''
+      items:
+        - ''
+    action: ''
+  -
+    title: 'Total HD'
+    slug: 'total'
+    subtitle:
+      - ''
+      - ''
+    list:
+      title: ''
+      items:
+        - ''
+    action: ''

@@ -1,12 +1,12 @@
 <channel-modal>
-  <div role="dialog" class="channel-modal { data.klass }">
+  <div role="dialog" class="channel-modal { data.klass }" show={ visible }>
     <div class="channel-modal_image" style="background-image:url({ data.img })"></div>
     <div class="channel-modal_indisponible">
       <div>
         Indisponível neste plano
       </div>
     </div>
-    <div class="channel-modal_close">
+    <div class="channel-modal_close" onclick={ close }>
       <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
         <g transform="translate(0, 0)">
           <line fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="19" y1="5" x2="5" y2="19" stroke-linejoin="round"></line>
@@ -32,10 +32,10 @@
             </div>
             <div class="oi-price_value">
               <span class="oi-price_value_integer">
-                { data.integer }
+                { integer }
               </span>
               <span class="oi-price_value_cents">
-                ,00
+                ,{ cents }
               </span>
               <div class="oi-price_suffix">
                 <span>/</span>Mês
@@ -127,12 +127,36 @@
   <script>
     var self = this;
     self.data = {}
-    loadChannel(urlApi){
-      $.getJSON(urlApi, function(json){
+    self.visible = false;
+
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      // Esc
+      if (evt.keyCode == 27) {
+        self.close()
+      }
+    };
+
+    self.open = function(url) {
+      self.loadChannel(url)
+    }
+
+    self.close = function(e) {
+      self.visible = false;
+      self.data = {}
+      self.update()
+      $('body').removeClass('scroll-lock');
+    }
+
+
+    self.loadChannel = function(url){
+      $.getJSON(url, function(json){
         self.data = json.data;
-        self.data.price = parseInt(self.data.price, 10)
-        self.data.integer = Math.floor(self.data.price);
-        self.data.cents = (self.data.price + "").split('.')[1];
+        self.visible = true;
+        self.integer = (json.data.price.toFixed(2) + '').split('.')[0]
+        self.cents = (json.data.price.toFixed(2) + '').split('.')[1];
+        console.log(self.integer, self.cents);
+        $('body').addClass('scroll-lock');
         self.update()
       });
     }

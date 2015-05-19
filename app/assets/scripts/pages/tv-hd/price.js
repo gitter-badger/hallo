@@ -13,6 +13,7 @@ define([
       cart = {},
       $spots = $('.oi-channels-addons_item_spots a'),
       $openClientType    = $('.oi-channels_header_client-type-trigger'),
+      $openClientTypeText = $openClientType.find('span').eq(0),
       $dropdowClientType = $('.oi-channels_header_client-type_dropdow'),
       $clientType        = $dropdowClientType.find('a'),
       $cartList = $('#cart-list'),
@@ -51,7 +52,7 @@ define([
       _private.cartStart(); //
       _private.startSpot();
       _private.changeSpot();
-      _private.openClientType();
+      _private.bindOpenClientType();
     });
   }
 
@@ -126,7 +127,9 @@ define([
         if(item === 'spot'){
           listHtml += '<li>' + cart[item].quant + ' ' + ( cart[item].quant === 1 ? cart[item].name : 'Pontos' ) + '</li>';
         } else {
-          listHtml += '<li>' + cart[item].name + '</li>';
+          if(item !== 'phone'){
+            listHtml += '<li>' + cart[item].name + '</li>';
+          }
         }
       }
     }
@@ -208,23 +211,66 @@ define([
     }).value();
   }
 
-  _private.openClientType = function(){
+  _private.bindOpenClientType = function(){
     $openClientType.on('click', function(evt){
       evt.preventDefault();
-      $dropdowClientType.toggleClass('open');
+      evt.stopPropagation()
+      _private.openClientType();
     });
     _private.changeClientType();
   }
 
+  _private.openClientType = function(){
+    $dropdowClientType.addClass('open');
+      _private.bindCloseClientType();
+      _private.bindNavKeyboardClientType();
+  }
+
+  _private.closeClientType = function(){
+    setTimeout(function(){
+      $dropdowClientType.removeClass('open');
+    }, 400)
+  }
+
+  _private.bindCloseClientType = function (){
+    $('body').on('click.bodyClientType', function (evt) {
+      evt.preventDefault();
+      console.log('aaa');
+      $('body').off('click.bodyClientType')
+      _private.closeClientType();
+    })
+  }
+
+  _private.bindNavKeyboardClientType = function(){
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      // Esc
+      if (evt.keyCode == 27) {
+        $('body').off('click.bodyClientType')
+        _private.closeClientType();
+      }
+    };
+  };
+
   _private.changeClientType = function(){
     $clientType.on('click', function(evt){
       evt.preventDefault();
+      if( !$(this).hasClass('active') ){
+        _private.toggleClientText();
+      }
       $clientType.removeClass('active');
       $(this).addClass('active')
-      $dropdowClientType.removeClass('open');
+      // $dropdowClientType.removeClass('open');
       var quant = $(this).hasClass('has-phone') ? 0 : 1;
       _private.cartUpdateValue('phone', quant)
     });
+  }
+
+  _private.toggleClientText = function  (){
+    var origText = $openClientTypeText.text();
+    var altText = $openClientTypeText.data('text');
+    $openClientTypeText.text(altText)
+    var altText = $openClientTypeText.data('text', origText);
   }
 
 
