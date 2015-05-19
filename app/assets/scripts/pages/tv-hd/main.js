@@ -37,12 +37,12 @@ define([
 
   _public.init = function(){
     _private.bindOpenModalChannel();
-    _private.bindNavKeyboard();
     _private.bindOpenAddOn();
     _private.bindOpenContract();
     _private.bindOpenFooterItem();
     _private.openModalRent();
     _private.showAllAudio();
+    _private.bindNavKeyboard();
   };
 
   _private.showAllAudio = function(){
@@ -99,12 +99,8 @@ define([
   };
 
   _private.bindNavKeyboard = function(){
-    document.onkeydown = function(evt) {
+    $(document).on('keydown', function (evt) {
       evt = evt || window.event;
-      // Esc
-      if (evt.keyCode == 27) {
-        cmodal.close()
-      }
       // Up / left = back
       if (evt.keyCode == 37 || evt.keyCode == 38 ) {
         _private.previousChannel();
@@ -113,7 +109,7 @@ define([
       if (evt.keyCode == 39 || evt.keyCode == 40 ) {
         _private.nextChannel();
       }
-    };
+    })
   };
 
   _private.previousChannel = function(){
