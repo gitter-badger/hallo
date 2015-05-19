@@ -31,5 +31,8 @@ node_modules
 dist/
 data/
 .publish
+.cache/
+.npm/
+tmp/
 bower_components/
 etc.md

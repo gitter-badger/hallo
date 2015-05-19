@@ -8,11 +8,11 @@ meyer-reset()
 box-sizing-reset()
 
 // CSS Base
-@import "css-base/_colors"
-@import "css-base/_base"
+@import "css-base/_colors" compile
+@import "css-base/_base" compile
 @import "css-base/_grid"
-@import "css-base/_typography"
-@import "css-base/_buttons"
+@import "css-base/_typography" compile
+@import "css-base/_buttons" compile
 
 // Components
 @import "components/_build-plan.styl"
@@ -26,6 +26,7 @@ box-sizing-reset()
 @import "components/_modal.styl"
 @import "components/_channel-info.styl"
 @import "components/_channel-search.styl"
+@import "components/_channel-print.styl"
 @import "components/_contract-rules.styl"
 @import "components/_movie-rent.styl"
 
@@ -37,6 +38,7 @@ box-sizing-reset()
 @import "_channel-lists.styl"
 @import "_channel-addons.styl"
 @import "_channel-search.styl"
+@import "_channel-print.styl"
 @import "_channel-footer-banner.styl"
 @import "_channel-footer-item.styl"
 @import "_channel-footer-faq.styl"

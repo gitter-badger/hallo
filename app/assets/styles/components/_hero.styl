@@ -18,12 +18,16 @@ oi-hero
     box-shadow 0 0 0 remify(350px) rgba(0,0,0,0)
 
 .oi-hero
-  display: none
+  display none
   +above('m')
     display: block
     height 100%
+    width 100%
     background-color $green
     z-index 1
+    position absolute
+    top 0
+    left 0
 
   &_image
     width 100%
@@ -32,3 +36,25 @@ oi-hero
     background-position top center
     background-size cover
     box-shadow inset 0px -40px 40px #000
+    
+  &_container
+    margin auto
+    max-width remify(1170px)
+    height remify(50px);
+    padding-top remify(400px);
+    padding-top s("calc(100vh - 250px)")
+    
+  &_caption
+    background-repeat no-repeat
+    background-position top right
+    color $white
+    
+  &_caption-name,
+  &_caption-time
+    text-align right
+    margin-right remify(60px)
+    font-size remify(13px)
+    
+  &_caption-name
+    font-weight bold
+    
