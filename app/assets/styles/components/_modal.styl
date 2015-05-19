@@ -75,23 +75,24 @@ channel-modal
       padding-right remify(100px)
 
     &_header
-      +above('l')
+      +above('m')
+        width 40%
         float left
+      +above('l')
         height remify(310px)
         width 50%
 
     &_price
       margin-bottom remify(60px)
-      +above('l')
-        height remify(310px)
+      +above('m')
         float left
-        width 43%
-        margin-left 7%
+        height remify(310px)
         padding-top remify(180px)
         margin-bottom 0
+        width 53%
+        margin-left 7%
       +above('l')
         width 43%
-        margin-left 7%
 
       a
         background-color transparent
@@ -116,6 +117,12 @@ channel-modal
             padding 0 remify(40px)
         &.tel
           display block
+          font-size remify(16px)
+          +above('m')
+            display inline-block
+            transform translate(0, remify(-17px))
+            font-size remify(13px)
+            padding 0 remify(15px)
           +above('l')
             display none
 
