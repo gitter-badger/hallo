@@ -151,12 +151,13 @@
 
     self.loadChannel = function(url){
       $.getJSON(url, function(json){
+        $('body').addClass('scroll-lock');
         self.data = json.data;
         self.visible = true;
-        self.integer = (json.data.price.toFixed(2) + '').split('.')[0]
-        self.cents = (json.data.price.toFixed(2) + '').split('.')[1];
-        console.log(self.integer, self.cents);
-        $('body').addClass('scroll-lock');
+        if(json.data.price){
+          self.integer = (json.data.price.toFixed(2) + '').split('.')[0]
+          self.cents = (json.data.price.toFixed(2) + '').split('.')[1];
+        }
         self.update()
       });
     }
