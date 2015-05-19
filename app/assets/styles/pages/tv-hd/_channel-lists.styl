@@ -15,112 +15,137 @@
     padding-bottom remify(120px)
 
   &_list-tv
-    height remify(150px)
-    padding remify(25px) 0 0 remify(15px)
+    position: relative
+    height remify(154px)
+    padding remify(49px) 0 0 0
+    // background-image: url(../../../images/oi/canais-mobile-mask.png)
+    // background-size: auto remify(154px)
+    // background-repeat: no-repeat
+    // background-position: left top
     +above('m')
-      padding remify(45px) 0 0 remify(30px)
-      height remify(195px)
+      height remify(154px)
+      padding remify(49px) 0 0 0
     +above('l')
-      padding 0
-      height auto
-      width (100% / 6)
-      float left
       position: relative;
-
-    &_title
-      font-size remify(13px)
-      height remify(15px)
-      margin-bottom remify(15px)
-      transition-property height, line-height
-      transition-duration 610ms
-      +above('m')
-        font-size remify(16px)
-        height remify(20px)
-      +above('l')
-        background-color: white
-        height remify(70px)
-        line-height remify(70px)
-        border-bottom remify(1px) solid $grayLight
-        text-align center
+      padding 0
+      width (100% / 6)
+      height auto
+      float left
+      padding: remify(13px) remify(30px) 0 0
+    &:after
+      content: " ";
+      +below('m')
         position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
+        bottom: 0
+        left: remify(30px)
+        display: block
+        width: 100vw
+        height: 1px
+        border-bottom: 1px dashed $grayLight
 
-      span
-        display inline
-        +above('l')
-          display none
 
     &_container
-      border-bottom remify(1px) dashed $grayLight
-      height remify(97px)
-      overflow scroll
+      height remify(105px)
+      overflow-x scroll
+      overflow-y hidden
+      padding-left: remify(21px)
       +above('m')
-        height remify(115px)
+        height remify(105px)
       +above('l')
+        padding: 0
         overflow auto
         height auto
-        border-bottom none
-        width remify(95px)
+        border none
+        width remify(120px)
         margin 0 auto
         position: relative;
-        top: remify(70px);
 
       ul
         display block
         width 2000px
+        height remify(105px)
         +above('l')
           width auto
+          height auto
 
       li
         display block
-        height remify(85px)
-        width remify(85px)
+        width 26.6vw
+        height remify(105px)
         float left
         text-align center
+        +above('s')
+          width 22vw
         +above('m')
-          height remify(95px)
-          width remify(95px)
+          width 17.1vw
+          height remify(105px)
         +above('l')
           float none
-          margin 0 auto remify(30px) 0
+          width remify(120px)
+          height remify(105px)
+          margin 0 auto remify(26px) 0
       a
-        border remify(1px) 1px solid $white
+        position relative
         display block
-        height remify(85px)
-        width remify(85px)
+        width remify(82px)
+        height remify(105px)
+        margin: 0 auto
         text-decoration none
         color $gray
+        border remify(1.1px) solid transparent
+        border-radius remify(2px)
         +above('m')
-          height remify(95px)
-          width remify(95px)
-        &:hover, &.active
-          border remify(1px) 1px solid $purple
-          color $purple
+          width remify(120px)
+          height remify(105px)
+        &:hover, &:active
+          +above('l')
+            transition-duration: 144ms
+            transition-delay: 210ms
+            transition-property: border
+            border remify(1.1px) solid $purple
+            color $purple
+        &:active
+          +above('l')
+            transition-duration: 0s
+            transition-delay: 0s
+            transform: translateY(remify(2px))
+        div
+          +above('m')
+            display: block
+            width: 100%
 
     &_logo
       background-repeat no-repeat
       background-position center
-      width 100%
-      height remify(60px)
-      background-size remify(45px) auto
+      width: 100%
+      height: 100%
+      background-size 134% auto
+      background-position center 29%
       position relative
       +above('m')
-        height remify(70px)
-        background-size remify(45px) auto
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-size 100% auto
+        background-position center 33%
 
     &_name
-      height remify(25px)
-      line-height remify(12px)
+      position: absolute
+      display: block
+      width: 100%
+      height: auto
       font-size remify(10px)
-      display table-cell
-      vertical-align middle
+      bottom: remify(25px)
       +above('m')
+        position: absolute
+        bottom: remify(15px)
+        display: block
+        height: auto
         font-size remify(11px)
       div
-        width remify(85px)
-
+        width 100%
 
   &_list-audio
     height remify(170px)

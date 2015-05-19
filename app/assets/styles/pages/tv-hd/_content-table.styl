@@ -3,31 +3,85 @@ $contentTableHeaderHeight = 70px;
 
 .content_table_header
   position: absolute;
-  top: 0;
+  top: remify(70px);
   left: 0;
   width: 100%;
-  height: remify($contentTableHeaderHeight)
-  background-color: $white
-  overflow: hidden;
+  height: 100%
   z-index: 1;
-  transition-property: transform
-  transition-duration: 610ms
+  pointer-events: none
+  +above('l')
+    top: 0
+    height: auto
+    border-left: remify(10px) solid transparent
+    border-right: remify(10px) solid transparent
+    background-color: $white
+
   ul
     position: absolute
     top: 0
     left: 0
     display: block;
     width: 100%
-    +above('m')
+    height: 100%
+    +above('l')
       position: relative
       display: table
-      margin: 0 auto
       max-width: remify(1170px)
+      // height: remify($contentTableHeaderHeight)
+      margin: 0 auto
+      background-color: $white
+      border-bottom: remify(1.1px) solid $grayLight
+      // background-image: url(../../../images/oi/table-header-mask.png)
+      // background-position: center top
+      // background-repeat: no-repeat
     li
-      +above('m')
+      position: relative
+      display: block
+      height: remify(154px)
+      +above('l')
+        font-size: remify(16px)
+        float: left
+        height: 100%
+      +below('s')
+        width: 100%
+      h4
         position: relative
-        display: table-cell
-        width: 20px
+        top: remify(27px)
+        left: remify(20px)
+        width: 100%
+        font-size: remify(13px)
+        +above('l')
+          top: 0
+          left: 0
+          height: 100%
+          font-size: remify(16px)
+          letter-spacing: remify(-1.3px);
+          text-align: center
+          line-height: remify(70px)
+        +above('xl')
+          letter-spacing: remify(-0.4px);
+        span
+          &:first-child
+            display: none
+            +above('l')
+              display: inline
+          &:last-child
+            display: inline
+            +above('l')
+              display: none
+
+.content_table_header_item
+  +above('l')
+    width: 12.820512821%
+    padding-right: remify(30px)
+
+.content_table_header_add-on
+  top: remify(333px)
+  +above('l')
+    top: 0
+    width: 23.076923077%
+    padding-right: 0
+    background-color: $grayLighter
 
 .content_table
   position: relative
