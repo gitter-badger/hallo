@@ -186,6 +186,7 @@
         transition all 0.3s ease
         width 100%
         position relative
+
         +above('m')
           height remify(30px)
           line-height remify(26px)
@@ -193,6 +194,8 @@
           font-size remify(13px)
           height remify(40px)
           line-height remify(35px)
+        &:focus
+          outline none
 
       .add
         background-color $grayLighter
@@ -200,7 +203,13 @@
         border-radius remify(2px)
         color $black
         display none
-        +above('m')
+        z-index 2
+        text-indent remify(10px)
+        &:hover, &:focus, &:active
+          border-color $purple
+          color $purple
+        +above('l')
+          text-indent 0
           display block
         svg
           position absolute
@@ -209,13 +218,13 @@
           height 80%
           opacity 0
           transition all 0.3s ease
-          margin-left remify(30px)
           +above('m')
             left 9%
           polyline
             stroke $white
 
-        &.added, &:hover, &:focus, &:active
+        &.added
+          border-color $green
           background-color $green
           color $white
           outline none
@@ -225,13 +234,18 @@
           & + .remove
             display block
             opacity 1
+            margin-top 0
           svg
             opacity 1
             margin-left 0
 
       .remove
         color $gray
-        display none
+        // display none
         opacity 0
+        z-index 1
+        transition all 0.3s ease
+        margin-top remify(-48px)
+        font-size(9px)
         +above('l')
           font-size(11px)
