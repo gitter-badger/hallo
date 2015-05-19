@@ -312,24 +312,45 @@ define([
     // add fold class to table
     // TODO: performance check
     var fold = function(){
-      if (window.scrollY >= foldPosition) {
-        console.log(scrollDirection);
-        if (!scrollDirection) {
-          if (!content.classList.contains('fold')) {
-            cards.className += ' fold';
-            content.className += ' fold';
-          }
-        } else {
-          if (content.classList.contains('fold')) {
-            cards.className = cards.className.replace(' fold', '');
-            content.className = content.className.replace(' fold', '');
-          }
-        }
-      } else {
+
+      var removeFold = function(){
         if (content.classList.contains('fold')) {
           cards.className = cards.className.replace(' fold', '');
           content.className = content.className.replace(' fold', '');
+          if (!content.classList.contains('unfold')) {
+            cards.className += ' unfold';
+            content.className += ' unfold';
+          }
         }
+      };
+
+      var addFold = function(){
+        if (!content.classList.contains('fold')) {
+          cards.className += ' fold';
+          content.className += ' fold';
+          if (content.classList.contains('unfold')) {
+            cards.className = cards.className.replace(' unfold', '');
+            content.className = content.className.replace(' unfold', '');
+          }
+        }
+      };
+
+      var removeUnfold = function(){
+        if (content.classList.contains('unfold')) {
+          cards.className = cards.className.replace(' unfold', '');
+          content.className = content.className.replace(' unfold', '');
+        }
+      };
+
+      if (window.scrollY >= foldPosition) {
+        if (!scrollDirection) {
+          addFold();
+        } else {
+          removeFold();
+        }
+      } else {
+        removeFold();
+        removeUnfold();
       }
       return;
     };
@@ -539,10 +560,15 @@ define([
   _private.scrollToLockPosition = function(){
 
     var pos = lockPosition;
+    var duration = 987;
+    if (window.innerWidth <= 414) {
+      pos = openPosition;
+      duration = 610;
+    }
 
     $('html, body').velocity('scroll', {
       offset: pos,
-      duration: 987,
+      duration: duration,
       mobileHA: false
     });
 
