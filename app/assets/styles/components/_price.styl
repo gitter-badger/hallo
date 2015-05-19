@@ -97,19 +97,21 @@ oi-price
 
 
 
-.oi-price.small
+.oi-price.oi-price--small
+  .oi-price_prefix
+    display: none
+  .oi-price_value
+    line-height: 0
   .oi-price_value_integer
+    top: remify(18px)
+    left: remify(20px)
     font-size remify(42px)
-    height remify(44px)
-    line-height remify(44px)
   .oi-price_value_cents
+    top: remify(4px)
+    left: remify(21px)
     font-size remify(21px)
-    height remify(22px)
-    line-height remify(22px)
-    transform translateY(remify(-14px))
-  .oi-price_suffix
-    font-size remify(11px)
-    height remify(22px)
-    line-height remify(22px)
-    margin-top remify(-25px)
-    text-indent remify(43px)
+  .oi-price_value_suffix
+    top: remify(19px)
+    left: remify(-5px)
+    font-size: remify(11px)
+
