@@ -80,8 +80,9 @@ define([
     $addOnsLink.on('click', function(evt){
       evt.preventDefault();
       $body.addClass('scroll-lock');
-      var urlPage = $(this)[0].href
-      _private.fillDetail(urlPage);
+      var urlPage = $(this)[0].href;
+      var urlApi = config.api.channel + urlPage.split('/').slice(-1)[0] + '.json';
+      cmodal.open(urlApi)
     });
   }
 
