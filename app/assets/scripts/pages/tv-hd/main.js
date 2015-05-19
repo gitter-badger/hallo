@@ -37,7 +37,6 @@ define([
 
   _public.init = function(){
     _private.bindOpenModalChannel();
-    _private.bindCloseButton();
     _private.bindNavKeyboard();
     _private.bindOpenAddOn();
     _private.bindOpenContract();
@@ -81,8 +80,9 @@ define([
     $addOnsLink.on('click', function(evt){
       evt.preventDefault();
       $body.addClass('scroll-lock');
-      var urlPage = $(this)[0].href
-      _private.fillDetail(urlPage);
+      var urlPage = $(this)[0].href;
+      var urlApi = config.api.channel + urlPage.split('/').slice(-1)[0] + '.json';
+      cmodal.open(urlApi)
     });
   }
 
@@ -93,30 +93,17 @@ define([
       $channelsContainer.find('a.active').removeClass('active')
       $(this).addClass('active')
       var urlPage = $(this)[0].href
-      _private.fillDetail(urlPage);
-    });
-  };
-
-  _private.fillDetail = function(urlPage){
-    var urlApi = config.api.channel + urlPage.split('/').slice(-1)[0] + '.json';
-    $('.channel-modal').show()
-    cmodal.loadChannel(urlApi)
-    _private.bindCloseButton()
-  };
-
-  _private.bindCloseButton = function(){
-    $('.channel-modal_close').on('click', function(e){
-      _private.closeModal();
+      var urlApi = config.api.channel + urlPage.split('/').slice(-1)[0] + '.json';
+      cmodal.open(urlApi)
     });
   };
 
   _private.bindNavKeyboard = function(){
-    return false
     document.onkeydown = function(evt) {
       evt = evt || window.event;
       // Esc
       if (evt.keyCode == 27) {
-        _private.closeModal();
+        cmodal.close()
       }
       // Up / left = back
       if (evt.keyCode == 37 || evt.keyCode == 38 ) {
@@ -136,11 +123,6 @@ define([
   _private.nextChannel = function(){
     $channelsContainer.find('a.active').parent('li').next('li').find('a').trigger('click')
   }
-
-  _private.closeModal = function(){
-    $('.channel-modal').hide()
-    $body.removeClass('scroll-lock');
-  };
 
   return _public;
 

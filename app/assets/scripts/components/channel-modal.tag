@@ -1,12 +1,12 @@
 <channel-modal>
-  <div role="dialog" class="channel-modal { data.klass }">
+  <div role="dialog" class="channel-modal { data.klass }" show={ visible }>
     <div class="channel-modal_image" style="background-image:url({ data.img })"></div>
     <div class="channel-modal_indisponible">
       <div>
         Indisponível neste plano
       </div>
     </div>
-    <div class="channel-modal_close">
+    <div class="channel-modal_close" onclick={ close }>
       <svg class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
         <g transform="translate(0, 0)">
           <line fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="19" y1="5" x2="5" y2="19" stroke-linejoin="round"></line>
@@ -127,12 +127,25 @@
   <script>
     var self = this;
     self.data = {}
-    loadChannel(urlApi){
-      $.getJSON(urlApi, function(json){
+    self.visible = false;
+
+    self.open = function(url) {
+      self.loadChannel(url)
+    }
+
+    self.close = function(e) {
+      self.visible = false;
+      self.data = {}
+      self.update()
+      $('body').removeClass('scroll-lock');
+    }
+
+    self.loadChannel = function(url){
+      console.log(url);
+      $.getJSON(url, function(json){
         self.data = json.data;
-        self.data.price = parseInt(self.data.price, 10)
-        self.data.integer = Math.floor(self.data.price);
-        self.data.cents = (self.data.price + "").split('.')[1];
+        self.visible = true;
+        $('body').addClass('scroll-lock');
         self.update()
       });
     }
