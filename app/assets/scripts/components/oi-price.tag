@@ -16,15 +16,28 @@
   <script>
     var self = this;
 
+    function toFixed(value, precision) {
+      var precision = precision || 0,
+          power = Math.pow(10, precision),
+          absValue = Math.abs(Math.round(value * power)),
+          result = (value < 0 ? '-' : '') + String(Math.floor(absValue / power));
+      if (precision > 0) {
+        var fraction = String(absValue % power),
+          padding = new Array(Math.max(precision - fraction.length, 0) + 1).join('0');
+        result += '.' + padding + fraction;
+      }
+      return (result + '').split('.')[1];
+    }
+
     self.prefix = 'A partir de';
     self.integer = Math.floor(opts.price);
-    self.cents = (opts.price.toFixed(2) + "").split('.')[1] || '00';
+    self.cents = toFixed(opts.price, 2)// (opts.price.toPrecision(3) + "").split('.')[1] || '00';
     self.suffix = 'Mês';
     self.small = opts.small ? 'oi-price--small' : '';
 
     this.updatePrice = function(newPrice){
       self.integer = Math.floor(newPrice);;
-      self.cents = (newPrice + "").split('.')[1];
+      self.cents = toFixed(newPrice, 2)// (newPrice.toPrecision(4) + "").split('.')[1] || '00';
       self.update();
     }
 

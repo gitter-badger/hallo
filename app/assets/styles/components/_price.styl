@@ -14,17 +14,24 @@ oi-price
       font-size remify(42px)
       height remify(44px)
       line-height remify(44px)
+      float right
+      margin-right remify(30px)
     .oi-price_value_cents
       font-size remify(21px)
       height remify(22px)
       line-height remify(22px)
-      transform translateY(remify(-14px))
+      transform translate(0px, remify(-41px))
+      float right
     .oi-price_suffix
       font-size remify(11px)
       height remify(22px)
       line-height remify(22px)
-      margin-top remify(-25px)
-      text-indent remify(43px)
+      // margin-top remify(-25px)
+      // text-indent remify(43px)
+      text-indent 0
+      float right
+      margin-right remify(-30px)
+      width remify(31px)
 
   &_prefix
     display none
@@ -68,7 +75,7 @@ oi-price
     text-indent remify(50px)
     transition: color 0.3s ease
     +above('m')
-      text-indent remify(110px)
+      text-indent remify(80px)
       font-size remify(19px)
 
     span
