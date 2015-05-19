@@ -1,0 +1,14 @@
+.content_table_header
+  ul
+    each group in channelsgroup.tv
+      li.content_table_header_item
+        h4=group.label
+          span= ' [' + group.channels.length + ']'
+
+    li.content_table_header_add-on
+      h4
+        span Turine Sua TV HD
+        span Opcionais para a sua Oi TV HD
+
+.content_table
+  include _channel.jade
