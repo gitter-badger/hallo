@@ -1,11 +1,13 @@
 define([
-  'domlib'
-  ], function($){
+  'domlib',
+  'vendor/velocity'
+  ], function($, velocity){
 
   var _public = {},
       _private = {};
 
   try{
+  var scrollDirection = 0;
 
   // html
   // var html = document.querySelector('html');
@@ -18,14 +20,16 @@ define([
   var oiCard = document.querySelectorAll('oi-card');
   var oiCardHeader = document.querySelectorAll('.oi-card_header');
   var oiCardHeaderTitle = document.querySelectorAll('.oi-card_header_title');
+  var clickableCards = document.querySelectorAll('oi-card');
 
-  // channels
+  // content
   var content = document.querySelector('.content');
   var contentHeader = document.querySelector('.content_header');
   var contentTableContainer = document.querySelector('.content_table_container');
+  var contentTable = document.querySelector('.content_table');
 
-  var contentListsTitles = document.querySelectorAll('.oi-channels-lists_list-tv_title, .oi-channels-addons_title');
-  var contentContainer = document.querySelector('.oi-channels_container');
+  // table
+  var tableLists = document.querySelector('.oi-channels_lists-container');
 
   // sizes
   var cardSize = cardsContainerBox.getBoundingClientRect().height;
@@ -36,7 +40,7 @@ define([
   // positions
   var openPosition = cards.offsetTop;
   var lockPosition = content.offsetTop;
-  var foldPosition = contentContainer.offsetTop;
+  var foldPosition = contentTable.offsetTop;
 
   /**
    * init
@@ -55,7 +59,9 @@ define([
     _private.scrollSpeed();
     _private.scroller();
     _private.keys();
+    _private.clicks();
     _private.updateOnResize();
+    _private.checkHash();
   };
 
   /**
@@ -186,11 +192,14 @@ define([
    * ***/
   _private.scroller = function(){
 
+    var lastScroll = 0;
+
     // change table position
     // TODO: performance check
     var dynamicTable = function(y, initialPoint, finalPoint){
       var p = _private.baseFromPoint(y, initialPoint, finalPoint, 10);
-      content.style.top = (25 - p*2.5)+'vh';
+      // content.style.top = (25 - p*2.5)+'vh';
+      // content.style.transform = 'translateY('+ (25 - p*2.5)+ 'vh)';
 
       content.style.opacity = _private.baseFromPoint(y, initialPoint, finalPoint, 1);
     };
@@ -237,10 +246,12 @@ define([
       if (y >= initialPoint) {
         if (!cards.classList.contains('parse')){
           cards.className += ' parse';
+          content.className += ' parse';
         }
       } else {
         if (cards.classList.contains('parse')){
           cards.className = cards.className.replace(' parse', '');
+          content.className = content.className.replace(' parse', '');
         }
       }
 
@@ -252,7 +263,7 @@ define([
     // TODO: clear componentes
     // TODO: increase logic
     var dynamicBorderSize = function(){
-      var newSize = contentTableContainer.getBoundingClientRect().bottom;
+      var newSize = content.getBoundingClientRect().bottom;
       if (newSize < window.innerHeight){
         cardsContainer.style.height = newSize+'px';
       } else {
@@ -260,13 +271,14 @@ define([
       }
     };
 
+    // hack position of buttons of folded
     var dynamiciPhoneSizeHack = function(){
       if (navigator.userAgent.match(/iPhone/i)){
         header.style.height = 'calc(100vh - 68px)';
       }
     };
 
-      // add open class to cards
+    // add open class to cards
     // TODO: performance check
     var open = function(){
       if (window.scrollY >= openPosition) {
@@ -287,39 +299,58 @@ define([
           lock.done = true;
           content.className += ' lock';
           cards.className += ' lock';
-          // frameSpy.loop = true;
-          // frameSpy();
         }
       } else {
         lock.done = false;
         content.className = content.className.replace(' lock', '');
         cards.className = cards.className.replace(' lock', '');
-       //  frameSpy.loop = false;
-       // _private.updateTitles(0, 0);
       }
 
       return;
     };
 
-    // add fold class to channels
+    // add fold class to table
     // TODO: performance check
     var fold = function(){
       if (window.scrollY >= foldPosition) {
-        if (!content.classList.contains('fold')) {
-          cards.className += ' fold';
-          content.className += ' fold';
+        console.log(scrollDirection);
+        if (!scrollDirection) {
+          if (!content.classList.contains('fold')) {
+            cards.className += ' fold';
+            content.className += ' fold';
+          }
+        } else {
+          if (content.classList.contains('fold')) {
+            cards.className = cards.className.replace(' fold', '');
+            content.className = content.className.replace(' fold', '');
+          }
         }
       } else {
-        cards.className = cards.className.replace(' fold', '');
-        content.className = content.className.replace(' fold', '');
-        // frameSpy.loop = false;
+        if (content.classList.contains('fold')) {
+          cards.className = cards.className.replace(' fold', '');
+          content.className = content.className.replace(' fold', '');
+        }
       }
       return;
+    };
+
+    // add hide class to table
+    // TODO: performance check
+    var hide = function(){
+      var newSize = tableLists.getBoundingClientRect().bottom;
+      if (newSize < window.innerHeight){
+        if (!content.classList.contains('hide')) {
+          content.className += ' hide';
+        }
+      } else {
+        content.className = content.className.replace(' hide', '');
+      }
     };
 
     // spy the scroll value
     // TODO: performance check
     var scrollSpy = _private.scrollSpy =  function(e){
+
       window.scrollY = window.pageYOffset;
 
       lockPosition = content.offsetTop - oiCardHeaderTitle[0].getBoundingClientRect().height - 10;
@@ -346,24 +377,12 @@ define([
 
       fold();
 
+      if (window.innerWidth >= 768) {
+        hide();
+      }
+
+      scrollDirection = (lastScroll > window.scrollY) ? 1 : 0;
       lastScroll = window.scrollY;
-    };
-
-    var frameSpy = function(){
-
-      var update = function(){
-        _private.updateTitles(contentHeader.getBoundingClientRect().bottom, contentHeader.getBoundingClientRect().left);
-        if (frameSpy.loop == true){
-          animationLoopback();
-        }
-      };
-
-      var animationLoopback = function(){
-        window.requestAnimationFrame(update);
-      };
-      animationLoopback();
-
-      return;
     };
 
     window.addEventListener('scroll', scrollSpy);
@@ -371,35 +390,31 @@ define([
   };
 
   /**
-   * updateTitles
+   * updateOnResize
    *
-   * update table titles postion when locked
+   * update base numbers on resize
    *
-   * @method updateTitles
-   * @param top {number} top position of title
-   * @param left {number} left position of title
+   * @method updateOnResize
    * @return null
    *
    * ***/
-  _private.updateTitles = function(top, left){
-    var nextLeft = left;
-    [].forEach.call(contentListsTitles, function(e){
-      e.style.top = top+'px';
+  _private.updateOnResize = function(){
 
-      if (top > 0){
-        e.style.left = nextLeft+'px';
-      } else {
-        e.style.left = '0px';
-      }
+    var update = function(e){
+      openPosition = cards.offsetTop;
+      foldPosition = contentTable.offsetTop;
 
-      if (e.classList.contains('oi-channels-addons_title')){
-        e.style.width = contentAddonsTitleWidth+'px';
-      } else {
-        e.style.width = contentListsListTvTitleWidth+'px';
-      }
+      cardSize = cardsContainerBox.getBoundingClientRect().height;
 
-      nextLeft += contentListsListTvTitleWidth;
-    });
+      contentHeaderWidth = contentHeader.getBoundingClientRect().width;
+      contentListsListTvTitleWidth = (contentHeaderWidth/100)*12.820512821;
+      contentAddonsTitleWidth = (contentHeaderWidth/100)*23.076923077;
+
+      _private.scrollSpy(e);
+    };
+
+    window.addEventListener('resize', update);
+    update();
 
     return;
   };
@@ -409,48 +424,11 @@ define([
    *
    * load keyboard letters to use on page points
    *
-   * @method scrollSpeed
+   * @method keys
    * @return null
    *
    * ***/
   _private.keys = function(){
-
-    var moveToOpenPosition = function(){
-      window.scroll(0, openPosition);
-      // $('html, body').animate({
-      //   scrollTop: parseInt(cards.offsetTop)
-      // }, 610);
-    };
-
-    var moveToCardPosition = function(){
-      var cardSize = window.cardSize;
-      var openPosition = parseInt($('#product-contents').offset().top);
-      $('html, body').animate({
-        scrollTop: parseInt(openPosition + cardSize*0.55)
-      }, 610);
-    };
-
-    var moveToLockPosition = function(){
-      // window.scroll(0, parseInt(cards.offsetTop + cardsContainerBox.getBoundingClientRect().height - oiCardHeader[0].getBoundingClientRect().height - 10));
-      window.scroll(0, lockPosition);
-      // $('html, body').animate({
-      //   scrollTop: parseInt(cards.offsetTop + cardsContainerBox.getBoundingClientRect().height - oiCardHeader[0].getBoundingClientRect().height - 10)
-      // }, 610);
-    };
-
-    var moveToTopPosition = function(){
-      oi.visual.scrollIt.disableScroll();
-      $('html, body').animate({
-        scrollTop: 0
-      }, 610);
-    };
-
-    var checkSelected = function(){
-      if(!$('.product-card').hasClass('selected')) {
-        var placeholder = $($('.product-card')[1]).attr('data-placeholder');
-        $('.product-card[data-placeholder="'+placeholder+'"]').addClass('selected');
-      }
-    };
 
     var selectBack = function(){
       if (!$('.product-card').hasClass('selected')) {
@@ -487,26 +465,12 @@ define([
     };
 
     var keypress = function(e){
-      if (e.keyCode == 40) {
-        e.preventDefault();
-        moveToLockPosition();
-      } else if (e.keyCode == 38) {
-        e.preventDefault();
-        moveToTopPosition();
-      } else if (e.keyCode == 65) {
-        e.preventDefault();
-        moveToOpenPosition();
-      } else if (e.keyCode == 66) {
-        e.preventDefault();
-        moveToCardPosition();
-      } else if (e.keyCode == 37) {
+      if (e.keyCode == 37) {
         e.preventDefault();
         selectBack();
       } else if (e.keyCode == 39) {
         e.preventDefault();
         selectFowrad();
-      } else {
-        console.log(e.keyCode);
       }
     };
 
@@ -514,31 +478,73 @@ define([
   };
 
   /**
-   * updateOnResize
+   * clicks
    *
-   * update base numbers on resize
+   * load clicks events of page
    *
-   * @method updateOnResize
+   * @method clicks
    * @return null
    *
    * ***/
-  _private.updateOnResize = function(){
+  _private.clicks = function(){
 
-    var update = function(e){
-      openPosition = cards.offsetTop;
-      foldPosition = contentContainer.offsetTop;
-
-      cardSize = cardsContainerBox.getBoundingClientRect().height;
-
-      contentHeaderWidth = contentHeader.getBoundingClientRect().width;
-      contentListsListTvTitleWidth = (contentHeaderWidth/100)*12.820512821;
-      contentAddonsTitleWidth = (contentHeaderWidth/100)*23.076923077;
-
-      _private.scrollSpy(e);
+    var clickOnCard = function(e){
+      [].forEach.call(clickableCards, function(element, i){
+        if (element == e.currentTarget) {
+          _public.changeCardTo(i);
+        }
+      });
     };
 
-    window.addEventListener('resize', update);
-    update();
+    [].forEach.call(clickableCards, function(e){
+      e.addEventListener('click', clickOnCard);
+      e.addEventListener('touch', clickOnCard);
+    });
+  };
+
+  /**
+   * changeTableTo
+   *
+   * change between tables by indexs
+   *
+   * @method changeTableTo
+   * @return {boolean} true, if we have a valid index, false if not
+   *
+   * ***/
+  _public.changeCardTo = function(index){
+
+    [].forEach.call(clickableCards, function(e){
+      e.className = e.className.replace('selected', '');
+    });
+
+    clickableCards[index].className += 'selected';
+    window.location.hash = '#'+clickableCards[index].querySelector('a[data-slug]').getAttribute('data-slug');
+
+    _private.changeTableTo(index);
+    _private.scrollToLockPosition();
+
+    return false;
+  };
+
+
+  /**
+   * scrollToLockPosition
+   *
+   * send the scroll to the "lock" position, mobile safe
+   *
+   * @method scrollToLockPosition
+   * @return null;
+   *
+   * ***/
+  _private.scrollToLockPosition = function(){
+
+    var pos = lockPosition;
+
+    $('html, body').velocity('scroll', {
+      offset: pos,
+      duration: 987,
+      mobileHA: false
+    });
 
     return;
   };
@@ -552,14 +558,44 @@ define([
    * @return {boolean} true, if we have a valid index, false if not
    *
    * ***/
-  _public.changeTableTo = function(index){
+  _private.changeTableTo = function(index){
     return false;
+  };
+
+
+
+  /**
+   * checkHash
+   *
+   * check the hash and send table to selected card option
+   *
+   * @method checkHash
+   * @return {boolean} false, if hash not found
+   *
+   * ***/
+  _private.checkHash = function(){
+
+    if (window.innerWidth < 768) {
+      return;
+    }
+
+    var hash = window.location.hash.replace('#', '');
+    var cardLink = document.querySelector('a[data-slug="'+hash+'"]');
+    if (!cardLink) {
+      return false;
+    }
+    var card = cardLink.parentNode;
+
+    [].forEach.call(clickableCards, function(e, i){
+      if (e == card) {
+        _public.changeCardTo(i);
+      }
+    });
   };
 
   }catch(e){
     console.log(e);
   }
-
 
   return _public;
 });
