@@ -32,10 +32,10 @@
             </div>
             <div class="oi-price_value">
               <span class="oi-price_value_integer">
-                { data.integer }
+                { integer }
               </span>
               <span class="oi-price_value_cents">
-                ,00
+                ,{ cents }
               </span>
               <div class="oi-price_suffix">
                 <span>/</span>Mês
@@ -129,6 +129,14 @@
     self.data = {}
     self.visible = false;
 
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      // Esc
+      if (evt.keyCode == 27) {
+        self.close()
+      }
+    };
+
     self.open = function(url) {
       self.loadChannel(url)
     }
@@ -140,11 +148,14 @@
       $('body').removeClass('scroll-lock');
     }
 
+
     self.loadChannel = function(url){
-      console.log(url);
       $.getJSON(url, function(json){
         self.data = json.data;
         self.visible = true;
+        self.integer = (json.data.price.toFixed(2) + '').split('.')[0]
+        self.cents = (json.data.price.toFixed(2) + '').split('.')[1];
+        console.log(self.integer, self.cents);
         $('body').addClass('scroll-lock');
         self.update()
       });
