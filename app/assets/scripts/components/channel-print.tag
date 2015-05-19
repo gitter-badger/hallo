@@ -10,15 +10,22 @@
         </g>
       </svg>
     </div>
+    <div class="channel-print_print">
+      <button type="button" role="button"  onclick={ printPage } class="channel-print_print_bt-print">Imprimir</button>
+    </div>
     <div class="channel-print_results">
       <div class="channel-print_results_container">
-        <h2>MIX HD <span></span> CANAIS</h2>
+        <h2><img src="/assets/images/oi/oi-logo.svg" width="70" />MIX HD <span>{ quant }</span> CANAIS</h2>
         <ol class="channel-print_list">
           <li class="channel-print_list_item" each={channel in results}>
+              <svg width="100%" height="100%">
+                <rect width="100%" height="100%" style="fill:rgb(245,245,245);" />
+              </svg>
               <span class="channel-print_list_number">{ channel.number }</span>
-              <span class="channel-print_list_type type-{ channel.type }" style="{ channel.type == '1' ? 'background-image:url(/assets/images/logos/height40/' + channel.img + '.png)' : '' }"></span>
+              <span class="channel-print_list_type">
+                <img class="channel-print_list_type_img type-{ channel.type }" src="{ channel.type == '1' ? '/assets/images/logos/240X80/' + channel.img + '.png' : '/assets/images/icons/music.svg' }" />
+              </span>
               <span class="channel-print_list_name">{ channel.name }</span>
-            
           </li>
         </ol>
       </div>
@@ -29,7 +36,7 @@
     self.channels = [];
     self.meta = {};
     self.results = [];
-    self.query = '';
+    self.quant = '';
 
     self.visible = false;
 
@@ -39,89 +46,27 @@
 
     this.open = function(e) {
       self.visible = true;
-      //console.log("abriu");
-      //$('body').addClass('scroll-lock');
+      self.update();
+      $('body').addClass('scroll-lock');
     }
     
-    // this.close = function(e) {
-    //   self.visible = false;
-    //   $('body').removeClass('scroll-lock');
-    // }
+    this.close = function(e) {
+      self.visible = false;
+      $('body').removeClass('scroll-lock');
+    }
 
-    // this.print = function(e) {
-    //   self.query = e.target.value;
-    //   var arr = self.channels.filter(filterLv)
-    //   var results;
+    this.printPage = function(e) {
+      window.print();
+    }
 
-    //   results = _.sortBy(arr, function(channel) {
-    //     var query = self.query.replace(/ /g,'').toLowerCase();
-    //     var channelName = channel.name.replace(/ /g,'').toLowerCase();
-    //     var startsWith =  _.startsWith(channelName, query);
-    //     return startsWith ? -1 : 0;
-    //   });
-
-    //   results = _.sortBy(results, function(channel) {
-    //     var query = self.query.replace(/ /g,'').toLowerCase();
-    //     var channelName = channel.name.replace(/ /g,'').toLowerCase();
-    //     var includes =  _.include(channelName, query);
-    //     return includes ? -1 : 0;
-    //   });
-
-    //   results = _.sortBy(arr, "type");
-
-    //   self.results = results.slice(0, 8);
-
-    //   // self.results = _.sortBy(self.channels.filter(filterLv), "name");
-
-    //   // _.debounce(function(){
-    //   //   self.test
-    //   // }, 500)
-
-    //   
-    // }.bind(this);
-
-    // function filterLv(channel){
-    //   var query = self.query.replace(/ /g,'').toLowerCase();
-    //   var channelName = channel.name.replace(/ /g,'').toLowerCase();
-    //   var channelKeywords = channel.keywords.replace(/,/g,'').toLowerCase();
-    //   var distL = 0;
-
-    //   if( _.include(channelName, query) ){
-    //     return true;
-    //   }
-
-    //   // if( channelName.length < query.length ){
-    //   //   return false;
-    //   // }
-
-    //   if(channelKeywords.length > 0){
-    //     var distL = _.levenshtein( query, channelKeywords)
-    //     if(distL <= 4){
-    //       return true;
-    //     } else {
-    //       return false;
-    //     }
-    //   }
-
-    //   var distL = _.levenshtein( query, channelName)
-    //   if(distL <= 3){
-    //     return true;
-    //   } else {
-    //     return false;
-    //   }
-
-    // }
 
     loadChannels(){
       $.getJSON('/api/channel/list.json', function(json){
         self.channels = _.sortBy(json.data, "name");
         self.meta = json.meta;
         self.results = self.channels
+        self.quant = self.channels.length
         self.update();
-
-        // muda para o ON no final
-        $('.channel-print_results_container h2 span').text(self.channels.length);
-        //$('body').addClass('scroll-lock');
       });
     }
     

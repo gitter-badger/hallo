@@ -13,7 +13,7 @@ define([
   ],function ($, _, _s, riot, channelModal, channelSearch, channerlPrint, rules, movieRent, price, scroll) {
 
   price.init();
-  scroll.init();
+  //scroll.init();
 
   _.mixin(_s.exports());
 
