@@ -8,41 +8,29 @@ define([
   'tags/contracts-rules',
   'tags/movie-rent',
   'pages/tv-hd/cart',
-  'pages/tv-hd/scroll',
+  'pages/tv-hd/scroll'
   ],function ($, _, _s, riot, channelModal, channelSearch, rules, movieRent, cart, scroll) {
 
   cart.init();
-  scroll.init();
+  // scroll.init();
+
 
   _.mixin(_s.exports());
 
   var _public = {},
       _private = {};
-      $body              = $('body'),
-      $channelsContainer = $('.oi-channels-lists_list-tv_container'),
-      $channelLink       = $channelsContainer.find('a'),
-      $addOnsLink        = $('.oi-channels-addons_item_link'),
-      $btOpenSearch        = $('.oi-channels_search-call a')
+      $body              = $('body')
 
       var riotMovieRent = riot.mount('movie-rent')[0]
       var cSerachcmodal = riot.mount('channel-search')[0]
       var cContractModal = riot.mount('contract-rules')[0]
-      var cmodal = riot.mount('channel-modal')[0]
-
-  var config = {
-    api: {
-      channel: '/api/channel/'
-    }
-  }
+      riot.mount('channel-modal')
 
   _public.init = function(){
-    _private.bindOpenModalChannel();
-    _private.bindOpenAddOn();
     _private.bindOpenContract();
     _private.bindOpenFooterItem();
     _private.openModalRent();
     _private.showAllAudio();
-    _private.bindNavKeyboard();
   };
 
   _private.showAllAudio = function(){
@@ -58,6 +46,7 @@ define([
       event.preventDefault();
       var url = $(this)[0].href.split('/').slice(-1)[0]
       riotMovieRent.open(url)
+      oiMediator.publish( 'open modal', 'rent' );
     });
   }
 
@@ -74,50 +63,6 @@ define([
       event.preventDefault();
       cContractModal.open()
     });
-  }
-
-  _private.bindOpenAddOn = function(){
-    $addOnsLink.on('click', function(evt){
-      evt.preventDefault();
-      $body.addClass('scroll-lock');
-      var urlPage = $(this)[0].href;
-      var urlApi = config.api.channel + urlPage.split('/').slice(-1)[0] + '.json';
-      cmodal.open(urlApi)
-    });
-  }
-
-  _private.bindOpenModalChannel = function(){
-    $channelLink.on('click', function(e){
-      e.preventDefault();
-      $body.addClass('scroll-lock');
-      $channelsContainer.find('a.active').removeClass('active')
-      $(this).addClass('active')
-      var urlPage = $(this)[0].href
-      var urlApi = config.api.channel + urlPage.split('/').slice(-1)[0] + '.json';
-      cmodal.open(urlApi)
-    });
-  };
-
-  _private.bindNavKeyboard = function(){
-    $(document).on('keydown', function (evt) {
-      evt = evt || window.event;
-      // Up / left = back
-      if (evt.keyCode == 37 || evt.keyCode == 38 ) {
-        _private.previousChannel();
-      }
-      // Down / right = next
-      if (evt.keyCode == 39 || evt.keyCode == 40 ) {
-        _private.nextChannel();
-      }
-    })
-  };
-
-  _private.previousChannel = function(){
-    $channelsContainer.find('a.active').parent('li').prev().find('a').trigger('click')
-  }
-
-  _private.nextChannel = function(){
-    $channelsContainer.find('a.active').parent('li').next('li').find('a').trigger('click')
   }
 
   return _public;

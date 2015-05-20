@@ -26,7 +26,7 @@
 
       each channel in channelsgroup.addons.channels.itens
         li.oi-channels-addons_item(aria-live="assertive" aria-relevant="text")
-          a.oi-channels-addons_item_link(href=channel.img)
+          a.oi-channels-addons_item_link.open-addon(href=channel.img)
             .oi-channels-addons_item_tooltip
               div(id="addon-tooltip-"+channel.slug)
             .oi-channels-addons_item_logo.b-lazy(data-src="/assets/images/logos/height40/"+channel.img+".png")

@@ -42,10 +42,11 @@
               </div>
             </div>
           </div>
-        <a class="add add-addon" href="#" data-slug="{ data.slug }">
-          <span>
-            Adicionar
-          </span>
+        <a class="add add-addon" href="#" data-slug="{ data.slug }" onclick={ add }>
+          { addtext }
+        </a>
+        <a class="rem-addon" href="#" data-slug="{ data.slug }" onclick={ remove } show={ added }>
+          Remover
         </a>
         <a class="tel" href="tel:">Ligue para contratar por R$ { data.price }/Mês</a>
       </div>
@@ -128,6 +129,8 @@
     var self = this;
     self.data = {}
     self.visible = false;
+    self.added = false;
+    self.addtext = 'Adicionar';
 
     document.onkeydown = function(evt) {
       evt = evt || window.event;
@@ -136,6 +139,22 @@
         self.close()
       }
     };
+
+    self.add = function (argument){
+      console.log(self.data.slug);
+      self.addtext = 'Adicionado';
+      self.added = true;
+      self.update()
+      oiMediator.publish( 'addon add', self.data.slug );
+    }
+
+    self.remove = function (argument){
+      console.log(self.data.slug);
+      self.addtext = 'Adicionar';
+      self.added = false;
+      self.update()
+      oiMediator.publish( 'addon remove', self.data.slug );
+    }
 
     self.open = function(url) {
       self.loadChannel(url)
@@ -148,6 +167,14 @@
       $('body').removeClass('scroll-lock');
     }
 
+    $('.open-addon').on('click', function  (evt){
+      evt.preventDefault();
+      $('.open-addon.active').removeClass('active');
+      $(this).addClass('active')
+      var urlPage = $(this)[0].href;
+      var urlApi = '/api/channel/' + urlPage.split('/').slice(-1)[0] + '.json';
+      self.open(urlApi)
+    });
 
     self.loadChannel = function(url){
       $.getJSON(url, function(json){

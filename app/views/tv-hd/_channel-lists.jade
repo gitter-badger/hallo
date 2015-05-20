@@ -7,7 +7,7 @@
         ul
           each channel in group.channels
             li
-              a(href=channel.slug class=channel.color)
+              a.open-addon(href=channel.slug)
                 .oi-channels-lists_list-tv_logo.b-lazy(data-src="/assets/images/logos/height40/"+channel.img+".png")
                 .oi-channels-lists_list-tv_name
                   div=channel.name
