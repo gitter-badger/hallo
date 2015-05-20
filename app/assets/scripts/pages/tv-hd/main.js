@@ -19,12 +19,10 @@ define([
 
   var _public = {},
       _private = {};
-      $body              = $('body')
-
-      var riotMovieRent = riot.mount('movie-rent')[0]
-      var cSerachcmodal = riot.mount('channel-search')[0]
-      var cContractModal = riot.mount('contract-rules')[0]
-      riot.mount('channel-modal')
+      tagMovieModal = riot.mount('movie-rent')[0],
+      tagSearchChannel = riot.mount('channel-search')[0],
+      tagContractModal = riot.mount('contract-rules')[0],
+      tagChannelModal = riot.mount('channel-modal')[0];
 
   _public.init = function(){
     _private.bindOpenContract();
@@ -45,7 +43,7 @@ define([
     $('.oi-channels_footer-item_content-area_movies a').on('click', function(event) {
       event.preventDefault();
       var url = $(this)[0].href.split('/').slice(-1)[0]
-      riotMovieRent.open(url)
+      tagMovieModal.open(url)
       oiMediator.publish( 'open modal', 'rent' );
     });
   }
@@ -61,7 +59,7 @@ define([
   _private.bindOpenContract = function(){
     $('#openContract').on('click', function(event) {
       event.preventDefault();
-      cContractModal.open()
+      tagContractModal.open()
     });
   }
 
