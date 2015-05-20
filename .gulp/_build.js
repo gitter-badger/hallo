@@ -130,6 +130,12 @@ gulp.task('build-stylus', function () {
     .pipe(gulp.dest(config.path.dist.css))
     .pipe($.if(config.isProd, $.gzip()))
     .pipe(gulp.dest(config.path.dist.css));
+
+  gulp.src('./app/assets/styles/css-base/fonts.css')
+    .pipe($.plumber({errorHandler: helpers.notifyError}))
+    .pipe($.csso())
+    .pipe(gulp.dest(config.path.dist.css));
+
 });
 
 gulp.task('build-bower', function() {
