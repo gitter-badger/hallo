@@ -29,7 +29,7 @@ node_modules
 .DS_Store
 .vagrant/
 dist/
-data/
 .publish
 bower_components/
 etc.md
+output/firebase
