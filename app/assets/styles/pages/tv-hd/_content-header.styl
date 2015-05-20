@@ -40,6 +40,7 @@
     ul
       position relative
       display table
+      width 100%
       height 100%
       white-space nowrap
       overflow hidden
@@ -56,10 +57,10 @@
       &:first-child:before
         display none
       &:last-child
-        +above('m')
-          display none
         +above('l')
           display table-cell
+      &:first-child
+        display table-cell
       &:before
         content '+'
         color $grayLight
@@ -73,7 +74,6 @@
     display block
     float: right
     height 100%
-    overflow hidden
     +above('xs')
       width: 100%
     +above('m')
@@ -82,15 +82,26 @@
   // the _sidewalk
   // .content_header_client-type
   &_client-type
+    position relative
     font-family $fontTextRegular
-    width remify(140px)
-    float left
-    // height remify(58px)
-    margin remify(-3px) 0 0 remify(11px)
-    // padding remify(12px) 0
-    +below('xs')
-      width: 100%
+    +above('xs')
+      width 100%
       margin: 0
+    +above('s')
+      width remify(140px)
+    +above('l')
+      top remify(30px)
+      left remify(10px)
+    +below('l')
+      top remify(10px)
+    +below('m')
+      left remify(35px)
+    +below('s')
+      left 0
+    +below('xs')
+      top 0
+      left 0
+
     &-trigger
       color $green
       text-decoration none
@@ -226,38 +237,39 @@
         +above('m')
           right remify(40px)
 
+  // .content_header_price
   &_price
-    width remify(100px)
-    float right
-    height remify(58px)
-    transform translateY(remify(-5px))
-    margin remify(-7px) 0
-    padding remify(10px) 0
-    overflow: hidden
+    position relative
+    +above('xs')
+      display block
+    +above('xs')
+      width remify(100px)
+      float right
+      height remify(58px)
+      overflow: hidden
     +above('m')
       float left
-    +below('xs')
-      display: none
 
+  // .content_header_action
   &_action
     display none
     font-family $fontTextRegular
-    +below('s')
-      position: fixed
-      display: block
-      bottom: 0
-      left: 0
-      width: 92%;
-      margin-left: 4%;
-      margin-bottom: 4%;
-    +below('xs')
-      display: none
-    +above('l')
-      display block
-      width remify(170px)
-      height remify(58px)
-      float left
-      margin remify(-11px) 0 0 remify(23px)
+    // +below('s')
+    //   position: fixed
+    //   display: block
+    //   bottom: 0
+    //   left: 0
+    //   width: 92%;
+    //   margin-left: 4%;
+    //   margin-bottom: 4%;
+    // +below('xs')
+    //   display: none
+    // +above('l')
+    //   display block
+    //   width remify(170px)
+    //   height remify(58px)
+    //   float left
+    //   margin remify(-11px) 0 0 remify(23px)
 
     a
       color $black
@@ -277,3 +289,9 @@
       &:hover
         border-bottom remify(1px) solid $orange
         margin-top remify(5px)
+
+
+
+
+
+
