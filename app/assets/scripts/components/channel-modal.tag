@@ -26,29 +26,31 @@
       </div>
 
       <div class="channel-modal_content_price" if={ data.price }>
-          <div class="oi-price">
-            <div class="oi-price_prefix">
-              A partir de
-            </div>
-            <div class="oi-price_value">
-              <span class="oi-price_value_integer">
-                { integer }
-              </span>
-              <span class="oi-price_value_cents">
-                ,{ cents }
-              </span>
-              <div class="oi-price_suffix">
-                <span>/</span>Mês
-              </div>
+        <div class="oi-price">
+          <div class="oi-price_prefix">
+            A partir de
+          </div>
+          <div class="oi-price_value">
+            <span class="oi-price_value_integer">
+              { integer }
+            </span>
+            <span class="oi-price_value_cents">
+              ,{ cents }
+            </span>
+            <div class="oi-price_suffix">
+              <span>/</span>Mês
             </div>
           </div>
-        <a class="add add-addon" href="#" data-slug="{ data.slug }" onclick={ add }>
-          { addtext }
-        </a>
-        <a class="rem-addon" href="#" data-slug="{ data.slug }" onclick={ remove } show={ added }>
-          Remover
-        </a>
-        <a class="tel" href="tel:">Ligue para contratar por R$ { data.price }/Mês</a>
+        </div>
+        <div class="channel-modal_content_actions">
+          <a class="add-addon" href="#" data-slug="{ data.slug }" onclick={ add }>
+            { addtext }
+          </a>
+          <a class="rem-addon" href="#" data-slug="{ data.slug }" onclick={ remove } show={ added }>
+            Remover
+          </a>
+          <!-- <a class="tel" href="tel:">Ligue para contratar por R$ { data.price }/Mês</a> -->
+        </div>
       </div>
 
       <div class="channel-modal_info">
@@ -141,19 +143,20 @@
     };
 
     self.add = function (argument){
-      console.log(self.data.slug);
+      $('[data-slug="' + self.slug + '"]').addClass('added');
       self.addtext = 'Adicionado';
       self.added = true;
-      self.update()
-      oiMediator.publish( 'addon add', self.data.slug );
+      self.update();
+      self.close();
+      oiMediator.publish( 'addon add', self.slug );
     }
 
     self.remove = function (argument){
-      console.log(self.data.slug);
+      $('[data-slug="' + self.slug + '"]').removeClass('added');
       self.addtext = 'Adicionar';
       self.added = false;
       self.update()
-      oiMediator.publish( 'addon remove', self.data.slug );
+      oiMediator.publish( 'addon remove', self.slug );
     }
 
     self.open = function(url) {
@@ -162,7 +165,7 @@
 
     self.close = function(e) {
       self.visible = false;
-      self.data = {}
+      self.data = {};
       self.update()
       $('body').removeClass('scroll-lock');
     }
@@ -170,10 +173,10 @@
     $('.open-addon').on('click', function  (evt){
       evt.preventDefault();
       $('.open-addon.active').removeClass('active');
-      $(this).addClass('active')
+      $(this).addClass('active');
       var urlPage = $(this)[0].href;
       var urlApi = '/api/channel/' + urlPage.split('/').slice(-1)[0] + '.json';
-      self.open(urlApi)
+      self.open(urlApi);
     });
 
     self.loadChannel = function(url){
@@ -181,11 +184,12 @@
         $('body').addClass('scroll-lock');
         self.data = json.data;
         self.visible = true;
+        self.slug = json.data.slug;
         if(json.data.price){
-          self.integer = (json.data.price.toFixed(2) + '').split('.')[0]
+          self.integer = (json.data.price.toFixed(2) + '').split('.')[0];
           self.cents = (json.data.price.toFixed(2) + '').split('.')[1];
         }
-        self.update()
+        self.update();
       });
     }
   </script>
