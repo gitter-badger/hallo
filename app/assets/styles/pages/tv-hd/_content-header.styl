@@ -83,33 +83,28 @@
   // .content_header_client-type
   &_client-type
     position relative
+    display table
+    height 100%
     font-family $fontTextRegular
-    +above('xs')
+    +below('xs')
       width 100%
       margin: 0
-    +above('s')
-      width remify(140px)
-    +above('l')
-      top remify(30px)
-      left remify(10px)
-    +below('l')
-      top remify(10px)
-    +below('m')
-      left remify(35px)
-    +below('s')
-      left 0
-    +below('xs')
       top 0
       left 0
+    +above('m')
+      width remify(140px)
+    +above('l')
+      left remify(10px)
 
     &-trigger
-      color $green
-      text-decoration none
-      font-size remify(13px)
+      display table-cell
       height remify(30px)
-      display block
-      +below('xs')
-        margin-top: remify(7px)
+      vertical-align middle
+      font-size remify(13px)
+      line-height remify(30px)
+      text-decoration none
+      color $green
+
       span
         height remify(15px)
         line-height remify(15px)
@@ -241,14 +236,15 @@
   &_price
     position relative
     +above('xs')
-      display block
-    +above('xs')
-      width remify(100px)
-      float right
-      height remify(58px)
-      overflow: hidden
-    +above('m')
-      float left
+      display none
+    // +above('xs')
+    //   display block
+    // +above('xs')
+    //   width remify(100px)
+    //   float right
+    //   height remify(58px)
+    // +above('m')
+    //   float left
 
   // .content_header_action
   &_action
