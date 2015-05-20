@@ -23,8 +23,10 @@ define([
 
   _public.init = function (){
     _private.loadPrice('rj');
-    _private.bindBtAddon();
     _private.bindBtPlan();
+    // oiMediator.subscribe( 'open modal', this.addAddon );
+    oiMediator.subscribe( 'addon add', _public.addAddon );
+    oiMediator.subscribe( 'addon remove', _public.removeAddon );
   }
 
   _private.bindBtPlan = function(){
@@ -37,6 +39,14 @@ define([
       defaultPlan = slug;
       _private.startPlan();
     });
+  }
+
+  _public.addAddon = function (slug){
+    _private.cartUpdateValue(slug, 1);
+  }
+
+  _public.removeAddon = function (slug){
+    _private.cartUpdateValue(slug, 0);
   }
 
   _private.startPlan = function (local){
@@ -53,6 +63,7 @@ define([
       _private.startSpot();
       _private.changeSpot();
       _private.bindOpenClientType();
+      _private.bindBtAddon();
     });
   }
 
@@ -181,8 +192,8 @@ define([
   _private.bindBtAddon = function(){
 
     $(document).delegate('.add-addon','click', function (evt){
-    // $('.add-addon').live('click', function (evt){
       evt.preventDefault();
+
       var $bt = $(this),
           slug = $bt.data('slug'),
           quant = $bt.hasClass('add') ? 1 : 0;
@@ -235,7 +246,6 @@ define([
   _private.bindCloseClientType = function (){
     $('body').on('click.bodyClientType', function (evt) {
       evt.preventDefault();
-      console.log('aaa');
       $('body').off('click.bodyClientType')
       _private.closeClientType();
     })
