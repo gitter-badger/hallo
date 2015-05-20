@@ -94,37 +94,45 @@ channel-modal
       +above('l')
         width 43%
 
+    &_actions
+      width 100%
+      text-align center
+      transform translate(0, remify(-17px))
+      display inline-block
+      position relative
+      +above('m')
+        width 60%
+
       a
         background-color transparent
-        border remify(1px) solid $white
         border-radius remify(2px)
         height remify(50px)
         line-height remify(50px)
         text-align center
         color $white
         text-decoration none
-        margin-left auto
-        +above('l')
-          margin-left remify(30px)
+        width 70%
 
-        &.add
-          display none
-          transform translate(0, remify(-17px))
-          +above('l')
-            padding 0 remify(20px)
-            display inline-block
-          +above('xl')
-            padding 0 remify(40px)
-        &.tel
-          display block
-          font-size remify(16px)
-          +above('m')
-            display inline-block
-            transform translate(0, remify(-17px))
-            font-size remify(13px)
-            padding 0 remify(15px)
-          +above('l')
-            display none
+        &.add-addon
+          display inline-block
+          border remify(1px) solid $white
+
+        &.rem-addon
+          font-size remify(13px)
+          position absolute
+          top 40px
+          left 15%
+
+        // &.tel
+        //   display block
+        //   font-size remify(16px)
+        //   +above('m')
+        //     display inline-block
+        //     transform translate(0, remify(-17px))
+        //     font-size remify(13px)
+        //     padding 0 remify(15px)
+        //   +above('l')
+        //     display none
 
   &_image
     position absolute
@@ -280,8 +288,8 @@ channel-modal
 
   .oi-price
     display none
-    zoom 82px
     transform scale(.8)
     color $white
+    width 40%
     +above('m')
       display inline-block
