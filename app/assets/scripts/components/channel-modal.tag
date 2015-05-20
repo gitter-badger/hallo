@@ -152,7 +152,9 @@
     }
 
     self.remove = function (argument){
-      $('[data-slug="' + self.slug + '"]').removeClass('added');
+      $('[data-slug="' + self.slug + '"].add')
+        .removeClass('added')
+        .text('Adicionar');
       self.addtext = 'Adicionar';
       self.added = false;
       self.update()
@@ -189,6 +191,8 @@
           self.integer = (json.data.price.toFixed(2) + '').split('.')[0];
           self.cents = (json.data.price.toFixed(2) + '').split('.')[1];
         }
+        self.added = window.cart[json.data.slug];
+        self.addtext = self.added ? 'Adicionado' : 'Adicionar';
         self.update();
       });
     }

@@ -18,8 +18,8 @@ define([
       $clientType        = $dropdowClientType.find('a'),
       $cartList = $('#cart-list'),
       cartWidth = $cartList.width();
-
-
+      // @todo: remove from global scope
+      window.cart = cart;
 
   _public.init = function (){
     _private.loadPrice('rj');
@@ -109,7 +109,7 @@ define([
       }
       cart[product] = {  quant: quant, name: prodAdd.name, type: prodAdd.type }
     }
-    // console.table(cart);
+    console.table(cart);
     _private.cartUpdatePrice();
     _private.cartUpdateList();
   }
