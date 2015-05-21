@@ -12,10 +12,8 @@ define([
       defaultPlan = 'mix',
       cart = {},
       $spots = $('.oi-channels-addons_item_spots a'),
-      // $openClientType    = $('.oi-channels_header_client-type-trigger'),
-      // $openClientTypeText = $openClientType.find('span').eq(0),
-      // $dropdowClientType = $('.oi-channels_header_client-type_dropdow'),
       $openClientType    = $('.content_header_client-type-trigger'),
+      $openClientTypeText = $openClientType.find('span').eq(0),
       $dropdowClientType = $('.content_header_client-type_dropdow'),
       $clientType        = $dropdowClientType.find('a'),
       $cartList = $('#cart-list'),
@@ -26,7 +24,6 @@ define([
   _public.init = function (){
     _private.loadPrice('rj');
     _private.bindBtPlan();
-    // oiMediator.subscribe( 'open modal', this.addAddon );
     oiMediator.subscribe( 'addon add', _public.addAddon );
     oiMediator.subscribe( 'addon remove', _public.removeAddon );
   }
