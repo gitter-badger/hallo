@@ -115,24 +115,6 @@
       border remify(1px) solid $gray
       border-radius remify(5px)
       display none
-<<<<<<< HEAD
-      float left
-      font-family $fontTitle
-      font-size remify(42px)
-      text-transform uppercase
-      position relative
-      z-index 1
-      height remify(58px)
-      width s("calc(100% - " + remify(140px + 100px + 200px) + ")")
-      padding-right remify(30px)
-      margin remify(-10px) 0
-      +above('s')
-        display block
-        width s("calc(100% - " + remify(140px + 100px) + ")")
-      +above('m')
-        margin 0
-        width s("calc(100% - " + remify(140px + 100px + 200px) + ")")
-=======
       font-family $fontTextRegular
       left remify(15px)
       position absolute
@@ -157,7 +139,6 @@
         border-radius remify(4px)
         border-width remify(1px)  0 0 remify(1px)
         content ''
->>>>>>> 89b0852... structure changes
         display block
         height remify(15px)
         left remify(126px)
@@ -184,46 +165,18 @@
         display block
 
       li
-<<<<<<< HEAD
-        display inline-block
-        opacity 0
-        &.visible
-          opacity 1
-=======
         height remify(115px)
         border-bottom remify(1px) solid $grayLight
         padding 0 remify(5px)
         position relative
         +above('m')
           padding 0 remify(40px)
->>>>>>> 89b0852... structure changes
 
         &:last-child
-<<<<<<< HEAD
-          display inline-block
-        &:before
-          content '+'
-          color $grayLight
-
-
-    &_client-type
-      font-family $fontTextRegular
-      width remify(140px)
-      float left
-      height remify(58px)
-      margin-top remify(-12px)
-      padding remify(12px) 0
-      a.oi-channels_header_client-type-trigger
-        color $green
-        text-decoration none
-        font-size remify(13px)
-        height remify(30px)
-=======
           border-bottom none
 
       a
         font-size remify(16px)
->>>>>>> 89b0852... structure changes
         display block
         text-decoration none
         color $black
@@ -243,96 +196,6 @@
 
         &.active, &:hover, &:focus, &:active
           & > span
-<<<<<<< HEAD
-            transition color 0.3s ease
-            width s(" calc(100% - 140px)")
-            display inline-block
-            line-height remify(20px)
-            position absolute
-            top remify(30px)
-            height remify(55px)
-            & > div
-              display table-cell
-              vertical-align middle
-              height remify(55px)
-
-          &.active, &:focus, &:active
-            & > span
-              color $green
-            svg circle.icon-inner
-              transform scale(1.2)
-              fill $green
-
-          svg
-            width remify(33px)
-            transform translateY(remify(33px))
-            margin 0 remify(5px) 0 0
-            circle
-              stroke $green
-              &.icon-inner
-                transform scale(0)
-                transform-origin remify(25px) remify(25px)
-                transition all 0.2s ease
-                stroke $white
-                fill $white
-              &.icon-outer
-                stroke $green
-
-        oi-price
-          right remify(20px)
-          width remify(80px)
-          display inline-block
-          position absolute
-          top remify(38px)
-          +above('m')
-            right remify(40px)
-
-    &_price
-      width remify(100px)
-      float right
-      height remify(58px)
-      transform translateY(remify(-5px))
-      margin remify(-7px) 0
-      padding remify(10px) 0
-      +above('m')
-        float left
-
-    &_action
-      height remify(58px)
-      display block
-      float left
-      font-family $fontTextRegular
-      position fixed
-      bottom 0
-      left 0
-      width 100%
-      +above('m')
-        width remify(170px)
-        position relative
-        margin remify(-12px) 0 0 0
-        display block
-
-      a
-        color $black
-        display block
-        text-decoration none
-        background-color $orangeLight
-        border-bottom remify(2px) solid $orange
-        border-radius remify(2px)
-        font-size remify(16px)
-        height remify(50px)
-        line-height remify(50px)
-        text-align center
-        max-width 50%
-        margin 0 auto
-        +above('m')
-          max-width 100%
-          margin-left remify(30px)
-          margin-top remify(4px)
-          width remify(170px)
-        &:hover
-          border-bottom remify(2px) solid $orangeLight
-=======
             color $green
           svg circle.icon-inner
             fill $green
@@ -409,4 +272,3 @@
       &:hover
         border-bottom remify(1px) solid $orange
         margin-top remify(5px)
->>>>>>> 89b0852... structure changes
