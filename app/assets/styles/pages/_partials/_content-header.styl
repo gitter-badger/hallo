@@ -1,0 +1,258 @@
+.content_header
+  height remify(65px)
+  padding remify(17px) remify(20px)
+  background-color $white
+  position relative
+  max-width remify(1170px)
+  margin 0 auto
+  z-index 2
+  border-bottom remify(1.1px) solid $black
+  transition-property height, padding
+  transition-duration 610ms
+  // background-image: url('../../../images/oi/cart-mask.png')
+  // background-position: center
+
+  +below('s')
+    overflow: visible
+  +above('m')
+    padding remify(50px) remify(30px)
+    height remify(130px)
+  +above('l')
+    padding remify(50px) 0
+
+  &_list
+    display none
+    float left
+    font-family $fontTitle
+    font-size remify(42px)
+    text-transform uppercase
+    position relative
+    z-index 1
+    height remify(58px)
+    // width s("calc(100% - " + remify(140px + 100px + 170px) + ")")
+    width 60%
+    padding-right remify(30px)
+    +above('s')
+      display block
+      margin-top remify(-12px)
+
+    ul
+      display block
+      height remify(70px)
+      overflow hidden
+      white-space nowrap
+
+    li
+      // display none
+      display inline-block
+      opacity 0
+      &.visible
+        opacity 1
+
+      &:first-child:before
+        display none
+      &:before
+        content '+'
+        color $grayLight
+
+  &_sidewalk
+    float: right
+    width: 100%
+    +above('m')
+      width: 40%
+
+
+  // the _sidewalk
+  &_client-type
+    font-family $fontTextRegular
+    width remify(140px)
+    float left
+    margin remify(-3px) 0 0 remify(11px)
+    +below('xs')
+      width: 100%
+      margin: 0
+    &-trigger
+      color $green
+      text-decoration none
+      font-size remify(13px)
+      height remify(30px)
+      display block
+      +below('xs')
+        margin-top: remify(7px)
+      span
+        height remify(15px)
+        line-height remify(15px)
+        display block
+        +below('xs')
+          display: inline
+        &:first-child
+          margin-bottom: remify(5px)
+      svg
+        display inline-block
+        width remify(9px)
+        margin-left remify(5px)
+        & + span
+          display inline-block
+      path
+        fill $green
+    &_dropdow
+      background-color $white
+      border remify(1px) solid $gray
+      border-radius remify(5px)
+      display none
+      font-family $fontTextRegular
+      left remify(15px)
+      position absolute
+      top remify(55px)
+      width s("calc(100% - 30px)")
+      max-width remify(465px)
+      &.open
+        display block
+      +above('m')
+        top remify(104px)
+        // right 0
+        right remify(191px)
+        left auto
+      +above('l')
+        right remify(191px)
+      +above('xl')
+        right remify(151px)
+
+      &:before
+        background $white
+        border 1px solid $gray
+        border-radius remify(4px)
+        border-width remify(1px)  0 0 remify(1px)
+        content ''
+        display block
+        height remify(15px)
+        left remify(126px)
+        position: absolute
+        top remify(-6px)
+        transform rotate(45deg)
+        width remify(15px)
+        +above('m')
+          left remify(328px)
+
+      &:after
+        background $white
+        content ''
+        display block
+        height remify(15px)
+        width remify(30px)
+        left remify(120px)
+        position: absolute
+        top remify(0)
+        +above('m')
+          left remify(320px)
+
+      ul
+        display block
+
+      li
+        height remify(115px)
+        border-bottom remify(1px) solid $grayLight
+        padding 0 remify(5px)
+        position relative
+        +above('m')
+          padding 0 remify(40px)
+
+        &:last-child
+          border-bottom none
+
+      a
+        font-size remify(16px)
+        display block
+        text-decoration none
+        color $black
+
+        & > span
+          transition color 0.3s ease
+          width s(" calc(100% - 140px)")
+          display inline-block
+          line-height remify(20px)
+          position absolute
+          top remify(30px)
+          height remify(55px)
+          & > div
+            display table-cell
+            vertical-align middle
+            height remify(55px)
+
+        &.active, &:hover, &:focus, &:active
+          & > span
+            color $green
+          svg circle.icon-inner
+            fill $green
+
+        svg
+          width remify(25px)
+          transform translateY(remify(33px))
+          margin 0 remify(5px) 0 0
+          circle
+            stroke $green
+            &.icon-inner
+              stroke $white
+              fill $white
+            &.icon-outer
+              stroke $green
+
+      oi-price
+        right remify(20px)
+        width remify(80px)
+        display inline-block
+        position absolute
+        top remify(38px)
+        +above('m')
+          right remify(40px)
+
+  &_price
+    width remify(120px)
+    float right
+    height remify(58px)
+    transform translateY(remify(-5px))
+    margin remify(-7px) 0
+    padding remify(10px) 0
+    overflow: hidden
+    +above('m')
+      float left
+    +below('xs')
+      display: none
+
+  &_action
+    display none
+    font-family $fontTextRegular
+    +below('s')
+      position: fixed
+      display: block
+      bottom: 0
+      left: 0
+      width: 92%;
+      margin-left: 4%;
+      margin-bottom: 4%;
+    +below('xs')
+      display: none
+    +above('l')
+      display block
+      width remify(170px)
+      height remify(58px)
+      float left
+      margin remify(-11px) 0 0 remify(23px)
+
+    a
+      color $black
+      display block
+      text-decoration none
+      background-color $orangeLight
+      border-bottom remify(2px) solid $orange
+      border-radius remify(2px)
+      font-size remify(16px)
+      height remify(50px)
+      line-height remify(50px)
+      margin-top remify(4px)
+      text-align center
+      +above('m')
+        height remify(50px)
+        line-height remify(50px)
+      &:hover
+        border-bottom 0 solid $orange

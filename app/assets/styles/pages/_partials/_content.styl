@@ -1,0 +1,129 @@
+.content
+  display block
+  width 100%
+  margin 0 auto
+  overflow hidden
+  position relative
+  z-index 1
+  +above('m')
+    top: 0
+    border remify(10px) solid transparent
+    border-top 0
+
+  &_header_container
+    position absolute
+    top 0
+    left 0
+    width: 100%
+    background $white
+    z-index: 2
+
+  &_table_container
+    position relative
+    background $white
+    z-index: 1
+    +above('m')
+      top remify(130px)
+
+
+.content.lock
+
+  .content_header_container
+    +above('s')
+      position: fixed
+      top: remify(74px);
+      left: 0
+      width: 100%
+      border-left: remify(10px) solid transparent
+      border-right: remify(10px) solid transparent
+
+  .content_header
+    +below('m')
+      background-color: transparent
+
+  .content_table_header
+    +above('l')
+      position: fixed
+      top: remify(74px + 130px);
+      transition-duration: 610ms
+      transition-property: transform
+
+
+.content.fold
+
+  .content_header_container
+    +below('xs')
+      position: fixed
+      top: 100%
+      background-color: transparent;
+      transform: translateY(remify(-100px))
+      transition-duration: 610ms
+      transition-property: transform
+    +above('s')
+      position: fixed
+      top: remify(74px);
+    +above('m')
+      transition-duration: 610ms
+      transition-property: top
+      top: remify(10px);
+
+  .content_header
+    +below('xs')
+      overflow: visible
+      border-bottom: 0
+    +above('m')
+      padding remify(28px) remify(30px)
+      height remify(90px)
+    +above('l')
+      padding remify(28px) 0
+      height remify(90px)
+
+  .content_header_action
+    +below('s')
+      display: block
+
+  .content_table_header
+    +above('l')
+      height remify(48px)
+      transition-duration: 610ms
+      transform: translateY(remify(-104px));
+    ul li
+      +above('l')
+        height remify(48px)
+        line-height remify(48px)
+      h4
+        +above('l')
+          line-height: remify(50px)
+
+.content.unfold
+  .content_header
+    +below('xs')
+      overflow: visible
+      border-bottom: 0
+
+  .content_header_container
+    +below('xs')
+      position: fixed
+      top: 100%
+      background-color: transparent;
+      transform: translateY(remify(-100px))
+    +above('m')
+      transition-duration: 610ms;
+
+  .content_header_action
+    +below('s')
+      display: block
+
+.content.hide
+  .content_table_header
+    +above('l')
+      transition-duration: 610ms;
+      // transform: translateY(remify(-255px));
+      transform: translateY(remify(-154px));
+  .content_header
+    +below('s')
+      overflow: visible
+
+
+
+
