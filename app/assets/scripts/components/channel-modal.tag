@@ -1,5 +1,5 @@
 <channel-modal>
-  <div role="dialog" class="channel-modal { data.klass }" show={ visible }>
+  <div role="dialog" class="channel-modal { disponibility }" show={ visible }>
     <div class="channel-modal_image" style="background-image:url({ data.img })"></div>
     <div class="channel-modal_indisponible">
       <div>
@@ -171,6 +171,7 @@
 
     $('.open-addon, .open-channel').on('click', function  (evt){
       evt.preventDefault();
+      self.disponibility = $(this).hasClass('inactive') ?  'indisponible': ''
       $('.open-addon.active').removeClass('active');
       $(this).addClass('active');
       var urlPage = $(this)[0].href;

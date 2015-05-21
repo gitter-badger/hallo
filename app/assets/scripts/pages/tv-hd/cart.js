@@ -1,9 +1,59 @@
+define('channels-plans', [
+  'domlib',
+  'vendor/lodash',
+  'vendor/underscore.string',
+  ], function ($, _, _s){
+  _.mixin(_s.exports());
+  var _public = {},
+      _private = {},
+      channelsMeta = {}
+      channelsList = {}
+      planSlug = 'start'
+
+  _public.init = function (){
+    _private.loadChannels();
+    // oiMediator.subscribe( 'start plan', _public.changePlan );
+    oiMediator.subscribe( 'change plan', _public.changePlan );
+  }
+
+  _public.changePlan = function (slug){
+    planSlug = slug;
+    _private.setChannels();
+  }
+
+  _private.loadChannels = function (){
+    $.getJSON('/api/channels.json', function(json){
+      channelsList = json.data;
+      channelsMeta = json.meta;
+      _private.setChannels();
+    });
+  }
+
+  var $channelList =  $('.oi-channels-lists')
+
+  _private.setChannels = function (){
+    // planSlug
+    $channelList.find('a').removeClass('inactive')
+    var planId = channelsMeta.plans[planSlug].id
+    var showChannels = _.filter(channelsList, function(channel) {
+      return _.includes(channel.dist, planId);
+    });
+    _.forEach(showChannels, function(channel, key) {
+      var slugChannel = _.slugify(channel.name);
+      $channelList.find('.slug-'+slugChannel).addClass('inactive')
+    });
+  }
+
+  return _public;
+});
+
 define([
   'domlib',
   'vendor/lodash',
   'vendor/riot',
   'tags/oi-price',
-], function($, _, riot, pricetag){
+  'channels-plans',
+], function($, _, riot, pricetag, channelsPlans){
   var _public = {},
       _private = {},
       price,
@@ -21,9 +71,12 @@ define([
       // @todo: remove from global scope
       window.cart = cart;
 
+  channelsPlans.init();
+
   _public.init = function (){
     _private.loadPrice('rj');
     _private.bindBtPlan();
+    oiMediator.publish( 'start plan', defaultPlan );
     oiMediator.subscribe( 'addon add', _public.addAddon );
     oiMediator.subscribe( 'addon remove', _public.removeAddon );
   }
@@ -36,6 +89,7 @@ define([
       $('.oi-channels_tabs a.active, .oi-card.active').removeClass('active');
       $bt.addClass('active');
       defaultPlan = slug;
+      oiMediator.publish( 'change plan', slug );
       _private.startPlan();
     });
   }
@@ -90,6 +144,7 @@ define([
 
   _private.cartStart = function(){
     _private.cartUpdateValue(defaultPlan, 1)
+
   }
 
   // @todo: transform cart in array. objects are unordered by definition
@@ -109,7 +164,7 @@ define([
       }
       cart[product] = {  quant: quant, name: prodAdd.name, type: prodAdd.type }
     }
-    console.table(cart);
+    // console.table(cart);
     _private.cartUpdatePrice();
     _private.cartUpdateList();
   }
