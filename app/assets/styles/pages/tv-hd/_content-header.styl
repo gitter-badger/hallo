@@ -51,21 +51,9 @@
 
       &:first-child:before
         display none
-      // &:last-child
-      //   +above('m')
-      //     display none
-      //   +above('l')
-      //     display inline-block
       &:before
         content '+'
         color $grayLight
-        // display inline-block
-        // width remify(12px)
-        // height remify(12px)
-        // border-radius remify(6px)
-        // background-color $grayLight
-        // transform translateY(remify(-7px))
-        // margin 0 remify(7px) 0 0
 
   &_sidewalk
     float: right
@@ -79,9 +67,7 @@
     font-family $fontTextRegular
     width remify(140px)
     float left
-    // height remify(58px)
     margin remify(-3px) 0 0 remify(11px)
-    // padding remify(12px) 0
     +below('xs')
       width: 100%
       margin: 0
@@ -269,5 +255,4 @@
         height remify(50px)
         line-height remify(50px)
       &:hover
-        border-bottom remify(1px) solid $orange
-        margin-top remify(5px)
+        border-bottom 0 solid $orange
