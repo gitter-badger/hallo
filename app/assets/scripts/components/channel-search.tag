@@ -81,12 +81,25 @@
       $('body').addClass('scroll-lock');
     }
 
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      // Esc
+      if (evt.keyCode == 27) {
+        self.close()
+      }
+    };
+
     this.close = function(e) {
       self.visible = false;
       $('body').removeClass('scroll-lock');
     }
 
-    this.search = function(e) {
+    this.search = function(evt) {
+      evt = evt || window.event;
+      if (evt.keyCode == 27) {
+        self.close()
+        return
+      }
       self.query = e.target.value;
       var arr = self.channels.filter(filterLv)
       var results;
@@ -119,6 +132,9 @@
     }.bind(this);
 
     function filterLv(channel){
+      if(!channel){
+        return
+      }
       var query = self.query.replace(/ /g,'').toLowerCase();
       var channelName = channel.name.replace(/ /g,'').toLowerCase();
       var channelKeywords = channel.keywords.replace(/,/g,'').toLowerCase();
