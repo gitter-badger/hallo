@@ -1,12 +1,16 @@
 // main.js
 define([
-  ], function(){
+  '../../enhance/product-scroll.js'
+  ], function(scroll){
 
   var _private = {};
   var _public = {};
 
   _public.init = function(){
-    console.log('fixo, _public.init');
+    console.log('internet, _public.init');
+    console.log('scroll', scroll);
+
+    scroll.init();
   };
 
   return _public;
