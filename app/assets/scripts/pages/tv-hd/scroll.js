@@ -5,6 +5,8 @@ define([
   var _public = {},
       _private = {};
 
+  try{
+
   // html
   // var html = document.querySelector('html');
   var header = document.querySelector('body >header');
@@ -553,6 +555,11 @@ define([
   _public.changeTableTo = function(index){
     return false;
   };
+
+  }catch(e){
+    console.log(e);
+  }
+
 
   return _public;
 });
