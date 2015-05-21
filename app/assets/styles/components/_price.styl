@@ -1,84 +1,117 @@
 oi-price
-  display block
   position relative
+  display block
 
 .oi-price
+  position relative
   color inherit
   display block
   height remify(44px)
   +above('m')
-    height remify(56px)
+    height remify(110px)
 
-  &.oi-price--small
-    .oi-price_value_integer
-      font-size remify(42px)
-      height remify(44px)
-      line-height remify(44px)
-      float right
-      margin-right remify(30px)
-    .oi-price_value_cents
-      font-size remify(21px)
-      height remify(22px)
-      line-height remify(22px)
-      transform translate(0px, remify(-41px))
-      float right
-    .oi-price_suffix
-      font-size remify(11px)
-      height remify(22px)
-      line-height remify(22px)
-      // margin-top remify(-25px)
-      // text-indent remify(43px)
-      text-indent 0
-      float right
-      margin-right remify(-30px)
-      width remify(31px)
+  // &.oi-price--small
+  //   .oi-price_value_integer
+  //     font-size remify(42px)
+  //     height remify(44px)
+  //     line-height remify(44px)
+  //     float right
+  //     margin-right remify(30px)
+  //   .oi-price_value_cents
+  //     font-size remify(21px)
+  //     height remify(22px)
+  //     line-height remify(22px)
+  //     transform translate(0px, remify(-41px))
+  //     float right
+  //   .oi-price_suffix
+  //     font-size remify(11px)
+  //     height remify(22px)
+  //     line-height remify(22px)
+  //     // margin-top remify(-25px)
+  //     // text-indent remify(43px)
+  //     text-indent 0
+  //     float right
+  //     margin-right remify(-30px)
+  //     width remify(31px)
 
   &_prefix
-    display none
-    font-family $fontTextRegular
+    display: none
+    +above('m')
+      position absolute;
+      display: block
+      font-size remify(13px)
+      font-family $fontTextRegular
+      text-transform lowercase
+      color $grayLight
+      width: 100%
+      top: remify(4px);
+      left: remify(51px);
 
   &_value
+    position relative;
+    width: 100%
+    height: 100%
+    margin 0 auto
     font-family $fontTitle
     text-align center
-    transition: color 0.3s ease
+    white-space nowrap
+    line-height: remify(46px)
+    +above('m')
+      line-height: remify(94px)
 
     &_integer
+      position relative;
       display inline-block
-      font-size remify(35px)
-      height remify(44px)
-      line-height remify(44px)
+      top: remify(-7px)
+      left: remify(7px)
+      font-size remify(34px)
       +above('m')
-        font-size remify(75px)
-        height remify(56px)
-        line-height remify(56px)
+        top: remify(21px)
+        left: remify(29px)
+        font-size remify(96px)
 
     &_cents
+      position relative;
       display inline-block
-      font-size remify(17.5px)
-      height remify(22px)
-      line-height remify(22px)
-      transform translateY(remify(-10px))
+      top: remify(-19px)
+      left: remify(9px)
+      font-size: remify(18px)
       +above('m')
-        font-size remify(37.5px)
-        height remify(28px)
-        line-height remify(28px)
-        transform translateY(remify(-27px))
+        top: remify(-14px)
+        left: remify(29px)
+        font-size: remify(48px)
 
-  &_suffix
-    display block
-    font-family $fontTitle
-    font-size remify(8.5px)
-    height remify(22px)
-    line-height remify(22px)
-    margin-top remify(-25px)
-    text-align center
-    text-indent remify(50px)
-    transition: color 0.3s ease
-    +above('m')
-      text-indent remify(80px)
-      font-size remify(19px)
-
-    span
-      display none
+    &_suffix
+      position relative;
+      display inline-block
+      font-size remify(9px)
+      top: remify(-6px)
+      left: remify(-14px)
       +above('m')
-        display inline
+        top: remify(21px)
+        left: remify(-32px)
+        font-size remify(24px)
+      span
+        +below('m')
+          display: none
+
+
+
+.oi-price.oi-price--small
+  .oi-price_prefix
+    display: none
+  .oi-price_value
+    line-height: 0
+  .oi-price_value_integer
+    top: remify(18px)
+    left: remify(20px)
+    font-size remify(42px)
+  .oi-price_value_cents
+    top: remify(4px)
+    left: remify(21px)
+    font-size remify(21px)
+  .oi-price_value_suffix
+    top: remify(19px)
+    left: remify(-5px)
+    font-size: remify(11px)
+

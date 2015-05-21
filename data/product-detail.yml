@@ -165,7 +165,8 @@ product-details:
         - 'Grave 2 canais ao mesmo tempo'
         - 'Pause ao vivo'
     -
-      type: 'Condições de compra'
+      type: 'compra'
+      title: 'Condições de compra'
       obs:
         - 'Por R$ 20/mês'
       features:
@@ -384,7 +385,8 @@ product-details:
         - 'Grave 2 canais ao mesmo tempo'
         - 'Pause ao vivo'
     -
-      type: 'Condições de compra'
+      type: 'compra'
+      title: 'Condições de compra'
       obs:
         - 'Por R$ 20/mês'
       features:
@@ -603,7 +605,8 @@ product-details:
         - 'Grave 2 canais ao mesmo tempo'
         - 'Pause ao vivo'
     -
-      type: 'Condições de compra'
+      type: 'compra'
+      title: 'Condições de compra'
       obs:
         - 'Por R$ 20/mês'
       features:

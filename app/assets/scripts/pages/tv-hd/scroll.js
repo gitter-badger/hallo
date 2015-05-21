@@ -1,210 +1,627 @@
 define([
   'domlib',
-  'vendor/lodash',
-  'velocity'
-  ],function ($, lodash, Velocity ) {
+  'vendor/velocity'
+  ], function($, velocity){
 
   var _public = {},
-      _private = {}
+      _private = {};
 
-  var $body = $('body'),
-      $win = $(window),
-      $main = $('main'),
-      $cardsContainer = $('.cards_container'),
-      $cardsContainerBg = $('.cards_container--bg'),
-      $cards = $('.cards'),
-      $cardHeader = $('.oi-card_header'),
-      $cardSubtitle = $('.oi-card_subtitle'),
-      $cardTitle = $('.oi-card_title'),
-      $cardMain = $('.oi-card_main'),
-      $cardFooter = $('.oi-card_footer'),
-      $cardFooterAction = $('.oi-card_action'),
-      $channels = $('.oi-channels'),
-      $channelInfo = $('#channel-info'),
-      $channelTabs = $('.oi-channels_tabs'),
-      $channelsContainer = $('.oi-channels_container'),
-      $channelsheader = $('.oi-channels_header'),
-      $hero = $('oi-hero'),
-      cardsOffset = {},
-      cardsContainerOffset = {},
-      cardHeaderOffset = {},
-      cardMainOffset = {},
-      cardFooterOffset = {},
-      cardFooterActionOffset = {},
-      channelsOffset = {},
-      channelInfoOffset = {},
-      channelsheaderOffset = {},
-      docWidth;
+  try{
+  var scrollDirection = 0;
 
+  // html
+  // var html = document.querySelector('html');
+  var header = document.querySelector('body >header');
 
+  // cards
+  var cards = document.querySelector('.cards');
+  var cardsContainer = document.querySelector('.cards_container');
+  var cardsContainerBox = document.querySelector('.cards_container_box');
+  var oiCard = document.querySelectorAll('oi-card');
+  var oiCardHeader = document.querySelectorAll('.oi-card_header');
+  var oiCardHeaderTitle = document.querySelectorAll('.oi-card_header_title');
+  var clickableCards = document.querySelectorAll('oi-card');
+
+  // content
+  var content = document.querySelector('.content');
+  var contentHeader = document.querySelector('.content_header');
+  var contentTableContainer = document.querySelector('.content_table_container');
+  var contentTable = document.querySelector('.content_table');
+
+  // table
+  var tableLists = document.querySelector('.oi-channels_lists-container');
+
+  // sizes
+  var cardSize = cardsContainerBox.getBoundingClientRect().height;
+  var contentHeaderWidth = contentHeader.getBoundingClientRect().width;
+  var contentListsListTvTitleWidth = Math.round((contentHeaderWidth/100)*12.820512821);
+  var contentAddonsTitleWidth = Math.round((contentHeaderWidth/100)*23.076923077);
+
+  // positions
+  var openPosition = cards.offsetTop;
+  var lockPosition = content.offsetTop;
+  var foldPosition = contentTable.offsetTop;
+
+  /**
+   * init
+   *
+   * self explanatory definition
+   *
+   * @method init
+   *
+   * ***/
   _public.init = function(){
 
     if(!('__proto__' in {})){
-      return
+      return;
     }
 
-    _private.loadSizes();
-    _private.bindCard();
-    _private.bindResize();
+    _private.scrollSpeed();
+    _private.scroller();
+    _private.keys();
+    _private.clicks();
+    _private.updateOnResize();
+    _private.checkHash();
+  };
 
-  }
-  _private.bindResize = function(){
-    $(window).on('resize', function (){
-      $(window).off('scroll.anim');
-      window.scrollTo(0, 0);
-      _private.loadSizes();
-      $(window).trigger('scroll.anim')
+  /**
+   * baseFromPoint
+   *
+   * Calculates and returns a point value between initial and final points based on a base number
+   *
+   * @method baseFromPoint
+   * @param p {number} point to discover
+   * @param initialPoint {number} initial value, also as minimum value
+   * @param finalPoint {number} final value for point, also as maximum value
+   * @param base {number} base distance between points, best don't be negative, if bas has not been set, assumes value 100
+   * @return {number} calculated number
+   *
+   * ***/
+  _private.baseFromPoint = function(p, initialPoint, finalPoint, base){
+    // TODO: default values need to be added
+    if (!base) { base = 100; }
+
+    var point = 0; // TODO: Math.max improvements ?
+    if (p > initialPoint && p < finalPoint) {
+      point = ((p - initialPoint) / (finalPoint - initialPoint)) * base;
+    } else if (p <= initialPoint) {
+      point = 0;
+    } else if (p >= finalPoint) {
+      point = base;
+    }
+
+    return point.toFixed(2);
+  };
+
+  /**
+   * checkSelected
+   *
+   * checks if a cards has selected, if not, select the last card form the list, returns the selected object
+   *
+   * @method checkSelected
+   * @return {Object}
+   *
+   * ***/
+  _private.checkSelected = function(){
+    var hasSelected = 0;
+    [].forEach.call(oiCard, function(card){
+      if (card.classList.contains('selected')){
+        hasSelected++;
+      }
     });
-  }
 
-  _private.loadSizes = function(){
-      docWidth = $(document).width(),
-      cardsOffset = $cards.offset(),
-      cardsContainerOffset = $cardsContainer.offset(),
-      cardHeaderOffset = $cardHeader.offset(),
-      cardMainOffset = $cardMain.offset(),
-      cardFooterOffset = $cardFooter.offset(),
-      cardFooterActionOffset = $cardFooterAction.offset(),
-      channelsOffset = $channels.offset(),
-      channelInfoOffset = $channelInfo.offset(),
-      channelsheaderOffset = $channelsheader.offset();
-      _private.bindScroll();
-  }
+    if (hasSelected > 0){
+      return;
+    } else {
+      oiCard[2].className += 'selected';
+    }
 
-  _private.bindCard = function(){
-    $cards.find('a').on('click.card', function (evt){
-      evt.preventDefault();
-      $channels.velocity("scroll", {
-        duration: 3000,
-        delay: 200
+    return oiCard[2];
+  };
+
+  /**
+   * scrollSpeed
+   *
+   * change transition-duration on some elements relative to scroll speed
+   *
+   * @method scrollSpeed
+   * @return null
+   *
+   * ***/
+  _private.scrollSpeed = function(){
+
+    var lastSpeeds = [];
+    var baseTime = 0.610;
+    var lastScroll = 0;
+    var lastTime = 0;
+    var checkStopTimeout = 0;
+
+    var update = function(){
+
+      var currentTime = Date.now();
+
+      var timeDiff = currentTime - lastTime;
+      var scrollDiff = window.scrollY - lastScroll;
+
+      var diff = Math.abs((scrollDiff / timeDiff) * 0.610).toFixed(2);
+      var finalTimer = baseTime - diff;
+      finalTimer = finalTimer < 0 ? 0 : finalTimer;
+      finalTimer = finalTimer > baseTime ? baseTime : finalTimer;
+
+      if (lastSpeeds.length > 9) { lastSpeeds.splice(0,1); }
+      lastSpeeds.push(finalTimer);
+
+      // calculating media
+      var media = 0;
+      lastSpeeds.forEach(function(e){
+        media += e;
       });
-    })
-  }
+      media = (media/lastSpeeds.length).toFixed(2);
 
-  _private.resetAnim = function(){
-    $cards.css({ marginTop: 0, marginBottom: 0 })
-      $cardsContainer.css({
-        maxWidth: '73.125rem',
-        marginBottom: '12.1875rem'
-      })
-      $cardMain.css({ marginTop: 0 })
-      $cardFooter.css({ opacity: 1  })
-      $cardHeader.css({
-        paddingTop: '1.875rem',
-        paddingBottom: '1.875rem',
-        maxWidth: '11.25rem'
-      })
-      $cardTitle.css({
-        fontSize: '1.3125rem'
-      })
-      $cardSubtitle.css({
-        opacity: 1,
-        height: '1.375rem'
-      })
-      $channels.css({
-        opacity: 1
-      })
-      $channelInfo.css({
-        marginTop: 0
+      // checking stop
+      clearTimeout(checkStopTimeout);
+      checkStopTimeout = window.setTimeout(function(){
+        lastSpeeds = [];
+      }, 1000);
+
+      // updating elements
+      // html.style.transitionDuration = media+'s';
+      cards.style.transitionDuration = media+'s';
+      [].forEach.call(oiCardHeader, function(e){
+        e.style.transitionDuration = media+'s';
       });
-  }
 
-  _private.bindScroll = function(){
-    $channels.addClass('nopad')
-    $channelTabs.hide();
-    $channels.css({opacity: 0});
+      lastScroll = window.scrollY;
+      lastTime = currentTime;
+    };
 
-    $(window).on('scroll.anim', _.throttle( function(){
-      var scrollTop = $win.scrollTop();
+    window.addEventListener('scroll', update);
+    update();
 
-      if(scrollTop >= cardsOffset.top + cardsOffset.height - channelsheaderOffset.height &&  scrollTop < cardsOffset.top + cardsOffset.height - channelsheaderOffset.height +100 ){
-        var stageAnim2 = (scrollTop - (cardsOffset.top + cardsOffset.height - channelsheaderOffset.height))/100
-        // Show border channels area
-        $cardsContainerBg.css({
-          paddingTop: .625 * (stageAnim2) + 'rem',
-          paddingLeft: .625 * (stageAnim2) + 'rem',
-          paddingRight: .625 * (stageAnim2) + 'rem'
-        })
-        $channels.css({paddingLeft: .625 * (stageAnim2) + 'rem', paddingRight: .625 * (stageAnim2) + 'rem' })
+    return;
+  };
+
+  /**
+   * scroller
+   *
+   * listen the page scrollY and dispatch some funcitons
+   *
+   * @method scroller
+   * @return null
+   *
+   * ***/
+  _private.scroller = function(){
+
+    var lastScroll = 0;
+
+    // change table position
+    // TODO: performance check
+    var dynamicTable = function(y, initialPoint, finalPoint){
+      var p = _private.baseFromPoint(y, initialPoint, finalPoint, 10);
+      // content.style.top = (25 - p*2.5)+'vh';
+      // content.style.transform = 'translateY('+ (25 - p*2.5)+ 'vh)';
+
+      content.style.opacity = _private.baseFromPoint(y, initialPoint, finalPoint, 1);
+    };
+
+    // change table opacity
+    // TODO: performance check
+    // TODO: bound to dynamicTable method
+    var dynamicTableOpacity = function(y, initialPoint, finalPoint){
+      var p = _private.baseFromPoint(y, initialPoint, finalPoint, 10);
+      content.style.opacity = (p/10);
+    };
+
+    // change cards height
+    // TODO: performance check
+    var dynamicCards = function(y, initialPoint, finalPoint){
+      var p = _private.baseFromPoint(y, initialPoint, finalPoint, 100);
+      for (var i = 0; i < 3; i++) {
+        oiCard[i].style.height = (100 - p)+'%';
       }
+    };
 
-      if(scrollTop <= cardsOffset.top + cardsOffset.height - channelsheaderOffset.height ){
-        $cardsContainerBg.css({
-          paddingTop: 0,
-          paddingLeft: 0,
-          paddingRight: 0
-        })
-        $channels.css({paddingLeft:0, paddingRight:0 })
-
+    // add thin class on titles
+    // TODO: performance check
+    var dynamicTitle = function(y, initialPoint, finalPoint){
+      var thinTitle = (y >= initialPoint);
+      for (var i = 0; i < 3; i++) {
+        if (thinTitle) {
+          if (!oiCardHeader[i].classList.contains('thin')){
+            oiCardHeader[i].className += ' thin';
+          }
+        } else {
+          if (oiCardHeader[i].classList.contains('thin')){
+            oiCardHeader[i].className = oiCardHeader[i].className.replace(' thin', '');
+          }
+        }
       }
+    };
 
-      if(scrollTop >= cardsOffset.top &&  scrollTop < 8000 ){
+    // add parse class on backgrounds
+    // TODO: performance check
+    // TODO: clear comments
+    var dynamicBackgrounds = function(y, initialPoint, finalPoint){
 
-        $hero.removeClass('show-shaddow')
-        $cards.addClass('is-tabs');
-
-        // set mix as active if user dont made a selection
-        // if( !$cardsContainer.find('.active')[0]){
-        //   $cardsContainer.find('[data-slug="mix"]').trigger('click')
-        // }
-
-        var cardPos = (scrollTop - cardsOffset.top),
-            sumMainFooter = cardMainOffset.height + cardFooterOffset.height + 1,
-            stageAnim = cardPos/sumMainFooter <= 1 ? cardPos/sumMainFooter: 1 ,
-            cardsWidth = 73.125,
-            docWidthREM = docWidth/16,
-            newWidth = docWidthREM * stageAnim >= cardsWidth ? docWidthREM * stageAnim : cardsWidth,
-            newHeight = cardPos > sumMainFooter ? sumMainFooter  : cardPos,
-            newFsCardTitle = 1 + .375 * (1-stageAnim ) + 'rem';
-
-        // pin card
-        $cards.css({ marginTop: scrollTop - cardsOffset.top, marginBottom: 0 })
-
-        // cards full width
-        $cardsContainer.css({
-          maxWidth: newWidth + 'rem',
-          marginBottom: 12.25 * (1-stageAnim) + 'rem'
-        })
-
-        // hide card main & footer
-        $cardMain.css({ marginTop: -newHeight, opacity: 1 - stageAnim })
-        $cardFooter.css({ opacity: 1 - stageAnim - 0.3 })
-
-        // adjust header card height
-        $cardHeader.css({
-          paddingTop: 1.875 * (1-stageAnim ) + 'rem',
-          paddingBottom: 1.875 * (1-stageAnim ) + 'rem',
-          maxWidth: stageAnim*100 + '%'
-        })
-
-        $cardTitle.css({
-          fontSize: newFsCardTitle
-        })
-
-        $cardSubtitle.css({
-          opacity: (1-stageAnim - .3),
-          height: 1.375 * (1-stageAnim) + 'rem'
-        })
-
-        $channels.css({
-          opacity: stageAnim,
-        })
-
-        if(stageAnim >= 1){
-          $channelInfo.css({
-            marginTop: -(scrollTop - ( cardsOffset.top + cardsOffset.height - channelsheaderOffset.height -18 ))
-          });
+      if (y >= initialPoint) {
+        if (!cards.classList.contains('parse')){
+          cards.className += ' parse';
+          content.className += ' parse';
         }
       } else {
-        $cards.removeClass('is-tabs');
-        $hero.addClass('show-shaddow');
-        _private.resetAnim();
+        if (cards.classList.contains('parse')){
+          cards.className = cards.className.replace(' parse', '');
+          content.className = content.className.replace(' parse', '');
+        }
       }
 
+      return;
+    };
 
-    }, 10, true));
+    // change the size of border realtive to the table depth
+    // TODO: performance check
+    // TODO: clear componentes
+    // TODO: increase logic
+    var dynamicBorderSize = function(){
+      var newSize = content.getBoundingClientRect().bottom;
+      if (newSize < window.innerHeight){
+        cardsContainer.style.height = newSize+'px';
+      } else {
+        cardsContainer.style.height = '100vh';
+      }
+    };
+
+    // hack position of buttons of folded
+    var dynamiciPhoneSizeHack = function(){
+      if (navigator.userAgent.match(/iPhone/i)){
+        header.style.height = 'calc(100vh - 68px)';
+      }
+    };
+
+    // add open class to cards
+    // TODO: performance check
+    var open = function(){
+      if (window.scrollY >= openPosition) {
+        if (!cards.classList.contains('open')) {
+          cards.className += ' open';
+          _private.checkSelected();
+        }
+      } else {
+        cards.className = cards.className.replace(' open', '');
+      }
+    };
+
+    // add open class to cards and channels
+    // TODO: performance check
+    var lock = function(){
+      if (window.scrollY >= lockPosition) {
+        if (!lock.done) {
+          lock.done = true;
+          content.className += ' lock';
+          cards.className += ' lock';
+        }
+      } else {
+        lock.done = false;
+        content.className = content.className.replace(' lock', '');
+        cards.className = cards.className.replace(' lock', '');
+      }
+
+      return;
+    };
+
+    // add fold class to table
+    // TODO: performance check
+    var fold = function(){
+
+      var removeFold = function(){
+        if (content.classList.contains('fold')) {
+          cards.className = cards.className.replace(' fold', '');
+          content.className = content.className.replace(' fold', '');
+          if (!content.classList.contains('unfold')) {
+            cards.className += ' unfold';
+            content.className += ' unfold';
+          }
+        }
+      };
+
+      var addFold = function(){
+        if (!content.classList.contains('fold')) {
+          cards.className += ' fold';
+          content.className += ' fold';
+          if (content.classList.contains('unfold')) {
+            cards.className = cards.className.replace(' unfold', '');
+            content.className = content.className.replace(' unfold', '');
+          }
+        }
+      };
+
+      var removeUnfold = function(){
+        if (content.classList.contains('unfold')) {
+          cards.className = cards.className.replace(' unfold', '');
+          content.className = content.className.replace(' unfold', '');
+        }
+      };
+
+      if (window.scrollY >= foldPosition) {
+        if (!scrollDirection) {
+          addFold();
+        } else {
+          removeFold();
+        }
+      } else {
+        removeFold();
+        removeUnfold();
+      }
+      return;
+    };
+
+    // add hide class to table
+    // TODO: performance check
+    var hide = function(){
+      var newSize = tableLists.getBoundingClientRect().bottom;
+      if (newSize < window.innerHeight){
+        if (!content.classList.contains('hide')) {
+          content.className += ' hide';
+        }
+      } else {
+        content.className = content.className.replace(' hide', '');
+      }
+    };
+
+    // spy the scroll value
+    // TODO: performance check
+    var scrollSpy = _private.scrollSpy =  function(e){
+
+      window.scrollY = window.pageYOffset;
+
+      lockPosition = content.offsetTop - oiCardHeaderTitle[0].getBoundingClientRect().height - 10;
+      foldPosition = lockPosition + contentHeader.offsetHeight;
+
+      if (window.innerWidth >= 768) {
+        dynamicTable(window.scrollY, openPosition, openPosition + cardSize*0.21 );
+        // dynamicTable(window.scrollY, -window.innerHeight*3, openPosition );
+        // dynamicTableOpacity(window.scrollY, openPosition, openPosition + cardSize*0.21 );
+
+        dynamicCards(window.scrollY, openPosition, openPosition + cardSize*0.89);
+        dynamicTitle(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize * 0.89);
+
+        dynamicBorderSize();
+      } else {
+
+        dynamiciPhoneSizeHack();
+      }
+
+      dynamicBackgrounds(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize * 0.89);
+
+      open();
+      lock();
+
+      fold();
+
+      if (window.innerWidth >= 768) {
+        hide();
+      }
+
+      scrollDirection = (lastScroll > window.scrollY) ? 1 : 0;
+      lastScroll = window.scrollY;
+    };
+
+    window.addEventListener('scroll', scrollSpy);
+    scrollSpy();
+  };
+
+  /**
+   * updateOnResize
+   *
+   * update base numbers on resize
+   *
+   * @method updateOnResize
+   * @return null
+   *
+   * ***/
+  _private.updateOnResize = function(){
+
+    var update = function(e){
+      openPosition = cards.offsetTop;
+      foldPosition = contentTable.offsetTop;
+
+      cardSize = cardsContainerBox.getBoundingClientRect().height;
+
+      contentHeaderWidth = contentHeader.getBoundingClientRect().width;
+      contentListsListTvTitleWidth = (contentHeaderWidth/100)*12.820512821;
+      contentAddonsTitleWidth = (contentHeaderWidth/100)*23.076923077;
+
+      _private.scrollSpy(e);
+    };
+
+    window.addEventListener('resize', update);
+    update();
+
+    return;
+  };
+
+  /**
+   * keys
+   *
+   * load keyboard letters to use on page points
+   *
+   * @method keys
+   * @return null
+   *
+   * ***/
+  _private.keys = function(){
+
+    var selectBack = function(){
+      if (!$('.product-card').hasClass('selected')) {
+        moveToLockPosition();
+      } else {
+        var placeholder = $('.product-card.selected').attr('data-placeholder');
+        $('.product-card').each(function(i, e){
+          if ($(e).attr('data-placeholder') == placeholder) {
+            if ($('.product-card')[i-1]) {
+              $('.product-card').removeClass('selected');
+              $($('.product-card')[i-1]).addClass('selected');
+              $('.product-card .product-card-title').attr('style', 'height: 4rem');
+            }
+          }
+        });
+      }
+    };
+
+    var selectFowrad = function(){
+      if (!$('.product-card').hasClass('selected')) {
+        moveToLockPosition();
+      } else {
+        var placeholder = $('.product-card.selected').attr('data-placeholder');
+        $('.product-card').each(function(i, e){
+          if ($(e).attr('data-placeholder') == placeholder) {
+            if ($('.product-card')[i+1]) {
+              $('.product-card').removeClass('selected');
+              $($('.product-card')[i+1]).addClass('selected');
+              $('.product-card .product-card-title').attr('style', 'height: 4rem');
+            }
+          }
+        });
+      }
+    };
+
+    var keypress = function(e){
+      if (e.keyCode == 37) {
+        e.preventDefault();
+        selectBack();
+      } else if (e.keyCode == 39) {
+        e.preventDefault();
+        selectFowrad();
+      }
+    };
+
+    document.addEventListener('keydown', keypress);
+  };
+
+  /**
+   * clicks
+   *
+   * load clicks events of page
+   *
+   * @method clicks
+   * @return null
+   *
+   * ***/
+  _private.clicks = function(){
+
+    var clickOnCard = function(e){
+      [].forEach.call(clickableCards, function(element, i){
+        if (element == e.currentTarget) {
+          _public.changeCardTo(i);
+        }
+      });
+    };
+
+    [].forEach.call(clickableCards, function(e){
+      e.addEventListener('click', clickOnCard);
+      e.addEventListener('touch', clickOnCard);
+    });
+  };
+
+  /**
+   * changeTableTo
+   *
+   * change between tables by indexs
+   *
+   * @method changeTableTo
+   * @return {boolean} true, if we have a valid index, false if not
+   *
+   * ***/
+  _public.changeCardTo = function(index){
+
+    [].forEach.call(clickableCards, function(e){
+      e.className = e.className.replace('selected', '');
+    });
+
+    clickableCards[index].className += 'selected';
+    window.location.hash = '#'+clickableCards[index].querySelector('a[data-slug]').getAttribute('data-slug');
+
+    _private.changeTableTo(index);
+    _private.scrollToLockPosition();
+
+    return false;
+  };
+
+
+  /**
+   * scrollToLockPosition
+   *
+   * send the scroll to the "lock" position, mobile safe
+   *
+   * @method scrollToLockPosition
+   * @return null;
+   *
+   * ***/
+  _private.scrollToLockPosition = function(){
+
+    var pos = lockPosition;
+    var duration = 987;
+    if (window.innerWidth <= 414) {
+      pos = openPosition;
+      duration = 610;
+    }
+
+    $('html, body').velocity('scroll', {
+      offset: pos,
+      duration: duration,
+      mobileHA: false
+    });
+
+    return;
+  };
+
+  /**
+   * changeTableTo
+   *
+   * change between tables by indexs
+   *
+   * @method changeTableTo
+   * @return {boolean} true, if we have a valid index, false if not
+   *
+   * ***/
+  _private.changeTableTo = function(index){
+    return false;
+  };
+
+
+
+  /**
+   * checkHash
+   *
+   * check the hash and send table to selected card option
+   *
+   * @method checkHash
+   * @return {boolean} false, if hash not found
+   *
+   * ***/
+  _private.checkHash = function(){
+
+    if (window.innerWidth < 768) {
+      return;
+    }
+
+    var hash = window.location.hash.replace('#', '');
+    var cardLink = document.querySelector('a[data-slug="'+hash+'"]');
+    if (!cardLink) {
+      return false;
+    }
+    var card = cardLink.parentNode;
+
+    [].forEach.call(clickableCards, function(e, i){
+      if (e == card) {
+        _public.changeCardTo(i);
+      }
+    });
+  };
+
+  }catch(e){
+    console.log(e);
   }
 
-  return _public
-
+  return _public;
 });

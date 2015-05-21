@@ -1,10 +1,19 @@
 html
   font-size 16px
+  +above('m')
+    font-size 92%
+  +above('l')
+    font-size 100%
+  +above('xxl')
+    font-size 134%
   +above('xxxl')
+    font-size 155%
+  +above('4k')
     font-size 1vw
 
 body
-  font-family font-stack( 'Helvetica' )
+  // font-family font-stack( 'Helvetica' )
+  font-family $fontTextRegular
   font-size 1rem
   line-height 1.4
   opacity 1
@@ -19,7 +28,7 @@ body
       display block
 
    .b-lazy
-    transition opacity 500ms ease-in-out
+    transition opacity 144ms linear
     max-width 100%
     opacity 0
     &.b-loaded
@@ -28,6 +37,20 @@ body
 
 .container
   background-color #fff
+  max-width: remify(1170px)
+
+.clearfix
+  &:after, &:before
+    content: " ";
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+    width: 0;
+    height: 0;
+  &:after
+    clear: both;
 
 $visuallyhidden
   position absolute

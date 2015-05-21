@@ -27,9 +27,6 @@
 
       <div class="channel-modal_content_price" if={ data.price }>
         <div class="oi-price">
-          <div class="oi-price_prefix">
-            A partir de
-          </div>
           <div class="oi-price_value">
             <span class="oi-price_value_integer">
               { integer }
@@ -172,7 +169,7 @@
       $('body').removeClass('scroll-lock');
     }
 
-    $('.open-addon').on('click', function  (evt){
+    $('.open-addon, .open-channel').on('click', function  (evt){
       evt.preventDefault();
       $('.open-addon.active').removeClass('active');
       $(this).addClass('active');

@@ -1,45 +1,168 @@
 .cards
   width 100%
-  // padding 0 remify(10px)
+  height $cardSizeMobile
   position relative
-  z-index 1
-
-  &.is-tabs
-    .oi-card.active
-      background-color $green
-      border-width 0
-      .oi-card_header
-        background-color $green
-        h2
-          color $white
-      .oi-card_subtitle
-        color $white
-      .oi-price
-        color $white
-      .oi-card_list
-        color $white
-      .oi-card_action
-        background-color $green
-        border-color $white
-        color $white
+  z-index 3
+  +above('m')
+    height $cardSize
 
   &_container
+    position relative
+    width 100%
+    height $cardSizeMobile
     overflow hidden
-    margin-bottom remify(125px)
+    transition-duration inherit
+    transition-property border
+    border 0 solid $green
+    pointer-events: none
     +above('m')
-      margin-bottom remify(195px)
-    +above('l')
+      height 100vh
+      z-index: 999
+
+    &_box
+      position relative
+      height $cardSizeMobile
       max-width remify(1170px)
       margin 0 auto
+      transition-duration inherit
       clear both
-      margin-top remify(-127px)
-      margin-bottom remify(195px)
-    &--bg
-      background-color $green
-      overflow hidden
+      pointer-events: none
+      +above('m')
+        height $cardSize
 
   oi-card
     width (100% / 3)
     float left
-    & + oi-card .oi-card
-      border-left 0
+    pointer-events: initial
+    border-right-width 0
+    &:last-child
+      border-right-width remify(1px)
+
+
+.cards.open
+
+  .cards_container
+    +above('s')
+      position fixed
+      top 0
+
+  .cards_container_box
+    max-width 100%
+
+  oi-card
+    border-color $green
+
+    .oi-card_header_title
+      +above('m')
+        padding-top remify(6px)
+
+    .oi-card_header_line
+      +above('m')
+        width: 100%
+        left: 0
+        background-color $green
+
+  oi-card.selected
+    +below('xs')
+      background-color: $green
+      color: $white
+
+    .oi-card_header_title
+      +below('m')
+        color $white
+
+    oi-price
+      +below('xs')
+        color: $white
+
+
+.cards.parse
+
+  .cards_container
+    +above('m')
+      border remify(10px) solid $green
+
+  .cards_container_box
+    oi-card
+      +above('m')
+        transition-duration: 0s
+
+  oi-card.selected
+    .oi-card_header
+      background-color $green
+    .oi-card_header_title
+      color $white
+    .oi-card_header_subtitle
+      color $green
+
+
+.cards.lock
+
+  .cards_container
+    +above('m')
+      position: fixed
+      top: 0
+      left: 0
+
+
+.cards.fold
+
+  .cards_container
+    +below('m')
+      position: fixed
+      top: 0
+      left: 0
+
+  .cards_container_box
+    oi-card
+      +below('m')
+        top: remify(-94px)
+        transition-duration: 610ms
+        transition-property: top
+      +above('m')
+        transition-duration: 610ms
+        transition-property: transform
+        transform: translateY(remify(-64px));
+
+
+.cards.unfold
+
+  .cards_container
+    +below('m')
+      position: fixed
+      top: 0
+      left: 0
+
+  .cards_container_box
+    oi-card
+      +below('m')
+        top: remify(0px)
+        transition-duration: 610ms
+        transition-property: top
+      +above('m')
+        transition-duration: 610ms
+        transition-property: transform
+
+
+// .cards.open.lock.parse:not(.unfold)
+//   .cards_container_box
+//     oi-card
+//       +below('m')
+//         top: remify(94px)
+//         transition-duration: 610ms
+//         transition-property: top
+
+// .cards.open.lock.parse:not(.unfold)
+//   .cards_container_box
+//     oi-card
+//       +below('m')
+//         transition-duration: 610ms
+//         top: remify(-94px)
+
+//   .cards_container_box
+//     oi-card
+//       +below('m')
+//         transform: translateY(0)
+//         transition-duration: 610ms
+//         transition-property: transform
+

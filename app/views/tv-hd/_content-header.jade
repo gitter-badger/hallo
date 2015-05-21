@@ -1,0 +1,30 @@
+header.content_header
+  .content_header_list
+    ul#cart-list
+      //- each title in channelsgroup.header.title
+        //- li=title
+  .content_header_sidewalk
+    .content_header_client-type
+      a(href="#").content_header_client-type-trigger
+        span(data-text="Valor para não clientes") Valor para clientes 
+        span
+          |de Telefone Fixo da Oi
+          include ../../assets/images/icons/arrow.svg
+      .content_header_client-type_dropdow
+        ul
+          li 
+            a(href="#").has-phone.active
+              include ../../assets/images/icons/radio-check.svg
+              span 
+                div Clientes de Telefone Fixo da Oi 
+              oi-price#price-has-phone
+          li 
+            a(href="#")
+              include ../../assets/images/icons/radio-check.svg
+              span
+                div Não Clientes de Telefone Fixo da Oi
+              oi-price#price-has-no-phone
+    .content_header_price
+      oi-price#price-total
+    .content_header_action
+      a(href="") Peça Já

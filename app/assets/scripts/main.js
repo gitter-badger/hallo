@@ -80,19 +80,19 @@ var oiMediator = new Mediator();
 
 require(['vendor/blazy'], function(Blazy) {
 
-   var bLazy = new Blazy();
+  //  var bLazy = new Blazy();
 
-   var bLazy2 = new Blazy({
-      container: '.oi-channels-lists_list-tv_container'
-    });
+  //  var bLazy2 = new Blazy({
+  //     container: '.oi-channels-lists_list-tv_container'
+  //   });
 
-  var bLazy3 = new Blazy({
-      container: '.oi-channels-addons_container'
-    });
+  // var bLazy3 = new Blazy({
+  //     container: '.oi-channels-addons_container'
+  //   });
 
-  var bLazy4 = new Blazy({
-      container: '.list-container'
-    });
+  // var bLazy4 = new Blazy({
+  //     container: '.list-container'
+  //   });
 
   // Crossroads?
 

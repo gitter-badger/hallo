@@ -1,15 +1,21 @@
 oi-buildplan
-  a.build-plan(href="#" itemscope itemtype="http://schema.org/Offer" role="banner")
+  a.build-plan(href="/combo/" itemscope itemtype="http://schema.org/Offer" role="banner")
+    
     span.build-plan_text(itemprop="name") Combo com TV por R$ 109,90
+
     ul.build-plan_icons
       li
-        include ../../assets/images/icons/tv.svg
+        div: include ../../assets/images/icons/tv-s.svg
+        div: include ../../assets/images/icons/tv.svg
       li
-        include ../../assets/images/icons/internet.svg
+        div: include ../../assets/images/icons/internet-s.svg
+        div: include ../../assets/images/icons/internet.svg
       li
-        include ../../assets/images/icons/fixo.svg
+        div: include ../../assets/images/icons/fixo-s.svg
+        div: include ../../assets/images/icons/fixo.svg
       li
-        include ../../assets/images/icons/celular.svg
-    span.build-plan_action
-      |Simule 
-      span e Economize
+        div: include ../../assets/images/icons/celular-s.svg
+        div: include ../../assets/images/icons/celular.svg
+    div.build-plan_action
+      span Simule
+      span Simule seu combo

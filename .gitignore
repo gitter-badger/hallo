@@ -33,3 +33,4 @@ dist/
 bower_components/
 etc.md
 output/firebase
+app/assets/images/oi/*-mask.png

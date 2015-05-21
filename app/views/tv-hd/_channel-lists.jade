@@ -1,14 +1,12 @@
 .oi-channels-lists
   each group in channelsgroup.tv
     .oi-channels-lists_list-tv
-      h4.oi-channels-lists_list-tv_title=group.label
-        span= ' [' + group.channels.length + ']'
       .oi-channels-lists_list-tv_container
         ul
           each channel in group.channels
             li
-              a.open-addon(href=channel.slug)
-                .oi-channels-lists_list-tv_logo.b-lazy(data-src="/assets/images/logos/height40/"+channel.img+".png")
+              a.open-channel(href=channel.slug)
+                .oi-channels-lists_list-tv_logo(data-src="/assets/images/240x80/"+channel.img+".png", style="background-image:url(/assets/images/logos/240x80/"+channel.img+".png)")
                 .oi-channels-lists_list-tv_name
                   div=channel.name
 

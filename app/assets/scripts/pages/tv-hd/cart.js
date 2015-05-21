@@ -12,9 +12,9 @@ define([
       defaultPlan = 'mix',
       cart = {},
       $spots = $('.oi-channels-addons_item_spots a'),
-      $openClientType    = $('.oi-channels_header_client-type-trigger'),
+      $openClientType    = $('.content_header_client-type-trigger'),
       $openClientTypeText = $openClientType.find('span').eq(0),
-      $dropdowClientType = $('.oi-channels_header_client-type_dropdow'),
+      $dropdowClientType = $('.content_header_client-type_dropdow'),
       $clientType        = $dropdowClientType.find('a'),
       $cartList = $('#cart-list'),
       cartWidth = $cartList.width();
@@ -24,7 +24,6 @@ define([
   _public.init = function (){
     _private.loadPrice('rj');
     _private.bindBtPlan();
-    // oiMediator.subscribe( 'open modal', this.addAddon );
     oiMediator.subscribe( 'addon add', _public.addAddon );
     oiMediator.subscribe( 'addon remove', _public.removeAddon );
   }
@@ -93,6 +92,7 @@ define([
     _private.cartUpdateValue(defaultPlan, 1)
   }
 
+  // @todo: transform cart in array. objects are unordered by definition
   _private.cartUpdateValue = function (product, quant){
     if(quant == 0){
       delete cart[product]
@@ -135,10 +135,18 @@ define([
 
     for (var item in cart) {
       if (cart.hasOwnProperty(item)) {
+        if(cart[item].type === 'basic'){
+          listHtml += '<li>' + cart[item].name + '</li>';
+        }
+      }
+    }
+
+    for (var item in cart) {
+      if (cart.hasOwnProperty(item)) {
         if(item === 'spot'){
           listHtml += '<li>' + cart[item].quant + ' ' + ( cart[item].quant === 1 ? cart[item].name : 'Pontos' ) + '</li>';
         } else {
-          if(item !== 'phone'){
+          if(item !== 'phone' && cart[item].type !== 'basic'){
             listHtml += '<li>' + cart[item].name + '</li>';
           }
         }
@@ -146,7 +154,7 @@ define([
     }
     $cartList.html(listHtml);
     listHtml = '';
-    // Ugh! ude promises!!!
+    //@todo: Ugh! use promises!!!
     setTimeout( function () {
       var $itensTitle = $cartList.find('li');
       $itensTitle.each(function (i,el){
@@ -161,7 +169,7 @@ define([
             });
             listHtml += '<li>' + plan.name + '</li>';
             var channelsQuant = _.countBy(cart, function(productItem) {
-              return productItem.type !== 'basic';
+              return (productItem.type !== 'basic' && productItem.type !== 'client-type' );
             })['true'];
             listHtml += '<li>' + channelsQuant + ' Opcionais</li>';
             $cartList.html(listHtml).find('li').addClass('visible');
