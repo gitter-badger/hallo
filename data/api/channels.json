@@ -1,1473 +1,1566 @@
-[
-  {
-    "nr": 2,
-    "name": "TV Cultura",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "CORTESIA",
-    "dist": "XXXX"
-  },{
-    "nr": 6,
-    "name": "Rede TV",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 7,
-    "name": "Bandeirantes",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 9,
-    "name": "Sesc TV",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "CORTESIA",
-    "dist": "XXXX"
-  },{
-    "nr": 10,
-    "name": "Rede Brasil",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 11,
-    "name": "SBT",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 12,
-    "name": "CNT",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 13,
-    "name": "Record",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 14,
-    "name": "Record News",
-    "type": "NOTICIAS",
-    "definition": "SD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 15,
-    "name": "Canção Nova",
-    "type": "RELIGIOSO",
-    "definition": "SD",
-    "type": "XXXX"
-  },{
-    "nr": 16,
-    "name": "Aparecida",
-    "type": "RELIGIOSO",
-    "definition": "SD",
-    "type": "XXXX"
-  },{
-    "nr": 17,
-    "name": "Rede Vida",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 18,
-    "name": "RIT",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 19,
-    "name": "RBI",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 20,
-    "name": "IDEAL TV",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 21,
-    "name": "TV Brasil",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 22,
-    "name": "TV Justiça",
-    "type": "NOTICIAS",
-    "definition": "SD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 23,
-    "name": "TV Senado",
-    "type": "NOTICIAS",
-    "definition": "SD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 24,
-    "name": "TV Câmara",
-    "type": "NOTICIAS",
-    "definition": "SD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 25,
-    "name": "TV Escola",
-    "type": "NOTICIAS",
-    "definition": "SD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 26,
-    "name": "NBR",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "ABERTO",
-    "dist": "XXXX"
-  },{
-    "nr": 31,
-    "name": "Canal Oi",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "CORTESIA",
-    "dist": "XXXX"
-  },{
-    "nr": 33,
-    "name": "Discovery Home & Health HD",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 34,
-    "name": "TLC",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 35,
-    "name": "Futura",
-    "type": "EDUCATIVO",
-    "definition": "SD",
-    "type": "CORTESIA",
-    "dist": "XXXX"
-  },{
-    "nr": 36,
-    "name": "Viva",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": " XXX"
-  },{
-    "nr": 37,
-    "name": "Sportv 3",
-    "genre": "ESPORTES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 38,
-    "name": "Sportv 2 HD",
-    "genre": "ESPORTES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 39,
-    "name": "Sportv HD",
-    "genre": "ESPORTES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 40,
-    "name": "Globonews HD",
-    "type": "NOTICIAS",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 41,
-    "name": "GNT HD",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 42,
-    "name": "Multishow HD",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 43,
-    "name": "Universal Channel HD",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XXX"
-  },{
-    "nr": 44,
-    "name": "Warner Channel HD",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XXX"
-  },{
-    "nr": 45,
-    "name": "Sony HD",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XXX"
-  },{
-    "nr": 46,
-    "name": "Fox",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XXX"
-  },{
-    "nr": 47,
-    "name": "Megapix HD",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XXX"
-  },{
-    "nr": 48,
-    "name": "TNT HD",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XXX"
-  },{
-    "nr": 49,
-    "name": "Cinema",
-    "genre": "FILMES E SÉRIES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 50,
-    "name": "HB0",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "HBO",
-    "dist": ""
-  },{
-    "nr": 51,
-    "name": "HBO 2 HD",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "HBO",
-    "dist": ""
-  },{
-    "nr": 52,
-    "name": "HBO Plus",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "HBO",
-    "dist": ""
-  },{
-    "nr": 53,
-    "name": "HBO Plus east",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "HBO",
-    "dist": ""
-  },{
-    "nr": 54,
-    "name": "HBO Family",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "HBO",
-    "dist": ""
-  },{
-    "nr": 55,
-    "name": "HBO Signature",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "HBO",
-    "dist": ""
-  },{
-    "nr": 56,
-    "name": "Max",
-    "genre": "FILMES E SÉRIES",
-    "definition": "SD",
-    "type": "HBO",
-    "dist": ""
-  },{
-    "nr": 57,
-    "name": "Maxprime",
-    "genre": "FILMES E SÉRIES",
-    "definition": "SD",
-    "type": "HBO",
-    "dist": ""
-  },{
-    "nr": 58,
-    "name": "Maxprime east",
-    "genre": "FILMES E SÉRIES",
-    "definition": "SD",
-    "type": "HBO",
-    "dist": ""
-  },{
-    "nr": 59,
-    "name": "Max UP",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "HBO",
-    "dist": ""
-  },{
-    "nr": 60,
-    "name": "Telecine Premium HD",
-    "genre": "FILMES",
-    "definition": "HD",
-    "type": "TELECINE",
-    "dist": ""
-  },{
-    "nr": 61,
-    "name": "Telecine Action HD",
-    "genre": "FILMES",
-    "definition": "HD",
-    "type": "TELECINE",
-    "dist": ""
-  },{
-    "nr": 62,
-    "name": "Telecine Touch HD",
-    "genre": "FILMES",
-    "definition": "HD",
-    "type": "TELECINE",
-    "dist": ""
-  },{
-    "nr": 63,
-    "name": "Telecine Fun HD",
-    "genre": "FILMES",
-    "definition": "HD",
-    "type": "TELECINE",
-    "dist": ""
-  },{
-    "nr": 64,
-    "name": "Telecine Pipoca HD",
-    "genre": "FILMES",
-    "definition": "HD",
-    "type": "TELECINE",
-    "dist": ""
-  },{
-    "nr": 65,
-    "name": "Telecine Cult HD",
-    "genre": "FILMES",
-    "definition": "HD",
-    "type": "TELECINE",
-    "dist": ""
-  },{
-    "nr": 66,
-    "name": "Canal Brasil",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XXX"
-  },{
-    "nr": 67,
-    "name": "TCM",
-    "genre": "FILMES E SÉRIES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 68,
-    "name": "Space HD",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 69,
-    "name": "AXN HD",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 70,
-    "name": "ID - Investigation Discovery",
-    "genre": "FILMES E SÉRIES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 71,
-    "name": "FX",
-    "definition": "HD",
-    "genre": "FILMES E, SÉRIES",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 72,
-    "name": "A&E HD",
-    "genre": "FILMES E SÉRIES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 73,
-    "name": "Lifetime",
-    "genre": "FILMES E SÉRIES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 74,
-    "name": "Studio Universal",
-    "genre": "FILMES E SÉRIES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 75,
-    "name": "Curta",
-    "genre": "FILMES E SÉRIES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "XXX"
-  },{
-    "nr": 76,
-    "name": "SYFY",
-    "genre": "FILMES E SÉRIES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 77,
-    "name": "Polishop",
-    "genre": "LEILÃO/VENDAS",
-    "definition": "SD",
-    "type": "CORTESIA",
-    "dist": "XXXX"
-  },{
-    "nr": 78,
-    "name": "Shoptime",
-    "genre": "LEILÃO/VENDAS",
-    "definition": "SD",
-    "type": "CORTESIA",
-    "dist": "XXXX"
-  },{
-    "nr": 90,
-    "name": "Discovery Channel HD",
-    "genre": "DOCUMENTÁRIO",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 91,
-    "name": "Animal Planet",
-    "genre": "DOCUMENTÁRIO",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 92,
-    "name": "National Geographic",
-    "genre": "DOCUMENTÁRIO ",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 93,
-    "name": "NatGeo Wild HD",
-    "genre": "DOCUMENTÁRIO ",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 95,
-    "name": "Discovery Civilization",
-    "genre": "DOCUMENTÁRIO",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 96,
-    "name": "Discovery Science",
-    "genre": "DOCUMENTÁRIO",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 97,
-    "name": "Discovery HD Theater",
-    "genre": "DOCUMENTÁRIO ",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 98,
-    "name": "History Channel HD",
-    "genre": "DOCUMENTÁRIO ",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 99,
-    "name": "H2",
-    "genre": "DOCUMENTÁRIO",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 110,
-    "name": "Gloob HD",
-    "genre": "INFANTIL ",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 111,
-    "name": "Discovery Kids HD",
-    "genre": "INFANTIL ",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 112,
-    "name": "Cartoon Network",
-    "definition": "HD",
-    "genre": "INFANTIL",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 113,
-    "name": "Nickelodeon",
-    "genre": "INFANTIL",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 114,
-    "name": "DISNEY CHANNEL",
-    "genre": "INFANTIL",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 115,
-    "name": "Disney XD",
-    "genre": "INFANTIL",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 116,
-    "name": "Disney Junior",
-    "genre": "INFANTIL",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 117,
-    "name": "Nick HD",
-    "genre": "",
-    "genre": " ",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 118,
-    "name": "Nick Jr",
-    "genre": "INFANTIL",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 119,
-    "name": "DISNEY HD",
-    "genre": "INFANTIL ",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 120,
-    "name": "Baby TV",
-    "genre": "INFANTIL",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 121,
-    "name": "TV Ra Tim Bum",
-    "genre": "INFANTIL",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 122,
-    "name": "Tooncast",
-    "genre": "INFANTIL",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 123,
-    "name": "Boomerang",
-    "genre": "INFANTIL",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 129,
-    "name": "TV Diário",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "CORTESIA",
-    "dist": "XXX"
-  },{
-    "nr": 130,
-    "name": "+ Globosat",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 131,
-    "name": "Bis",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 132,
-    "name": "Tru TV HD",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 133,
-    "name": "E! Entertainment",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 134,
-    "name": "MTV",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 135,
-    "name": "Paramount HD",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 136,
-    "name": "VH1 Mega Hits",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 137,
-    "name": "Comedy Central",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 138,
-    "name": "Mix TV",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 139,
-    "name": "Chef TV",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 140,
-    "name": "I.SAT",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 141,
-    "name": "Glitz",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 142,
-    "name": "Fox Life",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 143,
-    "name": "Play TV",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 144,
-    "name": "TBS HD",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 145,
-    "name": "BYU",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 146,
-    "name": "TLC HD",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 147,
-    "name": "Arte 1",
-    "genre": "VARIEDADES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 148,
-    "name": "BBC HD",
-    "genre": "VARIEDADES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 160,
-    "name": "ESPN Brasil HD",
-    "genre": "ESPORTES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 161,
-    "name": "ESPN  International HD",
-    "genre": "ESPORTES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 162,
-    "name": "ESPN +   ",
-    "genre": "ESPORTES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 163,
-    "name": "Fox Sports HD  ",
-    "genre": "ESPORTES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 164,
-    "name": "Off    ",
-    "genre": "ESPORTES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 165,
-    "name": "Woohoo   ",
-    "genre": "ESPORTES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 166,
-    "name": "Esporte Interativo",
-    "genre": "ESPORTES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 167,
-    "name": "Discovery Turbo  ",
-    "genre": "ESPORTES",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 168,
-    "name": "BandSports   ",
-    "genre": "ESPORTES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 169,
-    "name": "Esporte Interativo Nordeste  ",
-    "genre": "ESPORTES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 170,
-    "name": "Fox Sports 2 HD  ",
-    "genre": "ESPORTES",
-    "definition": "HD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 178,
-    "name": "Terra Viva",
-    "genre": "AGRONEGÓCIOS",
-    "definition": "SD",
-    "type": "CORTESIA",
-    "dist": "XXXX"
-  },{
-    "nr": 179,
-    "name": "CANAL RURAL",
-    "genre": "AGRONEGÓCIOS",
-    "definition": "SD",
-    "type": "CORTESIA",
-    "dist": "XXXX"
-  },{
-    "nr": 180,
-    "name": "Band News",
-    "type": "NOTICIAS",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "XX"
-  },{
-    "nr": 181,
-    "name": "CNN Internacional",
-    "type": "NOTICIAS",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 182,
-    "name": "CNNe",
-    "type": "NOTICIAS",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 183,
-    "name": "Bloomberg",
-    "type": "NOTICIAS",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X"
-  },{
-    "nr": 189,
-    "name": "Clima Tempo",
-    "type": "NOTICIAS",
-    "definition": "SD",
-    "type": "PAGO",
-    "dist": "X X"
-  },{
-    "nr": 190,
-    "name": "RTPi",
-    "genre": "ÉTNICO",
-    "definition": "SD",
-    "type": "A LA CARTE",
-    "dist": ""
-  },{
-    "nr": 191,
-    "name": "TV5  Monde",
-    "genre": "ÉTNICO",
-    "definition": "SD",
-    "type": "A LA CARTE",
-    "dist": ""
-  },{
-    "nr": 192,
-    "name": "TVE",
-    "genre": "ÉTNICO",
-    "definition": "SD",
-    "type": "A LA CARTE",
-    "dist": ""
-  },{
-    "nr": 193,
-    "name": "Deutsche Welle",
-    "genre": "ÉTNICO",
-    "definition": "SD",
-    "type": "A LA CARTE",
-    "dist": ""
-  },{
-    "nr": 210,
-    "name": "Rede Gênesis",
-    "type": "RELIGIOSO",
-    "definition": "SD",
-    "type": "CORTESIA",
-    "dist": "XXXX"
-  },{
-    "nr": 211,
-    "name": "Rede Super",
-    "type": "RELIGIOSO",
-    "definition": "SD",
-    "type": "CORTESIA",
-    "dist": "XXXX"
-  },{
-    "nr": 212,
-    "name": "TV LBV",
-    "type": "RELIGIOSO",
-    "definition": "SD",
-    "type": "CORTESIA",
-    "dist": "XXXX"
-  },{
-    "nr": 214,
-    "name": "TV NOVO TEMPO",
-    "type": "RELIGIOSO",
-    "definition": "SD",
-    "type": "CORTESIA",
-    "dist": "XXXX"
-  },{
-    "nr": 342,
-    "name": "Premiere Clubes",
-    "type": "FUTEBOL",
-    "definition": "SD",
-    "dist": ""
-  },{
-    "nr": 343,
-    "name": "Premiere 1",
-    "type": "FUTEBOL",
-    "definition": "SD",
-    "dist": ""
-  },{
-    "nr": 344,
-    "name": "Premiere 2",
-    "type": "FUTEBOL",
-    "definition": "SD",
-    "dist": ""
-  },{
-    "nr": 345,
-    "name": "Premiere 3",
-    "type": "FUTEBOL",
-    "definition": "SD",
-    "dist": ""
-  },{
-    "nr": 346,
-    "name": "Premiere 4",
-    "type": "FUTEBOL",
-    "definition": "SD",
-    "dist": ""
-  },{
-    "nr": 347,
-    "name": "Premiere 5",
-    "type": "FUTEBOL",
-    "definition": "SD",
-    "dist": ""
-  },{
-    "nr": 348,
-    "name": "Premiere 6",
-    "type": "FUTEBOL",
-    "definition": "SD",
-    "dist": ""
-  },{
-    "nr": 349,
-    "name": "Premiere 7",
-    "type": "FUTEBOL",
-    "definition": "SD",
-    "dist": ""
-  },{
-    "nr": 350,
-    "name": "Premiere 8",
-    "type": "FUTEBOL",
-    "definition": "SD",
-    "dist": ""
-  },{
-    "nr": 351,
-    "name": "Premiere 9",
-    "type": "FUTEBOL",
-    "definition": "SD",
-    "dist": ""
-  },{
-    "nr": 352,
-    "name": "Premiere 10",
-    "type": "FUTEBOL",
-    "definition": "SD",
-    "dist": ""
-  },{
-    "nr": 353,
-    "name": "Premiere HD",
-    "type": "FUTEBOL",
-    "definition": "HD",
-    "dist": ""
-  },{
-    "nr": 354,
-    "name": "Premiere",
-    "definition": "HD",
-    "type": "FUTEBOL",
-    "dist": ""
-  },{
-    "nr": 360,
-    "na,me": "Combate",
-    "genre": "LUTAS",
-    "definition": "SD",
-    "type": "A LA CARTE",
-    "dist": ""
-  },{
-    "nr": 370,
-    "name": "Sex Privé",
-    "type": "ADULTO",
-    "definition": "SD",
-    "type": "A LA CARTE",
-    "dist": ""
-  },{
-    "nr": 371,
-    "name": "Sexy Hot",
-    "type": "ADULTO",
-    "definition": "SD",
-    "type": "A LA CARTE",
-    "dist": ""
-  },{
-    "nr": 372,
-    "name": "Playboy TV",
-    "type": "ADULTO",
-    "definition": "SD",
-    "definition": "SD",
-    "type": "A LA CARTE",
-    "dist": ""
-  },{
-    "nr": 900,
-    "name": "Anos 6",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX",
-    "dist": ""
-  },{
-    "nr": 901,
-    "name": "Anos 7",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 902,
-    "name": "Anos 8",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 903,
-    "name": "Anos 9",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 904,
-    "name": "Rock Clássic",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 905,
-    "name": "New Rock",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 906,
-    "name": "Kids",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 907,
-    "name": "Música Clássic",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 908,
-    "name": "Bossa Nova",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 909,
-    "name": "MP",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 910,
-    "name": "Samba de Rai",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 911,
-    "name": "Blue",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 912,
-    "name": "R & ",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 913,
-    "name": "Jazz Clássic",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 914,
-    "name": "Jazz Contemporâneo",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 915,
-    "name": "Easy Listening",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 916,
-    "name": "Standard",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 917,
-    "name": "Lounge",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 918,
-    "name": "Trilhas sonora",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 919,
-    "name": "Sucessos",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 920,
-    "name": "Balada",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 921,
-    "name": "Fest",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 922,
-    "name": "Disc",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 923,
-    "name": "Música Eletrônic",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 924,
-    "name": "Hip Ho",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 925,
-    "name": "Reggae",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 926,
-    "name": "Latina",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 927,
-    "name": "",
-    "type": "Pagode",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "  "
-  },{
-    "nr": 928,
-    "name": "Axé",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 929,
-    "name": "Forró",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 930,
-    "name": "Sertanej",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 931,
-    "name": "Gospel",
-    "type": "PAGO",
-    "media": "ÁUDIO",
-    "dist": "XXX"
-  },{
-    "nr": 950,
-    "name": "CBN RJ",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 951,
-    "name": "CBN",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 952,
-    "name": "CBN Brasília",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 953,
-    "name": "CBN BH",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 954,
-    "name": "Band News",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 955,
-    "name": "Jovem Pan News",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 957,
-    "name": "Rádio Bandeirantes",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 958,
-    "name": "Rádio Globo SP",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 959,
-    "name": "Rádio Globo RJ",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 960,
-    "name": "Rádio Clube do Pará",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 961,
-    "name": "Bradesco Esportxes",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 962,
-    "name": "Globo FM Bahia",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 963,
-    "name": "Bahia FM",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 964,
-    "name": "BH FM",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 967,
-    "name": "Globo FM",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 968,
-    "name": "Band FM",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 969,
-    "name": "Jovem Pan",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 970,
-    "name": "Cultura FM",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 971,
-    "name": "Cultura Brasil",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 972,
-    "name": "Radio Itapema",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 973,
-    "name": "Beat 98 FM",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 974,
-    "name": "Rádio Grenal",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 976,
-    "name": "Nativa FM",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 978,
-    "name": "Rádio Super",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 979,
-    "name": "Rádio Gaúcha",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 980,
-    "name": "Rádio 93 FM",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 981,
-    "name": "Rádio Disney",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 982,
-    "name": "Rádio Verdes Mares AM",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 983,
-    "name": "Rádio Tamoio AM",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 984,
-    "name": "Rádio Atlântida",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 985,
-    "name": "RFI",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 987,
-    "name": "Rádio Novo Tempo",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 988,
-    "name": "Radio Sara Brasil FM",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 989,
-    "name": "LBV",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  },{
-    "nr": 990,
-    "name": "Rádio Canção Nova",
-    "type": "CORTESIA",
-    "media": "RÁDIO",
-    "dist": "XXXX"
-  }
-]
+{
+  "meta": {
+    "plans":{
+      "1": {
+        "name": "Oi TV Livre HD",
+        "slug": "livre"
+        },
+      "2": {
+        "name": "Oi Start HD",
+        "slug": "start"
+        },
+      "3": {
+        "name": "Oi TV Mix HD",
+        "slug": "mix"
+        },
+      "4": {
+        "name": "Oi TV Total HD",
+        "slug": "total"
+        },
+    },
+    "genres": {
+      "1": "Variedades",
+      "2": "Notícias",
+      "3": "Educativo",
+      "4": "Filmes e Séries",
+      "5": "Documentário",
+      "6": "Filmes",
+      "7": "Leilão/Vendas",
+      "8": "Infantil",
+      "9": "Esportes",
+      "10": "Agronegócios",
+      "11": "Adulto",
+      "12": "Religioso",
+      "13": "Étnico",
+      "14": "Futebol",
+      "15": "Lutas"
+    },
+    "types": {
+      "1": "Cortesia",
+      "2": "Aberto",
+      "3": "Pago",
+      "4": "Telecine",
+      "5": "HBO",
+      "6": "A la Carte",
+      "7": "Futebol"
+    },
+    "definitions":{
+      "1": "SD",
+      "2": "HD"
+    },
+    "medias": {
+      "1": "TV",
+      "2": "Audio",
+      "3": "Rádio"
+    }
+  },
+  "data":
+    [
+      {
+        "nr": 2,
+        "name": "TV Cultura",
+        "genre": 1,
+        "definition": 1,
+        "type": 1,
+        "media": 1,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 6,
+        "name": "Rede TV",
+        "media": 1,
+        "genre": 1,
+        "definition": 2,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 7,
+        "name": "Bandeirantes",
+        "media": 1,
+        "genre": 1,
+        "definition": 2,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 9,
+        "name": "Sesc TV",
+        "media": 1,
+        "genre": 1,
+        "definition": 1,
+        "type": 1,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 10,
+        "name": "Rede Brasil",
+        "media": 1,
+        "genre": 1,
+        "definition": 1,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 11,
+        "name": "SBT",
+        "genre": 1,
+        "definition": 2,
+        "media": 1,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 12,
+        "name": "CNT",
+        "media": 1,
+        "genre": 1,
+        "definition": 1,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 13,
+        "media": 1,
+        "name": "Record",
+        "genre": 1,
+        "definition": 2,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 14,
+        "name": "Record News",
+        "media": 1,
+        "genre": 2,
+        "definition": 1,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 15,
+        "name": "Canção Nova",
+        "media": 1,
+        "genre": 12,
+        "type": 2,
+        "definition": 1,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 16,
+        "media": 1,
+        "name": "Aparecida",
+        "genre": 12,
+        "type": 2,
+        "definition": 1,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 17,
+        "name": "Rede Vida",
+        "media": 1,
+        "genre": 1,
+        "definition": 1,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 18,
+        "name": "RIT",
+        "media": 1,
+        "genre": 1,
+        "definition": 1,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 19,
+        "name": "RBI",
+        "media": 1,
+        "genre": 1,
+        "definition": 1,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 20,
+        "name": "IDEAL TV",
+        "media": 1,
+        "genre": 1,
+        "definition": 1,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 21,
+        "name": "TV Brasil",
+        "media": 1,
+        "genre": 1,
+        "definition": 1,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 22,
+        "name": "TV Justiça",
+        "media": 1,
+        "genre": 2,
+        "definition": 1,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 23,
+        "name": "TV Senado",
+        "media": 1,
+        "genre": 2,
+        "definition": 1,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 24,
+        "name": "TV Câmara",
+        "media": 1,
+        "genre": 2,
+        "definition": 1,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 25,
+        "name": "TV Escola",
+        "media": 1,
+        "genre": 2,
+        "definition": 1,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 26,
+        "name": "NBR",
+        "media": 1,
+        "genre": 1,
+        "definition": 1,
+        "type": 2,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 31,
+        "name": "Canal Oi",
+        "media": 1,
+        "genre": 1,
+        "definition": 1,
+        "type": 1,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 33,
+        "name": "Discovery Home & Health HD",
+        "genre": 1,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 34,
+        "name": "TLC",
+        "genre": 1,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 35,
+        "name": "Futura",
+        "type": 3,
+        "definition": 1,
+        "type": 1,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 36,
+        "name": "Viva",
+        "genre": 1,
+        "definition": 2,
+        "type": 3,
+        "dist": [2,3,4]
+      },{
+        "nr": 37,
+        "name": "Sportv 3",
+        "genre": 9,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 38,
+        "name": "Sportv 2 HD",
+        "genre": 9,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 39,
+        "name": "Sportv HD",
+        "genre": 9,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 40,
+        "name": "Globonews HD",
+        "genre": 2,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 41,
+        "name": "GNT HD",
+        "genre": 1,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 42,
+        "name": "Multishow HD",
+        "genre": 1,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 43,
+        "name": "Universal Channel HD",
+        "genre": 4,
+        "definition": 2,
+        "type": 3,
+        "dist": [2,3,4]
+      },{
+        "nr": 44,
+        "name": "Warner Channel HD",
+        "genre": 4,
+        "definition": 2,
+        "type": 3,
+        "dist": [2,3,4]
+      },{
+        "nr": 45,
+        "name": "Sony HD",
+        "genre": 4,
+        "definition": 2,
+        "type": 3,
+        "dist": [2,3,4]
+      },{
+        "nr": 46,
+        "name": "Fox",
+        "genre": 4,
+        "definition": 2,
+        "type": 3,
+        "dist": [2,3,4]
+      },{
+        "nr": 47,
+        "name": "Megapix HD",
+        "genre": 4,
+        "definition": 2,
+        "type": 3,
+        "dist": [2,3,4]
+      },{
+        "nr": 48,
+        "name": "TNT HD",
+        "genre": 4,
+        "definition": 2,
+        "type": 3,
+        "dist": [2,3,4]
+      },{
+        "nr": 49,
+        "name": "Cinema",
+        "genre": 4,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 50,
+        "name": "HB0",
+        "genre": 4,
+        "definition": 2,
+        "type": 5,
+        "dist": []
+      },{
+        "nr": 51,
+        "name": "HBO 2 HD",
+        "genre": 4,
+        "definition": 2,
+        "type": 5,
+        "dist": []
+      },{
+        "nr": 52,
+        "name": "HBO Plus",
+        "genre": 4,
+        "definition": 2,
+        "type": 5,
+        "dist": []
+      },{
+        "nr": 53,
+        "name": "HBO Plus east",
+        "genre": 4,
+        "definition": 2,
+        "type": 5,
+        "dist": []
+      },{
+        "nr": 54,
+        "name": "HBO Family",
+        "genre": 4,
+        "definition": 2,
+        "type": 5,
+        "dist": []
+      },{
+        "nr": 55,
+        "name": "HBO Signature",
+        "genre": 4,
+        "definition": 2,
+        "type": 5,
+        "dist": []
+      },{
+        "nr": 56,
+        "name": "Max",
+        "genre": 4,
+        "definition": 1,
+        "type": 5,
+        "dist": []
+      },{
+        "nr": 57,
+        "name": "Maxprime",
+        "genre": 4,
+        "definition": 1,
+        "type": 5,
+        "dist": []
+      },{
+        "nr": 58,
+        "name": "Maxprime east",
+        "genre": 4,
+        "definition": 1,
+        "type": 5,
+        "dist": []
+      },{
+        "nr": 59,
+        "name": "Max UP",
+        "genre": 4,
+        "definition": 2,
+        "type": 5,
+        "dist": []
+      },{
+        "nr": 60,
+        "name": "Telecine Premium HD",
+        "genre": 6,
+        "definition": 2,
+        "type": 4,
+        "dist": []
+      },{
+        "nr": 61,
+        "name": "Telecine Action HD",
+        "genre": 6,
+        "definition": 2,
+        "type": 4,
+        "dist": []
+      },{
+        "nr": 62,
+        "name": "Telecine Touch HD",
+        "genre": 6,
+        "definition": 2,
+        "type": 4,
+        "dist": []
+      },{
+        "nr": 63,
+        "name": "Telecine Fun HD",
+        "genre": 6,
+        "definition": 2,
+        "type": 4,
+        "dist": []
+      },{
+        "nr": 64,
+        "name": "Telecine Pipoca HD",
+        "genre": 6,
+        "definition": 2,
+        "type": 4,
+        "dist": []
+      },{
+        "nr": 65,
+        "name": "Telecine Cult HD",
+        "genre": 6,
+        "definition": 2,
+        "type": 4,
+        "dist": []
+      },{
+        "nr": 66,
+        "name": "Canal Brasil",
+        "genre": 4,
+        "definition": 2,
+        "type": 3,
+        "dist": [2,3,4]
+      },{
+        "nr": 67,
+        "name": "TCM",
+        "genre": 4,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 68,
+        "name": "Space HD",
+        "genre": 4,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 69,
+        "name": "AXN HD",
+        "genre": 4,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 70,
+        "name": "ID - Investigation Discovery",
+        "genre": 4,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 71,
+        "name": "FX",
+        "definition": 2,
+        "genre": 4,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 72,
+        "name": "A&E HD",
+        "genre": 4,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 73,
+        "name": "Lifetime",
+        "genre": 4,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 74,
+        "name": "Studio Universal",
+        "genre": 4,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 75,
+        "name": "Curta",
+        "genre": 4,
+        "definition": 1,
+        "type": 3,
+        "dist": [2,3,4]
+      },{
+        "nr": 76,
+        "name": "SYFY",
+        "genre": 4,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 77,
+        "name": "Polishop",
+        "genre": 7,
+        "definition": 1,
+        "type": 1,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 78,
+        "name": "Shoptime",
+        "genre": 7,
+        "definition": 1,
+        "type": 1,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 90,
+        "name": "Discovery Channel HD",
+        "genre": 5,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 91,
+        "name": "Animal Planet",
+        "genre": 5,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 92,
+        "name": "National Geographic",
+        "genre": 5,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 93,
+        "name": "NatGeo Wild HD",
+        "genre": 5,
+        "definition": 2,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 95,
+        "name": "Discovery Civilization",
+        "genre": 5,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 96,
+        "name": "Discovery Science",
+        "genre": 5,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 97,
+        "name": "Discovery HD Theater",
+        "genre": 5,
+        "definition": 2,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 98,
+        "name": "History Channel HD",
+        "genre": 5,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 99,
+        "name": "H2",
+        "genre": 5,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 110,
+        "name": "Gloob HD",
+        "genre": 8,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 111,
+        "name": "Discovery Kids HD",
+        "genre": 8,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 112,
+        "name": "Cartoon Network",
+        "definition": 2,
+        "genre": 8,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 113,
+        "name": "Nickelodeon",
+        "genre": 8,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 114,
+        "name": "DISNEY CHANNEL",
+        "genre": 8,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 115,
+        "name": "Disney XD",
+        "genre": 8,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 116,
+        "name": "Disney Junior",
+        "genre": 8,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 117,
+        "name": "Nick HD",
+        "genre": 8,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 118,
+        "name": "Nick Jr",
+        "genre": 8,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 119,
+        "name": "DISNEY HD",
+        "genre": 8,
+        "definition": 2,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 120,
+        "name": "Baby TV",
+        "genre": 8,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 121,
+        "name": "TV Ra Tim Bum",
+        "genre": 8,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 122,
+        "name": "Tooncast",
+        "genre": 8,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 123,
+        "name": "Boomerang",
+        "genre": 8,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 129,
+        "name": "TV Diário",
+        "genre": 1,
+        "definition": 1,
+        "type": 1,
+        "dist": [2,3,4]
+      },{
+        "nr": 130,
+        "name": "+ Globosat",
+        "genre": 1,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 131,
+        "name": "Bis",
+        "genre": 1,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 132,
+        "name": "Tru TV HD",
+        "genre": 1,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 133,
+        "name": "E! Entertainment",
+        "genre": 1,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 134,
+        "name": "MTV",
+        "genre": 1,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 135,
+        "name": "Paramount HD",
+        "genre": 1,
+        "definition": 2,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 136,
+        "name": "VH1 Mega Hits",
+        "genre": 1,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 137,
+        "name": "Comedy Central",
+        "genre": 1,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 138,
+        "name": "Mix TV",
+        "genre": 1,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 139,
+        "name": "Chef TV",
+        "genre": 1,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 140,
+        "name": "I.SAT",
+        "genre": 1,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 141,
+        "name": "Glitz",
+        "genre": 1,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 142,
+        "name": "Fox Life",
+        "genre": 1,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 143,
+        "name": "Play TV",
+        "genre": 1,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 144,
+        "name": "TBS HD",
+        "genre": 1,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 145,
+        "name": "BYU",
+        "genre": 1,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 146,
+        "name": "TLC HD",
+        "genre": 1,
+        "definition": 2,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 147,
+        "name": "Arte 1",
+        "genre": 1,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 148,
+        "name": "BBC HD",
+        "genre": 1,
+        "definition": 2,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 160,
+        "name": "ESPN Brasil HD",
+        "genre": 9,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 161,
+        "name": "ESPN  International HD",
+        "genre": 9,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 162,
+        "name": "ESPN +",
+        "genre": 9,
+        "definition": 2,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 163,
+        "name": "Fox Sports HD",
+        "genre": 9,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 164,
+        "name": "Off",
+        "genre": 9,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 165,
+        "name": "Woohoo",
+        "genre": 9,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 166,
+        "name": "Esporte Interativo",
+        "genre": 9,
+        "definition": 2,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 167,
+        "name": "Discovery Turbo",
+        "genre": 9,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 168,
+        "name": "BandSports",
+        "genre": 9,
+        "definition": 2,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 169,
+        "name": "Esporte Interativo Nordeste",
+        "genre": 9,
+        "definition": 2,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 170,
+        "name": "Fox Sports 2 HD",
+        "genre": 9,
+        "definition": 2,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 178,
+        "name": "Terra Viva",
+        "genre": 10,
+        "definition": 1,
+        "type": 1,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 179,
+        "name": "Canal Rural",
+        "genre": 10,
+        "definition": 1,
+        "type": 1,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 180,
+        "name": "Band News",
+        "genre": 2,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 181,
+        "name": "CNN Internacional",
+        "genre": 2,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 182,
+        "name": "CNNe",
+        "genre": 2,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 183,
+        "name": "Bloomberg",
+        "genre": 2,
+        "definition": 1,
+        "type": 3,
+        "dist": [3]
+      },{
+        "nr": 189,
+        "name": "Clima Tempo",
+        "genre": 2,
+        "definition": 1,
+        "type": 3,
+        "dist": [1,2]
+      },{
+        "nr": 190,
+        "name": "RTPi",
+        "genre": 13,
+        "definition": 1,
+        "type": 6,
+        "dist": []
+      },{
+        "nr": 191,
+        "name": "TV5  Monde",
+        "genre": 13,
+        "definition": 1,
+        "type": 6,
+        "dist": []
+      },{
+        "nr": 192,
+        "name": "TVE",
+        "genre": 13,
+        "definition": 1,
+        "type": 6,
+        "dist": []
+      },{
+        "nr": 193,
+        "name": "Deutsche Welle",
+        "genre": 13,
+        "definition": 1,
+        "type": 6,
+        "dist": []
+      },{
+        "nr": 210,
+        "name": "Rede Gênesis",
+        "type": 12,
+        "definition": 1,
+        "type": 1,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 211,
+        "name": "Rede Super",
+        "type": 12,
+        "definition": 1,
+        "type": 1,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 212,
+        "name": "TV LBV",
+        "type": 12,
+        "definition": 1,
+        "type": 1,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 214,
+        "name": "TV NOVO TEMPO",
+        "type": 12,
+        "definition": 1,
+        "type": 1,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 342,
+        "name": "Premiere Clubes",
+        "genre": 14,
+        "type": 7,
+        "definition": 1,
+        "dist": []
+      },{
+        "nr": 343,
+        "name": "Premiere 1",
+        "genre": 14,
+        "type": 7,
+        "definition": 1,
+        "dist": []
+      },{
+        "nr": 344,
+        "name": "Premiere 2",
+        "genre": 14,
+        "type": 7,
+        "definition": 1,
+        "dist": []
+      },{
+        "nr": 345,
+        "name": "Premiere 3",
+        "genre": 14,
+        "type": 7,
+        "definition": 1,
+        "dist": []
+      },{
+        "nr": 346,
+        "name": "Premiere 4",
+        "genre": 14,
+        "type": 7,
+        "definition": 1,
+        "dist": []
+      },{
+        "nr": 347,
+        "name": "Premiere 5",
+        "genre": 14,
+        "type": 7,
+        "definition": 1,
+        "dist": []
+      },{
+        "nr": 348,
+        "name": "Premiere 6",
+        "genre": 14,
+        "type": 7,
+        "definition": 1,
+        "dist": []
+      },{
+        "nr": 349,
+        "name": "Premiere 7",
+        "genre": 14,
+        "type": 7,
+        "definition": 1,
+        "dist": []
+      },{
+        "nr": 350,
+        "name": "Premiere 8",
+        "genre": 14,
+        "type": 7,
+        "definition": 1,
+        "dist": []
+      },{
+        "nr": 351,
+        "name": "Premiere 9",
+        "genre": 14,
+        "type": 7,
+        "definition": 1,
+        "dist": []
+      },{
+        "nr": 352,
+        "name": "Premiere 10",
+        "genre": 14,
+        "type": 7,
+        "definition": 1,
+        "dist": []
+      },{
+        "nr": 353,
+        "name": "Premiere HD",
+        "genre": 14,
+        "type": 7,
+        "definition": 2,
+        "dist": []
+      },{
+        "nr": 354,
+        "name": "Premiere",
+        "definition": 2,
+        "genre": 14,
+        "type": 7,
+        "dist": []
+      },{
+        "nr": 360,
+        "name": "Combate",
+        "genre": 15,
+        "definition": 1,
+        "type": 6,
+        "dist": []
+      },{
+        "nr": 370,
+        "name": "Sex Privé",
+        "genre": 11,
+        "definition": 1,
+        "type": 6,
+        "dist": []
+      },{
+        "nr": 371,
+        "name": "Sexy Hot",
+        "genre": 11,
+        "definition": 1,
+        "type": 6,
+        "dist": []
+      },{
+        "nr": 372,
+        "name": "Playboy TV",
+        "genre": 11,
+        "definition": 1,
+        "type": 6,
+        "dist": []
+      },{
+        "nr": 900,
+        "name": "Anos 60",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4],
+        "dist": []
+      },{
+        "nr": 901,
+        "name": "Anos 70",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 902,
+        "name": "Anos 80",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 903,
+        "name": "Anos 90",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 904,
+        "name": "Rock Clássico",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 905,
+        "name": "New Rock",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 906,
+        "name": "Kids",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 907,
+        "name": "Música Clássica",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 908,
+        "name": "Bossa Nova",
+        "media": 2,
+        "type": 3,
+        "dist": [2,3,4]
+      },{
+        "nr": 909,
+        "name": "MPB",
+        "media": 2,
+        "type": 3,
+        "dist": [2,3,4]
+      },{
+        "nr": 910,
+        "name": "Samba de Raiz",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 911,
+        "name": "Blues",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 912,
+        "name": "R & B",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 913,
+        "name": "Jazz Clássics",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 914,
+        "name": "Jazz Contemporâneo",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 915,
+        "name": "Easy Listening",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 916,
+        "name": "Standard",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 917,
+        "name": "Lounge",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 918,
+        "name": "Trilhas sonoras",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 919,
+        "name": "Sucessos",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 920,
+        "name": "Baladas",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 921,
+        "name": "Festas",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 922,
+        "name": "Disco",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 923,
+        "name": "Música Eletrônica",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 924,
+        "name": "Hip Hop",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 925,
+        "name": "Reggae",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 926,
+        "name": "Latina",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 927,
+        "name": "Pagode",
+        "type": 3,
+        "type": 3,
+        "media": 2,
+        "dist": []
+      },{
+        "nr": 928,
+        "name": "Axé",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 929,
+        "name": "Forró",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 930,
+        "name": "Sertanejo",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 931,
+        "name": "Gospel",
+        "type": 3,
+        "media": 2,
+        "dist": [2,3,4]
+      },{
+        "nr": 950,
+        "name": "CBN RJ",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 951,
+        "name": "CBN",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 952,
+        "name": "CBN Brasília",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 953,
+        "name": "CBN BH",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 954,
+        "name": "Band News",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 955,
+        "name": "Jovem Pan News",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 957,
+        "name": "Rádio Bandeirantes",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 958,
+        "name": "Rádio Globo SP",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 959,
+        "name": "Rádio Globo RJ",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 960,
+        "name": "Rádio Clube do Pará",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 961,
+        "name": "Bradesco Esportxes",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 962,
+        "name": "Globo FM Bahia",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 963,
+        "name": "Bahia FM",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 964,
+        "name": "BH FM",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 967,
+        "name": "Globo FM",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 968,
+        "name": "Band FM",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 969,
+        "name": "Jovem Pan",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 970,
+        "name": "Cultura FM",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 971,
+        "name": "Cultura Brasil",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 972,
+        "name": "Radio Itapema",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 973,
+        "name": "Beat 98 FM",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 974,
+        "name": "Rádio Grenal",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 976,
+        "name": "Nativa FM",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 978,
+        "name": "Rádio Super",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 979,
+        "name": "Rádio Gaúcha",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 980,
+        "name": "Rádio 93 FM",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 981,
+        "name": "Rádio Disney",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 982,
+        "name": "Rádio Verdes Mares AM",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 983,
+        "name": "Rádio Tamoio AM",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 984,
+        "name": "Rádio Atlântida",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 985,
+        "name": "RFI",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 987,
+        "name": "Rádio Novo Tempo",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 988,
+        "name": "Radio Sara Brasil FM",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 989,
+        "name": "LBV",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      },{
+        "nr": 990,
+        "name": "Rádio Canção Nova",
+        "type": 1,
+        "media": 3,
+        "dist": [1,2,3,4]
+      }
+    ]
+}
