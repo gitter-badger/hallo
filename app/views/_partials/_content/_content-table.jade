@@ -28,3 +28,15 @@ mixin contentTableFixo()
           h4 group #{group}
   .content_table
     include /views/fixo/_table.jade
+
+//-
+//- content table related to internet
+//-
+mixin contentTableInternet()
+  .content_table_header
+    ul
+      each group in [0,1,2]
+        li.content_table_header_item
+          h4 group #{group}
+  .content_table
+    include /views/internet/_table.jade
