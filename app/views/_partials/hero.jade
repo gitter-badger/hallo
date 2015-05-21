@@ -1,9 +1,12 @@
-oi-hero
-  .oi-hero
-    .oi-hero_image(data-src="/assets/images/demo/product-hero.jpg", style="background-image:url(/assets/images/demo/product-hero.jpg)")
-    //- .caption-container
-    //-   .caption(style="background-image:url(/assets/images/demo/telecine-white.png)")
-    //-     .caption-name Meu Malvado favorito
-    //-     .caption-time Domingo às 20:30
+mixin heroTVHD()
+  oi-hero
+    .oi-hero
+      .oi-hero_image(data-src="/assets/images/demo/product-hero.jpg", style="background-image:url(/assets/images/demo/product-hero.jpg)")
+      //- .caption-container
+      //-   .caption(style="background-image:url(/assets/images/demo/telecine-white.png)")
+      //-     .caption-name Meu Malvado favorito
+      //-     .caption-time Domingo às 20:30
 
-include ../_partials/header.jade
+mixin heroFixo()
+  oi-hero
+    .oi-hero
