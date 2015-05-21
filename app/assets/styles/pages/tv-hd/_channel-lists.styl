@@ -97,6 +97,10 @@
         +above('m')
           width remify(120px)
           height remify(105px)
+        &.inactive
+          -webkit-filter grayscale(100%)
+          filter grayscale(100%)
+          opacity .7
         &:hover, &:active
           +above('l')
             transition-duration: 144ms

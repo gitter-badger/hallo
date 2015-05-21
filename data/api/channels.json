@@ -1,22 +1,22 @@
 {
   "meta": {
     "plans":{
-      "1": {
-        "name": "Oi TV Livre HD",
-        "slug": "livre"
+      "livre": {
+          "name": "Oi TV Livre HD",
+          "id": 1
         },
-      "2": {
+      "start": {
         "name": "Oi Start HD",
-        "slug": "start"
+        "id": 2
         },
-      "3": {
+      "mix": {
         "name": "Oi TV Mix HD",
-        "slug": "mix"
+        "id": 3
         },
-      "4": {
+      "total": {
         "name": "Oi TV Total HD",
-        "slug": "total"
-        },
+        "id": 4
+        }
     },
     "genres": {
       "1": "Variedades",
@@ -276,7 +276,7 @@
         "dist": [1,2]
       },{
         "nr": 39,
-        "name": "Sportv HD",
+        "name": "Sportv",
         "genre": 9,
         "definition": 2,
         "type": 3,
@@ -311,11 +311,11 @@
         "dist": [2,3,4]
       },{
         "nr": 44,
-        "name": "Warner Channel HD",
+        "name": "Warner",
         "genre": 4,
         "definition": 2,
         "type": 3,
-        "dist": [2,3,4]
+        "dist": [2,4]
       },{
         "nr": 45,
         "name": "Sony HD",
