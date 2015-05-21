@@ -135,10 +135,18 @@ define([
 
     for (var item in cart) {
       if (cart.hasOwnProperty(item)) {
+        if(cart[item].type === 'basic'){
+          listHtml += '<li>' + cart[item].name + '</li>';
+        }
+      }
+    }
+
+    for (var item in cart) {
+      if (cart.hasOwnProperty(item)) {
         if(item === 'spot'){
           listHtml += '<li>' + cart[item].quant + ' ' + ( cart[item].quant === 1 ? cart[item].name : 'Pontos' ) + '</li>';
         } else {
-          if(item !== 'phone'){
+          if(item !== 'phone' && cart[item].type !== 'basic'){
             listHtml += '<li>' + cart[item].name + '</li>';
           }
         }
@@ -146,7 +154,7 @@ define([
     }
     $cartList.html(listHtml);
     listHtml = '';
-    //@todo: Ugh! ude promises!!!
+    //@todo: Ugh! use promises!!!
     setTimeout( function () {
       var $itensTitle = $cartList.find('li');
       $itensTitle.each(function (i,el){
