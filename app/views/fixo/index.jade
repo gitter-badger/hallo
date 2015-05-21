@@ -6,7 +6,12 @@ body
   header
     include ../_partials/build-plan.jade
     include ../_partials/menu.jade
+
     include ../_partials/hero.jade
+    +heroFixo()
+
+    include ../_partials/header.jade
+    +headerFixo()
 
   main
     include ../_partials/_content/_content.jade
