@@ -5,7 +5,7 @@
         ul
           each channel in group.channels
             li
-              a(href=channel.slug class=channel.color)
+              a.open-channel(href=channel.slug)
                 .oi-channels-lists_list-tv_logo(data-src="/assets/images/240x80/"+channel.img+".png", style="background-image:url(/assets/images/logos/240x80/"+channel.img+".png)")
                 .oi-channels-lists_list-tv_name
                   div=channel.name
