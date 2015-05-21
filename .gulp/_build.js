@@ -45,7 +45,8 @@ gulp.task('build-jade',['build-data'], function() {
     .pipe($.filter(helpers.filterPartials))
     .pipe($.jade({
       locals: data,
-      pretty: true
+      pretty: true,
+      basedir: 'app'
     }))
     .pipe($.uglifyInline({
       mangle: true
