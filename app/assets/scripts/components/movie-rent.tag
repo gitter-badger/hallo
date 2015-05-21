@@ -36,9 +36,6 @@
             <div class="oi-price">
               <meta itemprop="priceCurrency" content="BRL" />
               <meta itemprop="availabilityEnds" content="2015-04-29" />
-              <div class="oi-price_prefix">
-                A partir de
-              </div>
               <div class="oi-price_value" itemprop="price" content="10.00">
                 <span class="oi-price_value_integer">
                   { data.offers.price.split('.')[0] }
