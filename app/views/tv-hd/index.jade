@@ -6,7 +6,12 @@ body
   header
     include ../_partials/build-plan.jade
     include ../_partials/menu.jade
+
     include ../_partials/hero.jade
+    +heroTVHD()
+
+    include ../_partials/header.jade
+    +headerTVHD()
 
   main
     include _cards.jade

@@ -1,5 +1,37 @@
-oi-header
-  header.oi-header
-    h1.oi-header_title TV HD
-    .oi-header_client-type
-      a(href="") Já tem a Oi TV HD?
+mixin headerTVHD()
+  oi-header
+    header.oi-header
+      h1.oi-header_title TV HD
+      .oi-header_client-type
+        a(href="") Já tem a Oi TV HD?
+
+mixin headerFixo()
+  oi-header
+    header.oi-header
+      h1.oi-header_title FIXO
+      .oi-header_client-type
+        a(href="") Já tem o Fixo da Oi?
+
+mixin headerInternet()
+  oi-header
+    header.oi-header
+      h1.oi-header_title Internet
+      .oi-header_client-type
+        a(href="#planos") Planos
+        a(href="ja-tenho") Já tenho
+
+mixin headerCelular()
+  oi-header
+    header.oi-header
+      h1.oi-header_title Celular
+      .oi-header_client-type
+        a(href="#planos") Planos
+        a(href="ja-tenho") Já tenho
+
+mixin headerCombo()
+  oi-header
+    header.oi-header
+      h1.oi-header_title Combo
+      .oi-header_client-type
+        a(href="#planos") Planos
+        a(href="ja-tenho") Já tenho
