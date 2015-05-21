@@ -46,7 +46,7 @@ gulp.task('build-jade',['build-data'], function() {
     .pipe($.jade({
       locals: data,
       pretty: true,
-      baseDir: 'app'
+      basedir: 'app'
     }))
     .pipe($.uglifyInline({
       mangle: true
