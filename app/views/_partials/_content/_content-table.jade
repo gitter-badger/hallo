@@ -1,0 +1,30 @@
+//-
+//- content table related to TVHD
+//-
+mixin contentTvHD()
+  .content_table_header
+    ul
+      each group in channelsgroup.tv
+        li.content_table_header_item
+          h4=group.label
+            span= ' [' + group.channels.length + ']'
+
+      li.content_table_header_add-on
+        h4
+          span Turbine sua TV HD
+          span Opcionais para a sua Oi TV HD
+
+  .content_table
+    include /views/tv-hd/_channel.jade
+
+//-
+//- content table related to fixo
+//-
+mixin contentTableFixo()
+  .content_table_header
+    ul
+      each group in [0,1,2]
+        li.content_table_header_item
+          h4 group #{group}
+  .content_table
+    include /views/fixo/_table.jade

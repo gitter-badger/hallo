@@ -1,0 +1,16 @@
+include _content-header.jade
+include _content-table.jade
+
+//-
+//- building content structure
+//- @param header {String} chose a header inside _content-header.jade
+//- @param table {String} chose a table inside _content-table.jade
+//-
+mixin buildContent(header, table)
+  .content
+    .content_header_container
+      - if (header)
+        +#{header}()
+    .content_table_container
+      - if (table)
+        +#{table}()
