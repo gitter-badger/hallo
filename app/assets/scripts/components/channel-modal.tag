@@ -27,9 +27,6 @@
 
       <div class="channel-modal_content_price" if={ data.price }>
         <div class="oi-price">
-          <div class="oi-price_prefix">
-            A partir de
-          </div>
           <div class="oi-price_value">
             <span class="oi-price_value_integer">
               { integer }

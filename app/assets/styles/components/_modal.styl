@@ -114,7 +114,12 @@ channel-modal
 
         &.add-addon
           display inline-block
-          border remify(1px) solid $white
+          border 1px solid $white
+          // @todo rewrite
+          +above('m')
+            transform translate(150px, -83px)
+          +above('l')
+            transform translate(160px, -90px)
 
         &.rem-addon
           font-size remify(13px)
@@ -290,5 +295,12 @@ channel-modal
     transform scale(.8)
     color $white
     width 40%
+    // @todo rewrite
+    transform translate(0px, remify(-30px)) scale(.62)
+    overflow hidden
+    height remify(108px)
+    width remify(240px)
     +above('m')
       display inline-block
+    &_suffix
+      margin -80px 0 0 140px
