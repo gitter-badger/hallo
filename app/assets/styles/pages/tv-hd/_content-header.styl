@@ -1,3 +1,9 @@
+/**
+ * .content_header
+ *
+ * the big header inside the product content table, sometimes called as product cart
+ *
+ * ***/
 .content_header
   position relative
   width 100%
@@ -16,9 +22,6 @@
   +above('l')
     max-width remify(1170px)
     padding remify(18px) 0
-    // blueprint - desktop
-    background-image: url('../../../images/oi/cart-mask.png')
-    background-position: center
   +above('xl')
     height remify(130px)
 
@@ -35,6 +38,10 @@
       overflow hidden
       font-size remify(42px)
       text-transform uppercase
+    +above('l')
+      width: 54%
+    +above('xl')
+      width: 62%
 
     // .content_header_list ul
     ul
@@ -76,8 +83,14 @@
     height 100%
     +above('xs')
       width: 100%
+      max-width: 100%
     +above('m')
-      width: 38%
+      width auto
+      max-width: 34%
+    +above('l')
+      max-width: 46%
+    +above('xl')
+      max-width: 38%
 
   // the _sidewalk
   // .content_header_client-type
@@ -85,6 +98,7 @@
     position relative
     display table
     height 100%
+    float left
     font-family $fontTextRegular
     +below('xs')
       width 100%
@@ -94,8 +108,9 @@
     +above('m')
       width remify(140px)
     +above('l')
-      left remify(10px)
+      margin-left remify(10px)
 
+    // .content_header_client-type-trigger
     &-trigger
       display table-cell
       height remify(30px)
@@ -121,6 +136,8 @@
           display inline-block
       path
         fill $green
+
+    // .content_header_client-type_dropdow
     &_dropdow
       background-color $white
       border remify(1px) solid $gray
@@ -235,8 +252,21 @@
   // .content_header_price
   &_price
     position relative
-    +above('xs')
+    display table
+    height 100%
+    float left
+    +below('xs')
       display none
+
+    oi-price
+      margin 0 auto
+      display table-cell
+      vertical-align middle
+      // +above('m')
+      //   left remify(-10px)
+      .oi-price.oi-price--small
+        height remify(32px)
+
     // +above('xs')
     //   display block
     // +above('xs')
@@ -248,43 +278,52 @@
 
   // .content_header_action
   &_action
-    display none
+    display table
     font-family $fontTextRegular
-    // +below('s')
-    //   position: fixed
-    //   display: block
-    //   bottom: 0
-    //   left: 0
-    //   width: 92%;
-    //   margin-left: 4%;
-    //   margin-bottom: 4%;
-    // +below('xs')
-    //   display: none
-    // +above('l')
-    //   display block
-    //   width remify(170px)
-    //   height remify(58px)
-    //   float left
-    //   margin remify(-11px) 0 0 remify(23px)
+    float left
+    text-align right
+    height 100%
+    +above('l')
+      width remify(168px)
+    +above('xl')
+      width remify(196px)
 
+    // .content_header_action_box
+    &_box
+      display table-cell
+      vertical-align middle
     a
-      color $black
-      display block
-      text-decoration none
+      height remify(52px)
       background-color $orangeLight
-      border-bottom remify(2px) solid $orange
-      border-radius remify(2px)
+      border-left: remify(3px) solid transparent
+      border-right: remify(3px) solid transparent
+      border-top: remify(2px) solid transparent
+      border-bottom: remify(3px) solid $orange
+      border-radius remify(3px)
       font-size remify(16px)
-      height remify(50px)
-      line-height remify(50px)
-      margin-top remify(4px)
       text-align center
-      +above('m')
-        height remify(50px)
-        line-height remify(50px)
+      text-decoration none
+      line-height remify(52px)
+      color $black
+      +below('s')
+        position fixed
+        bottom 0
+        left 0
+        display block
+        width 100%
+        height remify(62px)
+        border-radius 0
+        line-height remify(62px)
+      +above('l')
+        display inline-block
+        width remify(138px)
+      +above('xl')
+        width remify(170px)
       &:hover
-        border-bottom remify(1px) solid $orange
-        margin-top remify(5px)
+        border-bottom remify(3px) solid transparent
+      &:active
+        border-top remify(3px) solid $orange
+        border-bottom remify(2px) solid transparent
 
 
 
