@@ -92,6 +92,7 @@ define([
     _private.cartUpdateValue(defaultPlan, 1)
   }
 
+  // @todo: transform cart in array. objects are unordered by definition
   _private.cartUpdateValue = function (product, quant){
     if(quant == 0){
       delete cart[product]
@@ -145,7 +146,7 @@ define([
     }
     $cartList.html(listHtml);
     listHtml = '';
-    // Ugh! ude promises!!!
+    //@todo: Ugh! ude promises!!!
     setTimeout( function () {
       var $itensTitle = $cartList.find('li');
       $itensTitle.each(function (i,el){
@@ -160,7 +161,7 @@ define([
             });
             listHtml += '<li>' + plan.name + '</li>';
             var channelsQuant = _.countBy(cart, function(productItem) {
-              return productItem.type !== 'basic';
+              return (productItem.type !== 'basic' && productItem.type !== 'client-type' );
             })['true'];
             listHtml += '<li>' + channelsQuant + ' Opcionais</li>';
             $cartList.html(listHtml).find('li').addClass('visible');
