@@ -35,14 +35,11 @@ define('channels-plans', [
     // planSlug
     $channelList.find('a').removeClass('inactive')
     var planId = channelsMeta.plans[planSlug].id
-    console.log(planId);
     var showChannels = _.filter(channelsList, function(channel) {
       return _.includes(channel.dist, planId);
     });
-    console.log(showChannels.length);
     _.forEach(showChannels, function(channel, key) {
       var slugChannel = _.slugify(channel.name);
-      // console.log(slugChannel);
       $channelList.find('.slug-'+slugChannel).addClass('inactive')
     });
   }
