@@ -1,0 +1,23 @@
+include ../_partials/head.jade
+
+body(onload="measureCRP()" itemtype="http://schema.org/WebPage")
+body
+
+  header
+    include ../_partials/build-plan.jade
+    include ../_partials/menu.jade
+    include ../_partials/hero.jade
+
+  main
+    include ../_partials/_cards/_cards.jade
+    +cardsInternet()
+  
+    include ../_partials/_content/_content.jade
+    +buildContent('contentHeaderInternet', 'contentTableInternet')
+
+  include ../_partials/footer.jade
+
+  channel-modal
+  contract-rules
+  
+  script(src='/assets/scripts/vendor/require.js' data-main="/assets/scripts/main" async)

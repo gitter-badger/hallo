@@ -52,3 +52,15 @@ mixin contentTableCelular()
           h4 group #{group}
   .content_table
     include /views/celular/_table.jade
+
+//-
+//- content table related to combo
+//-
+mixin contentTableCombo()
+  .content_table_header
+    ul
+      each group in [0,1,2]
+        li.content_table_header_item
+          h4 group #{group}
+  .content_table
+    include /views/combo/_table.jade
