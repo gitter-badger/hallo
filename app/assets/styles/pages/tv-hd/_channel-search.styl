@@ -1,12 +1,6 @@
 .oi-channels_search-call
   max-width remify(1170px)
   margin 0 auto
-  svg
-    display inline-block
-    height remify(11px)
-    width remify(11px)
-    path
-      fill $green
   a
     color $green
     display block
@@ -22,3 +16,15 @@
     +above('l')
       font-size remify(16px)
       border-top remify(1.2px) solid $black
+      
+    svg
+      display inline-block
+      height remify(11px)
+      width remify(11px)
+      path
+        fill $green
+        
+    &:hover 
+      color $purple
+      svg
+        fill $purple

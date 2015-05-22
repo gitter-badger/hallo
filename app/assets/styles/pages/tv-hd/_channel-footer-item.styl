@@ -16,6 +16,7 @@
       height remify(88px)
       padding 0 remify(20px)
       cursor pointer
+      margin-bottom remify(100px)
       +above('m')
         -webkit-tap-highlight-color rgba(0, 0, 0, 0)
         cursor default
@@ -93,6 +94,8 @@
           display block
           +above('m')
             display inline-block
+          &:hover 
+            color $purple
 
         br
           display none
