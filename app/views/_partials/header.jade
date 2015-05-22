@@ -35,3 +35,11 @@ mixin headerCombo()
       .oi-header_client-type
         a(href="#planos") Planos
         a(href="ja-tenho") Já tenho
+
+mixin header(config)
+  oi-header
+    header.oi-header
+      h1.oi-header_title=config.title
+      .oi-header_client-type
+        a(href="#planos") Planos
+        a(href="ja-tenho") Já tenho

@@ -1,4 +1,7 @@
 include ../_partials/head.jade
+include ../_partials/hero.jade
+include ../_partials/header.jade
+include ../_partials/_cards/_cards.jade
 
 +head('internet')
 
@@ -7,18 +10,28 @@ body(itemtype="http://schema.org/WebPage")
   header
     include ../_partials/build-plan.jade
     include ../_partials/menu.jade
-    include ../_partials/hero.jade
+    +hero()
+    +header({title: 'Internet'})
 
   main
-    include ../_partials/_cards/_cards.jade
-    +cardsInternet()
-  
+    
+    +cards([
+      { 
+        title: "Casa", 
+        list_items: ['Velocidade de até 15 mega', 'Instalação grátis', 'Oi WiFi ilimitado', 'Modem incluso'], 
+        action: 'Conheça a Internet para Casa' 
+      },
+      { 
+        title: "Móvel", 
+        list_items: ['Velocidade até 4G', 'Franquias de 10 MB à 10 GB', 'Oi WiFi por 1 ano'], 
+        action: 'Conheça a Internet Móvel'
+      }
+    ])
+
+
     include ../_partials/_content/_content.jade
     +buildContent('contentHeaderInternet', 'contentTableInternet')
 
   include ../_partials/footer.jade
 
-  channel-modal
-  contract-rules
-  
   script(src='/assets/scripts/vendor/require.js' data-main="/assets/scripts/main" async)
