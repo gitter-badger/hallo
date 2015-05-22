@@ -34,19 +34,6 @@ mixin contentHeaderTVHD()
         a(href="") Peça Já
 
 //-
-//- content header related to Fixo
-//-
-mixin contentHeaderFixo()
-  header.content_header
-    .content_header_list
-      ul#cart-list
-    .content_header_sidewalk
-      .content_header_price
-        oi-price#price-total
-      .content_header_action
-        a(href="") Peça Já
-
-//-
 //- content header related to internet
 //-
 mixin contentHeaderInternet()
@@ -84,3 +71,20 @@ mixin contentHeaderCombo()
         oi-price#price-total
       .content_header_action
         a(href="") Peça Já
+
+mixin contentHeader(config)
+  header.content_header
+    .content_header_list
+      if config.title
+        h2=config.title
+      if config.list_title
+        ul#cart-list
+        each item in list_title
+          li=item
+    .content_header_sidewalk
+      if config.price
+        .content_header_price
+          oi-price
+      if config.action
+        .content_header_action
+          a(href="#")=config.action
