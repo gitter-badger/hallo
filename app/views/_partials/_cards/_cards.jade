@@ -1,3 +1,5 @@
+- cardsImagesDirectory = '/assets/images/layout';
+
 mixin cardsTVHD()
   .cards
     .cards_container
@@ -31,39 +33,40 @@ mixin cardsTVHD()
                 .oi-card_content_footer
                   button.oi-card_content_footer_action Conheça o Start HD
 
-
+//- 
+//- construct internet cards based on 'cardsInternet' data
+//- 
 mixin cardsInternet()
   .cards
     .cards_container
       .cards_container_box
-        each val, index in ['casa', 'movel']
+        each card in cardsInternet.data
+          - console.log(card.title, card.list.items.length);
           oi-card
-            a(href="#" data-slug=val class="oi-card "+ (val == 'mix' ? 'active': '') )
+            a(href="#" data-slug=card.slug class="oi-card "+ (card.active == 1 ? 'active': '') )
               .oi-card_header
-                h2.oi-card_header_title=val
-                h5.oi-card_header_subtitle
-                  | 119 Canais 
-                  i.heading-bullet
-                  |  20 HD
-                i.oi-card_header_line
+                h2.oi-card_header_title #{card.title}
+
               .oi-card_content
-                .oi-card_content_price
-                  oi-price(id="card-price-"+val)
+
+                if (card.image)
+                  .oi-card_content_image
+                    img(src="#{cardsImagesDirectory}/#{card.image}")
+
                 .oi-card_content_list
-                  h5.oi-card_content_list_title Você ainda pode adicionar
-                  ul.oi-card_content_list_items
-                    - if (index == 0)
-                      li Ponto extra em HD
-                    - else if (index == 1)
-                      li Ponto extra em HD
-                      li HBO, Telecine e mais
-                      li Gravador Digital
-                    - else if (index == 2)
-                      li Ponto extra em HD
-                      li HBO, Telecine e mais
-                      li Gravador Digital com VOD
+                  if (card.list.title)
+                    h5.oi-card_content_list_title #{card.list.title}
+                  if (card.list.items.length > 0)
+                    ul.oi-card_content_list_items
+                      each item in card.list.items
+                        li=item
+
                 .oi-card_content_footer
-                  button.oi-card_content_footer_action Conheça o Start HD
+                  if (card.action)
+                    button.oi-card_content_footer_action #{card.action}
+//- 
+//- ------------------------------
+//- 
 
 
 mixin cardsCelular()
