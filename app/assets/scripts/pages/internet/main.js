@@ -1,7 +1,5 @@
 // main.js
-define([
-  '../../enhance/product-scroll.js'
-  ], function(scroll){
+define([], function(scroll){
 
   var _private = {};
   var _public = {};
@@ -9,8 +7,6 @@ define([
   _public.init = function(){
     console.log('internet, _public.init');
     console.log('scroll', scroll);
-
-    scroll.init();
   };
 
   return _public;
