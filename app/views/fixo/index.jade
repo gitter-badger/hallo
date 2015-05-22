@@ -24,7 +24,13 @@ body(itemtype="http://schema.org/WebPage")
         })
       
       .content_table_container
-        +contentTableFixo()
+        .content_table_header
+          ul
+            each group in [0,1,2]
+              li.content_table_header_item
+                h4 group #{group}
+        .content_table
+          include /views/fixo/_table.jade
     
 
   include ../_partials/footer.jade
