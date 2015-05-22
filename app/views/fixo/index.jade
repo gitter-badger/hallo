@@ -1,27 +1,23 @@
 include ../_partials/head.jade
+include ../_partials/hero.jade
+include ../_partials/header.jade
+include ../_partials/_cards/_cards.jade
 
 +head('fixo')
 
 body(itemtype="http://schema.org/WebPage")
-body
 
   header
     include ../_partials/build-plan.jade
     include ../_partials/menu.jade
-
-    include ../_partials/hero.jade
-    +heroFixo()
-
-    include ../_partials/header.jade
-    +headerFixo()
+    +hero()
+    +header({title: 'Fixo'})
 
   main
+    
     include ../_partials/_content/_content.jade
-    +buildContent('contentHeaderFixo', 'contentTableFixo')
+    +buildContent('contentHeaderInternet', 'contentTableInternet')
 
   include ../_partials/footer.jade
 
-  channel-modal
-  contract-rules
-  
   script(src='/assets/scripts/vendor/require.js' data-main="/assets/scripts/main" async)
