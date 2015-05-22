@@ -136,3 +136,34 @@ mixin cardsCombo()
                 .oi-card_content_footer
                   button.oi-card_content_footer_action Conheça o Start HD
 
+mixin cards(cards)
+  .cards
+    .cards_container
+      .cards_container_box
+        each card in cards
+          oi-card
+            a.oi-card(href="#" data-slug=card.slug )
+              .oi-card_header
+                h2.oi-card_header_title=card.title
+                if card.subtitle
+                  h5.oi-card_header_subtitle
+                    | 119 Canais 
+                    i.heading-bullet
+                    |  20 HD
+                if card.subtitle
+                  i.oi-card_header_line
+              .oi-card_content
+                if card.price
+                  .oi-card_content_price
+                    oi-price
+                .oi-card_content_list
+                  if card.list_title
+                    h5.oi-card_content_list_title Você ainda pode adicionar
+                  if card.list_items
+                    ul.oi-card_content_list_items
+                      each item in card.list_items
+                        li=item
+                if card.action 
+                  .oi-card_content_footer
+                    button.oi-card_content_footer_action=card.action
+
