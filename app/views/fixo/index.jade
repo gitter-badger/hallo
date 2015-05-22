@@ -58,20 +58,47 @@ body(itemtype="http://schema.org/WebPage")
                     span.bold -
 
 
-          br
-          br
-          br
-          br
-          br
-          br
-          h1 fixo
-          br
-          br
-          br
-          br
-          br
-          br
-          br
+      .content_addons_container
+        .content_addons
+          .addons_title
+            |Turbine 
+            br
+            | seu plano
+          .addons_list
+            ul
+              li.addons_item
+                .addons_item_img.img1
+                h4.addons_item_title Voz Total [Fixo + pré]
+                p.addons_item_desc Chip pré com ligações ilimitadas para fixo e celular, internet, torpedos e Oi WiFi.
+                .addons_item_actions
+                  button.add
+                    span.call Adicione
+                    span.price a partir de R$10
+                  button.rem Remover
+              li.addons_item
+                .addons_item_img.img2
+                h4.addons_item_title Ligações para Celular da Oi
+                p.addons_item_desc Adicione minutos locais ilimitados do seu fixo para Celular Oi.
+                .addons_item_actions
+                  button.add
+                    span.call Adicione
+                    spa.pricen R$5
+                  button.rem Remover
+              li.addons_item
+                .addons_item_img.img3
+                h4.addons_item_title Banda Larga da Oi
+                p.addons_item_desc Modem incluído + Oi WiFi. Escolha uma velocidade:
+                .addons_item_actions
+                  button.add.add-1-3
+                    span.call 2 mega
+                    span.price R$49,90
+                  button.add.add-1-3
+                    span.call 10 mega
+                    span.price R$59,90
+                  button.add.add-1-3
+                    span.call 15 mega
+                    span.price R$69,90
+                  button.rem Remover
 
   include ../_partials/footer.jade
 
