@@ -19,14 +19,15 @@ var helpers = (function() {
 
   _public.loadData = function() {
     var dataFiles = _private.listDataFiles(),
-        dataMerged = {};
-    dataFiles.map(function(file, index){
-      try {
-        dataMerged = _.merge(dataMerged, yaml.safeLoad(fs.readFileSync('./data/' + file , 'utf8')));
-      } catch (e) {
-        console.log(e);
-      }
-    });
+      dataMerged = {};
+      dataFiles.map(function(file, index){
+        try {
+          dataMerged = _.merge(dataMerged, yaml.safeLoad(fs.readFileSync('./data/' + file , 'utf8')));
+        } catch (e) {
+          console.log(e);
+        }
+      });
+    dataMerged = _.merge(dataMerged, yaml.safeLoad(fs.readFileSync('./data/pages/internet/cards.yml', 'utf8')));
     return dataMerged;
   }
 
