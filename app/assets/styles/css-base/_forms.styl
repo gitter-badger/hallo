@@ -22,7 +22,7 @@ input[type="checkbox"]
     height: formPaddingVertical*1.34
     border: 0.08rem solid $grayLight
     background-color: $white
-    roundBorderAll(borderRoundSize)
+    border-radius 0.125rem
 
   &:after
     content: " "
@@ -35,7 +35,7 @@ input[type="checkbox"]
     transform: scale(0.66)
     background-color: $purple
     transform-origin: 50% 50%
-    roundBorderAll(borderRoundSize)
+    border-radius 0.125rem
 
   &:checked::after
     animation: kf-checkbox-on 0.21s ease
@@ -62,24 +62,22 @@ input[type="radio"]
     top: 0
     left: 0
     display: block
-    width: formPaddingVertical*1.34
-    height: formPaddingVertical*1.34
+    width: 1.5625rem // 25px
+    height: 1.5625rem // 25px
     border: 0.08rem solid $grayLight
     background-color: $white
-    roundBorderAll(50%)
+    border-radius 50%
 
   &:after
     content: " "
     position: absolute
-    top: 0.08rem
-    left: 0.08rem
+    top: 0.3125rem // 5px
+    left: 0.3125rem // 5px
     display: block
-    width: formPaddingVertical*1.34
-    height: formPaddingVertical*1.34
-    transform: scale(0.66)
+    width: 0.9375rem // 15px
+    height: 0.9375rem // 15px
     background-color: $green
-    transform-origin: 50% 50%
-    roundBorderAll(50%)
+    border-radius 50%
 
   &:checked::after
     animation: kf-radio-on 0.21s ease
@@ -89,3 +87,4 @@ input[type="radio"]
     &:after
       animation: kf-radio-off 0.21s ease
       animation-fill-mode: forwards
+
