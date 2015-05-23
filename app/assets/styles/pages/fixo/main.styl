@@ -23,7 +23,6 @@ body
       overflow hidden
 
 .table-compare
-  border none
   border-bottom 1px solid $black
   font-family $fontTextRegular
   text-align center
@@ -232,98 +231,6 @@ body
           font-size remify(10.98px)
           color $gray
 
-.table-compare
-  border none
-  border-bottom 1px solid $black
-  font-family $fontTextRegular
-  text-align center
-  width 100%
-  min-width remify(760px)
-
-  caption
-    display none
-
-  thead
-    tr
-      border-bottom 1px solid $gray
-
-  tbody
-    tr
-      border-bottom 1px dashed $gray
-
-  tr
-    height remify(90px)
-
-  th
-    height remify(90px)
-    vertical-align middle
-    padding 0 7%
-    position relative
-
-  td
-    height remify(90px)
-    vertical-align middle
-    font-weight 600
-    position relative
-    &.opt
-      width remify(210px)
-
-  .promo
-    background-color $orangeLight
-    border-radius 100%
-    width remify(50px)
-    height remify(50px)
-    display block
-    position absolute
-    top remify(-10px)
-    left remify(60px)
-    color $black
-    font-size remify(11px)
-    padding remify(13px) 0
-    line-height remify(12px)
-    transform rotate(-25deg)
-
-  .bold
-    font-family $fontTextBold
-
-  .tag
-    background-color $green
-    border-radius remify(2px)
-    font-weight 500
-    color $white
-    display inline-block
-    height remify(20px)
-    line-height remify(20px)
-    font-size remify(13px)
-    padding 0 remify(10px)
-    text-transform lowercase
-
-  svg
-    width remify(25px)
-    margin 0 remify(5px) 0 0
-    display inline-block
-    cursor pointer
-    position absolute
-    top remify(21px)
-    left remify(25px)
-    circle
-      stroke $green
-      &.icon-inner
-        stroke $white
-        fill $white
-      &.icon-outer
-        stroke $grayLight
-    &:hover
-      circle.icon-inner
-        fill $green
-
-  oi-price
-    display inline-block
-    height remify(90px)
-    position absolute
-    top remify(28px)
-    left remify(90px)
-
 .content_details
   &_container
     background-repeat no-repeat
@@ -492,7 +399,6 @@ body
         &:hover, &.forcus
           border 1px solid purple
           color $purple
-
 
 .footer
   &_faq-menu
