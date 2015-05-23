@@ -5,6 +5,10 @@
 @import "../_partials/_content.styl"
 @import "../_partials/_content-header.styl"
 
+body
+  .content
+    border-bottom 1px solid $black
+
 .content_table
   overflow hidden
   &_container
@@ -485,4 +489,58 @@
           border 1px solid purple
           color $purple
 
+
+.footer
+  &_faq-menu
+    background-color $grayLighter
+    font-family $fontTextRegular
+    font-size remify(13px)
+    height remify(88px)
+    overflow hidden
+    line-height remify(88px)
+    +above('m')
+      height remify(160px)
+      line-height remify(160px)
+
+    ul
+      display block
+      max-width remify(1170px)
+      margin 0 auto
+
+    li
+      display none
+      +above('m')
+        display inline-block
+        margin-right remify(10px)
+
+    a
+      color $black
+      text-decoration none
+      display block
+      padding 0 remify(10px)
+
+    .faq-menu_icon
+      display block
+      padding 0 remify(20px)
+      +above('m')
+        margin-right remify(60px)
+        display inline-block
+        font-family $fontTextBold
+
+      svg
+        display inline-block
+        width remify(30px)
+        margin-right remify(10px)
+        transform translateY(remify(6px))
+        path
+          fill $green
+          +above('m')
+            fill $black
+
+      a
+        color $green
+        margin 0
+        padding 0
+        +above('m')
+          color $black
 
