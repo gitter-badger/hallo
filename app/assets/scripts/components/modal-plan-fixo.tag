@@ -99,12 +99,14 @@
     $('body').addClass('scroll-lock');
     self.visible = true;
     self.update();
+    oiMediator.publish( 'modal open', {type: 'plano fixo'} );
   }
 
   self.close = function() {
     $('body').removeClass('scroll-lock');
     self.visible = false;
     self.update();
+    oiMediator.publish( 'modal close', {type: 'plano fixo'} );
   }
 
   document.onkeydown = function(evt) {
