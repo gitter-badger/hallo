@@ -8,9 +8,12 @@ include _content-table.jade
 //-
 mixin buildContent(header, table)
   .content
+
+    - if (header)
     .content_header_container
-      - if (header)
         +#{header}()
+
+    - if (table)
     .content_table_container
-      - if (table)
+      
         +#{table}()
