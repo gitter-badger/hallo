@@ -10,6 +10,9 @@
   &_container
     max-width remify(1170px)
     margin 0 auto
+    overflow scroll
+    +above('m')
+      overflow hidden
 
 .table-compare
   border none
@@ -17,7 +20,7 @@
   font-family $fontTextRegular
   text-align center
   width 100%
-  min-width remify(760px)
+  min-width remify(800px)
 
   caption
     display none
@@ -119,23 +122,35 @@
   &_title
     font-size remify(21px)
     font-family $fontTextLight
-    width 25%
-    float left
     display block
     text-transform uppercase
-  &_list
-    width 75%
-    float left
     text-align center
+    margin-bottom remify(60px)
+    +above('m')
+      margin-bottom 0
+      text-align left
+      width 25%
+      float left
+    br
+      display none
+      +above('m')
+        display block
+  &_list
+    text-align center
+    +above('m')
+      width 75%
+      float left
     ul
       display block
       width 100%
       overflow hidden
   &_item
-    width 33%
-    float left
     padding 0 5%
-    // copiando odd do gaspar
+    margin-bottom remify(60px)
+    +above('m')
+      margin-bottom 0
+      width 33%
+      float left
     &_img
       height remify(50px)
       margin-bottom remify(20px)
@@ -208,3 +223,266 @@
         &.price
           font-size remify(10.98px)
           color $gray
+
+.table-compare
+  border none
+  border-bottom 1px solid $black
+  font-family $fontTextRegular
+  text-align center
+  width 100%
+  min-width remify(760px)
+
+  caption
+    display none
+
+  thead
+    tr
+      border-bottom 1px solid $gray
+
+  tbody
+    tr
+      border-bottom 1px dashed $gray
+
+  tr
+    height remify(90px)
+
+  th
+    height remify(90px)
+    vertical-align middle
+    padding 0 7%
+    position relative
+
+  td
+    height remify(90px)
+    vertical-align middle
+    font-weight 600
+    position relative
+    &.opt
+      width remify(210px)
+
+  .promo
+    background-color $orangeLight
+    border-radius 100%
+    width remify(50px)
+    height remify(50px)
+    display block
+    position absolute
+    top remify(-10px)
+    left remify(60px)
+    color $black
+    font-size remify(11px)
+    padding remify(13px) 0
+    line-height remify(12px)
+    transform rotate(-25deg)
+
+  .bold
+    font-family $fontTextBold
+
+  .tag
+    background-color $green
+    border-radius remify(2px)
+    font-weight 500
+    color $white
+    display inline-block
+    height remify(20px)
+    line-height remify(20px)
+    font-size remify(13px)
+    padding 0 remify(10px)
+    text-transform lowercase
+
+  svg
+    width remify(25px)
+    margin 0 remify(5px) 0 0
+    display inline-block
+    cursor pointer
+    position absolute
+    top remify(21px)
+    left remify(25px)
+    circle
+      stroke $green
+      &.icon-inner
+        stroke $white
+        fill $white
+      &.icon-outer
+        stroke $grayLight
+    &:hover
+      circle.icon-inner
+        fill $green
+
+  oi-price
+    display inline-block
+    height remify(90px)
+    position absolute
+    top remify(28px)
+    left remify(90px)
+
+.content_details
+  &_container
+    background-repeat no-repeat
+    background-position right remify(250px)
+    margin 0 auto
+    max-width remify(1170px)
+    padding-top remify(160px)
+    +above('m')
+      background-image url(/assets/images/layout/fixo4.png)
+
+.details
+  &_item
+    position relative
+    display block
+    max-width remify(1170px)
+    margin 0 auto
+    border-bottom remify(1.2px) solid $grayLight
+    font-family $fontTextRegular
+    font-size remify(13px)
+    overflow hidden
+    +above('m')
+      border-bottom none
+      margin-top remify(85px)
+
+    &_title-area
+      height remify(88px)
+      padding 0 remify(20px)
+      cursor pointer
+      +above('m')
+        -webkit-tap-highlight-color rgba(0, 0, 0, 0)
+        cursor default
+        width remify(200px)
+        padding-right remify(20px)
+        float left
+
+      &_title
+        line-height remify(88px)
+        font-size remify(13px)
+        text-transform uppercase
+        color $green
+        +above('m')
+          font-size remify(21px)
+          line-height remify(25px)
+          padding-right remify(10px)
+          color $black
+          margin-bottom remify(15px)
+
+      &_desc
+        display none
+        font-size remify(13px)
+        +above('m')
+          display block
+
+        p
+          margin-bottom remify(15px)
+
+    &_content-area
+      padding 0 0 0 remify(20px)
+      overflow hidden
+      height 0
+      opacity 0
+      transition all 0.3s ease
+      +above('m')
+        padding-bottom 0
+        height auto
+        width remify(520px)
+        padding 0
+        float left
+        opacity 1
+      &.open
+        height auto
+        opacity 1
+
+      &_desc
+        line-height remify(20px)
+        font-size remify(13px)
+        padding-bottom remify(50px)
+        +above('m')
+          padding-bottom 0
+        dl
+          display block
+          overflow hidden
+          +above('m')
+            margin-bottom remify(35px)
+        dt
+          display block
+          font-family $fontTextBold
+          &.hide
+            opacity 0
+          +above('m')
+            clear both
+            float left
+            margin-bottom remify(10px)
+            width remify(135px)
+        dd
+          display block
+          margin-bottom remify(30px)
+          +above('m')
+            float left
+            width remify(380px)
+            margin-bottom remify(10px)
+
+        .line
+          border-top 1px solid $grayLight
+          padding-top remify(10px)
+        a
+          color $green
+          text-decoration none
+          display block
+          +above('m')
+            display inline-block
+
+        .subinfo
+          color $gray
+          font-style italic
+          display block
+
+        br
+          display none
+          +above('m')
+            display inline
+
+
+      .list-bullets
+        background-repeat no-repeat
+        &.img-fixo-pre
+          background-image url(/assets/images/layout/fixo5.png)
+          +above('m')
+            padding-left remify(225px)
+            background-position 0 0
+        ul
+          list-style-type disc
+          color $grayLight
+          padding-left remify(15px)
+          margin-bottom remify(10px)
+        li
+          line-height remify(20px)
+          +above('m')
+            line-height remify(27px)
+        button
+          font-family $fontTextRegular
+          color $green
+          cursor pointer
+          background-color transparent
+          border none
+          font-size 16px
+        span
+          color black
+
+        .view
+          color $green
+          font-size remify(13px)
+          &:hover
+            color $purple
+
+      .button
+        border 1px solid $black
+        border-radius remify(2px)
+        color $black
+        display inline-block
+        font-size remify(13px)
+        height remify(50px)
+        line-height remify(50px)
+        padding 0 remify(40px)
+        text-align center
+        &:hover, &.forcus
+          border 1px solid purple
+          color $purple
+
+

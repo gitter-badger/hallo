@@ -12,7 +12,16 @@ define([
   _public.init = function(){
     console.log('fixo, _public.init');
     _private.loadPlans()
+    _private.bindOpenDetail();
   };
+
+  _private.bindOpenDetail = function(){
+    $('.details_item_title-area').on('click', function(event) {
+      event.preventDefault();
+      var $this = $(this);
+      $this.next('.details_item_content-area').toggleClass('open');
+    });
+  }
 
   _private.loadPlans = function (){
     _private.showPrices()
