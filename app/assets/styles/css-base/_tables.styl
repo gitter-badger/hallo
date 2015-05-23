@@ -1,15 +1,15 @@
-tablePaddingVertical = 2.5rem;
-tablePaddingHorizontal = 1.5625rem;
+$tablePaddingVertical = 2.5rem;
+$tablePaddingHorizontal = 1.5625rem;
 
 table
 	width: 100%
-	border-top: 0.08rem solid colorBlack
-	border-bottom: 0.08rem solid colorBlack
+	border-top: 0.08rem solid $black
+	border-bottom: 0.08rem solid $black
 
 	tr
 		&.hardline
 			td, th
-				border-top: 0.08rem solid colorBlack
+				border-top: 0.08rem solid $black
 
 		td, th
 			font-weight: normal
@@ -20,14 +20,14 @@ table
 			&.right
 				text-align: right
 			&.hardline
-				border-top: 0.08rem solid colorBlack
+				border-top: 0.08rem solid $black
 
 	thead
 		width: 100%
-		border-bottom: 0.08rem solid colorLightGray
+		border-bottom: 0.08rem solid $grayLight
 		th
 			position: relative
-			padding: tablePaddingVertical tablePaddingVertical
+			padding: $tablePaddingVertical $tablePaddingVertical
 			text-align: center
 			.hashtag
 				position: absolute
@@ -35,7 +35,7 @@ table
 				margin-bottom: -(1.3125rem/2)
 				left: 50%
 				margin-left: -(3.9375rem/2)
-				outline: 0.55rem solid colorWhite
+				outline: 0.55rem solid $white
 			.icon
 				display: inline-block
 				width: 2rem
@@ -51,8 +51,8 @@ table
 				position: relative
 				min-width: 2rem
 				height: auto
-				padding: tablePaddingVertical tablePaddingVertical
-				border-top: 0.08rem dashed colorLightGray
+				padding: $tablePaddingVertical $tablePaddingVertical
+				border-top: 0.08rem dashed $grayLight
 				text-align: center
 				vertical-align: middle
 
@@ -69,19 +69,19 @@ table
 						left: 0
 						width: 1.6875rem
 						height: 100%
-						border-top: 0.08rem solid colorLightGray
-						border-left: 0.08rem solid colorLightGray
-						border-bottom: 0.08rem solid colorLightGray
+						border-top: 0.08rem solid $grayLight
+						border-left: 0.08rem solid $grayLight
+						border-bottom: 0.08rem solid $grayLight
 
 	&.checkout
 		thead
 			tr
 				th
-					padding: tablePaddingVertical 0
+					padding: $tablePaddingVertical 0
 
 		tbody
 			tr
 				td
 					font-size: 0.8125rem
-					padding: tablePaddingVertical*0.34 0
+					padding: $tablePaddingVertical*0.34 0
 
