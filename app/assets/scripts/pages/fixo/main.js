@@ -4,7 +4,8 @@ define([
   'vendor/lodash',
   'vendor/riot',
   'tags/oi-price',
-  ], function($, _, riot, tagPrice){
+  'tags/modal-plan-fixo',
+  ], function($, _, riot, tagPrice, tagPlanFixo){
 
   var _private = {};
   var _public = {};
@@ -13,6 +14,8 @@ define([
     console.log('fixo, _public.init');
     _private.loadPlans()
     _private.bindOpenDetail();
+
+    riot.mount('modal-planfixo', {});
   };
 
   _private.bindOpenDetail = function(){

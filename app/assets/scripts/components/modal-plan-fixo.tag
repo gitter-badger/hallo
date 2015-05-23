@@ -1,9 +1,9 @@
 <modal-planfixo>
-  <div class="modal-plan-fixo">
+  <div class="modal-plan-fixo" show={ visible }>
 
     <header class="modal-plan-fixo_header">
       <div class="modal-plan-fixo_container">
-        <button class="modal-plan-fixo_close">Fechar</button>
+        <button class="modal-plan-fixo_close" onclick={ close }>Fechar</button>
         <div class="modal-plan-fixo_header_img"></div>
         <h1 class="modal-plan-fixo_header_title">voz total (fixo + pré)</h1>
         <button class="modal-plan-fixo_header_action">Adicionar</button>
@@ -93,6 +93,30 @@
 
   <script>
   var self = this;
+  self.visible = false;
+
+  self.open = function() {
+    self.visible = true;
+    self.update();
+  }
+
+  self.close = function() {
+    self.visible = false;
+    self.update();
+  }
+
+  document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    // Esc
+    if (evt.keyCode == 27) {
+      self.close()
+    }
+  };
+
+  $('.open-plan-fixo').on('click', function  (evt){
+    evt.preventDefault();
+    self.open();
+  });
 
   </script>
 
