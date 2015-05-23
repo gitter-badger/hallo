@@ -33,11 +33,6 @@ mixin contentTableFixo()
 //- content table related to internet
 //-
 mixin contentTableInternet()
-  .content_table_header
-    ul
-      each group in ['Velocidade', 'Modem incluído']
-        li.content_table_header_item
-          h4 #{group}
   .content_table
     include /views/internet/_content.jade
 
