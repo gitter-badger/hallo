@@ -96,11 +96,13 @@
   self.visible = false;
 
   self.open = function() {
+    $('body').addClass('scroll-lock');
     self.visible = true;
     self.update();
   }
 
   self.close = function() {
+    $('body').removeClass('scroll-lock');
     self.visible = false;
     self.update();
   }
