@@ -2,6 +2,7 @@ include ../_partials/head.jade
 include ../_partials/hero.jade
 include ../_partials/header.jade
 include ../_partials/_cards/_cards.jade
+include ../_partials/_content/_content.jade
 
 +head('internet')
 
@@ -16,8 +17,6 @@ body(itemtype="http://schema.org/WebPage")
   main
 
     +cardsInternet(cardsInternet)
-
-    include ../_partials/_content/_content.jade
     +buildContent('contentHeaderInternet', 'contentTableInternet')
 
   include ../_partials/footer.jade
