@@ -113,7 +113,7 @@ gulp.task('build-stylus', function () {
     .pipe($.plumber({errorHandler: helpers.notifyError}))
     // .pipe($.changed(config.path.src.stylus))
     .pipe($.filter(helpers.filterPartials))
-    .pipe($.sourcemaps.init())
+    // .pipe($.sourcemaps.init())
     .pipe($.stylus({
       use: [jeet(), koutoSwiss(), rupture()],
       include: './app/assets/styles/'
@@ -125,16 +125,16 @@ gulp.task('build-stylus', function () {
       browsers: config.BrowserList,
       cascade: false
     }))
-    .pipe($.minifyCss())
-    .pipe($.csso())
-    .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest(config.path.dist.css))
-    .pipe($.if(config.isProd, $.gzip()))
+    // .pipe($.minifyCss())
+    // .pipe($.csso())
+    // .pipe($.sourcemaps.write('.'))
+    // .pipe(gulp.dest(config.path.dist.css))
+    // .pipe($.if(config.isProd, $.gzip()))
     .pipe(gulp.dest(config.path.dist.css));
 
   gulp.src('./app/assets/styles/css-base/fonts.css')
-    .pipe($.plumber({errorHandler: helpers.notifyError}))
-    .pipe($.csso())
+    // .pipe($.plumber({errorHandler: helpers.notifyError}))
+    // .pipe($.csso())
     .pipe(gulp.dest(config.path.dist.css));
 
 });
