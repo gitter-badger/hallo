@@ -10,8 +10,10 @@
           span.hashtag ilimitado
     tbody
       tr
-        td: input(type="radio",name="radio-test")
-        td: oi-price#plan-price-one(data-price="69,90")
+        td
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-one(data-price="69,90")
         td: strong 15 Mega
         td
           i.icon_check
@@ -20,8 +22,10 @@
           i.icon_check
             include /assets/images/icons/check.svg
       tr
-        td: input(type="radio",name="radio-test")
-        td: oi-price#plan-price-two(data-price="59,90")
+        td
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-two(data-price="59,90")
         td: strong 10 Mega
         td
           i.icon_check
@@ -31,8 +35,10 @@
             include /assets/images/icons/check.svg
           small com WiFi
       tr
-        td: input(type="radio",name="radio-test")
-        td: oi-price#plan-price-three(data-price="49,90")
+        td
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-three(data-price="49,90")
         td: strong 2 Mega
         td
           i.icon_check
