@@ -1,0 +1,30 @@
+.product-cheat-sheet
+  max-width: remify(1170px);
+
+.product-cheat-sheet_row
+  @extend .clearfix
+
+.product-cheat-sheet_column-left
+  @extend .clearfix
+  float: left
+  width: remify(200px)
+
+.product-cheat-sheet_column-right
+  @extend .clearfix
+  float: left
+  width: remify(970px)
+
+  dl
+    position: relative
+    width: remify(440px)
+    padding-left: remify(130px)
+    dt
+      position: absolute
+      top: 0
+      left: 0
+      width: remify(130px)
+      height: auto
+    dd
+      width: 100%
+      padding-bottom: 1.34em
+      line-height: 1em
