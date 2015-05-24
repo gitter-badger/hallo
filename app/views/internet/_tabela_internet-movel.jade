@@ -2,45 +2,95 @@
   table
     thead
       tr
+        th Dispositivo e plano
         th
-        th
-        th Velocidade
-        th Modem incluído
-        th Oi WiFi
-          span.hashtag ilimitado
+        th Franquia
+        th Validade
     tbody
       tr
-        td: input(type="radio",name="radio-test")
-        td: oi-price#plan-price-one(data-price="69,90")
-        td: strong 15 Mega
+        td.left(rowspan="4")
+          strong Celular pós-pago
+          small Você precisa ter um plano Pós da Oi.
+          div.left-bracer
+            div.inner
         td
-          i.icon_check
-            include /assets/images/icons/check.svg
-        td
-          i.icon_check
-            include /assets/images/icons/check.svg
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-one(data-price="59,90")
+        td: strong 5 GB
+        td: span.hashtag ilimitada
       tr
-        td: input(type="radio",name="radio-test")
-        td: oi-price#plan-price-two(data-price="59,90")
-        td: strong 10 Mega
         td
-          i.icon_check
-            include /assets/images/icons/check.svg
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-two(data-price="39,90")
         td
-          i.icon_check
-            include /assets/images/icons/check.svg
-          small com WiFi
+          strong 2 GB
+          small.tooltip Ganhe 5GB por 3 meses
+        td: span.hashtag ilimitada
       tr
-        td: input(type="radio",name="radio-test")
-        td: oi-price#plan-price-three(data-price="49,90")
-        td: strong 2 Mega
         td
-          i.icon_check
-            include /assets/images/icons/check.svg
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-three(data-price="29,90")
+        td: strong 500 MB
+        td: span.hashtag ilimitada
+      tr
         td
-          i.icon_check
-            include /assets/images/icons/check.svg
-          small com WiFi
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-three(data-price="19,90")
+        td: strong 300 MB
+        td: span.hashtag ilimitada
+
+      tr
+        td.left(rowspan="6")
+          strong Celular pós-pago
+          small Você precisa ter um plano Pós da Oi.
+          div.left-bracer
+            div.inner
+        td
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-one(data-price="29,90")
+        td: strong 500 MB
+        td
+          strong 30 Dias
+          em Até o final do 30º dia
+      tr
+        td
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-two(data-price="19,90")
+        td: strong 300 MB
+        td
+          strong 30 Dias
+          em Até o final do 30º dia
+      tr
+        td
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-two(data-price="9,90")
+        td: strong 150 MB
+        td
+          strong 30 Dias
+          em Até o final do 30º dia
+      tr
+        td
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-two(data-price="2,90", data-posfix="semana")
+        td: strong 50 MB
+        td
+          strong 7 Dias
+          em Até o final do 7º dia
+
+
+
+      
+
+
+
 
 .oi-banda-larga_table_footer
   | Esses são planos para clientes de Telefone Fixo da Oi. 
