@@ -26,7 +26,7 @@
       return (result + '').split('.')[1];
     }
 
-    self.prefix = 'A partir de';
+    self.prefix = opts.prefix;
     self.integer = Math.floor(opts.price);
     self.cents = toFixed(opts.price, 2)// (opts.price.toPrecision(3) + "").split('.')[1] || '00';
     self.suffix = 'Mês';

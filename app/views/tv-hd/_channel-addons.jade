@@ -27,7 +27,7 @@
           a.oi-channels-addons_item_link.open-addon(href=channel.img)
             .oi-channels-addons_item_tooltip
               div(id="addon-tooltip-"+channel.slug)
-            .oi-channels-addons_item_logo.b-lazy(data-src="/assets/images/logos/height40/"+channel.img+".png")
+            .oi-channels-addons_item_logo(style="background-image: url(/assets/images/logos/240x80/"+channel.img+".png)")
             .oi-channels-addons_item_desc
               each info in channel.desc
                 span!=info
