@@ -1,0 +1,59 @@
+{
+  "meta": [],
+  "data": [
+    {
+      "name": "Fixo Ilimitado com DDD",
+      "slug": "ilimitado-ddd",
+      "price": {
+        "fidelizado": 59.90,
+        "sem-fidelidade": 79.90
+      },
+      "adesao": {
+        "fidelizado": [120, "Até 12 de R$10,00 = R$120"],
+        "sem-fidelidade": 79.90
+      },
+      "multa": 240,
+      "addons": {
+        "celular-oi": 5,
+        "chip-pre": 10,
+        "chip-pre-internet-ddd": 20,
+      }
+    },
+    {
+      "name": "Fixo Ilimitado",
+      "slug": "ilimitado",
+      "price": {
+        "fidelizado": 49.90,
+        "sem-fidelidade": 69.90
+      },
+      "adesao": {
+        "fidelizado": [120, "Até 12 de R$10,00 = R$120"],
+        "sem-fidelidade": 69.90
+      },
+      "multa": 240,
+      "addons": {
+        "celular-oi": 5,
+        "chip-pre": 10,
+        "chip-pre-internet-ddd": 20,
+      }
+    },
+    {
+      "name": "Fixo Controle Ilimitado",
+      "slug": "ilimitado-controle",
+      "price": {
+        "fidelizado": 49.90,
+        "sem-fidelidade": 69.90
+      },
+      "adesao": {
+        "fidelizado": [120, "Até 12 de R$10,00 = R$120"],
+        "sem-fidelidade": 69.90
+      },
+      "multa": 240,
+      "addons": {
+        "celular-oi": 5,
+        "chip-pre": 10,
+        "chip-pre-internet-ddd": 20,
+      }
+    }
+  ]
+}
