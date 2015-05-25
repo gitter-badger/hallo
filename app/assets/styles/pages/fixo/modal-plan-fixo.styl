@@ -53,17 +53,47 @@
       float left
     &_action
       float right
-      border 1px solid $white
-      color $white
-      background-color transparent
-      padding 0 remify(60px)
-      height remify(50px)
-      font-size remify(16px)
-      text-decoration none
-      cursor pointer
-      &:hover, &:focus, &:active
-        border-color $purple
-        color $purple
+      margin-top remify(12px)
+      position relative
+      button
+        padding 0 remify(60px)
+        height remify(50px)
+        font-size remify(16px)
+        text-decoration none
+        cursor pointer
+      &_add
+          color $white
+          border 1px solid $white
+          background-color transparent
+          position relative
+          z-index 2
+          &:hover, &:focus, &:active
+            border-color $purple
+            color $purple
+            outline none
+          &.added
+            background-color $greenLight
+            color $white
+            border 1px solid $greenLight
+            &:hover, &:focus, &:active
+              border-color $greenLight
+              color $white
+            & + .modal-plan-fixo_header_action_rem
+              top remify(50px)
+              opacity 1
+
+      &_rem
+          background-color transparent
+          border none
+          color $white
+          opacity 0
+          position absolute
+          right 0
+          top 0
+          transition all .3s ease
+          z-index 1
+          &:hover, &:focus, &:active
+            outline none
 
   &_main
     padding remify(70px) 0

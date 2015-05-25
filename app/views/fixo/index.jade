@@ -65,12 +65,13 @@ body(itemtype="http://schema.org/WebPage")
             | seu plano
           .addons_list
             ul
-              li.addons_item
+              li.addons_item#vozTotal
                 .addons_item_img.img1
                 h4.addons_item_title Voz Total [Fixo + pré]
                 p.addons_item_desc Chip pré com ligações ilimitadas para fixo e celular, internet, torpedos e Oi WiFi.
                 .addons_item_actions
-                  button.add.open-plan-fixo
+                  button.add.open-voz-total
+                    span.textAdded Adicionado
                     span.call Adicione
                     span.price a partir de R$10
                   button.rem Remover
@@ -80,8 +81,9 @@ body(itemtype="http://schema.org/WebPage")
                 p.addons_item_desc Adicione minutos locais ilimitados do seu fixo para Celular Oi.
                 .addons_item_actions
                   button.add
+                    span.textAdded Adicionado
                     span.call Adicione
-                    spa.price R$5
+                    span.price R$5
                   button.rem Remover
               li.addons_item
                 .addons_item_img.img3
@@ -89,12 +91,15 @@ body(itemtype="http://schema.org/WebPage")
                 p.addons_item_desc Modem incluído + Oi WiFi. Escolha uma velocidade:
                 .addons_item_actions
                   button.add.add-1-3
+                    span.textAdded Adicionado
                     span.call 2 mega
                     span.price R$49,90
                   button.add.add-1-3
+                    span.textAdded Adicionado
                     span.call 10 mega
                     span.price R$59,90
                   button.add.add-1-3
+                    span.textAdded Adicionado
                     span.call 15 mega
                     span.price R$69,90
                   button.rem Remover
@@ -138,7 +143,7 @@ body(itemtype="http://schema.org/WebPage")
                       span Pode adicionar até 3 chips para o seu pré.
                     li
                       span Tudo isso na conta do seu fixo.
-                  button.view Conheça o Voz Total
+                  button.view.open-voz-total Conheça o Voz Total
 
           .details_item
             .details_item_title-area
