@@ -9,13 +9,16 @@ define([
 
   var _private = {};
   var _public = {};
+  var tags = {}
 
   _public.init = function(){
     console.log('fixo, _public.init');
     _private.loadPlans()
     _private.bindOpenDetail();
-
-    riot.mount('modal-planfixo', {});
+    _private.bindRemoveVozTotal();
+    tags.ModalPlanoFixo = riot.mount('modal-planfixo', {})[0];
+    oiMediator.subscribe( 'voz-total add', _public.addVozTotal );
+    oiMediator.subscribe( 'voz-total remove', _public.removeVozTotal );
   };
 
   _private.bindOpenDetail = function(){
@@ -29,13 +32,26 @@ define([
   _private.loadPlans = function (){
     _private.showPrices()
   }
+
   _private.showPrices = function (){
     riot.mount('#price-fixo-regular', { price: 59.90, small: true });
     riot.mount('#price-fixo-ddd',     { price: 49.90, small: true });
   }
 
-  // oiMediator.publish( 'start plan', defaultPlan );
-  // oiMediator.subscribe( 'addon add', _public.addAddon );
+  _public.addVozTotal = function (){
+    $('#vozTotal').find('.add').addClass('added')
+  }
+
+  _private.bindRemoveVozTotal = function (){
+    $('#vozTotal').find('.rem').on('click', function (evt){
+      evt.preventDefault();
+      tags.ModalPlanoFixo.remove();
+    })
+  }
+
+  _public.removeVozTotal = function (){
+    $('#vozTotal').find('.add').removeClass('added')
+  }
 
   return _public;
 });

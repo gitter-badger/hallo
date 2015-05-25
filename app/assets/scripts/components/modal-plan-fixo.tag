@@ -100,7 +100,6 @@
   self.added = false;
   self.textAdd = 'Adicionar';
 
-
   self.open = function() {
     $('body').addClass('scroll-lock');
     self.visible = true;
@@ -126,8 +125,8 @@
   self.remove = function() {
     self.textAdd = 'Adicionar';
     self.added = false;
-    oiMediator.publish( 'voz-total remove' );
     self.update();
+    oiMediator.publish( 'voz-total remove' );
   }
 
   document.onkeydown = function(evt) {
