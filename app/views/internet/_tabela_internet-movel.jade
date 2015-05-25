@@ -84,7 +84,53 @@
         td
           strong 7 Dias
           em Até o final do 7º dia
+      tr
+        td
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-two(data-price="0,99", data-posfix="semana")
+        td: strong 15 MB
+        td
+          strong 1 Dia (pacote extra)
+          em Até o final do dia. Caso já tenha outro pacote contratado, terá a mesma validade do vigente.
+      tr
+        td
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-two(data-price="0,75", data-posfix="semana")
+        td: strong 10 MB
+        td
+          strong 1 Dia (pacote extra)
+          em Até o final do dia. Caso já tenha outro pacote contratado, terá a mesma validade do vigente.
 
+      tr
+        td.left(rowspan="3")
+          strong Para computador e tablet
+          p Você precisa ter um minimodem ou tablet compatível com 3G/4G.
+          p Valor com fidelização de 1 ano para clientes da Oi com celular pós ou fixo.
+          p: a(href="javascript:void(0);") Veja os valores para não clientes Oi e sem fidelização
+          div.left-bracer
+            div.inner
+        td
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-one(data-price="99,90")
+        td: strong 10 GB
+        td: span.hashtag ilimitada
+      tr
+        td
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-two(data-price="59,90")
+        td: strong 5 GB
+        td: span.hashtag ilimitada
+      tr
+        td
+          fieldset.price-fieldset
+            input(type="radio",name="radio-test")
+            oi-price#plan-price-two(data-price="39,90")
+        td: strong 2 GB
+        td: span.hashtag ilimitada
 
 
       
