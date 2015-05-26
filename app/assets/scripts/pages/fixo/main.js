@@ -5,14 +5,15 @@ define([
   'vendor/riot',
   'tags/oi-price',
   'tags/modal-plan-fixo',
-  ], function($, _, riot, tagPrice, tagPlanFixo){
+  'tags/table-compare'
+  ], function($, _, riot, tagPrice, tagPlanFixo, tagCompare){
 
   var _private = {};
   var _public = {};
   var tags = {}
+  var plans, labels;
 
   _public.init = function(){
-    console.log('fixo, _public.init');
     _private.loadPlans()
     _private.bindOpenDetail();
     _private.bindRemoveVozTotal();
@@ -30,12 +31,32 @@ define([
   }
 
   _private.loadPlans = function (){
-    _private.showPrices()
+    $.getJSON('/api/price/fixo/rj.json', function(json, textStatus) {
+        plans = json.data;
+        labels = json.meta.features_labels;
+        // _private.showPrices()
+        _private.insertTable()
+    });
+  }
+
+  _private.insertTable = function (data){
+    var plansTable = _.filter(plans, function(plan, key){
+      return plan.on_table;
+    })
+
+    tags.ModalPlanoFixo = riot.mount('table-compare', {plans: plansTable, labels: labels } )[0];
   }
 
   _private.showPrices = function (){
-    riot.mount('#price-fixo-regular', { price: 59.90, small: true });
-    riot.mount('#price-fixo-ddd',     { price: 49.90, small: true });
+    var price;
+    item = _.find(prices, function(item) {
+      return item.slug === 'ilimitado_ddd';
+    });
+    riot.mount('#price-ilimitado-ddd', { price: item.price.fidelizado, small: true });
+    item = _.find(prices, function(item) {
+      return item.slug === 'ilimitado';
+    })
+    riot.mount('#price-ilimitado', { price: item.price.fidelizado, small: true });
   }
 
   _public.addVozTotal = function (){
