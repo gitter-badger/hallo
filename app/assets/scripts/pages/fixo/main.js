@@ -5,15 +5,15 @@ define([
   'vendor/riot',
   'tags/oi-price',
   'tags/modal-plan-fixo',
-  ], function($, _, riot, tagPrice, tagPlanFixo){
+  'tags/table-compare'
+  ], function($, _, riot, tagPrice, tagPlanFixo, tagCompare){
 
   var _private = {};
   var _public = {};
   var tags = {}
-  var prices = []
+  var plans, labels;
 
   _public.init = function(){
-    console.log('fixo, _public.init');
     _private.loadPlans()
     _private.bindOpenDetail();
     _private.bindRemoveVozTotal();
@@ -32,9 +32,19 @@ define([
 
   _private.loadPlans = function (){
     $.getJSON('/api/price/fixo/rj.json', function(json, textStatus) {
-        prices = json.data;
-        _private.showPrices()
+        plans = json.data;
+        labels = json.meta.features_labels;
+        // _private.showPrices()
+        _private.insertTable()
     });
+  }
+
+  _private.insertTable = function (data){
+    var plansTable = _.filter(plans, function(plan, key){
+      return plan.on_table;
+    })
+
+    tags.ModalPlanoFixo = riot.mount('table-compare', {plans: plansTable, labels: labels } )[0];
   }
 
   _private.showPrices = function (){
