@@ -19,7 +19,8 @@
       },
       "price": {
         "loyal": 69.90,
-        "not_loyal": 94.90
+        "not_loyal": 94.90,
+        "without_landline": 128,07
       },
       "penalty": 999
     },
@@ -35,7 +36,8 @@
       },
       "price": {
         "loyal": 59.90,
-        "not_loyal": 84.90
+        "not_loyal": 84.90,
+        "without_landline": 118,07
       },
       "penalty": 999
     },
@@ -51,7 +53,8 @@
       },
       "price": {
         "loyal": 49.90,
-        "not_loyal": 74.90
+        "not_loyal": 74.90,
+        "without_landline": 108,07
       },
       "penalty": 999
     }
