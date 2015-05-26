@@ -46,31 +46,20 @@ define([
     tags.table = riot.mount('table-compare', {plans: plansTable, labels: labels } );
   }
 
-  _private.showPrices = function (){
-    var price;
-    item = _.find(prices, function(item) {
-      return item.slug === 'ilimitado_ddd';
-    });
-    riot.mount('#price-ilimitado-ddd', { price: item.price.fidelizado, small: true });
-    item = _.find(prices, function(item) {
-      return item.slug === 'ilimitado';
-    })
-    riot.mount('#price-ilimitado', { price: item.price.fidelizado, small: true });
-  }
-
+  var $vozTotal = $('#vozTotal');
   _public.addVozTotal = function (){
-    $('#vozTotal').find('.add').addClass('added')
+    $vozTotal.find('.add').addClass('added')
   }
 
   _private.bindRemoveVozTotal = function (){
-    $('#vozTotal').find('.rem').on('click', function (evt){
+    $vozTotal.find('.rem').on('click', function (evt){
       evt.preventDefault();
       tags.ModalPlanoFixo.remove();
     })
   }
 
   _public.removeVozTotal = function (){
-    $('#vozTotal').find('.add').removeClass('added')
+    $vozTotal.find('.add').removeClass('added')
   }
 
   return _public;
