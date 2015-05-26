@@ -17,7 +17,6 @@ define([
     _private.loadPlans()
     _private.bindOpenDetail();
     _private.bindRemoveVozTotal();
-    tags.ModalPlanoFixo = riot.mount('modal-planfixo', {})[0];
     oiMediator.subscribe( 'voz-total add', _public.addVozTotal );
     oiMediator.subscribe( 'voz-total remove', _public.removeVozTotal );
   };
@@ -42,8 +41,12 @@ define([
   _private.insertTable = function (data){
     var plansTable = _.filter(plans, function(plan, key){
       return plan.on_table;
-    })
+    });
     tags.table = riot.mount('table-compare', {plans: plansTable, labels: labels } );
+    var planModal = _.filter(plans, function(plan, key){
+      return plan.slug === 'fixo-ilimitado-com-ddd';
+    })[0]
+    tags.ModalPlanoFixo = riot.mount('modal-planfixo', {plan: planModal})[0];
   }
 
   var $vozTotal = $('#vozTotal');
