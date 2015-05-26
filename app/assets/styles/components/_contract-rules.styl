@@ -61,11 +61,12 @@
       text-transform uppercase
       color $white
       text-align center
+      letter-spacing remify(-3px)
       +above('m')
         text-align left
-        padding-right remify(50px)
-      +above('l')
         padding-right remify(70px)
+      +above('l')
+        padding-right remify(90px)
         font-size remify(57px)
         line-height remify(57px)
 
@@ -77,7 +78,7 @@
     background-color $white
     font-family $fontTextRegular
     font-size remify(16px)
-    overflow scroll
+    overflow-y scroll
     +above('m')
       height 100%
       width (100%  / 3 * 2)
@@ -86,6 +87,7 @@
     &_container
       +above('m')
         padding-left remify(50px)
+        padding-top: remify(200px)
       +above('l')
         padding-left remify(100px)
         max-width remify(780px)

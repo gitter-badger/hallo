@@ -1,0 +1,155 @@
+.modal-plan-fixo
+  background-color $white
+  position fixed
+  top 0
+  left 0
+  width 100%
+  z-index 10
+  height 100vh
+  overflow auto
+
+  &_container
+    max-width remify(1170px)
+    margin 0 auto
+    font-family $fontTextRegular
+
+  &_close
+    position fixed
+    top remify(30px)
+    right remify(30px)
+    width remify(30px)
+    height remify(30px)
+    cursor pointer
+    background-color transparent
+    border none
+    border-radius remify(2px)
+    font-family $fontTextRegular
+    background-image url(/assets/images/layout/fixo7.png)
+    background-repeat no-repeat
+    background-position center
+    color transparent
+
+  &_line
+    border 1px solid transparent
+    border-bottom 1px solid $black
+    margin remify(50px) 0
+    display block
+
+  &_header
+    height remify(400px)
+    background-color $green
+    padding-top remify(140px)
+    &_img
+      height remify(90px)
+      margin-bottom remify(50px)
+      background-image url(/assets/images/layout/fixo6.png)
+      background-repeat no-repeat
+      background-position 0 0
+    &_title
+      color $white
+      font-family $fontTitle
+      text-transform uppercase
+      font-size remify(57px)
+      float left
+    &_action
+      float right
+      margin-top remify(12px)
+      position relative
+      button
+        padding 0 remify(60px)
+        height remify(50px)
+        font-size remify(16px)
+        text-decoration none
+        cursor pointer
+      &_add
+          color $white
+          border 1px solid $white
+          background-color transparent
+          position relative
+          z-index 2
+          &:hover, &:focus, &:active
+            border-color $purple
+            color $purple
+            outline none
+          &.added
+            background-color $greenLight
+            color $white
+            border 1px solid $greenLight
+            &:hover, &:focus, &:active
+              border-color $greenLight
+              color $white
+            & + .modal-plan-fixo_header_action_rem
+              top remify(50px)
+              opacity 1
+
+      &_rem
+          background-color transparent
+          border none
+          color $white
+          opacity 0
+          position absolute
+          right 0
+          top 0
+          transition all .3s ease
+          z-index 1
+          &:hover, &:focus, &:active
+            outline none
+
+  &_main
+    padding remify(70px) 0
+    background-color $ehitr
+    &_container
+      max-width remify(1170px)
+      margin 0 auto
+    &_col
+      max-width remify(670px)
+
+    .table-compare
+      margin-bottom remify(60px)
+      td
+        height auto
+        padding remify(45px) 0
+        line-height remify(30px)
+        text-align left
+      span
+        display block
+        &.plan-name
+          font-size remify(16px)
+          font-family $fontTextBold
+        &.plan-info
+          font-size remify(16px)
+
+  &_desc
+    &_title
+      font-family $fontTextBold
+      display inline-block
+      font-size remify(16px)
+      margin-bottom remify(30px)
+      & + .modal_desc_title
+        margin-bottom remify(70px)
+    &_text
+      font-size remify(16px)
+      line-height remify(25px)
+
+    &_ord-list
+      counter-reset counter
+      li
+        margin-bottom remify(25px)
+        padding 0 0 0 remify(35px)
+        position relative
+        &:before
+          content counter(counter)
+          counter-increment counter
+          font-family $fontTextLight
+          color $gray
+          display inline-block
+          position absolute
+          top 0
+          left 0
+      a
+        color $green
+        text-decoration none
+        &:hover, &:focus, &:active
+          color $purple
+
+

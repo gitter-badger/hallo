@@ -1,27 +1,209 @@
 include ../_partials/head.jade
+include ../_partials/hero.jade
+include ../_partials/header.jade
+include ../_partials/_cards/_cards.jade
+include ../_partials/_content/_content.jade
 
 +head('fixo')
 
 body(itemtype="http://schema.org/WebPage")
-body
 
   header
     include ../_partials/build-plan.jade
     include ../_partials/menu.jade
-
-    include ../_partials/hero.jade
-    +heroFixo()
-
-    include ../_partials/header.jade
-    +headerFixo()
+    +hero()
+    +header({title: 'Fixo'})
 
   main
-    include ../_partials/_content/_content.jade
-    +buildContent('contentHeaderFixo', 'contentTableFixo')
+    .content
+      .content_header_container
+        
+        +contentHeader({
+          title: 'Escolha seu plano',
+          action: 'Compre agora'
+        })
+      
+      .content_table_container
+        .content_table
+          .table-compare_container
+            table.table-compare
+              caption Compare os planos de telefonia fixa
+              thead
+                tr
+                  td
+                  th Ligações locais para Fixo da Oi 
+                  th Ligações locais para fixo de outras operadoras
+                  th Ligações DDD para qualquer fixo
+              tbody
+                tr
+                  td.opt
+                    include /assets/images/icons/radio-check.svg
+                    span.promo Mais vendido
+                    oi-price#price-fixo-regular
+                  td
+                    span.tag Ilimitado
+                  td
+                    span.tag Ilimitado
+                  td
+                    span.tag Ilimitado
+                tr
+                  td.opt
+                    include /assets/images/icons/radio-check.svg
+                    oi-price#price-fixo-ddd
+                  td
+                    span.tag Ilimitado
+                  td
+                    span.bold 1.000 min
+                  td
+                    span.bold -
+
+      .content_addons_container
+        .content_addons
+          .addons_title
+            |Turbine 
+            br
+            | seu plano
+          .addons_list
+            ul
+              li.addons_item#vozTotal
+                .addons_item_img.img1
+                h4.addons_item_title Voz Total [Fixo + pré]
+                p.addons_item_desc Chip pré com ligações ilimitadas para fixo e celular, internet, torpedos e Oi WiFi.
+                .addons_item_actions
+                  button.add.open-voz-total
+                    span.textAdded Adicionado
+                    span.call Adicione
+                    span.price a partir de R$10
+                  button.rem Remover
+              li.addons_item
+                .addons_item_img.img2
+                h4.addons_item_title Ligações para Celular da Oi
+                p.addons_item_desc Adicione minutos locais ilimitados do seu fixo para Celular Oi.
+                .addons_item_actions
+                  button.add
+                    span.textAdded Adicionado
+                    span.call Adicione
+                    span.price R$5
+                  button.rem Remover
+              li.addons_item
+                .addons_item_img.img3
+                h4.addons_item_title Banda Larga da Oi
+                p.addons_item_desc Modem incluído + Oi WiFi. Escolha uma velocidade:
+                .addons_item_actions
+                  button.add.add-1-3
+                    span.textAdded Adicionado
+                    span.call 2 mega
+                    span.price R$49,90
+                  button.add.add-1-3
+                    span.textAdded Adicionado
+                    span.call 10 mega
+                    span.price R$59,90
+                  button.add.add-1-3
+                    span.textAdded Adicionado
+                    span.call 15 mega
+                    span.price R$69,90
+                  button.rem Remover
+  
+      .content_details_container
+        .content_details
+          
+          .details_item
+            .details_item_title-area
+              h3.details_item_title-area_title está incluído no plano
+              .details_item_title-area_desc
+                p 
+            .details_item_content-area
+              .details_item_content-area_desc
+                dl
+                  dt Ligações
+                  dd Minutos locais ilimitados para Fixo da Oi.
+                  dt.hide Ligações
+                  dd Minutos locais ilimitados para fixos de outras operadoras.
+                    span.subinfo No plano de R$ 49,90 a franquia é de 1.000 minutos
+                  dt.hide Ligações
+                  dd Minutos de longa distância ilimitados para fixos de qualquer operadora usando DDD 31.
+                    span.subinfo No plano de R$ 59,90
+                  dt Cortesias
+                  dd locais de Orelhão da Oi para Fixo da Oi.
+                  dt Serviços
+                  dd Chamadas em Espera
+
+          .details_item
+            .details_item_title-area
+              h3.details_item_title-area_title conheça o voz total (fixo + pré)
+              .details_item_title-area_desc
+                p Adicione a partir de R$ 10
+            .details_item_content-area
+              .details_item_content-area_desc
+                .list-bullets.img-fixo-pre(background-image="url(/assets/images/layout/fixo5.jpg)")
+                  ul
+                    li
+                      span Você fala ilimitado dentro e fora de casa.
+                    li
+                      span Pode adicionar até 3 chips para o seu pré.
+                    li
+                      span Tudo isso na conta do seu fixo.
+                  button.view.open-voz-total Conheça o Voz Total
+
+          .details_item
+            .details_item_title-area
+              h3.details_item_title-area_title Condições de compra
+              .details_item_title-area_desc
+                p 
+            .details_item_content-area
+              .details_item_content-area_desc
+                dl
+                  dt Instalação
+                  dd Até 12x de R$ 10. Em até 7 dias úteis. Seg. à sab. das 8h às 20h.
+                    a Acompanhe seu pedido online
+                  dt Entrega do chip
+                  dd Chip grátis. Em até 15 dias úteis (caso você contrate o Voz Total).
+                  dt Pagamento
+                  dd No débito automático, com desconto de R$ 10 nos 3 primeiros meses, ou no boleto bancário.
+                  dt Fidelização
+                  dd 12 meses. Cancelar no período gera multa. 
+                    a Consulte o regulamento.
+                  dt Período de adesão
+                  dd 01/01/15 à 30/03/15
+                  dt Informações legais 
+                  dd
+                    a Tarifas excedentes
+                    br
+                    a Contratos e regras de oferta
+                    br
+                    a Lista de todos os planos
+                  dt.line Outros planos
+                  dd.line
+                    a Plano Controle Ilimitado
+                    br
+                    a Plano Telefone Popular, Fixo Rural, Básico e Pasoo
+          
+          .details_item
+            .details_item_title-area
+              h3.details_item_title-area_title ajuda para comprar?
+            .details_item_content-area
+              .details_item_content-area_desc
+                a.button(href="#") Compre com um especialista 
+  
+  nav.footer_faq-menu
+    ul
+      li.faq-menu_icon
+        a(href="#") 
+          include ../../assets/images/icons/fixo.svg
+          span Já é cliente do  Fixo da Oi?
+      li
+        a(href="#") 2ª via de conta
+      li
+        a(href="#") Altere seu plano
+      li
+        a(href="#") Entenda a sua conta
+      li
+        a(href="#") Solicite um reparo
+      li
+        a(href="#") Perguntas frequentes
+  
+  modal-planfixo
 
   include ../_partials/footer.jade
 
-  channel-modal
-  contract-rules
-  
   script(src='/assets/scripts/vendor/require.js' data-main="/assets/scripts/main" async)

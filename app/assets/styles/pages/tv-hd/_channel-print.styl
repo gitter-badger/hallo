@@ -1,6 +1,12 @@
-.oi-channels_search-call
+.oi-channels_print-call
   max-width remify(1170px)
   margin 0 auto
+  svg
+    display inline-block
+    height remify(11px)
+    width remify(11px)
+    path
+      fill $green
   a
     color $green
     display block
@@ -10,21 +16,9 @@
     line-height remify(85px)
     text-decoration none
     padding 0 remify(20px)
-    border-bottom remify(1.2px) solid $grayLight
+    border-bottom remify(1px) solid $grayLight
     +above('m')
       border-bottom none
     +above('l')
       font-size remify(16px)
-      border-top remify(1.2px) solid $black
-      
-    svg
-      display inline-block
-      height remify(11px)
-      width remify(11px)
-      path
-        fill $green
-        
-    &:hover 
-      color $purple
-      svg
-        fill $purple
+      border-top remify(1px) solid $black
