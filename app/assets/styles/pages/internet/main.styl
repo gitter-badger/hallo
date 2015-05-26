@@ -13,8 +13,72 @@ body
     .content
       .content_table_container
         .content_table
-          padding-bottom 336px
+          padding-bottom remify(336px)
 
 .oi-banda-larga, .oi-internet-movel
   margin: 0 auto
   max-width: remify(1170px)
+
+.oi-banda-larga_table
+  background-position: center top
+  background-size: 100% auto
+  &:hover
+    background-image: url(../../../../assets/images/oi/table-banda-larga-mask.png)
+
+.oi-banda-larga_table
+  position: relative
+  display table
+  width 100%
+  table
+    thead
+      tr
+        th
+          height: remify(70px)
+    tbody
+      tr
+        td
+          height: remify(110px)
+
+
+.oi-banda-larga_table_heading
+  @extend .clearfix
+  position: absolute
+  display inline-block
+  width: 26%
+  vertical-align: top
+  background-color: $white
+  z-index: 1
+  +below('xs')
+    width: 40vw
+
+  table tbody tr td oi-price
+    pointer-events: none
+    height: remify(24px)
+
+
+.oi-banda-larga_table_scroll
+  @extend .clearfix
+  position: relative
+  left: 26%
+  display inline-block
+  width: 74%
+  vertical-align: top
+  z-index: 0
+  table tbody tr td
+    width: (100/3)%
+
+  +below('xs')
+    width: 60vw
+    left: 40vw
+    overflow-x: scroll
+    table
+      width: remify(185px*3)
+      tbody tr td
+        width: remify(185px)
+
+
+
+.oi-banda-larga_table_footer
+  @extend .clearfix
+  height remify(70px)
+  line-height remify(70px)
