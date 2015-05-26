@@ -43,8 +43,7 @@ define([
     var plansTable = _.filter(plans, function(plan, key){
       return plan.on_table;
     })
-
-    tags.ModalPlanoFixo = riot.mount('table-compare', {plans: plansTable, labels: labels } )[0];
+    tags.ModalPlanoFixo = riot.mount('table-compare', {plans: plansTable, labels: labels } );
   }
 
   _private.showPrices = function (){
