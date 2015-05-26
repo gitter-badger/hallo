@@ -1,0 +1,50 @@
+{
+  "meta":[],
+  "data":[
+    {
+      "name": "Banda Larga 15 Mega",
+      "slug": "banda-larga-15-mega",
+      "price": {
+        "fidelizado": 69.90,
+        "sem-fidelidade": 94.90
+      },
+      "speed": "15 Mega",
+      "modem": {
+        "model": "default",
+        "wifi": true
+      },
+      "oi-wifi": true,
+      "multa": 999
+    },
+    {
+      "name": "Banda Larga 10 Mega",
+      "slug": "banda-larga-10-mega",
+      "price": {
+        "fidelizado": 59.90,
+        "sem-fidelidade": 84.90
+      },
+      "speed": "10 Mega",
+      "modem": {
+        "model": "default",
+        "wifi": true
+      },
+      "oi-wifi": true,
+      "multa": 999
+    },
+    {
+      "name": "Banda Larga 2 Mega",
+      "slug": "banda-larga-2-mega",
+      "price": {
+        "fidelizado": 49.90,
+        "sem-fidelidade": 74.90
+      },
+      "speed": "2 Mega",
+      "modem": {
+        "model": "default",
+        "wifi": false
+      },
+      "oi-wifi": true,
+      "multa": 999
+    },
+  ]
+}
