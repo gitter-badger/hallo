@@ -1,6 +1,36 @@
 // forms
-formPaddingVertical = 1.125rem;
-formPaddingHorizontal = 2.25rem;
+$formPaddingVertical = 1.125rem;
+$formPaddingHorizontal = 2.25rem;
+
+@keyframes kf-radio-on {
+  0% {
+    top: 0.78125rem // 12.5px
+    left: 0.78125rem // 12.5px
+    width: 0rem // 0px
+    height: 0rem // 0px
+  }
+  100% {
+    top: 0.3125rem // 5px
+    left: 0.3125rem // 5px
+    width: 0.9375rem // 15px
+    height: 0.9375rem // 15px
+  }
+}
+
+@keyframes kf-radio-off {
+  0% {
+    top: 0.3125rem // 5px
+    left: 0.3125rem // 5px
+    width: 0.9375rem // 15px
+    height: 0.9375rem // 15px
+  }
+  100% {
+    top: 0.78125rem // 12.5px
+    left: 0.78125rem // 12.5px
+    width: 0rem // 0px
+    height: 0rem // 0px
+  }
+}
 
 input[type="checkbox"]
   position: relative
@@ -8,7 +38,7 @@ input[type="checkbox"]
   left: 0
   border: none
   width: 100%
-  height: formPaddingVertical*1.34
+  height: $formPaddingVertical*1.34
   &:hover
     &:before
       border-color: $purple
@@ -18,8 +48,8 @@ input[type="checkbox"]
     top: 0
     left: 0
     display: block
-    width: formPaddingVertical*1.34
-    height: formPaddingVertical*1.34
+    width: $formPaddingVertical*1.34
+    height: $formPaddingVertical*1.34
     border: 0.08rem solid $grayLight
     background-color: $white
     border-radius 0.125rem
@@ -30,11 +60,9 @@ input[type="checkbox"]
     top: 0.08rem
     left: 0.08rem
     display: block
-    width: formPaddingVertical*1.34
-    height: formPaddingVertical*1.34
-    transform: scale(0.66)
+    width: $formPaddingVertical*1.34
+    height: $formPaddingVertical*1.34
     background-color: $purple
-    transform-origin: 50% 50%
     border-radius 0.125rem
 
   &:checked::after
@@ -52,7 +80,7 @@ input[type="radio"]
   left: 0
   border: none
   width: 100%
-  height: formPaddingVertical*1.34
+  height: $formPaddingVertical*1.34
   &:hover
     &:before
       border-color: $green
