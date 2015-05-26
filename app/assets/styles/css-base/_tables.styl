@@ -2,94 +2,123 @@ $tablePaddingVertical = 2.5rem;
 $tablePaddingHorizontal = 1.5625rem;
 
 table
-	width: 100%
-	border-top: 0.08rem solid $black
-	border-bottom: 0.08rem solid $black
+  width: 100%
+  border-top: 0.08rem solid $black
+  border-bottom: 0.08rem solid $black
 
-	tr
-		&.hardline
-			td, th
-				border-top: 0.08rem solid $black
+  tr
+    &.hardline
+      td, th
+        padding: 0 0.9375rem // 15px
+        border-top: 0.08rem solid $black
 
-		td, th
-			font-weight: normal
-			display: table-cell !important
-			float: none !important
-			&.left
-				text-align: left
-			&.right
-				text-align: right
-			&.hardline
-				border-top: 0.08rem solid $black
+    td, th
+      position: relative
+      display: table-cell !important
+      padding: 0.625rem 0.9375rem // 15px
+      float: none !important
+      vertical-align: middle
+      font-weight: normal
+      &.left
+        text-align: left
+      &.right
+        text-align: right
+      &.hardline
+        border-top: 0.08rem solid $black
 
-	thead
-		width: 100%
-		border-bottom: 0.08rem solid $grayLight
-		th
-			position: relative
-			padding: $tablePaddingVertical $tablePaddingVertical
-			text-align: center
-			.hashtag
-				position: absolute
-				bottom: 0
-				margin-bottom: -(1.3125rem/2)
-				left: 50%
-				margin-left: -(3.9375rem/2)
-				outline: 0.55rem solid $white
-			.icon
-				display: inline-block
-				width: 2rem
-				height: 2rem
+  thead
+    width: 100%
+    border-bottom: 0.08rem solid $grayLight
+    th
+      position: relative
+      text-align: center
+      .hashtag
+        position: absolute
+        bottom: 0
+        margin-bottom: -(1.3125rem/2)
+        left: 50%
+        margin-left: -(3.9375rem/2)
+        outline: 0.55rem solid $white
+      .icon
+        display: inline-block
+        width: 2rem
+        height: 2rem
+      // &:last-child
+      //   padding-right: 0
+      // &:first-child
+      //   padding-left: 0
 
-	tbody
-		width: 100%
-		tr
-			&:first-child
-				td
-					border-top: none
-			td
-				position: relative
-				min-width: 2rem
-				height: auto
-				padding: $tablePaddingVertical $tablePaddingVertical
-				border-top: 0.08rem dashed $grayLight
-				text-align: center
-				vertical-align: middle
+  tbody
+    width: 100%
+    tr
+      &:first-child
+        td
+          border-top: none
+      td
+        position: relative
+        height: auto
+        border-top: 0.08rem dashed $grayLight
+        text-align: center
+        // &:last-child
+        //   padding-right: 0
+        // &:first-child
+        //   padding-left: 0
 
-				.left-bracer
-					position: absolute
-					top: 0;
-					right: 1rem
-					width: 1.6875rem
-					height: 100%
-					padding: 3rem 1.5625rem
-					.inner
-						position: relative
-						top: 0
-						left: 0
-						width: 1.6875rem
-						height: 100%
-						border-top: 0.08rem solid $grayLight
-						border-left: 0.08rem solid $grayLight
-						border-bottom: 0.08rem solid $grayLight
+        .left-bracer
+          position: absolute
+          top: 0;
+          right: 1rem
+          width: 1.6875rem
+          height: 100%
+          padding: 3rem 1.5625rem
 
-        fieldset input[type="radio"]
+          .inner
+            position: relative
+            top: 0
+            left: 0
+            width: 1.6875rem
+            height: 100%
+            border-top: 0.08rem solid $grayLight
+            border-left: 0.08rem solid $grayLight
+            border-bottom: 0.08rem solid $grayLight
+
+        fieldset
+          input[type="radio"]
             display: inline-block
             width: 1.5075rem
             float: left
 
-        oi-price
-          height: 1.5075rem
+        i.icon_check
+          position: relative
+          display: inline-block
+          width: 100%
+          min-height: 0.6875rem // 11px
+          font-size: 0.8125rem
+          svg
+            position: absolute
+            top: 0
+            left: 50%
+            display: block
+            width: 1rem // 16px
+            margin-left: -0.75rem // -12px
+          small
+            position: relative
+            top 1rem // 16px
+            left 0
+            display inline-block
+            width: 100%
+            white-space: nowrap
+            color: $grayLight
 
-	&.checkout
-		thead
-			tr
-				th
-					padding: $tablePaddingVertical 0
+  &.checkout
+    thead
+      tr
+        th
+          padding: $tablePaddingVertical 0
 
-		tbody
-			tr
-				td
-					font-size: 0.8125rem
-					padding: $tablePaddingVertical*0.34 0
+    tbody
+      tr
+        td
+          font-size: 0.8125rem
+          padding: $tablePaddingVertical*0.34 0
 
