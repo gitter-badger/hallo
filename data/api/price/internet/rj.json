@@ -1,50 +1,59 @@
 {
-  "meta":[],
-  "data":[
+  "meta": {
+    "features_labels": {
+      "1": "Velocidade",
+	  "2": "Modem incluso",
+	  "3": ["Oi WiFi", "ilimitado"]
+    }
+  },
+  "data": [
     {
-      "name": "Banda Larga 15 Mega",
+      "name": "Banda Larga 15 mega",
       "slug": "banda-larga-15-mega",
+      "best_seller": true,
+      "on_table": true,
+      "features": {
+        "1": "15 mega",
+		"2": [true, "com WiFi"],
+		"3": true
+      },
       "price": {
-        "fidelizado": 69.90,
-        "sem-fidelidade": 94.90
+        "loyal": 69.90,
+        "not_loyal": 94.90
       },
-      "speed": "15 Mega",
-      "modem": {
-        "model": "default",
-        "wifi": true
-      },
-      "oi-wifi": true,
-      "multa": 999
+      "penalty": 999
     },
-    {
-      "name": "Banda Larga 10 Mega",
+	{
+      "name": "Banda Larga 10 mega",
       "slug": "banda-larga-10-mega",
+      "best_seller": false,
+      "on_table": true,
+      "features": {
+        "1": "10 mega",
+		"2": [true, "com WiFi"],
+		"3": true
+      },
       "price": {
-        "fidelizado": 59.90,
-        "sem-fidelidade": 84.90
+        "loyal": 59.90,
+        "not_loyal": 84.90
       },
-      "speed": "10 Mega",
-      "modem": {
-        "model": "default",
-        "wifi": true
-      },
-      "oi-wifi": true,
-      "multa": 999
+      "penalty": 999
     },
-    {
-      "name": "Banda Larga 2 Mega",
+	{
+      "name": "Banda Larga 2 mega",
       "slug": "banda-larga-2-mega",
+      "best_seller": false,
+      "on_table": true,
+      "features": {
+        "1": "2 mega",
+		"2": [true, ""],
+		"3": true
+      },
       "price": {
-        "fidelizado": 49.90,
-        "sem-fidelidade": 74.90
+        "loyal": 49.90,
+        "not_loyal": 74.90
       },
-      "speed": "2 Mega",
-      "modem": {
-        "model": "default",
-        "wifi": false
-      },
-      "oi-wifi": true,
-      "multa": 999
-    },
+      "penalty": 999
+    }
   ]
 }
