@@ -1,4 +1,5 @@
 .oi-banda-larga_table
+
   .oi-banda-larga_table_heading
     table
       thead
@@ -12,6 +13,7 @@
               oi-price#plan-price-one(data-price="69,90")
         tr
           td
+            span.promo Mais vendido
             fieldset.price-fieldset
               input(type="radio",name="option-banda-larga")
               oi-price#plan-price-two(data-price="59,90")
@@ -58,5 +60,6 @@
               include /assets/images/icons/check.svg
 
 .oi-banda-larga_table_footer
-  | Esses são planos para clientes de Telefone Fixo da Oi. 
-  a(href="javascript:void(0);") Veja os planos fixo + banda larga
+  div
+    | Esses são planos para clientes de Telefone Fixo da Oi. 
+    a(href="javascript:void(0);") Veja os planos fixo + banda larga
