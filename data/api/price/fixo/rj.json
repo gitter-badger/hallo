@@ -1,58 +1,88 @@
 {
-  "meta": [],
+  "meta": {
+    "features_labels": {
+      "1": "Ligações locais para Fixo da Oi",
+      "2": "Ligações locais para fixo de outras operadoras",
+      "3": "Ligações DDD para qualquer fixo"
+    }
+  },
   "data": [
     {
       "name": "Fixo Ilimitado com DDD",
-      "slug": "ilimitado-ddd",
+      "slug": "fixo-ilimitado-com-ddd",
+      "best_seller": true,
+      "on_table": true,
+      "order": 1,
+      "features": {
+        "1": { "tag": true, "text": "Ilimitado"},
+        "2": { "tag": true, "text": "Ilimitado"},
+        "3": { "tag": true, "text": "Ilimitado"}
+      },
       "price": {
-        "fidelizado": 59.90,
-        "sem-fidelidade": 79.90
+        "loyal": 59.90,
+        "not_loyal": 79.90
       },
-      "adesao": {
-        "fidelizado": [120, "Até 12 de R$10,00 = R$120"],
-        "sem-fidelidade": 79.90
+      "adhesion": {
+        "loyal": [120, "Até 12 de R$10,00 = R$120"],
+        "not_loyal": 79.90
       },
-      "multa": 240,
+      "penalty": 240,
       "addons": {
-        "celular-oi": 5,
-        "chip-pre": 10,
-        "chip-pre-internet-ddd": 20,
+        "celular_oi": 5,
+        "chip_pre": 10,
+        "chip_pre_internet_ddd": 20
       }
     },
     {
       "name": "Fixo Ilimitado",
-      "slug": "ilimitado",
+      "slug": "fixo-ilimitado",
+      "best_seller": false,
+      "on_table": true,
+      "order": 2,
+      "features": {
+        "1": { "tag": true, "text": "Ilimitado"},
+        "2": { "tag": false, "text": "1.000 min"},
+        "3": { "tag": false, "text": "-"}
+      },
       "price": {
-        "fidelizado": 49.90,
-        "sem-fidelidade": 69.90
+        "loyal": 49.90,
+        "not_loyal": 69.90
       },
-      "adesao": {
-        "fidelizado": [120, "Até 12 de R$10,00 = R$120"],
-        "sem-fidelidade": 69.90
+      "adhesion": {
+        "loyal": [120, "Até 12 de R$10,00 = R$120"],
+        "not_loyal": 69.90
       },
-      "multa": 240,
+      "penalty": 240,
       "addons": {
-        "celular-oi": 5,
-        "chip-pre": 10,
-        "chip-pre-internet-ddd": 20,
+        "celular_oi": 5,
+        "chip_pre": 10,
+        "chip_pre_internet_ddd": 20
       }
     },
     {
       "name": "Fixo Controle Ilimitado",
-      "slug": "ilimitado-controle",
+      "slug": "fixo-controle-ilimitado",
+      "best_seller": false,
+      "on_table": false,
+      "order": null,
+      "features": {
+        "1": null,
+        "2": null,
+        "3": null
+      },
       "price": {
-        "fidelizado": 49.90,
-        "sem-fidelidade": 69.90
+        "loyal": 49.90,
+        "not_loyal": 69.90
       },
-      "adesao": {
-        "fidelizado": [120, "Até 12 de R$10,00 = R$120"],
-        "sem-fidelidade": 69.90
+      "adhesion": {
+        "loyal": [120, "Até 12 de R$10,00 = R$120"],
+        "not_loyal": 69.90
       },
-      "multa": 240,
+      "penalty": 240,
       "addons": {
-        "celular-oi": 5,
-        "chip-pre": 10,
-        "chip-pre-internet-ddd": 20,
+        "celular_oi": 5,
+        "chip_pre": 10,
+        "chip_pre_internet_ddd": 20
       }
     }
   ]

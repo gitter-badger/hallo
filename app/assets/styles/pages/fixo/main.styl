@@ -45,6 +45,10 @@ body
 
   tr
     height remify(90px)
+    cursor pointer
+
+    &.selected
+      background-color $grayLighter
 
   th
     height remify(90px)
@@ -61,6 +65,7 @@ body
     position relative
     &.opt
       width remify(210px)
+      padding-left remify(25px)
 
   .promo
     background-color $orangeLight
@@ -91,25 +96,6 @@ body
     font-size remify(13px)
     padding 0 remify(10px)
     text-transform lowercase
-
-  svg
-    width remify(25px)
-    margin 0 remify(5px) 0 0
-    display inline-block
-    cursor pointer
-    position absolute
-    top remify(21px)
-    left remify(25px)
-    circle
-      stroke $green
-      &.icon-inner
-        stroke $white
-        fill $white
-      &.icon-outer
-        stroke $grayLight
-    &:hover
-      circle.icon-inner
-        fill $green
 
   oi-price
     display inline-block
