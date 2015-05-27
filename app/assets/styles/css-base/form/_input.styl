@@ -1,0 +1,38 @@
+@keyframes kf-input-on {
+  0% { top: 0; }
+  100% { top: sizeEyebrow*0.55; }
+}
+@keyframes kf-input-off {
+  0% { top: sizeEyebrow*0.55; }
+  100% { top: 0; }
+}
+
+&.text
+  input[type="text"]
+    position: relative
+    top: 0
+    left: 0
+    border: none
+    width: 100%
+    font-size: 1rem
+
+  &.last-line
+    &.filling
+      borderAll(colorMagenta)
+    &.error
+      borderAll(colorAlertRed)
+
+  &.filling
+    input
+      animation: kf-input-on 0.21s ease
+      animation-fill-mode: forwards
+
+  &.filling-off
+    input
+      animation: kf-input-off 0.21s ease
+      animation-fill-mode: forwards
+
+  &.filled, &.success, &.error
+    input
+      top: sizeEyebrow*0.89
+

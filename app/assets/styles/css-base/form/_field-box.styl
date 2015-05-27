@@ -1,0 +1,155 @@
+borderSide(side, color)
+    border-{side}-color: color
+
+roundBorderSide(side, value)
+  border-{side}-radius: value;
+
+roundBorderAll(value)
+    roundBorderSide(top-left, value)
+    roundBorderSide(top-right, value)
+    roundBorderSide(bottom-left, value)
+    roundBorderSide(bottom-right, value)
+
+borderAll(color)
+    borderSide(top, color)
+    borderSide(right, color)
+    borderSide(bottom, color)
+    borderSide(left, color)
+
+hideText()
+  font-size: 1px
+  text-indent: 333%
+  overflow: hidden
+  white-space: nowrap
+
+@keyframes kf-placeholder-on {
+  0% {
+    top: $formPaddingVertical + (sizeEyebrow/4);
+    transform: scale(1);
+  }
+  100% {
+    top: sizeEyebrow*0.92;
+    transform: scale(0.66);
+  }
+}
+@keyframes kf-placeholder-off {
+  0% {
+    top: sizeEyebrow*0.92;
+    transform: scale(0.66);
+  }
+  100% {
+    top: $formPaddingVertical + (sizeEyebrow/4);
+    transform: scale(1);
+  }
+}
+
+filledBase()
+  label
+    top: sizeEyebrow*0.92
+    transform: scale(0.66)
+
+
+
+.field-box
+  position: relative
+  display: block
+  min-height: ($formPaddingVertical*2) + 1.55rem
+  padding: $formPaddingVertical
+  color: colorBlack
+  border-collapse: collapse
+  border-spacing: 0
+  border-width: 0.08rem
+  border-style: solid
+  border-color: transparent
+
+  borderSide(top, colorLightGray)
+  borderSide(left, colorLightGray)
+  &:last-child
+    borderSide(top, colorLightGray)
+    borderSide(right, colorLightGray)
+
+  &.round-top-left
+    roundBorderSide(top-left, borderRoundSize)
+  &.round-top-right
+    roundBorderSide(top-right, borderRoundSize)
+  &.round-bottom-left
+    roundBorderSide(bottom-left, borderRoundSize)
+  &.round-bottom-right
+    roundBorderSide(bottom-right, borderRoundSize)
+  &.round-all
+    border-radius: borderRoundSize
+
+  &:hover
+    borderAll(colorMagenta)
+
+  &.clear-border
+    border-color: transparent
+
+  label
+    position: absolute
+    pointer-events: none
+    z-index: 9
+    top: $formPaddingVertical + (sizeEyebrow/4); left: $formPaddingVertical
+    font-size: 1rem
+    line-height: 1rem
+    color: colorGray
+    font-size: sizeEyebrow
+    line-height: sizeEyebrow
+    transform-origin: top left
+
+  &.last-line
+    borderSide(bottom, colorLightGray)
+    &:hover
+      borderAll(colorMagenta)
+
+  &.filling
+    borderAll(colorMagenta);
+    label
+      animation: kf-placeholder-on 0.21s ease
+      animation-fill-mode: forwards
+
+  &.filling-off
+    label
+      animation: kf-placeholder-off 0.21s ease
+      animation-fill-mode: forwards
+
+  &.filled
+    filledBase()
+
+  &.success
+    filledBase()
+    label
+      &:after
+        position: absolute
+        content: " "
+        display: inline-block
+        width: 1rem
+        height: 1rem
+        top: -0.1rem
+        right: -1rem
+        background-image: url(imageEndpoint+'success.svg')
+
+  &.error
+    filledBase()
+    borderAll(colorAlertRed)
+    label
+      color: colorAlertRed
+      &:after
+        position: absolute
+        content: " "
+        display: inline-block
+        width: 1rem
+        height: 1rem
+        top: -0.1rem
+        right: -1rem
+        background-image: url(imageEndpoint+'error.svg')
+
+  @import "_input.styl";
+  @import "_select.styl";
+  @import "_checkbox.styl";
+  @import "_radio.styl";
+  @import "_search.styl";
+
+
+
+

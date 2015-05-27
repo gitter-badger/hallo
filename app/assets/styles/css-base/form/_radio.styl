@@ -1,0 +1,79 @@
+@keyframes kf-radio-on {
+  0% {
+    top: 0.78125rem // 12.5px
+    left: 0.78125rem // 12.5px
+    width: 0rem // 0px
+    height: 0rem // 0px
+  }
+  100% {
+    top: 0.3125rem // 5px
+    left: 0.3125rem // 5px
+    width: 0.9375rem // 15px
+    height: 0.9375rem // 15px
+  }
+}
+
+@keyframes kf-radio-off {
+  0% {
+    top: 0.3125rem // 5px
+    left: 0.3125rem // 5px
+    width: 0.9375rem // 15px
+    height: 0.9375rem // 15px
+  }
+  100% {
+    top: 0.78125rem // 12.5px
+    left: 0.78125rem // 12.5px
+    width: 0rem // 0px
+    height: 0rem // 0px
+  }
+}
+
+
+
+&.radio
+  label
+    top: $formPaddingVertical*1.34
+    padding-left: $formPaddingHorizontal
+
+  input[type="radio"]
+    position: relative
+    top: 0
+    left: 0
+    border: none
+    width: 100%
+    height: $formPaddingVertical*1.34
+    &:hover
+      &:before
+        border-color: $green
+    &:before
+      content: " "
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      width: 1.5625rem // 25px
+      height: 1.5625rem // 25px
+      border: 0.08rem solid $grayLight
+      background-color: $white
+      border-radius 50%
+
+    &:after
+      content: " "
+      position: absolute
+      top: 0.3125rem // 5px
+      left: 0.3125rem // 5px
+      display: block
+      width: 0.9375rem // 15px
+      height: 0.9375rem // 15px
+      background-color: $green
+      border-radius 50%
+
+    &:checked::after
+      animation: kf-radio-on 0.21s ease
+      animation-fill-mode: forwards
+
+    &:not(:checked)
+      &:after
+        animation: kf-radio-off 0.21s ease
+        animation-fill-mode: forwards
+
