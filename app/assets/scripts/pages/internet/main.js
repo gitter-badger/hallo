@@ -12,6 +12,8 @@ define([
     console.log('internet, _public.init');
     tables.init();
     modals.init();
+
+    scroll.init();
   };
 
   return _public;
