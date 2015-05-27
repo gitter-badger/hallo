@@ -53,7 +53,7 @@ filledBase()
 .field-box
   position: relative
   display: block
-  min-height: ($formPaddingVertical*2) + 1.55rem
+  min-height: 3.125rem + 1.25rem
   padding: $formPaddingVertical
   color: colorBlack
   border-collapse: collapse
@@ -89,7 +89,8 @@ filledBase()
     position: absolute
     pointer-events: none
     z-index: 9
-    top: $formPaddingVertical + (sizeEyebrow/4); left: $formPaddingVertical
+    top: 1.6875rem // 30px
+    left: 1.25rem // 20px
     font-size: 1rem
     line-height: 1rem
     color: colorGray
@@ -144,11 +145,44 @@ filledBase()
         right: -1rem
         background-image: url(imageEndpoint+'error.svg')
 
-  @import "_input.styl";
-  @import "_select.styl";
-  @import "_checkbox.styl";
-  @import "_radio.styl";
-  @import "_search.styl";
+  &.radio
+    label
+      top: $formPaddingVertical*1.34
+      padding-left: $formPaddingHorizontal
+
+  &.checkbox
+    label
+      top: $formPaddingVertical*1.34
+      padding-left: $formPaddingHorizontal
+
+  &.text
+  &.last-line
+    &.filling
+      borderAll(colorMagenta)
+    &.error
+      borderAll(colorAlertRed)
+
+  &.filling
+    input
+      animation: kf-input-on 0.21s ease
+      animation-fill-mode: forwards
+
+  &.filling-off
+    input
+      animation: kf-input-off 0.21s ease
+      animation-fill-mode: forwards
+
+  &.filled, &.success, &.error
+    input
+      top: sizeEyebrow*0.89
+
+  // &.search
+
+@import "_input.styl";
+@import "_checkbox.styl";
+@import "_radio.styl";
+@import "_search.styl";
+// @import "_select.styl";
 
 
 
