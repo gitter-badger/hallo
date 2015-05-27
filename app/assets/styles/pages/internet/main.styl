@@ -18,11 +18,20 @@ body
             width: (100/2)%
             +below('xs')
               width 50%
+    .cards.open
+      .cards_container
+        .cards_container_box
+          max-width: 100%
+
     .content
       .content_header_container
+        position: relative
         +below('xs')
           display none
+      .content_header
+        border-bottom none
       .content_table_container
+        top 0
         .content_table
           padding-bottom remify(336px)
           top 0
