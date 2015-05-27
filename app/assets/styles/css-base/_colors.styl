@@ -58,15 +58,39 @@ $bg-orangeLight
   background-color $orangeLight
 
 // Gradients
-$gradient-green
-  background-image: linear-gradient( 0deg, $greenLight, $green )
+.gradient-green
+  background-image linear-gradient(0deg, $greenLight 34%, $green 100%)
 
-$gradient-purple
-  background-image: linear-gradient( 0deg, $purpleLight, $purple )
+.gradient-purple
+  background-image linear-gradient(0deg, $purpleLight 34%, $purple 100%)
 
-$gradient-orange
-  background-image: linear-gradient( 0deg, $orangeLight, $orange )
+.gradient-orange
+  background-image linear-gradient(0deg, $orangeLight 34%, $orange 100%)
 
+
+
+
+// Anmated Gradients
+@keyframes kf-background {
+  0% { background-size: 100% 100%; }
+  66% { background-size: 100% 155%; }
+  100% { background-size: 100% 100%; }
+}
+
+.gradient-animate-green
+  background-color $green
+  animation kf-background 6.1s infinite
+  background-image linear-gradient(0deg, $greenLight 34%, $green 100%)
+
+.gradient-animate-purple
+  background-color $purple
+  animation kf-background 6.1s infinite
+  background-image linear-gradient(0deg, $purpleLight 34%, $purple 100%)
+
+.gradient-animate-orange
+  background-color $orange
+  animation kf-background 6.1s infinite
+  background-image linear-gradient(0deg, $orangeLight 34%, $orange 100%)
 
 
 
