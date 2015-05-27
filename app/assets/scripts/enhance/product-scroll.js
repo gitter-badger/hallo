@@ -29,7 +29,7 @@ define([
   var contentTable = document.querySelector('.content_table');
 
   // table
-  var tableLists = document.querySelector('.oi-channels_lists-container');
+  var tableLists = document.querySelector('.content_table_container');
 
   // sizes
   var cardSize = cardsContainerBox.getBoundingClientRect().height;
@@ -58,7 +58,7 @@ define([
 
     _private.scrollSpeed();
     _private.scroller();
-    _private.keys();
+    // _private.keys();
     _private.clicks();
     _private.updateOnResize();
     _private.checkHash();
@@ -113,10 +113,10 @@ define([
     if (hasSelected > 0){
       return;
     } else {
-      oiCard[2].className += 'selected';
+      oiCard[oiCard.length-1].className += 'selected';
     }
 
-    return oiCard[2];
+    return oiCard[oiCard.length-1];
   };
 
   /**
@@ -204,19 +204,11 @@ define([
       content.style.opacity = _private.baseFromPoint(y, initialPoint, finalPoint, 1);
     };
 
-    // change table opacity
-    // TODO: performance check
-    // TODO: bound to dynamicTable method
-    var dynamicTableOpacity = function(y, initialPoint, finalPoint){
-      var p = _private.baseFromPoint(y, initialPoint, finalPoint, 10);
-      content.style.opacity = (p/10);
-    };
-
     // change cards height
     // TODO: performance check
     var dynamicCards = function(y, initialPoint, finalPoint){
       var p = _private.baseFromPoint(y, initialPoint, finalPoint, 100);
-      for (var i = 0; i < 3; i++) {
+      for (var i = 0; i < oiCard.length; i++) {
         oiCard[i].style.height = (100 - p)+'%';
       }
     };
@@ -225,7 +217,7 @@ define([
     // TODO: performance check
     var dynamicTitle = function(y, initialPoint, finalPoint){
       var thinTitle = (y >= initialPoint);
-      for (var i = 0; i < 3; i++) {
+      for (var i = 0; i < oiCardHeader.length; i++) {
         if (thinTitle) {
           if (!oiCardHeader[i].classList.contains('thin')){
             oiCardHeader[i].className += ' thin';
