@@ -35,7 +35,6 @@
       display block
       width 62%
       height 100%
-      overflow hidden
       font-size remify(42px)
       text-transform uppercase
     +above('l')
@@ -324,8 +323,19 @@
         border-top remify(3px) solid $orange
         border-bottom remify(2px) solid transparent
 
-
-
-
-
-
+  // .content_header_alert
+  &_alert
+    position: relative
+    display: table
+    width: 100%
+    max-width: remify(1170px)
+    height: remify(80px)
+    margin: 0 auto
+    background-color: $grayLighter
+    color: $black
+    h4
+      display: table-cell
+      width: 100%
+      vertical-align: middle
+      text-align: center
+      padding: 0 remify(10px)
