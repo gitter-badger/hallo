@@ -89,8 +89,6 @@
       self.open();
     });
 
-    self.open();
-
   </script>
 
 </modal-plan-internet-disponibilidade>
