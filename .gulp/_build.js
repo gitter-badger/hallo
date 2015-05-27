@@ -207,17 +207,21 @@ gulp.task('build-templates', function(){
   gulp.src(config.path.src.tags)
     .pipe($.plumber({errorHandler: helpers.notifyError}))
     .pipe($.changed(config.path.dist.tags))
+    .pipe($.filter(helpers.filterJade))
+    .pipe($.jade({
+      pretty: true,
+      basedir: 'app'
+    }))
     .pipe($.flatten())
     .pipe($.riot({
-      compact: true,
-      // template: 'jade'
+      compact: true
     }))
     .pipe($.uglify({
       mangle: false
     }))
     .pipe($.wrap({ src: '.gulp/require-wrap.js.txt'}))
     .pipe(gulp.dest(config.path.dist.tags))
-    .pipe($.gzip())
+    .pipe($.if(config.isProd, $.gzip()))
     .pipe(gulp.dest(config.path.dist.tags))
 });
 

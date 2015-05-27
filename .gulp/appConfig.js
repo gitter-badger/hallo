@@ -17,20 +17,22 @@ var appConfig = (function() {
     data: {
 
     },
+
     src: {
       data: './data/**/*.yml',
       jade: './app/views/**/*.jade',
       partials: './app/views/_partials/**/*.jade',
       stylus: './app/assets/styles/**/*.styl',
       scripts: './app/assets/scripts/**/*.js',
-      tags: './app/assets/scripts/**/*.tag',
+      tags: './app/assets/scripts/**/*.{tag,jade}',
       components: './app/assets/styles/components/**/*.styl',
       fonts: './app/assets/fonts/**/*.{eot,svg,ttf,woff,woff2}',
       images: './app/assets/images/**/*.{jpg,jpeg,png,gif,svg}',
       icons: './app/assets/images/icons/**/*.svg',
       bower: './bower_components/',
-      api: './data/api/**/*.json'
+      api: './data/api/**/*.json',
     },
+
     dist: {
       root: './dist/',
       css: './dist/assets/styles/',
@@ -40,7 +42,7 @@ var appConfig = (function() {
       scripts: './dist/assets/scripts/',
       tags: './dist/assets/scripts/tags/',
       api: './dist/api/'
-    }
+    },
 
   }
 
