@@ -3,6 +3,14 @@
 
 .product-cheat-sheet_row
   @extend .clearfix
+  margin-bottom: remify(30px)
+
+  hr
+    height: remify(1.2px)
+    border: 0
+    margin: remify(5px) 0 remify(25px)
+    background-color: $grayLight
+
 
 .product-cheat-sheet_column-left
   @extend .clearfix
@@ -13,12 +21,13 @@
   h2
     font-family: $fontTitle
     font-size: remify(21px)
-
+    line-height: 1.21em
 
 .product-cheat-sheet_column-right
   @extend .clearfix
   float: left
   width: remify(970px)
+
 
 
 .product-cheat-sheet_data-list
@@ -41,7 +50,6 @@
       padding-bottom: 0.55em
       line-height: 1.34em
 
-
 .product-cheat-sheet_app-list
   h5
     padding-bottom: remify(30px)
@@ -49,13 +57,25 @@
     font-size: remify(13px)
 
   ul
+    width: remify(480px)
     li
       width: remify(70px)
       height: remify(190px)
-      margin-right: 30px
+      margin: 0 remify(30px) remify(30px) 0
       float: left
       font-size: remify(11px)
       em
         display: inline-block
         font-style: italic
         color: $gray
+
+.product-cheat-sheet_action-area
+  min-height: remify(165px)
+
+.product-cheat-sheet_legal-text
+  padding-top: remify(42px)
+  border-top: remify(1.2px) solid $grayLight
+  font-size: remify(11px)
+  color: $gray
+
+
