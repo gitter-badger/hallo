@@ -318,6 +318,8 @@ channel-modal
   height: 100%
   background-color: $white
   z-index: 9999
+  +below('xs')
+    overflow-y auto
 
 .modal_close
   position fixed
@@ -334,6 +336,12 @@ channel-modal
   text-indent 333%
   overflow hidden
   cursor pointer
+  +below('xs')
+    top remify(20px)
+    right remify(20px)
+    width remify(16px)
+    height remify(16px)
+
 
 
 .modal_header_logo
@@ -347,6 +355,11 @@ channel-modal
   background-size auto
   background-color transparent
   background-repeat no-repeat
+  +below('xs')
+    top remify(15px)
+    left remify(20px)
+    width remify(52px)
+    height remify(55px)
 
 .modal_header_title
   @extend $title-medium
@@ -358,35 +371,40 @@ channel-modal
   letter-spacing -0.046em
   line-height 0.98em
   color $white
+  +below('xs')
+    position relative
+    top 0
+    font-size remify(42px)
+    padding remify(98px) remify(20px) remify(20px) remify(20px)
 
 .modal_container
   padding remify(215px) 0
   width 79%
   margin 0 auto
+  +below('xs')
+    width 100%
+    padding remify(68px) remify(20px)
 
 .modal_container_row
   @extend .clearfix
   h5
-    padding remify(30px) 0
+    padding remify(10px) 0 remify(20px) 0
 
-.modal_container_half-left
-  @extends .clearfix
-  width: 50%
-  float: left
-  padding-right remify(15px)
-
-.modal_container_half-right
-  @extends .clearfix
-  width: 50%
-  float: left
-  padding-left remify(15px)
 
 .modal_column-left
-  position fixed
   top 0
   left 0
-  width 33.3%
-  height 100vh
+  +below('xs')
+    position: relative
+    width 100%
+    height auto
+    padding-bottom remify(20px)
+  +above('xs')
+    position fixed
+    width 33.3%
+    height 100vh
+
+
 
 .modal_column-right
   position fixed
@@ -396,7 +414,34 @@ channel-modal
   height 100vh
   overflow-y auto
   overflow-x hidden
+  +below('xs')
+    position relative
+    top 0
+    left 0
+    width 100%
+    height auto
 
+
+
+.modal_container_half-left
+  @extends .clearfix
+  width: 50%
+  float: left
+  padding-right remify(15px)
+  +below('xs')
+    width 100%
+    padding-right 0
+    padding-bottom remify(20px)
+
+.modal_container_half-right
+  @extends .clearfix
+  width: 50%
+  float: left
+  padding-left remify(15px)
+  +below('xs')
+    width 100%
+    padding-left 0
+    padding-bottom remify(20px)
 
 
 
