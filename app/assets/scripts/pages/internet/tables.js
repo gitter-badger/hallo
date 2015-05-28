@@ -5,7 +5,8 @@ define([
   'tags/oi-price',
   'tags/table-internet-banda-larga',
   'tags/table-internet-banda-larga-mais-fixo',
-  ], function($, riot, tagPrice, tagTableInternetBandaLarga, tagTableInternetBandaLargaMaisFixo){
+  'tags/table-internet-movel'
+  ], function($, riot, tagPrice, tagTableInternetBandaLarga, tagTableInternetBandaLargaMaisFixo, tableInternetMovel){
 
   var _private = {};
   var _public = {};
@@ -19,6 +20,10 @@ define([
 
     oiMediator.subscribe('table-internet-banda-larga event mount',  _private.tableMountComplete);
     oiMediator.subscribe('table-internet-banda-larga-mais-fixo event mount',  _private.tableMountComplete);
+
+    oiMediator.subscribe('scroll changeCardTo', _private.changeTable);
+
+    oiMediator.subscribe('table-internet-banda-larga mount', _private.loadAndMountTableBandaLarga);
 
     _private.bindBandaLargaToggle();
     _private.loadAndMountDefaultTable();
@@ -40,7 +45,14 @@ define([
     });
   };
 
+  _private.loadAndMountTableMovel = function (){
+    $.getJSON('/api/price/banda-larga-mais-fixo/rj.json', function(json) {
+      tags.tableInternetBandaLargaMaisFixo = riot.mount('table-internet', 'table-internet-movel', {plans: json.data, labels: json.meta.features_labels } );
+    });
+  };
+
   _private.bindBandaLargaToggle = function(){
+
     $('body').on('click', '#toggle-banda-larga-mais-fixo', function(e){
       riot.mount('content-header-alert', 'content-header-alert-message-banda-larga-mais-fixo', {});
       _private.loadAndMountTableBandaLargaMaisFixo();
@@ -50,7 +62,14 @@ define([
       riot.mount('content-header-alert', 'content-header-alert', {});
       _private.loadAndMountTableBandaLarga();
     });
+  };
 
+  _private.changeTable = function(slug){
+    if (slug == 'internet-movel-3g-4g') {
+      _private.loadAndMountTableMovel();
+    } else if (slug == 'banda-larga-da-oi') {
+      _private.loadAndMountTableBandaLarga();
+    }
   };
 
 

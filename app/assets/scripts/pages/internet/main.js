@@ -28,6 +28,8 @@ define([
     formAnime.init();
 
     oiMediator.subscribe('table-internet-banda-larga event', _private.dispatchScroll);
+
+    oiMediator.subscribe('scroll scrollToLockPosition', scroll.scrollToLockPosition);
   };
 
   _private.dispatchScroll = function(event){
