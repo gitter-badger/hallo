@@ -1,0 +1,10 @@
+{
+    "meta": { },
+    "data": [
+        { "status": true },
+        { "status": false },
+        { "status": true },
+        { "status": false },
+        { "status": true }
+    ]
+}
