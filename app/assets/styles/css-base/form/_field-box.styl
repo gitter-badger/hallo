@@ -1,3 +1,82 @@
+@keyframes kf-checkbox-on {
+  0% { transform: scale(0.08) }
+  100% { transform: scale(0.66) }
+}
+@keyframes kf-checkbox-off {
+  0% {
+    transform: scale(0.66);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+
+
+@keyframes kf-radio-on {
+  0% {
+    top: 0.78125rem // 12.5px
+    left: 0.78125rem // 12.5px
+    width: 0rem // 0px
+    height: 0rem // 0px
+  }
+  100% {
+    top: 0.3125rem // 5px
+    left: 0.3125rem // 5px
+    width: 0.9375rem // 15px
+    height: 0.9375rem // 15px
+  }
+}
+
+@keyframes kf-radio-off {
+  0% {
+    top: 0.3125rem // 5px
+    left: 0.3125rem // 5px
+    width: 0.9375rem // 15px
+    height: 0.9375rem // 15px
+  }
+  100% {
+    top: 0.78125rem // 12.5px
+    left: 0.78125rem // 12.5px
+    width: 0rem // 0px
+    height: 0rem // 0px
+  }
+}
+
+
+
+@keyframes kf-placeholder-on {
+  0% {
+    top: $formPaddingVertical + (sizeEyebrow/4);
+    transform: scale(1);
+  }
+  100% {
+    top: sizeEyebrow*0.92;
+    transform: scale(0.66);
+  }
+}
+@keyframes kf-placeholder-off {
+  0% {
+    top: sizeEyebrow*0.92;
+    transform: scale(0.66);
+  }
+  100% {
+    top: $formPaddingVertical + (sizeEyebrow/4);
+    transform: scale(1);
+  }
+}
+
+@keyframes kf-input-on {
+  0% { top: 0; }
+  100% { top: 0.875rem; }
+}
+@keyframes kf-input-off {
+  0% { top: 0.875rem; }
+  100% { top: 0; }
+}
+
 borderSide(side, color)
     border-{side}-color: color
 
@@ -21,27 +100,6 @@ hideText()
   text-indent: 333%
   overflow: hidden
   white-space: nowrap
-
-@keyframes kf-placeholder-on {
-  0% {
-    top: $formPaddingVertical + (sizeEyebrow/4);
-    transform: scale(1);
-  }
-  100% {
-    top: sizeEyebrow*0.92;
-    transform: scale(0.66);
-  }
-}
-@keyframes kf-placeholder-off {
-  0% {
-    top: sizeEyebrow*0.92;
-    transform: scale(0.66);
-  }
-  100% {
-    top: $formPaddingVertical + (sizeEyebrow/4);
-    transform: scale(1);
-  }
-}
 
 filledBase()
   label
@@ -178,12 +236,10 @@ filledBase()
 
   // &.search
 
-@import "_input.styl";
-@import "_checkbox.styl";
-@import "_radio.styl";
-@import "_search.styl";
-// @import "_select.styl";
-
-
+@require "_input.styl";
+@require "_checkbox.styl";
+@require "_radio.styl";
+// @require "_search.styl";
+// @require "_select.styl";
 
 
