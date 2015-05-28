@@ -3,14 +3,27 @@ $tablePaddingHorizontal = 1.5625rem;
 
 table
   width: 100%
-  border-top: 0.08rem solid $black
+  // border-top: 0.08rem solid $black
   border-bottom: 0.08rem solid $black
+
+  caption
+    display none
 
   tr
     &.hardline
       td, th
         padding: 0 0.9375rem // 15px
         border-top: 0.08rem solid $black
+
+    &.hover
+      cursor pointer
+      background-color $grayLighter
+      input[type="radio"]
+        &:before
+          border-color: $green
+
+    &.selected, &.selected.hover
+      background-color $grayLighter
 
     td, th
       position: relative
@@ -43,6 +56,11 @@ table
         display: inline-block
         width: 2rem
         height: 2rem
+      .subtitle
+        @extends .clearfix
+        position: relative
+        display inline-block
+
       // &:last-child
       //   padding-right: 0
       // &:first-child
@@ -100,6 +118,7 @@ table
             left: 50%
             display: block
             width: 1rem // 16px
+            height: 1rem // 16px
             margin-left: -0.75rem // -12px
           small
             position: relative
