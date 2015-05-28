@@ -46,6 +46,11 @@ var helpers = (function() {
     })(err);
     this.emit('end');
   };
+    
+  _public.notifyAlert = function(message) {
+    notify(message);
+    this.emit('end');
+  };
 
 
   _public.filterPartials = function(file) {
