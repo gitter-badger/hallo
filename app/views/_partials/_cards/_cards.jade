@@ -41,7 +41,6 @@ mixin cardsInternet(cards)
     .cards_container
       .cards_container_box
         each card in cards.data
-          - console.log(card.title, card.list.items.length);
           oi-card
             a(href="#" data-slug=card.slug class="oi-card "+ (card.active == 1 ? 'active': '') )
               .oi-card_header
