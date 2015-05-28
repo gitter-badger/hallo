@@ -56,8 +56,12 @@ button.basic, .button.basic
   text-align center
   color inherit
   cursor pointer
+  &:hover
+    color $purple
+    border-color $purple
 
 button.filled, .button.filled
+  width auto
   height remify(50px)
   background-color $orangeLight
   border-left: remify(3px) solid transparent
@@ -69,23 +73,13 @@ button.filled, .button.filled
   text-align center
   text-decoration none
   color $black
-  padding: remify(10px) remify(30px)
-  +below('s')
-    position fixed
-    bottom 0
-    left 0
-    display block
-    width 100%
-    height remify(62px)
-    border-radius 0
-    padding: remify(10px) remify(30px)
-  +above('l')
-    display inline-block
-    width remify(138px)
-  +above('xl')
-    width remify(170px)
+  padding: remify(12px) remify(30px)
   &:hover
+    color $black
     border-bottom remify(3px) solid transparent
   &:active
+    color $black
     border-top remify(3px) solid $orange
     border-bottom remify(2px) solid transparent
+  em
+    font-family $fontTextRegular
