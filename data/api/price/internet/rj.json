@@ -1,10 +1,10 @@
 {
   "meta": {
-    "features_labels": {
-      "1": "Velocidade",
-	  "2": "Modem incluso",
-	  "3": ["Oi WiFi", "ilimitado"]
-    }
+    "features_labels": [
+        { "label":"Velocidade", "extra": false },
+        { "label":"Modem incluso", "extra": false },
+        { "label":"Oi WiFi", "extra": "ilimitado" }
+    ]
   },
   "data": [
     {
@@ -13,9 +13,9 @@
       "best_seller": true,
       "on_table": true,
       "features": {
-        "1": "15 mega",
-		"2": [true, "com WiFi"],
-		"3": true
+        "speed": "15 mega",
+		"modem": [true, "com WiFi"],
+		"wifi": true
       },
       "price": {
         "loyal": 69.90,
@@ -30,9 +30,9 @@
       "best_seller": false,
       "on_table": true,
       "features": {
-        "1": "10 mega",
-		"2": [true, "com WiFi"],
-		"3": true
+        "speed": "10 mega",
+		"modem": [true, "com WiFi"],
+		"wifi": true
       },
       "price": {
         "loyal": 59.90,
@@ -47,9 +47,9 @@
       "best_seller": false,
       "on_table": true,
       "features": {
-        "1": "2 mega",
-		"2": [true, ""],
-		"3": true
+        "speed": "2 mega",
+		"modem": [true, ""],
+		"wifi": true
       },
       "price": {
         "loyal": 49.90,
