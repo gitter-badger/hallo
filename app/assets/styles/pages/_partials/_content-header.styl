@@ -71,7 +71,7 @@
         display table-cell
       &:before
         content '+'
-        color $grayLight
+        color $black
 
       // .content_header_list li.visible
       &.visible
@@ -294,17 +294,6 @@
       display table-cell
       vertical-align middle
     a
-      height remify(52px)
-      background-color $orangeLight
-      border-left: remify(3px) solid transparent
-      border-right: remify(3px) solid transparent
-      border-top: remify(2px) solid transparent
-      border-bottom: remify(3px) solid $orange
-      border-radius remify(3px)
-      font-size remify(16px)
-      text-align center
-      text-decoration none
-      line-height remify(52px)
       color $black
       +below('s')
         position fixed
@@ -320,33 +309,43 @@
         width remify(138px)
       +above('xl')
         width remify(170px)
-      &:hover
-        border-bottom remify(3px) solid transparent
-      &:active
-        border-top remify(3px) solid $orange
-        border-bottom remify(2px) solid transparent
 
   // .content_header_alert
   &_alert
     position: relative
+    top: remify(-1.2px)
     display: table
     width: 100%
     max-width: remify(1170px)
     height: remify(70px)
     margin: 0 auto
     border-bottom: remify(1.2px) solid $black
+    border-top: remify(1.2px) solid $grayLight
     background-color: $grayLighter
     color: $black
+    z-index: 2
     &.white
       background-color: $white
     h4
       display: table-cell
       width: 100%
+      padding: 0 remify(10px)
       vertical-align: middle
       text-align: center
-      padding: 0 remify(10px)
+      line-height: 1.89em;
+    i
+      position: relative
+      display: inline-block
+      width: remify(30px)
+      height: remify(30px)
+      vertical-align top
+      svg
+        position relative
+        top: remify(-1px)
+        left: remify(-16px)
 
     // .content_header_alert_option
     &_option
       position: absolute
       right remify(36px)
+      top remify(19px)
