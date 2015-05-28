@@ -60,8 +60,10 @@ table-internet-banda-larga
     self.labels = opts.labels;
 
     this.on('mount update unmount', function(eventName) {
-      oiMediator.publish('content-header updateTitle', ['Banda larga para sua casa']);
-      oiMediator.publish('content-header updateButton', 'Compre agora');
+      if (eventName == 'mount'){
+        oiMediator.publish('content-header updateHeader', { title: ['Banda larga para sua casa'], button: 'Compre agora' });
+        oiMediator.publish('scroll scrollToLockPosition', {});
+      }
 
       oiMediator.publish('table-internet-banda-larga event', eventName);
     });

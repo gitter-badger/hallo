@@ -68,8 +68,10 @@ table-internet-banda-larga-mais-fixo
      * 
      * **/
     this.on('mount update unmount', function(eventName) {
-      oiMediator.publish('content-header updateTitle', ['Banda larga', 'Fixo']);
-      oiMediator.publish('content-header updateButton', 'Compre com um especialista');
+      if (eventName == 'mount'){
+        oiMediator.publish('content-header updateHeader', { title: ['Banda larga', 'Fixo'], button: 'Compre com um especialista' });
+        oiMediator.publish('scroll scrollToLockPosition', {});
+      }
 
       oiMediator.publish('table-internet-banda-larga-mais-fixo event', eventName);
     });

@@ -1,5 +1,5 @@
 modal-internet-disponibilidade
-  .modal.modal-green(show="{visible}")
+  .modal.modal-green(show="{ visible }")
 
     .modal_column-left
       header.modal_header
@@ -17,10 +17,10 @@ modal-internet-disponibilidade
               fieldset
                 .field-box.round-all.last-line.text
                   label DDD + Fixo da Oi
-                  input(type='text', name='ddd-fixo-da-oi')
+                  input(type='text', name='ddd-fixo-da-oi', value="{ numero }")
 
             .modal_container_half-right
-              button.basic Consulte a disponibilidade
+              button.basic(onclick="{ verify }") Consulte a disponibilidade
 
         .modal_container_row
           h5 Não tem um Telefone Fixo ainda?
@@ -30,7 +30,7 @@ modal-internet-disponibilidade
 
   script.
     var self = this;
-    self.visible = false;
+    self.visible = opts.visible ? opts.visible : false;
     self.added = false;
 
     /**
@@ -47,29 +47,37 @@ modal-internet-disponibilidade
       $('body').addClass('scroll-lock');
       self.visible = true;
       self.update();
-      oiMediator.publish( 'modal open', {type: 'plano internet disponibilidade'} );
+      oiMediator.publish( 'modal-internet-disponibilidade open', {} );
     };
 
     self.close = function() {
       $('body').removeClass('scroll-lock');
       self.visible = false;
       self.update();
-      oiMediator.publish( 'modal close', {type: 'plano internet disponibilidade'} );
+      oiMediator.publish( 'modal-internet-disponibilidade close', {} );
     };
 
-    self.add = function() {
-      self.textAdd = 'Adicionado';
-      oiMediator.publish( 'voz-total add' );
-      self.added = true;
-      self.update();
-      self.close();
-    };
+    self.verify = function(){
+      var tel = $('input[name="ddd-fixo-da-oi"]').val();
+      $.getJSON('/api/verify/disponibilidade.json?tel='+tel, function(json, status){
+        if (status === 'success') {
 
-    self.remove = function() {
-      self.textAdd = 'Adicionar';
-      self.added = false;
-      self.update();
-      oiMediator.publish( 'voz-total remove' );
+          if (tel.indexOf('(1') >= 0){
+            riot.mount('content-header-alert', 'content-header-alert-message-disponivel', { numero: tel } );
+          } else if (tel.indexOf('(2') >= 0){
+            riot.mount('content-header-alert', 'content-header-alert-message-indisponivel', { numero: tel } );
+          } else if (tel.indexOf('(3') >= 0){
+            riot.mount('content-header-alert', 'content-header-alert-message-nao-oi', { numero: tel } );
+          } else if (tel.indexOf('(4') >= 0){
+            riot.mount('content-header-alert', 'content-header-alert-message-tem-maxima', { numero: tel } );
+          } else if (tel.indexOf('(5') >= 0){
+            riot.mount('content-header-alert', 'content-header-alert-message-tem-inferior', { numero: tel } );
+          }
+
+          oiMediator.publish('scroll scrollToLockPosition');
+          self.close();
+        }
+      });
     };
 
     document.onkeydown = function(evt) {
@@ -78,6 +86,9 @@ modal-internet-disponibilidade
         self.close();
       }
     };
+
+    //- $('input[name="ddd-fixo-da-oi"]').mask('(00) 0000-0000', { placeholder: "(__) ____-____" });
+    $('input[name="ddd-fixo-da-oi"]').mask('(00) 0000-0000');
 
     $('body').on('click', '#consulte-a-disponibilidade', function(evt){
       evt.preventDefault();

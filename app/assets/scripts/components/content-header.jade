@@ -7,32 +7,41 @@ content-header
     .content_header_sidewalk
       .content_header_action
         .content_header_action_box
-          a(href="javascript:void(0);") { buttonText }
+          a.button.filled(href="javascript:void(0);") { buttonText }
 
   content-header-alert
 
   script.
     var self = this;
-    self.titles = ['Banda larga para sua casa'];
-    self.buttonText = 'Peça Já';
+    self.titles = [''];
+    self.buttonText = '';
 
     this.on('mount update unmount', function(eventName) {
       oiMediator.publish('content-header event', eventName);
     });
 
-    this.changeTitle = function(newTitles){
+    changeTitle = function(newTitles){
       self.titles = newTitles;
       self.update();
 
       oiMediator.publish('content-header changedTitle', { titleChanged: self.titles });
     };
 
-    this.changeButtonText = function(newButton){
+    changeButtonText = function(newButton){
       self.buttonText = newButton;
       self.update();
 
       oiMediator.publish('content-header changedButton', { buttonChanged: self.buttonText });
     };
 
-    oiMediator.subscribe('content-header updateTitle', this.changeTitle);
-    oiMediator.subscribe('content-header updateButton', this.changeButtonText);
+    updateHeader = function(toUpdate){
+      changeTitle(toUpdate.title);
+      changeButtonText(toUpdate.button);
+
+      oiMediator.publish('content-header changedHeader', { headerChanged: toUpdate });
+    };
+
+    oiMediator.subscribe('content-header updateTitle', changeTitle);
+    oiMediator.subscribe('content-header updateButton', changeButtonText);
+
+    oiMediator.subscribe('content-header updateHeader', updateHeader);

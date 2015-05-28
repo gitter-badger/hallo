@@ -1,41 +1,143 @@
 content-header-alert
+  script.
+    var self = this;
+    this.close = function(){
+      this.unmount(true);
+    };
+
+
+
 
 content-header-alert-message-disponivel
   .content_header_alert
     h4
       i.icon_alert_success
-      |  Banda Larga de até 10 mega disponível para o Fixo da Oi { numero }
-      span.content_header_alert_option: a(id="content-header-alert-outro-numero",href="javascript:void(0);") Consulte outro número
+        include /assets/images/icons/disponivel.svg
+      |  Banda larga de até 10 mega disponível para o Fixo da Oi { numero }
+      span.content_header_alert_option: a(onclick="{ outroNumero }",href="javascript:void(0);") Consulte outro número
+  script.
+    var self = this;
+    this.numero = opts.numero;
+
+    self.outroNumero = function(e){
+      oiMediator.publish('modal-internet-disponibilidade mount', {visible: true} );
+      self.close();
+    };
+
+    self.close = function(){
+      this.unmount(true);
+    };
+
+
+
+
 
 content-header-alert-message-indisponivel
   .content_header_alert
     h4
       i.icon_alert_error
-      |  Banda Larga indisponível para o Fixo da Oi { numero }
-      span.content_header_alert_option: a(id="content-header-alert-outro-numero",href="javascript:void(0);") Consulte outro número
+        include /assets/images/icons/indisponivel.svg
+      |  Banda larga indisponível para o Fixo da Oi { numero }
+      span.content_header_alert_option: a(onclick="{ outroNumero }",href="javascript:void(0);") Consulte outro número
+  script.
+    var self = this;
+    this.numero = opts.numero;
+
+    self.outroNumero = function(e){
+      oiMediator.publish('modal-internet-disponibilidade mount', {visible: true} );
+      self.close();
+    };
+
+    self.close = function(){
+      this.unmount(true);
+    };
+
+
+
+
+
 
 content-header-alert-message-nao-oi
   .content_header_alert
     h4
       i.icon_alert_error
-      |  { numero } não é um Fixo da Oi <a id="message-nao-oi-veja" href="javascript:void(0);">Veja os planos Banda Larga + Fixo</a> ou <a id="message-nao-oi_consulte" href="javascript:void(0);">consulte outro número</a>
+        include /assets/images/icons/indisponivel.svg
+      |  { numero } não é um Fixo da Oi 
+      a(onclick="{ bandaLarga }" href="javascript:void(0);") Veja os planos Banda larga + Fixo 
+      | ou 
+      a(onclick="{ outroNumero }" href="javascript:void(0);") consulte outro número
+  script.
+    var self = this;
+    this.numero = opts.numero;
+
+    self.bandaLarga = function(e){
+      oiMediator.publish('table-internet-banda-larga mount', {});
+      self.close();
+    };
+
+    self.outroNumero = function(e){
+      oiMediator.publish('modal-internet-disponibilidade mount', {visible: true} );
+      self.close();
+    };
+
+    self.close = function(){
+      this.unmount(true);
+    };
+
+
 
 content-header-alert-message-tem-maxima
   .content_header_alert
     h4
       i.icon_alert_success
-      |  { numero } já tem 10 mega, velocidade máxima disponível para você. <a id="message-tem-maxima_adicione" href="javascript:void(0);">Adicione serviços</a> ou <a id="message-tem-maxima_consulte" href="javascript:void(0);">consulte outro número</a> .
+        include /assets/images/icons/disponivel.svg
+      |  { numero } já tem 10 mega, velocidade máxima disponível para você. 
+      a(onclick="{ adicioneServicos }" href="javascript:void(0);") Adicione serviços 
+      | ou 
+      a(onclick="{ outroNumero }" id="message-tem-maxima_consulte" href="javascript:void(0);") consulte outro número 
+      | .
+  script.
+    var self = this;
+    this.numero = opts.numero;
+
+    this.outroNumero = function(e){
+      oiMediator.publish('modal-internet-disponibilidade mount', {visible: true} );
+      self.close();
+    };
+
+    self.close = function(){
+      this.unmount(true);
+    };
+
+
+
 
 content-header-alert-message-tem-inferior
   .content_header_alert
     h4
       i.icon_alert_success
+        include /assets/images/icons/disponivel.svg
       |  { numero } já tem 2 mega, Você pode aumentar a velocidade para até 10 mega.
-      span.content_header_alert_option: a(id="content-header-alert-outro-numero",href="javascript:void(0);") Consulte outro número
+      span.content_header_alert_option: a(onclick="{ outroNumero }",href="javascript:void(0);") Consulte outro número
+  script.
+    var self = this;
+    this.numero = opts.numero;
+
+    this.outroNumero = function(e){
+      oiMediator.publish('modal-internet-disponibilidade mount');
+      self.close();
+    };
+
+    self.close = function(){
+      this.unmount(true);
+    };
+
+
 
 content-header-alert-message-banda-larga-mais-fixo
   .content_header_alert.white
     h4
       | Exibindo as opções de banda larga + fixo. 
       a(id="content-header-alert-outro-numero",href="javascript:void(0);") Volte a ver só as opções de banda larga.
-
+  script.
+    var self = this;
