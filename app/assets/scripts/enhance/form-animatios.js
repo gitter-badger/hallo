@@ -15,7 +15,7 @@ define([
    *
    */
   _private.setupTextField = function(){
-    $('.field-box input[type="text"]').on('focus', function(e){
+    $('body').on('focus', '.field-box input[type="text"]',function(e){
       var fieldBox = $(this).parent();
       if ( !fieldBox.hasClass('error') && !fieldBox.hasClass('success') ){
         fieldBox.removeClass('filling-off')
@@ -32,7 +32,7 @@ define([
       });
 
     $('.field-box').on('click', function(){
-      $('.field-box input[type="text"]').trigger('focus');
+      $(this).find('input[type="text"]').trigger('focus');
     });
   };
 

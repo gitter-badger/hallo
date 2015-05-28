@@ -539,6 +539,10 @@ define([
         [].forEach.call(clickableCards, function(element, i){
           if (element == e.currentTarget) {
             _public.changeCardTo(i);
+
+            var cards = $('oi-card a');
+            var slug = $(cards[i]).attr('data-slug');
+            oiMediator.publish('scroll changeCardTo', slug);
           }
         });
       };
@@ -565,9 +569,8 @@ define([
       });
 
       clickableCards[index].className += 'selected';
-      window.location.hash = clickableCards[index].querySelector('a[data-slug]').getAttribute('data-slug');
+      // window.location.hash = clickableCards[index].querySelector('a[data-slug]').getAttribute('data-slug');
 
-      _private.changeTableTo(index);
       _public.scrollToLockPosition();
 
       return false;
