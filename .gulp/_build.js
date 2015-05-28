@@ -207,11 +207,27 @@ gulp.task('build-scripts', function(){
     .pipe(gulp.dest(config.path.dist.scripts));
 });
 
-gulp.task('build-templates', function(){
+gulp.task('build-templates', ['build-templates-jade'], function(){
   gulp.src(config.path.src.tags)
     .pipe($.plumber({errorHandler: helpers.notifyError}))
     .pipe($.changed(config.path.dist.tags))
-    .pipe($.filter(helpers.filterJade))
+    .pipe($.flatten())
+    .pipe($.riot({
+      compact: true
+    }))
+    .pipe($.uglify({
+      mangle: false
+    }))
+    .pipe($.wrap({ src: '.gulp/require-wrap.js.txt'}))
+    .pipe(gulp.dest(config.path.dist.tags))
+    .pipe($.if(config.isProd, $.gzip()))
+    .pipe(gulp.dest(config.path.dist.tags))
+});
+
+gulp.task('build-templates-jade', function(){
+  gulp.src(config.path.src.tagsJade)
+    .pipe($.plumber({errorHandler: helpers.notifyError}))
+    .pipe($.changed(config.path.dist.tags))
     .pipe($.jade({
       pretty: true,
       basedir: 'app'
@@ -228,6 +244,8 @@ gulp.task('build-templates', function(){
     .pipe($.if(config.isProd, $.gzip()))
     .pipe(gulp.dest(config.path.dist.tags))
 });
+
+
 
 gulp.task('build-api', function(){
   gulp.src(config.path.src.api)

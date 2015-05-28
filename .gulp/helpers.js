@@ -57,10 +57,6 @@ var helpers = (function() {
     return !/\/_/.test(file.path);
   }
 
-  _public.filterJade = function(file) {
-    return /\.jade/.test(file.path);
-  }
-
   return _public;
 
 }());
