@@ -1,0 +1,41 @@
+content-header-alert
+
+content-header-alert-message-disponivel
+  .content_header_alert
+    h4
+      i.icon_alert_success
+      |  Banda Larga de até 10 mega disponível para o Fixo da Oi { numero }
+      span.content_header_alert_option: a(id="content-header-alert-outro-numero",href="javascript:void(0);") Consulte outro número
+
+content-header-alert-message-indisponivel
+  .content_header_alert
+    h4
+      i.icon_alert_error
+      |  Banda Larga indisponível para o Fixo da Oi { numero }
+      span.content_header_alert_option: a(id="content-header-alert-outro-numero",href="javascript:void(0);") Consulte outro número
+
+content-header-alert-message-nao-oi
+  .content_header_alert
+    h4
+      i.icon_alert_error
+      |  { numero } não é um Fixo da Oi <a id="message-nao-oi-veja" href="javascript:void(0);">Veja os planos Banda Larga + Fixo</a> ou <a id="message-nao-oi_consulte" href="javascript:void(0);">consulte outro número</a>
+
+content-header-alert-message-tem-maxima
+  .content_header_alert
+    h4
+      i.icon_alert_success
+      |  { numero } já tem 10 mega, velocidade máxima disponível para você. <a id="message-tem-maxima_adicione" href="javascript:void(0);">Adicione serviços</a> ou <a id="message-tem-maxima_consulte" href="javascript:void(0);">consulte outro número</a> .
+
+content-header-alert-message-tem-inferior
+  .content_header_alert
+    h4
+      i.icon_alert_success
+      |  { numero } já tem 2 mega, Você pode aumentar a velocidade para até 10 mega.
+      span.content_header_alert_option: a(id="content-header-alert-outro-numero",href="javascript:void(0);") Consulte outro número
+
+content-header-alert-message-banda-larga-mais-fixo
+  .content_header_alert.white
+    h4
+      | Exibindo as opções de banda larga + fixo. 
+      a(id="content-header-alert-outro-numero",href="javascript:void(0);") Volte a ver só as opções de banda larga.
+

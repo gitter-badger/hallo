@@ -1,0 +1,38 @@
+content-header
+  header.content_header
+    .content_header_list
+      hgroup
+        ul#cart-list
+          li(each="{ item, idx in titles}") { item }
+    .content_header_sidewalk
+      .content_header_action
+        .content_header_action_box
+          a(href="javascript:void(0);") { buttonText }
+
+  content-header-alert
+
+  script.
+    var self = this;
+    self.titles = ['Banda larga para sua casa'];
+    self.buttonText = 'Peça Já';
+
+    this.on('mount update unmount', function(eventName) {
+      oiMediator.publish('content-header event', eventName);
+    });
+
+    this.changeTitle = function(newTitles){
+      self.titles = newTitles;
+      self.update();
+
+      oiMediator.publish('content-header changedTitle', { titleChanged: self.titles });
+    };
+
+    this.changeButtonText = function(newButton){
+      self.buttonText = newButton;
+      self.update();
+
+      oiMediator.publish('content-header changedButton', { buttonChanged: self.buttonText });
+    };
+
+    oiMediator.subscribe('content-header updateTitle', this.changeTitle);
+    oiMediator.subscribe('content-header updateButton', this.changeButtonText);
