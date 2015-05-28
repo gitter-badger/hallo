@@ -25,7 +25,9 @@
 require.config({
   baseUrl: '/assets/scripts',
   paths: {
-    "domlib": ('__proto__' in {}) ? "vendor/zepto" : "vendor/jquery",
+    // "domlib": ('__proto__' in {}) ? "vendor/zepto" : "vendor/jquery",
+    "domlib": "vendor/jquery",
+    "mask": "vendor/jquery.mask",
     "velocity": 'vendor/velocity',
     "velocity-ui": 'vendor/velocityui',
     "ScrollMagic": 'vendor/ScrollMagic',
@@ -37,6 +39,9 @@ require.config({
     },
     "velocity-ui":  {
       deps: ['velocity']
+    },
+    "mask": {
+      deps: ['domlib']
     },
     domlib: {
       exports: "$"
