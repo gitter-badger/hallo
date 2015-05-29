@@ -5,8 +5,9 @@ define([
   'tags/oi-price',
   'tags/table-internet-banda-larga',
   'tags/table-internet-banda-larga-mais-fixo',
-  'tags/table-internet-movel'
-  ], function($, riot, tagPrice, tagTableInternetBandaLarga, tagTableInternetBandaLargaMaisFixo, tableInternetMovel){
+  'tags/table-internet-movel',
+  'tags/alert-box',
+  ], function($, riot){
 
   var _private = {};
   var _public = {};
@@ -18,15 +19,13 @@ define([
     oiMediator.subscribe('internet banda-larga plan-selected',  _public.selectPlanBandaLarga);
     oiMediator.subscribe('internet banda-larga-mais-fixo plan-selected',  _public.selectPlanBandaLargaMaisFixo);
 
-    oiMediator.subscribe('table-internet-banda-larga event mount',  _private.tableMountComplete);
-    oiMediator.subscribe('table-internet-banda-larga-mais-fixo event mount',  _private.tableMountComplete);
-
     oiMediator.subscribe('scroll changeCardTo', _private.changeTable);
 
     oiMediator.subscribe('table-internet-banda-larga mount', _private.loadAndMountTableBandaLarga);
 
     _private.bindBandaLargaToggle();
     _private.loadAndMountDefaultTable();
+
   };
 
   _private.loadAndMountDefaultTable = function (){
@@ -52,14 +51,10 @@ define([
   };
 
   _private.bindBandaLargaToggle = function(){
-
-    $('body').on('click', '#toggle-banda-larga-mais-fixo', function(e){
-      riot.mount('content-header-alert', 'content-header-alert-message-banda-larga-mais-fixo', {});
-      _private.loadAndMountTableBandaLargaMaisFixo();
-    });
+    $('body').on('click', '#veja-os-planos-fixo-banda-larga', _private.loadAndMountTableBandaLargaMaisFixo);
 
     $('body').on('click', '#content-header-alert-outro-numero', function(e){
-      riot.mount('content-header-alert', 'content-header-alert', {});
+      riot.mount('alert-box');
       _private.loadAndMountTableBandaLarga();
     });
   };
@@ -75,9 +70,6 @@ define([
 
 
 
-  _private.tableMountComplete = function(flux){
-    $('#toggle-banda-larga-mais-fixo').attr('data-table', flux.table);
-  };
 
   _public.selectPlanBandaLarga = function(slug){
   };
