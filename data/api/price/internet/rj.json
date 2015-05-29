@@ -10,7 +10,7 @@
     {
       "name": "Banda Larga 15 mega",
       "slug": "banda-larga-15-mega",
-      "best_seller": true,
+      "best_seller": false,
       "on_table": true,
       "features": {
         "speed": "15 mega",
@@ -27,7 +27,7 @@
 	{
       "name": "Banda Larga 10 mega",
       "slug": "banda-larga-10-mega",
-      "best_seller": false,
+      "best_seller": true,
       "on_table": true,
       "features": {
         "speed": "10 mega",

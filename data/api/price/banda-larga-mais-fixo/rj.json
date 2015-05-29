@@ -10,7 +10,7 @@
   },
   "data": [
     {
-      "name": "Banda Larga 15 mega + Fixo",
+      "name": "15 mega + Fixo",
       "slug": "banda-larga-15-mega-fixo",
       "best_seller": false,
       "on_table": true,
@@ -27,7 +27,7 @@
       "penalty": 999
     },
     {
-      "name": "Banda Larga 15 mega + Fixo Ilimitado",
+      "name": "15 mega + Fixo Ilimitado",
       "slug": "banda-larga-15-mega-fixo-ilimitado",
       "best_seller": true,
       "on_table": true,
@@ -44,7 +44,7 @@
       "penalty": 999
     },
     {
-      "name": "Banda Larga 10 mega + Fixo Ilimitado",
+      "name": "10 mega + Fixo Ilimitado",
       "slug": "banda-larga-10-mega-fixo-ilimitado",
       "best_seller": false,
       "on_table": true,
@@ -61,7 +61,7 @@
       "penalty": 999
     },
     {
-      "name": "Banda Larga 10 mega + Fixo",
+      "name": "10 mega + Fixo",
       "slug": "banda-larga-10-mega-fixo",
       "best_seller": false,
       "on_table": true,
@@ -78,7 +78,7 @@
       "penalty": 999
     },
     {
-      "name": "Banda Larga 2 mega + Fixo Ilimitado",
+      "name": "2 mega + Fixo Ilimitado",
       "slug": "banda-larga-2-mega-fixo-ilimitado",
       "best_seller": false,
       "on_table": true,
@@ -95,7 +95,7 @@
       "penalty": 999
     },
     {
-      "name": "Banda Larga 2 mega + Fixo",
+      "name": "2 mega + Fixo",
       "slug": "banda-larga-2-mega-fixo",
       "best_seller": false,
       "on_table": true,
