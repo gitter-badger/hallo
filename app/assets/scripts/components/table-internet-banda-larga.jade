@@ -76,6 +76,8 @@ table-internet-banda-larga
       $('table-internet table tr input[type="radio"]').removeAttr('checked');
       $('table-internet table tr[data-idx="'+idx+'"] input[type="radio"]').attr('checked', true);
 
+      oiMediator.publish('content-header updateHeader', { title: [self.plans[idx].name], button: 'Compre agora', price: self.plans[idx].price.loyal });
+
       var slug = $('table-internet table tr[data-idx="'+idx+'"] input[type="radio"]').attr('id');
       oiMediator.publish('internet banda-larga plan-selected', slug);
     };

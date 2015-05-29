@@ -5,6 +5,8 @@ content-header
         ul#cart-list
           li(each="{ item, idx in titles}") { item }
     .content_header_sidewalk
+      .content_header_price
+        oi-price(show="{ priceVisible }", small="{ true }")
       .content_header_action
         .content_header_action_box
           a.button.filled(href="javascript:void(0);") { buttonText }
@@ -15,6 +17,8 @@ content-header
     var self = this;
     self.titles = [''];
     self.buttonText = '';
+    self.price = 0;
+    self.priceVisible = false;
 
     this.on('mount update unmount', function(eventName) {
       oiMediator.publish('content-header event', eventName);
@@ -34,9 +38,27 @@ content-header
       oiMediator.publish('content-header changedButton', { buttonChanged: self.buttonText });
     };
 
+    changePrice = function(newPrice){
+      if (newPrice > 0) {
+        self.tags['oi-price'].updatePrice(newPrice);
+        self.priceVisible = true;
+        self.update();
+      } else {
+        self.priceVisible = false;
+        self.update();
+      }
+
+      oiMediator.publish('content-header changedButton', { buttonChanged: self.buttonText });
+    };
+
     updateHeader = function(toUpdate){
       changeTitle(toUpdate.title);
       changeButtonText(toUpdate.button);
+      if (toUpdate.price){
+        changePrice(toUpdate.price);
+      } else {
+        changePrice(0);
+      }
 
       oiMediator.publish('content-header changedHeader', { headerChanged: toUpdate });
     };
