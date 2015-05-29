@@ -20,26 +20,80 @@ modal-internet-pnbl
                 em Ligue para comprar
 
         .modal_container_row
-          | TABELA
+          table.modal-table
+              thead
+                tr
+                  th.left Plano
+                  th Valor mensal
+                  th.left O que está incluído
+              tbody
+                tr
+                  td.left Internet Móvel
+                    span.obs É preciso ter um mini-modem<br>ou tablet 3G/4G.
+                    p.link-regulamentos
+                      a(href="#") Regulamento
+                      a(href="#") Sumário
+                      a(href="#") Tarifas
+                  td R$ 29,00
+                  td.left Velocidade 3G ou 2G <br>Franquia de 300 MB de internet<br>Oi WiFi ilimitado
+                tr
+                  td.left Banda Larga
+                    span.obs É preciso ter um computador ou<br>notebook com modem.
+                    p.link-regulamentos
+                      a(href="#") Tarifas
+                  td R$ 29,00
+                    span.obs Taxa de habilitação de R$ 100,00
+                  td.left Até 1 mega de velocidade<br>Franquia de 500 MB de internet
+                tr
+                  td.left Fixo + Banda Larga
+                    span.obs É preciso ter um computador ou<br>notebook com modem.
+                    p.link-regulamentos
+                      a(href="#") Tarifas
+                  td R$ 79,80
+                    span.obs Taxa de habilitação de R$ 100,00<br>O valor do fixo é R$ 49,90<br>e da banda larga R$ 29,90.
+                  td.left Até 1 mega de velocidade<br>Franquia de 500 MB de internet<br>Ligações locais por menos de R$ 1 por dia
 
         .modal_container_row
-          .modal_container_half-left
-            strong Um plano da Oi e do Governo Federal para levar a banda larga para todo Brasil.
+          h5 Um plano da Oi e do Governo Federal<br>para levar a banda larga para todo Brasil.
 
         .modal_container_row
           h5 Entenda oferta
           ul.ordened
-            li Este plano pode ser oferecido na tecnologia fixa (ADSL) ou móvel (3G), dependendo da localidade.
-            li Esta parceria visa levar internet banda larga pra todos os habitantes do Brasil e fazer com que a experiência e a qualidade de acesso sejam as melhores possíveis.
-            li Em 2014, a Oi cumpriu a meta acordada no termo de compromisso do Plano Nacional de Banda Larga atendendo a todos os 4.668 municípios de sua área de atuação na oferta varejo do PNBL.
-            li Para usar a internet móvel, você precisa de um tablet ou minimodem compatível.
-            li Para usar a banda larga, é preciso ter um computador ou notebook e um modem.
-            li Ao atingir a franquia mensal, você pode continuar navegando com velocidade reduzida.
-            li A velocidade anunciada para banda larga é a máxima nominal podendo sofrer variações devido a fatores externos.
-            li O serviço de banda larga está sujeito a análise de viabilidade técnica.
+            li 
+              p Este plano pode ser oferecido na tecnologia fixa (ADSL) ou móvel (3G), dependendo da localidade.
+            li 
+              p Esta parceria visa levar internet banda larga pra todos os habitantes do Brasil e fazer com que a experiência e a qualidade de acesso sejam as melhores possíveis.
+            li 
+              p Em 2014, a Oi cumpriu a meta acordada no termo de compromisso do Plano Nacional de Banda Larga atendendo a todos os 4.668 municípios de sua área de atuação na oferta varejo do PNBL.
+            li 
+              p Para usar a internet móvel, você precisa de um tablet ou minimodem compatível.
+            li 
+              p Para usar a banda larga, é preciso ter um computador ou notebook e um modem.
+            li 
+              p Ao atingir a franquia mensal, você pode continuar navegando com velocidade reduzida.
+            li 
+              p A velocidade anunciada para banda larga é a máxima nominal podendo sofrer variações devido a fatores externos.
+            li 
+              p O serviço de banda larga está sujeito a análise de viabilidade técnica.
 
         .modal_container_row
-          h5 Não tem um Telefone Fixo ainda?
+          h5 Qual a velocidade da Internet Móvel?
+          p Em 3G: até 1 mbps de download e até 128 kbps de upload. 
+          p Em 2G: até 78 kbps de download e até 39 kbps de upload.
+          p Ao atingir a franquia, promocionalmente, a velocidade de download será reduzida para até 64 kbps. 
+            a(href="#") Consulte a área de cobertura.
+
+        .modal_container_row
+          h5 Qual a velocidade da Banda Larga?
+          p Até 1 mbps de download e até 256 kbps de upload. 
+          p Ao atingir a franquia, a velocidade de download será reduzida para até 128 Kbps.
+
+        .modal_container_row
+          .modal-contratos
+            hr
+            a(href="#") Contrato do Plano Nacional de Banda Larga para Internet Móvel.
+            a(href="#") Contrato do Plano Nacional de Banda Larga para Banda Larga.
+            p Ofertas válidas de 29/09/2011 até 31/12/2016. Incluem modem no modelo comodato. O assinante fará jus à franquia de consumo de dados mensal contratada.
 
     a.modal_close(href="javascript:void(0);", onclick="{ close }") Fechar
 

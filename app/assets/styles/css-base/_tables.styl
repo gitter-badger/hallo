@@ -146,7 +146,7 @@ table
 
 table.modal-table
   border-top remify(1px) solid $black
-  margin remify(20px) 0 remify(70px) 0
+  margin remify(20px) 0 0 0
   th
     padding remify(30px) remify(20px)
   .oi-price
@@ -154,6 +154,29 @@ table.modal-table
       padding-top remify(7px)
     +above('xs')
       padding-top remify(38px)
+      
+  th,
+  td
+    span.obs
+      display block
+      font-size remify(13px)
+      color $gray
+      padding-top remify(16px)
+    p.link-regulamentos
+      padding-top remify(30px)
+      a
+        cursor pointer
+        margin-right remify(8px)
+        font-size remify(13px)
+        color $gray
+        text-decoration underline
+        &:hover
+          text-decoration underline
+          border none
+          
+  th.left,
+  td.left
+    text-align left
   
     
 table.checkout
