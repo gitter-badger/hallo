@@ -1,5 +1,4 @@
-$cardSizeMobile = remify(94px)
-$cardSize = remify(586px)
+@require "../config/_variables.styl"
 
 oi-card
   display block
@@ -14,7 +13,7 @@ oi-card
   background-size: auto 100%
   transition-duration 0s
   +above('m')
-    // background-image: url(../../../images/oi/card-mask.png) // desktop
+    // background-image: url(../../../images/oi/internet-mask.png) // desktop
     height $cardSize
     min-height remify(64px)
 
@@ -53,6 +52,7 @@ oi-card
 
     &_title
       display block
+      width 100%
       font-family $fontTextLight
       font-size remify(18px)
       text-align center
@@ -105,6 +105,25 @@ oi-card
       +above('m')
         height remify(143px)
 
+    // .oi-card_content_image
+    &_image
+      position relative
+      top: remify(-30px)
+      display: table
+      width: 100%
+      height remify(44px)
+      +below('xs')
+        display none
+      +above('m')
+        height remify(173px)
+      img
+        position: relative
+        bottom: 0
+        display: table-cell
+        height 100%
+        vertical-align: middle
+        margin: 0 auto
+
     &_list
       display none
       +above('m')
@@ -121,7 +140,8 @@ oi-card
       &_items
         padding-top remify(15px)
       &_items li
-        line-height remify(30px)
+        min-height remify(30px)
+        line-height 1.34em
 
     &_footer
       display none

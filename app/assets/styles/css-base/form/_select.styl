@@ -1,0 +1,91 @@
+&.select {
+  position: relative;
+  cursor: pointer;
+
+  select { display: none; }
+
+  label { color: colorBlack; }
+
+  &:after {
+    position: absolute;
+    content: " ";
+    visibility: visible;
+    width: 0.625rem; height: 0.625rem;
+    background-image: url(imageEndpoint+'down.svg');
+    background-size: contain;
+    top: $formPaddingVertical*1.55;
+    right: $formPaddingVertical;
+  }
+
+  &.success {
+    label {
+      color: colorLightGray;
+    }
+    .selected-value {
+      top: sizeEyebrow*0.55;
+    }
+  }
+
+  .selected-value {
+    position: relative;
+    display: block;
+    pointer-events: none;
+    z-index: 9;
+    font-size: 1rem;
+    color: colorBlack;
+  }
+
+  .select-box {
+    position: absolute;
+    z-index: 99;
+    top: -3%; left: -1%;
+    width: 102%;
+    min-height: ($formPaddingVertical*2)+1rem;
+    background-color: colorWhite;
+    border: 0.08rem solid transparent;
+    overflow: hidden;
+    box-shadow: 0 0.21rem 0.34rem rgba(colorBlack, 0.08);
+    transform-origin: 50% 50%;
+    borderAll(colorMagenta);
+    roundBorder(borderRoundSize);
+
+    i {
+      position: absolute;
+      top: $formPaddingVertical*1.55;
+      right: $formPaddingVertical;
+      z-index: 99;
+      width: 1rem; height: 1rem;
+      background-image: url(imageEndpoint+'down-magenta.svg');
+      background-size: 0.625rem 0.625rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      transform-origin: 50% 50%;
+      animation-fill-mode: forwards;
+    }
+
+    ul {
+      width: 100%; height: auto;
+      padding: $formPaddingVertical*0.89 0;
+      li {
+        position: relative;
+        padding: 0 $formPaddingVertical;
+        text-align: center;
+        a, button {
+          display: inline-block;
+          width: 79%; min-width: 0;
+          border: none;
+          padding: $formPaddingVertical*0.89 $formPaddingVertical;
+          color: colorBlack;
+          text-align: left;
+          &:hover {
+            color: colorMagenta;
+            background-color: colorBrightGray;
+          }
+          &:active { background-color: rgba(colorBrightGray, 0.66); }
+        }
+      }
+    }
+  }
+
+}
+

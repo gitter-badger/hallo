@@ -1,0 +1,95 @@
+//- 
+//- table-internet
+//- 
+//- riotJS module runnig on <table-internet>
+//- 
+//- 
+table-internet-banda-larga
+
+  .oi-banda-larga
+
+    .oi-banda-larga_table
+
+      .oi-banda-larga_table_heading
+        table
+          caption Compare os planos de banda larga
+          thead
+            tr
+              th
+          tbody
+            tr(each!="{ plan, idx in plans }", onclick="{ parent.rowSelect }", onmouseover="{ parent.rowHover }", onmouseout="{ parent.rowOut }", data-idx="{ idx }")
+              td
+                span.promo(if="{plan.best_seller}") Mais vendido
+                fieldset.price-fieldset.checkbox
+                  input(id="{ plan.slug }", type="radio", name="oi-internet-banda-larga-plan")
+                  oi-price(price="{ plan.price.loyal }", small="{ true }")
+
+      .oi-banda-larga_table_scroll
+        table
+          thead
+            tr
+              th(each="{ label, idx in labels }")
+                | {label.label}
+                span.hashtag(if="{ label.extra }") {label.extra}
+                
+          tbody
+            tr(each!="{ plan, idx in plans }", onclick="{ parent.rowSelect }", onmouseover="{ parent.rowHover }", onmouseout="{ parent.rowOut }", data-idx="{ idx }")
+              td(id="{ plan.slug }"): strong {plan.features.speed}
+              td
+                i.icon_check
+                  | { if plan.features.modem[0] }
+                  include /assets/images/icons/check.svg
+                  | { endif }
+                  small(if="{plan.features.modem[1]}") { plan.features.modem[1] }
+              td
+                i.icon_check
+                  | { if plan.features.wifi }
+                  include /assets/images/icons/check.svg
+                  | { endif }
+
+    .oi-banda-larga_table_footer
+      div
+        | Esses são planos para clientes de Telefone Fixo da Oi. 
+        a#toggle-banda-larga-mais-fixo(href="javascript:void(0);") Veja os planos fixo + banda larga
+
+    include /views/internet/_ficha-tecnica_banda-larga.jade
+
+  script.
+    var self = this;
+    self.plans = opts.plans;
+    self.labels = opts.labels;
+
+    this.on('mount update unmount', function(eventName) {
+      if (eventName == 'mount'){
+        oiMediator.publish('content-header updateHeader', { title: ['Banda larga para sua casa'], button: 'Compre agora' });
+        oiMediator.publish('scroll scrollToLockPosition', {});
+      }
+
+      oiMediator.publish('table-internet-banda-larga event', eventName);
+    });
+
+    self.rowSelect = function(e){
+      var idx = e.currentTarget.getAttribute('data-idx');
+      $('table-internet table tr').removeClass();
+      $('table-internet table tr[data-idx="'+idx+'"]').addClass('selected');
+
+      $('table-internet table tr input[type="radio"]').removeAttr('checked');
+      $('table-internet table tr[data-idx="'+idx+'"] input[type="radio"]').attr('checked', true);
+
+      oiMediator.publish('content-header updateHeader', { title: [self.plans[idx].name], button: 'Compre agora', price: self.plans[idx].price.loyal });
+
+      var slug = $('table-internet table tr[data-idx="'+idx+'"] input[type="radio"]').attr('id');
+      oiMediator.publish('internet banda-larga plan-selected', slug);
+    };
+
+    self.rowHover = function(e){
+      var idx = e.currentTarget.getAttribute('data-idx');
+      $('table-internet table tr').removeClass('hover');
+      $('table-internet table tr[data-idx="'+idx+'"]').addClass('hover');
+    };
+
+    self.rowOut = function(e){
+      $('table-internet table tr').removeClass('hover');
+    };
+
+

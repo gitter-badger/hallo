@@ -1,0 +1,28 @@
+cardsInternet:
+  meta:
+  data:
+    -
+      title: 'Banda Larga da Oi'
+      slug: 'banda-larga-da-oi'
+      active: 0
+      image: 'card-internet-banda-larga-da-oi.png'
+      list:
+        title: ''
+        items:
+          - 'Velocidade de até 15 mega'
+          - 'Instalação grátis'
+          - 'Oi WiFi ilimitado'
+          - 'Modem incluso'
+      action: 'Conheça a Banda Larga da Oi'
+    -
+      title: 'Internet móvel 3G / 4G'
+      slug: 'internet-movel-3g-4g'
+      active: 1
+      image: 'card-internet-internet-movel-3g-4g.png'
+      list:
+        title: ''
+        items:
+          - 'Velocidade até 4G'
+          - 'Franquias de 10 MB à 10 GB'
+          - 'Oi WiFi por 1 ano para pós-pago, computador e tablet'
+      action: 'Conheça a Banda Larga da Oi'

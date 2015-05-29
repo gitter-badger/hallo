@@ -14,6 +14,7 @@ gulp.task('watch', ['build-data', 'build-api', 'build-bower', 'build-scripts', '
     gulp.watch(config.path.src.data, ['build-jade', reload]);
     gulp.watch(config.path.src.api, ['build-api', reload]);
     gulp.watch(config.path.src.tags, ['build-templates', reload]);
+    gulp.watch(config.path.src.tagsJade, ['build-templates-jade', reload]);
     gulp.watch(config.path.src.scripts, ['build-scripts', reload]);
     gulp.watch(config.path.src.jade, ['build-jade', reload]);
     gulp.watch(config.path.src.stylus, ['build-stylus', reload]);

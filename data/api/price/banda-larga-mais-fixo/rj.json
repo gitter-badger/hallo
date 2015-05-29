@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "features_labels": [
+        { "label":"Banda Larga", "subtitle":"Velocidade"},
+        { "label":"Banda Larga", "subtitle":"Modem Incluído"},
+        { "label":"Fixo", "subtitle":"Ligações locais para Fixo da Oi"},
+        { "label":"Fixo", "subtitle":"Ligações locais para fixo de outras operadoras"},
+        { "label":"Fixo", "subtitle":"Ligações DDD para qualquer fixo"}
+    ]
+  },
+  "data": [
+    {
+      "name": "Banda Larga 15 mega + Fixo",
+      "slug": "banda-larga-15-mega-fixo",
+      "best_seller": false,
+      "on_table": true,
+      "features": {
+        "speed": "15 mega",
+		"modem": [true, "com WiFi"],
+		"on_table_locals": "ilimitado",
+        "on_table_others": "ilimitado",
+        "on_table_ddd": "ilimitado"
+      },
+      "price": {
+        "loyal": 119.80
+      },
+      "penalty": 999
+    },
+    {
+      "name": "Banda Larga 15 mega + Fixo Ilimitado",
+      "slug": "banda-larga-15-mega-fixo-ilimitado",
+      "best_seller": true,
+      "on_table": true,
+      "features": {
+        "speed": "15 mega",
+		"modem": [true, "com WiFi"],
+		"on_table_locals": "ilimitado",
+        "on_table_others": "1.000 min",
+        "on_table_ddd": false
+      },
+      "price": {
+        "loyal": 109.80
+      },
+      "penalty": 999
+    },
+    {
+      "name": "Banda Larga 10 mega + Fixo Ilimitado",
+      "slug": "banda-larga-10-mega-fixo-ilimitado",
+      "best_seller": false,
+      "on_table": true,
+      "features": {
+        "speed": "10 mega",
+		"modem": [true, "com WiFi"],
+		"on_table_locals": "ilimitado",
+        "on_table_others": "ilimitado",
+        "on_table_ddd": "ilimitado"
+      },
+      "price": {
+        "loyal": 99.80
+      },
+      "penalty": 999
+    },
+    {
+      "name": "Banda Larga 10 mega + Fixo",
+      "slug": "banda-larga-10-mega-fixo",
+      "best_seller": false,
+      "on_table": true,
+      "features": {
+        "speed": "10 mega",
+		"modem": [true, "com WiFi"],
+		"on_table_locals": "ilimitado",
+        "on_table_others": "1.000 min",
+        "on_table_ddd": false
+      },
+      "price": {
+        "loyal": 89.80
+      },
+      "penalty": 999
+    },
+    {
+      "name": "Banda Larga 2 mega + Fixo Ilimitado",
+      "slug": "banda-larga-2-mega-fixo-ilimitado",
+      "best_seller": false,
+      "on_table": true,
+      "features": {
+        "speed": "2 mega",
+		"modem": [true, "com WiFi"],
+		"on_table_locals": "ilimitado",
+        "on_table_others": "ilimitado",
+        "on_table_ddd": "ilimitado"
+      },
+      "price": {
+        "loyal": 79.80
+      },
+      "penalty": 999
+    },
+    {
+      "name": "Banda Larga 2 mega + Fixo",
+      "slug": "banda-larga-2-mega-fixo",
+      "best_seller": false,
+      "on_table": true,
+      "features": {
+        "speed": "2 mega",
+		"modem": [true, ""],
+		"on_table_locals": "ilimitado",
+        "on_table_others": "1.000 min",
+        "on_table_ddd": false
+      },
+      "price": {
+        "loyal": 69.80
+      },
+      "penalty": 999
+    }
+  ]
+}

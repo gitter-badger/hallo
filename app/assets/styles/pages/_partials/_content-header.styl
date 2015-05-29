@@ -1,84 +1,126 @@
+/**
+ * .content_header
+ *
+ * the big header inside the product content table, sometimes called as product cart
+ *
+ * ***/
 .content_header
-  height remify(65px)
-  padding remify(17px) remify(20px)
-  background-color $white
   position relative
-  max-width remify(1170px)
+  width 100%
+  background-color $white
   margin 0 auto
+  border-bottom: remify(1.2px) solid $black
   z-index 2
-  border-bottom remify(1.1px) solid $black
-  transition-property height, padding
-  transition-duration 610ms
-  // background-image: url('../../../images/oi/cart-mask.png')
-  // background-position: center
-
-  +below('s')
-    overflow: visible
+  +below('xs')
+    border-bottom-color $grayLight
+  +above('xs')
+    height remify(64px)
+  +below('m')
+    padding remify(18px) remify(20px)
   +above('m')
-    padding remify(50px) remify(30px)
-    height remify(130px)
+    height remify(90px)
   +above('l')
-    padding remify(50px) 0
+    max-width remify(1170px)
+    padding remify(18px) 0
+  +above('xl')
+    height remify(130px)
 
+  // .content_header_list
   &_list
-    display none
     float left
     font-family $fontTitle
-    font-size remify(42px)
-    text-transform uppercase
-    position relative
-    z-index 1
-    height remify(58px)
-    // width s("calc(100% - " + remify(140px + 100px + 170px) + ")")
-    width 60%
-    padding-right remify(30px)
-    +above('s')
+    +above('xs')
+      display none
+    +above('m')
       display block
-      margin-top remify(-12px)
+      width 62%
+      height 100%
+      font-size remify(42px)
+      text-transform uppercase
+    +above('l')
+      width: 54%
+    +above('xl')
+      width: 62%
 
+    // .content_header_list hgroup
+    hgroup
+      position relative
+      display table
+      width 100%
+      height 100%
+
+    // .content_header_list ul
     ul
-      display block
-      height remify(70px)
-      overflow hidden
+      display table-cell
+      vertical-align middle
       white-space nowrap
+      overflow hidden
+      +above('m')
+        padding-right remify(20px)
+      +above('l')
+        padding-right remify(30px)
 
+    // .content_header_list li
     li
-      // display none
-      display inline-block
-      opacity 0
+      &:first-child:before
+        display none
+      &:last-child
+        +above('l')
+          display table-cell
+      &:first-child
+        display table-cell
+      &:before
+        content '+'
+        color $black
+
+      // .content_header_list li.visible
       &.visible
         opacity 1
 
-      &:first-child:before
-        display none
-      &:before
-        content '+'
-        color $grayLight
-
+  // .content_header_sidewalk
   &_sidewalk
+    display block
     float: right
-    width: 100%
+    height 100%
+    +above('xs')
+      width: 100%
+      max-width: 100%
     +above('m')
-      width: 40%
-
+      width auto
+      max-width: 34%
+    +above('l')
+      max-width: 46%
+    +above('xl')
+      max-width: 38%
 
   // the _sidewalk
+  // .content_header_client-type
   &_client-type
-    font-family $fontTextRegular
-    width remify(140px)
+    position relative
+    display table
+    height 100%
     float left
-    margin remify(-3px) 0 0 remify(11px)
+    font-family $fontTextRegular
     +below('xs')
-      width: 100%
+      width 100%
       margin: 0
+      top 0
+      left 0
+    +above('m')
+      width remify(140px)
+    +above('l')
+      margin-left remify(10px)
+
+    // .content_header_client-type-trigger
     &-trigger
-      color $green
-      text-decoration none
-      font-size remify(13px)
+      display table-cell
       height remify(30px)
-      display block
-      +below('xs')
-        margin-top: remify(7px)
+      vertical-align middle
+      font-size remify(13px)
+      line-height remify(30px)
+      text-decoration none
+      color $green
+
       span
         height remify(15px)
         line-height remify(15px)
@@ -95,6 +137,8 @@
           display inline-block
       path
         fill $green
+
+    // .content_header_client-type_dropdow
     &_dropdow
       background-color $white
       border remify(1.2px) solid $gray
@@ -206,53 +250,102 @@
         +above('m')
           right remify(40px)
 
+  // .content_header_price
   &_price
-    width remify(120px)
-    float right
-    height remify(58px)
-    transform translateY(remify(-5px))
-    margin remify(-7px) 0
-    padding remify(10px) 0
-    overflow: hidden
-    +above('m')
-      float left
+    position relative
+    display table
+    height 100%
+    float left
     +below('xs')
-      display: none
+      display none
 
+    oi-price
+      margin 0 auto
+      display table-cell
+      vertical-align middle
+      // +above('m')
+      //   left remify(-10px)
+      .oi-price.oi-price--small
+        height remify(32px)
+
+    // +above('xs')
+    //   display block
+    // +above('xs')
+    //   width remify(100px)
+    //   float right
+    //   height remify(58px)
+    // +above('m')
+    //   float left
+
+  // .content_header_action
   &_action
-    display none
+    display table
     font-family $fontTextRegular
-    +below('s')
-      position: fixed
-      display: block
-      bottom: 0
-      left: 0
-      width: 92%;
-      margin-left: 4%;
-      margin-bottom: 4%;
-    +below('xs')
-      display: none
+    float left
+    text-align right
+    height 100%
     +above('l')
-      display block
-      width remify(170px)
-      height remify(58px)
-      float left
-      margin remify(-11px) 0 0 remify(23px)
+      width remify(168px)
+    +above('xl')
+      width remify(196px)
 
+    // .content_header_action_box
+    &_box
+      display table-cell
+      vertical-align middle
     a
       color $black
-      display block
-      text-decoration none
-      background-color $orangeLight
-      border-bottom remify(2px) solid $orange
-      border-radius remify(2px)
-      font-size remify(16px)
-      height remify(50px)
-      line-height remify(50px)
-      margin-top remify(4px)
-      text-align center
-      +above('m')
-        height remify(50px)
-        line-height remify(50px)
-      &:hover
-        border-bottom 0 solid $orange
+      +below('s')
+        position fixed
+        bottom 0
+        left 0
+        display block
+        width 100%
+        height remify(62px)
+        border-radius 0
+        line-height remify(62px)
+      +above('l')
+        display inline-block
+        width remify(138px)
+      +above('xl')
+        width remify(170px)
+
+  // .content_header_alert
+  &_alert
+    position: relative
+    top: remify(-1.2px)
+    display: table
+    width: 100%
+    max-width: remify(1170px)
+    height: remify(70px)
+    margin: 0 auto
+    border-bottom: remify(1.2px) solid $black
+    border-top: remify(1.2px) solid $grayLight
+    background-color: $grayLighter
+    color: $black
+    z-index: 2
+    &.white
+      background-color: $white
+    h4
+      display: table-cell
+      width: 100%
+      padding: 0 remify(10px)
+      vertical-align: middle
+      text-align: center
+      line-height: 1.89em;
+    i
+      position: relative
+      display: inline-block
+      width: remify(30px)
+      height: remify(30px)
+      vertical-align top
+      svg
+        position relative
+        top: remify(-1px)
+        left: remify(-16px)
+
+    // .content_header_alert_option
+    &_option
+      position: absolute
+      right remify(36px)
+      top remify(19px)

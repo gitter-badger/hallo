@@ -6,3 +6,142 @@
 @import "../_partials/_content.styl"
 @import "../_partials/_content-header.styl"
 @import "../_partials/_content-table.styl"
+@import "../_partials/_product-cheat-sheet.styl"
+
+body >header
+  +above('m')
+    margin-bottom: remify(-271px)
+
+.oi-header_title
+  +above('m')
+    margin-top: remify(57px)
+
+body
+  main
+    .cards
+      .cards_container
+        .cards_container_box
+          max-width: remify(780px)
+          oi-card
+            width: (100/2)%
+            +below('xs')
+              width 50%
+    .cards.open
+      .cards_container
+        .cards_container_box
+          max-width: 100%
+
+
+    .content
+
+      .content_header_container
+        position: relative
+        +below('xs')
+          display none
+        .content_header_action
+          margin-left remify(30px)
+          width auto
+
+      .content_table_container
+        top: 0
+        .content_table
+          padding-bottom remify(336px)
+          top 0
+
+.oi-banda-larga,
+.oi-internet-movel,
+.oi-banda-larga-mais-fixo
+  margin: 0 auto
+  max-width: remify(1170px)
+
+
+
+.oi-banda-larga_table,
+.oi-banda-larga-mais-fixo_table
+  position: relative
+  display table
+  width 100%
+  table
+    thead tr th
+      height: remify(70px)
+    tbody tr td
+      height: remify(110px)
+
+.oi-banda-larga-mais-fixo_table
+  table thead tr th
+    height: remify(120px)
+    +below('s')
+      height: remify(140px)
+
+
+.oi-banda-larga_table_heading, .oi-banda-larga-mais-fixo_table_heading
+  @extend .clearfix
+  position: absolute
+  display inline-block
+  width: 26%
+  vertical-align: top
+  background-color: $white
+  z-index: 1
+  +below('xs')
+    width: 40vw
+
+  table tbody tr td oi-price
+    pointer-events: none
+    height: remify(24px)
+
+.oi-banda-larga-mais-fixo_table_heading
+  width: 18%
+
+.oi-banda-larga_table_scroll, .oi-banda-larga-mais-fixo_table_scroll
+  @extend .clearfix
+  position: relative
+  left: 26%
+  display inline-block
+  width: 74%
+  vertical-align: top
+  z-index: 0
+  table tbody tr td
+    width: (100/3)%
+
+  +below('xs')
+    width: 60vw
+    left: 40vw
+    overflow-x: scroll
+    table
+      width: remify(185px*3)
+      tbody tr td
+        width: remify(185px)
+
+.oi-banda-larga-mais-fixo_table_scroll
+  left: 18%
+  width: 82%
+
+
+.oi-banda-larga_table_footer, .oi-banda-larga-mais-fixo_table_footer
+  @extend .clearfix
+  display: table
+  height remify(70px)
+  div
+    display: table-cell
+    vertical-align: middle
+    width: 100%
+
+
+.oi-banda-larga_ficha-tecnica, .oi-banda-larga-mais-fixo_ficha-tecnica
+  padding-top: remify(130px)
+  // background-image: url(../../../../assets/images/oi/internet-features-maks.png)
+
+
+
+.oi-banda-larga-mais-fixo_table_scroll
+  table tbody tr td
+    width: (100/5)%
+
+  +below('xs')
+    width: 60vw
+    left: 40vw
+    overflow-x: scroll
+    table
+      width: remify(185px*3)
+      tbody tr td
+        width: remify(185px)

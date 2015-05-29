@@ -1,0 +1,92 @@
+@keyframes kf-button-breath {
+  0% { background-position: center 0%; }
+  66% { background-position: center 50%; }
+  100% { background-position: center 0%; }
+}
+
+@keyframes kf-button-shake {
+  0% { transform: translateX(0%); }
+  21% { transform: translateX(-0.5%); }
+  34% { transform: translateX(0.5%); }
+  55% { transform: translateX(1%); }
+  66% { transform: translateX(0.5%); }
+  87% { transform: translateX(1%); }
+  100% { transform: translateX(0%); }
+}
+
+
+button, .button {
+  min-width: 16.875rem;
+  min-height: 1rem;
+  padding: 1.125rem 2.25rem;
+  font-size: 1rem;
+  color: colorBlack;
+  border: 0.08rem solid colorBlack;
+  background-color: colorWhite;
+  roundBorderAll(0.21rem);
+  transform-origin: center center;
+
+  &:hover { border-color: colorGray; }
+
+  &:active {
+    color: colorWhite;
+    background-color: colorBlack;
+    border-color: colorBlack;
+  }
+
+  &:disabled {
+    color: colorGray;
+    background-color: lighten(colorLightGray, 13%);
+    border-color: colorLightGray;
+  }
+
+
+  &.fill {
+    color: colorBlack;
+    border-left: 0.21rem solid transparent;
+    border-right: 0.21rem solid transparent;
+    border-top: 0.13rem solid transparent;
+    border-bottom: 0.21rem solid colorYellowDeepDark;
+    background-position: center 0;
+    background-size: 100% 200%;
+    background-color: colorYellowDark;
+
+    &:hover {
+      border-bottom: 0.21rem solid transparent;
+    }
+
+    &:active {
+      color: colorBlack;
+      border-bottom: 0.13rem solid transparent;
+      border-top: 0.21rem solid rgba(colorYellowDeepDark, 1);
+    }
+
+    &:disabled {
+      color: rgba(colorBlack, 0.21);
+      border-bottom: 0.21rem solid transparent;
+    }
+
+    &.animate {
+      background-image: linear-gradient(to bottom, colorYellowDark 0%, colorYellowDeepDark 34%, colorYellowDeepDark 0%);
+      -webkit-animation: kf-button-breath 2.1s infinite;
+      animation: kf-button-breath 2.1s infinite;
+    }
+
+    &.anime-shake {
+      -webkit-animation: kf-button-shake 0.13s infinite;
+      animation: kf-button-shake 0.13s infinite;
+    }
+  }
+
+  &.gray {
+    min-width: 0;
+    border-color: colorLightGray;
+    background-color: colorBrightGray;
+    &:hover {
+      border-color: colorBlack;
+    }
+    &:active {
+      background-color: colorBlack;
+    }
+  }
+}
