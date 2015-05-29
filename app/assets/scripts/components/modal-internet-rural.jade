@@ -1,0 +1,96 @@
+modal-internet-rural
+  .modal.modal-green(show="{ visible }")
+
+    .modal_column-left
+      header.modal_header
+        .modal_header_logo
+        h1.modal_header_title plano rural de banda larga
+
+    .modal_column-right
+      main.modal_container
+
+        .modal_container_row
+          .modal_container_half-left
+            h4 Internet para o campo
+
+          .modal_container_half-right
+            button.filled
+              strong
+                | 0800 <span>{ 031 }</span> 0001 
+                em Ligue para comprar
+
+        .modal_container_row
+            table.modal-table
+              thead
+                tr
+                  th
+                  th Velocidade
+                  th Franquia
+              tbody
+                tr
+                  td
+                    oi-price(price="{45.69}" small="{true}")
+                  td
+                    strong 256 Kbps
+                  td
+                    strong 250 MB
+
+        .modal_container_row
+          h5 Entenda o plano
+          ul.ordened
+            li 
+              p A internet rural permite conexão para os estados de Mato Grosso, Mato Grosso do Sul, Distrito Federal, Goiás e Rio Grande do Sul. 
+                a(href="#")  Consulte os municípios elegíveis.
+            li 
+              p Para adquirir este plano, sua residência deve estar fora da área de tarifação básica (ATB) em até 30km - áreas rurais.
+            li 
+              p Após o pedido, a instalação será efetivada em até 90 dias.
+
+    a.modal_close(href="javascript:void(0);", onclick="{ close }") Fechar
+
+  script.
+    var self = this;
+    self.visible = false;
+    self.added = false;
+
+    /**
+     * native riot method
+     *
+     * dispacth events via oiMediator to any point needed on entire system
+     * 
+     * **/
+    this.on('mount update unmount', function(eventName) {
+      oiMediator.publish('modal-internet-rural event', eventName);
+    });
+
+    self.open = function() {
+      $('body').addClass('scroll-lock');
+      self.visible = true;
+      self.update();
+      oiMediator.publish( 'modal-internet-rural open', {} );
+    };
+
+    self.close = function() {
+      $('body').removeClass('scroll-lock');
+      self.visible = false;
+      self.update();
+      oiMediator.publish( 'modal-internet-rural close', {} );
+    };
+
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      if (evt.keyCode == 27) { // Esc
+        self.close();
+      }
+    };
+
+    if (opts.visible) {
+      self.open();
+    }
+
+    $('body').on('click', '#open-modal-rural', function(evt){
+      evt.preventDefault();
+      self.open();
+    });
+
+    //- self.open();

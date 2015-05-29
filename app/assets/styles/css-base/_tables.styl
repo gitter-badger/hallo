@@ -144,16 +144,27 @@ table
           color $black
           transform rotate(-30deg)
 
+table.modal-table
+  border-top remify(1px) solid $black
+  margin remify(20px) 0 remify(70px) 0
+  th
+    padding remify(30px) remify(20px)
+  .oi-price
+    +below('xs')
+      padding-top remify(7px)
+    +above('xs')
+      padding-top remify(38px)
+  
+    
+table.checkout
+  thead
+    tr
+      th
+        padding: $tablePaddingVertical 0
 
-  &.checkout
-    thead
-      tr
-        th
-          padding: $tablePaddingVertical 0
-
-    tbody
-      tr
-        td
-          font-size: 0.8125rem
-          padding: $tablePaddingVertical*0.34 0
+  tbody
+    tr
+      td
+        font-size: 0.8125rem
+        padding: $tablePaddingVertical*0.34 0
 
