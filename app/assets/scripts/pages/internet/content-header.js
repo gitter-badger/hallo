@@ -2,8 +2,7 @@
 define([
   'domlib',
   'vendor/riot',
-  'tags/content-header',
-  'tags/content-header-alert',
+  'tags/content-header'
   ], function($, riot){
 
   var _private = {};

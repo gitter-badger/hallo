@@ -63,15 +63,15 @@ modal-internet-disponibilidade
         if (status === 'success') {
 
           if (tel.indexOf('(1') >= 0){
-            riot.mount('content-header-alert', 'content-header-alert-message-disponivel', { numero: tel } );
+            riot.mount('alert-box', 'alert-box-message-disponivel', { numero: tel } );
           } else if (tel.indexOf('(2') >= 0){
-            riot.mount('content-header-alert', 'content-header-alert-message-indisponivel', { numero: tel } );
+            riot.mount('alert-box', 'alert-box-message-indisponivel', { numero: tel } );
           } else if (tel.indexOf('(3') >= 0){
-            riot.mount('content-header-alert', 'content-header-alert-message-nao-oi', { numero: tel } );
+            riot.mount('alert-box', 'alert-box-message-nao-oi', { numero: tel } );
           } else if (tel.indexOf('(4') >= 0){
-            riot.mount('content-header-alert', 'content-header-alert-message-tem-maxima', { numero: tel } );
+            riot.mount('alert-box', 'alert-box-message-tem-maxima', { numero: tel } );
           } else if (tel.indexOf('(5') >= 0){
-            riot.mount('content-header-alert', 'content-header-alert-message-tem-inferior', { numero: tel } );
+            riot.mount('alert-box', 'alert-box-message-tem-inferior', { numero: tel } );
           }
 
           oiMediator.publish('scroll scrollToLockPosition');
