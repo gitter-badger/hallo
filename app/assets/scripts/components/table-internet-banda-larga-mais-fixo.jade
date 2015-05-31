@@ -56,6 +56,8 @@ table-internet-banda-larga-mais-fixo
 
     .oi-banda-larga-mais-fixo_table_footer
 
+    include /views/internet/_ficha-tecnica_banda-larga-mais-fixo.jade
+
   script.
     var self = this;
     self.plans = opts.plans;
@@ -94,8 +96,7 @@ table-internet-banda-larga-mais-fixo
       $('table-internet table tr input[type="radio"]').removeAttr('checked');
       $('table-internet table tr[data-idx="'+idx+'"] input[type="radio"]').attr('checked', true);
 
-
-      oiMediator.publish('content-header updateHeader', { title: [self.plans[idx].name], button: 'Compre agora', price: self.plans[idx].price.loyal });
+      oiMediator.publish('content-header updateHeader', { title: self.plans[idx].name.split(' + '), button: 'Compre agora', price: self.plans[idx].price.loyal });
 
       var slug = $('table-internet-banda-larga table tr[data-idx="'+idx+'"] input[type="radio"]').attr('id');
       oiMediator.publish('internet banda-larga-mais-fixo plan-selected', slug);
