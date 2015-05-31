@@ -28,7 +28,7 @@ table
     td, th
       position: relative
       display: table-cell !important
-      padding: 0.625rem 0.9375rem // 15px
+      padding: 0.625rem // 10px
       float: none !important
       vertical-align: middle
       font-weight: normal
@@ -60,6 +60,7 @@ table
         @extends .clearfix
         position: relative
         display inline-block
+        width 100%
 
       // &:last-child
       //   padding-right: 0
@@ -154,8 +155,8 @@ table.modal-table
       padding-top remify(7px)
     +above('xs')
       padding-top remify(38px)
-  
-    
+
+
 table.checkout
   thead
     tr
