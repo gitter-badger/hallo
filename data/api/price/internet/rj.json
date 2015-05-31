@@ -8,8 +8,8 @@
   },
   "data": [
     {
-      "name": "Banda Larga 15 mega",
-      "slug": "banda-larga-15-mega",
+      "name": "15 mega de Banda Larga",
+      "slug": "15-mega-de-banda-larga",
       "best_seller": true,
       "on_table": true,
       "features": {
@@ -25,8 +25,8 @@
       "penalty": 999
     },
 	{
-      "name": "Banda Larga 10 mega",
-      "slug": "banda-larga-10-mega",
+      "name": "10 mega de Banda Larga",
+      "slug": "10-mega-de-banda-larga",
       "best_seller": false,
       "on_table": true,
       "features": {
@@ -42,8 +42,8 @@
       "penalty": 999
     },
 	{
-      "name": "Banda Larga 2 mega",
-      "slug": "banda-larga-2-mega",
+      "name": "2 mega Banda Larga",
+      "slug": "2-mega-banda-larga",
       "best_seller": false,
       "on_table": true,
       "features": {
