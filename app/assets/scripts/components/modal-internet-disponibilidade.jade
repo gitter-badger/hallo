@@ -32,6 +32,7 @@ modal-internet-disponibilidade
     var self = this;
     self.visible = opts.visible ? opts.visible : false;
     self.added = false;
+    self.originalLabel = '';
 
     /**
      * native riot method
@@ -40,6 +41,14 @@ modal-internet-disponibilidade
      * 
      * **/
     this.on('mount update unmount', function(eventName) {
+      if (eventName === 'mount'){
+        self.originalLabel = $('form#form-consulta-de-cobertura fieldset .field-box.text label').html();
+        $('input[name="ddd-fixo-da-oi"]').val('');
+        $('input[name="ddd-fixo-da-oi"]').mask('(99) 9999-9999', {autoclear:false});
+
+        self.bindEsc();
+      }
+
       oiMediator.publish('modal-internet-disponibilidade event', eventName);
     });
 
@@ -54,7 +63,9 @@ modal-internet-disponibilidade
       $('body').removeClass('scroll-lock');
       self.visible = false;
       self.update();
+
       oiMediator.publish( 'modal-internet-disponibilidade close', {} );
+      this.unmount(true);
     };
 
     self.verify = function(){
@@ -62,6 +73,9 @@ modal-internet-disponibilidade
       $.getJSON('/api/verify/disponibilidade.json?tel='+tel, function(json, status){
         if (status === 'success') {
 
+          $('form#form-consulta-de-cobertura fieldset .field-box.text label').html(self.originalLabel);
+
+          var invalid = 0;
           if (tel.indexOf('(1') >= 0){
             riot.mount('alert-box', 'alert-box-message-disponivel', { numero: tel } );
           } else if (tel.indexOf('(2') >= 0){
@@ -72,25 +86,33 @@ modal-internet-disponibilidade
             riot.mount('alert-box', 'alert-box-message-tem-maxima', { numero: tel } );
           } else if (tel.indexOf('(5') >= 0){
             riot.mount('alert-box', 'alert-box-message-tem-inferior', { numero: tel } );
+          } else {
+            invalid++;
+            $('form#form-consulta-de-cobertura fieldset .field-box.text label').html(self.originalLabel + ' - ' + json.error.join(' / '));
+            setTimeout(function(){
+              $('form#form-consulta-de-cobertura fieldset .field-box.text label').html(self.originalLabel);
+            }, json.error.length*987);
+            $('form#form-consulta-de-cobertura fieldset .field-box.text').addClass('error');
           }
 
-          oiMediator.publish('scroll scrollToLockPosition');
-          self.close();
+          if (invalid == 0){
+            oiMediator.publish('scroll scrollToLockPosition');
+            self.close();
+          } else {
+            console.log('invalid');
+          }
+
         }
       });
     };
 
-    document.onkeydown = function(evt) {
-      evt = evt || window.event;
-      if (evt.keyCode == 27) { // Esc
-        self.close();
-      }
+    self.bindEsc = function(){
+      console.log('self.bindEsc');
+      document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        if (evt.keyCode == 27) { // Esc
+          self.close();
+        }
+      };
     };
 
-    //- $('input[name="ddd-fixo-da-oi"]').mask('(00) 0000-0000', { placeholder: "(__) ____-____" });
-    $('input[name="ddd-fixo-da-oi"]').mask('(00) 0000-0000');
-
-    $('body').on('click', '#consulte-a-disponibilidade', function(evt){
-      evt.preventDefault();
-      self.open();
-    });

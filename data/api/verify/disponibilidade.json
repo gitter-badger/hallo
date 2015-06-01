@@ -6,5 +6,9 @@
         { "status": true },
         { "status": false },
         { "status": true }
+    ],
+    "error":[
+        "número incompleto",
+        "região inválida"
     ]
 }
