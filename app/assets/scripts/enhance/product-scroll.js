@@ -420,7 +420,7 @@ define([
         dynamicBackgrounds(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize * 0.89);
 
         open();
-        // lock();
+        lock();
 
         // fold();
 
