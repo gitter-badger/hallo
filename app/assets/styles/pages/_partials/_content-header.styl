@@ -55,6 +55,7 @@
       vertical-align middle
       white-space nowrap
       overflow hidden
+      letter-spacing remify(-2px)
       +above('m')
         padding-right remify(20px)
       +above('l')
@@ -72,6 +73,7 @@
       &:before
         content '+'
         color $black
+        margin 0 remify(15px)
 
       // .content_header_list li.visible
       &.visible
@@ -310,42 +312,3 @@
       +above('xl')
         width remify(170px)
 
-  // .content_header_alert
-  &_alert
-    position: relative
-    top: remify(-1.2px)
-    display: table
-    width: 100%
-    max-width: remify(1170px)
-    height: remify(70px)
-    margin: 0 auto
-    border-bottom: remify(1.2px) solid $black
-    border-top: remify(1.2px) solid $grayLight
-    background-color: $grayLighter
-    color: $black
-    z-index: 2
-    &.white
-      background-color: $white
-    h4
-      display: table-cell
-      width: 100%
-      padding: 0 remify(10px)
-      vertical-align: middle
-      text-align: center
-      line-height: 1.89em;
-    i
-      position: relative
-      display: inline-block
-      width: remify(30px)
-      height: remify(30px)
-      vertical-align top
-      svg
-        position relative
-        top: remify(-1px)
-        left: remify(-16px)
-
-    // .content_header_alert_option
-    &_option
-      position: absolute
-      right remify(36px)
-      top remify(19px)

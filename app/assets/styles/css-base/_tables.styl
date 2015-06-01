@@ -28,7 +28,7 @@ table
     td, th
       position: relative
       display: table-cell !important
-      padding: 0.625rem 0.9375rem // 15px
+      padding: 0.625rem // 10px
       float: none !important
       vertical-align: middle
       font-weight: normal
@@ -51,7 +51,20 @@ table
         margin-bottom: -(1.3125rem/2)
         left: 50%
         margin-left: -(3.9375rem/2)
-        outline: 0.55rem solid $white
+        &:after, &:before
+          content " "
+          position absolute
+          top 50%
+          display block
+          width remify(10px)
+          height remify(2.6px)
+          margin-top remify(-1.2px)
+          background-color $white
+        &:after
+          left 100%
+        &:before
+          right 100%
+
       .icon
         display: inline-block
         width: 2rem
@@ -60,6 +73,7 @@ table
         @extends .clearfix
         position: relative
         display inline-block
+        width 100%
 
       // &:last-child
       //   padding-right: 0
@@ -127,7 +141,7 @@ table
             display inline-block
             width: 100%
             white-space: nowrap
-            color: $grayLight
+            color: $gray
 
         .promo
           position absolute
@@ -154,8 +168,8 @@ table.modal-table
       padding-top remify(7px)
     +above('xs')
       padding-top remify(38px)
-  
-    
+
+
 table.checkout
   thead
     tr

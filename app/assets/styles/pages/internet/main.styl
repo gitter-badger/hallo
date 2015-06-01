@@ -1,6 +1,9 @@
 @import "../_partials/_base.styl"
 
 // Page Components
+@import "components/_alert-box.styl"
+
+// Page partials
 @import "../_partials/_structure.styl"
 @import "../_partials/_cards.styl"
 @import "../_partials/_content.styl"
@@ -16,8 +19,14 @@ body >header
   +above('m')
     margin-top: remify(57px)
 
+.oi-header_client-type
+  +above('m')
+    display block
+    margin-top remify(57px)
+
 body
   main
+    background-color $green
     .cards
       .cards_container
         .cards_container_box
@@ -35,7 +44,6 @@ body
     .content
 
       .content_header_container
-        position: relative
         +below('xs')
           display none
         .content_header_action
@@ -43,7 +51,6 @@ body
           width auto
 
       .content_table_container
-        top: 0
         .content_table
           padding-bottom remify(336px)
           top 0
