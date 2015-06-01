@@ -66,6 +66,18 @@ body
     &.opt
       width remify(210px)
       padding-left remify(25px)
+      position relative
+      input[type=radio]
+        position absolute
+        top 50%
+        left remify(25px)
+        margin-top remify(-16px)
+      oi-price
+        position absolute
+        top remify(30px)
+        left remify(115px)
+        height remify(36px)
+        // margin-top remify(-30px)
 
   .promo
     background-color $orangeLight
@@ -210,7 +222,7 @@ body
           opacity 0
           // position absolute
           width 100%
-          top -remify(50px)
+          top remify(-50px)
           left 0
           transition all .4s linear
           &:hover, &:focus, &:active
