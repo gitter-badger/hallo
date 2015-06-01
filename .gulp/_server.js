@@ -49,3 +49,5 @@ gulp.task('server', ['watch'], function() {
     }
   });
 });
+
+gulp.task('reset', ['clear', 'buidl', 'watch']);
