@@ -11,7 +11,9 @@ define([
   var _private = {};
   var _public = {};
   var tags = {}
+  var cart = {}
   var plans, labels;
+  var $vozTotal = $('#vozTotal');
 
   _public.init = function(){
     _private.loadPlans()
@@ -19,6 +21,7 @@ define([
     _private.bindRemoveVozTotal();
     oiMediator.subscribe( 'voz-total add', _public.addVozTotal );
     oiMediator.subscribe( 'voz-total remove', _public.removeVozTotal );
+    oiMediator.subscribe( 'plan fixo select', _private.selectPlan );
   };
 
   _private.bindOpenDetail = function(){
@@ -49,7 +52,7 @@ define([
     tags.ModalPlanoFixo = riot.mount('modal-planfixo', {plan: planModal})[0];
   }
 
-  var $vozTotal = $('#vozTotal');
+
   _public.addVozTotal = function (){
     $vozTotal.find('.add').addClass('added')
   }
@@ -63,6 +66,21 @@ define([
 
   _public.removeVozTotal = function (){
     $vozTotal.find('.add').removeClass('added')
+  }
+
+  _private.selectPlan = function (planSlug){
+    delete cart.plan;
+    cart.plan = planSlug
+    _private.updateTitle();
+  }
+
+  var $title = $('.content_header_list h2')
+
+  _private.updateTitle = function (){
+    var planName = _.find(plans, function(itemPlan){
+      return itemPlan.slug === cart.plan
+    }).name
+    $title.text(planName)
   }
 
   return _public;
