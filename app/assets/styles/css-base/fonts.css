@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'oiTitle';
+  font-family: 'oititle';
   src: url('/assets/fonts/simplon/simplonoi-headline-webfont.eot');
   src: url('/assets/fonts/simplon/simplonoi-headline-webfont.eot?#iefix') format('embedded-opentype'),
   url('/assets/fonts/simplon/simplonoi-headline-webfont.woff') format('woff'),
@@ -9,7 +9,7 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'oiTextRegular';
+  font-family: 'oitextregular';
   src: url('/assets/fonts/simplon/simplonbp-regular-webfont.eot');
   src: url('/assets/fonts/simplon/simplonbp-regular-webfont.eot?#iefix') format('embedded-opentype'),
   url('/assets/fonts/simplon/simplonbp-regular-webfont.woff') format('woff'),
@@ -20,7 +20,7 @@
 }
 /*
 @font-face {
-  font-family: 'oiTextLight';
+  font-family: 'oitextlight';
   src: url('/assets/fonts/simplon/simplonbp-medium-webfont.eot');
   src: url('/assets/fonts/simplon/simplonbp-medium-webfont.eot?#iefix') format('embedded-opentype'),
   url('/assets/fonts/simplon/simplonbp-medium-webfont.woff') format('woff'),
@@ -31,17 +31,17 @@
 }
 */
 @font-face {
-  font-family: 'oiTextLight';
-  src: url('/assets/fonts/simplon/SimplonBP-Light-webfont.eot');
-  src: url('/assets/fonts/simplon/SimplonBP-Light-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/assets/fonts/simplon/SimplonBP-Light-webfont.woff') format('woff'),
-  url('/assets/fonts/simplon/SimplonBP-Light-webfont.ttf') format('truetype'),
-  url('/assets/fonts/simplon/SimplonBP-Light-webfont.svg#simplon_bplight') format('svg');
+  font-family: 'oitextlight';
+  src: url('/assets/fonts/simplon/simplonbp-light-webfont.eot');
+  src: url('/assets/fonts/simplon/simplonbp-light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/simplon/simplonbp-light-webfont.woff') format('woff'),
+  url('/assets/fonts/simplon/simplonbp-light-webfont.ttf') format('truetype'),
+  url('/assets/fonts/simplon/simplonbp-light-webfont.svg#simplon_bplight') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'oiTextBold';
+  font-family: 'oitextbold';
   src: url('/assets/fonts/simplon/simplonbp-bold-webfont.eot');
   src: url('/assets/fonts/simplon/simplonbp-bold-webfont.eot?#iefix') format('embedded-opentype'),
   url('/assets/fonts/simplon/simplonbp-bold-webfont.woff') format('woff'),
@@ -52,9 +52,9 @@
 }
 
 /*
-SimplonBP-Light-webfont.eot
-SimplonBP-Light-webfont.svg
-SimplonBP-Light-webfont.ttf
-SimplonBP-Light-webfont.woff
-SimplonBP-Light-webfont.woff2
+simplonbp-light-webfont.eot
+simplonbp-light-webfont.svg
+simplonbp-light-webfont.ttf
+simplonbp-light-webfont.woff
+simplonbp-light-webfont.woff2
 */

@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "features_labels": [
+        { "label":"Velocidade", "extra": false },
+        { "label":"Modem incluso", "extra": false },
+        { "label":"Oi WiFi", "extra": "ilimitado" }
+    ]
+  },
+  "data": [
+    {
+      "name": "15 mega de Banda Larga",
+      "slug": "15-mega-de-banda-larga",
+      "best_seller": true,
+      "on_table": true,
+      "features": {
+        "speed": "15 mega",
+		"modem": [true, "com WiFi"],
+		"wifi": true
+      },
+      "price": {
+        "loyal": 69.90,
+        "not_loyal": 94.90,
+        "without_landline": 128.07
+      },
+      "penalty": 999
+    },
+	{
+      "name": "10 mega de Banda Larga",
+      "slug": "10-mega-de-banda-larga",
+      "best_seller": false,
+      "on_table": true,
+      "features": {
+        "speed": "10 mega",
+		"modem": [true, "com WiFi"],
+		"wifi": true
+      },
+      "price": {
+        "loyal": 59.90,
+        "not_loyal": 84.90,
+        "without_landline": 118.07
+      },
+      "penalty": 999
+    },
+	{
+      "name": "2 mega Banda Larga",
+      "slug": "2-mega-banda-larga",
+      "best_seller": false,
+      "on_table": true,
+      "features": {
+        "speed": "2 mega",
+		"modem": [true, ""],
+		"wifi": true
+      },
+      "price": {
+        "loyal": 49.90,
+        "not_loyal": 74.90,
+        "without_landline": 108.07
+      },
+      "penalty": 999
+    }
+  ]
+}

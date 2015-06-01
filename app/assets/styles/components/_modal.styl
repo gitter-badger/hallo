@@ -305,3 +305,172 @@ channel-modal
       display inline-block
     &_suffix
       margin -80px 0 0 140px
+
+
+
+
+.modal
+  position: fixed
+  top: 0
+  left: 0
+  display: block
+  width: 100%
+  height: 100%
+  background-color: $white
+  z-index: 9999
+  +below('xs')
+    overflow-y auto
+
+.modal_close
+  position fixed
+  top remify(30px)
+  right remify(30px)
+  display block
+  width remify(27px)
+  height remify(27px)
+  background-image url(/assets/images/icons/close.svg)
+  background-size contain
+  background-color transparent
+  background-repeat no-repeat
+  border none
+  text-indent 333%
+  overflow hidden
+  cursor pointer
+  +below('xs')
+    top remify(20px)
+    right remify(20px)
+    width remify(16px)
+    height remify(16px)
+
+
+
+.modal_header_logo
+  position absolute
+  top remify(100px)
+  left remify(98px)
+  display block
+  width remify(67px)
+  height remify(70px)
+  background-image url(/assets/images/oi/oi-logo.svg)
+  background-size auto
+  background-color transparent
+  background-repeat no-repeat
+  +below('xs')
+    top remify(15px)
+    left remify(20px)
+    width remify(52px)
+    height remify(55px)
+
+.modal_header_title
+  @extend $title-medium
+  position absolute
+  top remify(215px)
+  left 0
+  width 100%
+  padding 0 remify(40px) 0 remify(86px)
+  letter-spacing -0.046em
+  line-height 0.98em
+  color $white
+  +below('xs')
+    position relative
+    top 0
+    font-size remify(42px)
+    padding remify(98px) remify(20px) remify(20px) remify(20px)
+
+.modal_container
+  padding remify(215px) 0
+  width 79%
+  margin 0 auto
+  +below('xs')
+    width 100%
+    padding remify(68px) remify(20px)
+
+.modal_container_row
+  @extend .clearfix
+  h4
+    font-size remify(30px)
+    font-family $fontTextLight
+    padding remify(10px) 0 remify(20px) 0
+  h5
+    font-family $fontTextBold
+    padding remify(10px) 0 remify(20px) 0
+  ul
+    li
+      color $gray
+      list-style decimal
+      margin-left remify(26px)
+      padding-left remify(10px)
+      padding-bottom remify(30px)
+      p
+        color $black
+      a
+        color $green
+        text-decoration none
+        &:hover
+          color $purple
+          border-bottom: 0.08em solid $purple;
+    
+    
+.modal_column-left
+  top 0
+  left 0
+  +below('xs')
+    position: relative
+    width 100%
+    height auto
+    padding-bottom remify(20px)
+  +above('xs')
+    position fixed
+    width 33.3%
+    height 100vh
+
+
+
+.modal_column-right
+  position fixed
+  top 0
+  left 33.3%
+  width 66.7%
+  height 100vh
+  overflow-y auto
+  overflow-x hidden
+  +below('xs')
+    position relative
+    top 0
+    left 0
+    width 100%
+    height auto
+
+
+
+.modal_container_half-left
+  @extends .clearfix
+  width: 50%
+  float: left
+  padding-right remify(15px)
+  +below('xs')
+    width 100%
+    padding-right 0
+    padding-bottom remify(20px)
+
+.modal_container_half-right
+  @extends .clearfix
+  width: 50%
+  float: left
+  padding-left remify(15px)
+  +below('xs')
+    width 100%
+    padding-left 0
+    padding-bottom remify(20px)
+
+
+
+
+.modal-green
+  .modal_column-left
+    @extend .gradient-animate-green
+  .modal_close
+    background-image url(/assets/images/icons/close-gray.svg)
+
+// .modal-green .modal_column-right
+//   background-color: $white

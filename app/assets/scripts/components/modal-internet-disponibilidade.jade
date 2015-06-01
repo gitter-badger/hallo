@@ -1,0 +1,96 @@
+modal-internet-disponibilidade
+  .modal.modal-green(show="{ visible }")
+
+    .modal_column-left
+      header.modal_header
+        .modal_header_logo
+        h1.modal_header_title consulta de cobertura
+
+    .modal_column-right
+      main.modal_container
+
+        .modal_container_row
+          h5 Já tem um fixo da Oi?
+          form#form-consulta-de-cobertura
+
+            .modal_container_half-left
+              fieldset
+                .field-box.round-all.last-line.text
+                  label DDD + Fixo da Oi
+                  input(type='text', name='ddd-fixo-da-oi', value="{ numero }")
+
+            .modal_container_half-right
+              button.basic(onclick="{ verify }") Consulte a disponibilidade
+
+        .modal_container_row
+          h5 Não tem um Telefone Fixo ainda?
+          button.basic Fale com um especialista
+
+    a.modal_close(href="javascript:void(0);", onclick="{ close }") Fechar
+
+  script.
+    var self = this;
+    self.visible = opts.visible ? opts.visible : false;
+    self.added = false;
+
+    /**
+     * native riot method
+     *
+     * dispacth events via oiMediator to any point needed on entire system
+     * 
+     * **/
+    this.on('mount update unmount', function(eventName) {
+      oiMediator.publish('modal-internet-disponibilidade event', eventName);
+    });
+
+    self.open = function() {
+      $('body').addClass('scroll-lock');
+      self.visible = true;
+      self.update();
+      oiMediator.publish( 'modal-internet-disponibilidade open', {} );
+    };
+
+    self.close = function() {
+      $('body').removeClass('scroll-lock');
+      self.visible = false;
+      self.update();
+      oiMediator.publish( 'modal-internet-disponibilidade close', {} );
+    };
+
+    self.verify = function(){
+      var tel = $('input[name="ddd-fixo-da-oi"]').val();
+      $.getJSON('/api/verify/disponibilidade.json?tel='+tel, function(json, status){
+        if (status === 'success') {
+
+          if (tel.indexOf('(1') >= 0){
+            riot.mount('alert-box', 'alert-box-message-disponivel', { numero: tel } );
+          } else if (tel.indexOf('(2') >= 0){
+            riot.mount('alert-box', 'alert-box-message-indisponivel', { numero: tel } );
+          } else if (tel.indexOf('(3') >= 0){
+            riot.mount('alert-box', 'alert-box-message-nao-oi', { numero: tel } );
+          } else if (tel.indexOf('(4') >= 0){
+            riot.mount('alert-box', 'alert-box-message-tem-maxima', { numero: tel } );
+          } else if (tel.indexOf('(5') >= 0){
+            riot.mount('alert-box', 'alert-box-message-tem-inferior', { numero: tel } );
+          }
+
+          oiMediator.publish('scroll scrollToLockPosition');
+          self.close();
+        }
+      });
+    };
+
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      if (evt.keyCode == 27) { // Esc
+        self.close();
+      }
+    };
+
+    //- $('input[name="ddd-fixo-da-oi"]').mask('(00) 0000-0000', { placeholder: "(__) ____-____" });
+    $('input[name="ddd-fixo-da-oi"]').mask('(00) 0000-0000');
+
+    $('body').on('click', '#consulte-a-disponibilidade', function(evt){
+      evt.preventDefault();
+      self.open();
+    });

@@ -1,0 +1,143 @@
+//- 
+//- table-internet
+//- 
+//- riotJS module mounted on <table-internet>
+//- 
+//- 
+table-internet-banda-larga-mais-fixo
+
+  .oi-banda-larga-mais-fixo
+
+    alert-box
+
+    .oi-banda-larga-mais-fixo_table
+
+      .oi-banda-larga-mais-fixo_table_heading
+        table
+          caption Compare os planos de banda larga e fixo
+          thead
+            tr
+              th
+          tbody
+            tr(each!="{ plan, idx in plans }", onclick="{ parent.rowSelect }", onmouseover="{ parent.rowHover }", onmouseout="{ parent.rowOut }", data-idx="{ idx }")
+              td
+                span.promo(if="{plan.best_seller}") Mais vendido
+                fieldset.price-fieldset.checkbox
+                  input(id="{ plan.slug }", type="radio", name="oi-internet-banda-larga-plan")
+                  oi-price(price="{ plan.price.loyal }", small="{ true }")
+
+      .oi-banda-larga-mais-fixo_table_scroll
+        table
+          thead
+            tr
+              th(each="{ label, idx in labels }")
+                strong { label.label }
+                span.subtitle(if="{ label.subtitle }") { label.subtitle }
+                span.hashtag(if="{ label.extra }") {label.extra}
+                
+          tbody
+            tr(each!="{ plan, idx in plans }", onclick="{ parent.rowSelect }", onmouseover="{ parent.rowHover }", onmouseout="{ parent.rowOut }", data-idx="{ idx }")
+              td(id="{ plan.slug }"): strong {plan.features.speed}
+              td
+                i.icon_check
+                  | { if plan.features.modem[0] }
+                  include /assets/images/icons/check.svg
+                  | { endif }
+                  small(if="{plan.features.modem[1]}") { plan.features.modem[1] }
+              td
+                span.hashtag(if="{ plan.features.on_table_locals.split(' ').length <= 1 }") { plan.features.on_table_locals }
+                strong(if="{ plan.features.on_table_locals.split(' ').length > 1 }") { plan.features.on_table_locals }
+
+              td
+                span.hashtag(if="{ plan.features.on_table_others.split(' ').length <= 1 }") { plan.features.on_table_others }
+                strong(if="{ plan.features.on_table_others.split(' ').length > 1 }") { plan.features.on_table_others }
+
+              td
+                span.hashtag(if="{ plan.features.on_table_ddd.split(' ').length <= 1 }") { plan.features.on_table_ddd }
+                strong(if="{ plan.features.on_table_ddd.split(' ').length > 1 }") { plan.features.on_table_ddd }
+
+    .oi-banda-larga-mais-fixo_table_footer
+
+    include /views/internet/_ficha-tecnica_banda-larga-mais-fixo.jade
+
+  script.
+    var self = this;
+    self.plans = opts.plans;
+    self.labels = opts.labels;
+
+    /**
+     * native riot method
+     *
+     * dispacth events via oiMediator to any point needed on entire system
+     * 
+     * **/
+    this.on('mount update unmount', function(eventName) {
+      oiMediator.publish('table-internet-banda-larga-mais-fixo event', eventName);
+
+      if (eventName == 'mount'){
+        riot.mount('alert-box', 'alert-box-message-banda-larga-mais-fixo');
+
+        oiMediator.publish('content-header updateHeader', { title: ['Banda larga', 'Fixo'], button: 'Compre com um especialista' });
+        oiMediator.publish('scroll scrollToLockPosition', {});
+      } else if (eventName === 'unmount') {
+        oiMediator.publish('alert-box unmount this');
+      }
+    });
+
+
+    /**
+     * self.rowSelect
+     *
+     * select the clicked row as the selected plan, just need to post this to other page or listening the meditor
+     * 
+     * @method self.rowSelect
+     * @param e {event} table row click event
+     * 
+     * **/
+    self.rowSelect = function(e){
+      var idx = e.currentTarget.getAttribute('data-idx');
+      $('table-internet table tr').removeClass();
+      $('table-internet table tr[data-idx="'+idx+'"]').addClass('selected');
+
+      $('table-internet table tr input[type="radio"]').removeAttr('checked');
+      $('table-internet table tr[data-idx="'+idx+'"] input[type="radio"]').attr('checked', true);
+
+      oiMediator.publish('content-header updateHeader', { title: self.plans[idx].name.split(' + '), button: 'Compre agora', price: self.plans[idx].price.loyal });
+
+      oiMediator.publish('content-header updateHeader', { title: [self.plans[idx].name], button: 'Compre com um especialista', price: self.plans[idx].price.loyal });
+
+      var slug = $('table-internet-banda-larga table tr[data-idx="'+idx+'"] input[type="radio"]').attr('id');
+      oiMediator.publish('internet banda-larga-mais-fixo plan-selected', slug);
+    };
+
+    /**
+     * self.rowHover
+     *
+     * change the background color form each row, needed because we are using 2 tables with the same visual guide
+     * 
+     * @method self.rowHover
+     * @param e {event} table row rollover event
+     * 
+     * **/
+    self.rowHover = function(e){
+
+      var idx = e.currentTarget.getAttribute('data-idx');
+      $('table-internet table tr').removeClass('hover');
+      $('table-internet table tr[data-idx="'+idx+'"]').addClass('hover');
+    };
+
+    /**
+     * self.rowOut
+     *
+     * rolling out the table remove the `hover` class
+     * 
+     * @method self.rowOut
+     * @param e {event} table row rollout event
+     * 
+     * **/
+    self.rowOut = function(e){
+
+      $('table-internet table tr').removeClass('hover');
+    };
+
+

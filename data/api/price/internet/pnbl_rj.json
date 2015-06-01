@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "features_labels": {
+      "1": "Plano",
+	  "2": "Valor mensal",
+	  "3": "O que está incluído"
+    }
+  },
+  "data": [
+    {
+      "name": "Internet móvel",
+      "slug": "internet-movel",
+      "on_table": true,
+      "features": {
+        "1": ["Internet móvel","É preciso ter um mini-modem ou tablet 3g/4g"],
+		"2": 29.90,
+		"3": ["Velocidade 3g ou 2g","Franquia de 300 MB de internet","Oi WiFi ilimitado"]
+      },
+	  "links": {
+        "1": ["Regulamento","http://www.oi.com.br/link_regulamento"],
+		"2": ["Sumário","http://www.oi.com.br/link_sumario"],
+		"3": ["Tarifas","http://www.oi.com.br/link_tarifas"]
+      }
+    },
+	{
+      "name": "Fixo + Banda Larga PNBL",
+      "slug": "fixo-banda-larga-pnbl",
+      "on_table": true,
+      "features": {
+        "1": ["Fixo + Banda Larga PNBL","É preciso ter um computador ou notebook com modem."],
+		"2": [64.80, "Taxa de habilitação da banda larga (R$ 100) e taxa de adesão do fixo (R$ 120) em parcela única"],
+		"3": ["Até 1 mega de velocidade","Franquia de 500 MB de internet","Ligações locais por menos de R$ 1 por dia"]
+      },
+	  "links": {
+		"1": ["Tarifas","http://www.oi.com.br/link_tarifas"]
+      }
+    }
+  ]
+}

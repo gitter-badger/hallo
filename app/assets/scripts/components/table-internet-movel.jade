@@ -1,0 +1,189 @@
+//- 
+//- table-internet-movel
+//- 
+//- riotJS module runnig on <table-internet>
+//- 
+//- 
+table-internet-movel
+
+  .oi-internet-movel
+
+    alert-box
+
+    .oi-internet-movel_table
+      table
+        thead
+          tr
+            th Dispositivo e plano
+            th
+            th Franquia
+            th Validade
+        tbody
+          tr
+            td.left(rowspan="4")
+              strong Celular pós-pago
+              small Você precisa ter um plano Pós da Oi.
+              div.left-bracer
+                div.inner
+            td
+              fieldset.price-fieldset
+                input(type="radio",name="radio-test")
+                oi-price(price="{ 59.90 }", small="{true}")
+            td: strong 5 GB
+            td: span.hashtag ilimitada
+          tr
+            td
+              fieldset.price-fieldset
+                input(type="radio",name="radio-test")
+                oi-price(price="{ 39.90 }", small="{true}")
+            td
+              strong 2 GB
+              small.tooltip Ganhe 5GB por 3 meses
+            td: span.hashtag ilimitada
+          tr
+            td
+              fieldset.price-fieldset
+                input(type="radio",name="radio-test")
+                oi-price(price="{ 29.90 }", small="{true}")
+            td: strong 500 MB
+            td: span.hashtag ilimitada
+          tr
+            td
+              fieldset.price-fieldset
+                input(type="radio",name="radio-test")
+                oi-price(price="{ 19.90 }", small="{true}")
+            td: strong 300 MB
+            td: span.hashtag ilimitada
+
+          tr
+            td.left(rowspan="6")
+              strong Celular pós-pago
+              small Você precisa ter um plano Pós da Oi.
+              div.left-bracer
+                div.inner
+            td
+              fieldset.price-fieldset
+                input(type="radio",name="radio-test")
+                oi-price(price="{ 29.90 }", small="{true}")
+            td: strong 500 MB
+            td
+              strong 30 Dias
+              em Até o final do 30º dia
+          tr
+            td
+              fieldset.price-fieldset
+                input(type="radio",name="radio-test")
+                oi-price(price="{ 19.90 }", small="{true}")
+            td: strong 300 MB
+            td
+              strong 30 Dias
+              em Até o final do 30º dia
+          tr
+            td
+              fieldset.price-fieldset
+                input(type="radio",name="radio-test")
+                oi-price(price="{ 9.90 }", small="{true}")
+            td: strong 150 MB
+            td
+              strong 30 Dias
+              em Até o final do 30º dia
+          tr
+            td
+              fieldset.price-fieldset
+                input(type="radio",name="radio-test")
+                oi-price(price="{ 2.90 }", posfix="{ 'semana' }", small="{true}")
+            td: strong 50 MB
+            td
+              strong 7 Dias
+              em Até o final do 7º dia
+          tr
+            td
+              fieldset.price-fieldset
+                input(type="radio",name="radio-test")
+                oi-price(price="{ 0.99 }", posfix="{ 'semana' }", small="{true}")
+            td: strong 15 MB
+            td
+              strong 1 Dia (pacote extra)
+              em Até o final do dia. Caso já tenha outro pacote contratado, terá a mesma validade do vigente.
+          tr
+            td
+              fieldset.price-fieldset
+                input(type="radio",name="radio-test")
+                oi-price(price="{ 0.75 }", posfix="{ 'semana' }", small="{true}")
+            td: strong 10 MB
+            td
+              strong 1 Dia (pacote extra)
+              em Até o final do dia. Caso já tenha outro pacote contratado, terá a mesma validade do vigente.
+
+          tr
+            td.left(rowspan="3")
+              strong Para computador e tablet
+              p Você precisa ter um minimodem ou tablet compatível com 3G/4G.
+              p Valor com fidelização de 1 ano para clientes da Oi com celular pós ou fixo.
+              p: a(href="javascript:void(0);") Veja os valores para não clientes Oi e sem fidelização
+              div.left-bracer
+                div.inner
+            td
+              fieldset.price-fieldset
+                input(type="radio",name="radio-test")
+                oi-price(price="{99.90}", small="{true}")
+            td: strong 10 GB
+            td: span.hashtag ilimitada
+          tr
+            td
+              fieldset.price-fieldset
+                input(type="radio",name="radio-test")
+                oi-price(price="{59.90}", small="{true}")
+            td: strong 5 GB
+            td: span.hashtag ilimitada
+          tr
+            td
+              fieldset.price-fieldset
+                input(type="radio",name="radio-test")
+                oi-price(price="{39.90}", small="{true}")
+            td: strong 2 GB
+            td: span.hashtag ilimitada
+
+    .oi-internet-movel_table_footer
+      | Esses são planos para clientes de Telefone Fixo da Oi. 
+      a(href="javascript:void(0);") Veja os planos fixo + banda larga
+
+    include /views/internet/_ficha-tecnica_banda-larga.jade
+
+  script.
+    var self = this;
+    self.plans = opts.plans;
+    self.labels = opts.labels;
+
+    this.on('mount update unmount', function(eventName) {
+      if (eventName == 'mount'){
+        oiMediator.publish('content-header updateHeader', { title: ['Banda larga para sua casa'], button: 'Compre agora' });
+        oiMediator.publish('scroll scrollToLockPosition', {});
+      }
+
+      oiMediator.publish('table-internet-banda-larga event', eventName);
+    });
+
+    self.rowSelect = function(e){
+      var idx = e.currentTarget.getAttribute('data-idx');
+      $('table-internet table tr').removeClass();
+      $('table-internet table tr[data-idx="'+idx+'"]').addClass('selected');
+
+      $('table-internet table tr input[type="radio"]').removeAttr('checked');
+      $('table-internet table tr[data-idx="'+idx+'"] input[type="radio"]').attr('checked', true);
+
+      var slug = $('table-internet table tr[data-idx="'+idx+'"] input[type="radio"]').attr('id');
+      oiMediator.publish('internet banda-larga plan-selected', slug);
+    };
+
+    self.rowHover = function(e){
+      var idx = e.currentTarget.getAttribute('data-idx');
+      $('table-internet table tr').removeClass('hover');
+      $('table-internet table tr[data-idx="'+idx+'"]').addClass('hover');
+    };
+
+    self.rowOut = function(e){
+      $('table-internet table tr').removeClass('hover');
+    };
+
+

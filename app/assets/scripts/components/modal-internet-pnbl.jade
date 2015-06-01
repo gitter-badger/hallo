@@ -1,0 +1,91 @@
+modal-internet-pnbl
+  .modal.modal-green(show="{ visible }")
+
+    .modal_column-left
+      header.modal_header
+        .modal_header_logo
+        h1.modal_header_title plano nacional de banda larga
+
+    .modal_column-right
+      main.modal_container
+
+        .modal_container_row
+          .modal_container_half-left
+            h4 Internet para Todos
+
+          .modal_container_half-right
+            button.filled
+              strong
+                | 0800 <span>{ 031 }</span> 0001 
+                em Ligue para comprar
+
+        .modal_container_row
+          | TABELA
+
+        .modal_container_row
+          .modal_container_half-left
+            strong Um plano da Oi e do Governo Federal para levar a banda larga para todo Brasil.
+
+        .modal_container_row
+          h5 Entenda oferta
+          ul.ordened
+            li Este plano pode ser oferecido na tecnologia fixa (ADSL) ou móvel (3G), dependendo da localidade.
+            li Esta parceria visa levar internet banda larga pra todos os habitantes do Brasil e fazer com que a experiência e a qualidade de acesso sejam as melhores possíveis.
+            li Em 2014, a Oi cumpriu a meta acordada no termo de compromisso do Plano Nacional de Banda Larga atendendo a todos os 4.668 municípios de sua área de atuação na oferta varejo do PNBL.
+            li Para usar a internet móvel, você precisa de um tablet ou minimodem compatível.
+            li Para usar a banda larga, é preciso ter um computador ou notebook e um modem.
+            li Ao atingir a franquia mensal, você pode continuar navegando com velocidade reduzida.
+            li A velocidade anunciada para banda larga é a máxima nominal podendo sofrer variações devido a fatores externos.
+            li O serviço de banda larga está sujeito a análise de viabilidade técnica.
+
+        .modal_container_row
+          h5 Não tem um Telefone Fixo ainda?
+
+    a.modal_close(href="javascript:void(0);", onclick="{ close }") Fechar
+
+  script.
+    var self = this;
+    self.visible = false;
+    self.added = false;
+
+    /**
+     * native riot method
+     *
+     * dispacth events via oiMediator to any point needed on entire system
+     * 
+     * **/
+    this.on('mount update unmount', function(eventName) {
+      oiMediator.publish('modal-internet-pnbl event', eventName);
+    });
+
+    self.open = function() {
+      $('body').addClass('scroll-lock');
+      self.visible = true;
+      self.update();
+      oiMediator.publish( 'modal-internet-pnbl open', {} );
+    };
+
+    self.close = function() {
+      $('body').removeClass('scroll-lock');
+      self.visible = false;
+      self.update();
+      oiMediator.publish( 'modal-internet-pnbl close', {} );
+    };
+
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      if (evt.keyCode == 27) { // Esc
+        self.close();
+      }
+    };
+
+    if (opts.visible) {
+      self.open();
+    }
+
+    $('body').on('click', '#open-modal-pnbl', function(evt){
+      evt.preventDefault();
+      self.open();
+    });
+
+    //- self.open();
