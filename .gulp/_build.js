@@ -109,32 +109,28 @@ gulp.task('build-images', function() {
 });
 
 gulp.task('build-stylus', function () {
-//  gulp.src(config.path.src.stylus)
-  gulp.src('./app/assets/styles/pages/internet/main.styl')
+ gulp.src(config.path.src.stylus)
     .pipe($.plumber({errorHandler: helpers.notifyError}))
     .pipe($.changed(config.path.src.stylus))
     .pipe($.filter(helpers.filterPartials))
 //  .pipe($.sourcemaps.init())
     .pipe($.stylus({
       use: [jeet(), koutoSwiss(), rupture()],
-      include: './app/assets/styles/'
-      // compress: true,
-      // linenos: true
+      include: './app/assets/styles/',
+      compress: true,
+      linenos: true
     }))
     .pipe($.combineMediaQueries())
     .pipe($.autoprefixer({
       browsers: config.BrowserList,
       cascade: false
     }))
-//    .pipe($.minifyCss())
-//    .pipe($.csso())
-//    .pipe($.sourcemaps.write('.'))
-//    .pipe(gulp.dest(config.path.dist.css))
-//    .pipe($.if(config.isProd, $.gzip()))
-//    .pipe(gulp.dest(config.path.dist.css))
-    .pipe(gulp.dest('./dist/assets/styles/pages/internet/'))
-    .pipe($.notify('fim!'))
-    ;
+   .pipe($.minifyCss())
+   .pipe($.csso())
+   .pipe($.sourcemaps.write('.'))
+   .pipe(gulp.dest(config.path.dist.css))
+   .pipe($.if(config.isProd, $.gzip()))
+   .pipe(gulp.dest(config.path.dist.css));
 
   gulp.src('./app/assets/styles/css-base/fonts.css')
     .pipe($.plumber({errorHandler: helpers.notifyError}))

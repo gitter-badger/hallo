@@ -19,7 +19,10 @@
           <table class="table-compare">
             <tbody>
               <tr>
-                <td class="opt">10</td>
+                <td class="opt">
+                  <input type="radio" name="plan-select" class="radio" checked={ plan.selected }>
+                  <oi-price price={ plan.addons.chip_pre } small={true} />
+                </td>
                 <td>
                   <span class="plan-name">Chip pré</span>
                   <span class="plan-info">
@@ -30,7 +33,10 @@
                 </td>
               </tr>
               <tr>
-                <td class="opt">10</td>
+                <td class="opt">
+                  <input type="radio" name="plan-select" class="radio" checked={ plan.selected }>
+                  <oi-price price={ plan.addons.chip_pre_internet_ddd } small={true} />
+                </td>
                 <td>
                   <span class="plan-name">Chip pré com internet e DDD</span>
                   <span class="plan-info">
@@ -99,6 +105,7 @@
   self.visible = false;
   self.added = false;
   self.textAdd = 'Adicionar';
+  self.plan = opts.plan;
 
   self.open = function() {
     $('body').addClass('scroll-lock');
