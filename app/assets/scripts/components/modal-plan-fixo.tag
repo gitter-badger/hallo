@@ -37,7 +37,7 @@
               </tr>
               <tr class={ selected: selectedPlan === 'chip_pre_internet_ddd' }>
                 <td class="opt">
-                  <input type="radio" name="plan-select" class="radio" value="chip_pre_internet_ddd" onclick={ selectPlan }>
+                  <input type="radio" name="plan-select" class="radio" value="chip_pre_internet_ddd" onclick={ selectPlan } checked>
                   <oi-price price={ plan.addons.chip_pre_internet_ddd } small={true} />
                 </td>
                 <td>
@@ -109,7 +109,7 @@
   self.added = false;
   self.textAdd = 'Adicionar';
   self.plan = opts.plan;
-  self.selectedPlan = '';
+  self.selectedPlan = 'chip_pre_internet_ddd';
 
   open() {
     $('body').addClass('scroll-lock');
@@ -127,7 +127,7 @@
 
   add() {
     self.textAdd = 'Adicionado';
-    oiMediator.publish( 'voz-total add' );
+    oiMediator.publish( 'voz-total add', self.selectedPlan );
     self.added = true;
     self.update();
     self.close();

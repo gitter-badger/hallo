@@ -11,7 +11,10 @@ define([
   var _private = {};
   var _public = {};
   var tags = {}
-  var cart = {}
+  var cart = {
+    plan: null,
+    vozTotal: false
+  }
   var plans, labels;
   var $vozTotal = $('#vozTotal');
 
@@ -35,7 +38,7 @@ define([
   _private.loadPlans = function (){
     $.getJSON('/api/price/fixo/rj.json', function(json, textStatus) {
         plans = json.data;
-        labels = json.meta.features_labels;
+        labels = json.meta;
         // _private.showPrices()
         _private.insertTable()
     });
@@ -45,16 +48,17 @@ define([
     var plansTable = _.filter(plans, function(plan, key){
       return plan.on_table;
     });
-    tags.table = riot.mount('table-compare', {plans: plansTable, labels: labels } );
+    tags.table = riot.mount('table-compare', {plans: plansTable, labels: labels.features_labels } );
     var planModal = _.filter(plans, function(plan, key){
       return plan.slug === 'fixo-ilimitado-com-ddd';
     })[0]
     tags.ModalPlanoFixo = riot.mount('modal-planfixo', {plan: planModal})[0];
   }
 
-
-  _public.addVozTotal = function (){
+  _public.addVozTotal = function (vozTotalChip){
     $vozTotal.find('.add').addClass('added')
+    cart.vozTotal = vozTotalChip;
+    _private.updateTitle();
   }
 
   _private.bindRemoveVozTotal = function (){
@@ -66,6 +70,8 @@ define([
 
   _public.removeVozTotal = function (){
     $vozTotal.find('.add').removeClass('added')
+    cart.vozTotal = false;
+    _private.updateTitle();
   }
 
   _private.selectPlan = function (planSlug){
@@ -77,10 +83,19 @@ define([
   var $title = $('.content_header_list h2')
 
   _private.updateTitle = function (){
-    var planName = _.find(plans, function(itemPlan){
+    var text = '';
+    var planSelected = _.find(plans, function(itemPlan){
       return itemPlan.slug === cart.plan
-    }).name
-    $title.text(planName)
+    })
+    text = planSelected.name;
+
+    console.log(cart);
+    if( cart.vozTotal ){
+      text += ' + ' + labels.addons.vozTotal;
+    }
+
+
+    $title.text(text)
   }
 
   return _public;
