@@ -21,9 +21,9 @@
         <div class="modal-plan-fixo_main_col">
           <table class="table-compare">
             <tbody>
-              <tr>
+              <tr class={ selected: selectedPlan === 'chip_pre' }>
                 <td class="opt">
-                  <input type="radio" name="plan-select" class="radio" checked={ plan.selected }>
+                  <input type="radio" name="plan-select" class="radio" value="chip_pre" onclick={ selectPlan }>
                   <oi-price price={ plan.addons.chip_pre } small={true} />
                 </td>
                 <td>
@@ -35,9 +35,9 @@
                   </span>
                 </td>
               </tr>
-              <tr>
+              <tr class={ selected: selectedPlan === 'chip_pre_internet_ddd' }>
                 <td class="opt">
-                  <input type="radio" name="plan-select" class="radio" checked={ plan.selected }>
+                  <input type="radio" name="plan-select" class="radio" value="chip_pre_internet_ddd" onclick={ selectPlan }>
                   <oi-price price={ plan.addons.chip_pre_internet_ddd } small={true} />
                 </td>
                 <td>
@@ -109,22 +109,23 @@
   self.added = false;
   self.textAdd = 'Adicionar';
   self.plan = opts.plan;
+  self.selectedPlan = '';
 
-  self.open = function() {
+  open() {
     $('body').addClass('scroll-lock');
     self.visible = true;
     self.update();
     oiMediator.publish( 'modal open', {type: 'plano fixo'} );
   }
 
-  self.close = function() {
+  close() {
     $('body').removeClass('scroll-lock');
     self.visible = false;
     self.update();
     oiMediator.publish( 'modal close', {type: 'plano fixo'} );
   }
 
-  self.add = function() {
+  add() {
     self.textAdd = 'Adicionado';
     oiMediator.publish( 'voz-total add' );
     self.added = true;
@@ -132,11 +133,16 @@
     self.close();
   }
 
-  self.remove = function() {
+  remove() {
     self.textAdd = 'Adicionar';
     self.added = false;
     self.update();
     oiMediator.publish( 'voz-total remove' );
+  }
+
+  selectPlan(evt) {
+    self.selectedPlan = evt.target.value
+    self.update();
   }
 
   document.onkeydown = function(evt) {
