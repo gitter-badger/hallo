@@ -5,7 +5,10 @@
       <div class="modal-plan-fixo_container">
         <button class="modal-plan-fixo_close" onclick={ close }>Fechar</button>
         <div class="modal-plan-fixo_header_img"></div>
-        <h1 class="modal-plan-fixo_header_title ">voz total (fixo + pré)</h1>
+        <h1 class="modal-plan-fixo_header_title ">
+          <span class="init">Voz total (fixo + pré) </span>
+          <span class="end">Escolha seu chip pré</span>
+        </h1>
         <div class="modal-plan-fixo_header_action">
           <button class="modal-plan-fixo_header_action_add { added ? 'added' : '' }" onclick={ add}>{ textAdd }</button>
           <button class="modal-plan-fixo_header_action_rem" onclick={ remove }>Remover</button>
