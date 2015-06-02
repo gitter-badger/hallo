@@ -14,6 +14,12 @@ body
     float right
 // gpsr end
 
+#priceTotal
+  opacity 0
+  transition opacity .3s linear
+  &.visible
+    opacity 1
+
 .content_table
   overflow auto
   +above('m')
@@ -59,13 +65,26 @@ body
       padding 0 7%
 
   td
-    height remify(90px)
+    height remify(110px)
     vertical-align middle
     font-weight 600
     position relative
+    padding 0 remify(80px)
     &.opt
       width remify(210px)
       padding-left remify(25px)
+      position relative
+      input[type=radio]
+        position absolute
+        top 50%
+        left remify(25px)
+        margin-top remify(-16px)
+      oi-price
+        position absolute
+        top remify(38px)
+        left remify(115px)
+        height remify(36px)
+        // margin-top remify(-30px)
 
   .promo
     background-color $orangeLight
@@ -108,7 +127,8 @@ body
   margin 0 auto
   max-width remify(1170px)
   overflow hidden
-  padding remify(60px) 0
+  padding remify(55px) 0
+  height remify(290px)
   // fix cagada do gaspar (top -130)
   margin-top remify(130px)
   &_container
@@ -154,8 +174,8 @@ body
     width 33%
     float left
     &_img
-      height remify(50px)
-      margin-bottom remify(20px)
+      height remify(37px)
+      margin-bottom remify(15px)
       background-repeat no-repeat
       background-position center
       &.img1
@@ -166,36 +186,44 @@ body
         background-image url(/assets/images/layout/fixo3.png)
     &_title
       font-size remify(15.97px)
-      margin-bottom  remify(20px)
+      margin-bottom remify(15px)
     &_desc
       font-size remify(10.98px)
-      margin-bottom  remify(20px)
+      margin-bottom  remify(15px)
       color $gray
     &_actions
       overflow hidden
       position relative
+      .add-1-3
+        width (100% / 3)
+        float left
+        &:nth-child(2), &:nth-child(3)
+          margin-left -1px
+        button
+          &.added
+            .call
+              display block
+            .price
+              display block
+              color $grayLight
+
       button
         cursor pointer
         height remify(50px)
         width 100%
         display block
+        font-family $fontTextRegular
         &.add
           border 1px solid $grayLight
           background-color $grayLighter
           border-radius remify(2px)
           position relative
           z-index 2
-          &.add-1-3
-            width (100% / 3)
-            float left
-            & + .add-1-3
-              border-left-color transparent
-              &:hover, &:focus, &:active
-                border-color $purple
           &:hover, &:focus, &:active
             border-color $purple
             color $purple
             outline none
+            z-index 3
           &.added
             &:hover, &:focus, &:active
               background-color $greenLight
@@ -210,7 +238,7 @@ body
           opacity 0
           // position absolute
           width 100%
-          top -remify(50px)
+          top remify(-50px)
           left 0
           transition all .4s linear
           &:hover, &:focus, &:active
@@ -223,6 +251,11 @@ body
             display none
           .textAdded
             display block
+            svg
+              opacity 1
+              left remify(30px)
+
+
           & + .rem
             top 0
             opacity 1
@@ -232,6 +265,18 @@ body
         &.textAdded
           display none
           font-size remify(16px)
+          position relative
+          svg
+            position absolute
+            top remify( -3px)
+            left remify( 40px)
+            width remify( 30px)
+            height remify( 30px)
+            opacity 0
+            transition all .3s linear
+            path
+              stroke transparent
+              fill white
         &.call
           font-size remify(12.98px)
         &.price
@@ -245,7 +290,7 @@ body
     margin 0 auto
     max-width remify(1170px)
     padding-top remify(160px)
-    +above('m')
+    +above('l')
       background-image url(/assets/images/layout/fixo4.png)
 
 .details
@@ -461,3 +506,23 @@ body
         +above('m')
           color $black
 
+#help-buy
+  display none
+  +above('m')
+    display block
+
+.img-fixo-pre
+  display none
+  +above('m')
+    display block
+
+.addons_item_title
+  height remify(45px)
+  display block
+  +above('l')
+    height auto
+.addons_item_desc
+  height remify(60px)
+  display block
+  +above('l')
+    height auto

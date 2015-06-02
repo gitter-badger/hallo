@@ -4,15 +4,15 @@ mixin head($page)
     head
       meta(charset='utf-8')
       meta(http-equiv='X-UA-Compatible', content='IE=edge')
-      title Produtos
-      meta(name='description', content='Grid')
+      title new Oi
+      meta(name='description', content='')
       meta(name='viewport', content='width=device-width, initial-scale=1')
 
-      script
-        |  function measureCRP() {
-        |    var t = window.performance.timing, interactive = t.domInteractive - t.domLoading, dcl = t.domContentLoadedEventStart - t.domLoading, complete = t.domComplete - t.domLoading;
-        |    console.log({'interactive': interactive + 'ms', 'dcl': dcl + 'ms', 'complete': complete + 'ms'});
-        |  }
+      //- script.
+      //-   function measureCRP() {
+      //-     var t = window.performance.timing, interactive = t.domInteractive - t.domLoading, dcl = t.domContentLoadedEventStart - t.domLoading, complete = t.domComplete - t.domLoading;
+      //-     console.log({'interactive': interactive + 'ms', 'dcl': dcl + 'ms', 'complete': complete + 'ms'});
+      //-   }
 
       script
         include ../../assets/scripts/utils/_load-css.js
@@ -27,7 +27,6 @@ mixin head($page)
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
       script.
-        html5.addElements('test')
         document.createElement('card');
         document.createElement('channel-modal');
         document.createElement('channel-search');

@@ -5,7 +5,10 @@
       <div class="modal-plan-fixo_container">
         <button class="modal-plan-fixo_close" onclick={ close }>Fechar</button>
         <div class="modal-plan-fixo_header_img"></div>
-        <h1 class="modal-plan-fixo_header_title ">voz total (fixo + pré)</h1>
+        <h1 class="modal-plan-fixo_header_title ">
+          <span class="init">Voz total (fixo + pré) </span>
+          <span class="end">Escolha seu chip pré</span>
+        </h1>
         <div class="modal-plan-fixo_header_action">
           <button class="modal-plan-fixo_header_action_add { added ? 'added' : '' }" onclick={ add}>{ textAdd }</button>
           <button class="modal-plan-fixo_header_action_rem" onclick={ remove }>Remover</button>
@@ -18,9 +21,9 @@
         <div class="modal-plan-fixo_main_col">
           <table class="table-compare">
             <tbody>
-              <tr>
+              <tr class={ selected: selectedPlan === 'chip_pre' }>
                 <td class="opt">
-                  <input type="radio" name="plan-select" class="radio" checked={ plan.selected }>
+                  <input type="radio" name="plan-select-chip" class="radio" value="chip_pre" onclick={ selectPlan }>
                   <oi-price price={ plan.addons.chip_pre } small={true} />
                 </td>
                 <td>
@@ -32,9 +35,9 @@
                   </span>
                 </td>
               </tr>
-              <tr>
+              <tr class={ selected: selectedPlan === 'chip_pre_internet_ddd' }>
                 <td class="opt">
-                  <input type="radio" name="plan-select" class="radio" checked={ plan.selected }>
+                  <input type="radio" name="plan-select-chip" class="radio" value="chip_pre_internet_ddd" onclick={ selectPlan } checked>
                   <oi-price price={ plan.addons.chip_pre_internet_ddd } small={true} />
                 </td>
                 <td>
@@ -106,34 +109,40 @@
   self.added = false;
   self.textAdd = 'Adicionar';
   self.plan = opts.plan;
+  self.selectedPlan = 'chip_pre_internet_ddd';
 
-  self.open = function() {
+  open() {
     $('body').addClass('scroll-lock');
     self.visible = true;
     self.update();
     oiMediator.publish( 'modal open', {type: 'plano fixo'} );
   }
 
-  self.close = function() {
+  close() {
     $('body').removeClass('scroll-lock');
     self.visible = false;
     self.update();
     oiMediator.publish( 'modal close', {type: 'plano fixo'} );
   }
 
-  self.add = function() {
+  add() {
     self.textAdd = 'Adicionado';
-    oiMediator.publish( 'voz-total add' );
+    oiMediator.publish( 'voz-total add', self.selectedPlan );
     self.added = true;
     self.update();
     self.close();
   }
 
-  self.remove = function() {
+  remove() {
     self.textAdd = 'Adicionar';
     self.added = false;
     self.update();
     oiMediator.publish( 'voz-total remove' );
+  }
+
+  selectPlan(evt) {
+    self.selectedPlan = evt.target.value
+    self.update();
   }
 
   document.onkeydown = function(evt) {

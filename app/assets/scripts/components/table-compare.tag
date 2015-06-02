@@ -3,15 +3,15 @@
     <caption>Compare os planos de telefonia fixa</caption>
     <thead>
       <tr>
-        <td></td>
-        <td each={ id, label in labels }>{ label }</td>
+        <th></th>
+        <th each={ id, label in labels }>{ label }</th>
       </tr>
     </thead>
     <tbody>
-    <tr each={ plan, id2 in plans } onclick={ parent.select } class={ selected: plan.selected } >
+    <tr each={ plan, id2 in plans } class={ selected: plan.selected } >
       <td class="opt">
         <span class="promo" if={ plan.best_seller }>Mais vendido</span>
-        <input type="radio" name="plan-select" class="radio" checked={ plan.selected }>
+        <input type="radio" name="plan-select" class="radio" value={plan.slug} checked={ plan.selected } onclick={ parent.select }>
         <oi-price price={ parent.plans[id2].price.loyal } small={ true } />
       </td>
       <td each={ idF, labelF in plan.features }>
@@ -27,13 +27,14 @@
     self.plans = opts.plans;
     self.labels = opts.labels;
 
-    select(event){
-      var item = event.item
+    select(evt){
+      var item = evt.item
       _.forEach(self.plans, function (plan){
         plan.selected = false
       });
       item.plan.selected = true;
       self.update();
+      oiMediator.publish( 'plan fixo select', evt.target.value );
     }
   </script>
 

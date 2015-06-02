@@ -4,6 +4,11 @@
       "1": "Ligações locais para Fixo da Oi",
       "2": "Ligações locais para fixo de outras operadoras",
       "3": "Ligações DDD para qualquer fixo"
+    },
+    "addons":{
+      "vozTotal": "Voz Total",
+      "callCelOi": "Ligações para Celular da Oi",
+      "internet": "Banda Larga da Oi"
     }
   },
   "data": [
