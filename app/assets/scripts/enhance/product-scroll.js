@@ -1,6 +1,6 @@
 define([
   'domlib',
-  'vendor/velocity'
+  'velocity'
   ], function($, Velocity){
 
     var _public = {},

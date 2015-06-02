@@ -99,7 +99,7 @@ var Mediator = ( function( window, undefined ) {
 
 var oiMediator = new Mediator();
 
-require(['vendor/blazy'], function(Blazy) {
+require(['vendor/blazy', 'vendor/rem'], function(Blazy) {
 
   //  var bLazy = new Blazy();
 
