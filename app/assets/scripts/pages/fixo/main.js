@@ -63,7 +63,7 @@ define([
     $.getJSON('/api/price/internet/rj.json', function(json, textStatus) {
       _.forEach(json.data, function (planInternet){
         console.log(planInternet);
-        $('#internet-' + planInternet.slug).find('.price').text('R$' + planInternet.price.loyal)
+        $('#internet-' + planInternet.slug).find('.price').text('R$' + (planInternet.price.loyal.toFixed(2) + '').replace('.', ',') )
       });
     });
   }
