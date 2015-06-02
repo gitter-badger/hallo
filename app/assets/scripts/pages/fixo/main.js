@@ -18,6 +18,7 @@ define([
     internet: false
   }
   var plans, labels;
+  var plansInternet;
   var tagPriceTotal;
   var $vozTotal = $('#vozTotal'),
       $title = $('#cart-list li'),
@@ -54,23 +55,25 @@ define([
     $.getJSON('/api/price/fixo/rj.json', function(json, textStatus) {
         plans = json.data;
         labels = json.meta;
-        // _private.showPrices()
         _private.insertTable()
     });
   }
 
   _private.loadPlansInternet = function (){
     $.getJSON('/api/price/internet/rj.json', function(json, textStatus) {
-      _.forEach(json.data, function (planInternet){
-        console.log(planInternet);
-        $('#internet-' + planInternet.slug).find('.price').text('R$' + (planInternet.price.loyal.toFixed(2) + '').replace('.', ',') )
-      });
+      plansInternet = json.data;
+      _private.showPricesInternet();
     });
   }
+
   _private.showPricesInternet = function (){
-
+    _.forEach(plansInternet, function (planInternet){
+      $('#internet-' + planInternet.slug).find('.price')
+        .text('R$' + (planInternet.price.loyal.toFixed(2) + '').replace('.', ',') )
+        .parent('button')
+        .data('slug', planInternet.slug);
+    });
   }
-
 
   _private.insertTable = function (data){
     var plansTable = _.filter(plans, function(plan, key){
@@ -129,7 +132,7 @@ define([
   _private.bindAddInternet = function (){
     $addInternet.on('click', function (evt){
       evt.preventDefault();
-      cart.internet = true;
+      cart.internet = $(this).data('slug');
       $addInternet.removeClass('added');
       $(this).addClass('added');
       _private.updateTitle();
@@ -183,6 +186,14 @@ define([
     price += planSelected.price.loyal
     price += cart.vozTotal ? planSelected.addons[cart.vozTotal] : 0;
     price += cart.callCelOi ? planSelected.addons.celular_oi: 0;
+
+    if(cart.internet){
+      var planInternetSelected = _.find(plansInternet, function(itemPlan){
+        return itemPlan.slug === cart.internet
+      });
+      price += planInternetSelected.price.loyal
+    }
+
     tagPriceTotal.updatePrice(price);
     $priceTotal.addClass('visible');
   }
