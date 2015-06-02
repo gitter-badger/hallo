@@ -1,7 +1,12 @@
-rupture.scale       = 0       414px       768px       1024px       1366px       1920px       2560px       3200px
-//                    └┬──────┘   └┬──────┘   └┬──────┘    └┬──────┘    └┬──────┘    └┬──────┘    └┬──────┘    └┬──────┘
-// Slice numbers:      1           2           3            4            5            6            7            8
-rupture.scale-names=   'xs'        's'         'm'          'l'          'xl'         'xxl'        'xxxl'       '4k'
+//  * max width: 1280px | division: 12c | column: 70px | gutter: 30px | efective width: 1170px
+//  * max width: 1024px | division: 12c | column: 58px | gutter: 24px | efective width:  960px
+//  * max width:  768px | division: 12c | column: 44px | gutter: 16px | efective width:  704px
+//  * max width:  414px | division:  6c | column: 44px | gutter: 16px | efective width:  344px
+//  * max width:  320px | division:  6c | column: 35px | gutter: 14px | efective width:  280px
+rupture.scale       = 0       320px       414px       768px       1024px       1366px       1920px       2560px       3200px
+//                    └┬──────┘   └┬──────┘   └┬──────┘   └┬──────┘    └┬──────┘    └┬──────┘    └┬──────┘    └┬──────┘    └┬──────┘
+// Slice numbers:      1           2           3            4           5            6            7            8            9
+rupture.scale-names=   'xxs'       'xs'        's'         'm'          'l'          'xl'         'xxl'        'xxxl'       '4k'
 
 // rupture.mobile-cutoff = 414px
 // rupture.desktop-cutoff =
@@ -21,6 +26,27 @@ rupture.scale-names=   'xs'        's'         'm'          'l'          'xl'   
 // ks-support-android-chrome = false
 // ks-support-android-firefox = false
 // ks-support-ie-mobile = false
+
+
+// jeet config
+jeet['gutter'] = 2.565
+
+
+.container
+  +below('xxs')
+    center(rem(280px))
+
+  +below('xs')
+    center(rem(344px))
+
+  +below('s')
+    center(rem(704px))
+
+  +below('m')
+    center(rem(960px))
+
+  +above('l')
+    center(rem(1170px))
 
 
 $cardSizeMobile = remify(94px)
