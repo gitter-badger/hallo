@@ -28,7 +28,8 @@ define([
       $priceTotal = $('#priceTotal');
 
   _public.init = function(){
-    _private.loadPlans()
+    _private.loadPlans();
+    _private.loadPlansInternet();
     _private.bindOpenDetail();
     _private.bindAddCallCelOi();
     _private.bindRemCallCelOi();
@@ -57,6 +58,19 @@ define([
         _private.insertTable()
     });
   }
+
+  _private.loadPlansInternet = function (){
+    $.getJSON('/api/price/internet/rj.json', function(json, textStatus) {
+      _.forEach(json.data, function (planInternet){
+        console.log(planInternet);
+        $('#internet-' + planInternet.slug).find('.price').text('R$' + planInternet.price.loyal)
+      });
+    });
+  }
+  _private.showPricesInternet = function (){
+
+  }
+
 
   _private.insertTable = function (data){
     var plansTable = _.filter(plans, function(plan, key){
