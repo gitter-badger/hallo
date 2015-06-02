@@ -22,6 +22,7 @@ define([
   var tagPriceTotal;
   var $vozTotal = $('#vozTotal'),
       $title = $('#cart-list li'),
+      $cartList = $('#cart-list-small'),
       $addCallCelOi = $('.add-call-cel-oi'),
       $remCallCelOi = $('.rem-call-cel-oi'),
       $addInternet = $('.add-internet'),
@@ -151,6 +152,7 @@ define([
 
   _private.updateTitle = function (){
     var text = '';
+    var listSmall = '';
     var planSelected = _.find(plans, function(itemPlan){
       return itemPlan.slug === cart.plan
     })
@@ -164,7 +166,14 @@ define([
 
     if( countAddons > 1){
       text += ' + ' + countAddons + ' opcionais';
+      listSmall  = '<li>' + planSelected.name + '</li>';
+      listSmall += cart.vozTotal ? '<li>' + labels.addons.vozTotal + '</li>' : '';
+      listSmall += cart.callCelOi ?'<li>' + labels.addons.callCelOi + '</li>' : '';
+      listSmall += cart.internet ? '<li>' + labels.addons.internet + '</li>' : '';
+      $cartList.html(listSmall).addClass('visible')
+
     } else {
+      $cartList.empty().removeClass('visible')
       if( cart.vozTotal ){
         text += ' + ' + labels.addons.vozTotal;
       }
