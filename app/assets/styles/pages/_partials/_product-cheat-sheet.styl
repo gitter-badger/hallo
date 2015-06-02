@@ -5,12 +5,14 @@
 
 .product-cheat-sheet_row
   @extend .clearfix
-  margin-bottom: remify(30px)
+  margin-bottom: remify(90px)
+  &--thin-bottom-margin
+    margin-bottom: remify(21px)
 
   hr
     height: remify(1.2px)
     border: 0
-    margin: remify(5px) 0 remify(25px)
+    margin: remify(5px) 0 remify(12px)
     background-color: $grayLight
 
 
@@ -24,6 +26,7 @@
     font-family: $fontTitle
     font-size: remify(21px)
     line-height: 1.21em
+    letter-spacing: rem(-0.4px)
 
 .product-cheat-sheet_column-right
   @extend .clearfix
@@ -36,8 +39,7 @@
   dl
     position: relative
     width: remify(480px)
-    padding-left: remify(130px)
-    padding-bottom: 0.89em
+    padding rem(9px) 0 rem(1px) remify(139px)
     font-size: remify(13px)
     dt
       position: absolute
@@ -46,36 +48,56 @@
       width: remify(130px)
       height: auto
       font-family: $fontTextBold
-      line-height: 1.34em
+      line-height: 1em
+      padding-top rem(9px)
     dd
       width: 100%
       padding-bottom: 0.55em
-      line-height: 1.34em
+      line-height: 1em
+      p
+        line-height rem(12px)
+        margin-bottom rem(8px)
+      em
+        font-style italic
+        color $gray
 
 .product-cheat-sheet_app-list
   h5
-    padding-bottom: remify(30px)
+    padding rem(20px) 0 rem(25px)
     font-family: $fontTextBold
     font-size: remify(13px)
 
   ul
     width: remify(480px)
     li
+      display inline-block
       width: remify(70px)
-      height: remify(190px)
-      margin: 0 remify(30px) remify(30px) 0
+      min-height: remify(200px)
+      margin: 0 remify(30px) 0 0
+      padding-bottom rem(30px)
       float: left
       font-size: remify(11px)
+      &.break
+        clear both
       img
         width rem(70px)
         height rem(70px)
+      span
+        display block
+        width rem(74px)
+        padding-top rem(6px)
+        line-height rem(14px)
       em
-        display: inline-block
+        display: block
+        width rem(74px)
+        padding-top rem(2px)
         font-style: italic
+        line-height rem(14px)
         color: $gray
 
 .product-cheat-sheet_action-area
-  min-height: remify(165px)
+  button, .button
+    font-size rem(13px)
 
 .product-cheat-sheet_legal-text
   padding-top: remify(42px)
