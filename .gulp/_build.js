@@ -258,6 +258,7 @@ gulp.task('build', function() {
     'build-api',
     'build-bower',
     'build-templates',
+    'build-templates-jade',
     'build-scripts',
     'build-jade',
     'build-stylus',

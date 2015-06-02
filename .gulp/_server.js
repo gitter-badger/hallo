@@ -8,6 +8,7 @@ var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var logdown= require('logdown')
 var msg    = new logdown({prefix: 'Message:'})
+var runSequence  = require('run-sequence');
 
 
 gulp.task('watch', ['build-data', 'build-api', 'build-bower', 'build-scripts', 'build-templates', 'build-jade', 'build-stylus', 'build-fonts'],  function() {
@@ -48,4 +49,12 @@ gulp.task('server', ['watch'], function() {
       // xip: true
     }
   });
+});
+
+gulp.task('reset', [], function(){
+  runSequence(
+      'clear',
+      'build',
+      'watch'
+  );
 });
