@@ -17,7 +17,6 @@ mixin headerInternet()
     header.oi-header
       h1.oi-header_title Internet
       .oi-header_client-type
-        a(href="#planos") Planos
         a(href="ja-tenho") Já tenho
 
 mixin headerCelular()
@@ -41,5 +40,6 @@ mixin header(config)
     header.oi-header
       h1.oi-header_title=config.title
       .oi-header_client-type
-        a(href="#planos") Planos
-        a(href="ja-tenho") Já tenho
+        if (config.types)
+          each (item in config.types)
+            a(href="#{item.url}") #{item.title}

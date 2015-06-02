@@ -378,7 +378,7 @@ channel-modal
     padding remify(98px) remify(20px) remify(20px) remify(20px)
 
 .modal_container
-  padding remify(215px) 0
+  padding remify(215px) 0 rem(107px)
   width 79%
   margin 0 auto
   +below('xs')
@@ -387,6 +387,8 @@ channel-modal
 
 .modal_container_row
   @extend .clearfix
+  &:not(:first-child)
+    margin-top rem(80px)
   h4
     font-size remify(30px)
     font-family $fontTextLight
@@ -409,8 +411,8 @@ channel-modal
         &:hover
           color $purple
           border-bottom: 0.08em solid $purple;
-    
-    
+
+
 .modal_column-left
   top 0
   left 0

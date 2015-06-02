@@ -27,7 +27,7 @@ require.config({
   paths: {
     // "domlib": ('__proto__' in {}) ? "vendor/zepto" : "vendor/jquery",
     "domlib": "vendor/jquery",
-    "mask": "vendor/jquery.mask",
+    "mask": 'vendor/jquery.maskedinput',
     "velocity": 'vendor/velocity',
     "velocity-ui": 'vendor/velocityui',
     "ScrollMagic": 'vendor/ScrollMagic',
