@@ -18,6 +18,7 @@ define([
     internet: false
   }
   var plans, labels;
+  var tagPriceTotal;
   var $vozTotal = $('#vozTotal'),
       $title = $('#cart-list li'),
       $addCallCelOi = $('.add-call-cel-oi'),
@@ -37,7 +38,7 @@ define([
     oiMediator.subscribe( 'voz-total add', _public.addVozTotal );
     oiMediator.subscribe( 'voz-total remove', _public.removeVozTotal );
     oiMediator.subscribe( 'plan fixo select', _private.selectPlan );
-    riot.mount('#priceTotal')
+    tagPriceTotal = riot.mount('#priceTotal')[0];
   };
 
   _private.bindOpenDetail = function(){
@@ -156,7 +157,20 @@ define([
         text += ' + ' + labels.addons.internet;
       }
     }
-    $title.text(text)
+    $title.text(text);
+    _private.updatePrice();
+  }
+
+  _private.updatePrice = function (){
+    var price  = 0;
+    var planSelected = _.find(plans, function(itemPlan){
+      return itemPlan.slug === cart.plan
+    });
+    price += planSelected.price.loyal
+    price += cart.vozTotal ? planSelected.addons[cart.vozTotal] : 0;
+    price += cart.callCelOi ? planSelected.addons.celular_oi: 0;
+    tagPriceTotal.updatePrice(price);
+    $priceTotal.addClass('visible');
   }
 
   return _public;
