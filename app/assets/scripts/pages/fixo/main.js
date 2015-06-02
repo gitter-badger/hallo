@@ -24,6 +24,7 @@ define([
       $remCallCelOi = $('.rem-call-cel-oi'),
       $addInternet = $('.add-internet'),
       $remInternet = $('.rem-internet');
+      $priceTotal = $('#priceTotal');
 
   _public.init = function(){
     _private.loadPlans()
@@ -36,6 +37,7 @@ define([
     oiMediator.subscribe( 'voz-total add', _public.addVozTotal );
     oiMediator.subscribe( 'voz-total remove', _public.removeVozTotal );
     oiMediator.subscribe( 'plan fixo select', _private.selectPlan );
+    riot.mount('#priceTotal')
   };
 
   _private.bindOpenDetail = function(){

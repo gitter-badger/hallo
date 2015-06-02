@@ -78,6 +78,9 @@ mixin contentHeader(config)
       if config.price
         .content_header_price
           oi-price
+      if config.price
+        .content_header_price
+          oi-price(id=config.price.id price=config.price.value small=config.price.small)
       if config.action
         .content_header_action
           a(href="#").button.filled=config.action
