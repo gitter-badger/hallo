@@ -1,3 +1,5 @@
+imageEndpoint = "/assets/images/icons/";
+
 @keyframes kf-checkbox-on {
   0% { transform: scale(0.08) }
   100% { transform: scale(0.66) }
@@ -12,7 +14,6 @@
     opacity: 0;
   }
 }
-
 
 
 @keyframes kf-radio-on {
@@ -103,9 +104,8 @@ hideText()
 
 filledBase()
   label
-    top: sizeEyebrow*0.92
-    transform: scale(0.66)
-
+    top: 0.78125rem // 12.5px
+    left: 0.78125rem // 12.5px
 
 
 .field-box
@@ -185,8 +185,10 @@ filledBase()
         width: 1rem
         height: 1rem
         top: -0.1rem
-        right: -1rem
+        right: -1.34rem
         background-image: url(imageEndpoint+'success.svg')
+        svg path
+          fill colorAlertRed
 
   &.error
     filledBase()

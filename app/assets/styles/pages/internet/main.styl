@@ -25,7 +25,7 @@ body >header
     margin-top remify(57px)
 
 body
-  main
+  >main
     background-color $green
     .cards
       .cards_container
@@ -55,11 +55,13 @@ body
           padding-bottom remify(336px)
           top 0
 
+
 .oi-banda-larga,
 .oi-internet-movel,
 .oi-banda-larga-mais-fixo
   margin: 0 auto
-  max-width: remify(1170px)
+  width 100%
+
 
 
 
@@ -68,6 +70,8 @@ body
   position: relative
   display table
   width 100%
+  max-width rem(1170px)
+  margin 0 auto
   table
     thead tr th
       height: remify(70px)
@@ -81,7 +85,8 @@ body
       height: remify(140px)
 
 
-.oi-banda-larga_table_heading, .oi-banda-larga-mais-fixo_table_heading
+.oi-banda-larga_table_heading,
+.oi-banda-larga-mais-fixo_table_heading
   @extend .clearfix
   position: absolute
   display inline-block
@@ -99,7 +104,8 @@ body
 .oi-banda-larga-mais-fixo_table_heading
   width: 18%
 
-.oi-banda-larga_table_scroll, .oi-banda-larga-mais-fixo_table_scroll
+.oi-banda-larga_table_scroll,
+.oi-banda-larga-mais-fixo_table_scroll
   @extend .clearfix
   position: relative
   left: 26%
@@ -124,10 +130,14 @@ body
   width: 82%
 
 
-.oi-banda-larga_table_footer, .oi-banda-larga-mais-fixo_table_footer
+.oi-banda-larga_table_footer,
+.oi-banda-larga-mais-fixo_table_footer
   @extend .clearfix
   display: table
+  width 100%
   height remify(70px)
+  max-width rem(1170px)
+  margin 0 auto
   div
     display: table-cell
     vertical-align: middle
@@ -136,7 +146,12 @@ body
 
 .oi-banda-larga_ficha-tecnica, .oi-banda-larga-mais-fixo_ficha-tecnica
   padding-top: remify(130px)
-  // background-image: url(../../../../assets/images/oi/internet-features-maks.png)
+
+.oi-banda-larga_ficha-tecnica
+  background-image: url(/assets/images/layout/img-background-banda-larga.png)
+  background-repeat: no-repeat;
+  background-size: rem(469px) auto;
+  background-position: 100% 34%;
 
 
 

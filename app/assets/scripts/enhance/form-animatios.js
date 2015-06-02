@@ -15,14 +15,14 @@ define([
    *
    */
   _private.setupTextField = function(){
-    $('body').on('focus', '.field-box input[type="text"]',function(e){
+    $('body').on('focus', '.field-box input[type="text"]', function(e){
       var fieldBox = $(this).parent();
       if ( !fieldBox.hasClass('error') && !fieldBox.hasClass('success') ){
         fieldBox.removeClass('filling-off')
           .addClass('filling');
       }
     })
-      .on('blur', function(e){
+      .on('blur', '.field-box input[type="text"]', function(e){
         var fieldBox = $(this).parent();
         if ($(this).val() === '') {
           $(this).parent()
@@ -31,7 +31,7 @@ define([
         }
       });
 
-    $('.field-box').on('click', function(){
+    $('body').on('click', '.field-box',function(){
       $(this).find('input[type="text"]').trigger('focus');
     });
   };
@@ -145,7 +145,7 @@ define([
     };
 
     $('html').on('click', closeAllSelectBox);
-    $('.field-box.select').on('click', buildSelectBox);
+    $('body').on('click', '.field-box.select', buildSelectBox);
   };
 
   /**
