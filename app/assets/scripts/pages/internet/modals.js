@@ -36,7 +36,7 @@ define([
   };
 
   _private.bindButtons = function(){
-    $('body').on('click', '#consulte-a-disponibilidade', function(evt){
+    $('body').on('click', '#consulte-a-disponibilidade, #consulte-a-banda-larga-oi', function(evt){
       evt.preventDefault();
       oiMediator.publish('modal-internet-disponibilidade mount', { visible: true })
     });

@@ -422,7 +422,7 @@ define([
         open();
         lock();
 
-        // fold();
+        fold();
 
         if (window.innerWidth >= 768) {
           hide();

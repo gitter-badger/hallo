@@ -4,7 +4,7 @@
 
   .product-cheat-sheet
 
-    .product-cheat-sheet_row
+    .product-cheat-sheet_row.product-cheat-sheet_row--thin-bottom-margin
 
       .product-cheat-sheet_column-left
         h2 Está incluído no plano
@@ -18,9 +18,10 @@
             dd: em Com WiFi a partir do plano de R$ 59,90.
           dl
             dt Internet
-            dd 15 mega: Até 15 mbps de download, até 1 mbps de upload.
-            dd 5 mega: Até 5 mbps de download, até 512 mbps de upload.
-            dd 2 mega: Até 2 mbps de download, até 512 mbps de upload.
+            dd
+              p 15 mega: Até 15 mbps de download, até 1 mbps de upload.
+              p 10 mega: Até 10 mbps de download, até 512 mbps de upload.
+              p 2 mega: Até 2 mbps de download, até 512 mbps de upload. 
             dd Essas são as velocidades máximas. 
             dd Sua velocidade pode variar devido a fatores externos.
             dd: a#consulte-a-disponibilidade(href="javascript:void(0);") Consulte a disponibilidade
@@ -33,8 +34,9 @@
             dt Serviços
             dd Antivírus.
             dd Backup online.
-            dd Portal Educativo da Oi.
-            dd: em Itens inclusos sem alteração do preço nos planos.
+            dd
+              p Educa, portal educativo da Oi.
+              p: em Itens incluídos sem alteração do preço nos planos.
 
         .product-cheat-sheet_app-list
           h5 Plano ideal para
@@ -42,10 +44,9 @@
             li
               img(src="#{bandaLargaImagesPath}icon-facebook.png")
               span Usar o Facebook
-              em Recomendável para os planos de 10 e 15 mega
             li
               img(src="#{bandaLargaImagesPath}icon-netflix.png")
-              span Assistir filmes e séries no Netflix
+              span Assistir a filmes e séries no Netflix
               em Recomendável para os planos de 10 e 15 mega
             li
               img(src="#{bandaLargaImagesPath}icon-games.png")
@@ -54,7 +55,7 @@
             li
               img(src="#{bandaLargaImagesPath}icon-internet.png")
               span Navegar na internet à vontade
-            li
+            li.break
               img(src="#{bandaLargaImagesPath}icon-wifi.png")
               span Conectar seu notebook, tablet e smartphone
             li
@@ -71,7 +72,7 @@
     .product-cheat-sheet_row
 
       .product-cheat-sheet_column-left
-        h2 Condições de compra
+        h2 Condições <br/> de compra
       .product-cheat-sheet_column-right
         .product-cheat-sheet_data-list
           dl
@@ -84,13 +85,13 @@
             dt Fidelização
             dd Permanência mínima de 12 meses<sup>1</sup>.
           dl
-            dt: strong Área de cobertura
-            dd: a(href="javascript:void(0);") Consulte a disponibilidade
+            dt Disponibilidade
+            dd: a#consulte-a-banda-larga-oi(href="javascript:void(0);") Consulte se a Banda Larga da Oi já chegou na sua casa
           dl
-            dt: strong Vigência da oferta
+            dt Vigência da oferta
             dd 01/01/15 até 30/03/15
           dl
-            dt: strong Informações legais
+            dt Informações legais
             dd: a(href="javascript:void(0);") Contratos e regras de oferta
             dd: a(href="javascript:void(0);") Lista de todos os planos
 
