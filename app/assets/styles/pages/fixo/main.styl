@@ -526,3 +526,24 @@ body
   display block
   +above('l')
     height auto
+
+#cart-list-small
+  color $gray
+  font-size remify(14px)
+  left 0
+  position absolute
+  top 4rem
+  white-space nowrap
+  width 100%
+  opacity 0
+  transform opacity .3s linear
+  &.visible
+    opacity 1
+  li
+    display inline-block
+    text-transform none
+    font-family sans-serif
+    letter-spacing normal
+    &:before
+      margin 0 remify(10px)
+      color $gray
