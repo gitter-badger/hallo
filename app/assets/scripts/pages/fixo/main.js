@@ -55,6 +55,7 @@ define([
     $.getJSON('/api/price/fixo/rj.json', function(json, textStatus) {
         plans = json.data;
         labels = json.meta;
+        // plans[0].selected = true;
         _private.insertTable()
     });
   }
