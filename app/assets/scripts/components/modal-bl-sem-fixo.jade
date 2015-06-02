@@ -1,0 +1,155 @@
+modal-bl-sem-fixo
+  .modal.modal-green(show="{ visible }")
+
+    .modal_column-left
+      header.modal_header
+        .modal_header_logo
+        h1.modal_header_title banda larga sem fixo da oi
+
+    .modal_column-right
+      main.modal_container
+
+        .modal_container_row
+          .modal_container_half-left
+            h4 Escolha seu plano
+
+          .modal_container_half-right
+            button.filled 
+              em Compre com um especialista
+
+        .modal_container_row
+            table.modal-table
+              thead
+                tr
+                  th
+                  th
+                  th Velocidade
+                  th Modem incluído
+              tbody
+                tr
+                  td
+                    oi-price(price="{128.07}" small="{true}")
+                  td.left
+                    span.obs-price Taxa de instalação:<br>1x de R$160,00
+                  td
+                    strong 15 Mega
+                  td
+                    i.icon_check
+                      span com WiFi
+                tr
+                  td
+                    oi-price(price="{118.07}" small="{true}")
+                  td.left
+                    span.obs-price Taxa de instalação:<br>1x de R$160,00
+                  td
+                    strong 10 Mega
+                  td
+                    i.icon_check
+                      span com WiFi
+                tr
+                  td
+                    oi-price(price="{108.07}" small="{true}")
+                  td.left
+                    span.obs-price Taxa de instalação:<br>1x de R$160,00
+                  td
+                    strong 2 Mega
+                  td
+                    i.icon_check
+
+
+        .modal_container_row
+          h5 Entenda oferta
+          ul.ordened
+            li 
+              p Prazo de instalação de até 7 dias após solicitação do serviço.
+            li 
+              p Promocionalmente, até 20/07/2015 a franquia mensal será ilimitada. Condição renovada automática e mensalmente, salvo comunicação prévia da Oi com antecedência mínima de 30 dias.
+            li 
+              p Acesso ilimitado e gratuito ao serviço Oi WiFi até o fim da presente oferta. 
+            li 
+              p Ao atingir a franquia mensal, você pode continuar navegando com velocidade reduzida.
+            li 
+              p A velocidade anunciada para banda larga é a máxima nominal podendo sofrer variações devido a fatores externos.
+            li 
+              p O serviço de banda larga está sujeito a análise de viabilidade técnica.
+
+        .modal_container_row
+          h5 O que é preciso?
+          p Seu computador precisa estar de acordo com algumas configurações para garantir o bom funcionamento da Banda Larga da Oi sem fixo.
+          br
+          ul.ordened
+            li 
+              p Sistema operacional Windows 2000 ou superior / MAC OS X 10.5 ou superior / Linux.
+            li 
+              p Adaptador PCMCIA ou USB para a tecnologia WiFi - verifique se o seu computador, laptop ou dispositivo portátil possui a tecnologia WiFi, dispensando o adaptador; e/ou placa de rede 10/100 na base T disponível - para a instalação do modem via cabo ou WiFi.
+            li 
+              p Navegadores: Internet Explorer / Google Chrome / Firefox / Safari
+
+        .modal_container_row
+          h5 Qual a velocidade?
+          p 10 mega: até 10 mbps de download, até  512 kbps de upload.
+          p 5 mega: até 5 mbps de download, até 512 kbps de upload.
+          p 2 mega: até 2 mbps de download, até 512 kbps de upload.
+
+        .modal_container_row
+          h5 Como comprar?
+          .button-belt
+            button.basic Chat online
+            button.basic 0800 31 0001
+
+        .modal_container_row
+          .modal-contratos
+            hr
+            a(href="#") Contrato do Plano Banda Larga sem Fixo da Oi
+            a(href="#") Regulamento do Plano Banda Larga sem Fixo da Oi
+            a(href="#") Sumário do Plano Banda Larga sem Fixo da Oi
+            p A oferta tem validade de 12 meses a partir da data de adesão, prorrogável automaticamente por períodos sucessivos de 30 dias, com a manutenção integral das condições da presente oferta. <br>Incluem modem no modelo comodato. O assinante fará jus à franquia de consumo de dados mensal contratada. O prazo de instalação pode ser prorrogado em casos de fatores alheios à responsabilidade da empresa.
+
+    a.modal_close(href="javascript:void(0);", onclick="{ close }") Fechar
+
+  script.
+    var self = this;
+    self.visible = false;
+    self.added = false;
+
+    /**
+     * native riot method
+     *
+     * dispacth events via oiMediator to any point needed on entire system
+     * 
+     * **/
+    this.on('mount update unmount', function(eventName) {
+      oiMediator.publish('modal-bl-sem-fixo event', eventName);
+    });
+
+    self.open = function() {
+      $('body').addClass('scroll-lock');
+      self.visible = true;
+      self.update();
+      oiMediator.publish( 'modal-bl-sem-fixo open', {} );
+    };
+
+    self.close = function() {
+      $('body').removeClass('scroll-lock');
+      self.visible = false;
+      self.update();
+      oiMediator.publish( 'modal-bl-sem-fixo close', {} );
+    };
+
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      if (evt.keyCode == 27) { // Esc
+        self.close();
+      }
+    };
+
+    if (opts.visible) {
+      self.open();
+    }
+
+    $('body').on('click', '#open-bl-sem-fixo', function(evt){
+      evt.preventDefault();
+      self.open();
+    });
+
+    //- self.open();
