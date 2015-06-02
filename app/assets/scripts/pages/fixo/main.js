@@ -19,7 +19,7 @@ define([
   }
   var plans, labels;
   var $vozTotal = $('#vozTotal'),
-      $title = $('.content_header_list h2'),
+      $title = $('#cart-list li'),
       $addCallCelOi = $('.add-call-cel-oi'),
       $remCallCelOi = $('.rem-call-cel-oi'),
       $addInternet = $('.add-internet'),

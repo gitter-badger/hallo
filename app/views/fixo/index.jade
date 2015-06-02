@@ -16,13 +16,12 @@ body(itemtype="http://schema.org/WebPage")
 
   main
     .content
-      .content_header_container
-        
-        +contentHeader({
-          title: 'Escolha seu plano',
-          action: 'Compre agora',
-          price: { id: 'priceTotal', value: 0, small: 'true'}
-        })
+
+      +contentHeader({
+        title: 'Escolha seu plano',
+        action: 'Compre agora',
+        price: { id: 'priceTotal', value: 0, small: 'true'}
+      })
       
       .content_table_container
         .content_table
