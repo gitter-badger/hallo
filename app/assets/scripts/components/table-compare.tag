@@ -3,8 +3,8 @@
     <caption>Compare os planos de telefonia fixa</caption>
     <thead>
       <tr>
-        <td></td>
-        <td each={ id, label in labels }>{ label }</td>
+        <th></th>
+        <th each={ id, label in labels }>{ label }</th>
       </tr>
     </thead>
     <tbody>
