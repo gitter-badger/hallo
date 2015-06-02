@@ -1,7 +1,7 @@
 .product-cheat-sheet
   width 100%
-  max-width: remify(1170px);
-  margin 0 auto
+  @extend .container
+
 
 .product-cheat-sheet_row
   @extend .clearfix
@@ -19,8 +19,11 @@
 .product-cheat-sheet_column-left
   @extend .clearfix
   float: left
-  width: remify(200px)
-  padding-right: remify(30px)
+  // width: remify(200px)
+  col(2/12)
+  +below('s')
+    col(6/6)
+  // padding-right: remify(30px)
 
   h2
     font-family: $fontTitle
@@ -31,7 +34,11 @@
 .product-cheat-sheet_column-right
   @extend .clearfix
   float: left
-  width: remify(970px)
+  // width: remify(970px)
+  col(10/12)
+  +below('s')
+    col(6/6)
+
 
 
 
