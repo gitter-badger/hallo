@@ -186,28 +186,36 @@ body
     &_actions
       overflow hidden
       position relative
+      .add-1-3
+        width (100% / 3)
+        float left
+        &:nth-child(2), &:nth-child(3)
+          margin-left -1px
+        button
+          &.added
+            .call
+              display block
+            .price
+              display block
+              color $grayLight
+
       button
         cursor pointer
         height remify(50px)
         width 100%
         display block
+        font-family $fontTextRegular
         &.add
           border 1px solid $grayLight
           background-color $grayLighter
           border-radius remify(2px)
           position relative
           z-index 2
-          &.add-1-3
-            width (100% / 3)
-            float left
-            & + .add-1-3
-              border-left-color transparent
-              &:hover, &:focus, &:active
-                border-color $purple
           &:hover, &:focus, &:active
             border-color $purple
             color $purple
             outline none
+            z-index 3
           &.added
             &:hover, &:focus, &:active
               background-color $greenLight

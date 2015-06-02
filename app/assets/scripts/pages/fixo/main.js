@@ -13,14 +13,25 @@ define([
   var tags = {}
   var cart = {
     plan: null,
-    vozTotal: false
+    vozTotal: false,
+    callCelOi: false,
+    internet: false
   }
   var plans, labels;
-  var $vozTotal = $('#vozTotal');
+  var $vozTotal = $('#vozTotal'),
+      $title = $('.content_header_list h2'),
+      $addCallCelOi = $('.add-call-cel-oi'),
+      $remCallCelOi = $('.rem-call-cel-oi'),
+      $addInternet = $('.add-internet'),
+      $remInternet = $('.rem-internet');
 
   _public.init = function(){
     _private.loadPlans()
     _private.bindOpenDetail();
+    _private.bindAddCallCelOi();
+    _private.bindRemCallCelOi();
+    _private.bindAddInternet();
+    _private.bindRemInternet();
     _private.bindRemoveVozTotal();
     oiMediator.subscribe( 'voz-total add', _public.addVozTotal );
     oiMediator.subscribe( 'voz-total remove', _public.removeVozTotal );
@@ -80,21 +91,69 @@ define([
     _private.updateTitle();
   }
 
-  var $title = $('.content_header_list h2')
+  _private.bindAddCallCelOi = function (){
+    $addCallCelOi.on('click', function (evt){
+      evt.preventDefault();
+      cart.callCelOi = true;
+      $(this).addClass('added');
+      _private.updateTitle();
+    });
+  }
+
+  _private.bindRemCallCelOi = function (){
+    $remCallCelOi.on('click', function (evt){
+      evt.preventDefault();
+      cart.callCelOi = false;
+      $addCallCelOi.removeClass('added');
+      _private.updateTitle();
+    });
+  }
+
+  _private.bindAddInternet = function (){
+    $addInternet.on('click', function (evt){
+      evt.preventDefault();
+      cart.internet = true;
+      $addInternet.removeClass('added');
+      $(this).addClass('added');
+      _private.updateTitle();
+    });
+  }
+
+  _private.bindRemInternet = function (){
+    $remInternet.on('click', function (evt){
+      evt.preventDefault();
+      cart.internet = false;
+      $addInternet.removeClass('added');
+      _private.updateTitle();
+    });
+  }
 
   _private.updateTitle = function (){
     var text = '';
     var planSelected = _.find(plans, function(itemPlan){
       return itemPlan.slug === cart.plan
     })
+
     text = planSelected.name;
 
-    console.log(cart);
-    if( cart.vozTotal ){
-      text += ' + ' + labels.addons.vozTotal;
+    var countAddons = 0;
+    cart.vozTotal ? countAddons++ : null;
+    cart.callCelOi ? countAddons++ : null;
+    cart.internet ? countAddons++ : null;
+
+    if( countAddons > 1){
+      text += ' + ' + countAddons + ' opcionais';
+    } else {
+      if( cart.vozTotal ){
+        text += ' + ' + labels.addons.vozTotal;
+      }
+      if( cart.callCelOi ){
+        text += ' + ' + labels.addons.callCelOi;
+      }
+      if( cart.internet ){
+        text += ' + ' + labels.addons.internet;
+      }
     }
-
-
     $title.text(text)
   }
 

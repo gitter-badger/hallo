@@ -6,7 +6,9 @@
       "3": "Ligações DDD para qualquer fixo"
     },
     "addons":{
-      "vozTotal": "Voz Total"
+      "vozTotal": "Voz Total",
+      "callCelOi": "Ligações para Celular da Oi",
+      "internet": "Banda Larga da Oi"
     }
   },
   "data": [
