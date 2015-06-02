@@ -23,7 +23,7 @@
             <tbody>
               <tr class={ selected: selectedPlan === 'chip_pre' }>
                 <td class="opt">
-                  <input type="radio" name="plan-select" class="radio" value="chip_pre" onclick={ selectPlan }>
+                  <input type="radio" name="plan-select-chip" class="radio" value="chip_pre" onclick={ selectPlan }>
                   <oi-price price={ plan.addons.chip_pre } small={true} />
                 </td>
                 <td>
@@ -37,7 +37,7 @@
               </tr>
               <tr class={ selected: selectedPlan === 'chip_pre_internet_ddd' }>
                 <td class="opt">
-                  <input type="radio" name="plan-select" class="radio" value="chip_pre_internet_ddd" onclick={ selectPlan } checked>
+                  <input type="radio" name="plan-select-chip" class="radio" value="chip_pre_internet_ddd" onclick={ selectPlan } checked>
                   <oi-price price={ plan.addons.chip_pre_internet_ddd } small={true} />
                 </td>
                 <td>
