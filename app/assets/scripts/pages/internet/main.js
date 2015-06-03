@@ -26,20 +26,30 @@ define([
     modals.init();
 
     formAnime.init();
+    scroll.init();
 
-    oiMediator.subscribe('table-internet-banda-larga event', _private.dispatchScroll);
+    _private.bindCards();
 
     oiMediator.subscribe('scroll scrollToLockPosition', scroll.scrollToLockPosition);
   };
 
-  _private.dispatchScroll = function(event){
+  _private.bindCards = function(){
+    $('body').on('click', 'oi-card', function(e){
 
-    if (event === 'mount'){
-      scrollCount++;
-      if (scrollCount == 1){
-        scroll.init();
+      var cardSlug = $(e.currentTarget).attr('data-slug');
+      var tableSlug = $(e.currentTarget).attr('data-table');
+      var endpoint = $(e.currentTarget).attr('data-endpoint');
+
+      if (cardSlug && tableSlug) {
+        $('oi-card').removeClass();
+        $(e.currentTarget).addClass('selected');
+
+        oiMediator.publish('table changeCardTo', { cardSlug: cardSlug, tableSlug: tableSlug, endpoint: endpoint });
+        oiMediator.publish('scroll scrollToLockPosition');
+      } else {
+        console.log('card without cardSlug or tableSlug');
       }
-    }
+    });
   };
 
   return _public;
