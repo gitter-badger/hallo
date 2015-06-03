@@ -13,7 +13,7 @@ table-compare
         td.opt
           span.promo Mais vendido
           input.radio(type="radio", name="plan-select2", value="{plans[0].slug}" checked="{ plans[0].selected }" onclick="{ select }")
-          //- oi-price(price="{ plans[0].price.loyal }" small="{ true }")
+          oi-price(price="{ plans[0].price.loyal }" small="{ true }")
         td
           span.tag Ilimitado
         td
@@ -23,7 +23,7 @@ table-compare
       tr
         td.opt
           input.radio(type="radio", name="plan-select2", value="{plans[1].slug}" checked="{ plans[1].selected }" onclick="{ select }")
-          //- oi-price(price="{ plans[1].price.loyal }" small="{ true }")
+          oi-price(price="{ plans[1].price.loyal }" small="{ true }")
         td
           span.tag Ilimitado
         td
