@@ -33,13 +33,13 @@ input[type="checkbox"]
     background-color: $purple
     border-radius 0.125rem
 
-  &:checked::after
-    animation: kf-checkbox-on 0.21s ease
-    animation-fill-mode: forwards
+  &[checked="checked"], &[checked]
+    &:after
+      animation: kf-checkbox-on 0.21s ease
+      animation-fill-mode: forwards
 
-  &:not(:checked)
+  &:not([checked="checked"]), &:not([checked])
     &:after
       animation: kf-checkbox-off 0.21s ease
-
       animation-fill-mode: forwards
 
