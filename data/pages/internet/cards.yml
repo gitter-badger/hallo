@@ -4,7 +4,9 @@ cardsInternet:
     -
       title: 'Banda Larga da Oi'
       slug: 'banda-larga-da-oi'
-      active: 0
+      table: 'table-internet-banda-larga'
+      endpoint: 'internet'
+      active: 1
       image: 'card-internet-banda-larga-da-oi.png'
       list:
         title: ''
@@ -15,9 +17,11 @@ cardsInternet:
           - 'Modem incluso'
       action: 'Conheça a Banda Larga da Oi'
     -
-      title: 'Internet móvel 3G / 4G'
-      slug: 'internet-movel-3g-4g'
-      active: 1
+      title: 'Internet Móvel'
+      slug: 'internet-movel'
+      table: 'table-internet-movel'
+      endpoint: 'internet-movel'
+      active: 0
       image: 'card-internet-internet-movel-3g-4g.png'
       list:
         title: ''
