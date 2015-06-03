@@ -104,8 +104,6 @@ table-internet-banda-larga-mais-fixo
 
       oiMediator.publish('content-header updateHeader', { title: self.plans[idx].name.split(' + '), button: 'Compre agora', price: self.plans[idx].price.loyal });
 
-      oiMediator.publish('content-header updateHeader', { title: [self.plans[idx].name], button: 'Compre com um especialista', price: self.plans[idx].price.loyal });
-
       var slug = $('table-internet-banda-larga table tr[data-idx="'+idx+'"] input[type="radio"]').attr('id');
       oiMediator.publish('internet banda-larga-mais-fixo plan-selected', slug);
     };

@@ -31,11 +31,12 @@ input[type="radio"]
     background-color: $green
     border-radius 50%
 
-  &:checked::after
-    animation: kf-radio-on 0.21s ease
-    animation-fill-mode: forwards
+  &[checked="checked"], &[checked]
+    &:after
+      animation: kf-radio-on 0.21s ease
+      animation-fill-mode: forwards
 
-  &:not(:checked)
+  &:not([checked="checked"]), &:not([checked])
     &:after
       animation: kf-radio-off 0.21s ease
       animation-fill-mode: forwards

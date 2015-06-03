@@ -1,3 +1,24 @@
+/*
+simplonbp-light-webfont.eot
+simplonbp-light-webfont.svg
+simplonbp-light-webfont.ttf
+simplonbp-light-webfont.woff
+simplonbp-light-webfont.woff2
+*/
+
+/**
+ * from:
+ * http://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/
+ *
+ * @font-face {
+ *   font-family: 'Graublau Web';
+ *   src: url('GraublauWeb.eot?') format('eot'),
+ *    url('GraublauWeb.woff') format('woff'),
+ *    url('GraublauWeb.ttf') format('truetype');
+ * }
+ *
+ * **/
+
 @font-face {
   font-family: 'oititle';
   src: url('/assets/fonts/simplon/simplonoi-headline-webfont.eot');
@@ -8,6 +29,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'oitextregular';
   src: url('/assets/fonts/simplon/simplonbp-regular-webfont.eot');
@@ -15,41 +37,6 @@
   url('/assets/fonts/simplon/simplonbp-regular-webfont.woff') format('woff'),
   url('/assets/fonts/simplon/simplonbp-regular-webfont.ttf') format('truetype'),
   url('/assets/fonts/simplon/simplonbp-regular-webfont.svg#simplon_bpregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-/*
-@font-face {
-  font-family: 'oitextlight';
-  src: url('/assets/fonts/simplon/simplonbp-medium-webfont.eot');
-  src: url('/assets/fonts/simplon/simplonbp-medium-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/assets/fonts/simplon/simplonbp-medium-webfont.woff') format('woff'),
-  url('/assets/fonts/simplon/simplonbp-medium-webfont.ttf') format('truetype'),
-  url('/assets/fonts/simplon/simplonbp-medium-webfont.svg#simplon_bpmedium') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-*/
-/*
-@font-face {
-  font-family: 'oitextlight';
-  src: url('/assets/fonts/simplon/simplonbp-light-webfont.eot');
-  src: url('/assets/fonts/simplon/simplonbp-light-webfont.eot?#iefix') format('embedded-opentype'),
-  url('/assets/fonts/simplon/simplonbp-light-webfont.woff') format('woff'),
-  url('/assets/fonts/simplon/simplonbp-light-webfont.ttf') format('truetype'),
-  url('/assets/fonts/simplon/simplonbp-light-webfont.svg#simplon_bplight') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-*/
-
-@font-face {
-  font-family: 'oitextlight';
-  /*src: url('/assets/fonts/simplon/simplonbp-light-webfont.eot');*/
-  /*src: url('/assets/fonts/simplon/simplonbp-light-webfont.eot?#iefix') format('embedded-opentype'),*/
-  src: url('/assets/fonts/simplon/simplonbp-light.woff') format('woff'),
-  url('/assets/fonts/simplon/simplonbp-light-webfont.ttf') format('truetype'),
-  url('/assets/fonts/simplon/simplonbp-light-webfont.svg#simplon_bplight') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -66,9 +53,43 @@
 }
 
 /*
-simplonbp-light-webfont.eot
-simplonbp-light-webfont.svg
-simplonbp-light-webfont.ttf
-simplonbp-light-webfont.woff
-simplonbp-light-webfont.woff2
+@font-face {
+  font-family: 'oitextlight';
+  src: url('/assets/fonts/simplon/simplonbp-medium-webfont.eot');
+  src: url('/assets/fonts/simplon/simplonbp-medium-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/simplon/simplonbp-medium-webfont.woff') format('woff'),
+  url('/assets/fonts/simplon/simplonbp-medium-webfont.ttf') format('truetype'),
+  url('/assets/fonts/simplon/simplonbp-medium-webfont.svg#simplon_bpmedium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 */
+
+/*
+@font-face {
+  font-family: 'oitextlight';
+  src: url('/assets/fonts/simplon/simplonbp-light-webfont.eot');
+  src: url('/assets/fonts/simplon/simplonbp-light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/simplon/simplonbp-light-webfont.woff') format('woff'),
+  url('/assets/fonts/simplon/simplonbp-light-webfont.ttf') format('truetype'),
+  url('/assets/fonts/simplon/simplonbp-light-webfont.svg#simplon_bplight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+
+/*
+@font-face {
+  font-family: 'oitextlight';
+  src: url('/assets/fonts/simplon/simplonbp-light-webfont.eot');
+  src: url('/assets/fonts/simplon/simplonbp-light-webfont.eot?#iefix') format('embedded-opentype'),
+  src: url('/assets/fonts/simplon/simplonbp-light.woff') format('woff'),
+  url('/assets/fonts/simplon/simplonbp-light-webfont.ttf') format('truetype'),
+  url('/assets/fonts/simplon/simplonbp-light-webfont.svg#simplon_bplight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+
+
+
