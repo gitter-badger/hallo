@@ -35,6 +35,7 @@ define([
 
   _private.bindCards = function(){
     $('body').on('click', 'oi-card', function(e){
+      e.preventDefault();
 
       var cardSlug = $(e.currentTarget).attr('data-slug');
       var tableSlug = $(e.currentTarget).attr('data-table');
