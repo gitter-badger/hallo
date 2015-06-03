@@ -14,11 +14,11 @@ mixin head($page)
       //-     console.log({'interactive': interactive + 'ms', 'dcl': dcl + 'ms', 'complete': complete + 'ms'});
       //-   }
 
-      script
-        include ../../assets/scripts/utils/_load-css.js
+      //- script
+      //-   include ../../assets/scripts/utils/_load-css.js
 
-      noscript
-        link(rel='stylesheet', href='/assets/styles/fonts.css')
+      //- noscript
+      link(rel='stylesheet', href='/assets/styles/fonts.css')
       
       link(rel='stylesheet', href='/assets/styles/pages/' + $page + '/main.css')
 
