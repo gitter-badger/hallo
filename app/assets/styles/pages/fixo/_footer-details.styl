@@ -1,0 +1,168 @@
+.content_details
+  &_container
+    background-repeat no-repeat
+    background-position right remify(250px)
+    margin 0 auto
+    max-width remify(1170px)
+    padding-top remify(160px)
+    +above('l')
+      background-image url(/assets/images/layout/fixo4.png)
+
+.details
+  &_item
+    position relative
+    display block
+    max-width remify(1170px)
+    margin 0 auto
+    border-bottom remify(1.2px) solid $grayLight
+    font-family $fontTextRegular
+    font-size remify(13px)
+    overflow hidden
+    +above('m')
+      border-bottom none
+      margin-top remify(85px)
+
+    &_title-area
+      height remify(88px)
+      padding 0 remify(20px)
+      cursor pointer
+      +above('m')
+        -webkit-tap-highlight-color rgba(0, 0, 0, 0)
+        cursor default
+        width remify(200px)
+        padding-right remify(20px)
+        float left
+
+      &_title
+        line-height remify(88px)
+        font-size remify(13px)
+        text-transform uppercase
+        color $green
+        +above('m')
+          font-size remify(21px)
+          line-height remify(25px)
+          padding-right remify(10px)
+          color $black
+          margin-bottom remify(15px)
+
+      &_desc
+        display none
+        font-size remify(13px)
+        +above('m')
+          display block
+
+        p
+          margin-bottom remify(15px)
+
+    &_content-area
+      padding 0 0 0 remify(20px)
+      overflow hidden
+      height 0
+      opacity 0
+      transition all 0.3s ease
+      +above('m')
+        padding-bottom 0
+        height auto
+        width remify(520px)
+        padding 0
+        float left
+        opacity 1
+      &.open
+        height auto
+        opacity 1
+
+      &_desc
+        line-height remify(20px)
+        font-size remify(13px)
+        padding-bottom remify(50px)
+        +above('m')
+          padding-bottom 0
+        dl
+          display block
+          overflow hidden
+          +above('m')
+            margin-bottom remify(35px)
+        dt
+          display block
+          font-family $fontTextBold
+          &.hide
+            opacity 0
+          +above('m')
+            clear both
+            float left
+            margin-bottom remify(10px)
+            width remify(135px)
+        dd
+          display block
+          margin-bottom remify(30px)
+          +above('m')
+            float left
+            width remify(380px)
+            margin-bottom remify(10px)
+
+        .line
+          border-top 1px solid $grayLight
+          padding-top remify(10px)
+        a
+          color $green
+          text-decoration none
+          display block
+          +above('m')
+            display inline-block
+
+        .subinfo
+          color $gray
+          font-style italic
+          display block
+
+        br
+          display none
+          +above('m')
+            display inline
+
+
+      .list-bullets
+        background-repeat no-repeat
+        &.img-fixo-pre
+          background-image url(/assets/images/layout/fixo5.png)
+          +above('m')
+            padding-left remify(225px)
+            background-position 0 0
+        ul
+          list-style-type disc
+          color $grayLight
+          padding-left remify(15px)
+          margin-bottom remify(10px)
+        li
+          line-height remify(20px)
+          +above('m')
+            line-height remify(27px)
+        button
+          font-family $fontTextRegular
+          color $green
+          cursor pointer
+          background-color transparent
+          border none
+          font-size 16px
+        span
+          color black
+
+        .view
+          color $green
+          font-size remify(13px)
+          &:hover
+            color $purple
+
+      .button
+        border 1px solid $black
+        border-radius remify(2px)
+        color $black
+        display inline-block
+        font-size remify(13px)
+        height remify(50px)
+        line-height remify(50px)
+        padding 0 remify(40px)
+        text-align center
+        &:hover, &.forcus
+          border 1px solid purple
+          color $purple
