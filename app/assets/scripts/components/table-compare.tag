@@ -3,7 +3,9 @@
     <caption>Compare os planos de telefonia fixa</caption>
     <thead>
       <tr>
-        <th></th>
+        <th class="opt">
+          <div class="white-marker"></div>
+        </th>
         <th each={ id, label in labels }>{ label }</th>
       </tr>
     </thead>
