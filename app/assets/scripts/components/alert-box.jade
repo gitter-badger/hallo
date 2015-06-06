@@ -139,12 +139,7 @@ alert-box-message-banda-larga-mais-fixo
   .alert-box.white
     h4
       | Exibindo as opções de banda larga + fixo. 
-      a(onclick="{ outroNumero }", href="javascript:void(0);") Volte a ver só as opções de banda larga.
+      a(id="volte-a-ver-banda-larga",href="javascript:void(0);") Volte a ver só as opções de banda larga.
   script.
     var self = this;
-
-    this.outroNumero = function(e){
-      oiMediator.publish('table-internet-banda-larga mount');
-      self.close();
-    };
 

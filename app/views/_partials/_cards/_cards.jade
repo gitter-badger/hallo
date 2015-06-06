@@ -41,8 +41,8 @@ mixin cardsInternet(cards)
     .cards_container
       .cards_container_box
         each card in cards.data
-          oi-card
-            a(href="#" data-slug=card.slug class="oi-card "+ (card.active == 1 ? 'active': '') )
+          oi-card(data-slug=card.slug data-active=card.active data-table=card.table data-endpoint=card.endpoint)
+            a(href="#" class="oi-card "+ (card.active == 1 ? 'active': '') )
               .oi-card_header
                 h2.oi-card_header_title #{card.title}
 

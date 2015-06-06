@@ -78,7 +78,6 @@ table-internet-banda-larga-mais-fixo
         riot.mount('alert-box', 'alert-box-message-banda-larga-mais-fixo');
 
         oiMediator.publish('content-header updateHeader', { title: ['Banda larga', 'Fixo'], button: 'Compre com um especialista' });
-        oiMediator.publish('scroll scrollToLockPosition', {});
       } else if (eventName === 'unmount') {
         oiMediator.publish('alert-box unmount this');
       }
