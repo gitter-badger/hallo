@@ -1,0 +1,160 @@
+.content_addons
+  margin 0 auto
+  max-width remify(1170px)
+  overflow hidden
+  padding remify(55px) 0
+  height remify(290px)
+  margin-top remify(130px)
+  +below('m')
+    height auto
+  &_container
+    background-color $grayLighter
+
+.addons
+  color $black
+  overflow hidden
+  &_title
+    font-size remify(21px)
+    font-family $fontTextLight
+    display block
+    text-transform uppercase
+    text-align center
+    margin-bottom remify(60px)
+    +above('m')
+      margin-bottom 0
+      text-align left
+      width 25%
+      float left
+    br
+      display none
+      +above('m')
+        display block
+  &_list
+    text-align center
+    width 100%
+    overflow auto
+    +above('m')
+      overflow hidden
+      width 75%
+      float left
+    ul
+      display block
+      overflow hidden
+      width 300%
+      +above('m')
+        width 100%
+  &_item
+    padding 0 5%
+    // margin-bottom remify(60px)
+    margin-bottom 0
+    width 33%
+    float left
+    &_img
+      height remify(37px)
+      margin-bottom remify(15px)
+      background-repeat no-repeat
+      background-position center
+      &.img1
+        background-image url(/assets/images/layout/fixo1.png)
+      &.img2
+        background-image url(/assets/images/layout/fixo2.png)
+      &.img3
+        background-image url(/assets/images/layout/fixo3.png)
+    &_title
+      font-size remify(15.97px)
+      margin-bottom remify(15px)
+    &_desc
+      font-size remify(10.98px)
+      margin-bottom  remify(15px)
+      color $gray
+    &_actions
+      overflow hidden
+      position relative
+      .add-1-3
+        width (100% / 3)
+        float left
+        &:nth-child(2), &:nth-child(3)
+          margin-left -1px
+        button
+          &.added
+            .call
+              display block
+            .price
+              display block
+              color $grayLight
+
+      button
+        cursor pointer
+        height remify(50px)
+        width 100%
+        display block
+        font-family $fontTextRegular
+        &.add
+          border 1px solid $grayLight
+          background-color $grayLighter
+          border-radius remify(2px)
+          position relative
+          z-index 2
+          &:hover, &:focus, &:active
+            border-color $purple
+            color $purple
+            outline none
+            z-index 3
+          &.added
+            &:hover, &:focus, &:active
+              background-color $greenLight
+              border-color $greenLight
+              color $white
+        &.rem
+          border none
+          color $gray
+          background-color transparent
+          position relative
+          z-index 1
+          opacity 0
+          // position absolute
+          width 100%
+          top remify(-50px)
+          left 0
+          transition all .4s linear
+          &:hover, &:focus, &:active
+            outline none
+        &.added
+          background-color $greenLight
+          border-color $greenLight
+          color $white
+          .call, .price
+            display none
+          .textAdded
+            display block
+            svg
+              opacity 1
+              left remify(25px)
+
+
+          & + .rem
+            top 0
+            opacity 1
+
+      span
+        display block
+        &.textAdded
+          display none
+          font-size remify(16px)
+          position relative
+          svg
+            position absolute
+            top remify( -3px)
+            left remify( 40px)
+            width remify( 25px)
+            height remify( 25px)
+            opacity 0
+            transition all .3s linear
+            path
+              stroke transparent
+              fill white
+        &.call
+          font-size remify(12.98px)
+        &.price
+          font-size remify(10.98px)
+          color $gray

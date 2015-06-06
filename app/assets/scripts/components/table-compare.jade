@@ -1,0 +1,71 @@
+table-compare
+  table.table-compare
+    caption Compare os planos de telefonia fixa
+    thead
+      tr
+        th.opt
+          .white-marker
+        th Ligações locais para Fixo da Oi
+        th Ligações locais para fixo de outras operadoras
+        th Ligações DDD para qualquer fixo
+    tbody
+      tr
+        td.opt
+          span.promo Mais vendido
+          input.radio(type="radio", name="plan-select2", value="{plans[0].slug}" checked="{ plans[0].selected }" onclick="{ select }")
+          oi-price(price="{ plans[0].price.loyal }" small="{ true }")
+        td
+          span.tag Ilimitado
+        td
+          span.tag Ilimitado
+        td
+          span.tag Ilimitado
+      tr
+        td.opt
+          input.radio(type="radio", name="plan-select2", value="{plans[1].slug}" checked="{ plans[1].selected }" onclick="{ select }")
+          oi-price(price="{ plans[1].price.loyal }" small="{ true }")
+        td
+          span.tag Ilimitado
+        td
+          span.bold 1.000 min
+        td
+          span.bold -
+
+  //- table.table-compare
+  //-   caption Compare os planos de telefonia fixa
+  //-   thead
+  //-     tr
+  //-       th.opt
+  //-         .white-marker
+  //-       th(each="{ id, label in labels }") { label }
+  //-   tbody
+  //-     tr(each="{ plan, id2 in plans }" class="{ selected: plan.selected }")
+  //-       td.opt
+  //-         span.promo(if="{ plan.best_seller }") Mais vendido
+  //-         input.radio(type="radio" name="plan-select" value="{plan.slug}" checked="{ plan.selected }" onclick="{ parent.select }")
+  //-         oi-price(price="{ parent.plans[id2].price.loyal }" small="{ true }")
+  //-       td(each="{ idF, labelF in plan.features }")
+  //-         span.tag(if="{ labelF.tag }") { labelF.text }
+  //-         span.bold(if="{ !labelF.tag }") { labelF.text }
+
+  script.
+    var self = this;
+    self.plans = opts.plans;
+    self.labels = opts.labels;
+
+    self.select = function(evt){
+      //- var item = evt.item
+      //- _.forEach(self.plans, function (plan){
+      //-   plan.selected = false
+      //- });
+      //- item.plan.selected = true;
+      //- self.update();
+      //- oiMediator.publish( 'plan fixo select', evt.target.value );
+      if(evt.target.value === 'fixo-ilimitado'){
+        self.plans[1].selected = true;
+      }else{
+        self.plans[0].selected = true;
+      }
+      self.update();
+      oiMediator.publish( 'plan fixo select', evt.target.value );
+    }

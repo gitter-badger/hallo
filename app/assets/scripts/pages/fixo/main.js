@@ -1,7 +1,7 @@
 // main.js
 define([
   'domlib',
-  'vendor/lodash',
+  'lodash',
   'vendor/riot',
   'tags/oi-price',
   'tags/modal-plan-fixo',
@@ -81,7 +81,7 @@ define([
     var plansTable = _.filter(plans, function(plan, key){
       return plan.on_table;
     });
-    tags.table = riot.mount('table-compare', {plans: plansTable, labels: labels.features_labels } );
+    tags.table = riot.mount('#table-plans', {plans: plansTable, labels: labels.features_labels } );
     var planModal = _.filter(plans, function(plan, key){
       return plan.slug === 'fixo-ilimitado-com-ddd';
     })[0]
