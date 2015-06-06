@@ -1,0 +1,105 @@
+modal-internet-contratos-ofertas
+  .modal.modal-green(show="{ visible }")
+
+    .modal_column-left
+      header.modal_header
+        .modal_header_logo
+        h1.modal_header_title contrato e regras da oferta
+
+    .modal_column-right
+      main.modal_container
+
+        .modal_container_row
+          table.outras-ofertas
+              tbody
+                tr
+                  td.left  Contrato de Adesão
+                  td.left 
+                    a(href="#") Nome Contrato
+                tr
+                  td.left  Contrato de Adesão
+                  td.left 
+                    a(href="#") Nome Contrato
+                    a(href="#") Nome Contrato
+                    a(href="#") Nome Contrato
+                    a(href="#") Nome Contrato
+                    a(href="#") Nome Contrato
+                    a(href="#") Nome Contrato
+                    a(href="#") Nome Contrato
+                tr
+                  td.left  Contrato de Adesão
+                  td.left 
+                    a(href="#") Nome Contrato
+                    a(href="#") Nome Contrato
+                    a(href="#") Nome Contrato
+                    a(href="#") Nome Contrato
+                
+
+        .modal_container_row
+          .modal_container_half-left
+            h4 Entenda Passo a Passo
+
+        .modal_container_row
+          h5 Pergunta?
+          p Resposta
+
+        .modal_container_row
+          h5 Pergunta?
+          p Resposta
+
+        .modal_container_row
+          h5 Pergunta?
+          p Resposta
+
+        .modal_container_row
+          h5 Pergunta?
+          p Resposta
+
+    a.modal_close(href="javascript:void(0);", onclick="{ close }") Fechar
+
+  script.
+    var self = this;
+    self.visible = false;
+    self.added = false;
+
+    /**
+     * native riot method
+     *
+     * dispacth events via oiMediator to any point needed on entire system
+     * 
+     * **/
+    this.on('mount update unmount', function(eventName) {
+      oiMediator.publish('modal-internet-contratos-ofertas event', eventName);
+    });
+
+    self.open = function() {
+      $('body').addClass('scroll-lock');
+      self.visible = true;
+      self.update();
+      oiMediator.publish( 'modal-internet-contratos-ofertas open', {} );
+    };
+
+    self.close = function() {
+      $('body').removeClass('scroll-lock');
+      self.visible = false;
+      self.update();
+      oiMediator.publish( 'modal-internet-contratos-ofertas close', {} );
+    };
+
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      if (evt.keyCode == 27) { // Esc
+        self.close();
+      }
+    };
+
+    if (opts.visible) {
+      self.open();
+    }
+
+    $('body').on('click', '#open-modal-internet-contratos-ofertas', function(evt){
+      evt.preventDefault();
+      self.open();
+    });
+
+    //- self.open();

@@ -306,9 +306,6 @@ channel-modal
     &_suffix
       margin -80px 0 0 140px
 
-
-
-
 .modal
   position: fixed
   top: 0
@@ -395,7 +392,7 @@ channel-modal
     padding remify(10px) 0 remify(20px) 0
   h5
     font-family $fontTextBold
-    padding remify(10px) 0 remify(20px) 0
+    padding remify(70px) 0 remify(20px) 0
   ul
     li
       color $gray
@@ -403,15 +400,34 @@ channel-modal
       margin-left remify(26px)
       padding-left remify(10px)
       padding-bottom remify(30px)
+      &:last-child
+        padding-bottom 0
       p
         color $black
-      a
-        color $green
-        text-decoration none
-        &:hover
-          color $purple
-          border-bottom: 0.08em solid $purple;
-
+  a
+    color $green
+    text-decoration none
+    &:hover
+      color $purple
+      border-bottom: remify(1px) solid $purple;
+    
+.modal-contratos
+  font-size remify(13px)
+  color $gray
+  hr
+    width remify(125px)
+    border none
+    border-bottom remify(1px) solid $gray
+    margin remify(70px) 0 remify(40px) 0
+  a
+    display block
+    color $gray
+    text-decoration underline
+    &:hover
+      color $gray
+      border none
+  p
+    margin-top remify(20px)
 
 .modal_column-left
   top 0
@@ -460,6 +476,7 @@ channel-modal
   width: 50%
   float: left
   padding-left remify(15px)
+  text-align right
   +below('xs')
     width 100%
     padding-left 0
