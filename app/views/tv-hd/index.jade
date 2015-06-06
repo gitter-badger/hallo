@@ -1,4 +1,5 @@
 include ../_partials/head.jade
+include ../_partials/_cards/_cards.jade
 
 +head('tv-hd')
 
@@ -16,7 +17,7 @@ body
     +headerTVHD()
 
   main
-    include _cards.jade
+    +cardsTVHD(cardsTvHd)
     include _content.jade
 
   include ../_partials/footer.jade

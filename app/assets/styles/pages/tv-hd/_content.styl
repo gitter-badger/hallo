@@ -23,13 +23,21 @@
     background $white
     z-index: 1
     +above('m')
-      top remify(130px)
+      top rem(30px)
+    +above('l')
+      top rem(130px)
+
+.content_header_action_box
+  min-width: rem(170px)
+
+
+
 
 
 .content.lock
 
   .content_header_container
-    +above('s')
+    +above('m')
       position: fixed
       top: remify(74px);
       left: 0
@@ -47,6 +55,9 @@
       top: remify(74px + 130px);
       transition-duration: 610ms
       transition-property: transform
+      border-left remify(10px) solid transparent
+      border-right remify(10px) solid transparent
+
 
 
 .content.fold
@@ -56,9 +67,9 @@
       position: fixed
       top: 100%
       background-color: transparent;
-      transform: translateY(remify(-100px))
-      transition-duration: 610ms
-      transition-property: transform
+    //   transform: translateY(remify(-100px))
+    //   transition-duration: 610ms
+    //   transition-property: transform
     +above('s')
       position: fixed
       top: remify(74px);
@@ -71,11 +82,11 @@
     +below('xs')
       overflow: visible
       border-bottom: 0
-    +above('m')
-      height remify(90px)
-    +above('l')
-      padding remify(28px) 0
-      height remify(90px)
+    // +above('m')
+    //   height remify(90px)
+    // +above('l')
+    //   padding remify(28px) 0
+    //   height remify(90px)
 
   .content_header_action
     +below('s')
@@ -85,7 +96,7 @@
     +above('l')
       height remify(48px)
       transition-duration: 610ms
-      transform: translateY(remify(-104px));
+      transform: translateY(remify(-114px));
     ul li
       +above('l')
         height remify(48px)
@@ -105,7 +116,7 @@
       position: fixed
       top: 100%
       background-color: transparent;
-      transform: translateY(remify(-100px))
+      // transform: translateY(remify(-100px))
     +above('m')
       transition-duration: 610ms;
 

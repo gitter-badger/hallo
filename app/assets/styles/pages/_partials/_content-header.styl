@@ -17,6 +17,7 @@
     height remify(64px)
   +below('m')
     padding remify(18px) remify(20px)
+    height remify(90px)
   +above('m')
     height remify(130px)
   +above('l')
@@ -294,17 +295,20 @@
     &_box
       display table-cell
       vertical-align middle
-    a
+    a.button
       color $black
+      +below('xs')
+        bottom: rem(0px)
       +below('s')
         position fixed
-        bottom 0
+        bottom rem(10px)
         left 0
         display block
         width 100%
+        max-width 100%
         height remify(62px)
         border-radius 0
-        line-height remify(62px)
+        line-height remify(40px)
       +above('l')
         display inline-block
         width remify(138px)

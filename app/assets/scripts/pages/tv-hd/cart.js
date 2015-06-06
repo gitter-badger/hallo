@@ -125,7 +125,7 @@ define([
       return product.type === 'basic';
     })
     .forEach(function(basic, key) {
-      riot.mount('#card-price-'+ basic.slug, { price: basic.price });
+      riot.mount('#card-price-'+ basic.slug +'-hd', { price: basic.price });
     });
   }
 

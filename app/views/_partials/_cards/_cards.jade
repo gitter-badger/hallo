@@ -1,37 +1,44 @@
 - cardsImagesDirectory = '/assets/images/layout';
 
-mixin cardsTVHD()
+//- 
+//- construct tv-hd cards based on 'cardsTvHd' data
+//- 
+mixin cardsTVHD(cards)
   .cards
     .cards_container
       .cards_container_box
-        each val, index in ['start', 'mix', 'total']
+        each card in cards.data
           oi-card
-            a(href="#" data-slug=val class="oi-card "+ (val == 'mix' ? 'active': '') )
+            a(href="#" data-slug="#{card.slug}" class="oi-card "+ (val == 'mix' ? 'active': '') )
               .oi-card_header
-                h2.oi-card_header_title=val+ ' HD'
-                h5.oi-card_header_subtitle
-                  | 119 Canais 
-                  i.heading-bullet
-                  |  20 HD
+                h2.oi-card_header_title #{card.title}
+                if (card.subtitle)
+                  h5.oi-card_header_subtitle
+                    | #{card.subtitle[0]} 
+                    i.heading-bullet
+                    |  #{card.subtitle[1]}
                 i.oi-card_header_line
+
               .oi-card_content
                 .oi-card_content_price
-                  oi-price(id="card-price-"+val)
+                  oi-price(id="card-price-#{card.slug}", price="{ #{card.price} }")
+
                 .oi-card_content_list
-                  h5.oi-card_content_list_title Você ainda pode adicionar
-                  ul.oi-card_content_list_items
-                    - if (index == 0)
-                      li Ponto extra em HD
-                    - else if (index == 1)
-                      li Ponto extra em HD
-                      li HBO, Telecine e mais
-                      li Gravador Digital
-                    - else if (index == 2)
-                      li Ponto extra em HD
-                      li HBO, Telecine e mais
-                      li Gravador Digital com VOD
+                  if (card.list.title)
+                    h5.oi-card_content_list_title #{card.list.title}
+                  if (card.list.items.length > 0)
+                    ul.oi-card_content_list_items
+                      each item in card.list.items
+                        li=item
+
                 .oi-card_content_footer
-                  button.oi-card_content_footer_action Conheça o Start HD
+                  if (card.action)
+                    button.oi-card_content_footer_action #{card.action}
+//- 
+//- ------------------------------
+//- 
+
+
 
 //- 
 //- construct internet cards based on 'cardsInternet' data
