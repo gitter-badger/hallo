@@ -28,6 +28,7 @@ var helpers = (function() {
         }
       });
     dataMerged = _.merge(dataMerged, yaml.safeLoad(fs.readFileSync('./data/pages/internet/cards.yml', 'utf8')));
+    dataMerged = _.merge(dataMerged, yaml.safeLoad(fs.readFileSync('./data/pages/tv-hd/cards.yml', 'utf8')));
     return dataMerged;
   }
 
