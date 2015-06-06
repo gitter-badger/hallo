@@ -116,7 +116,7 @@ channelsgroup:
           name: "TV Senado"
           color: ""
     -
-      label: "Filmes & Séries"
+      label: "Filmes e séries"
       channels:
         -
           img: "warner"
