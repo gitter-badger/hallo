@@ -1,34 +1,48 @@
-cards:
-  -
-    title: 'Start HD'
-    slug: 'start'
-    subtitle:
-      - ''
-      - ''
-    list:
-      title: ''
-      items:
-        - ''
-    action: ''
-  -
-    title: 'Mix HD'
-    slug: 'mix'
-    subtitle:
-      - ''
-      - ''
-    list:
-      title: ''
-      items:
-        - ''
-    action: ''
-  -
-    title: 'Total HD'
-    slug: 'total'
-    subtitle:
-      - ''
-      - ''
-    list:
-      title: ''
-      items:
-        - ''
-    action: ''
+cardsTvHd:
+  meta:
+  data:
+    -
+      title: 'Start HD'
+      subtitle:
+        - '119 Canais'
+        - '20 HD'
+      price: 59.9
+      slug: 'start-hd'
+      active: 0
+      list:
+        title: 'Você ainda pode adicionar:'
+        items:
+          - '1 Ponto adicional'
+      action: 'Conheça o Start HD'
+    -
+      title: 'Mix HD'
+      subtitle:
+        - '159 Canais'
+        - '42 HD'
+      price: 79.9
+      slug: 'mix-hd'
+      active: 1
+      list:
+        title: 'Você ainda pode adicionar:'
+        items:
+          - '1 Ponto adicional'
+          - 'HBO, Telecine, Premiere e mais'
+          - 'Gravador Digital'
+          - 'Video on demand'
+      action: 'Conheça o Mix HD'
+    -
+      title: 'Total HD'
+      subtitle:
+        - '185 Canais'
+        - '52 HD'
+      price: 99.9
+      slug: 'total-hd'
+      active: 1
+      list:
+        title: 'Você ainda pode adicionar:'
+        items:
+          - '1 Ponto adicional'
+          - 'HBO, Telecine, Premiere e mais'
+          - 'Gravador Digital'
+          - 'Video on demand'
+      action: 'Conheça o Total HD'
