@@ -61,3 +61,52 @@
 //       column(col/12, uncycle: 6, cycle: 12)
 
 
+.container
+  +below('xxs')
+    center(rem(280px))
+
+  +below('xs')
+    center(rem(344px))
+
+  +below('s')
+    center(rem(704px))
+
+  +below('m')
+    center(rem(960px))
+
+  +above('l')
+    center(rem(1170px))
+
+
+//  * max width: 1280px | division: 12c | column: 70px | gutter: 30px | efective width: 1170px
+//  * max width: 1024px | division: 12c | column: 58px | gutter: 24px | efective width:  960px
+//  * max width:  768px | division: 12c | column: 44px | gutter: 16px | efective width:  704px
+//  * max width:  414px | division:  6c | column: 44px | gutter: 16px | efective width:  344px
+//  * max width:  320px | division:  6c | column: 35px | gutter: 14px | efective width:  280px
+// (ratios = 1, offset = 0, cycle = 0, uncycle = 0, gutter = jeet-gutter)
+$xxs_gutter = 5
+$xs_gutter = 4.652
+$s_gutter = 2.273
+$m_gutter = 2.5
+$l_gutter = 2.565
+
+buildCol(num)
+  +below('xxs')
+    col(num/6, 0, 0, 0, $xxs_gutter)
+  +below('xs')
+    col(num/6, 0, 0, 0, $xs_gutter)
+  +below('s')
+    col(num/12, 0, 0, 0, $s_gutter)
+  +below('m')
+    col(num/12, 0, 0, 0, $m_gutter)
+  +above('l')
+    col(num/12, 0, 0, 0, $l_gutter)
+
+buildAllCols()
+  for num in (1..12)
+    .col-{num}
+      buildCol(num)
+
+
+.container
+  buildAllCols()
