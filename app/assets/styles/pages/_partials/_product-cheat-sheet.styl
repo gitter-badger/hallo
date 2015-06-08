@@ -1,6 +1,6 @@
 .product-cheat-sheet
   width 100%
-  @extend .container
+  @extend $container
 
 
 .product-cheat-sheet_row
@@ -10,6 +10,7 @@
     margin-bottom: remify(21px)
 
   hr
+    max-width: rem(480px)
     height: remify(1.2px)
     border: 0
     margin: remify(5px) 0 remify(12px)
@@ -20,9 +21,9 @@
   @extend .clearfix
   float: left
   // width: remify(200px)
-  col(2/12)
+  @extends $col-2-12
   +below('s')
-    col(6/6)
+    @extends $col-6-6
   // padding-right: remify(30px)
 
   h2
@@ -35,9 +36,9 @@
   @extend .clearfix
   float: left
   // width: remify(970px)
-  col(10/12)
+  @extends $col-10-12
   +below('s')
-    col(6/6)
+    @extends $col-6-6
 
 
 
