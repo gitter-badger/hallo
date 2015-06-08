@@ -65,6 +65,15 @@ define([
       oiMediator.publish('scroll scrollToLockPosition');
       _private.loadAndMountTableBandaLarga();
     });
+
+    $('body').on('click', '.product-cheat-sheet_row h2', function(e){
+
+      // $('.product-cheat-sheet_row').removeClass('product-cheat-sheet_row--mobile-open');
+
+      var row = $(e.currentTarget).parent().parent();
+      row.toggleClass('product-cheat-sheet_row--mobile-open');
+      row.find('.product-cheat-sheet_column-right').toggle();
+    });
   };
 
   _private.mountOnTablePoint = function(dataEndpoint, tableComponentName, dataToPass){
