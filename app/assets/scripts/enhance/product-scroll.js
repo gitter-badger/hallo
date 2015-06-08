@@ -401,7 +401,7 @@ define([
 
         window.scrollY = window.pageYOffset;
 
-        lockPosition = content.offsetTop - oiCardHeaderTitle[0].getBoundingClientRect().height - 2;
+        lockPosition = content.offsetTop - oiCardHeaderTitle[0].getBoundingClientRect().height - 10;
         foldPosition = lockPosition + contentHeader.offsetHeight;
 
         if (window.innerWidth >= 768) {
@@ -409,8 +409,8 @@ define([
           // dynamicTable(window.scrollY, -window.innerHeight*3, openPosition );
           // dynamicTableOpacity(window.scrollY, openPosition, openPosition + cardSize*0.21 );
 
-          dynamicCards(window.scrollY, openPosition, openPosition + cardSize*1);
-          dynamicTitle(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize*1);
+          dynamicCards(window.scrollY, openPosition, openPosition + cardSize*0.98);
+          dynamicTitle(window.scrollY, openPosition, openPosition + cardSize*0.98);
 
           dynamicBorderSize();
         } else {
@@ -418,7 +418,7 @@ define([
           dynamiciPhoneSizeHack();
         }
 
-        dynamicBackgrounds(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize * 0.89);
+        dynamicBackgrounds(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize*0.55 + cardSize * 0.92);
 
         open();
         lock();
