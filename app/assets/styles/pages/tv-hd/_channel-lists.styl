@@ -92,7 +92,7 @@
         margin: 0 auto
         text-decoration none
         color $gray
-        border remify(1.1px) solid transparent
+        border remify(1.2px) solid transparent
         border-radius remify(2px)
         +above('m')
           width remify(120px)
@@ -102,12 +102,18 @@
           filter grayscale(100%)
           opacity .7
         &:hover, &:active
-          +above('l')
-            transition-duration: 144ms
-            transition-delay: 210ms
-            transition-property: border
-            border remify(1.1px) solid $purple
-            color $purple
+          transition-duration: 144ms
+          transition-delay: 210ms
+          transition-property: border
+          border remify(1.2px) solid $purple
+          color $purple
+
+          // +above('l')
+          //   transition-duration: 144ms
+          //   transition-delay: 210ms
+          //   transition-property: border
+          //   border remify(1.2px) solid $purple
+          //   color $purple
         &:active
           +above('l')
             transition-duration: 0s

@@ -1,0 +1,121 @@
+modal-fixo-outros
+  .modal.modal-green(show="{ visible }")
+
+    .modal_column-left
+      header.modal_header
+        .modal_header_logo
+        h1.modal_header_title outros planos de fixo
+
+    .modal_column-right
+      main.modal_container
+
+        .modal_container_row
+          .modal_container_half-left
+            h4 Escolha um plano
+
+          .modal_container_half-right
+            button.filled
+              strong
+                | 0800 <span>{ 031 }</span> 0001 
+                em Ligue para comprar
+
+        .modal_container_row
+          table.modal-table
+              thead
+                tr
+                  th.left Plano
+                  th Ligaões locais para Fixo da Oi
+                  th Informações
+              tbody
+                tr
+                  td.left 
+                    strong Internet Móvel
+                    p É preciso estar inscrito nos Programas do Governo Federal
+                  td 90 minutos
+                    span.obs Para outros serviços 
+                      a(href="#") recarregue
+                  td.lista-tarifa
+                    a(href="#") Tarifas
+                    a(href="#") Contrato
+                    a(href="#") Regulamentos
+                tr
+                  td.left 
+                    strong Fixo Rural
+                    p É preciso morar até 30km da 
+                      a.black(href="#") área de tarifação basica
+                  td 100 minutos
+                  td.lista-tarifa
+                    a(href="#") Tarifas
+                    a(href="#") Contrato
+                    a(href="#") Regulamentos
+                tr
+                  td.left 
+                    strong Básico
+                    p Plano básico da ANATEL<br> 
+                      a.black(href="#") Compare com seu plano atual
+                  td 200 minutos
+                  td.lista-tarifa 
+                    a(href="#") Tarifas
+                    a(href="#") Contrato
+                    a(href="#") Regulamentos
+                tr
+                  td.left 
+                    strong Pasoo (alternativo)
+                  td 400 minutos
+                  td.lista-tarifa 
+                    a(href="#") Tarifas
+                    a(href="#") Contrato
+                    a(href="#") Regulamentos
+
+
+        .modal_container_row
+          p Estes são os planos com condições especiais oferecidos conforme as regulamentações da ANATEL e parcerias com o Governo Federal.
+
+    a.modal_close(href="javascript:void(0);", onclick="{ close }") Fechar
+
+  script.
+    var self = this;
+    self.visible = false;
+    self.added = false;
+
+    /**
+     * native riot method
+     *
+     * dispacth events via oiMediator to any point needed on entire system
+     * 
+     * **/
+    this.on('mount update unmount', function(eventName) {
+      oiMediator.publish('modal-fixo-outros event', eventName);
+    });
+
+    self.open = function() {
+      $('body').addClass('scroll-lock');
+      self.visible = true;
+      self.update();
+      oiMediator.publish( 'modal-fixo-outros open', {} );
+    };
+
+    self.close = function() {
+      $('body').removeClass('scroll-lock');
+      self.visible = false;
+      self.update();
+      oiMediator.publish( 'modal-fixo-outros close', {} );
+    };
+
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      if (evt.keyCode == 27) { // Esc
+        self.close();
+      }
+    };
+
+    if (opts.visible) {
+      self.open();
+    }
+
+    $('body').on('click', '#open-modal-fixo-outros', function(evt){
+      evt.preventDefault();
+      self.open();
+    });
+
+    //- self.open();

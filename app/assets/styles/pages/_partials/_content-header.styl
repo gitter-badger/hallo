@@ -15,6 +15,8 @@
     border-bottom-color $grayLight
   +above('xs')
     height remify(64px)
+  +below('s')
+    height remify(90px)
   +below('m')
     padding remify(18px) remify(20px)
   +above('m')
@@ -31,15 +33,15 @@
       display none
     +above('m')
       display block
-      width 62%
+      width 50%
       height 100%
       overflow hidden
       font-size remify(42px)
       text-transform uppercase
-    +above('l')
-      width: 54%
-    +above('xl')
-      width: 62%
+    // +above('l')
+    //   max-width 50%
+    // +above('xl')
+    //   width: 54%
 
     // .content_header_list hgroup
     hgroup
@@ -88,11 +90,11 @@
       max-width: 100%
     +above('m')
       width auto
-      max-width: 34%
+      max-width: 37%
     +above('l')
-      max-width: 46%
-    +above('xl')
-      max-width: 38%
+      max-width: 50%
+    // +above('xl')
+    //   max-width: 44%
 
   // the _sidewalk
   // .content_header_client-type
@@ -121,6 +123,7 @@
       line-height remify(30px)
       text-decoration none
       color $green
+      border none
 
       span
         height remify(15px)
@@ -287,6 +290,7 @@
     height 100%
     +above('l')
       width remify(168px)
+      margin-left rem(30px)
     +above('xl')
       width remify(196px)
 
@@ -294,17 +298,20 @@
     &_box
       display table-cell
       vertical-align middle
-    a
+    a.button
       color $black
+      +below('xs')
+        bottom: rem(0px)
       +below('s')
         position fixed
-        bottom 0
+        bottom rem(10px)
         left 0
         display block
         width 100%
+        max-width 100%
         height remify(62px)
         border-radius 0
-        line-height remify(62px)
+        line-height remify(40px)
       +above('l')
         display inline-block
         width remify(138px)

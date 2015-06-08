@@ -64,7 +64,6 @@ table-internet-banda-larga
     this.on('mount update unmount', function(eventName) {
       if (eventName == 'mount'){
         oiMediator.publish('content-header updateHeader', { title: ['Banda larga para sua casa'], button: 'Compre agora' });
-        oiMediator.publish('scroll scrollToLockPosition', {});
       }
 
       oiMediator.publish('table-internet-banda-larga event', eventName);

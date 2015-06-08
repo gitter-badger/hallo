@@ -58,25 +58,26 @@ define([
       scrollDirection = 0;
 
       // html
-      header = document.querySelector('body >header');
+      header = $('body >header')[0];
 
       // cards
-      cards = document.querySelector('.cards');
-      cardsContainer = document.querySelector('.cards_container');
-      cardsContainerBox = document.querySelector('.cards_container_box');
-      oiCard = document.querySelectorAll('oi-card');
-      oiCardHeader = document.querySelectorAll('.oi-card_header');
-      oiCardHeaderTitle = document.querySelectorAll('.oi-card_header_title');
-      clickableCards = document.querySelectorAll('oi-card');
+      cards = $('.cards')[0];
+      cardsContainer = $('.cards_container')[0];
+      cardsContainerBox = $('.cards_container_box')[0];
+
+      oiCard = $('oi-card');
+      oiCardHeader = $('.oi-card_header');
+      oiCardHeaderTitle = $('.oi-card_header_title');
+      clickableCards = $('oi-card');
 
       // content
-      content = document.querySelector('.content');
-      contentHeader = document.querySelector('.content_header');
-      contentTableContainer = document.querySelector('.content_table_container');
-      contentTable = document.querySelector('.content_table');
+      content = $('.content')[0];
+      contentHeader = $('.content_header')[0];
+      contentTableContainer = $('.content_table_container')[0];
+      contentTable = $('.content_table')[0];
 
       // table
-      tableLists = document.querySelector('.content_table_container');
+      tableLists = $('.content_table_container')[0];
 
       // sizes
       cardSize = cardsContainerBox.getBoundingClientRect().height;
@@ -92,7 +93,7 @@ define([
       _private.scrollSpeed();
       _private.scroller();
       // _private.keys();
-      _private.clicks();
+      // _private.clicks();
       _private.updateOnResize();
       _private.checkHash();
     };
@@ -146,7 +147,8 @@ define([
       if (hasSelected > 0){
         return;
       } else {
-        oiCard[oiCard.length-1].className += 'selected';
+        $('oi-card[data-active="1"]').addClass('selected');
+        // oiCard[oiCard.length-1].className += 'selected';
       }
 
       return oiCard[oiCard.length-1];
@@ -368,7 +370,6 @@ define([
         };
 
         if (window.scrollY >= foldPosition) {
-        // if (window.scrollY >= lockPosition) {
           if (!scrollDirection) {
             addFold();
           } else {
@@ -400,7 +401,7 @@ define([
 
         window.scrollY = window.pageYOffset;
 
-        lockPosition = content.offsetTop - oiCardHeaderTitle[0].getBoundingClientRect().height - 10;
+        lockPosition = content.offsetTop - oiCardHeaderTitle[0].getBoundingClientRect().height - 2;
         foldPosition = lockPosition + contentHeader.offsetHeight;
 
         if (window.innerWidth >= 768) {
@@ -408,8 +409,8 @@ define([
           // dynamicTable(window.scrollY, -window.innerHeight*3, openPosition );
           // dynamicTableOpacity(window.scrollY, openPosition, openPosition + cardSize*0.21 );
 
-          dynamicCards(window.scrollY, openPosition, openPosition + cardSize*0.89);
-          dynamicTitle(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize * 0.89);
+          dynamicCards(window.scrollY, openPosition, openPosition + cardSize*1);
+          dynamicTitle(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize*1);
 
           dynamicBorderSize();
         } else {
@@ -525,35 +526,6 @@ define([
     };
 
     /**
-     * clicks
-     *
-     * load clicks events of page
-     *
-     * @method clicks
-     * @return null
-     *
-     * ***/
-    _private.clicks = function(){
-
-      var clickOnCard = function(e){
-        [].forEach.call(clickableCards, function(element, i){
-          if (element == e.currentTarget) {
-            _public.changeCardTo(i);
-
-            var cards = $('oi-card a');
-            var slug = $(cards[i]).attr('data-slug');
-            oiMediator.publish('scroll changeCardTo', slug);
-          }
-        });
-      };
-
-      [].forEach.call(clickableCards, function(e){
-        e.addEventListener('click', clickOnCard);
-        e.addEventListener('touch', clickOnCard);
-      });
-    };
-
-    /**
      * changeTableTo
      *
      * change between tables by indexs
@@ -601,11 +573,17 @@ define([
       //   mobileHA: false
       // });
 
-      Velocity(document.body, 'scroll', {
-        offset: pos,
-        duration: duration,
-        mobileHA: false
-      });
+      console.log(window.scrollY, pos);
+
+      if (window.scrollY != pos){
+        Velocity(document.body, 'scroll', {
+          offset: pos,
+          duration: duration,
+          mobileHA: false
+        });
+      } else {
+        _private.updateOnResize();
+      }
 
       return;
     };
@@ -641,7 +619,7 @@ define([
       }
 
       var hash = window.location.hash.replace('#', '');
-      var cardLink = document.querySelector('a[data-slug="'+hash+'"]');
+      var cardLink = $('a[data-slug="'+hash+'"]');
       if (!cardLink) {
         return false;
       }

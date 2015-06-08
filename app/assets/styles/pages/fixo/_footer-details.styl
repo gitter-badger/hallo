@@ -1,5 +1,15 @@
-.oi-channels
-  &_footer-item
+.content_details
+  &_container
+    background-repeat no-repeat
+    background-position right remify(250px)
+    margin 0 auto
+    max-width remify(1170px)
+    padding-top remify(160px)
+    +above('l')
+      background-image url(/assets/images/layout/fixo4.png)
+
+.details
+  &_item
     position relative
     display block
     max-width remify(1170px)
@@ -16,8 +26,6 @@
       height remify(88px)
       padding 0 remify(20px)
       cursor pointer
-      +above('m')
-        margin-bottom remify(100px)
       +above('m')
         -webkit-tap-highlight-color rgba(0, 0, 0, 0)
         cursor default
@@ -77,6 +85,8 @@
         dt
           display block
           font-family $fontTextBold
+          &.hide
+            opacity 0
           +above('m')
             clear both
             float left
@@ -89,14 +99,21 @@
             float left
             width remify(380px)
             margin-bottom remify(10px)
+
+        .line
+          border-top 1px solid $grayLight
+          padding-top remify(10px)
         a
           color $green
           text-decoration none
           display block
           +above('m')
             display inline-block
-          &:hover
-            color $purple
+
+        .subinfo
+          color $gray
+          font-style italic
+          display block
 
         br
           display none
@@ -104,103 +121,10 @@
             display inline
 
 
-      &_movies
-
-        .list-title
-          font-family $fontTextBold
-          font-size remify(13px)
-          margin-bottom remify(15px)
-
-        .list-container
-          height remify(230px)
-          overflow scroll
-          +above('m')
-            height auto
-            overflow auto
-
-          &.rent-list
-            li
-              +above('m')
-                height remify(190px)
-
-        ul
-          display block
-          height remify(230px)
-          width (120px * 8 )
-          +above('m')
-            height auto
-            width 100%
-            overflow auto
-
-        li
-          float left
-          height remify(230px)
-          width remify(100px)
-          margin-right remify(20px)
-          font-size remify(10px)
-          +above('m')
-            font-size remify(11px)
-
-          a
-            display block
-            color $black
-            text-decoration none
-
-        .poster
-          background-repeat no-repeat
-          background-size cover
-          display block
-          height remify(150px)
-          width remify(100px)
-          margin-bottom remify(10px)
-          background-color $grayLighter
-          position relative
-
-        .dist
-          display block
-          position absolute
-          left remify(4px)
-          bottom remify(4px)
-          span
-            display inline-block
-            line-height remify(18px)
-            height remify(18px)
-            padding 0 remify(4px)
-            color $white
-            border-radius remify(2px)
-            margin-right remify(2px)
-          .vod
-            background-color $purple
-          .oi-filmes
-            background-color $purpleLight
-
-        .channel
-          display block
-          font-family $fontTextBold
-          width 100%
-          height remify(15px)
-          overflow hidden
-          text-overflow ellipsis
-          white-space nowrap
-
-        .name
-          display block
-          width 100%
-          height remify(15px)
-          overflow hidden
-          text-overflow ellipsis
-          white-space nowrap
-
-        .avaliable
-          font-style italic
-          color $black
-          +above('m')
-            padding-right remify(15px)
-
       .list-bullets
         background-repeat no-repeat
-        &.img-recorder
-          background-position -9999px
+        &.img-fixo-pre
+          background-image url(/assets/images/layout/fixo5.png)
           +above('m')
             padding-left remify(225px)
             background-position 0 0
@@ -223,8 +147,14 @@
         span
           color black
 
+        .view
+          color $green
+          font-size remify(13px)
+          &:hover
+            color $purple
+
       .button
-        border remify(1.2px) solid inherit
+        border 1px solid $black
         border-radius remify(2px)
         color $black
         display inline-block
@@ -234,5 +164,5 @@
         padding 0 remify(40px)
         text-align center
         &:hover, &.forcus
+          border 1px solid purple
           color $purple
-

@@ -1,0 +1,128 @@
+.table-compare
+  border-bottom 1px solid $black
+  font-family $fontTextRegular
+  text-align center
+  width 100%
+  min-width remify(800px)
+  margin-top remify(90px)
+  +above('m')
+    margin-top 0
+
+  caption
+    display none
+
+  thead
+    tr
+      border-bottom 1px solid $gray
+
+  tbody
+    tr
+      border-bottom 1px dashed $gray
+
+  tr
+    height remify(90px)
+    cursor pointer
+
+    &.selected
+      background-color $grayLighter
+
+  th
+    height remify(90px)
+    padding 0 6%
+    vertical-align middle
+    position relative
+    +above('m')
+      padding 0 7%
+    &.opt
+      +below('s')
+        position inherit
+      .white-marker
+        +below('s')
+          width remify(120px)
+          box-shadow remify(10px) 0px remify(10px) white
+          height remify(180px)
+          position absolute
+          top 0
+          left 0
+          background-color $white
+          z-index 3
+
+  td
+    height remify(110px)
+    vertical-align middle
+    font-weight 600
+    position relative
+    padding 0 remify(80px)
+    z-index 1
+    &.opt
+      width remify(210px)
+      padding-left remify(25px)
+      position relative
+      +below('s')
+        position inherit
+      z-index 2
+      input[type=radio]
+        position absolute
+        top 50%
+        left remify(25px)
+        margin-top remify(-16px)
+        +below('s')
+          display: none
+      oi-price
+        position absolute
+        top remify(38px)
+        left remify(115px)
+        height remify(36px)
+        +below('s')
+          position absolute
+          top auto
+          left 0
+          background-color $white
+          box-shadow remify(10px) 0px remify(10px) white
+          width remify(120px)
+          height remify(109px)
+          margin-top remify(-54px)
+          padding remify(35px) 0 0 0
+          z-index 2
+
+  .promo
+    background-color $orangeLight
+    border-radius 100%
+    width remify(50px)
+    height remify(50px)
+    display block
+    position absolute
+    top remify(-10px)
+    left remify(60px)
+    color $black
+    font-size remify(11px)
+    padding remify(13px) 0
+    line-height remify(12px)
+    transform rotate(-25deg)
+    +below('s')
+      top remify(160px)
+      left remify(100px)
+      z-index 4
+
+
+  .bold
+    font-family $fontTextBold
+
+  .tag
+    background-color $green
+    border-radius remify(2px)
+    font-weight 500
+    color $white
+    display inline-block
+    height remify(20px)
+    line-height remify(20px)
+    font-size remify(13px)
+    padding 0 remify(10px)
+    text-transform lowercase
+
+  // oi-price
+  //   display inline-block
+  //   height remify(90px)
+  //   position absolute
+  //   top remify(28px)
+  //   left remify(90px)

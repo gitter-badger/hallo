@@ -26,6 +26,7 @@ require.config({
   baseUrl: '/assets/scripts',
   paths: {
     // "domlib": ('__proto__' in {}) ? "vendor/zepto" : "vendor/jquery",
+    "lodash": "vendor/lodash",
     "domlib": "vendor/jquery",
     "mask": 'vendor/jquery.maskedinput',
     "velocity": 'vendor/velocity',
@@ -100,22 +101,6 @@ var Mediator = ( function( window, undefined ) {
 var oiMediator = new Mediator();
 
 require(['vendor/blazy', 'vendor/rem'], function(Blazy) {
-
-  //  var bLazy = new Blazy();
-
-  //  var bLazy2 = new Blazy({
-  //     container: '.oi-channels-lists_list-tv_container'
-  //   });
-
-  // var bLazy3 = new Blazy({
-  //     container: '.oi-channels-addons_container'
-  //   });
-
-  // var bLazy4 = new Blazy({
-  //     container: '.list-container'
-  //   });
-
-  // Crossroads?
 
   var path = window.location.pathname.split('/').slice(1);
 
