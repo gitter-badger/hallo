@@ -46,9 +46,15 @@ body
       .content_header_container
         +below('xs')
           display none
+        .content_header_list
+          max-width 60%
+        .content_header_sidewalk
+          max-width 40%
         .content_header_action
           margin-left remify(30px)
           width auto
+          .content_header_action_box a
+            min-width rem(170px)
 
       .content_table_container
         .content_table
@@ -77,6 +83,11 @@ body
       height: remify(70px)
     tbody tr td
       height: remify(110px)
+      // fieldset
+      //   oi-price
+      //     +below('xs')
+      //       left: rem(-10px)
+
 
 .oi-banda-larga-mais-fixo_table
   table thead tr th
@@ -95,14 +106,33 @@ body
   background-color: $white
   z-index: 1
   +below('xs')
-    width: 40vw
+    width: rem(130px)
+    border-right: 1px solid $grayLight
+
+
+  table:after
+    +below('xs')
+      content: " ";
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 3px;
+      top: 0;
+      right: -3px;
+      background-color: rgba(0,0,0,0.05);
 
   table tbody tr td oi-price
     pointer-events: none
     height: remify(24px)
+    +below('xs')
+      left rem(-14px)
+  table tbody tr td fieldset input[type="radio"]
+    +below('xs')
+      transform: scale(0.89)
+      transform-origin: 50% 50%
 
-.oi-banda-larga-mais-fixo_table_heading
-  width: 18%
+// .oi-banda-larga-mais-fixo_table_heading
+//   width: 18%
 
 .oi-banda-larga_table_scroll,
 .oi-banda-larga-mais-fixo_table_scroll
@@ -117,41 +147,43 @@ body
     width: (100/3)%
 
   +below('xs')
-    width: 60vw
-    left: 40vw
+    width: s('calc(100vw - '+rem(130px)+')')
+    left: rem(130px)
     overflow-x: scroll
     table
-      width: remify(185px*3)
-      tbody tr td
-        width: remify(185px)
+      width: s('calc(41vw * 3)')
 
-.oi-banda-larga-mais-fixo_table_scroll
-  left: 18%
-  width: 82%
+// .oi-banda-larga-mais-fixo_table_scroll
+//   left: 18%
+//   width: 82%
 
 
 .oi-banda-larga_table_footer,
 .oi-banda-larga-mais-fixo_table_footer
-  @extend .clearfix
-  display: table
+  @extend $container
   width 100%
   height remify(70px)
-  max-width rem(1170px)
-  margin 0 auto
+
   div
-    display: table-cell
-    vertical-align: middle
-    width: 100%
+    padding: rem(24px) 0
+    +below('xs')
+      @extend $col-6-6
+    +above('s')
+      @extend $col-12-12
 
 
-.oi-banda-larga_ficha-tecnica, .oi-banda-larga-mais-fixo_ficha-tecnica
-  padding-top: remify(130px)
+
+.oi-banda-larga_ficha-tecnica,
+.oi-banda-larga-mais-fixo_ficha-tecnica
+  +above('m')
+    padding-top: remify(130px)
 
 .oi-banda-larga_ficha-tecnica
-  background-image: url(/assets/images/layout/img-background-banda-larga.png)
-  background-repeat: no-repeat;
-  background-size: rem(469px) auto;
-  background-position: 100% 34%;
+  +above('m')
+    background-image: url(/assets/images/layout/img-background-banda-larga.png)
+    background-repeat: no-repeat;
+    background-size: rem(469px) auto;
+    background-position: 100% 34%;
 
 
 
