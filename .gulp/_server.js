@@ -52,9 +52,8 @@ gulp.task('server', ['watch'], function() {
 });
 
 gulp.task('reset', [], function(){
-  runSequence(
+  runSequence([
       'clear',
-      'build',
-      'watch'
-  );
+      'build'
+  ]);
 });
