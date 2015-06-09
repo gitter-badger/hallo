@@ -18,19 +18,25 @@ var helpers = (function() {
   }
 
   _public.loadData = function() {
-    var dataFiles = _private.listDataFiles(),
-      dataMerged = {};
-      dataFiles.map(function(file, index){
-        try {
-          dataMerged = _.merge(dataMerged, yaml.safeLoad(fs.readFileSync('./data/' + file , 'utf8')));
-        } catch (e) {
-          console.log(e);
+
+    var dataFiles = _private.listDataFiles();
+    var dataMerged = {};
+      
+    dataFiles.map(function(file, index){
+      try {
+        if (file.split('.yml').length == 2){
+            dataMerged = _.merge(dataMerged, yaml.safeLoad(fs.readFileSync('./data/' + file , 'utf8')));
         }
-      });
+      } catch (e) {
+        console.log(e);
+      }
+    }); 
+
     dataMerged = _.merge(dataMerged, yaml.safeLoad(fs.readFileSync('./data/pages/internet/cards.yml', 'utf8')));
     dataMerged = _.merge(dataMerged, yaml.safeLoad(fs.readFileSync('./data/pages/tv-hd/cards.yml', 'utf8')));
+
     return dataMerged;
-  }
+  };
 
   _public.notifyError = function(err) {
     err.$filename = err.path || err.filename ;

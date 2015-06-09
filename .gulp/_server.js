@@ -11,7 +11,19 @@ var msg    = new logdown({prefix: 'Message:'})
 var runSequence  = require('run-sequence');
 
 
-gulp.task('watch', ['build-data', 'build-api', 'build-bower', 'build-scripts', 'build-templates', 'build-jade', 'build-stylus', 'build-fonts'],  function() {
+gulp.task('watch', [],  function() {
+
+    runSequence([
+        'build-data',
+        'build-api',
+        'build-bower',
+        'build-scripts',
+        'build-templates',
+        'build-jade',
+        'build-stylus',
+        'build-fonts'
+    ]);
+
     gulp.watch(config.path.src.data, ['build-jade', reload]);
     gulp.watch(config.path.src.api, ['build-api', reload]);
     gulp.watch(config.path.src.tags, ['build-templates', reload]);
@@ -52,9 +64,8 @@ gulp.task('server', ['watch'], function() {
 });
 
 gulp.task('reset', [], function(){
-  runSequence(
+  runSequence([
       'clear',
-      'build',
-      'watch'
-  );
+      'build'
+  ]);
 });
