@@ -16,7 +16,7 @@ define([
   scroll.init();
 
 
-  _.mixin(_s.exports());
+  // _.mixin(_s.exports());
 
   var _public = {},
       _private = {};
@@ -58,13 +58,13 @@ define([
       tagChannelPrint.open()
     });
   }
-  
+
   _private.slideShow = function(){
    var count = 0;
-   setInterval(function(){ 
+   setInterval(function(){
        if (count === $('.oi-hero').length) {count = 0;}
        $('.oi-hero').eq(count).appendTo('oi-hero');
-       setTimeout(function(){ 
+       setTimeout(function(){
            //$heroSlides.eq(count).css({'transition': 'all 2s ease-in-out','left': '-100%'});
            //$heroSlides.eq(count).remove();
            count++;

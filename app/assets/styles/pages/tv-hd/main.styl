@@ -1,3 +1,4 @@
+$isIE8 = false
 @import "kouto-swiss"
 @import "config/_variables.styl"
 @import 'jeet'
@@ -32,10 +33,14 @@ box-sizing-reset()
 
 // Page Components
 @import "_structure.styl"
-@import "_cards.styl"
-@import "_content.styl"
-@import "_content-header.styl"
+// @import "_cards.styl"
+@import "../_partials/_cards.styl"
+// @import "_content-header.styl"
+@import "../_partials/_content-header.styl"
 @import "_content-table.styl"
+
+@import "_content.styl"
+
 
 @import "_channel-lists.styl"
 @import "_channel-addons.styl"
@@ -44,3 +49,5 @@ box-sizing-reset()
 @import "_channel-footer-banner.styl"
 @import "_channel-footer-item.styl"
 @import "_channel-footer-faq.styl"
+
+

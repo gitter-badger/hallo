@@ -1,0 +1,136 @@
+modal-bl-sem-fidelizacao
+  .modal.modal-green(show="{ visible }")
+
+    .modal_column-left
+      header.modal_header
+        .modal_header_logo
+        h1.modal_header_title banda larga sem fidelização
+
+    .modal_column-right
+      main.modal_container
+
+        .modal_container_row
+          .modal_container_half-left
+            h4 Escolha seu plano
+
+          .modal_container_half-right
+            button.filled 
+              em Compre com um especialista
+
+        .modal_container_row
+            table.modal-table
+              thead
+                tr
+                  th
+                  th Velocidade
+                  th Modem incluído
+              tbody
+                tr
+                  td
+                    oi-price(price="{94.90}" small="{true}")
+                  td
+                    strong 15 Mega
+                  td
+                    i.icon_check
+                      span com WiFi
+                tr
+                  td
+                    oi-price(price="{84.90}" small="{true}")
+                  td
+                    strong 10 Mega
+                  td
+                    i.icon_check
+                      span com WiFi
+                tr
+                  td
+                    oi-price(price="{74.90}" small="{true}")
+                  td
+                    strong 2 Mega
+                  td
+                    i.icon_check
+
+
+        .modal_container_row
+          h5 Entenda oferta
+          ul.ordened
+            li 
+              p Sujeito à disponibilidade e viabilidade técnica e a análise de crédito. 
+            li 
+              p Os planos incluem modem no modelo comodato e promocionalmente para clientes da Banda Larga da Oi adimplentes que contratarem os planos de banda larga com velocidade de 5 Mbps ou superior receberão, em regime de comodato, modem WiFi (sujeito a disponibilidade). 
+            li 
+              p Promocionalmente, clientes da Banda Larga da Oi adimplentes que contratarem planos de serviço de banda larga em qualquer velocidade terão acesso ilimitado e gratuito até 20/07/2015 ao Oi WiFi. 
+            li 
+              p Instalação em até 7 dias após solicitado o serviço, podendo ser prorrogado em casos de fatores alheios à responsabilidade da empresa. 
+            li 
+              p A velocidade anunciada de acesso e tráfego na internet é a máxima nominal, podendo sofrer variações decorrentes de fatores externos.
+
+
+        .modal_container_row
+          h5 Qual a velocidade?
+          p 10 mega: até 10 mbps de download, até  512 kbps de upload.
+          p 5 mega: até 5 mbps de download, até 512 kbps de upload.
+          p 2 mega: até 2 mbps de download, até 512 kbps de upload.
+
+        .modal_container_row
+          h5 Como comprar?
+          .button-belt
+            button.basic Chat online
+            button.basic 0800 31 0001
+            button.basic Lojas da Oi
+
+        .modal_container_row
+          .modal-contratos
+            hr
+            a(href="#") Contrato do Plano Banda Larga sem Fixo da Oi
+            a(href="#") Regulamento do Plano Banda Larga sem Fixo da Oi
+            a(href="#") Sumário do Plano Banda Larga sem Fixo da Oi
+            p A oferta tem validade de 12 meses a partir da data de adesão, prorrogável automaticamente por períodos sucessivos de 30 dias, com a manutenção integral das condições da presente oferta. <br>Incluem modem no modelo comodato. O assinante fará jus à franquia de consumo de dados mensal contratada. O prazo de instalação pode ser prorrogado em casos de fatores alheios à responsabilidade da empresa.
+
+    a.modal_close(href="javascript:void(0);", onclick="{ close }") Fechar
+
+  script.
+    var self = this;
+    self.visible = false;
+    self.added = false;
+
+    /**
+     * native riot method
+     *
+     * dispacth events via oiMediator to any point needed on entire system
+     * 
+     * **/
+    this.on('mount update unmount', function(eventName) {
+      oiMediator.publish('modal-bl-sem-fidelizacao event', eventName);
+    });
+
+    self.open = function() {
+      $('body').addClass('scroll-lock');
+      self.visible = true;
+      self.update();
+      oiMediator.publish( 'modal-bl-sem-fidelizacao open', {} );
+    };
+
+    self.close = function() {
+      $('body').removeClass('scroll-lock');
+      self.visible = false;
+      self.update();
+      oiMediator.publish( 'modal-bl-sem-fidelizacao close', {} );
+    };
+
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      if (evt.keyCode == 27) { // Esc
+        self.close();
+      }
+    };
+
+    if (opts.visible) {
+      self.open();
+    }
+
+    $('body').on('click', '#open-bl-sem-fidelizacao', function(evt){
+      evt.preventDefault();
+      self.open();
+    });
+
+    //- self.open();

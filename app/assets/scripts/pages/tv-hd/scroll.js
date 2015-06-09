@@ -382,8 +382,10 @@ define([
         // dynamicTable(window.scrollY, -window.innerHeight*3, openPosition );
         // dynamicTableOpacity(window.scrollY, openPosition, openPosition + cardSize*0.21 );
 
-        dynamicCards(window.scrollY, openPosition, openPosition + cardSize*0.89);
-        dynamicTitle(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize * 0.89);
+        // dynamicCards(window.scrollY, openPosition, openPosition + cardSize*0.89);
+        dynamicCards(window.scrollY, openPosition, openPosition + cardSize);
+        // dynamicTitle(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize * 0.89);
+        dynamicTitle(window.scrollY, openPosition + cardSize*0.55, openPosition + cardSize);
 
         dynamicBorderSize();
       } else {

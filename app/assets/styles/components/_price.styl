@@ -100,18 +100,37 @@ oi-price
 .oi-price.oi-price--small
   .oi-price_prefix
     display: none
+
   .oi-price_value
     line-height: 0
+
   .oi-price_value_integer
-    top: remify(18px)
-    left: remify(20px)
-    font-size remify(42px)
+    +below('xs')
+      top: rem(18px)
+      left: rem(20px)
+      font-size rem(32px)
+    +above('m')
+      top: rem(18px)
+      left: rem(20px)
+      font-size rem(42px)
+
   .oi-price_value_cents
-    top: remify(4px)
-    left: remify(21px)
-    font-size remify(21px)
+    +below('m')
+      top: rem(8px)
+      left: rem(21px)
+      font-size rem(16px)
+    +above('m')
+      top: rem(4px)
+      left: rem(21px)
+      font-size rem(21px)
+
   .oi-price_value_suffix
-    top: remify(19px)
-    left: remify(-5px)
-    font-size: remify(11px)
+    +below('xs')
+      top: rem(19px)
+      left: rem(1px)
+      font-size: rem(8px)
+    +above('m')
+      top: rem(19px)
+      left: rem(-5px)
+      font-size: rem(10.5px)
 

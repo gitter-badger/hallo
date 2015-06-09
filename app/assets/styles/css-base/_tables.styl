@@ -160,7 +160,7 @@ table.default-table, table
 
 table.modal-table
   border-top remify(1px) solid $black
-  margin remify(20px) 0 remify(70px) 0
+  margin remify(20px) 0 0 0
   th
     padding remify(30px) remify(20px)
   .oi-price
@@ -168,8 +168,86 @@ table.modal-table
       padding-top remify(7px)
     +above('xs')
       padding-top remify(38px)
-
-
+      
+  th,
+  td
+    span.obs
+      display block
+      font-size remify(13px)
+      color $gray
+      padding-top remify(16px)
+      a
+        color $gray
+        &:hover
+          color $gray
+          border none
+    p.link-regulamentos
+      padding-top remify(30px)
+      a
+        cursor pointer
+        margin-right remify(8px)
+        font-size remify(13px)
+        color $gray
+        text-decoration underline
+        &:hover
+          text-decoration underline
+          border none
+    a.black
+      color $black
+      text-decoration underline
+      &:hover
+        color $black
+        border none
+    span.selo
+      color $white
+      font-size remify(13px)
+      background-color $green
+      border-radius remify(3px)
+      padding remify(3px) remify(6px) remify(3px) remify(6px)
+  
+  th,
+  td
+    span.obs-price
+      display block
+      font-size remify(13px)
+      color $gray
+          
+  th.left,
+  td.left
+    text-align left
+    
+  th.lista-tarifa,
+  td.lista-tarifa
+    a 
+      color $black
+      display block
+      text-decoration underline
+      &:hover
+        color $black
+        border none
+        
+  th.gray-obs,
+  td.gray-obs
+    background-color $grayLighter
+    padding remify(44px)
+    text-align left
+    h5
+      padding 0
+    p
+      span
+        font-size remify(13px)
+        color $gray
+ 
+table.outras-ofertas
+  margin remify(20px) 0 remify(40px) 0
+  
+  td
+    border none
+    a 
+      float left
+      clear left
+      border-bottom remify(1px) solid $white
+    
 table.checkout
   thead
     tr

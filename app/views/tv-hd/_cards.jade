@@ -1,6 +1,7 @@
 .cards
   .cards_container
     .cards_container_box
+      - console.log(cardsTvHd);
       each val, index in ['start', 'mix', 'total']
         oi-card
           a(href="#" data-slug=val class="oi-card "+ (val == 'mix' ? 'active': '') )

@@ -38,6 +38,11 @@
     &:last-child
       border-right-width remify(1.2px)
 
+  .oi-card_header_title
+    width auto
+    background-color transparent
+    position relative
+
 
 .cards.open
 
@@ -105,8 +110,14 @@
       left: 0
 
 
-.cards.fold
+.cards.parse.open.lock
+  .cards_container_box
+    oi-card
+      +below('m')
+        transition-duration: 610ms
+        transition-property: top
 
+.cards.fold
   .cards_container
     +below('m')
       position: fixed
@@ -116,9 +127,9 @@
   .cards_container_box
     oi-card
       +below('m')
-        top: remify(-94px)
         transition-duration: 610ms
         transition-property: top
+        top: rem(-94px)
       +above('m')
         transition-duration: 610ms
         transition-property: transform

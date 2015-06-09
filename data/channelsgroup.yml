@@ -116,7 +116,7 @@ channelsgroup:
           name: "TV Senado"
           color: ""
     -
-      label: "Filmes & Séries"
+      label: "Filmes e séries"
       channels:
         -
           img: "warner"
@@ -282,7 +282,7 @@ channelsgroup:
           name: "Woohoo"
           color: "dark"
     -
-      label: "Infantis & Básicos"
+      label: "Infantis"
       channels:
         -
           img: "cartoon-network"
@@ -380,7 +380,7 @@ channelsgroup:
           name: "Terra Viva"
           color: "dark"
     -
-      label: "Notícias & Cultura"
+      label: "Cultura e notícias"
       channels:
         -
           img: "globo-news"

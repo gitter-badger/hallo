@@ -25,9 +25,9 @@
 require.config({
   baseUrl: '/assets/scripts',
   paths: {
-    "domlib": ('__proto__' in {}) ? "vendor/zepto" : "vendor/jquery",
+    // "domlib": ('__proto__' in {}) ? "vendor/zepto" : "vendor/jquery",
     "lodash": "vendor/lodash",
-    // "domlib": "vendor/jquery",
+    "domlib": "vendor/jquery",
     "mask": 'vendor/jquery.maskedinput',
     "velocity": 'vendor/velocity',
     "velocity-ui": 'vendor/velocityui',
