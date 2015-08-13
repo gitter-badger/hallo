@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box_check_update = false
 
-  config.vm.hostname = "oi-box"
+  config.vm.hostname = "hallo-box"
 
   config.ssh.forward_agent = true
   config.vm.network "forwarded_port", guest: 3000, host: 3000, auto_correct: true
@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
   # config.vm.network "private_network", ip: "192.168.33.10"
   # config.vm.network "public_network"
 
-  config.vm.post_up_message = "Hello Oi > 'vagrant ssh'para conectar "
+  config.vm.post_up_message = "Hallo > 'vagrant ssh'para conectar "
 
   config.vm.provision "shell", path: "vagrant/provision.sh", privileged: false
 
