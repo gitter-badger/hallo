@@ -1,14 +1,14 @@
 {
-  "name": "portal-oi",
+  "name": "hallo",
   "version": "0.0.0",
-  "description": "novo portal Oi",
+  "description": "",
   "main": "index.html",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/letanure/oi.git"
+    "url": ""
   },
   "keywords": [
     "js"
@@ -16,9 +16,9 @@
   "author": "Luiz Tanure",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/letanure/oi/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/letanure/oi",
+  "homepage": "",
   "devDependencies": {
     "bower": "^1.3.12",
     "browser-sync": "~2.3.1",
